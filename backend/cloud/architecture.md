@@ -8,7 +8,8 @@
 
 ### \*Decomposing business problem
 
-O -> o,o,o,o
+> *Decomposing:* 
+> O -> o,o,o,o
 
 Break big problem into several small ones === break monolithic domain into MS domain.
 
