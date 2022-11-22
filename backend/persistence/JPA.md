@@ -80,3 +80,9 @@ INNER JOIN
 ```
 
 [Read why JPA and Hibernate FetchType.EAGER is a code smell](https://vladmihalcea.com/eager-fetching-is-a-code-smell/)
+
+## FetchType.LAZY
+
+N+1 problem with `FetchType.LAZY` is pretty obvious - you fetch collection of comments and they are loaded without post, but if you'll traverse through comment and get their posts, for each post-postComment you'll have a select post query.
+
+
