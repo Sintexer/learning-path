@@ -85,4 +85,24 @@ INNER JOIN
 
 N+1 problem with `FetchType.LAZY` is pretty obvious - you fetch collection of comments and they are loaded without post, but if you'll traverse through comment and get their posts, for each post-postComment you'll have a select post query.
 
+## N+1 for biderectional @OneToOne
 
+Imagine you have Post and PostDetails, that share same primary key. In this key PostDetails primery key is a foreign key for Post.
+
+When using unidirectional @OneToOne there is no problem. Using @mapsId annotation on PostDetails side you easily can have such relation. 
+
+But when adding biderectional association you could face the problem when using `FetchType.LAZY` on the Parent side if you use advanced setter, where a biderectional association is initialized:
+
+``` java
+
+public void setDetails(PostDetails details) {
+    this.details = details;
+    details.post = this;
+}
+```
+
+the line `details.post = this;` will lead to second select when quering for post - hibernate will try to inject a proxy of PostDetails and this eventually will trigger proxy to be loaded.
+
+This can be avoided with Bytecode enhancement like `@LazyToOneOption.NO_PROXY`, which force you to remove `@MapsId` on the child side.
+
+But also when using `@MapsId` there is no much sense for biderectional assocoation since Post and PostDetails share the same `id`, so you can easily fetch PostDetails having only Post.
