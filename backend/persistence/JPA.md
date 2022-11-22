@@ -106,3 +106,5 @@ The line `details.post = this;` will lead to second SELECT when quering for post
 This can be avoided with Bytecode enhancement like `@LazyToOneOption.NO_PROXY`, which force you to remove `@MapsId` on the child side as well.
 
 But also when using `@MapsId` there is no much sense for biderectional assocoation since Post and PostDetails share the same `id`, so you can easily fetch PostDetails having only Post.
+
+By default the name of the column of the field with `@MapsId` annotation will be field name + `_id`, but if you want to change it (e.g., to `id`, at least because it is a primary key) use good old `@JoinColumn(name = "desired_column_name")`
