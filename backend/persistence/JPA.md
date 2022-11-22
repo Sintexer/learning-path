@@ -101,8 +101,8 @@ public void setDetails(PostDetails details) {
 }
 ```
 
-the line `details.post = this;` will lead to second select when quering for post - hibernate will try to inject a proxy of PostDetails and this eventually will trigger proxy to be loaded.
+The line `details.post = this;` will lead to second SELECT when quering for post - hibernate will try to inject a proxy of PostDetails and this eventually will trigger proxy to be loaded.
 
-This can be avoided with Bytecode enhancement like `@LazyToOneOption.NO_PROXY`, which force you to remove `@MapsId` on the child side.
+This can be avoided with Bytecode enhancement like `@LazyToOneOption.NO_PROXY`, which force you to remove `@MapsId` on the child side as well.
 
 But also when using `@MapsId` there is no much sense for biderectional assocoation since Post and PostDetails share the same `id`, so you can easily fetch PostDetails having only Post.
