@@ -131,3 +131,7 @@ This can be avoided with Bytecode enhancement like `@LazyToOneOption.NO_PROXY`, 
 But also when using `@MapsId` there is no much sense for biderectional assocoation since Post and PostDetails share the same `id`, so you can easily fetch PostDetails having only Post.
 
 By default the name of the column of the field with `@MapsId` annotation will be field name + `_id`, but if you want to change it (e.g., to `id`, at least because it is a primary key) use good old `@JoinColumn(name = "desired_column_name")`
+
+## N+1 for 2nd layer cache
+
+If you use 2nd layer cache, you could also face N+1. If you query for PostComment where each comment has a field of Post, than for each PostComment a SELECT query for Post is executed if PostComment is not yet in the 2nd layer cache.
