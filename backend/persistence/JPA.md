@@ -7,6 +7,29 @@
 | @ManyToOne       | EAGER                   |
 | @OneToMany       | EAGER                   |
 
+# JPA/Hibernate cache
+
+## 1st layer cache
+
+1st layer cache is a session cache which is associated with current transaction. It is enabled by default and used to prevent quering for the same object. It is implemented as key-value Map inside EntityManager.
+
+## 2nd layer cache
+
+2nd layer cache is a global cache that is stored inside SessionFactory and same for every transaction. It could be usefull for read-only object (`@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)`). 2nd layer cache disabled by default and could be enabled. You need to add implementation dependency to make it work (e.g., `hibernate-ehcache`).
+
+``` yaml
+spring:
+  ...
+  jpa:
+    ...
+    properties:
+      hibernate:
+        cache:
+          use_second_level_cache: true
+          region:
+            factory_class: org.hibernate.cache.ehcache.EhCacheRegionFactory
+```
+
 # N+1 problem
 
 https://habr.com/ru/company/otus/blog/529692/
