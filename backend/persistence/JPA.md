@@ -1,3 +1,12 @@
+# Default fetching policy
+
+| Association Type | Default fetching policy |
+|------------------|-------------------------|
+| @OneToMany       | LAZY                    |
+| @ManyToMany      | LAZY                    |
+| @ManyToOne       | EAGER                   |
+| @OneToMany       | EAGER                   |
+
 # N+1 problem
 
 https://habr.com/ru/company/otus/blog/529692/
