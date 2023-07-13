@@ -529,6 +529,27 @@ or been cancelled; the client code can callgetorisCancelled
 
 Summary Structuring applications around the execution of tasks can simplify development and facilitate concurrency. TheExecutorframework permits you to decouple task submission from execution policy and supports a rich variety of execution policies; whenever you f i nd yourself creating threads to perform tasks, consider using anExecutorinstead. To maximize the benef i t of decomposing an applica-tion into tasks, you must identify sensible task boundaries. In some applications, the obvious task boundaries work well, whereas in others some analysis may be required to uncover f i ner-grained exploitable parallelism.
 
---
-Reading books with ReadEra
-https://play.google.com/store/apps/details?id=org.readera&hl=en
+*****
+
+## Performance and Scalability
+
+The task might be IO bound, CPU bound, DB bound etc. We say that task is bound to some rousorce if this resource becomes the ceiling or reason of why we cannot improve performance by adding more threads.
+To achieve better performance we need to:
+1. Utilize the processing resources we have more effectively (Keep CPU as busy as possible)
+2. Enable our program to exploit additional processing resources if they become available
+
+If the program is CPU-bound, we can achieve better concurency by adding more cpus, but if application doesn't keep the processons 100% busy, adding more won't help.
+
+Scalability is the ability to improve throughput or capacity when additional computing resources (such as CPU, memory, storage or I/O bandwidth) are added.
+
+Poorly designed concurrent application might behave worst than the same app written in single thread.
+
+### Questions:
+1. Sometimes it is said the task can be xxx-bound. To what a concurrent task might be bound?
+2. What is **scalability**?
+3. Name different computing resources that might improve apps performance.
+
+### Answers:
+1. Task can be CPU-bound, I/O-bound, network-bound, DB-bound and etc. Usually it is bound by some resource, it can be bound by this reource's speed or quantity. E.g. task might be bound to the amount of DB connections available. So adding more threads than max Db connections available unlikely improves performance.
+2. Scalability is the ability of progrram to improve throughput or capacity when additional computing resources are added.
+3. CPUs, memory, I/O bandwidth, storage
