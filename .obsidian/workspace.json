@@ -13,13 +13,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "AWS/S3.md",
+                "file": "AWS/Storage and S3.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e814af4bd27a2790",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "AWS/Cloud.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -85,7 +98,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "AWS/S3.md",
+                "file": "AWS/Cloud.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +115,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "AWS/S3.md",
+                "file": "AWS/Cloud.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,11 +138,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "AWS/S3.md"
+                "file": "AWS/Cloud.md"
               }
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
@@ -145,8 +159,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "514b6c544611407c",
+  "active": "f6c372ba0cf8931e",
   "lastOpenFiles": [
+    "AWS/Storage and S3.md",
+    "AWS/Cloud.md",
     "README.md",
     "Welcome.md",
     "java/jvmArgs.md",
@@ -164,7 +180,6 @@
     "backend/backend-path.png",
     "backend/backend-path.drawio",
     "backend",
-    "AWS/S3.md",
     "AWS"
   ]
 }
