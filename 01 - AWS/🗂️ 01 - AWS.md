@@ -2,6 +2,6 @@
 ## MOC
 
 - [[🗂️ Regions]]
-- [[🗂️ Security]]
+- [[🗂️ AWS Security]]
 - [[Cloud]]
 - [[Storage and S3]]

@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "ed97185918daf5dd",
+            "id": "024762a5a21dcc73",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/Storage and S3.md",
+                "file": "01 - AWS/IAM/IAM.md",
                 "mode": "source",
                 "source": false
               }
@@ -86,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/Storage and S3.md",
+                "file": "01 - AWS/IAM/IAM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/Storage and S3.md",
+                "file": "01 - AWS/IAM/IAM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/Storage and S3.md"
+                "file": "01 - AWS/IAM/IAM.md"
               }
             }
           },
@@ -172,43 +172,44 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "ed97185918daf5dd",
+  "active": "024762a5a21dcc73",
   "lastOpenFiles": [
-    "01 - AWS/Cloud.md",
-    "01 - AWS/Security/Shared responsibility.md",
-    "01 - AWS/Security/🗂️ Security.md",
+    "01 - AWS/IAM/IAM policies.md",
+    "01 - AWS/IAM/IAM.md",
+    "01 - AWS/IAM/IAM user.md",
+    "01 - AWS/IAM/IAM group.md",
+    "01 - AWS/IAM/🗂️ AWS IAM.md",
+    "01 - AWS/🗂️ 01 - AWS.md",
+    "01 - AWS/IAM",
+    "01 - AWS/AWS Security/Untitled",
+    "01 - AWS/AWS Security/Root User.md",
+    "01 - AWS/AWS Security/IAM Group.md",
+    "04 - Security/Authentication and Authorization.md",
+    "04 - Security/Identity federation.md",
+    "01 - AWS/AWS Security/🗂️ AWS Security.md",
+    "04 - Security/🗂️ 04 - Security.md",
+    "02 - Java/🗂️ 02 - Java.md",
+    "04 - Security",
+    "04 - Security",
+    "01 - AWS/AWS Security/MFA.md",
     "01 - AWS/Storage and S3.md",
+    "01 - AWS/Cloud.md",
+    "01 - AWS/AWS Security/Shared responsibility.md",
     "01 - AWS/EC2.md",
     "01 - AWS/AWS API.md",
     "01 - AWS/AWS CLI.md",
-    "01 - AWS/🗂️ 01 - AWS.md",
     "01 - AWS/Regions/Availability Zone.md",
     "01 - AWS/Security.md",
-    "01 - AWS/Security/Authentication and Authorization.md",
-    "01 - AWS/Security/User.md",
-    "01 - AWS/Security/MFA.md",
     "01 - AWS/Regions/Region.md",
-    "01 - AWS/Security/IAM.md",
-    "01 - AWS/Security",
+    "01 - AWS/AWS Security",
     "01 - AWS/Regions/Regions.md",
     "🗂️ hub.md",
     "01 - AWS/Regions/🗂️ Regions.md",
-    "01 - AWS/Regions/Service scope.md",
-    "01 - AWS/Regions/Edge locations.md",
-    "01 - AWS/Regions/Data Center.md",
-    "00 - Start here.md",
     "01 - AWS/Regions",
-    "03 - Backend/Cloud/Architecture.md",
-    "03 - Backend/Cloud/Cloud ToDo.md",
-    "03 - Backend/🗂️ 03 - Backend.md",
-    "02 - Java/🗂️ 02 - Java.md",
     "03 - Backend/backend-path.png",
     "02 - Java",
     "03 - Backend/Spring",
     "03 - Backend/Cloud",
-    "03 - Backend/Persistence",
-    "03 - Backend/backend-path.drawio",
-    "03 - Backend",
-    "01 - AWS"
+    "03 - Backend/Persistence"
   ]
 }

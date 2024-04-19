@@ -1,0 +1,2 @@
+
+Identity federation allows users with passwords elsewhere - like corporate network or internet identity provider - to get access to a resource. E.g. allow users from LDAP to access application via [[Keycloak]]. 

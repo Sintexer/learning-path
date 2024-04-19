@@ -1,7 +1,7 @@
 ## MOC
 
 - [[IAM]]
-- [[User]]
+- [[Root User]]
 - [[MFA]]
 - [[Authentication and Authorization]]
 - [[Shared responsibility]]
