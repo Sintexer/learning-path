@@ -1,0 +1,1 @@
+It's an external user account that is accessing AWS service. E.g. enterprise LDAP system has thousands of users, and all of them are now required to access AWS. There is no need to duplicate account into AWS, AWS can handle such case and works well with external accounts.
