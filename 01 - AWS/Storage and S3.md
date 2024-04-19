@@ -108,7 +108,7 @@ Object stored in S3 along with some metadata:
 - **System-Defined** - used to maintain things such as created date, size and last modified.
 - **User-Defined** - allows user to assign key-value pairs to the data.
 
-Amazon S3 provides SLA 99.999999999% (11 9's). This is possible due to high rate of data redundancy across at least 3 AZs in an S3 Region.
+	Amazon S3 provides SLA 99.999999999% (11 9's). This is possible due to high rate of data redundancy across at least 3 AZs in an S3 Region.
 
 **Bucket** is the fundamental container for objects.
 
