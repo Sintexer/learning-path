@@ -4,35 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "c730d72cf2615255",
+        "id": "8d6826dea963957a",
         "type": "tabs",
         "children": [
           {
-            "id": "da33c98569aa51cb",
+            "id": "ed97185918daf5dd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00 - Start here.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "fb0ebff55e4ff8d3",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "🗂️ hub.md",
+                "file": "01 - AWS/Storage and S3.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -99,8 +86,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "🗂️ hub.md",
-                "collapseAll": true,
+                "file": "01 - AWS/Storage and S3.md",
+                "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -116,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "🗂️ hub.md",
+                "file": "01 - AWS/Storage and S3.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "🗂️ hub.md"
+                "file": "01 - AWS/Storage and S3.md"
               }
             }
           },
@@ -185,36 +172,41 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "fb0ebff55e4ff8d3",
+  "active": "ed97185918daf5dd",
   "lastOpenFiles": [
-    "03 - Backend/🗂️ 03 - Backend.md",
+    "01 - AWS/Cloud.md",
+    "01 - AWS/Security/Shared responsibility.md",
+    "01 - AWS/Security/🗂️ Security.md",
+    "01 - AWS/Storage and S3.md",
+    "01 - AWS/EC2.md",
+    "01 - AWS/AWS API.md",
+    "01 - AWS/AWS CLI.md",
+    "01 - AWS/🗂️ 01 - AWS.md",
+    "01 - AWS/Regions/Availability Zone.md",
+    "01 - AWS/Security.md",
+    "01 - AWS/Security/Authentication and Authorization.md",
+    "01 - AWS/Security/User.md",
+    "01 - AWS/Security/MFA.md",
+    "01 - AWS/Regions/Region.md",
+    "01 - AWS/Security/IAM.md",
+    "01 - AWS/Security",
+    "01 - AWS/Regions/Regions.md",
     "🗂️ hub.md",
+    "01 - AWS/Regions/🗂️ Regions.md",
+    "01 - AWS/Regions/Service scope.md",
+    "01 - AWS/Regions/Edge locations.md",
+    "01 - AWS/Regions/Data Center.md",
+    "00 - Start here.md",
+    "01 - AWS/Regions",
+    "03 - Backend/Cloud/Architecture.md",
+    "03 - Backend/Cloud/Cloud ToDo.md",
+    "03 - Backend/🗂️ 03 - Backend.md",
     "02 - Java/🗂️ 02 - Java.md",
     "03 - Backend/backend-path.png",
-    "03 - Backend/cloud/🗂️ Backend cloud.md",
-    "03 - Backend/persistence/🗂️ Backend persistence.md",
-    "03 - Backend/spring/🗂️ Spring.md",
-    "00 - Start here.md",
-    "01 - AWS/🗂️ 01 - AWS.md",
-    "01 - AWS/Regions.md",
-    "02 - Java/jmxConfig.md",
-    "01 - AWS/AWS CLI.md",
-    "README.md",
-    "01 - AWS/Security.md",
-    "02 - Java/jvmArgs.md",
-    "03 - Backend/cloud/ToDo.md",
-    "idea.md",
-    "03 - Backend/persistence/JPA.md",
-    "03 - Backend/spring/persistence.md",
-    "02 - Java/concurrency.md",
-    "01 - AWS/Storage and S3.md",
-    "01 - AWS/Cloud.md",
-    "Welcome.md",
     "02 - Java",
-    "03 - Backend/cloud/architecture.md",
-    "03 - Backend/spring",
-    "03 - Backend/cloud",
-    "03 - Backend/persistence",
+    "03 - Backend/Spring",
+    "03 - Backend/Cloud",
+    "03 - Backend/Persistence",
     "03 - Backend/backend-path.drawio",
     "03 - Backend",
     "01 - AWS"

@@ -1,0 +1,2 @@
+
+AWS enables **caching** for users. If AZ is located in Ohio, users might download content from regional **edge caches** without the need to download it directly from Ohio Data Center. AWS service **Amazon CloudFront** might be used to cache content using the edge locations

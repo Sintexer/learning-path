@@ -1,0 +1,7 @@
+Depending on the AWS service that you use, your resources are either deployed at the Availability Zone, Region, or Global level. Each service is different, so you must understand how the scope of a service might affect your application architecture.  
+  
+When you operate a **Region-scoped** service, you only need to select the [[Region]] that you want to use. If you are not asked to specify an individual Availability Zone to deploy the service in, this is an indicator that the service operates on a Region-scope level. For Region-scoped services, AWS automatically performs actions to increase data durability and availability.  
+  
+On the other hand, some services ask you to specify an **Availability Zone**. With these services, you are often responsible for increasing the data durability and high availability of these resources.
+
+To keep your application available, you must maintain **high availability** and **resiliency**. A well-known best practice for cloud architecture is to use Region-scoped, managed services. These services come with availability and resiliency built in. When that is not possible, make sure your workload is **replicated across multiple Availability Zones**. At a minimum, you should use two Availability Zones. That way, if an Availability Zone fails, your application will have infrastructure up and running in a second Availability Zone to take over the traffic.

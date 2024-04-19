@@ -1,5 +1,8 @@
-# Block stores
-## EBS - Elastic block store
+
+Data stored in AWS is safe. AWS ensures redundancy of your data to insure natural disaster or any other catastrophic event won't make you lose your data. Your data might be replicated across [[Region]]s, [[Availability Zone]]s, or [[Data Center]]s, or not even replicated at all. This is based on the service you are using and service settings. Some services require you to configure data redundancy, some handle this automatically. If a service is **Region-scoped**, it handles redundancy across AZs automatically.
+
+## Block stores
+### EBS - Elastic block store
 
 Could be **SSD** or **HDD** backed. 
 - SSD: *gp3, gp2, io1, io2.* 
@@ -43,7 +46,7 @@ warehouses, and log processing.
 than IOPS. These volumes are ideal for large, sequential, cold-data workloads. If you require **infrequent
 access** to your data and are looking to save costs, these volumes provide inexpensive block storage.
 
-## EBS vs Instance store:
+### EBS vs Instance store:
 
 Instance store is physically attached to the machine, while EBS volume is a network drive.
 
@@ -55,9 +58,9 @@ Instance store is physically attached to the machine, while EBS volume is a netw
 `-` You can't resize the instance store.
 `-` backups *must* be operated by user.
 
-# File store
+## File store
 
-## EFS - Elastic file system
+### EFS - Elastic file system
 
 You can mount EFS volume to different AWS networks and devices, could be mounted to several AZ. Uses NFSv4 protocol.
 
@@ -90,7 +93,7 @@ EFS is suitable for:
 
 You pay for the storage used only.
 
-## Amazon FSx
+### Amazon FSx
 
 Amazon FSx for Windows File Server. Has features, performance and compatibility to easily lift and shift enterprise applications to the AWS cloud.
 
@@ -98,8 +101,8 @@ Supports Server Message Block (SMB) protocol.
 
 As a fully managed service, Amazon FSx for Windows File Server eliminates the administrative overhead of setting up and provisioning file servers and storage volumes. Additionally, Amazon FSx keeps Windows software up to date, detects and addresses hardware failures, and performs backups.
 
-# Object stores
-## Simple Storage Service (S3)
+## Object stores
+### Simple Storage Service (S3)
 
 Object-level storage of any data type. Doesn't store files in a file system.
 

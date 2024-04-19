@@ -1,7 +1,7 @@
 
 ## MOC
 
+- [[🗂️ Regions]]
+- [[🗂️ Security]]
 - [[Cloud]]
-- [[Regions]]
-- [[Security]]
 - [[Storage and S3]]

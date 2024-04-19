@@ -1,6 +1,4 @@
 
-**last revised at:** `2024-04-17`
-
 There are different types of hosts: **on-premises, cloud, and hybrid solutions**. 
 
 # Different types of deployments
