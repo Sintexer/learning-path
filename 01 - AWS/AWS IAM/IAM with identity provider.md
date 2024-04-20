@@ -1,0 +1,5 @@
+If you decide to make your cat photo application into a business and begin to have more than a handful of people working on it, consider managing employee identity information through an [[Identity provider]] (**IdP**). Using an **IdP**, whether it's with an AWS service such as [[AWS Identity Center]] (successor to AWS Single Sign-On) or a third-party *identity provider*, provides a single source of truth for all identities in your organization.
+
+You no longer have to create separate [[IAM user|IAM users]] in AWS. You can instead use [[IAM role|IAM roles]] to provide permissions to identities that are _federated_ ([[Identity federation]]) from your IdP. Being federated is a process that allows for the transfer of identity and authentication information across a set of networked systems. 
+
+> For example, your employee Martha has access to multiple AWS accounts. Instead of creating and managing multiple *IAM users* named Martha in each of those AWS accounts, you could **manage Martha in your company’s IdP**. If Martha moves in the company or leaves the company, Martha can be updated in the IdP rather than in every AWS account in the company.

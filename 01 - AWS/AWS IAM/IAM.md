@@ -24,17 +24,11 @@ IAM **is not** used for website [[Authentication and Authorization]], such as pr
 
 ### 4. Use IAM roles when possible
 
-Maintaining roles is more efficient than maintaining users. When you assume a role, IAM dynamically provides temporary credentials that expire after a defined period of time, between 15 minutes and 36 hours. Users, on the other hand, have long-term credentials in the form of user name and password combinations or a set of access keys.
-
-User access keys only expire when you or the account admin rotates the keys. User login credentials expire if you applied a password policy to your account that forces users to rotate their passwords.
+Maintaining [[IAM role|roles]] is more efficient than maintaining users. User access keys only expire when you or the account admin rotates the keys. User login credentials expire if you applied a password policy to your account that forces users to rotate their passwords.
 
 ### 5. Consider using an identity provider
 
-If you decide to make your cat photo application into a business and begin to have more than a handful of people working on it, consider managing employee identity information through an identity provider (IdP). Using an IdP, whether it's with an AWS service such as AWS IAM Identity Center (successor to AWS Single Sign-On) or a third-party identity provider, provides a single source of truth for all identities in your organization.
-
-You no longer have to create separate IAM users in AWS. You can instead use IAM roles to provide permissions to identities that are _federated_ from your IdP. Being federated is a process that allows for the transfer of identity and authentication information across a set of networked systems. 
-
-> For example, your employee Martha has access to multiple AWS accounts. Instead of creating and managing multiple IAM users named Martha in each of those AWS accounts, you could manage Martha in your company’s IdP. If Martha moves in the company or leaves the company, Martha can be updated in the IdP rather than in every AWS account in the company.
+It is much simpler to manage one user in [[Identity provider]] with assigned IAM roles, than managing several IAM users attached to one person. If this person leaves company, you can simply remove IAM role from the federated account. See [[IAM with identity provider]]
 
 ### 6. Regularly review and clean up unused users, groups, permissions and roles
 
@@ -45,3 +39,5 @@ You might have IAM users, roles, permissions, policies, or credentials that you 
 - [[IAM user]]
 - [[IAM group]]
 - [[IAM policies]]
+- [[IAM identity]]
+- [[IAM role]]

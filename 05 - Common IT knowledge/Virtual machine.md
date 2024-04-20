@@ -1,0 +1,1 @@
+The virtual machine emulates a physical server and allows you to install an HTTP server to run your applications, for example. To run virtual machines, you install a [[Hypervisor|hypervisor]] on a host machine. The hypervisor provisions the resources to create and run your VMs.

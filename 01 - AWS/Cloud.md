@@ -1,7 +1,6 @@
 
 There are different types of hosts: **on-premises, cloud, and hybrid solutions**. 
 
-# Different types of deployments
 ## On-premises 
 
 Before the cloud companies and organizations hosted hardware, including computing, storage and network equipment. It often required to be handled by a special infrastructure department, which resulted in costly operations that made some workloads and experimentation impossible. With the growth of the internet, demand for compute, storage and networking equipment increased. The cost of infrastructure became unbearable for many companies, but cloud solutions helped in solving this problem. Company might even have bigger data center and some of computation power will be left unused, but will provide costs anyway.
@@ -16,7 +15,7 @@ Cloud computing is the on-demand delivery of IT resources over the internet with
 
 This type of deployment is a way to connect infrastructure and applications between cloud-based resources and existing resources that are not located in the cloud. The most common method of hybrid deployment between the cloud and existing on-premises infrastructure connects cloud resources to internal systems to extend and grow an organization's infrastructure into the cloud.
 
-# Cloud pros
+## Cloud pros
 
 **Six advantages of cloud computing:**
 1. **Pay-as-you-go** - paying only for the resources that you use.

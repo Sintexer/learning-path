@@ -1,0 +1,1 @@
+A hypervisor is software or firmware that makes it possible to share physical hardware resources across one or more virtual machines
