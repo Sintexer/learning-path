@@ -1,2 +1,4 @@
 
+> **No one-size-fits-all compute service exists because it depends on your needs. The key is to understand what each option offers.**
+
 Your instance sizing will depend on both the demands of your application and the anticipated size of your user base. Forecasting server capacity for an [[Cloud#On-premises|on-premises]] application requires difficult decisions involving significant upfront capital spending. In contrast, changes to the allocation of your [[Cloud#Cloud|cloud-based]] services can be made with a simple API call. Because of the AWS pay-as-you-go model, you can match your infrastructure capacity to your application’s demand, instead of the other way around.
