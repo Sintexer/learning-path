@@ -4,5 +4,5 @@
 - [[🗂️ Regions]]
 - [[🗂️ AWS Security]]
 - [[🗂️ AWS IAM]]
+- [[🗂️ AWS Storage]]
 - [[Cloud]]
-- [[Storage and S3]]

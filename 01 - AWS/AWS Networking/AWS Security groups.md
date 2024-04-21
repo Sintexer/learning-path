@@ -1,0 +1,7 @@
+The is a layer of security for your [[EC2]] instances. Here, you can create a **virtual firewall** called a **security group**. The **default** configuration of a security group **blocks all inbound traffic** and **allows all outbound traffic**.
+
+You might be wondering, “Wouldn’t this block all EC2 instances from receiving the response of any customer requests?” Well, **security groups are stateful**. That means that they **will remember** if a connection is originally initiated by the EC2 instance or from the outside, and **temporarily allow traffic to respond** without modifying the inbound rules.
+
+If you want your EC2 instance to *accept* traffic from the internet, you must open up inbound ports. If you have a web server, you might need to accept [[HTTP]] and [[HTTPS]] requests to allow that type of traffic into your security group. You can create an inbound rule that will allow port 80 (HTTP) and port 443 (HTTPS).
+
+[[Subnet|Subnets]] can be used to segregate traffic between computers in your network (See also [[AWS VPC]]. Security groups can be used in the same way. A common design pattern is to **organize resources into different groups** and create security groups for each to control **network** communication between them.

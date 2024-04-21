@@ -4,7 +4,7 @@
 
 ### AWS responsibilities 
 
-AWS is responsible for security of the cloud. This means that AWS protects and secures the infrastructure that runs the services offered in the AWS Cloud. It includes protecting and securing AWS [[Region]], [[Availability Zone]]s, and [[Data Center]]s, down to the physical security of the buildings for low-level services ([[EC2]]), and managing hardware and software and encryption for services with higher levels of abstraction ([[Storage and S3#Simple Storage Service (S3)|S3]]).
+AWS is responsible for security of the cloud. This means that AWS protects and secures the infrastructure that runs the services offered in the AWS Cloud. It includes protecting and securing AWS [[Region]], [[Availability Zone]]s, and [[Data Center]]s, down to the physical security of the buildings for low-level services ([[EC2]]), and managing hardware and software and encryption for services with higher levels of abstraction ([[AWS S3|S3]]).
 
 ### User responsibilities
 

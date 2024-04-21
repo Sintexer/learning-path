@@ -21,6 +21,6 @@ To **create** an EC2 instance, you must define the following:
 
 When launching an EC2 instance, the first setting you configure is which **operating system** you want by selecting an [[AWS AMI|Amazon Machine Image (AMI)]]. EC2 and AMI have strong [[AWS AMI#EC2 and AMI relation|functional relation]].
 
-**Initialization script:** You can equip your EC2 instance with a custom initialization script that will automatically run after the instance boots up. This script allows you to configure and customize your instance according to your specific needs. For instance, in simple use cases such script could download your application and all it dependencies. But generally it should be used to install third-party linux packages, vital for the application.
+**Initialization script:** You can equip your EC2 instance with a custom initialization script that will automatically run after the instance boots up. This script allows you to configure and customize your instance according to your specific needs. For instance, in simple use cases such script could download your application and all it dependencies. But generally it should be used to install third-party Linux packages, vital for the application.
 
-During creation you should also choose the [[EC2 instance type|instance type]], [[EC2 instance network|network]], and [[Storage and S3|storage]]**.
+During creation you should also choose the [[EC2 instance type|instance type]], [[EC2 instance network|network]], and [[EC2 storage|storage]]**.

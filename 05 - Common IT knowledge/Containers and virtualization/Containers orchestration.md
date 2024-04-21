@@ -6,4 +6,4 @@ If you’re trying to manage your compute at a large scale, you should consider 
 - What happens if your instance fails
 - How to monitor deployments of your containers
 
-This coordination is handled by a **container orchestration service**. Most popular choice for today is [[Kubernetes|K8S]]. Cloud platforms also offer their own orchestration services. AWS offers two container orchestration services: [[AWS Elastic Container Service|Amazon Elastic Container Service (Amazon ECS)]] and [[|Amazon Elastic Kubernetes Service (Amazon EKS)]].
+This coordination is handled by a **container orchestration service**. Most popular choice for today is [[Kubernetes|K8S]]. Cloud platforms also offer their own orchestration services. AWS offers two container orchestration services: [[AWS Elastic Container Service|Amazon Elastic Container Service (Amazon ECS)]] and [[AWS Elastic Kubernetes Service|Amazon Elastic Kubernetes Service (Amazon EKS)]].

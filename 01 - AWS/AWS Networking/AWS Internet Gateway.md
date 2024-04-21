@@ -1,0 +1,3 @@
+To activate internet connectivity for your [[AWS VPC|VPC]], you must create an **internet gateway**. Think of the gateway as *similar to a modem*. Just as a modem connects your computer to the internet, the internet gateway **connects your VPC to the internet**. Unlike your modem at home, which sometimes goes down or offline, an **internet gateway is highly available and scalable**. After you create an internet gateway, you attach it to your VPC.
+
+Internet gateways have an [[ARN]] with a prefix `igw-`.
