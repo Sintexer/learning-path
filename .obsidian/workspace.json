@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Virtual Private Cloud.md",
+                "file": "01 - AWS/AWS Services/AWS License Manager.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS EC2.md",
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 instance sizing.md",
                 "mode": "source",
                 "source": false
               }
@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS AMI.md",
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 instance sizing.md",
                 "mode": "source",
                 "source": false
               }
@@ -49,14 +49,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/AWS Access keys.md",
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 pricing.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -123,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS EC2.md",
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 pricing.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -140,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS EC2.md",
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 pricing.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS EC2.md"
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 pricing.md"
               }
             }
           },
@@ -175,8 +175,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       },
       {
         "id": "61ff1fc84dc9c394",
@@ -207,47 +206,49 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "random-note:Open random note": false,
-      "obsidian-spaced-repetition:Review flashcards": false
+      "obsidian-spaced-repetition:Review flashcards": true
     }
   },
-  "active": "593b5c10c3fac5a7",
+  "active": "abfdb552885946fb",
   "lastOpenFiles": [
+    "01 - AWS/AWS Services/AWS License Manager.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 pricing.md",
+    "01 - AWS/AWS IAM/AWS Access keys.md",
+    "01 - AWS/AWS Compute/AWS EC2/AWS EC2.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 instance type.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 instance sizing.md",
+    "01 - AWS/AWS Services/AWS Fargate.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.canvas",
     "01 - AWS/AWS Compute/AWS AMI.md",
-    "01 - AWS/AWS Compute/AWS EC2.md",
-    "01 - AWS/AWS Compute/AWS Lambda.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 instance network.md",
+    "01 - AWS/Storage and S3.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 high availability.md",
+    "01 - AWS/AWS Compute/AWS EC2/🗂️ AWS EC2.md",
+    "01 - AWS/AWS Security/Shared responsibility.md",
+    "01 - AWS/AWS IAM/IAM role.md",
+    "01 - AWS/AWS Compute/AWS Compute.md",
+    "01 - AWS/AWS Compute/🗂️ AWS Compute.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 Instance family.md",
     "05 - Common IT knowledge/Virtual Private Cloud.md",
+    "01 - AWS/AWS Compute/AWS EC2",
+    "01 - AWS/AWS Compute/AWS Lambda.md",
     "01 - AWS/Cloud.md",
     "README.md",
     "Untitled.md",
     "New Text Document.txt",
     "Keycloak.md",
-    "01 - AWS/AWS IAM/AWS Access keys.md",
-    "01 - AWS/AWS Compute/🗂️ AWS Compute.md",
     "01 - AWS/AWS IAM/IAM.md",
     "01 - AWS/AWS IAM/IAM with identity provider.md",
-    "01 - AWS/AWS Compute/AWS Compute.md",
-    "05 - Common IT knowledge/Virtual machine.md",
-    "05 - Common IT knowledge/Hypervisor.md",
     "05 - Common IT knowledge",
     "01 - AWS/AWS Compute",
-    "01 - AWS/AWS IAM/🗂️ AWS IAM.md",
-    "01 - AWS/AWS IAM/IAM role.md",
-    "01 - AWS/AWS IAM/IAM user.md",
-    "01 - AWS/AWS IAM/Federated user.md",
-    "04 - Security/Identity provider.md",
-    "01 - AWS/AWS IAM/IAM policies.md",
-    "01 - AWS/AWS Services/AWS Identity Center.md",
     "01 - AWS/AWS Services",
-    "01 - AWS/AWS IAM/IAM identity.md",
-    "01 - AWS/AWS IAM/IAM group.md",
-    "04 - Security/Identity federation.md",
-    "01 - AWS/🗂️ 01 - AWS.md",
     "01 - AWS/AWS IAM",
     "01 - AWS/AWS Security/Untitled",
     "04 - Security",
     "04 - Security",
     "01 - AWS/AWS Security",
-    "01 - AWS/AWS Regions",
     "03 - Backend/backend-path.png"
   ]
 }

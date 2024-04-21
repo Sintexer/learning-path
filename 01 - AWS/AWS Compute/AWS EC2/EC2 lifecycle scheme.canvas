@@ -1,0 +1,23 @@
+{
+	"nodes":[
+		{"id":"c98600dbc76ac084","type":"text","text":"Rebooting","x":-440,"y":-40,"width":145,"height":60},
+		{"id":"85e1be6dde399289","type":"text","text":"Running","x":-180,"y":-40,"width":180,"height":60,"color":"4"},
+		{"id":"f5c67362a73d09c4","type":"text","text":"Stopping","x":220,"y":-40,"width":140,"height":60,"color":"5"},
+		{"id":"241e45ad978764d5","type":"text","text":"Stopped","x":440,"y":-40,"width":140,"height":60,"color":"6"},
+		{"id":"7327735f5278e1e9","type":"text","text":"Shutting-down","x":-180,"y":100,"width":180,"height":60,"color":"5"},
+		{"id":"0ec78cb9cb8b4ddd","type":"text","text":"Terminated","x":-180,"y":220,"width":180,"height":60,"color":"6"},
+		{"id":"ed39159ace49fae0","x":-180,"y":-190,"width":180,"height":60,"color":"5","type":"text","text":"Pending"},
+		{"id":"00e99a3841d27690","x":-400,"y":-190,"width":105,"height":60,"color":"2","type":"text","text":"[[AWS AMI|AMI]]"}
+	],
+	"edges":[
+		{"id":"3e842854a3ffad6f","fromNode":"00e99a3841d27690","fromSide":"right","toNode":"ed39159ace49fae0","toSide":"left","label":"Launch"},
+		{"id":"af1c3741067ca441","fromNode":"ed39159ace49fae0","fromSide":"bottom","toNode":"85e1be6dde399289","toSide":"top"},
+		{"id":"f942570411738335","fromNode":"85e1be6dde399289","fromSide":"right","toNode":"f5c67362a73d09c4","toSide":"left","label":"Stop/\nStop-hibernate"},
+		{"id":"026fb5e829d633e4","fromNode":"85e1be6dde399289","fromSide":"left","toNode":"c98600dbc76ac084","toSide":"right","fromEnd":"arrow","label":"Reboot"},
+		{"id":"775c2c627e9a09fe","fromNode":"241e45ad978764d5","fromSide":"top","toNode":"ed39159ace49fae0","toSide":"right","label":"Start"},
+		{"id":"1834312ed71004ea","fromNode":"f5c67362a73d09c4","fromSide":"right","toNode":"241e45ad978764d5","toSide":"left"},
+		{"id":"809943452e24bfe2","fromNode":"241e45ad978764d5","fromSide":"bottom","toNode":"0ec78cb9cb8b4ddd","toSide":"right","label":"Terminate"},
+		{"id":"339c863bd2d299c0","fromNode":"85e1be6dde399289","fromSide":"bottom","toNode":"7327735f5278e1e9","toSide":"top","label":"Terminate"},
+		{"id":"9fc4b5707a16c06f","fromNode":"7327735f5278e1e9","fromSide":"bottom","toNode":"0ec78cb9cb8b4ddd","toSide":"top"}
+	]
+}
