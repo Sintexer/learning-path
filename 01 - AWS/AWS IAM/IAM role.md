@@ -1,6 +1,6 @@
 IAM role grants temporary access to AWS account resources. [[IAM policies]] could be attached to role.
 
-All HTTP API requests to AWS must be authenticated. Users are using credentials or [[AWS Access keys|access keys]]. But what if one [[AWS EC2]] instance must make a request to a AWS service? You don't want to hardcode access codes in your apps or create users for your services. **IAM roles** come handy in such cases.
+All HTTP API requests to AWS must be authenticated. Users are using credentials or [[AWS Access keys|access keys]]. But what if one [[EC2]] instance must make a request to a AWS service? You don't want to hardcode access codes in your apps or create users for your services. **IAM roles** come handy in such cases.
 
 When you assume a **role**, IAM dynamically provides *temporary credentials* that expire after a defined period of time, between 15 minutes and 36 hours. Users, on the other hand, have long-term credentials in the form of user name and password combinations or a set of access keys.
 

@@ -1,5 +1,5 @@
 
-One of the ways to reduce costs with [[AWS EC2|Amazon EC2]] is to choose the right **pricing** option for the way that your applications run. AWS offers a variety of pricing options to address different workload scenarios.
+One of the ways to reduce costs with [[EC2|Amazon EC2]] is to choose the right **pricing** option for the way that your applications run. AWS offers a variety of pricing options to address different workload scenarios.
 
 ## Pricing options
 
@@ -28,7 +28,7 @@ With Spot Instances, you **set a limit** on how much you want to pay for the ins
 
 ### 3 Saving plans
 
-**Savings Plans** are a flexible pricing model that offers **low usage prices** for a **1-year** or **3-year** term commitment to a *consistent amount of usage*. Savings Plans apply to [[AWS EC2|Amazon EC2]], [[AWS Lambda]], and [[AWS Fargate]] usage and provide up to **72 percent savings** on AWS compute usage.  
+**Savings Plans** are a flexible pricing model that offers **low usage prices** for a **1-year** or **3-year** term commitment to a *consistent amount of usage*. Savings Plans apply to [[EC2|Amazon EC2]], [[AWS Lambda]], and [[AWS Fargate]] usage and provide up to **72 percent savings** on AWS compute usage.  
 
 For workloads that have predictable and consistent usage, Savings Plans can provide significant savings compared to **On-Demand** Instances. Savings Plans are recommended for the following use cases:
 
@@ -38,7 +38,7 @@ For workloads that have predictable and consistent usage, Savings Plans can prov
 
 ### 4 Reserved instances
 
-For applications with **steady state usage** that might require reserved capacity, [[AWS EC2|Amazon EC2]] offers the **Reserved Instances** option. With this option, you save up to **75 percent** compared to **On-Demand Instance** pricing. You can choose between three payment options: **All Upfront**, **Partial Upfront**, or **No Upfront**. You can select either a **1-year** or **3-year** term for each of these options. 
+For applications with **steady state usage** that might require reserved capacity, [[EC2|Amazon EC2]] offers the **Reserved Instances** option. With this option, you save up to **75 percent** compared to **On-Demand Instance** pricing. You can choose between three payment options: **All Upfront**, **Partial Upfront**, or **No Upfront**. You can select either a **1-year** or **3-year** term for each of these options. 
 
 With Reserved Instances, you can choose the type that best fits your applications needs.     
 

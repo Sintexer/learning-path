@@ -1,3 +1,0 @@
-> An EC2 instance with the container agent installed is often called a **container instance**.
-
-If you choose to have more control by running and managing your containers on a cluster of [[AWS EC2|Amazon EC2]] instances, you will also need to install the **Amazon ECS container agent** on your **EC2 instances**. Note that an EC2 instance with the container agent installed is often called a **container instance**. This container agent is open source and responsible for communicating to the Amazon ECS service about cluster management details. You can run the agent on both Linux and Windows AMIs.

@@ -1,0 +1,7 @@
+If you want to deploy your workloads and applications without having to manage any [[EC2]] instances or [[Container|containers]], you can use **Lambda**. With Lambda, you can run code for virtually any type of application or backend service. This includes *data processing*, real-time *stream processing*, *machine learning*?, *WebSockets*, *IoT backends*, mobile *backends*, and *web applications*.
+
+Lambda runs your code on a **high availability** compute infrastructure and requires **no administration** from the user. You upload your source code in **one of the languages** that Lambda supports, and Lambda takes care of everything required to *run* and *scale* your code with high availability. There are no servers to manage. You get continuous scaling with sub second metering and consistent performance.
+
+Lambda runs your application in [[AWS Lambda function|lambda functions]], that are defined and configured by user. Function has a **trigger**, receives an **event**, **deployment package**, **runtime** and **application environment**.
+
+With Lambda, you can run code without provisioning or managing servers, and you pay only for what you use. You are charged for the number of times that your code is invoked (requests) and for the time that your code runs, rounded up to the nearest 1 millisecond (ms) of duration. It can be cost effective to run functions whose execution time is very low, such as functions with durations under 100 ms or low latency APIs.

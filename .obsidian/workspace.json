@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Elastic Container Service.md",
+                "file": "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,14 +25,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Elastic Kubernetes Service.md",
+                "file": "01 - AWS/AWS Compute/AWS Containers/AWS ECS Container agent.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "40f1cc97ae88f10d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "cea8c7ead1349341",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Compute/AWS Serverless/Serverless flashcards.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -99,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Elastic Kubernetes Service.md",
+                "file": "01 - AWS/AWS Compute/AWS Serverless/Serverless flashcards.md",
                 "collapseAll": true,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -116,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Elastic Kubernetes Service.md",
+                "file": "01 - AWS/AWS Compute/AWS Serverless/Serverless flashcards.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -139,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Elastic Kubernetes Service.md"
+                "file": "01 - AWS/AWS Compute/AWS Serverless/Serverless flashcards.md"
               }
             }
           },
@@ -182,50 +206,50 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "random-note:Open random note": false,
-      "obsidian-spaced-repetition:Review flashcards": true
+      "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "0f2b529fa2a37b5f",
+  "active": "cea8c7ead1349341",
   "lastOpenFiles": [
-    "05 - Common IT knowledge/Kubernetes.md",
-    "01 - AWS/AWS Compute/AWS Elastic Kubernetes Service.md",
-    "01 - AWS/AWS Compute/AWS Elastic Container Service.md",
-    "01 - AWS/AWS Compute/AWS ECS Container agent.md",
-    "01 - AWS/AWS Compute/AWS EC2/AWS EC2.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 flashcards.md",
+    "01 - AWS/AWS Compute/AWS Serverless/Serverless flashcards.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function.md",
+    "05 - Common IT knowledge/Open Container Initiative.md",
+    "01 - AWS/AWS Services/AWS Serverless Application Repository.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless.md",
+    "01 - AWS/AWS Services/AWS Serverless Application Model.md",
+    "01 - AWS/AWS Services/AWS CloudFormation.md",
+    "01 - AWS/AWS Terms/ARN.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Fargate.md",
+    "01 - AWS/AWS Terms",
+    "01 - AWS/AWS Compute/AWS Serverless/🗂️ AWS Serverless.md",
+    "01 - AWS/AWS Networking/AWS VPC.md",
+    "01 - AWS/AWS Networking/🗂️ AWS Networking.md",
+    "01 - AWS/AWS Networking",
+    "05 - Common IT knowledge/Serverless.md",
+    "01 - AWS/AWS Compute/AWS Containers/🗂️ AWS Containers.md",
+    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
+    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Kubernetes Service.md",
+    "01 - AWS/AWS Compute/AWS Containers/AWS ECS Container agent.md",
+    "01 - AWS/AWS Compute/🗂️ AWS Compute.md",
     "01 - AWS/AWS Compute/AWS Compute.md",
+    "01 - AWS/AWS Compute/AWS Containers",
+    "01 - AWS/AWS Compute/AWS Serverless",
+    "05 - Common IT knowledge/Kubernetes.md",
     "05 - Common IT knowledge/Containers orchestration.md",
     "05 - Common IT knowledge/Container.md",
     "03 - Backend/Cloud/Service discovery.md",
-    "05 - Common IT knowledge/Difference between VMs and containers.md",
-    "01 - AWS/AWS Services/AWS License Manager.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 instance sizing.md",
     "05 - Common IT knowledge/Difference between VMs and containers visual.png",
-    "05 - Common IT knowledge/Virtual machine.md",
-    "01 - AWS/AWS Compute/🗂️ AWS Compute.md",
-    "01 - AWS/AWS Compute/AWS EC2/🗂️ AWS EC2.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 pricing.md",
-    "01 - AWS/AWS IAM/AWS Access keys.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 instance type.md",
-    "01 - AWS/AWS Services/AWS Fargate.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle.md",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.canvas",
-    "01 - AWS/AWS Compute/AWS AMI.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 instance network.md",
-    "01 - AWS/Storage and S3.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 high availability.md",
-    "01 - AWS/AWS Security/Shared responsibility.md",
-    "01 - AWS/AWS IAM/IAM role.md",
     "01 - AWS/AWS Compute/AWS EC2",
     "New Text Document.txt",
     "05 - Common IT knowledge",
     "01 - AWS/AWS Compute",
     "01 - AWS/AWS Services",
     "01 - AWS/AWS IAM",
-    "01 - AWS/AWS Security/Untitled",
-    "04 - Security",
-    "04 - Security",
-    "01 - AWS/AWS Security",
     "03 - Backend/backend-path.png"
   ]
 }
