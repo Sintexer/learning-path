@@ -1,0 +1,1 @@
+If you are using AWS managed key for encryption at rest, usage of key is recorded in AWS CloudTrail. CloudTrail can tell who made the request, the services used, actions performed, parameters for the action, and response elements returned.

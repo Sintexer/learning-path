@@ -1,0 +1,1 @@
+When using Aurora in [[AWS RDS]], data is stored in **cluster volumes**, which are single, virtual volumes that use solid-state drives (SSDs). A cluster volume contains copies of your data across three [[Availability Zone|Availability Zones]] in a single [[Region]]. For nonpersistent, temporary files, Aurora uses local storage.
