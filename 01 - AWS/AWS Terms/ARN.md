@@ -1,6 +1,6 @@
 > Amazon Resource Name
 
-**Amazon ARN** is a unique address for any resource within the vast **AWS** ecosystem. Just like your home address helps identify your location, an **ARN** helps identify a specific resource in AWS, such as an [[EC2|EC2 instance]], an [[AWS S3|S3 bucket]], or an [[IAM user|IAM user]].
+**Amazon ARN** is a unique address for any resource within the vast **AWS** ecosystem. Just like your home address helps identify your location, an **ARN** helps identify a specific resource in AWS, such as an [[EC2|EC2 instance]], an [[AWS S3 Bucket]], or an [[IAM user|IAM user]].
 
 An ARN follows a specific format:
 

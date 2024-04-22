@@ -13,10 +13,66 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Storage/AWS EBS snapshots.md",
+                "file": "01 - AWS/AWS Storage/AWS S3.md",
                 "mode": "source",
                 "source": false
               }
+            }
+          },
+          {
+            "id": "15d40063bb948419",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Regions/Partition.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "0f17d9d4da24c87f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Storage/AWS S3 Bucket versioning.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e54c22fa1309cd64",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Web/URI.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "14d40e77e6d323fd",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Storage/🗂️ AWS Storage.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "63e4d1d0012453fc",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
             }
           },
           {
@@ -79,7 +135,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -146,9 +203,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Storage/AWS EBS snapshots.md",
                 "collapseAll": true,
-                "extraContext": false,
+                "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
@@ -163,7 +219,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Storage/AWS EBS snapshots.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -185,9 +240,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "01 - AWS/AWS Storage/AWS EBS snapshots.md"
-              }
+              "state": {}
             }
           },
           {
@@ -231,34 +284,37 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "fe78b6fb2d7a6712",
+  "active": "63e4d1d0012453fc",
   "lastOpenFiles": [
-    "01 - AWS/AWS Networking/AWS Security groups.md",
-    "01 - AWS/AWS Networking/AWS Network Access Control List.md",
-    "01 - AWS/AWS Storage/AWS EBS.md",
-    "05 - Common IT knowledge/Networks/Subnet.md",
-    "01 - AWS/AWS Storage/AWS EBS snapshots.md",
-    "01 - AWS/AWS Storage/AWS EBS volume types.md",
     "01 - AWS/AWS Storage/🗂️ AWS Storage.md",
-    "01 - AWS/🗂️ 01 - AWS.md",
-    "01 - AWS/AWS Storage/AWS EFS.md",
-    "05 - Common IT knowledge/Web/HTTP.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 storage.md",
-    "01 - AWS/AWS Storage/AWS EBS scaling.md",
-    "01 - AWS/AWS Storage/AWS EC2 Instance store.md",
-    "01 - AWS/AWS Storage/AWS Storage Services.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2.md",
-    "01 - AWS/AWS Storage/Storage and S3.md",
-    "01 - AWS/AWS Security/Shared responsibility.md",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle.md",
-    "01 - AWS/AWS Terms/ARN.md",
-    "01 - AWS/AWS Storage/AWS S3.md",
-    "01 - AWS/AWS Storage/AWS Block Storage.md",
-    "01 - AWS/AWS Storage/AWS FSx.md",
-    "01 - AWS/AWS Storage/AWS File Storage.md",
     "01 - AWS/AWS Storage/AWS Object Storage.md",
-    "01 - AWS/AWS Compute/AWS Containers/AWS ECS Container agent.md",
-    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
+    "01 - AWS/AWS Storage/AWS Block Storage.md",
+    "01 - AWS/AWS Storage/AWS File Storage.md",
+    "01 - AWS/AWS Storage/AWS Storage Services.md",
+    "01 - AWS/AWS Storage/🎴 AWS Storage flashcards.md",
+    "01 - AWS/AWS Storage/AWS Storage Services - choosing right solution.md",
+    "01 - AWS/AWS Storage/AWS S3.md",
+    "01 - AWS/AWS Services/AWS CloudFront.md",
+    "05 - Common IT knowledge/Web/CDN.md",
+    "01 - AWS/AWS Services/AWS CloudFormation.md",
+    "05 - Common IT knowledge/Web/URI.md",
+    "05 - Common IT knowledge/Web/URL.md",
+    "01 - AWS/AWS Storage/AWS EC2 Instance store.md",
+    "01 - AWS/AWS Storage/AWS S3 lifecycle.md",
+    "01 - AWS/AWS Storage/AWS S3 storage classes.md",
+    "01 - AWS/AWS Storage/AWS S3 Bucket versioning.md",
+    "01 - AWS/AWS Storage/AWS S3 Bucket.md",
+    "01 - AWS/AWS Storage/AWS S3 security.md",
+    "05 - Common IT knowledge/Security/AES256.md",
+    "05 - Common IT knowledge/Security/SSE.md",
+    "05 - Common IT knowledge/Security",
+    "01 - AWS/AWS IAM/IAM policies.md",
+    "01 - AWS/AWS Storage/AWS EBS snapshots.md",
+    "01 - AWS/AWS Regions/Partition.md",
+    "01 - AWS/AWS Terms/ARN.md",
+    "01 - AWS/AWS Regions/Region.md",
+    "01 - AWS/AWS CLI/Commands",
+    "01 - AWS/AWS CLI",
     "01 - AWS/AWS Storage",
     "05 - Common IT knowledge/Web",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
@@ -267,12 +323,9 @@
     "01 - AWS/AWS Terms",
     "01 - AWS/AWS Networking",
     "01 - AWS/AWS Compute/AWS Containers",
-    "01 - AWS/AWS Compute/AWS Serverless",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.canvas",
-    "01 - AWS/AWS Compute/AWS EC2",
-    "New Text Document.txt",
     "03 - Backend/backend-path.png"
   ]
 }

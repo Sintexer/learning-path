@@ -2,6 +2,7 @@
 ## MOC
 
 - [[AWS Storage Services]]
+- [[AWS Storage Services - choosing right solution]]
 - [[AWS File Storage]]
 - [[AWS Block Storage]]
 - [[AWS Object Storage]]

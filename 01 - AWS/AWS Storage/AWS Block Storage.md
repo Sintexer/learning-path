@@ -1,3 +1,5 @@
+Service examples: [[AWS EBS]], [[AWS EC2 Instance store]]
+
 [[AWS File Storage|File storage]] treats files as a singular unit, but **block storage** splits files into fixed-size chunks of data called **blocks** that have their *own addresses*. Each block is an individual piece of data storage. Because each block is addressable, **blocks can be retrieved efficiently**. Think of block storage as a more direct route to access the data.  
   
 When data is requested, the addresses are used by the storage system to organize the blocks in the correct order to form a complete file to present back to the requestor. Besides the address, no additional metadata is associated with each block.

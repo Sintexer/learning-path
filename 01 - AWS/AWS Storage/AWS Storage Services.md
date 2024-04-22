@@ -7,3 +7,5 @@ AWS storage services are grouped into three categories: [[AWS File Storage|file 
 - In **object storage**, data is stored as objects in buckets.
 
 When configuring AWS resources, like [[EC2]] instance, you can set them up with [[AWS EFS]], [[AWS FSx]], [[AWS EBS]], and integrate it with [[AWS S3]]. Options for a **EC2** storage are [[EC2 storage|explained here]].
+
+It is important to have a skill of [[AWS Storage Services - choosing right solution|choosing right storage service]] for your needs.

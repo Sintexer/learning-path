@@ -1,4 +1,4 @@
-Service example: [[AWS EFS]]
+Service examples: [[AWS EFS]], [[AWS FSx]].
 
 Files are organized in a tree-like hierarchy that consist of folders and subfolders (like in Windows File Explorer or Finder on MacOS). For example, if you have hundreds of cat photos on your laptop, you might want to create a folder called **Cat photos**, and place the images inside that folder to organize them. Because you know that these images will be used in an application, you might want to place the **Cat photos** folder inside another folder called **Application files**.
 

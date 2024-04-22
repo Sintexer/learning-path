@@ -1,4 +1,6 @@
-In **object storage**, files are stored as *objects*. Objects, much like files, are **treated as a single, distinct unit of data** when stored. However, unlike file storage, these objects are stored in a bucket using a flat structure, meaning there are **no folders**, directories, or complex hierarchies. Each **object contains a unique identifier**. This identifier, along with any additional metadata, is bundled with the data and stored.
+Service examples: [[AWS S3]].
+
+In **object storage**, files are stored as *objects*. Objects, much like files, are **treated as a single, distinct unit of data** when stored. However, unlike file storage, these objects are stored in a bucket using a flat structure, meaning there are **no folders**, directories, or complex hierarchies. Each **object contains a unique identifier**. This identifier, along with any additional **metadata**, is bundled with the data and stored.
 
 Changing just one character in an object is more difficult than with block storage. When you want to change one character in an object, the entire object must be updated.
 

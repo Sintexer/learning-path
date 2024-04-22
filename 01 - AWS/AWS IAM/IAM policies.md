@@ -1,6 +1,19 @@
 To manage access and provide **permissions** to AWS services and resources, you create **IAM policies** and attach them to an [[IAM identity]]. Whenever an **IAM identity** makes a request, AWS evaluates the policies associated with them. For example, if you have a developer inside the developers group who makes a request to an AWS service, AWS evaluates any **policies** attached to the developers [[IAM group|group]] and any policies attached to the developer user to determine if the request should be *allowed or denied* (controlled by policy [[IAM policies#^8c66de|Effect]]). Policy could also be applied to [[IAM role]]
 
 IAM policies are often referred as **permissions**.
+
+## Access policies
+
+When IAM policies are attached to your resources (e.g. [[AWS S3 Bucket|buckets and objects]]) or [[IAM user|IAM users]], [[IAM group|groups]], and [[IAM role|roles]], the policies define which actions they can perform. **Access policies** that you attach to your resources are referred to as _resource-based policies_ and access policies attached to users in your account are called _user policies_.
+
+### Resource-based policies
+
+**Access policies** that you attach to your resources (e.g. [[AWS S3 Bucket|buckets and objects]]) are referred to as _resource-based policies_.
+
+### User policies
+
+**Access policies** attached to users in your account are called _user policies_.
+
 ## IAM policy example
 
 ```json

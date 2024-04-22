@@ -1,4 +1,4 @@
-[[EC2]] instance store provides temporary [[AWS Block Storage|block-level storage]] for an instance. This storage is located on disks that are *physically attached to the host computer*. This ties the **lifecycle of the data to the lifecycle of the EC2 instance**. 
+[[EC2]] instance store provides temporary [[AWS Block Storage|block-level storage]] for an instance. This storage is located on disks that are *physically attached to the host computer*. This ties the **lifecycle of the data to the lifecycle of the EC2 instance**. Instance store cost is also already included into EC2 price, so you might save some many by using only Instance store without [[AWS EBS]] in some cases.
 
 > **If you delete the instance, the instance store is also deleted. Because of this, instance store is considered ephemeral storage**.
   

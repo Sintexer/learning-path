@@ -1,0 +1,6 @@
+You can use the [[AWS STS]] to create and provide trusted users with [[IAM temporary credentials|temporary security credentials]] that can control access to your AWS resources. Temporary security credentials work almost identically to long-term access key credentials, with the following differences:
+
+- Temporary security credentials are _short-term_, as the name implies. They can be configured to last for anywhere from a few minutes to several hours. After the credentials expire, AWS no longer recognizes them or allows any kind of access from API requests made with them.
+- Temporary security credentials are not stored with the user but are generated dynamically and provided to the user when requested. When (or even before) the temporary security credentials expire, the user can request new credentials, as long as the user requesting them still has permissions to do so.
+
+Temporary credentials might be used for [[AWS CLI]] or [[AWS API]] access. There is a tricky part to [[AWS CLI with temporary credentials|configure AWC CLI with security credentials]].
