@@ -1,0 +1,3 @@
+**Add additional instances.** For the application to work in an [[Active-active systems|active-active system]], it’s already created as stateless, not storing any client sessions on the server. This means that having two or four servers wouldn’t require any application changes. It would only be a matter of creating more instances when required and shutting them down when traffic decreases. 
+  
+There are many more advantages to using an active-active system in comparison with an [[Active-passive systems|active-passive system]]. Modifying your application to become stateless provides scalability.

@@ -7,11 +7,12 @@
 - **Pay-as-you-go**: Pay by the hour or second for each instance type (minimum of 60 seconds).
 - EC2 is **elastic**,  which means you can add or remove instances easily based on current demand.
 
-EC2 instances have a [[EC2 lifecycle|defined lifecycle]], encompassing various states they can transition through over time.
+EC2 instances have a [[EC2 lifecycle|defined lifecycle]], encompassing various states they can transition through over time. By default EC2 instances are not [[Availability|highly available]]. To achieve high availability on can use [[AWS ELB]] and [[EC2 Auto Scaling]].
 
 ## Orchestration
 
 EC2 instances might be grouped into a cluster with an [[Containers orchestration|orchestration service]] to run containers in an elastic, highly-available environment. To do so it is required to install [[AWS ECS Container agent]] on all instances.
+
 ## EC2 instance creation
 
 To **create** an EC2 instance, you must define the following:

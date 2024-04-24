@@ -2,6 +2,8 @@
 tags:
   - flashcards
 ---
+Related to [[🗂️ AWS Networking]]
+
 What is the smallest network size for AWS network?::16 IP addresses, mask `/28`
 
 What is the largest network size for AWS network?::65,536 IP addresses, or mask `/16`

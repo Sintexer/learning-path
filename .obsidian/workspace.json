@@ -4,22 +4,59 @@
     "type": "split",
     "children": [
       {
-        "id": "f4c162ea9d9877d7",
+        "id": "608a4fed0346f9d4",
         "type": "tabs",
         "children": [
           {
-            "id": "24711a400b01fb9d",
+            "id": "222ac6b2a5e100fd",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Databases/AWS RDS backups.md",
+                "file": "01 - AWS/AWS Services/AWS GLB.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "14303ede02eb266a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Cloud/Active-passive systems.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "890c9eb04868a053",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 Auto Scaling.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "66a4894dce13d663",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Services/AWS ELB.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -78,7 +115,7 @@
       {
         "id": "4f013835e2e2f7ae",
         "type": "tabs",
-        "dimension": 63.856589147286826,
+        "dimension": 37.1124031007752,
         "children": [
           {
             "id": "514b6c544611407c",
@@ -86,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Databases/AWS RDS backups.md",
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 Auto Scaling.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -103,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Databases/AWS RDS backups.md",
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 Auto Scaling.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Databases/AWS RDS backups.md"
+                "file": "01 - AWS/AWS Compute/AWS EC2/EC2 Auto Scaling.md"
               }
             }
           },
@@ -141,10 +178,18 @@
         ]
       },
       {
-        "id": "61ff1fc84dc9c394",
+        "id": "4a28ccf585ff50ef",
         "type": "tabs",
-        "dimension": 36.143410852713174,
+        "dimension": 62.8875968992248,
         "children": [
+          {
+            "id": "cd844eacba24a0dd",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
           {
             "id": "4d2b225381b89727",
             "type": "leaf",
@@ -171,38 +216,39 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "24711a400b01fb9d",
+  "active": "890c9eb04868a053",
   "lastOpenFiles": [
-    "01 - AWS/AWS Databases/🗂️ AWS Databases.md",
-    "01 - AWS/AWS Databases/AWS Database - choosing right solution.md",
-    "01 - AWS/AWS Databases/AWS Purpose-Built Databases.md",
-    "01 - AWS/AWS Databases/AWS Managed Database.md",
+    "05 - Common IT knowledge/Cloud/Horizontal scaling.md",
+    "05 - Common IT knowledge/Cloud/Vertical scaling.md",
+    "05 - Common IT knowledge/Cloud/Scaling.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 Auto Scaling.md",
+    "01 - AWS/AWS Compute/AWS EC2/EC2 high availability.md",
+    "05 - Common IT knowledge/Cloud/Active-passive systems.md",
+    "05 - Common IT knowledge/Cloud/Availability.md",
+    "05 - Common IT knowledge/Cloud/Active-active systems.md",
+    "01 - AWS/AWS Services/AWS ELB.md",
+    "01 - AWS/AWS Services/AWS GLB.md",
+    "01 - AWS/AWS Services/AWS NLB.md",
+    "01 - AWS/AWS Services/AWS ALB.md",
+    "01 - AWS/AWS Services/AWS Route 53.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI Model.md",
+    "05 - Common IT knowledge/Security/OIDC.md",
+    "01 - AWS/AWS Services/ASM.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 1 layer.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 2 layer.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 3 layer.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 4 layer.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 5 layer.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 6 layer.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md",
+    "05 - Common IT knowledge/Networks/ISO.md",
+    "01 - AWS/AWS Monitoring/AWS CloudWatch.md",
+    "05 - Common IT knowledge/Networks/OSI",
+    "05 - Common IT knowledge/Networks/TCP.md",
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
-    "01 - AWS/AWS Databases/AWS DynamoDB.md",
-    "01 - AWS/AWS Services/AWS CloudTrail.md",
-    "01 - AWS/AWS Security/AWS KMS.md",
-    "05 - Common IT knowledge/Databases/OLTP.md",
-    "01 - AWS/AWS Monitoring/AWS Management Console.md",
     "01 - AWS/AWS Monitoring",
-    "05 - Common IT knowledge/IOT.md",
-    "05 - Common IT knowledge/Databases/Graph database.md",
-    "05 - Common IT knowledge/Services/Apache Cassandra.md",
-    "05 - Common IT knowledge/Services/MongoDB.md",
-    "05 - Common IT knowledge/Services/Redis.md",
-    "05 - Common IT knowledge/Services/Memcached.md",
     "05 - Common IT knowledge/Services",
-    "05 - Common IT knowledge/Networks/Subnet.md",
-    "01 - AWS/AWS Storage/AWS EBS snapshots.md",
-    "01 - AWS/AWS Storage/🗂️ AWS Storage.md",
-    "01 - AWS/🗂️ 01 - AWS.md",
-    "01 - AWS/AWS Storage/AWS EBS volume types.md",
-    "05 - Common IT knowledge/Cloud/IaaC.md",
-    "05 - Common IT knowledge/Cloud/IaaS.md",
     "05 - Common IT knowledge/Cloud",
-    "01 - AWS/AWS Databases/AWS RDS.md",
-    "01 - AWS/AWS Databases/AWS RDS Multi-AZ redundancy.md",
-    "01 - AWS/AWS Databases/AWS RDS backups.md",
-    "05 - Common IT knowledge/Databases/DBMS.md",
     "01 - AWS/AWS Databases/Pasted image 20240422210414.png",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Databases",
@@ -211,7 +257,6 @@
     "01 - AWS/AWS CLI/Commands",
     "01 - AWS/AWS CLI",
     "01 - AWS/AWS Storage",
-    "05 - Common IT knowledge/Web",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",

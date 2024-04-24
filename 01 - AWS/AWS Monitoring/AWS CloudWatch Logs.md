@@ -1,0 +1,7 @@
+**CloudWatch Logs** is centralized place for logs to be stored and analyzed. With this service, you can monitor, store, and access your log files from applications running on instances and other sources.
+
+With CloudWatch Logs, you can query and filter your log data, or set up metric filters on logs, which turn log data into numerical [[AWS CloudWatch]] metrics that you can graph and use on your dashboards.  
+  
+Some services, like [[AWS Lambda]], are set up to send log data to **CloudWatch Logs** with minimal effort. With Lambda, all you need to do is give the Lambda function the correct [[IAM policies|IAM permissions]] to post logs to CloudWatch Logs. Other services require more configuration. For example, to send your application logs from an [[EC2]] instance into CloudWatch Logs, you need to install and configure the **CloudWatch Logs agent** on the EC2 instance. With the CloudWatch Logs agent, EC2 instances can automatically send log data to CloudWatch Logs.
+
+Log data sent to CloudWatch Logs can come from different sources, so it’s important you understand how they’re organized. **Event** is a single log message, identified by a timestamp. **Log stream** is a group of events related to the same resource. **Log Group** is composed of log streams that all share same retention and permission settings (e.g., group multiple EC2 instance logs together).

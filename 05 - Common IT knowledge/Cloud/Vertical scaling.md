@@ -1,0 +1,7 @@
+**Increase the instance size.** If too many requests are sent to a single active-passive system, the active server will become unavailable and, hopefully, fail over to the passive server. But this doesn’t solve anything.  
+  
+With [[Active-passive systems]], you need **vertical scaling**. This means increasing the size of the server. To vertically scale an active-passive system one must stop the back-up instance, change its size, start back-up instance, reroute traffic to this instance, and than do the same to previous primary instance - lots of manual work. When the number of requests reduces, you must do the same operation. Even though there aren’t that many steps involved, it’s actually a lot of manual work. And this is applied only to cloud environments.
+
+Another disadvantage is that a server can only scale vertically up to a certain limit. When that limit is reached, the only option is to create another active-passive system and split the requests and functionalities across them. This can require massive application rewriting.  
+  
+This is where the [[Active-active systems|active-active system]] can help. When there are too many requests, you can [[Horizontal scaling|scale this system horizontally]] by adding more servers.

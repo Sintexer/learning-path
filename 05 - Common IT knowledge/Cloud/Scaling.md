@@ -1,0 +1,1 @@
+Scaling can be [[Horizontal scaling|horizontal]] or [[Vertical scaling|vertical]].
