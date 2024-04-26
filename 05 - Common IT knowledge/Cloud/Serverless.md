@@ -1,5 +1,5 @@
 
-With **serverless compute**, you can spend time on the things that differentiate your application, rather than spending time on ensuring *availability*, *scaling*, and *managing servers*. **Serverless** is a *cloud computing model* where you don't have to manage *servers* or *infrastructure*. Instead, you simply write and deploy your code, and the cloud **provider takes care** of everything else. Every definition of serverless mentions the following four aspects:
+With **serverless compute**, you can spend time on the things that differentiate your application, rather than spending time on ensuring *availability*, *scaling*, and *managing servers*. **Serverless** is a *cloud computing model* where you don't have to manage *servers* or *infrastructure*. Instead, you simply write and deploy your code, and the cloud **provider takes care** of everything else. Serverless also decreases [[Time-to-Market]]. Every definition of serverless mentions the following four aspects:
 
 - There are **no servers** to provision or manage.
 - It **scales** with usage.
@@ -11,6 +11,8 @@ With **serverless compute**, you can spend time on the things that differentiate
 * **You write your code:** Focus on your application logic without worrying about server setup or maintenance.
 * **Cloud provider manages servers:** The cloud provider dynamically allocates and scales servers based on your code's needs.
 * **You pay per execution:** You only pay for the time your code is actually running, not for idle servers.
+
+Compared to the classic application, serverless takes care of: **configuring an instance**, **updating OS**, **installation of application platform**, **configuring auto-scaling and load balancing**, **securing and monitoring instances**. Though you are still required to *build and deploy the app* and *monitor and maintain the apps*.
 
 ## Benefits of serverless
 

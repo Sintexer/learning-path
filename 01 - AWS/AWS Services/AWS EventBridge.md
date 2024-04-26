@@ -1,0 +1,1 @@
+EventBridge can ingest and filer events using rules to forward them only to the consumers who need to know.
