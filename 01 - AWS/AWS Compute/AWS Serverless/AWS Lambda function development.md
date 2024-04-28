@@ -1,11 +1,6 @@
 ## Handler method
 
-The Lambda function handler is the method in your function code that processes events. When your function is invoked, Lambda runs the handler method. When the handler exits or returns a response, it becomes available to handle another event. The handler method takes two objects – the **event object**  and the **context object (optional)**. 
-
-###  Event
-
-The **event** object differs in structure and contents, depending on which event source created it. 
-
+The Lambda function handler is the method in your function code that processes events. When your function is invoked, Lambda runs the handler method. When the handler exits or returns a response, it becomes available to handle another event. The handler method takes two objects – the **[[AWS Lambda function#Event|event object]]**  and the **context object (optional)**. 
 ### Context
 
 The **context** object allows your function code to interact with the Lambda execution environment. At minimum context contains the elements:
@@ -21,7 +16,7 @@ The **context** object allows your function code to interact with the Lambda exe
 - Because your functions only exist when there is work to be done, it is particularly important for serverless applications to treat each function as stateless.
 - Minimize both your deployment package dependencies and its size.  This can have a significant impact on the startup time for your function. For example, only choose the modules that you need — do not include an entire AWS SDK.
 
-## Invocation
+## Lambda coding
 
 There are three ways to build and deploy your Lambda functions – the **Lambda console editor**, **deployment packages**, and **automation tools**.
 
@@ -35,8 +30,13 @@ Your Lambda function's code consists of scripts or compiled programs and their d
 
 ### Automate using tools
 
-Serverless applications built using Lambda are a combination of Lambda functions, event sources, and other resources defined using the [[AWS SAM]]. You can automate the deployment process of your applications by using AWS SAM and other AWS services, such as [[AWS CodeBuild]], [[AWS CodeDeploy]], and [[AWS CodePipeline]].
+Serverless applications built using Lambda are a combination of Lambda functions, event sources, and other resources defined using the [[AWS SAM]]. You can automate the deployment process of your applications by using AWS SAM and other AWS services, such as [[AWS CodeBuild]], [[AWS CodeDeploy]], and [[AWS CodePipeline]]. Developers can also use AWS Cloud9 to develop and test functions in web IDE environment.
 
+## Enable URL
+
+To enable URL for [[AWS Lambda]], it should be configured to have URL. By default Lambda are only processing events, not API requests. A function URL is a dedicated HTTP(S) endpoint for your Lambda function. You can create and configure a function URL through the Lambda console or the Lambda API. When you create a function URL, Lambda automatically generates a unique URL endpoint for you. Once you create a function URL, its URL endpoint never changes.
+
+Lambda URL example: `https://<url-id>.lambda-url.<region>.on.aws`
 ### Best practices
 
 - Include logging.

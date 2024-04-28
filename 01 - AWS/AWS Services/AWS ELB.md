@@ -17,7 +17,7 @@ Monitoring is an important part of load balancers because they should route traf
 - Establishing a connection to a backend EC2 instance using TCP and marking the instance as available if the connection is successful.
 - Making an HTTP or HTTPS request to a webpage that you specify and validating that an HTTP response code is returned.
 
-If Amazon [[EC2 Auto Scaling]] has a scaling policy that calls for a scale down action, it informs ELB that the EC2 instance will be terminated. ELB can prevent Amazon EC2 Auto Scaling from terminating an EC2 instance until all connections to the instance end. It also prevents any new connections. This feature is called **connection draining**.
+If Amazon [[AWS EC2 Auto Scaling]] has a scaling policy that calls for a scale down action, it informs ELB that the EC2 instance will be terminated. ELB can prevent Amazon EC2 Auto Scaling from terminating an EC2 instance until all connections to the instance end. It also prevents any new connections. This feature is called **connection draining**.
 
 ## ELB components
 

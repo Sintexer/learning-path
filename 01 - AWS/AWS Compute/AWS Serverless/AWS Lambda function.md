@@ -1,4 +1,4 @@
-The **Lambda function** is the foundational principle of **[[AWS Lambda]]**. Think of a function as a small, self-contained application lambdas are stateless and each function is associated with code and some configuration information. You have the option of configuring your functions using the **Lambda console**, **Lambda API**, [[AWS CloudFormation]], or [[AWS Serverless Application Model]]. You can invoke your function directly by using the Lambda API, or you can configure an AWS service or resource to invoke your function in response to an event.
+The **Lambda function** is the foundational principle of **[[AWS Lambda]]**. Think of a function as a small, self-contained application lambdas are stateless and each function is associated with code and some configuration information. You have the option of configuring your functions using the **Lambda console**, **Lambda API**, [[AWS CloudFormation]], or [[AWS Serverless Application Model]]. You can invoke your function directly by using the Lambda API, or you can configure an AWS service or resource to invoke your function in response to an event. Lambda is integrated with [[AWS CodeDeploy]] for automated rollout with traffic shifting.
 
 A **function** is a resource that you can invoke to run your code in Lambda. Lambda *runs instances* of your function to process events. When you create the Lambda function, it can be authored in several ways:
 
@@ -7,12 +7,14 @@ A **function** is a resource that you can invoke to run your code in Lambda. Lam
 - You can select a container image to deploy for your function.
 - You can browse the [[AWS Serverless Application Repository]].
 
-You can configure Lambda with a set of permissions and define what services it is permitted to interact with using [[IAM]]. Also you need to configure which events or event sources can initiate the function. Assign a code to execute, and at the end configure execution parameters: memory, timeout and concurency.
+You can configure Lambda with a set of permissions and define what services it is permitted to interact with using [[IAM]]. Also you need to configure which events or event sources can initiate the function. Assign a code to execute, and at the end configure execution parameters: [[AWS Lambda function configuration|memory, timeout and concurrency]]. Different configurations impact on [[AWS Lambda billing]].
+
+One potential risk is every change to Lambda is published and visible in the system. It might be hard to rollback if something is wrong. This problem might be solved by [[AWS Lambda function versioning]].
 ### Trigger
 
 **Triggers** describe **when** a Lambda function should run. A trigger integrates your Lambda function with other AWS services and event source mappings. So you can run your Lambda function in response to certain API calls or by reading items from a stream or queue. This increases your ability to respond to events in your console without having to perform manual actions.
 
-Event sources can invoke a Lambda function in three general patterns. These patterns are called **invocation models**. They are: [[AWS Lambda invocation models]]. You must choose which of them fulfills your requriements.
+Event sources can invoke a Lambda function in three general patterns. These patterns are called **invocation models**. They are: [[AWS Lambda invocation models]]. You must choose which of them fulfills your requirements.
 
 ### Event
 
