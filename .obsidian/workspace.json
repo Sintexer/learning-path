@@ -37,7 +37,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS IAM/IAM policies.md",
                 "mode": "source",
                 "source": false
               }
@@ -135,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS IAM/IAM policies.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -152,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS IAM/IAM policies.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md"
+                "file": "01 - AWS/AWS IAM/IAM policies.md"
               }
             }
           },
@@ -185,7 +185,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS IAM/IAM policies.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -208,7 +208,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 1.2971550513956862,
+                  "scale": 0.9252288693772959,
                   "close": true
                 }
               }
@@ -250,11 +250,19 @@
   },
   "active": "2dd732d0f564c0a1",
   "lastOpenFiles": [
+    "01 - AWS/AWS IAM/IAM.md",
+    "01 - AWS/AWS IAM/IAM policies.md",
+    "01 - AWS/AWS IAM/IAM access granting.md",
+    "01 - AWS/AWS Storage/AWS S3 Bucket.md",
+    "01 - AWS/AWS IAM/AWS Credentials types.md",
+    "01 - AWS/AWS IAM/IAM role.md",
+    "01 - AWS/AWS IAM/IAM group.md",
+    "07 - Security/Least privilege principle.md",
+    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS SAM.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function development.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda Java.md",
-    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda monitoring.md",
     "01 - AWS/AWS Compute/AWS CodeDeploy.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function.md",
@@ -269,17 +277,9 @@
     "01 - AWS/AWS Compute/AWS Serverless/Lambda Power Tuning.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda invocation models.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda.md",
-    "01 - AWS/AWS Services/AWS ECR.md",
-    "01 - AWS/AWS Monitoring/AWS CloudWatch.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda security.md",
-    "01 - AWS/AWS Networking/AWS PrivateLink.md",
-    "01 - AWS/AWS IAM/IAM Trust policy.md",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
     "01 - AWS/AWS IAM/IAM Trust policy example.png",
-    "01 - AWS/AWS IAM/IAM Access Analyzer.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Event-driven architecture.md",
     "06 - Architecture",
     "05 - Common IT knowledge/Networks/OSI",
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
@@ -289,7 +289,7 @@
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Databases",
     "05 - Common IT knowledge/Databases",
-    "05 - Common IT knowledge/Security",
+    "07 - Security",
     "01 - AWS/AWS CLI/Commands",
     "01 - AWS/AWS CLI",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",

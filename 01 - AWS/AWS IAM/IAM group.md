@@ -2,7 +2,7 @@
 
 An IAM group is a collection of [[IAM#IAM user|users]] All users in the group inherit the permission assigned to the group. 
 
->**Examples:** 
+> [!example]
 >- If you have an application that you’re trying to build and you have multiple users in one account working on the application, you might **organize the users by job function**. For example, you might organize your IAM groups by *developers*, *security*, and *admins*. You could then place all your IAM users into their respective groups.
 > - A new developer joins your AWS account to help with your application. You create a new user and add them to the developer group, without thinking about which permissions they need.
 > - A developer changes jobs and becomes a security engineer. Instead of editing the user’s permissions directly, you remove them from the old group and add them to the new group that already has the correct level of access.

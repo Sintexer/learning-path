@@ -1,4 +1,4 @@
-IAM role grants temporary access to AWS account resources. [[IAM policies]] could be attached to role.
+IAM roles allow you to delegate access to users, applications, or services that normally don't have access to your organization's AWS resources. You can assume a role to obtain temporary security credentials that you can use to make AWS API calls. [[IAM policies]] could be attached to role.
 
 All HTTP API requests to AWS must be authenticated. Users are using credentials or [[AWS Access keys|access keys]]. But what if one [[EC2]] instance must make a request to a AWS service? You don't want to hardcode access codes in your apps or create users for your services. **IAM roles** come handy in such cases.
 
