@@ -1,6 +1,6 @@
-AWS **Identity and Access Management** (**IAM**) is an *AWS service* that helps you **manage access** to your AWS account and resources. It also provides a centralized view of [[Authentication and Authorization#Authentication|Authentication]] and [[Authentication and Authorization#Authorization|Authorization]]. With IAM, you can share access to an AWS account and resources *without sharing your set of [[AWS Access keys]] or password*. You can also provide granular access to those working in your account, so people and services only have permissions to the resources that they need. 
+AWS **Identity and Access Management** (**IAM**) is a global *AWS service* that helps you **manage access** to your AWS account and resources. It also provides a centralized view of [[Authentication and Authorization#Authentication|Authentication]] and [[Authentication and Authorization#Authorization|Authorization]]. With IAM, you can share access to an AWS account and resources *without sharing your set of [[AWS Access keys]] or password*. You can also provide granular access to those working in your account, so people and services only have permissions to the resources that they need. 
 
-Best way to work with IAM is to follow the [[Least privilege principle]]. When user makes a request, AWS checks all associated permissions according to [[IAM access granting]] to understand whether ALLOW or DENY an action.
+Best way to work with IAM is to follow the [[Least privilege principle]]. When user makes a request, AWS checks all associated permissions according to [[IAM Access granting]] to understand whether ALLOW or DENY an action.
 
 > For example, to provide a user of your AWS account with read-only access to a particular AWS service, you can granularly select which actions and which resources in that service that they can access.
 
@@ -10,7 +10,7 @@ IAM is completely free.
 
 ## IAM best practices
 
-### 1. Lock down [[Root User]]
+### 1. Lock down [[AWS Root User]]
 
 Root user has too much power. To lock down your root user you should **prevent credentials sharing**, **delete root user [[AWS Access keys|access keys]]**, and **activate [[MFA]] on the root account**.
 
@@ -40,6 +40,6 @@ You might have IAM users, roles, permissions, policies, or credentials that you 
 
 - [[IAM user]]
 - [[IAM group]]
-- [[IAM policies]]
+- [[IAM policy]]
 - [[IAM identity]]
 - [[IAM role]]

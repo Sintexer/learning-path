@@ -1,0 +1,1 @@
+Inline policies are embedded directly into a single [[IAM user|user]], [[IAM group|group]], or [[IAM role|role]]. In most cases, AWS doesn't recommend using inline policies. This type of policy might be useful to maintain strict one-to-one relationship.

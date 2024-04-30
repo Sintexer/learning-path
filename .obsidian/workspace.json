@@ -8,67 +8,43 @@
         "type": "tabs",
         "children": [
           {
-            "id": "222ac6b2a5e100fd",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - AWS/AWS Services/AWS GLB.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "14303ede02eb266a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "2dd732d0f564c0a1",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policies.md",
+                "file": "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "e4b72cc3007b6933",
+            "id": "4aedc64f77511867",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Cloud/Serverless.md",
+                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "66a4894dce13d663",
+            "id": "8c3a9028ad22ba7f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS ELB.md",
+                "file": "01 - AWS/AWS IAM/IAM role.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -127,7 +103,7 @@
       {
         "id": "4f013835e2e2f7ae",
         "type": "tabs",
-        "dimension": 41.38929088277858,
+        "dimension": 41.389290882778575,
         "children": [
           {
             "id": "514b6c544611407c",
@@ -135,7 +111,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policies.md",
+                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -152,7 +128,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policies.md",
+                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +151,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policies.md"
+                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md"
               }
             }
           },
@@ -185,7 +161,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policies.md",
+                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -208,10 +184,18 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.9252288693772959,
+                  "scale": 0.65994304983673,
                   "close": true
                 }
               }
+            }
+          },
+          {
+            "id": "338d60851270b34c",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {}
             }
           }
         ],
@@ -220,7 +204,7 @@
       {
         "id": "4a28ccf585ff50ef",
         "type": "tabs",
-        "dimension": 58.61070911722142,
+        "dimension": 58.610709117221425,
         "children": [
           {
             "id": "4d2b225381b89727",
@@ -248,37 +232,38 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "2dd732d0f564c0a1",
+  "active": "4aedc64f77511867",
   "lastOpenFiles": [
-    "01 - AWS/AWS IAM/IAM.md",
-    "01 - AWS/AWS IAM/IAM policies.md",
-    "01 - AWS/AWS IAM/IAM access granting.md",
-    "01 - AWS/AWS Storage/AWS S3 Bucket.md",
-    "01 - AWS/AWS IAM/AWS Credentials types.md",
     "01 - AWS/AWS IAM/IAM role.md",
-    "01 - AWS/AWS IAM/IAM group.md",
+    "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
+    "01 - AWS/AWS IAM/Policies/IAM Permissions boundaries.md",
+    "01 - AWS/AWS IAM/IAM ABAC.md",
+    "01 - AWS/AWS IAM/Policies/IAM policy.md",
+    "01 - AWS/AWS IAM/🗂️ AWS IAM.md",
+    "01 - AWS/AWS IAM/IAM Federated user.md",
+    "01 - AWS/AWS IAM/IAM Access Control approaches.md",
+    "01 - AWS/AWS IAM/IAM RBAC.md",
+    "01 - AWS/AWS IAM/IAM Authorization context.md",
+    "01 - AWS/AWS IAM/IAM Access granting.md",
+    "01 - AWS/AWS IAM/Policies/IAM policy principal.md",
+    "01 - AWS/AWS IAM/AWS principal.md",
+    "01 - AWS/AWS Terms/AWS Principal.md",
+    "01 - AWS/AWS Terms/Tag.md",
+    "01 - AWS/AWS IAM/Untitled 1.md",
+    "01 - AWS/AWS IAM/🎴AWS IAM flashcards.md",
+    "01 - AWS/AWS IAM/IAM role trust policy.md",
     "07 - Security/Least privilege principle.md",
-    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS SAM.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function development.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda Java.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda monitoring.md",
-    "01 - AWS/AWS Compute/AWS CodeDeploy.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function versioning.md",
-    "05 - Common IT knowledge/Cloud/Serverless.md",
-    "01 - AWS/AWS Services/AWS ELB.md",
-    "01 - AWS/AWS Services/AWS CloudFormation.md",
-    "01 - AWS/AWS Services/AWS API Gateway.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration.md",
+    "07 - Security/POLP.md",
+    "07 - Security/SAML.md",
+    "01 - AWS/AWS Security/AWS Root User.md",
+    "05 - Common IT knowledge/Networks/TLS.md",
+    "05 - Common IT knowledge/Networks/SSL.md",
+    "01 - AWS/AWS IAM/IAM role trust policy example.png",
+    "01 - AWS/AWS IAM/Policies/IAM Inline policy.md",
+    "01 - AWS/AWS IAM/Policies/IAM Identity-based policy.md",
+    "01 - AWS/AWS IAM/Policies",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration concurrency types.png",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda billing.md",
-    "01 - AWS/AWS Compute/AWS Serverless/Lambda Power Tuning.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda invocation models.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda.md",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
-    "01 - AWS/AWS IAM/IAM Trust policy example.png",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
     "06 - Architecture",
     "05 - Common IT knowledge/Networks/OSI",
@@ -291,7 +276,6 @@
     "05 - Common IT knowledge/Databases",
     "07 - Security",
     "01 - AWS/AWS CLI/Commands",
-    "01 - AWS/AWS CLI",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",

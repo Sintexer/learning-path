@@ -1,0 +1,3 @@
+Restricts permissions for assumed roles and federated users
+
+A session policy is an **inline** permissions [[IAM policy|policy]] that users pass in the session when they assume the role. The permissions for a session are the intersection of the [[IAM Identity-based policy|identity-based policies]] for the IAM entity (user or role) used to create the session and the session policies. Permissions can also come from a [[IAM Resource-based policy|resource-based policy]]. Session policies limit the permissions that the role or user's identity-based policies grant to the session. An upcoming section will cover session policies in more detail.

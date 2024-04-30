@@ -4,7 +4,7 @@ If you decide that you want everyone on the internet to see your photos, you can
 
 To be more specific about who can do what with your S3 resources, S3 provides several security management features: 
 
-- [[IAM policies]], 
+- [[IAM policy]], 
 - [[#S3 bucket policies]]
 - [[#AWS S3 Encryption|S3 encryption]] to develop and implement your own security policies.
 
@@ -15,7 +15,7 @@ You should **use IAM policies** for private buckets **in the following two scena
 
 ## S3 bucket policies
 
-Like IAM policies, **S3 bucket policies** are defined in a JSON format. Unlike [[IAM policies]] which are attached to resources and users, S3 bucket policies can only be attached to S3 buckets. The policy that is placed on the bucket **applies to every object in that bucket**. S3 bucket policies specify what actions are allowed or denied on the bucket.
+Like IAM policies, **S3 bucket policies** are defined in a JSON format. Unlike [[IAM policy]] which are attached to resources and users, S3 bucket policies can only be attached to S3 buckets. The policy that is placed on the bucket **applies to every object in that bucket**. S3 bucket policies specify what actions are allowed or denied on the bucket.
 
 You should use S3 bucket policies in the following scenarios:
 

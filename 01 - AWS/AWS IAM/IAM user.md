@@ -1,6 +1,6 @@
 ## IAM user
 
-An IAM user represents a person or service that interacts with AWS. You define the user in your AWS account. Any activity done by that user is billed to your account. When you create a user, that user can sign in to gain access to the AWS resources inside your account. One account can have many users, each with their own login credentials. First IAM user in the account must be created by [[Root User]].
+An IAM user represents a person or service that interacts with AWS. You define the user in your AWS account. Any activity done by that user is billed to your account. When you create a user, that user can sign in to gain access to the AWS resources inside your account. One account can have many users, each with their own login credentials. First IAM user in the account must be created by [[AWS Root User]].
 
 You can provide user with two types of access: **Access to AWS Management Console** and **Programmatic Access to [[AWS CLI]] and [[AWS API]]**. IAM user credentials are considered permanent, until there's a forced rotation by admin.
 

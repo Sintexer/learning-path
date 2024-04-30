@@ -33,9 +33,9 @@ Using these controls provides layers of security for your infrastructure. It rei
 
 ## Security
 
-When it comes to security in Amazon RDS, you have control over managing access to your Amazon RDS resources, such as your databases on a DB instance. How you manage access will depend on the tasks you or other users need to perform in Amazon RDS. [[AWS Network Access Control List|Network ACLs]] and [[AWS Security groups|security groups]] help users dictate the flow of traffic. If you want to restrict the actions and resources others can access, you can use [[IAM policies]].
+When it comes to security in Amazon RDS, you have control over managing access to your Amazon RDS resources, such as your databases on a DB instance. How you manage access will depend on the tasks you or other users need to perform in Amazon RDS. [[AWS Network Access Control List|Network ACLs]] and [[AWS Security groups|security groups]] help users dictate the flow of traffic. If you want to restrict the actions and resources others can access, you can use [[IAM policy]].
 
-- **[[IAM policies]]** - You can use IAM policies to specify who can create, describe, modify, or delete DB instances, tag resources, or modify security groups. 
+- **[[IAM policy]]** - You can use IAM policies to specify who can create, describe, modify, or delete DB instances, tag resources, or modify security groups. 
 - **[[AWS Security groups]]** - control which IP addresses or [[EC2]] instances can connect to your DBs. When you first create a DB instance, all database access is prevented except through rules specified by an associated security group.
 - **RDS encryption** - encrypt instance and snapshots to increase their security
 - **SSL or TLS** - use SSL or TLS connections with DB instances. 

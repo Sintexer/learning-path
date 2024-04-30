@@ -1,0 +1,3 @@
+Use ACLs to control which principals in other accounts can access the resource to which the ACL is attached. ACLs are supported by [[AWS S3]] buckets and objects. They are similar to [[IAM Resource-based policy|resource-based policies]] although they are the only policy type that **does not use the JSON** policy document structure. 
+
+ACLs are cross-account permissions policies that grant permissions to the specified principal. ACLs cannot grant permissions to entities within the same account.

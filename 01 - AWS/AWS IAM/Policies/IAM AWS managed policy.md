@@ -1,0 +1,1 @@
+These [[IAM policy]] are created and managed by AWS. They can be attached to multiple users, groups, and roles.

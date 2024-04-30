@@ -38,7 +38,7 @@ DynamoDB provides a number of security features to consider as you develop and i
 
 - DynamoDB provides a highly durable storage infrastructure designed for mission-critical and primary data storage. Data is **redundantly stored** on multiple devices across multiple facilities in a DynamoDB Region.  
 - All user data stored in DynamoDB is fully **encrypted** at rest. DynamoDB encryption at rest provides enhanced security by encrypting all your data at rest using encryption keys stored in [[AWS KMS]].
-- [[IAM]] administrators control who can be authenticated and authorized to use DynamoDB resources. You can use IAM to manage access permissions and implement [[IAM policies|security policies]].
+- [[IAM]] administrators control who can be authenticated and authorized to use DynamoDB resources. You can use IAM to manage access permissions and implement [[IAM policy|security policies]].
 - As a managed service, DynamoDB is protected by the **AWS global network security procedures**
 - You can use [[AWS CloudTrail]] to view different security actions logs.
 - Use [[IAM role]] for applications, users and services that access DynamoDB.

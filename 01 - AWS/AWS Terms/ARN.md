@@ -11,7 +11,7 @@ arn:<partition>:<service>:<region>:<account-id>:<resource-type>:<resource-id>
 * **partition:** Identifies the AWS partition (e.g., aws, aws-cn, aws-us-gov).
 * **service:** Identifies the AWS service (e.g., ec2, s3, iam).
 * **region:** Identifies the [[Region|AWS region]] (e.g., us-east-1, eu-west-2).
-* **account-id:** Identifies your unique [[Root User|AWS account]] ID.
+* **account-id:** Identifies your unique [[AWS Root User|AWS account]] ID.
 * **resource-type:** Identifies the type of resource (e.g., instance, bucket, user).
 * **resource-id:** Identifies the specific instance of the resource (e.g., instance ID, bucket name, user name).
 
@@ -19,7 +19,7 @@ arn:<partition>:<service>:<region>:<account-id>:<resource-type>:<resource-id>
 
 * **Uniquely identify resources:** ARNs provide a unique identifier for every resource in AWS, regardless of its location or type.
 * **Simplify resource management:** ARNs allow you to easily reference and manage resources across different AWS services.
-* **Enhance security:** ARNs are used in [[IAM policies]] to control access to AWS resources.
+* **Enhance security:** ARNs are used in [[IAM policy]] to control access to AWS resources.
 
 **Examples of ARNs:**
 
