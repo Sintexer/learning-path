@@ -25,26 +25,38 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
+                "file": "01 - AWS/AWS IAM/AWS Single Sign-On.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "8c3a9028ad22ba7f",
+            "id": "62029183242797f4",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM role.md",
+                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "e04619668546f1e0",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS IAM/IAM temporary credentials.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -111,7 +123,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
+                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -128,7 +140,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
+                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -151,7 +163,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md"
+                "file": "01 - AWS/AWS IAM/IAM policy simulator.md"
               }
             }
           },
@@ -161,7 +173,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
+                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -184,7 +196,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 0.65994304983673,
+                  "scale": 1.2971550513956878,
                   "close": true
                 }
               }
@@ -198,8 +210,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -232,35 +243,36 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "4aedc64f77511867",
+  "active": "62029183242797f4",
   "lastOpenFiles": [
-    "01 - AWS/AWS IAM/IAM role.md",
-    "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
-    "01 - AWS/AWS IAM/Policies/IAM Permissions boundaries.md",
+    "01 - AWS/AWS IAM/Policies/IAM Permissions boundary.md",
+    "01 - AWS/AWS IAM/IAM policy simulator.md",
+    "01 - AWS/AWS IAM/IAM Identity Center.md",
+    "01 - AWS/AWS IAM/AWS Single Sign-On.md",
+    "01 - AWS/AWS IAM/AWS Identity federation.md",
+    "01 - AWS/AWS IAM/AWS Cognito.md",
+    "01 - AWS/AWS IAM/IAM temporary credentials.md",
     "01 - AWS/AWS IAM/IAM ABAC.md",
-    "01 - AWS/AWS IAM/Policies/IAM policy.md",
-    "01 - AWS/AWS IAM/🗂️ AWS IAM.md",
-    "01 - AWS/AWS IAM/IAM Federated user.md",
-    "01 - AWS/AWS IAM/IAM Access Control approaches.md",
-    "01 - AWS/AWS IAM/IAM RBAC.md",
-    "01 - AWS/AWS IAM/IAM Authorization context.md",
-    "01 - AWS/AWS IAM/IAM Access granting.md",
+    "04 - Security/Identity provider.md",
+    "04 - Security/IdP.md",
+    "04 - Security/Identity federation.md",
+    "01 - AWS/AWS IAM/IAM role session tag.md",
+    "01 - AWS/AWS IAM/IAM role assume.md",
+    "01 - AWS/AWS Security/STS Assume role request.md",
+    "01 - AWS/AWS IAM/IAM role.md",
+    "01 - AWS/AWS IAM/IAM role session policy.md",
+    "01 - AWS/AWS IAM/IAM role session name.md",
+    "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
     "01 - AWS/AWS IAM/Policies/IAM policy principal.md",
-    "01 - AWS/AWS IAM/AWS principal.md",
-    "01 - AWS/AWS Terms/AWS Principal.md",
-    "01 - AWS/AWS Terms/Tag.md",
-    "01 - AWS/AWS IAM/Untitled 1.md",
-    "01 - AWS/AWS IAM/🎴AWS IAM flashcards.md",
+    "01 - AWS/AWS IAM/IAM with identity provider.md",
     "01 - AWS/AWS IAM/IAM role trust policy.md",
-    "07 - Security/Least privilege principle.md",
-    "07 - Security/POLP.md",
-    "07 - Security/SAML.md",
-    "01 - AWS/AWS Security/AWS Root User.md",
-    "05 - Common IT knowledge/Networks/TLS.md",
-    "05 - Common IT knowledge/Networks/SSL.md",
-    "01 - AWS/AWS IAM/IAM role trust policy example.png",
+    "01 - AWS/AWS IAM/Policies/IAM policy.md",
     "01 - AWS/AWS IAM/Policies/IAM Inline policy.md",
-    "01 - AWS/AWS IAM/Policies/IAM Identity-based policy.md",
+    "01 - AWS/AWS IAM/IAM Access granting.md",
+    "01 - AWS/AWS IAM/IAM Access Analyzer.md",
+    "01 - AWS/AWS IAM/IAM.md",
+    "01 - AWS/AWS IAM/IAM role session policy scheme.png",
+    "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/Policies",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration concurrency types.png",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
@@ -279,7 +291,6 @@
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.canvas",
-    "03 - Backend/backend-path.png"
+    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.canvas"
   ]
 }

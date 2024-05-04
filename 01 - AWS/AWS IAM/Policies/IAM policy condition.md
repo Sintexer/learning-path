@@ -16,12 +16,12 @@ Service keys are prefixed with service name; IAM uses `iam` prefix. There are ma
 
 - `iam:AWSServiceName` - might be used in scope of [[IAM role#Service roles|service roles]] when roles need to be **attached** to only specific services.
 - `iam:OrganizationPolicyId`
-- `iam:PermissionsBoundary` - checks that the specified policy is attached as a [[IAM Permissions boundaries|permissions boundary]] on the IAM principal resource.
+- `iam:PermissionsBoundary` - checks that the specified policy is attached as a [[IAM Permissions boundary|permissions boundary]] on the IAM principal resource.
 - `iam:PolicyARN` - This condition key checks the [[ARN]] of a policy in requests that involve that same managed policy. You use this key for actions like `iam:AttachGroupPolicy` to control how users can apply AWS managed and customer managed policies. For example, you might create a policy that allows users to attach only the `IAMUserChangePassword` AWS managed policy to a new IAM user, group, or role.
 - `iam:ResourceTag` - checks that the tag attached to the identity resource. For example, you can add this condition for `iam:DeleteUser` action to allow removal of only inactive users by applying condition to the **status** resource tag.
 - `iam:PrincipalTag` - checks that the tag attached to the [[AWS Principal]] - author of the request.
-- `iam:PassedToService` - extremely useful to control [[IAM role#Assuming a role|role assumption]], specifically the action `iam:PassRole`. Using this key in your conditions you might restrict the role **passing** action to only specific AWS services.
-- `iam:AssociatedResourceArn` - also used to control [[IAM role#Assuming a role|role assumption]]. Can be added to `iam:PassRole` related policy to check the [[ARN]] of the service with which the role is assumed.
+- `iam:PassedToService` - extremely useful to control [[IAM role assume|role assumption]], specifically the action `iam:PassRole`. Using this key in your conditions you might restrict the role **passing** action to only specific AWS services.
+- `iam:AssociatedResourceArn` - also used to control [[IAM role assume|role assumption]]. Can be added to `iam:PassRole` related policy to check the [[ARN]] of the service with which the role is assumed.
 
 ## Global Condition keys
 

@@ -8,6 +8,8 @@ Each policy is defined from three pieces of logic:
 2. **Action** - What the principal is attempting to do
 3. **Resource** - AWS resource object upon which the actions or operations are performed
 
+Policies offer great control via [[IAM policy condition|conditions]] and [[IAM policy advanced statements]].
+
 ## Policies types
 
 All policies belong to one of:
@@ -21,7 +23,7 @@ Policies are used in many places across all AWS features. By their duty they are
 - [[IAM Identity-based policy]] (grants)
 - [[IAM Resource-based policy]] (grants)
 - [[IAM ACL]] (grants)
-- [[IAM Permissions boundaries]] (restricts)
+- [[IAM Permissions boundary]] (restricts)
 - [[IAM AWS Organizations SCPs]] (restricts)
 - [[IAM Session policy]] (restricts)
 

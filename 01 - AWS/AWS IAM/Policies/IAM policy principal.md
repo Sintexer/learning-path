@@ -34,7 +34,7 @@ If you already manage user identities outside AWS, you can use IAM identity prov
 
 ## IAM roles
 
-You can use [[IAM role|roles]] to delegate access to users, applications, or services that don't normally have access to your AWS resources. This is related to feature of [[IAM role#Assuming a role|role assumption]].
+You can use [[IAM role|roles]] to delegate access to users, applications, or services that don't normally have access to your AWS resources. This is related to feature of [[IAM role assume|role assumption]].
 
 ```json
 "Principal": { "AWS": "arn:aws:iam::123456789012:role/<role-name>" }
@@ -42,7 +42,7 @@ You can use [[IAM role|roles]] to delegate access to users, applications, or ser
 
 ## AWS services
 
-[[IAM role#Service roles|Service roles]] must include a [[IAM role trust policy|trust policy]]. Some service roles have predefined trust policies. However, in some cases, you must specify the service principal in the trust policy. A service principal is an identifier that is used to grant permissions to a service.
+[[IAM role assume#Service roles|Service roles]] must include a [[IAM role trust policy|trust policy]]. Some service roles have predefined trust policies. However, in some cases, you must specify the service principal in the trust policy. A service principal is an identifier that is used to grant permissions to a service.
 
 The identifier includes the long version of a service name and is usually in the _long_service-name.amazonaws.com_ format. The following example shows a policy that can be attached to a service role. The policy enables two services—Amazon EMR and AWS Data Pipeline—to assume the role.
 
