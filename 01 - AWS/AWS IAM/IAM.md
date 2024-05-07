@@ -16,7 +16,7 @@ Root user has too much power. To lock down your root user you should **prevent c
 
 ### 2. Follow the [[Least privilege principle]]
 
-Grant only the necessary permissions to do a particular job and nothing more. To implement least privilege for access control, start with the minimum set of permissions in an IAM policy and then grant additional permissions as necessary for a [[IAM user|user]], [[IAM group|group]], or [[IAM role|role]].
+Grant only the necessary permissions to do a particular job and nothing more. To implement least privilege for access control, start with the minimum set of permissions in an IAM policy and then grant additional permissions as necessary for a [[IAM user|user]], [[IAM group|group]], or [[IAM role|role]]. Use secondary services [[IAM Access Analyzer]] and [[IAM policy simulator]] to better control the permissions across your AWS accounts. [[IAM Access history]] might also be useful to tackle down unused permissions to enforce the [[POLP]].
 
 ### 3. Use IAM properly
 

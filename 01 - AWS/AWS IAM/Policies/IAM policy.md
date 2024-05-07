@@ -8,7 +8,7 @@ Each policy is defined from three pieces of logic:
 2. **Action** - What the principal is attempting to do
 3. **Resource** - AWS resource object upon which the actions or operations are performed
 
-Policies offer great control via [[IAM policy condition|conditions]] and [[IAM policy advanced statements]].
+Policies offer great control via [[IAM policy condition|conditions]] and [[IAM policy advanced statements]]. You can test your policies using [[IAM policy simulator]].
 
 ## Policies types
 

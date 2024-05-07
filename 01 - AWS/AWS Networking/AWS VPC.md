@@ -14,3 +14,4 @@ In AWS **subnets** are bound to a **VPC**, an [[Availability Zone]], and have it
 
 - Use a public subnet for resources that must be connected to the internet and a private subnet for resources that won't be connected to the internet.
 - When using a **VPC** for your application, consider [[High availability with VPC]].
+- Apply [[VPC security]] tips.

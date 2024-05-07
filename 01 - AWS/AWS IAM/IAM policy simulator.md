@@ -1,4 +1,4 @@
-With the IAM policy simulator, you can test and troubleshoot [[IAM Identity-based policy|identity-based policies]], [[IAM Permissions boundary|IAM permissions boundaries]], [[AWS Organizations]] service control policies, and [[IAM Resource-based policy|resource-based policies]]. The policy simulator **does not make** an actual AWS service request, so you can *safely* test requests that might make unwanted changes to your live AWS environment. The only result returned is whether the requested action would be allowed or denied.
+With the IAM policy simulator, you can test and troubleshoot [[IAM Identity-based policy|identity-based policies]], [[IAM Permissions boundary|IAM permissions boundaries]], [[AWS Organizations]] service control [[IAM policy|policies]], and [[IAM Resource-based policy|resource-based policies]]. The policy simulator **does not make** an actual AWS service request, so you can *safely* test requests that might make unwanted changes to your live AWS environment. The only result returned is whether the requested action would be allowed or denied.
 
 Here are some common use cases for the IAM policy simulator:
 

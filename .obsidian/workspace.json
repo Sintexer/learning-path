@@ -37,7 +37,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
+                "file": "01 - AWS/AWS Networking/🗂️ AWS Networking.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "54601bb369eb48b8",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
                 "mode": "source",
                 "source": false
               }
@@ -56,7 +68,7 @@
             }
           }
         ],
-        "currentTab": 2
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -123,7 +135,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
+                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -140,7 +152,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
+                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -163,7 +175,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policy simulator.md"
+                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md"
               }
             }
           },
@@ -173,7 +185,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM policy simulator.md",
+                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -243,10 +255,26 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "62029183242797f4",
+  "active": "54601bb369eb48b8",
   "lastOpenFiles": [
-    "01 - AWS/AWS IAM/Policies/IAM Permissions boundary.md",
+    "01 - AWS/AWS Services/AWS CloudTrail.md",
+    "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
+    "01 - AWS/AWS IAM/IAM Access history.md",
+    "01 - AWS/AWS IAM/IAM.md",
+    "07 - Security/POLP.md",
+    "07 - Security/Least privilege principle.md",
+    "01 - AWS/AWS IAM/IAM Access Analyzer.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda security.md",
+    "01 - AWS/AWS IAM/🗂️ AWS IAM.md",
+    "01 - AWS/AWS IAM/AWS Access keys.md",
+    "01 - AWS/AWS Networking/AWS VPC.md",
+    "01 - AWS/AWS Networking/🗂️ AWS Networking.md",
+    "01 - AWS/AWS Networking/🎴 AWS Networking flashcards.md",
+    "01 - AWS/AWS Networking/VPC security.md",
+    "01 - AWS/AWS IAM/Policies/IAM policy.md",
+    "01 - AWS/AWS IAM/Untitled.md",
     "01 - AWS/AWS IAM/IAM policy simulator.md",
+    "01 - AWS/AWS IAM/Policies/IAM Permissions boundary.md",
     "01 - AWS/AWS IAM/IAM Identity Center.md",
     "01 - AWS/AWS IAM/AWS Single Sign-On.md",
     "01 - AWS/AWS IAM/AWS Identity federation.md",
@@ -255,22 +283,6 @@
     "01 - AWS/AWS IAM/IAM ABAC.md",
     "04 - Security/Identity provider.md",
     "04 - Security/IdP.md",
-    "04 - Security/Identity federation.md",
-    "01 - AWS/AWS IAM/IAM role session tag.md",
-    "01 - AWS/AWS IAM/IAM role assume.md",
-    "01 - AWS/AWS Security/STS Assume role request.md",
-    "01 - AWS/AWS IAM/IAM role.md",
-    "01 - AWS/AWS IAM/IAM role session policy.md",
-    "01 - AWS/AWS IAM/IAM role session name.md",
-    "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
-    "01 - AWS/AWS IAM/Policies/IAM policy principal.md",
-    "01 - AWS/AWS IAM/IAM with identity provider.md",
-    "01 - AWS/AWS IAM/IAM role trust policy.md",
-    "01 - AWS/AWS IAM/Policies/IAM policy.md",
-    "01 - AWS/AWS IAM/Policies/IAM Inline policy.md",
-    "01 - AWS/AWS IAM/IAM Access granting.md",
-    "01 - AWS/AWS IAM/IAM Access Analyzer.md",
-    "01 - AWS/AWS IAM/IAM.md",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/Policies",
