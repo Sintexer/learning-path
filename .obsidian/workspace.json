@@ -49,7 +49,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
+                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2c546ff7c23b2622",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "04 - Security/Authentication.md",
                 "mode": "source",
                 "source": false
               }
@@ -135,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
+                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -152,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
+                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -175,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md"
+                "file": "01 - AWS/AWS Services/AWS API Gateway.md"
               }
             }
           },
@@ -185,7 +197,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
+                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -257,10 +269,26 @@
   },
   "active": "54601bb369eb48b8",
   "lastOpenFiles": [
-    "01 - AWS/AWS Services/AWS CloudTrail.md",
-    "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
-    "01 - AWS/AWS IAM/IAM Access history.md",
+    "01 - AWS/AWS Services/AWS WebSocket API Gateway.md",
+    "01 - AWS/AWS Services/AWS API Gateway.md",
+    "01 - AWS/AWS Services/AWS HTTP API Gateway.md",
+    "01 - AWS/AWS Services/AWS REST API Gateway.md",
+    "05 - Common IT knowledge/Web/WebSocket.md",
+    "03 - Backend/API/REST.md",
+    "03 - Backend/API/RESTful.md",
+    "03 - Backend/API",
+    "01 - AWS/AWS Services/AWS CloudFront.md",
+    "04 - Security/Authentication and Authorization.md",
     "01 - AWS/AWS IAM/IAM.md",
+    "04 - Security/Identity federation.md",
+    "01 - AWS/AWS Security/🗂️ AWS Security.md",
+    "04 - Security/Authentication.md",
+    "04 - Security/Authorization.md",
+    "07 - Security/CORS.md",
+    "03 - Backend/API/API.md",
+    "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
+    "01 - AWS/AWS Services/AWS CloudTrail.md",
+    "01 - AWS/AWS IAM/IAM Access history.md",
     "07 - Security/POLP.md",
     "07 - Security/Least privilege principle.md",
     "01 - AWS/AWS IAM/IAM Access Analyzer.md",
@@ -268,21 +296,6 @@
     "01 - AWS/AWS IAM/🗂️ AWS IAM.md",
     "01 - AWS/AWS IAM/AWS Access keys.md",
     "01 - AWS/AWS Networking/AWS VPC.md",
-    "01 - AWS/AWS Networking/🗂️ AWS Networking.md",
-    "01 - AWS/AWS Networking/🎴 AWS Networking flashcards.md",
-    "01 - AWS/AWS Networking/VPC security.md",
-    "01 - AWS/AWS IAM/Policies/IAM policy.md",
-    "01 - AWS/AWS IAM/Untitled.md",
-    "01 - AWS/AWS IAM/IAM policy simulator.md",
-    "01 - AWS/AWS IAM/Policies/IAM Permissions boundary.md",
-    "01 - AWS/AWS IAM/IAM Identity Center.md",
-    "01 - AWS/AWS IAM/AWS Single Sign-On.md",
-    "01 - AWS/AWS IAM/AWS Identity federation.md",
-    "01 - AWS/AWS IAM/AWS Cognito.md",
-    "01 - AWS/AWS IAM/IAM temporary credentials.md",
-    "01 - AWS/AWS IAM/IAM ABAC.md",
-    "04 - Security/Identity provider.md",
-    "04 - Security/IdP.md",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/Policies",
@@ -299,7 +312,6 @@
     "01 - AWS/AWS Databases",
     "05 - Common IT knowledge/Databases",
     "07 - Security",
-    "01 - AWS/AWS CLI/Commands",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",
