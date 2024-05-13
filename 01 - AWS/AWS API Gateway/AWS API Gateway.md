@@ -1,7 +1,14 @@
-API Gateway is a service that facilitates the creation, publishing, maintenance, monitoring, and security of your [[API|APIs]] at any scale. API Gateway handles all your tasks around accepting and processing hundreds of thousands of concurrent API calls. This includes handling traffic management, [[CORS]] support, [[Authorization|authorization]] and access control, throttling, monitoring, and API version management.
+API Gateway is a service that facilitates the creation, publishing, maintenance, monitoring, and security of your [[API|APIs]] at any scale. API Gateway handles all your tasks around accepting and processing hundreds of thousands of concurrent API calls. This includes:
+
+- [[AWS API Gateway access management|handling access and traffic management]]
+- [[AWS API Gateway throttling|throttling]]
+- monitoring
+- [[AWS API Gateway stage|API version management]].
 
 > [!example] **Example: Social identity provider API**
 > Authenticating into an application using social identity providers such as Amazon, Facebook, or Google. When you select this option while logging in, the application will communicate with the social media provider's API to authenticate you using your identity provider account.
+
+It is beneficial to follow [[AWS API Gateway best-practices]].
 
 ## Architecture
 
@@ -14,6 +21,14 @@ API Gateway comes in three forms:
 - [[AWS WebSocket API Gateway]]
 
 **For a more in-depth comparison between HTTP and REST APIs, see** [Choosing between HTTP APIs and REST APIs](https://docs.aws.amazon.com/apigateway/latest/developerguide/http-api-vs-rest.html).
+
+When creating an API through the console, you'll have the option to create a new API, clone an existing API, or import an API as your starting point.
+
+API gateway requires you to [[AWS API Gateway components|configure API name, resources, and resource methods in order to configure the API]]. You can also set-up [[AWS API Gateway integration types|different integrations]] with other AWS services.
+
+Once you’ve saved the details of the integration type, the console will display panels where you can add to your request-response details. For example, you might add query strings or custom header parameters to your methods. You also might need to update the integration request to map input data from the method request to the format required by the backend.
+
+When you deploy your API, you're creating a [[AWS API Gateway stage|stage]]. Each new deployment is added to an existing stage, or creates a new one. This is a way to implement versioning.
 
 ## Features
 

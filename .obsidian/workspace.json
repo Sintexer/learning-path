@@ -37,19 +37,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Networking/🗂️ AWS Networking.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "54601bb369eb48b8",
+            "id": "24b6203d7b12b139",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,14 +73,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/IAM temporary credentials.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 5
       }
     ],
     "direction": "vertical"
@@ -109,7 +109,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "load balance",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -147,7 +147,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -164,7 +164,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,7 +187,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS API Gateway.md"
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md"
               }
             }
           },
@@ -197,7 +197,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS API Gateway.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -267,35 +267,36 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "54601bb369eb48b8",
+  "active": "e04619668546f1e0",
   "lastOpenFiles": [
-    "01 - AWS/AWS Services/AWS WebSocket API Gateway.md",
-    "01 - AWS/AWS Services/AWS API Gateway.md",
-    "01 - AWS/AWS Services/AWS HTTP API Gateway.md",
-    "01 - AWS/AWS Services/AWS REST API Gateway.md",
-    "05 - Common IT knowledge/Web/WebSocket.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway stage.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway throttling.md",
+    "01 - AWS/AWS API Gateway/AWS REST API Gateway.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway access management.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway Cognito Authorizer.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway IAM Authorization.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway Lambda Authorizer.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway usage plans.md",
+    "04 - Security/Authentication.md",
+    "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway best-practices.md",
+    "01 - AWS/AWS API Gateway/AWS WebSocket API Gateway.md",
+    "01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
+    "01 - AWS/AWS IAM/IAM temporary credentials.md",
+    "01 - AWS/AWS Networking/AWS PrivateLink.md",
     "03 - Backend/API/REST.md",
+    "01 - AWS/AWS API Gateway",
+    "01 - AWS/AWS Networking/🗂️ AWS Networking.md",
+    "05 - Common IT knowledge/Web/WebSocket.md",
     "03 - Backend/API/RESTful.md",
     "03 - Backend/API",
     "01 - AWS/AWS Services/AWS CloudFront.md",
     "04 - Security/Authentication and Authorization.md",
     "01 - AWS/AWS IAM/IAM.md",
-    "04 - Security/Identity federation.md",
-    "01 - AWS/AWS Security/🗂️ AWS Security.md",
-    "04 - Security/Authentication.md",
-    "04 - Security/Authorization.md",
-    "07 - Security/CORS.md",
-    "03 - Backend/API/API.md",
-    "01 - AWS/AWS Services/AWS Well-Architected Tool.md",
-    "01 - AWS/AWS Services/AWS CloudTrail.md",
-    "01 - AWS/AWS IAM/IAM Access history.md",
-    "07 - Security/POLP.md",
-    "07 - Security/Least privilege principle.md",
-    "01 - AWS/AWS IAM/IAM Access Analyzer.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda security.md",
-    "01 - AWS/AWS IAM/🗂️ AWS IAM.md",
-    "01 - AWS/AWS IAM/AWS Access keys.md",
-    "01 - AWS/AWS Networking/AWS VPC.md",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/Policies",
@@ -311,7 +312,6 @@
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Databases",
     "05 - Common IT knowledge/Databases",
-    "07 - Security",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",
