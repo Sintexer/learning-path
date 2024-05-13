@@ -1,5 +1,5 @@
 
-> AKA **AWS ECS**
+> AKA [[AWS ECS]]
 
 AWS ECS is an end-to-end [[Containers orchestration|Container orchestration service]]. This means that **Amazon ECS** handles the entire lifecycle of your [[Container|containerized]] applications, from initial deployment to ongoing management and scaling. With **Amazon ECS**, your containers are defined in a **task definition** that you use to run an individual task or a task within a service. You have the option to run your tasks and services on a *serverless* infrastructure that's managed by another AWS service called [[AWS Fargate]]. Alternatively, for more control over your infrastructure, you can run your tasks and services on a cluster of [[EC2|EC2 instances]] that you manage.
 

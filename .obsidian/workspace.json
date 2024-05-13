@@ -73,14 +73,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
+                "file": "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "55e0df1cfb31b9da",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "vertical"
@@ -147,8 +159,8 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
-                "collapseAll": true,
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
+                "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
@@ -164,7 +176,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -187,7 +199,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md"
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md"
               }
             }
           },
@@ -197,7 +209,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
+                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -234,7 +246,8 @@
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 4
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -267,8 +280,20 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "e04619668546f1e0",
+  "active": "55e0df1cfb31b9da",
   "lastOpenFiles": [
+    "01 - AWS/AWS API Gateway/AWS API Gateway.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway error handling.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway data mapping.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway monitoring.md",
+    "01 - AWS/AWS Monitoring/AWS CloudWatch.md",
+    "01 - AWS/AWS Monitoring/AWS X-Ray.md",
+    "01 - AWS/AWS Monitoring/AWS Monitoring.md",
+    "01 - AWS/AWS Compute/AWS Containers/AWS ECS Container agent.md",
+    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
+    "01 - AWS/AWS Compute/AWS Containers/AWS ECS.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway stage.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway throttling.md",
     "01 - AWS/AWS API Gateway/AWS REST API Gateway.md",
@@ -276,8 +301,6 @@
     "01 - AWS/AWS API Gateway/AWS API Gateway Cognito Authorizer.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway IAM Authorization.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway Lambda Authorizer.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway usage plans.md",
     "04 - Security/Authentication.md",
     "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
@@ -285,18 +308,8 @@
     "01 - AWS/AWS API Gateway/AWS WebSocket API Gateway.md",
     "01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
-    "01 - AWS/AWS IAM/IAM temporary credentials.md",
-    "01 - AWS/AWS Networking/AWS PrivateLink.md",
-    "03 - Backend/API/REST.md",
     "01 - AWS/AWS API Gateway",
-    "01 - AWS/AWS Networking/🗂️ AWS Networking.md",
-    "05 - Common IT knowledge/Web/WebSocket.md",
-    "03 - Backend/API/RESTful.md",
     "03 - Backend/API",
-    "01 - AWS/AWS Services/AWS CloudFront.md",
-    "04 - Security/Authentication and Authorization.md",
-    "01 - AWS/AWS IAM/IAM.md",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/Policies",

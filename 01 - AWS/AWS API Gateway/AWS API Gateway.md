@@ -26,7 +26,7 @@ When creating an API through the console, you'll have the option to create a new
 
 API gateway requires you to [[AWS API Gateway components|configure API name, resources, and resource methods in order to configure the API]]. You can also set-up [[AWS API Gateway integration types|different integrations]] with other AWS services.
 
-Once you’ve saved the details of the integration type, the console will display panels where you can add to your request-response details. For example, you might add query strings or custom header parameters to your methods. You also might need to update the integration request to map input data from the method request to the format required by the backend.
+Once you’ve saved the details of the integration type, the console will display panels where you can add to your request-response details. For example, you might add query strings or custom header parameters to your methods. You also might need to update the integration request to [[AWS API Gateway data mapping|map input data]] from the method request to the format required by the backend, or to [[AWS API Gateway error handling|handle errors]] or [[AWS API Gateway input validation|validate input]].
 
 When you deploy your API, you're creating a [[AWS API Gateway stage|stage]]. Each new deployment is added to an existing stage, or creates a new one. This is a way to implement versioning.
 
@@ -37,3 +37,5 @@ When you deploy your API, you're creating a [[AWS API Gateway stage|stage]]. Eac
 **Build-in, flexible authorization options**: API Gateway gives you several options for authorization. You can authorize access to your APIs with [[IAM]] and [[AWS Cognito]]. If you use [[OAuth token|OAuth tokens]], API Gateway also offers native [[OIDC]] and [[OAuth 2]] support. To support custom authorization requirements, you can invoke a [[AWS Lambda]] authorizer from Lambda. With a **Lambda authorizer**, you can develop your own authorization code using a custom Lambda function.
 
 **API keys for third-party developers**: If you’re using REST APIs, API Gateway helps you manage the ecosystem of third-party developers accessing your APIs. You can create API keys on API Gateway, set fine-grained access permissions on each API key, and distribute them to third-party developers to access your APIs. API keys are not a primary authorization mechanism for your APIs, but provide you the ability to track usage for specific users or services. You can also define usage plans that set throttling and request quota limits for each API key. The use of API keys is optional.
+
+**Monitoring and logs**: There lots of metrics and logs collected by [[AWS CloudWatch]] for API Gateway, see [[AWS API Gateway monitoring]].

@@ -59,8 +59,8 @@ You don’t want to invoke an alarm based on short, temporary spikes in the CPU.
 2. **Define an alarm** - Continuing example, the alarm state is invoked if HTTP 500 error responses are sustained for a specified period of time.
 3. **Define an action** - Send email or alert
 
-## [[AWS Lambda]] integration
+## AWS Lambda integration
 
 The **CloudWatch embedded metric format** (**EMF**) is a JSON specification used to instruct CloudWatch Logs to automatically extract metric values embedded in structured log events. You can use CloudWatch to graph and create alarms on the extracted metric values. 
 
-You can use EMF to ingest complex high-cardinality application data in the form of logs and easily generate actionable metrics from them. Traditionally, it has been hard to generate actionable custom metrics from your ephemeral resources such as Lambda functions and containers.
+You can use EMF to ingest complex high-cardinality application data in the form of logs and easily generate actionable metrics from them. Traditionally, it has been hard to generate actionable custom metrics from your ephemeral resources such as [[AWS Lambda function|Lambda functions]] and containers.
