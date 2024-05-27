@@ -1,0 +1,1 @@
+You can also update the processing stream to include a **Kinesis Data Analytics** application before storing the data to [[AWS S3]]. [[AWS Kinesis]] Data Analytics lets you do real-time analysis using SQL before persisting the data.

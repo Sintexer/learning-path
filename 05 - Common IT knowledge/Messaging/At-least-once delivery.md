@@ -1,0 +1,1 @@
+A message might be delivered and processed more than once in case of retries.

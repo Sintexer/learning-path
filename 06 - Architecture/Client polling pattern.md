@@ -1,0 +1,1 @@
+In the client polling pattern, after the client initiates a request, it repeatedly checks or 'polls' the server for the status of the request until it is completed. This pattern is useful in serverless architectures where the processing might take a while and the client needs to know the status or result of the operation. It was used a lot on the Internet before websockets.

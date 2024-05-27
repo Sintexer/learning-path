@@ -9,3 +9,4 @@
 - [[🗂️ AWS CLI]]
 - [[🗂️ AWS Networking]]
 - [[Cloud]]
+- [[AWS learn materials]]

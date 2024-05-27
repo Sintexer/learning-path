@@ -1,0 +1,1 @@
+It is guaranteed that messages will be delivered and there won't be delivery duplications.

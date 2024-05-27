@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "04 - Security/Authentication.md",
+                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
                 "mode": "source",
                 "source": false
               }
@@ -73,7 +73,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
+                "file": "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless patterns.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,14 +85,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
+                "file": "05 - Common IT knowledge/Web/GraphQL.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "73f7ca99be611c13",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Web/gRPC.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -159,7 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
+                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -176,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
+                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -199,7 +211,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md"
+                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md"
               }
             }
           },
@@ -209,7 +221,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
+                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -232,7 +244,7 @@
                   "repelStrength": 10,
                   "linkStrength": 1,
                   "linkDistance": 250,
-                  "scale": 1.2971550513956878,
+                  "scale": 0.6599430498367304,
                   "close": true
                 }
               }
@@ -280,38 +292,41 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "55e0df1cfb31b9da",
+  "active": "2c546ff7c23b2622",
   "lastOpenFiles": [
-    "01 - AWS/AWS API Gateway/AWS API Gateway.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway input validation.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway error handling.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway data mapping.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway monitoring.md",
-    "01 - AWS/AWS Monitoring/AWS CloudWatch.md",
-    "01 - AWS/AWS Monitoring/AWS X-Ray.md",
-    "01 - AWS/AWS Monitoring/AWS Monitoring.md",
-    "01 - AWS/AWS Compute/AWS Containers/AWS ECS Container agent.md",
-    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
-    "01 - AWS/AWS Compute/AWS Containers/AWS ECS.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway policies.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway stage.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway throttling.md",
-    "01 - AWS/AWS API Gateway/AWS REST API Gateway.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway access management.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway Cognito Authorizer.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway IAM Authorization.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway Lambda Authorizer.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway usage plans.md",
-    "04 - Security/Authentication.md",
-    "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway best-practices.md",
-    "01 - AWS/AWS API Gateway/AWS WebSocket API Gateway.md",
+    "01 - AWS/AWS learn materials.md",
+    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
     "01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
+    "01 - AWS/AWS IAM/AWS Cognito.md",
+    "01 - AWS/🗂️ 01 - AWS.md",
+    "00 - Start here.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda invocation models.md",
+    "01 - AWS/AWS Messages/AWS Kinesis.md",
+    "01 - AWS/AWS Messages/AWS Kinesis Data Firehose.md",
+    "01 - AWS/AWS Messages/AWS Kinesis Data Streams.md",
+    "01 - AWS/AWS Messages/AWS Kinesis Data Streams vs Firehose.md",
+    "05 - Common IT knowledge/Messaging/At-least-once delivery.md",
+    "05 - Common IT knowledge/Messaging/Exactly-once delivery.md",
+    "05 - Common IT knowledge/Messaging",
+    "01 - AWS/AWS Messages/AWS Kinesis Data Analytics.md",
+    "04 - Security/Authentication.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless patterns.md",
+    "01 - AWS/AWS IAM/IAM user.md",
+    "01 - AWS/AWS IAM/IAM session token.md",
+    "01 - AWS/AWS IAM/IAM role trust policy example.png",
+    "01 - AWS/AWS IAM/IAM role trust policy.md",
+    "01 - AWS/AWS IAM/IAM role session tag.md",
+    "01 - AWS/AWS IAM/IAM role.md",
+    "01 - AWS/AWS IAM/IAM RBAC.md",
+    "01 - AWS/AWS IAM/IAM policy simulator.md",
+    "01 - AWS/AWS IAM/IAM Identity Center.md",
+    "01 - AWS/AWS IAM/IAM group.md",
+    "01 - AWS/AWS IAM/IAM Federated user.md",
+    "01 - AWS/AWS Messages",
+    "Untitled",
     "01 - AWS/AWS API Gateway",
     "03 - Backend/API",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
-    "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/Policies",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration concurrency types.png",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
@@ -321,10 +336,7 @@
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
     "01 - AWS/AWS Monitoring",
     "05 - Common IT knowledge/Services",
-    "05 - Common IT knowledge/Cloud",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
-    "01 - AWS/AWS Databases",
-    "05 - Common IT knowledge/Databases",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",

@@ -296,4 +296,70 @@ You can find a detailed documentation [here](https://github.com/epam/aws-syndica
 
 ## Developing lambdas
 
-**Lambda function URL config**. To enable URL config, add @LambdaUrlConfig annotation and remove aliasName from @LambdaHandler.
+### Lambda function URL config
+
+To enable URL config, add @LambdaUrlConfig annotation and remove aliasName from @LambdaHandler.
+
+### API Gateway integration
+
+To add [[AWS API Gateway|API gateway]] in front of your lambda, you just need to add `api_gateway` resource to the **deployment_resources.json** file. There is a auto generator of such configs in syndicate:
+
+```shell
+syndicate generate meta api_gateway \  
+--resource_name task3_api \  
+--deploy_stage api \  
+--minimum_compression_size 0  
+  
+syndicate generate meta api_gateway_resource \  
+--api_name task3_api \  
+--path /hello \  
+--enable_cors false  
+  
+syndicate generate meta api_gateway_resource_method \  
+--api_name task3_api \  
+--path /hello \  
+--method GET \  
+--integration_type lambda \  
+--lambda_name hello_world \  
+--authorization_type NONE \  
+--api_key_required false
+```
+
+Here is an example of the API gateway config that uses lambda functions for `/hello` endpoint:
+
+```json
+{
+	...
+	"task3_api": {
+	    "resource_type": "api_gateway",
+	    "deploy_stage": "api",
+	    "dependencies": [],
+	    "resources": {
+	      "/hello": {
+	        "enabled_cors": false,
+	        "GET": {
+	          "authorization_type": "NONE",
+	          "integration_type": "lambda",
+	          "lambda_name": "hello_world",
+	          "api_key_required": false,
+	          "method_request_parameters": {},
+	          "integration_request_body_template": {},
+	          "responses": [],
+	          "integration_responses": [],
+	          "default_error_pattern": true
+	        }
+	      }
+	    },
+	    "minimum_compression_size": 0
+	}
+}
+```
+
+### Env variables for DynamoDB table names
+
+Syndicate loves prefixes. All resources are deployed with the prefix from **syndicate.yml**. But that brings a problem - how to get the dynamodb table name inside a lambda? Because the actual table name will have a prefix, you can't be sure. Env variables come quite handy here. 
+
+1. Add a variable to the **syndicate_aliases.yml** and then assign it to the env variable inside lambda. E.g. `targetTable = Events`.
+2. Add an env variable annotation `@EnvironmentVariable(key = "TABLE_NAME", value = "${targetTable}")`. Here you are assigning value from aliases file to an env variable, that could be used inside the lambda code.
+3. Access this env variable from a lambda code `System.getenv(TABLE_NAME_ENV)`.
+4. During the deployment, you env variable will have a value calculated by syndicate: `TABLE_NAME_ENV=cmtr_a3fec_Events`.

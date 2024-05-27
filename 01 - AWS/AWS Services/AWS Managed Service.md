@@ -1,3 +1,5 @@
+> AKA **Fully managed service**
+
 **AWS Managed Services** are a set of offerings that allow customers to offload the management and operation of their infrastructure and applications to AWS. This can free up customers to focus on their core business, while **AWS takes care of the underlying infrastructure and services**. Other services offer more control over infrastructure and functionality, but require deeper expertise and called [[AWS Unmanaged Service|AWS Unmanaged Services]].
 
 ### Benefits

@@ -4,3 +4,4 @@ API Gateway verifies either or both of the following conditions for you.
 
 - The required request parameters in the URL, query string, and headers of an incoming request are included and non-blank. 
 - The applicable request payload adheres to the configured JSON request model of the method.
+- There also possible to define some constraints like allowed enum values, etc.
