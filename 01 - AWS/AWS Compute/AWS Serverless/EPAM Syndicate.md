@@ -359,7 +359,15 @@ Here is an example of the API gateway config that uses lambda functions for `/he
 
 Syndicate loves prefixes. All resources are deployed with the prefix from **syndicate.yml**. But that brings a problem - how to get the dynamodb table name inside a lambda? Because the actual table name will have a prefix, you can't be sure. Env variables come quite handy here. 
 
-1. Add a variable to the **syndicate_aliases.yml** and then assign it to the env variable inside lambda. E.g. `targetTable = Events`.
-2. Add an env variable annotation `@EnvironmentVariable(key = "TABLE_NAME", value = "${targetTable}")`. Here you are assigning value from aliases file to an env variable, that could be used inside the lambda code.
+1. Add a variable to the **syndicate_aliases.yml** and then assign it to the env variable inside lambda. E.g. `target_table = Events`.
+2. Add an env variable annotation `@EnvironmentVariable(key = "TABLE_NAME", value = "${target_table}")`. Here you are assigning value from aliases file to an env variable, that could be used inside the lambda code.
 3. Access this env variable from a lambda code `System.getenv(TABLE_NAME_ENV)`.
 4. During the deployment, you env variable will have a value calculated by syndicate: `TABLE_NAME_ENV=cmtr_a3fec_Events`.
+
+## Syndicate course feedback
+
+Task descriptions are just walls of text. Just moving description through the chat gpt once improves readability by 100%. It is also a bad idea to host text on a gray background, use white at least.
+
+I get why syndicate is a such a big part of this course. But it is unrealistically raw. And for what reason you are hiding all the information necessary to use syndicate in the wiki? You perfectly know what parts of syndicate are required to complete each task : just give students a set of links, that are mandatory to read to complete this task. No one will read full syndicate docs at first. Your tasks require to use aliases and environment variables. This information is not listed anywhere in the course. The most we have is a small note of what are the aliases used in a task, 
+
+I don't understand why course tasks are build in a way student must spent most of the time fighting for correct syntax and Validation implementation, instead of actual AWS related concepts. You should provide templates of business logic, with everything ready except things that matter for serverless development. Just give students a template and leave the necessary methods without the implementation, and it will be 500% more fun to develop these lambdas, and it will require 5x less time. It is harmful to feel how much time is spent on re-verification because of "wrong validation was written". Also error messagews are useless in 50% of the time.

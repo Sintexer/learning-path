@@ -7,3 +7,10 @@
 - [x] AWS [Deep Dive with Security: AWS Identity and Access Management (IAM)](https://explore.skillbuilder.aws/learn/course/external/view/elearning/104/deep-dive-with-security-aws-identity-and-access-management-iam)
 - [ ] AWS [Architecting Serverless Applications](https://explore.skillbuilder.aws/learn/course/external/view/elearning/12716/architecting-serverless-applications)
 - [ ] AWS [AWS DynamoDB for Serverless Architectures](https://explore.skillbuilder.aws/learn/course/external/view/elearning/67/amazon-dynamodb-for-serverless-architectures)
+- [ ] AWS [Scaling Serverless Architectures](https://explore.skillbuilder.aws/learn/course/external/view/elearning/12713/scaling-serverless-architectures)
+- [ ] AWS [Security and Observability for Serverless Applications](https://explore.skillbuilder.aws/learn/course/external/view/elearning/12714/security-and-observability-for-serverless-applications)
+- [ ] AWS [Deploying Serverless Applications](https://explore.skillbuilder.aws/learn/course/external/view/elearning/12836/deploying-serverless-applications)
+
+TODO:
+
+- [ ] SQS

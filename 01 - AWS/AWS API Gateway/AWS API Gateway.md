@@ -32,10 +32,16 @@ When you deploy your API, you're creating a [[AWS API Gateway stage|stage]]. Eac
 
 ## Features
 
-**Reduce latency and throttle traffic**: API Gateway provides end users with the lowest possible latency for API requests and responses by taking advantage of the [[AWS CloudFront]] global network of [[Edge locations|edge locations]]. With this service, you also can **throttle** traffic and authorize API calls to ensure that backend operations withstand traffic spikes and backend systems are not unnecessarily called.
+**Reduce latency and throttle traffic (Edge-optimized)**: Not enabled by default. API Gateway provides end users with the lowest possible latency for API requests and responses by taking advantage of the [[AWS CloudFront]] global network of [[Edge locations|edge locations]]. With this service, you also can **throttle** traffic and authorize API calls to ensure that backend operations withstand traffic spikes and backend systems are not unnecessarily called.
 
 **Build-in, flexible authorization options**: API Gateway gives you several options for authorization. You can authorize access to your APIs with [[IAM]] and [[AWS Cognito]]. If you use [[OAuth token|OAuth tokens]], API Gateway also offers native [[OIDC]] and [[OAuth 2]] support. To support custom authorization requirements, you can invoke a [[AWS Lambda]] authorizer from Lambda. With a **Lambda authorizer**, you can develop your own authorization code using a custom Lambda function.
 
-**API keys for third-party developers**: If you’re using REST APIs, API Gateway helps you manage the ecosystem of third-party developers accessing your APIs. You can create API keys on API Gateway, set fine-grained access permissions on each API key, and distribute them to third-party developers to access your APIs. API keys are not a primary authorization mechanism for your APIs, but provide you the ability to track usage for specific users or services. You can also define usage plans that set throttling and request quota limits for each API key. The use of API keys is optional.
+**API keys for third-party developers**: Throttle request volume on a per-client basis. If you’re using REST APIs, API Gateway helps you manage the ecosystem of third-party developers accessing your APIs. You can create API keys on API Gateway, set fine-grained access permissions on each API key, and distribute them to third-party developers to access your APIs. API keys are not a primary authorization mechanism for your APIs, but provide you the ability to track usage for specific users or services. You can also define usage plans that set throttling and request quota limits for each API key. The use of API keys is optional.
 
 **Monitoring and logs**: There lots of metrics and logs collected by [[AWS CloudWatch]] for API Gateway, see [[AWS API Gateway monitoring]].
+
+**Optional cache**: Reduces backend hits. You can configure the cache size, set time-to-live (TTL) for cached responses, and enable or disable caching for specific methods. Additionally, you can invalidate the cache manually or programmatically to ensure that clients receive the most up-to-date data when necessary.
+
+## Things to keep in mind
+
+API Gateway has a 10-MB payload limit.

@@ -41,9 +41,14 @@ This invocation model is designed to integrate with AWS streaming and queuing ba
 
 - [[AWS Kinesis]]
 - [[AWS SQS]]
-- [[AWS DynamoDB Streams]]
+- [[AWS DynamoDB Stream]]
 
 With this type of integration, AWS will manage the poller on your behalf and perform synchronous invocations of your function. With this model, the retry behavior varies depending on the event source and its configuration.
+
+By default lambda uses 5 parallel processes to get messages from the queue. These five parallel processes mean Lambda is invoking **5 concurrent instances** of your Lambda function. To avoid your Lambda function getting throttled right out of the gate, make sure that the reserved concurrency on the function is at least 5.
+
+> [!info]
+> Best practice, is to set your SQS queue visibility timeout to 6 times the function timeout.
 
 ## Event source mapping
 

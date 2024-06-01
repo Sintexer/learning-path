@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
                 "mode": "source",
                 "source": false
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "load balance",
+                "query": "burst beh",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -154,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 389.5
   },
   "right": {
     "id": "b590e1f2cda623f5",
@@ -171,7 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -211,7 +211,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md"
+                "file": "01 - AWS/AWS Services/AWS Control Tower.md"
               }
             }
           },
@@ -221,7 +221,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -258,8 +258,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 4
+        ]
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -294,48 +293,48 @@
   },
   "active": "2c546ff7c23b2622",
   "lastOpenFiles": [
-    "01 - AWS/AWS learn materials.md",
-    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
-    "01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md",
-    "01 - AWS/AWS IAM/AWS Cognito.md",
-    "01 - AWS/🗂️ 01 - AWS.md",
-    "00 - Start here.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda invocation models.md",
-    "01 - AWS/AWS Messages/AWS Kinesis.md",
-    "01 - AWS/AWS Messages/AWS Kinesis Data Firehose.md",
-    "01 - AWS/AWS Messages/AWS Kinesis Data Streams.md",
-    "01 - AWS/AWS Messages/AWS Kinesis Data Streams vs Firehose.md",
-    "05 - Common IT knowledge/Messaging/At-least-once delivery.md",
-    "05 - Common IT knowledge/Messaging/Exactly-once delivery.md",
-    "05 - Common IT knowledge/Messaging",
-    "01 - AWS/AWS Messages/AWS Kinesis Data Analytics.md",
-    "04 - Security/Authentication.md",
+    "01 - AWS/AWS Services/AWS Organizations.md",
+    "01 - AWS/AWS Services/AWS Control Tower.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function burst.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless scaling.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless patterns.md",
-    "01 - AWS/AWS IAM/IAM user.md",
-    "01 - AWS/AWS IAM/IAM session token.md",
+    "01 - AWS/AWS learn materials.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda invocation models.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway.md",
+    "08 - AI/Prompts/Learning prompts ChatGPT.md",
+    "01 - AWS/AWS Messages/AWS SQS.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda authorizers.md",
+    "07 - Security/JWT.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Step Functions.md",
+    "05 - Common IT knowledge/Web/GraphQL.md",
+    "08 - AI/Prompts",
+    "08 - AI",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless.md",
+    "01 - AWS/AWS Compute/AWS Serverless/🗂️ AWS Serverless.md",
+    "01 - AWS/AWS Compute/AWS Serverless/🎴 AWS Serverless flashcards.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
+    "06 - Architecture/Microservices/Microservices architecture.md",
+    "06 - Architecture/Microservices",
+    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
+    "01 - AWS/AWS IAM/AWS Cognito.md",
+    "01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md",
+    "05 - Common IT knowledge/Messaging",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
-    "01 - AWS/AWS IAM/IAM role trust policy.md",
-    "01 - AWS/AWS IAM/IAM role session tag.md",
-    "01 - AWS/AWS IAM/IAM role.md",
-    "01 - AWS/AWS IAM/IAM RBAC.md",
-    "01 - AWS/AWS IAM/IAM policy simulator.md",
-    "01 - AWS/AWS IAM/IAM Identity Center.md",
-    "01 - AWS/AWS IAM/IAM group.md",
-    "01 - AWS/AWS IAM/IAM Federated user.md",
     "01 - AWS/AWS Messages",
-    "Untitled",
     "01 - AWS/AWS API Gateway",
     "03 - Backend/API",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
     "01 - AWS/AWS IAM/Policies",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration concurrency types.png",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
     "06 - Architecture",
     "05 - Common IT knowledge/Networks/OSI",
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
-    "01 - AWS/AWS Monitoring",
-    "05 - Common IT knowledge/Services",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "05 - Common IT knowledge/Containers and virtualization/Difference between VMs and containers visual.png",
