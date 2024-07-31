@@ -61,7 +61,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "09 - Linux/Linux Terminal.md",
                 "mode": "source",
                 "source": false
               }
@@ -154,7 +154,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 389.5
+    "width": 290.5
   },
   "right": {
     "id": "b590e1f2cda623f5",
@@ -163,7 +163,7 @@
       {
         "id": "4f013835e2e2f7ae",
         "type": "tabs",
-        "dimension": 41.389290882778575,
+        "dimension": 57.96232876712328,
         "children": [
           {
             "id": "514b6c544611407c",
@@ -171,7 +171,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "09 - Linux/Linux Terminal.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -188,7 +188,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "09 - Linux/Linux Terminal.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -211,7 +211,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md"
+                "file": "09 - Linux/Linux Terminal.md"
               }
             }
           },
@@ -221,7 +221,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "09 - Linux/Linux Terminal.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -251,19 +251,20 @@
             }
           },
           {
-            "id": "338d60851270b34c",
+            "id": "db9299da8e99a016",
             "type": "leaf",
             "state": {
               "type": "review-queue-list-view",
               "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 5
       },
       {
         "id": "4a28ccf585ff50ef",
         "type": "tabs",
-        "dimension": 58.610709117221425,
+        "dimension": 42.03767123287671,
         "children": [
           {
             "id": "4d2b225381b89727",
@@ -277,7 +278,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 363.5
+    "width": 350.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -293,8 +295,20 @@
   },
   "active": "2c546ff7c23b2622",
   "lastOpenFiles": [
-    "01 - AWS/AWS Services/AWS Organizations.md",
+    "09 - Linux/Linux hard drive structure.md",
+    "05 - Common IT knowledge/EFI.md",
+    "09 - Linux/Linux devices.md",
+    "05 - Common IT knowledge/SCSI.md",
+    "09 - Linux/Linux Terminal.md",
+    "05 - Common IT knowledge/TTY.md",
+    "09 - Linux/Fedora experience.md",
+    "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
+    "09 - Linux/Linux Mint experience.md",
+    "09 - Linux/Fedora.md",
+    "09 - Linux/Ubuntu experience.md",
     "01 - AWS/AWS Services/AWS Control Tower.md",
+    "09 - Linux",
+    "01 - AWS/AWS Services/AWS Organizations.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function burst.md",
@@ -308,21 +322,10 @@
     "01 - AWS/AWS API Gateway/AWS API Gateway.md",
     "08 - AI/Prompts/Learning prompts ChatGPT.md",
     "01 - AWS/AWS Messages/AWS SQS.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda authorizers.md",
-    "07 - Security/JWT.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Step Functions.md",
-    "05 - Common IT knowledge/Web/GraphQL.md",
     "08 - AI/Prompts",
     "08 - AI",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless.md",
-    "01 - AWS/AWS Compute/AWS Serverless/🗂️ AWS Serverless.md",
-    "01 - AWS/AWS Compute/AWS Serverless/🎴 AWS Serverless flashcards.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
-    "06 - Architecture/Microservices/Microservices architecture.md",
     "06 - Architecture/Microservices",
-    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
-    "01 - AWS/AWS IAM/AWS Cognito.md",
-    "01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md",
     "05 - Common IT knowledge/Messaging",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS Messages",
@@ -333,7 +336,6 @@
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
     "06 - Architecture",
-    "05 - Common IT knowledge/Networks/OSI",
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
