@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
+                "file": "00 - Start here.md",
                 "mode": "source",
                 "source": false
               }
@@ -25,7 +25,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/AWS Single Sign-On.md",
+                "file": "03 - Backend/Backend senior developer questions.md",
                 "mode": "source",
                 "source": false
               }
@@ -61,7 +61,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "00 - Start here.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "8ab01f37554e7eb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Web/HTTP1.1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +97,31 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Web/GraphQL.md",
+                "file": "05 - Common IT knowledge/Web/HTTP1.1.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "bba888202ca8fef2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Web/HTTP2.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "43f6f86aa965360e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Web/HTTP2.md",
                 "mode": "source",
                 "source": false
               }
@@ -104,7 +140,7 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -171,7 +207,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "03 - Backend/Backend senior developer questions.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -188,7 +224,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "03 - Backend/Backend senior developer questions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -211,7 +247,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md"
+                "file": "03 - Backend/Backend senior developer questions.md"
               }
             }
           },
@@ -221,7 +257,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "01 - AWS/AWS Services/AWS Control Tower.md",
+                "file": "03 - Backend/Backend senior developer questions.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -291,38 +327,39 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "2c546ff7c23b2622",
+  "active": "4aedc64f77511867",
   "lastOpenFiles": [
-    "01 - AWS/AWS Services/AWS Organizations.md",
-    "01 - AWS/AWS Services/AWS Control Tower.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function burst.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless scaling.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless patterns.md",
-    "01 - AWS/AWS learn materials.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda invocation models.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway.md",
-    "08 - AI/Prompts/Learning prompts ChatGPT.md",
-    "01 - AWS/AWS Messages/AWS SQS.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda authorizers.md",
-    "07 - Security/JWT.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Step Functions.md",
-    "05 - Common IT knowledge/Web/GraphQL.md",
+    "03 - Backend/backend-path.png",
+    "03 - Backend/Backend senior developer questions.md",
+    "02 - Java/Untitled.md",
+    "06 - Architecture/Microservices/Microservices architecture.md",
+    "00 - Start here.md",
+    "02 - Java/Java versions.md",
+    "03 - Backend/API/API Performance improvement.md",
+    "10 - Management/Code review best practices and pitfals.md",
+    "06 - Architecture/Microservices/Microservices Tracing.md",
+    "06 - Architecture/Microservices/Microservices Service mesh pattern.md",
+    "06 - Architecture/Microservices/Microservices Sidecar pattern.md",
+    "06 - Architecture/Microservices/Microservices Saga pattern.md",
+    "06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md",
+    "06 - Architecture/Microservices/Microservices patterns.md",
+    "06 - Architecture/Microservices/Microservices Orchestration and Choreography.md",
+    "06 - Architecture/Microservices/Microservices decomposition.md",
+    "00 - info stack.md",
+    "05 - Common IT knowledge/Networks/Reverse proxy.md",
+    "05 - Common IT knowledge/Networks/Forward proxy.md",
+    "10 - Management/Team management.md",
+    "01 - AWS/AWS IAM/AWS Single Sign-On.md",
+    "10 - Management",
+    "05 - Common IT knowledge/Web/HTTP3.md",
+    "05 - Common IT knowledge/Web/HTTP2.md",
+    "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
+    "05 - Common IT knowledge/Web/gRPC.md",
+    "05 - Common IT knowledge/Web/HTTP.md",
     "08 - AI/Prompts",
     "08 - AI",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless.md",
-    "01 - AWS/AWS Compute/AWS Serverless/🗂️ AWS Serverless.md",
-    "01 - AWS/AWS Compute/AWS Serverless/🎴 AWS Serverless flashcards.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
-    "06 - Architecture/Microservices/Microservices architecture.md",
     "06 - Architecture/Microservices",
-    "01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md",
-    "01 - AWS/AWS IAM/AWS Cognito.md",
-    "01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md",
     "05 - Common IT knowledge/Messaging",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS Messages",
@@ -333,7 +370,6 @@
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
     "06 - Architecture",
-    "05 - Common IT knowledge/Networks/OSI",
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
