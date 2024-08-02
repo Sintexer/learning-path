@@ -1,0 +1,5 @@
+13.06.2024
+
+I've installed Ubuntu LTS 24.04. Installation process was terrible - installer lagged, sometimes it was hanging for eternity with spinner loading, but most of the time it just crashed. Like I clicked next two times - it crashed. Open installer again, make three steps - crash. Open again, make two steps - crash. And these crashes are like unrelated to what are you doing. Somehow I've completed the installation and even used the system for a couple of our. But for f sake I decided to change the cursor look - oh dear - that s just crashed the system - it just died. I've never been able to recover from the white screen of gnome desktop, which says to re-login to the session.
+
+I reinstalled ubuntu and then spent some time to create a new boot drive from linux system. I searched for rufus-like app - but this was a mislead. Linux has `dd` utility by default, which allows you to create a boot drive from iso. So, then I used dd to create [[Linux Mint experience|linux mint]] boot drive.
