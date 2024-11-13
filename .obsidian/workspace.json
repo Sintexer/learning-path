@@ -32,6 +32,16 @@
             }
           },
           {
+            "id": "07a3d36d42a12eb0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.6.7"
+              }
+            }
+          },
+          {
             "id": "62029183242797f4",
             "type": "leaf",
             "state": {
@@ -140,7 +150,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -327,7 +337,7 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "4aedc64f77511867",
+  "active": "07a3d36d42a12eb0",
   "lastOpenFiles": [
     "09 - Linux/Ubuntu experience.md",
     "09 - Linux/Linux Terminal.md",
