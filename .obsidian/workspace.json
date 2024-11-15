@@ -16,7 +16,9 @@
                 "file": "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "IAM Customer managed policy"
             }
           },
           {
@@ -28,7 +30,9 @@
                 "file": "01 - AWS/AWS IAM/AWS Single Sign-On.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "AWS Single Sign-On"
             }
           },
           {
@@ -40,7 +44,9 @@
                 "file": "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "AWS API Gateway integration types"
             }
           },
           {
@@ -52,7 +58,9 @@
                 "file": "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "AWS API Gateway components"
             }
           },
           {
@@ -61,10 +69,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "09 - Linux/Linux Terminal.md",
+                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "Two pointers"
             }
           },
           {
@@ -76,7 +86,9 @@
                 "file": "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless patterns.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "AWS Serverless patterns"
             }
           },
           {
@@ -88,7 +100,9 @@
                 "file": "05 - Common IT knowledge/Web/GraphQL.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "GraphQL"
             }
           },
           {
@@ -100,7 +114,9 @@
                 "file": "05 - Common IT knowledge/Web/gRPC.md",
                 "mode": "source",
                 "source": false
-              }
+              },
+              "icon": "lucide-file",
+              "title": "gRPC"
             }
           }
         ],
@@ -124,7 +140,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
             }
           },
           {
@@ -139,7 +157,9 @@
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical"
-              }
+              },
+              "icon": "lucide-search",
+              "title": "Search"
             }
           },
           {
@@ -147,7 +167,9 @@
             "type": "leaf",
             "state": {
               "type": "bookmarks",
-              "state": {}
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
             }
           }
         ]
@@ -171,7 +193,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "09 - Linux/Linux Terminal.md",
+                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -179,7 +201,9 @@
                 "searchQuery": "",
                 "backlinkCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Two pointers"
             }
           },
           {
@@ -188,10 +212,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "09 - Linux/Linux Terminal.md",
+                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Two pointers"
             }
           },
           {
@@ -202,7 +228,9 @@
               "state": {
                 "sortOrder": "frequency",
                 "useHierarchy": true
-              }
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
             }
           },
           {
@@ -211,8 +239,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "09 - Linux/Linux Terminal.md"
-              }
+                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Two pointers"
             }
           },
           {
@@ -221,7 +251,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "09 - Linux/Linux Terminal.md",
+                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -247,7 +277,9 @@
                   "scale": 0.6599430498367304,
                   "close": true
                 }
-              }
+              },
+              "icon": "lucide-git-fork",
+              "title": "Graph of Two pointers"
             }
           },
           {
@@ -255,11 +287,33 @@
             "type": "leaf",
             "state": {
               "type": "review-queue-list-view",
-              "state": {}
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "59a74396e30323ce",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "5d2b6d0eeea71fe4",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 7
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -271,7 +325,9 @@
             "type": "leaf",
             "state": {
               "type": "calendar",
-              "state": {}
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
             }
           }
         ]
@@ -293,13 +349,15 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "2c546ff7c23b2622",
+  "active": "5d2b6d0eeea71fe4",
   "lastOpenFiles": [
+    "09 - Linux/Linux Terminal.md",
+    "05 - Common IT knowledge/Algorithms/Two pointers.md",
+    "05 - Common IT knowledge/Algorithms",
     "09 - Linux/Linux hard drive structure.md",
     "05 - Common IT knowledge/EFI.md",
     "09 - Linux/Linux devices.md",
     "05 - Common IT knowledge/SCSI.md",
-    "09 - Linux/Linux Terminal.md",
     "05 - Common IT knowledge/TTY.md",
     "09 - Linux/Fedora experience.md",
     "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
@@ -321,7 +379,6 @@
     "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway.md",
     "08 - AI/Prompts/Learning prompts ChatGPT.md",
-    "01 - AWS/AWS Messages/AWS SQS.md",
     "08 - AI/Prompts",
     "08 - AI",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
@@ -335,7 +392,6 @@
     "01 - AWS/AWS IAM/Policies",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
-    "06 - Architecture",
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
