@@ -21,6 +21,9 @@
 - [ ] `l155` min stack
 - [ ] `l704` binary search
 - [ ] `l74` search a 2d matrix
+- [ ] `l150` evaluate reverse polish notation
+- [ ] `l22` generate parentheses
+- [ ] `l739` daily temperatures
 
 ###  From ChatGPT course
 ### Two Pointers

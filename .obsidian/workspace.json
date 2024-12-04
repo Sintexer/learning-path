@@ -338,12 +338,42 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "81288403c3aa6b6b",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "9f1e972c4b42fb18",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "d776239f8e053aeb",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
               "icon": "SpacedRepIcon",
               "title": "Notes Review Queue"
             }
           }
         ],
-        "currentTab": 10
+        "currentTab": 13
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -379,7 +409,7 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "2506a0ed85eb8308",
+  "active": "d776239f8e053aeb",
   "lastOpenFiles": [
     "05 - Common IT knowledge/Algorithms/Binary search.md",
     "05 - Common IT knowledge/Algorithms/Algorithms TODO.md",
