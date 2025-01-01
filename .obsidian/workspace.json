@@ -368,12 +368,22 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "d9729663708ddfe2",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
               "icon": "SpacedRepIcon",
               "title": "Notes Review Queue"
             }
           }
         ],
-        "currentTab": 13
+        "currentTab": 14
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -409,7 +419,7 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "d776239f8e053aeb",
+  "active": "d9729663708ddfe2",
   "lastOpenFiles": [
     "05 - Common IT knowledge/Algorithms/Binary search.md",
     "05 - Common IT knowledge/Algorithms/Algorithms TODO.md",

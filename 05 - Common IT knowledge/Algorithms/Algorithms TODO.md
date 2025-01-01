@@ -24,6 +24,11 @@
 - [ ] `l150` evaluate reverse polish notation
 - [ ] `l22` generate parentheses
 - [ ] `l739` daily temperatures
+- [ ] `l2337` move pieces to obtain a string
+- [ ] `l853` car fleet
+- [ ] `l84` largest rectangle in histogram
+- [ ] `l875` koko eating bananas
+- [ ] `l153` find minimum in rotated sorted array
 
 ###  From ChatGPT course
 ### Two Pointers
