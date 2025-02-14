@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md",
+                "file": "11 - Japanese/Minnanonihongo/Test A.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "IAM Customer managed policy"
+              "title": "Test A"
             }
           },
           {
@@ -119,8 +119,7 @@
               "title": "gRPC"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -152,7 +151,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "burst beh",
+                "query": "🎴",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -177,7 +176,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 290.5
+    "width": 328.5
   },
   "right": {
     "id": "b590e1f2cda623f5",
@@ -252,7 +251,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md",
+                "file": "11 - Japanese/Minnanonihongo/Test A.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -280,117 +279,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Two pointers"
-            }
-          },
-          {
-            "id": "db9299da8e99a016",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "59a74396e30323ce",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "5d2b6d0eeea71fe4",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "335626b0b102a46d",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "6cfa039c70dc58d6",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "2506a0ed85eb8308",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "81288403c3aa6b6b",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "9f1e972c4b42fb18",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "d776239f8e053aeb",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "d9729663708ddfe2",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
-            }
-          },
-          {
-            "id": "5020ea57ed8a9b91",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "SpacedRepIcon",
-              "title": "Notes Review Queue"
+              "title": "Graph of Test A"
             }
           },
           {
@@ -402,9 +291,19 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
+          },
+          {
+            "id": "fb68dc9a33d281ad",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
+            }
           }
         ],
-        "currentTab": 16
+        "currentTab": 5
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -425,7 +324,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 350.5
+    "width": 347.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -440,35 +339,38 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "5020ea57ed8a9b91",
+  "active": "2dd732d0f564c0a1",
   "lastOpenFiles": [
-    "05 - Common IT knowledge/Algorithms/Binary search.md",
-    "05 - Common IT knowledge/Algorithms/Algorithms TODO.md",
-    "05 - Common IT knowledge/Algorithms/Two pointers.md",
-    "10 - Management/Team management.md",
-    "10 - Management/Code review best practices and pitfals.md",
-    "10 - Management",
-    "06 - Architecture/Microservices/Microservices patterns.md",
-    "06 - Architecture/Microservices/Microservices decomposition.md",
-    "06 - Architecture/Microservices/Microservices Tracing.md",
+    "01 - AWS/AWS Storage/AWS File Storage.md",
+    "03 - Backend/cloud/Cloud ToDo.md",
+    "05 - Common IT knowledge/Networks/SSL.md",
+    "05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md",
+    "01 - AWS/AWS IAM/AWS Credentials types.md",
+    "01 - AWS/AWS CLI/Commands/aws s3api.md",
     "06 - Architecture/Microservices/Microservices To-Do.md",
-    "06 - Architecture/Microservices/Microservices Sidecar pattern.md",
-    "06 - Architecture/Microservices/Microservices Service mesh pattern.md",
-    "06 - Architecture/Microservices/Microservices Saga pattern.md",
-    "06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md",
-    "06 - Architecture/Microservices/Microservices Orchestration and Choreography.md",
-    "05 - Common IT knowledge/Web/HTTP3.md",
-    "05 - Common IT knowledge/Web/HTTP2.md",
-    "05 - Common IT knowledge/Web/HTTP1.1.md",
-    "05 - Common IT knowledge/Networks/Reverse proxy.md",
-    "05 - Common IT knowledge/Networks/Forward proxy.md",
-    "03 - Backend/Backend senior developer questions.md",
-    "03 - Backend/API/API versioning.md",
-    "03 - Backend/API/API Performance improvement.md",
-    "02 - Java/Untitled.md",
-    "02 - Java/Java versions.md",
-    "00 - info stack.md",
-    "09 - Linux/Linux Terminal.md",
+    "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
+    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda billing.md",
+    "01 - AWS/AWS Services/AWS Managed Service.md",
+    "05 - Common IT knowledge/Web/URL.md",
+    "01 - AWS/AWS Networking/AWS PrivateLink.md",
+    "11 - Japanese/Minnanonihongo/Test A.md",
+    "11 - Japanese/Japanese Error correction.md",
+    "01 - AWS/AWS IAM/AWS Single Sign-On.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
+    "11 - Japanese/Minnanonihongo/Lesson 6.md",
+    "11 - Japanese/Japanese.md",
+    "04 - Security/Authentication and Authorization.md",
+    "01 - AWS/AWS IAM/🎴AWS IAM flashcards.md",
+    "01 - AWS/AWS Compute/AWS EC2/🎴 EC2 flashcards.md",
+    "01 - AWS/AWS Storage/🎴 AWS Storage flashcards.md",
+    "01 - AWS/AWS Networking/🎴 AWS Networking flashcards.md",
+    "01 - AWS/AWS Compute/AWS Serverless/🎴 AWS Serverless flashcards.md",
+    "11 - Japanese/Minnanonihongo/Lesson 6/Lesson 6 Repetiotion.md",
+    "11 - Japanese/Minnanonihongo/Lesson 6",
+    "11 - Japanese/Minnanonihongo",
+    "🗂️ hub.md",
+    "11 - Japanese",
+    "10 - Management",
     "05 - Common IT knowledge/Algorithms",
     "09 - Linux",
     "08 - AI/Prompts",
@@ -477,9 +379,6 @@
     "06 - Architecture/Microservices",
     "05 - Common IT knowledge/Messaging",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
-    "01 - AWS/AWS Messages",
-    "01 - AWS/AWS API Gateway",
-    "03 - Backend/API",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
