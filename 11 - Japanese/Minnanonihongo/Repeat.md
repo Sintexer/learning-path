@@ -1,0 +1,6 @@
+- [ ] lesson 6 (kaiwa, c)
+- [ ] lesson 5 (all, - bunkei,reibun, a, b)
+- [ ] lesson 4 (all)
+- [ ] lesson 3 (all) 
+- [ ] lesson 2 (all) 
+- [ ] lesson 1 (all)

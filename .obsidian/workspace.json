@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11 - Japanese/Minnanonihongo/Test A.md",
+                "file": "11 - Japanese/Minnanonihongo/Repeat.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Test A"
+              "title": "Repeat"
             }
           },
           {
@@ -118,8 +118,61 @@
               "icon": "lucide-file",
               "title": "gRPC"
             }
+          },
+          {
+            "id": "73da62d4bf05ef24",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "11 - Japanese/Minnanonihongo/Lesson 7/Lesson 7.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Lesson 7"
+            }
+          },
+          {
+            "id": "2600cfb2e29f6fb7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "11 - Japanese/Minnanonihongo/🎴 Lesson 7 flashcards.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "🎴 Lesson 7 flashcards"
+            }
+          },
+          {
+            "id": "7cf2d937adac8170",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "11 - Japanese/Minnanonihongo/🎴 Lesson 8 flashcards.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "🎴 Lesson 8 flashcards"
+            }
+          },
+          {
+            "id": "165b8f058174c070",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
           }
-        ]
+        ],
+        "currentTab": 11
       }
     ],
     "direction": "vertical"
@@ -151,7 +204,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "🎴",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -339,8 +392,24 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "2dd732d0f564c0a1",
+  "active": "165b8f058174c070",
   "lastOpenFiles": [
+    "11 - Japanese/Minnanonihongo/🎴 Lesson 8 flashcards.md",
+    "11 - Japanese/Minnanonihongo/🎴 Verbs.md",
+    "11 - Japanese/Kanji/Kanji 2.md",
+    "11 - Japanese/Minnanonihongo/🎴 Lesson 7 flashcards.md",
+    "11 - Japanese/Minnanonihongo/Lesson 7/Lesson 7.md",
+    "11 - Japanese/Kanji/Kanji 1.md",
+    "11 - Japanese/Minnanonihongo/🎴 Lesson 6 flashcards.md",
+    "11 - Japanese/Minnanonihongo/Lesson 6.md",
+    "11 - Japanese/Kanji",
+    "11 - Japanese/Minnanonihongo/Lesson 7/moraimasu.md",
+    "11 - Japanese/Minnanonihongo/Lesson 7",
+    "11 - Japanese/Minnanonihongo/Test A.md",
+    "11 - Japanese/Minnanonihongo/Repeat.md",
+    "11 - Japanese/Minnanonihongo/Useful words.md",
+    "11 - Japanese/Japanese Error correction.md",
+    "11 - Japanese/Japanese.md",
     "01 - AWS/AWS Storage/AWS File Storage.md",
     "03 - Backend/cloud/Cloud ToDo.md",
     "05 - Common IT knowledge/Networks/SSL.md",
@@ -353,22 +422,8 @@
     "01 - AWS/AWS Services/AWS Managed Service.md",
     "05 - Common IT knowledge/Web/URL.md",
     "01 - AWS/AWS Networking/AWS PrivateLink.md",
-    "11 - Japanese/Minnanonihongo/Test A.md",
-    "11 - Japanese/Japanese Error correction.md",
-    "01 - AWS/AWS IAM/AWS Single Sign-On.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
-    "11 - Japanese/Minnanonihongo/Lesson 6.md",
-    "11 - Japanese/Japanese.md",
-    "04 - Security/Authentication and Authorization.md",
-    "01 - AWS/AWS IAM/🎴AWS IAM flashcards.md",
-    "01 - AWS/AWS Compute/AWS EC2/🎴 EC2 flashcards.md",
-    "01 - AWS/AWS Storage/🎴 AWS Storage flashcards.md",
-    "01 - AWS/AWS Networking/🎴 AWS Networking flashcards.md",
-    "01 - AWS/AWS Compute/AWS Serverless/🎴 AWS Serverless flashcards.md",
-    "11 - Japanese/Minnanonihongo/Lesson 6/Lesson 6 Repetiotion.md",
     "11 - Japanese/Minnanonihongo/Lesson 6",
     "11 - Japanese/Minnanonihongo",
-    "🗂️ hub.md",
     "11 - Japanese",
     "10 - Management",
     "05 - Common IT knowledge/Algorithms",
@@ -376,8 +431,6 @@
     "08 - AI/Prompts",
     "08 - AI",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
-    "06 - Architecture/Microservices",
-    "05 - Common IT knowledge/Messaging",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
     "01 - AWS/AWS Databases/AWS Managed DB service diagram.png",
