@@ -4,3 +4,4 @@
 - [[concurrency]]
 - [[jmxConfig]]
 - [[jvmArgs]]
+- [[🗂️ JPA]]

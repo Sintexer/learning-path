@@ -20,4 +20,6 @@
 - [x] Code reviews best practices and pitfalls
 - [x] Team management
 - [ ] Problem solving
-- [ ] 
+- [ ] OWASP Top10
+- [ ] DB
+- [ ] Postgresql

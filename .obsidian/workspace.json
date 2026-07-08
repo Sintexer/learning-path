@@ -246,7 +246,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -256,7 +255,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Two pointers"
+              "title": "Backlinks"
             }
           },
           {
@@ -265,12 +264,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Two pointers"
+              "title": "Outgoing links"
             }
           },
           {
@@ -344,16 +342,6 @@
               "icon": "git-pull-request",
               "title": "Source Control"
             }
-          },
-          {
-            "id": "fb68dc9a33d281ad",
-            "type": "leaf",
-            "state": {
-              "type": "review-queue-list-view",
-              "state": {},
-              "icon": "SpacedRepIcon",
-              "title": "Notes Review Queue"
-            }
           }
         ],
         "currentTab": 5
@@ -381,6 +369,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "graph:Open graph view": false,
       "canvas:Create new canvas": false,
@@ -394,6 +383,29 @@
   },
   "active": "165b8f058174c070",
   "lastOpenFiles": [
+    "Untitled.canvas",
+    "05 - Common IT knowledge/Multithreading/Single Writer Principle.md",
+    "05 - Common IT knowledge/Multithreading/Compare-And-Swap.md",
+    "05 - Common IT knowledge/Multithreading/Optimistic Concurrency Control.md",
+    "05 - Common IT knowledge/Multithreading/Mutual Exclusion.md",
+    "05 - Common IT knowledge/Multithreading/Critical Section.md",
+    "05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md",
+    "05 - Common IT knowledge/Multithreading/Little's Law.md",
+    "02 - Java/concurrency.md",
+    "05 - Common IT knowledge/Multithreading",
+    "02 - Java/JPA/Hibernate/Hibernate.md",
+    "03 - Backend/Database/HiLo id optimization.md",
+    "03 - Backend/Database",
+    "02 - Java/JPA/JPA.md",
+    "02 - Java/JPA/🗂️ JPA.md",
+    "03 - Backend/🗂️ 03 - Backend.md",
+    "03 - Backend/persistence/🗂️ Backend persistence.md",
+    "03 - Backend/persistence/JPA.md",
+    "02 - Java/JPA/Hibernate",
+    "02 - Java/🗂️ 02 - Java.md",
+    "00 - Start here.md",
+    "02 - Java/JPA",
+    "02 - Java/Java versions.md",
     "11 - Japanese/Minnanonihongo/🎴 Lesson 8 flashcards.md",
     "11 - Japanese/Minnanonihongo/🎴 Verbs.md",
     "11 - Japanese/Kanji/Kanji 2.md",
@@ -401,35 +413,12 @@
     "11 - Japanese/Minnanonihongo/Lesson 7/Lesson 7.md",
     "11 - Japanese/Kanji/Kanji 1.md",
     "11 - Japanese/Minnanonihongo/🎴 Lesson 6 flashcards.md",
-    "11 - Japanese/Minnanonihongo/Lesson 6.md",
     "11 - Japanese/Kanji",
-    "11 - Japanese/Minnanonihongo/Lesson 7/moraimasu.md",
     "11 - Japanese/Minnanonihongo/Lesson 7",
-    "11 - Japanese/Minnanonihongo/Test A.md",
-    "11 - Japanese/Minnanonihongo/Repeat.md",
-    "11 - Japanese/Minnanonihongo/Useful words.md",
-    "11 - Japanese/Japanese Error correction.md",
-    "11 - Japanese/Japanese.md",
-    "01 - AWS/AWS Storage/AWS File Storage.md",
-    "03 - Backend/cloud/Cloud ToDo.md",
-    "05 - Common IT knowledge/Networks/SSL.md",
-    "05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md",
-    "01 - AWS/AWS IAM/AWS Credentials types.md",
-    "01 - AWS/AWS CLI/Commands/aws s3api.md",
-    "06 - Architecture/Microservices/Microservices To-Do.md",
-    "01 - AWS/AWS IAM/Policies/IAM policy condition.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda billing.md",
-    "01 - AWS/AWS Services/AWS Managed Service.md",
-    "05 - Common IT knowledge/Web/URL.md",
-    "01 - AWS/AWS Networking/AWS PrivateLink.md",
     "11 - Japanese/Minnanonihongo/Lesson 6",
     "11 - Japanese/Minnanonihongo",
     "11 - Japanese",
     "10 - Management",
-    "05 - Common IT knowledge/Algorithms",
-    "09 - Linux",
-    "08 - AI/Prompts",
-    "08 - AI",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
