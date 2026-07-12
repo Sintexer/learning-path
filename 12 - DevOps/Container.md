@@ -8,7 +8,7 @@
 * **Lightweight:** Compared to virtual machines, containers have a much smaller footprint, making them more efficient in terms of resource utilization.
 * **Scalability:** Containers can be easily scaled up or down to meet changing application demands.
 
-In the real world it is hard to manage containers manually. Various [[Containers orchestration|orchestration services]] like [[AWS Elastic Container Service|Amazon ECS]] or [[05 - Common IT knowledge/Containers and virtualization/Kubernetes|K8S]] are designed to help with hundreds of containers running simultaneously, spin up and shut down additional instances on demand, and even enable [[Service discovery|service discovery]].
+In the real world it is hard to manage containers manually. Various [[Containers orchestration|orchestration services]] like [[AWS Elastic Container Service|Amazon ECS]] or [[Kubernetes|K8S]] are designed to help with hundreds of containers running simultaneously, spin up and shut down additional instances on demand, and even enable [[Service discovery|service discovery]].
 
 ### Use cases for containers:
 

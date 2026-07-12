@@ -1,0 +1,1 @@
+The cluster's DNS service has a static IP address that is hard-coded into every Pod on the cluster. This ensures every container and Pod can locate it and use it for discovery. Service registration is also automatic. Cluster's DNS is based on the open-source CoreDNS.

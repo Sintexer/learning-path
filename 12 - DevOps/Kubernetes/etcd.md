@@ -1,0 +1,5 @@
+**etcd** is a distributed, reliable key-value store used to hold the critical configuration data and state for distributed systems, most notably [[Kubernetes]].
+
+At its core, etcd acts as the "source of truth" for a cluster. It uses the Raft consensus algorithm to ensure that data remains consistent and available across multiple nodes, even if some nodes fail. Because it is designed to be highly available and fault-tolerant, it is the ideal place to store configuration details, service discovery information, and the current state of a distributed system.
+
+In the context of Kubernetes, etcd is the backbone of the control plane. Every time you deploy a pod, update a configuration, or scale a service, that information is written to etcd. [[K8S Control Plane#API Server]] interacts with etcd to track the cluster's state, ensuring that the actual state of your infrastructure always matches the desired state defined by your manifests.

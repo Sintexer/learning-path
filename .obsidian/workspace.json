@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01 - AWS/AWS IAM/AWS Single Sign-On.md",
+                "file": "12 - DevOps/Kubernetes/Pod.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AWS Single Sign-On"
+              "title": "Pod"
             }
           },
           {
@@ -167,7 +167,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12 - DevOps/Container Runtime Interface.md",
+                "file": "12 - DevOps/Kubernetes/Container Runtime Interface.md",
                 "mode": "source",
                 "source": false
               },
@@ -181,16 +181,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12 - DevOps/Kubernetes.md",
+                "file": "12 - DevOps/Kubernetes/K8S Control Plane.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kubernetes"
+              "title": "K8S Control Plane"
             }
           }
         ],
-        "currentTab": 12
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -222,7 +222,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Kubernetes",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -264,7 +264,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "12 - DevOps/Kubernetes.md",
+                "file": "12 - DevOps/Kubernetes/Pod.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -274,7 +274,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Kubernetes"
+              "title": "Backlinks for Pod"
             }
           },
           {
@@ -283,12 +283,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "12 - DevOps/Kubernetes.md",
+                "file": "12 - DevOps/Kubernetes/Pod.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Kubernetes"
+              "title": "Outgoing links from Pod"
             }
           },
           {
@@ -363,7 +363,8 @@
               "title": "Source Control"
             }
           }
-        ]
+        ],
+        "currentTab": 5
       },
       {
         "id": "4a28ccf585ff50ef",
@@ -399,19 +400,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6805f34f8e60ff58",
+  "active": "f6c372ba0cf8931e",
   "lastOpenFiles": [
-    "12 - DevOps/containerd.md",
-    "12 - DevOps/Kubernetes.md",
+    "12 - DevOps/Kubernetes/Pod Desired State.md",
+    "12 - DevOps/Kubernetes/Pod.md",
+    "12 - DevOps/Kubernetes/Kubernetes.md",
+    "12 - DevOps/Kubernetes/K8S DNS.md",
+    "12 - DevOps/Kubernetes/K8S Worker nodes.md",
+    "12 - DevOps/Kubernetes/containerd.md",
+    "12 - DevOps/Kubernetes/K8S Control Plane.md",
+    "12 - DevOps/Kubernetes/etcd.md",
+    "01 - AWS/AWS IAM/AWS Single Sign-On.md",
+    "11 - Japanese/Minnanonihongo/Repeat.md",
+    "12 - DevOps/Kubernetes/Container Runtime Interface.md",
+    "12 - DevOps/Difference between VMs and containers.md",
     "12 - DevOps/Hypervisor.md",
-    "12 - DevOps/Container Runtime Interface.md",
     "12 - DevOps/Open Container Initiative.md",
     "12 - DevOps/Virtual machine.md",
+    "12 - DevOps/Attachments",
+    "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "12 - DevOps/Containers orchestration.md",
-    "12 - DevOps/Difference between VMs and containers.md",
-    "12 - DevOps/Difference between VMs and containers visual.png",
-    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Kubernetes Service.md",
     "12 - DevOps/Container.md",
+    "12 - DevOps/Kubernetes",
+    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Kubernetes Service.md",
     "05 - Common IT knowledge/Containers and virtualization/Kubernetes.md",
     "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Fargate.md",
@@ -422,23 +433,13 @@
     "12 - DevOps",
     "Untitled.canvas",
     "05 - Common IT knowledge/Multithreading/Single Writer Principle.md",
-    "05 - Common IT knowledge/Multithreading/Compare-And-Swap.md",
-    "05 - Common IT knowledge/Multithreading/Optimistic Concurrency Control.md",
-    "05 - Common IT knowledge/Multithreading/Mutual Exclusion.md",
-    "05 - Common IT knowledge/Multithreading/Critical Section.md",
-    "05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md",
-    "05 - Common IT knowledge/Multithreading/Little's Law.md",
-    "02 - Java/concurrency.md",
     "05 - Common IT knowledge/Multithreading",
-    "02 - Java/JPA/Hibernate/Hibernate.md",
     "03 - Backend/Database",
     "02 - Java/JPA/Hibernate",
     "02 - Java/JPA",
     "11 - Japanese/Kanji",
     "11 - Japanese/Minnanonihongo/Lesson 7",
     "11 - Japanese/Minnanonihongo/Lesson 6",
-    "11 - Japanese/Minnanonihongo",
-    "11 - Japanese",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
