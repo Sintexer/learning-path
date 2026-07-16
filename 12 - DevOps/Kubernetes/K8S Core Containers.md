@@ -1,0 +1,6 @@
+These four images are the absolute bare minimum required to make a Kubernetes cluster function. Here is the "anatomy" of a K3s cluster:
+
+- **`coredns` (The Phonebook):** In Kubernetes, IP addresses change constantly as Pods die and restart. CoreDNS ensures that if Pod A wants to talk to Pod B, it can just use the name `pod-b`, and CoreDNS will instantly translate that to the correct, current IP address.
+- **`local-path-provisioner` (The Hard Drive Manager):** If you deploy a database (like PostgreSQL) and it asks Kubernetes for 5GB of permanent storage, this little program intercepts that request and creates a folder on your Colima VM's hard drive to store that data.
+- **`metrics-server` (The Heart Rate Monitor):** This constantly checks how much CPU and RAM your pods are using. Because this is running, you can type `kubectl top nodes` or `kubectl top pods` in your terminal to see live resource usage.
+- **`pause` (The Unsung Hero of Kubernetes):** This is the most interesting one. In Kubernetes, you don't deploy "Containers", you deploy "Pods" (which can hold multiple containers). The `pause` container is a tiny, invisible container that starts first. Its _only_ job is to grab an IP address and hold the network open so your actual application containers can share it.

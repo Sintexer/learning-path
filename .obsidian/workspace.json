@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12 - DevOps/Kubernetes/K8S Deployment.md",
+                "file": "12 - DevOps/Kubernetes/K8S Label.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "K8S Deployment"
+              "title": "K8S Label"
             }
           }
         ]
@@ -233,17 +233,21 @@
   },
   "active": "dd784abe028c1833",
   "lastOpenFiles": [
-    "12 - DevOps/Kubernetes/K8S ReplicaSet.md",
+    "12 - DevOps/Kubernetes/kubectl.md",
+    "12 - DevOps/Kubernetes/K8S Label.md",
+    "12 - DevOps/Kubernetes/K8S Core Containers.md",
+    "12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md",
+    "12 - DevOps/Kubernetes/K8S Version Skew.md",
+    "12 - DevOps/Kubernetes/Kubernetes.md",
     "12 - DevOps/Kubernetes/K8S Deployment.md",
+    "12 - DevOps/Kubernetes/K8S ReplicaSet.md",
     "12 - DevOps/Kubernetes/K8S Namespace.md",
     "12 - DevOps/Kubernetes/Pod.md",
     "12 - DevOps/Kubernetes/Multi-container Pods.md",
-    "12 - DevOps/Kubernetes/kubectl.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
     "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
     "12 - DevOps/Kubernetes/K8S Service.md",
     "12 - DevOps/Kubernetes/Pod Desired State.md",
-    "12 - DevOps/Kubernetes/Kubernetes.md",
     "12 - DevOps/Kubernetes/K8S DNS.md",
     "12 - DevOps/Kubernetes/K8S Worker nodes.md",
     "12 - DevOps/Kubernetes/containerd.md",
@@ -255,13 +259,9 @@
     "12 - DevOps/Difference between VMs and containers.md",
     "12 - DevOps/Hypervisor.md",
     "12 - DevOps/Open Container Initiative.md",
-    "12 - DevOps/Virtual machine.md",
     "12 - DevOps/Attachments",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
-    "12 - DevOps/Containers orchestration.md",
-    "12 - DevOps/Container.md",
     "12 - DevOps/Kubernetes",
-    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Kubernetes Service.md",
     "12 - DevOps",
     "Untitled.canvas",
     "05 - Common IT knowledge/Multithreading",

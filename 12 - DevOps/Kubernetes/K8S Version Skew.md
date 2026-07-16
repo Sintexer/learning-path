@@ -1,0 +1,1 @@
+Is it a problem? **No.** Kubernetes has a strict rule: Your `kubectl` client is allowed to be exactly **one minor version newer or older** than the server (e.g., a 1.36 client can talk to a 1.35, 1.36, or 1.37 server).

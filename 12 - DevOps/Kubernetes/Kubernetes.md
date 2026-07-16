@@ -20,7 +20,7 @@ Docker Swarm and Mesosphere DCOS are former K8S competitors, while swarm is stil
 
 Kubernetes abstracts the cloud and hence the way we distribute resources between containers. It is like modern programming languages abstract developers from the memory addresses and cpu cores. 
 
----
+Kubernetes isn't just one magic program; it is actually a collection of system containers running in the background.
 
 ## Kubernetes as a cluster
 
