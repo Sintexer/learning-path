@@ -1,0 +1,3 @@
+Behind-the-scenes, [[K8S Deployment|Deployments]] rely heavily on another object called a ReplicaSet. While it’s usually recommended not to manage ReplicaSets directly (let the Deployment controller manage them), it’s important to understand the role they play. At a high-level, containers are a great way to package applications and dependencies. [[Pod|Pods]] allow containers to run on Kubernetes and enable co-scheduling and a bunch of other good stuff. ReplicaSets manage Pods and bring self-healing and scaling. Deployments manage ReplicaSets and add rollouts and rollbacks.
+
+Think of Deployments as managing ReplicaSets, and ReplicaSets as managing Pods. Put them together, and you’ve got a great way to deploy and manage stateless applications on Kubernetes.

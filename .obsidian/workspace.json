@@ -4,193 +4,24 @@
     "type": "split",
     "children": [
       {
-        "id": "608a4fed0346f9d4",
+        "id": "9c5801f827f5e764",
         "type": "tabs",
         "children": [
           {
-            "id": "2dd732d0f564c0a1",
+            "id": "dd784abe028c1833",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "11 - Japanese/Minnanonihongo/Repeat.md",
+                "file": "12 - DevOps/Kubernetes/K8S Deployment.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Repeat"
-            }
-          },
-          {
-            "id": "4aedc64f77511867",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "12 - DevOps/Kubernetes/Pod.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Pod"
-            }
-          },
-          {
-            "id": "62029183242797f4",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "AWS API Gateway integration types"
-            }
-          },
-          {
-            "id": "24b6203d7b12b139",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "AWS API Gateway components"
-            }
-          },
-          {
-            "id": "2c546ff7c23b2622",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Common IT knowledge/Algorithms/Algorithms TODO.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Algorithms TODO"
-            }
-          },
-          {
-            "id": "e04619668546f1e0",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "01 - AWS/AWS Compute/AWS Serverless/AWS Serverless patterns.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "AWS Serverless patterns"
-            }
-          },
-          {
-            "id": "55e0df1cfb31b9da",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Common IT knowledge/Web/GraphQL.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "GraphQL"
-            }
-          },
-          {
-            "id": "73f7ca99be611c13",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "05 - Common IT knowledge/Web/gRPC.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "gRPC"
-            }
-          },
-          {
-            "id": "73da62d4bf05ef24",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "11 - Japanese/Minnanonihongo/Lesson 7/Lesson 7.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Lesson 7"
-            }
-          },
-          {
-            "id": "2600cfb2e29f6fb7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "11 - Japanese/Minnanonihongo/🎴 Lesson 7 flashcards.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "🎴 Lesson 7 flashcards"
-            }
-          },
-          {
-            "id": "7cf2d937adac8170",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "11 - Japanese/Minnanonihongo/🎴 Lesson 8 flashcards.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "🎴 Lesson 8 flashcards"
-            }
-          },
-          {
-            "id": "165b8f058174c070",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "12 - DevOps/Kubernetes/Container Runtime Interface.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "Container Runtime Interface"
-            }
-          },
-          {
-            "id": "6805f34f8e60ff58",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "12 - DevOps/Kubernetes/K8S Control Plane.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "K8S Control Plane"
+              "title": "K8S Deployment"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -264,7 +95,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "12 - DevOps/Kubernetes/Pod.md",
+                "file": "12 - DevOps/Kubernetes/K8S Service.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -274,7 +105,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for Pod"
+              "title": "Backlinks for K8S Service"
             }
           },
           {
@@ -283,12 +114,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "12 - DevOps/Kubernetes/Pod.md",
+                "file": "12 - DevOps/Kubernetes/K8S Service.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from Pod"
+              "title": "Outgoing links from K8S Service"
             }
           },
           {
@@ -400,10 +231,18 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "f6c372ba0cf8931e",
+  "active": "dd784abe028c1833",
   "lastOpenFiles": [
-    "12 - DevOps/Kubernetes/Pod Desired State.md",
+    "12 - DevOps/Kubernetes/K8S ReplicaSet.md",
+    "12 - DevOps/Kubernetes/K8S Deployment.md",
+    "12 - DevOps/Kubernetes/K8S Namespace.md",
     "12 - DevOps/Kubernetes/Pod.md",
+    "12 - DevOps/Kubernetes/Multi-container Pods.md",
+    "12 - DevOps/Kubernetes/kubectl.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
+    "12 - DevOps/Kubernetes/K8S Service.md",
+    "12 - DevOps/Kubernetes/Pod Desired State.md",
     "12 - DevOps/Kubernetes/Kubernetes.md",
     "12 - DevOps/Kubernetes/K8S DNS.md",
     "12 - DevOps/Kubernetes/K8S Worker nodes.md",
@@ -423,16 +262,8 @@
     "12 - DevOps/Container.md",
     "12 - DevOps/Kubernetes",
     "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Kubernetes Service.md",
-    "05 - Common IT knowledge/Containers and virtualization/Kubernetes.md",
-    "01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md",
-    "01 - AWS/AWS Compute/AWS Serverless/AWS Fargate.md",
-    "05 - Common IT knowledge/Cloud/Microservices App.md",
-    "05 - Common IT knowledge/Cloud/Cloud-Native App.md",
-    "11 - Japanese/Japanese Error correction.md",
-    "11 - Japanese/Japanese.md",
     "12 - DevOps",
     "Untitled.canvas",
-    "05 - Common IT knowledge/Multithreading/Single Writer Principle.md",
     "05 - Common IT knowledge/Multithreading",
     "03 - Backend/Database",
     "02 - Java/JPA/Hibernate",
