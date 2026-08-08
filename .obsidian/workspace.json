@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12 - DevOps/Kubernetes/K8S Label.md",
+                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "K8S Label"
+              "title": "Kafka Consumer"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -53,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Docker",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -233,8 +235,21 @@
   },
   "active": "dd784abe028c1833",
   "lastOpenFiles": [
-    "12 - DevOps/Kubernetes/kubectl.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Message.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md",
+    "12 - DevOps/Deployments/Zero-downtime deployment.md",
+    "03 - Backend/Event Driven/Apache Kafka",
+    "03 - Backend/Event Driven",
+    "12 - DevOps/Deployments/JVM App Deployment.md",
+    "README.md",
+    "12 - DevOps/Deployments",
+    "02 - Java/Java Memory Model.md",
+    "02 - Java/concurrency.md",
     "12 - DevOps/Kubernetes/K8S Label.md",
+    "12 - DevOps/Kubernetes/kubectl.md",
     "12 - DevOps/Kubernetes/K8S Core Containers.md",
     "12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md",
     "12 - DevOps/Kubernetes/K8S Version Skew.md",
@@ -249,16 +264,6 @@
     "12 - DevOps/Kubernetes/K8S Service.md",
     "12 - DevOps/Kubernetes/Pod Desired State.md",
     "12 - DevOps/Kubernetes/K8S DNS.md",
-    "12 - DevOps/Kubernetes/K8S Worker nodes.md",
-    "12 - DevOps/Kubernetes/containerd.md",
-    "12 - DevOps/Kubernetes/K8S Control Plane.md",
-    "12 - DevOps/Kubernetes/etcd.md",
-    "01 - AWS/AWS IAM/AWS Single Sign-On.md",
-    "11 - Japanese/Minnanonihongo/Repeat.md",
-    "12 - DevOps/Kubernetes/Container Runtime Interface.md",
-    "12 - DevOps/Difference between VMs and containers.md",
-    "12 - DevOps/Hypervisor.md",
-    "12 - DevOps/Open Container Initiative.md",
     "12 - DevOps/Attachments",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "12 - DevOps/Kubernetes",
@@ -268,9 +273,6 @@
     "03 - Backend/Database",
     "02 - Java/JPA/Hibernate",
     "02 - Java/JPA",
-    "11 - Japanese/Kanji",
-    "11 - Japanese/Minnanonihongo/Lesson 7",
-    "11 - Japanese/Minnanonihongo/Lesson 6",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
