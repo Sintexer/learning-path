@@ -13,15 +13,28 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
+                "file": "12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kafka Consumer"
+              "title": "Running Kubernetes Cluster Locally"
+            }
+          },
+          {
+            "id": "109b915ef37b99a0",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.13.6"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.13.6"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -233,10 +246,21 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "dd784abe028c1833",
+  "active": "9c4b8ec1a35f1a1d",
   "lastOpenFiles": [
-    "03 - Backend/Event Driven/Apache Kafka/Kafka.md",
+    "05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md",
+    "05 - Common IT knowledge/System Design/Learning path.md",
+    "05 - Common IT knowledge/System Design/Designing Data Intensive Applications.md",
+    "05 - Common IT knowledge/System Design",
+    "05 - Common IT knowledge/Databases/Untitled.md",
+    "05 - Common IT knowledge/Databases/SQL vs NoSQL.md",
+    "05 - Common IT knowledge/Databases/Query Languages for Data.md",
+    "05 - Common IT knowledge/Databases/MapReduce querying.md",
+    "05 - Common IT knowledge/Databases/Impedance mismatch.md",
+    "05 - Common IT knowledge/Databases/Document Database.md",
+    "12 - DevOps/Kubernetes/Kubernetes.md",
     "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka.md",
     "03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md",
     "03 - Backend/Event Driven/Apache Kafka/Kafka Message.md",
     "03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md",
@@ -253,17 +277,7 @@
     "12 - DevOps/Kubernetes/K8S Core Containers.md",
     "12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md",
     "12 - DevOps/Kubernetes/K8S Version Skew.md",
-    "12 - DevOps/Kubernetes/Kubernetes.md",
     "12 - DevOps/Kubernetes/K8S Deployment.md",
-    "12 - DevOps/Kubernetes/K8S ReplicaSet.md",
-    "12 - DevOps/Kubernetes/K8S Namespace.md",
-    "12 - DevOps/Kubernetes/Pod.md",
-    "12 - DevOps/Kubernetes/Multi-container Pods.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway components.md",
-    "01 - AWS/AWS API Gateway/AWS API Gateway integration types.md",
-    "12 - DevOps/Kubernetes/K8S Service.md",
-    "12 - DevOps/Kubernetes/Pod Desired State.md",
-    "12 - DevOps/Kubernetes/K8S DNS.md",
     "12 - DevOps/Attachments",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "12 - DevOps/Kubernetes",
@@ -272,7 +286,6 @@
     "05 - Common IT knowledge/Multithreading",
     "03 - Backend/Database",
     "02 - Java/JPA/Hibernate",
-    "02 - Java/JPA",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
