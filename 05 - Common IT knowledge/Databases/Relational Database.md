@@ -4,6 +4,10 @@ A table stores data in **rows** and **columns**. A row, often called a record, c
 
 The tables, rows, columns, and relationships between them is called a logical schema. With relational databases, a schema is fixed. After the database is operational, it becomes difficult to change the schema. Because of this, most of the data modeling is done up front before the database is active.
 
+## Query optimization 
+
+In a relational database, the query optimizer automatically decides which parts of the query to execute in which order, and which indexes to use. So the database automatically updates the access path with indexes changes, and application code is never had to be updated for this purpose 
+
 ### Relation databases benefits
 
 1. Complex [[SQL]] queries.

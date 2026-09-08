@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "12 - DevOps/Kubernetes/K8S Worker nodes.md",
+                "file": "05 - Common IT knowledge/Databases/Untitled.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "K8S Worker nodes"
+              "title": "Untitled"
             }
           }
         ]
@@ -183,6 +183,24 @@
   },
   "active": "1df4c4fa2a64329e",
   "lastOpenFiles": [
+    "05 - Common IT knowledge/System Design/Designing Data Intensive Applications.md",
+    "05 - Common IT knowledge/Databases/Query Languages for Data.md",
+    "05 - Common IT knowledge/Databases/NoSQL database.md",
+    "05 - Common IT knowledge/Databases/Graph database.md",
+    "05 - Common IT knowledge/Databases/Impedance mismatch.md",
+    "05 - Common IT knowledge/Databases/Untitled.md",
+    "05 - Common IT knowledge/Databases/MapReduce querying.md",
+    "05 - Common IT knowledge/Databases/SQL vs NoSQL.md",
+    "05 - Common IT knowledge/Databases/Document Database.md",
+    "05 - Common IT knowledge/Databases/Relational Database.md",
+    "05 - Common IT knowledge/Databases/OLTP.md",
+    "05 - Common IT knowledge/Databases/RDBMS.md",
+    "05 - Common IT knowledge/Databases/DBMS.md",
+    "05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md",
+    "05 - Common IT knowledge/System Design/Learning path.md",
+    "🗂️ hub.md",
+    "12 - DevOps/Kubernetes/K8S Worker nodes.md",
+    "05 - Common IT knowledge/System Design",
     "12 - DevOps/Kubernetes/K8S Service.md",
     "12 - DevOps/Kubernetes/K8S Deployment.md",
     "README.md",

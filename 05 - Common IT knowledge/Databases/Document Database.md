@@ -1,0 +1,5 @@
+Document Databases, or [[NoSQL database]]s stored data as collections of objects. Usually document database have no strict schema, which allows them to store different kinds of data in one collection. 
+
+However such architecture is not suitable for many-to-one and many-to-many relationships. Document databases usually store such relationships as a denormalized duplicates within the document. E.g. the city name has no id, it is just repeated across entries, causing problems with duplicates, complications of renaming a value (when city name changes due to politics), handling free-text input and mapping values to a same style (case, writing).
+
+Even if the original design of the application's data model fits well into document database, data has a tendency to change over time, and a need for joins might arise over time. If a database doesn't support joins, they will be executed on the application side. E.g. Linkedin has references To schools and workplaces, which might have their own account. If these values are links to other entities, app will automatically fetch related data and update it as it updates.
