@@ -1,3 +1,9 @@
+
+Known gaps:
+- [ ] how DB schema migration libraries work under the hood
+- [ ] passing data between services using db
+
+
 ```mermaid
 flowchart TD
     classDef step fill:#ffffff,stroke:#333333,stroke-width:1px,color:#000000;

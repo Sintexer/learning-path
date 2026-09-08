@@ -25,12 +25,14 @@
             "id": "109b915ef37b99a0",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.13.6"
+                "file": "05 - Common IT knowledge/Databases/Database Storage Engines/Database Index.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "Release Notes 1.13.6"
+              "icon": "lucide-file",
+              "title": "Database Index"
             }
           }
         ],
@@ -246,11 +248,15 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9c4b8ec1a35f1a1d",
+  "active": "109b915ef37b99a0",
   "lastOpenFiles": [
-    "05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md",
-    "05 - Common IT knowledge/System Design/Learning path.md",
+    "05 - Common IT knowledge/Databases/Database Storage Engines/Database Log.md",
+    "05 - Common IT knowledge/Databases/Database Storage Engines/Database Index.md",
+    "05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md",
     "05 - Common IT knowledge/System Design/Designing Data Intensive Applications.md",
+    "05 - Common IT knowledge/Databases/Database Storage Engines",
+    "05 - Common IT knowledge/System Design/Learning path.md",
+    "05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md",
     "05 - Common IT knowledge/System Design",
     "05 - Common IT knowledge/Databases/Untitled.md",
     "05 - Common IT knowledge/Databases/SQL vs NoSQL.md",
@@ -275,9 +281,6 @@
     "12 - DevOps/Kubernetes/K8S Label.md",
     "12 - DevOps/Kubernetes/kubectl.md",
     "12 - DevOps/Kubernetes/K8S Core Containers.md",
-    "12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md",
-    "12 - DevOps/Kubernetes/K8S Version Skew.md",
-    "12 - DevOps/Kubernetes/K8S Deployment.md",
     "12 - DevOps/Attachments",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "12 - DevOps/Kubernetes",
@@ -285,7 +288,6 @@
     "Untitled.canvas",
     "05 - Common IT knowledge/Multithreading",
     "03 - Backend/Database",
-    "02 - Java/JPA/Hibernate",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
     "01 - AWS/AWS IAM/IAM role trust policy example.png",
     "01 - AWS/AWS IAM/IAM role session policy scheme.png",
