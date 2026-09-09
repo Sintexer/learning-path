@@ -2,6 +2,43 @@ Index is an *additional* data structure that is derived from the primary data. M
 
 Any kind of index usually trades write performance (as we have to update the index any time the data is written) for read performance. That is why databases don't usually index everything by default, but require you to choose indexes manually, using your knowledge of the application typical query patterns.
 
+[[NoSQL database]]s usually use:
+- [[#Log Structured Indexes]]
+- [[#Hash Index]]
+
+[[Relational Database]]s usually use:
+- [[B-Tree]]
+
+## Log Structured Indexes
+
+Log-structured indexes use [[Database Log]] at their core to maintain the records based on the write order.
+
+- [[LSM Tree]] with [[SSTable]]
+
+## Comparing B-Trees and LSM-Trees
+
+Generally, B-Trees are faster for read, while LSM-Trees are faster for write. However numbers depend on the concrete workload and etc.
+
+A B-tree index must write every piece of data at least twice: once to the write-ahead log, and once to the tree page itself (and perhaps again as pages are split). There is also overhead from having to write an entire page at a time, even if only a few bytes in that page changed. Some storage engines even overwrite the same page twice in order to avoid ending up with a partially updated page in the event of a power failure
+
+1 Why LSM-Trees Win on Writes & Storage:
+* **High Write Throughput:** LSM-trees turn random writes into sequential writes on disk, making them significantly faster at absorbing high-volume ingestion than B-trees (which must update random pages in place).
+* **Better Compression & Less Waste:** B-trees suffer from **internal fragmentation** (half-empty disk pages created by page splits). LSM-trees don't use fixed-size pages and rewrite data cleanly during compaction, resulting in substantially smaller files on disk.
+
+2 The Cost of LSM-Trees: Compaction & Write Amplification:
+* **Write Amplification:** Because SSTables are repeatedly merged and rewritten over time, a single incoming write causes multiple physical disk writes. This eats into available disk bandwidth and accelerates SSD wear.
+* **Tail Latency Spikes ($p99$):** Background compaction competes with active read/write queries for limited disk I/O. When disk bandwidth saturates, queries must wait, causing sudden latency spikes (making B-trees far more predictable).
+* **Compaction Falling Behind:** If write volume exceeds compaction speed, unmerged SSTable files pile up. This simultaneously degrades read latency (more files to scan) and risks filling the disk completely.
+
+3 Why B-Trees Still Dominate for Transactions:
+* **Deterministic Location:** In a B-tree, a key exists in **exactly one place**. In an LSM-tree, multiple versions of a key are scattered across several SSTables.
+* **Simpler Transaction Isolation:** Because a key lives in a single known node, databases can easily attach range locks directly to the tree structure, making strong ACID transactional semantics much easier to implement.
+
+### The Bottom Line
+
+* **Use LSM-Trees** when write throughput and storage efficiency are the primary bottlenecks.
+* **Use B-Trees** when you need predictable read latency, rock-solid $p99$ response times, and strong transactional locks.
+
 ## Hash Index
 
 It is the common index for key-value data. Key-value stores are quite similar to the dictionary type that you can find in many programming languages, and which are usually implemented as a hash map. It is the simplest case for [[Database Log]] implementation.
@@ -30,19 +67,40 @@ The hash table index also has limitations:
 - The hash table must fit in memory, so if you have a very large number of keys, you’re out of luck. In principle, you could maintain a hash map on disk, but unfortunately it is difficult to make an on-disk hash map perform well. It requires a lot of random access I/O, it is expensive to grow when it becomes full, and hash collisions require fiddly logic. 
 - Range queries are not efficient. For example, you cannot easily scan over all keys between kitty00000 and kitty99999—you’d have to look up each key individually in the hash maps.
 
-## SSTables and LSM-Tress
+## Other indexing structures
 
-If we take format of the [[#Hash Index]] example and change it to store pairs not by the order or write, but sorting by key, we will implement the Sorted String Table, or SSTable for short. It also requires that each key only appears once within each merged segment file (compaction ensures that). SSTables have several big advantages over log segments with hash index:
-1. Merging segments is simple and efficient, even if the files are bigger than the available memory. The approach is like the one used in the mergesort algorithm: you start reading the input files side by side, look at the first key in each file, copy the lowest key (according to the sort order) to the output file, and repeat. This produces a new merged segment file, also sorted by key.
-2. In order to find a particular key in the file, you no longer need to keep an index of all the keys in memory. For example: say you’re looking for the key *handiwork*, but you don’t know the exact offset of that key in the segment file. However, you do know the offsets for the keys *handbag* and *handsome*, and because of the sorting you know that *handiwork* must appear between those two. This means you can jump to the offset for *handbag* and scan from there until you find *handiwork* (or not, if the key is not present in the file). You still need an in-memory index to tell you the offsets for some of the keys, but it can be sparse: one key for every few kilobytes of segment file is sufficient, because a few kilobytes can be scanned very quickly
-3. Since read requests need to scan over several key-value pairs in the requested range anyway, it is possible to group those records into a block and compress it before writing it to disk. Each entry of the sparse in-memory index then points at the start of a compressed block. Besides saving disk space, compression also reduces the I/O bandwidth use.
+### Secondary Indexes
 
-To maintain the order of writes we can use in-memory data structure such as red-black trees or AVL trees. With these data structures you can insert keys in any order and read them in sorted order.
+Indexes listed below are like a *primary key* index in the relational model. It is also very common to have secondary indexes to boost the joins performance.
 
-The workflow is follows:
-1. When a write comes in, it is added to in-memory data structure (it is usually called a *memtable*)
-2. When the memtable gets bigger then some threshold, write it out to disk as an SSTable file.The new SSTable file becomes the most recent segment of the database. While the SSTable is being written out to disk, writes can continue to a new memtable instance.
-3. In orde to serve a read request, first try to find the key in the memtable, then in the most recent on-disk segment, then in the next-older segment, etc.
-4. From time to time, run a merging and compaction process in the background to combine segment files and to discard overwritten or deleted values.
+A secondary index can easily be constructed from a key-value index. The main difference is that keys are not unique; i.e., there might be many rows (documents, vertices) with the same key. This can be solved in two ways: either by making each value in the index a list of matching row identifiers (like a postings list in a full-text index) or by making each key unique by appending a row identifier to it. Either way, both B-trees and log-structured indexes can be used as secondary indexes.
 
-This scheme works very well. It only suffers from one problem: if the database crashes, the most recent writes (which are in the memtable but not yet written out to disk) are lost. In order to avoid that problem, we can keep a separate log on disk to which every write is immediately appended. That log is not in sorted order, but that doesn’t matter, because its only purpose is to restore the memtable after a crash. Every time the memtable is written out to an SSTable, the corresponding log can be discarded.
+### Storing data within an index
+
+When an index finds a matching key, it needs to provide the associated data. Databases use three distinct strategies to store this data:
+
+#### 1. Heap Files (Non-Clustered / Reference-Based)
+* **How it works:** The actual table rows live in an unordered storage pool called a **heap file**. The index stores only the key and a **pointer (memory/disk address)** to that heap file.
+* **Benefit:** **Zero duplication.** If you have 5 different secondary indexes, they all point to the same single row in the heap. 
+* **Drawbacks:**
+  * **The "Extra Hop":** Reads are slower because the database must first read the index, then make a second I/O hop to fetch the row from the heap.
+  * **Update penalties:** If an updated row grows larger than its original space, it must move to a new spot in the heap, requiring either updating *all* other secondary indexes or leaving behind a slower forwarding pointer.
+
+#### 2. Clustered Indexes (Data Stored Directly in the Index)
+* **How it works:** The actual row data is stored **directly inside the leaf nodes** of the primary index itself (e.g., MySQL InnoDB primary keys).
+* **Benefit:** **Blazing fast reads** for primary key lookups—eliminates the "extra hop" entirely.
+* **Drawback:** Secondary indexes must now point to the primary key (rather than a raw disk offset), requiring a two-stage traversal for secondary lookups.
+
+#### 3. Covering Indexes (The Hybrid Compromise)
+* **How it works:** A secondary index that stores the indexed key **plus a few extra frequently requested columns** (an "index with included columns").
+* **Benefit:** Allows the database to fulfill specific queries entirely within the index itself, avoiding any trip to the main table or heap file (known as an **index-only scan**).
+
+### Multi-column and Multi-dimensional indexes
+
+Standard single-key indexes fall short when queries need to filter on multiple attributes simultaneously. The most common solution is a **concatenated index**, which joins multiple columns into a single ordered key (like `(lastname, firstname)` in a phone book). While efficient for queries matching the full key or just the leading column, it cannot help when searching solely for subsequent columns (such as looking up people by `firstname` alone). 
+
+For true multi-dimensional range searches — such as bounding-box geospatial queries on `(latitude, longitude)` or filtering weather data by `(date, temperature)`— concatenated B-trees and LSM-trees are ineffective because they can only order data along one dimension at a time, forcing the engine to scan a wide range along the first axis and manually filter the rest. To narrow down across multiple dimensions at once, databases must either project multiple coordinates into a single dimension using space-filling curves or rely on specialized tree structures like **R-trees** (commonly used in [[PostGIS]]). This approach applies not only to geographic maps, but to any domain requiring simultaneous range filtering over continuous properties, such as searching e-commerce inventories by color ranges `(red, green, blue)` or querying multi-variable sensor logs.
+
+### Fuzzy Querying and Full-Text Search
+
+Traditional database indexes rely on exact matches or sorted range comparisons, making them incapable of handling typos, synonyms, or grammatical variations. To support this kind of fuzzy querying, full-text search engines like [[Apache Lucene]] use linguistic analysis and edit-distance algorithms (which measure character insertions, deletions, or substitutions) to find approximate matches. Under the hood, Lucene organizes its vocabulary in an SSTable-like term dictionary on disk, but instead of using a simple sparse key index like LevelDB, it uses an in-memory finite state automaton structured similarly to a [[Trie]]. This structure can be evaluated as a Levenshtein automaton, allowing the database to efficiently navigate character transitions and locate all terms within a specified edit distance without having to scan through every word in the dictionary. More advanced approaches to non-exact searching extend beyond character mechanics into document classification and machine learning.

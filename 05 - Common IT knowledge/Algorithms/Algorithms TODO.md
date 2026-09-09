@@ -9,6 +9,7 @@
 - [ ] Product of array except self
 - [ ] Valid sudoku
 - [ ] Longest consecutive sequence
+- [ ] [[Run-length encoding]]
 
 ## Repeat
 

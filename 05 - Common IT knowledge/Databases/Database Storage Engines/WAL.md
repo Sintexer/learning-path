@@ -1,0 +1,1 @@
+Write Ahead Log. Also known as *redo log*. This is an append-only file to which every B-tree. modification must be written before it can be applied to the pages of the tree itself. When the database comes up after a crash, this log is used to restore the B-tree back to a consistent state.
