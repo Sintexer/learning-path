@@ -1,0 +1,1 @@
+In a contrast to [[Backward Compatibility]], means older code can read and modify data written by newer code.

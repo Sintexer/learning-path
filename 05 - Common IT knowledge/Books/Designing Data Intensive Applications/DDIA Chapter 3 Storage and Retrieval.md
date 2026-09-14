@@ -1,15 +1,3 @@
-[[Reliability, Scalability, Maintainability]]
-## Chapter 2: Data models
-
-- [[Relational Database]]
-- [[Document Database]]
-- [[SQL vs NoSQL]]
-- [[Query Languages for Data]]
-- [[MapReduce querying]]
-- [[Graph database]]
-
-## Chapter 3: Storage and Retrieval
-
 
 Databases handle data storage and retrieval using two main approaches optimized for different workloads: **OLTP** (transaction processing) and **OLAP** (analytics).
 
