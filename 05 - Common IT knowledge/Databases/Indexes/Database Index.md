@@ -1,5 +1,16 @@
 Index is an *additional* data structure that is derived from the primary data. Many databases allow you to add and remove indexes, and this doesn't affect the contents of the database; it only affects the performance of queries. Maintaining additional structures incurs overhead, especially on writes. 
 
+There are different kinds of index implementation:
+- [[B-Tree Index]]
+- [[Hash Index]]
+- [[GIN Index]]
+- [[GiST Index]]
+- [[BRIN Index]]
+- [[Bitmap Index]]
+
+> [!info]
+> An index is fundamentally an auxiliary data structure designed to minimize disk/buffer-pool I/O. Without an index, the engine must perform a **Sequential Scan (Full Table Scan)**, reading every single disk page allocated to the table.
+
 Any kind of index usually trades write performance (as we have to update the index any time the data is written) for read performance. That is why databases don't usually index everything by default, but require you to choose indexes manually, using your knowledge of the application typical query patterns.
 
 [[NoSQL database]]s usually use:
@@ -7,7 +18,93 @@ Any kind of index usually trades write performance (as we have to update the ind
 - [[#Hash Index]]
 
 [[Relational Database]]s usually use:
-- [[B-Tree]]
+- [[B-Tree Index]]
+
+## Why indexes matter: use-cases
+
+Normally, when you run:
+
+```sql
+SELECT * FROM users ORDER BY age;
+```
+
+If there is **no index** on `age`, the database must:
+
+1. Fetch all rows from disk into memory (`work_mem`).
+2. Run a sorting algorithm (like QuickSort or external MergeSort on disk if it exceeds RAM).
+3. Emit the sorted rows.  In an `EXPLAIN ANALYZE` execution plan, this shows up as an expensive node called **`Sort`**.
+
+A B-Tree leaf node is **already physically sorted** on disk, and leaf pages are tied together via a **doubly linked list**.
+
+## Partial Index (Filtered Index)
+
+An index built on **only a subset of rows** in a table, filtered by a `WHERE` condition — instead of indexing the entire table.
+
+```sql
+CREATE INDEX idx_active_users ON users (email)
+WHERE status = 'active';
+```
+
+**Why use it:**
+
+- Much smaller index → faster to scan, cheaper to maintain, less disk space.
+- Great when queries almost always filter on a specific condition (e.g., only "active" rows, or `deleted_at IS NULL`), and the excluded rows are large in number but rarely queried.
+
+The query's `WHERE` clause must match (or logically imply) the index's condition for the planner to use it.
+
+```sql
+SELECT email FROM users WHERE status = 'active' AND email = 'x@y.com';
+-- ✅ can use idx_active_users
+
+SELECT email FROM users WHERE status = 'inactive';
+-- ❌ can't use it, condition doesn't match
+```
+
+**Common use cases:** soft-delete flags, boolean status columns, excluding NULLs, uniqueness constraints on a subset (e.g., "only one active session per user").
+
+### Covering Index
+
+An index that **includes all the columns a query needs**, so the database can answer the query **entirely from the index** without touching the actual table (a.k.a. an **index-only scan**).
+
+```sql
+CREATE INDEX idx_covering ON orders (customer_id) INCLUDE (order_date, total);
+```
+
+or, without `INCLUDE`, by putting extra columns directly in the index key:
+
+```sql
+CREATE INDEX idx_covering ON orders (customer_id, order_date, total);
+```
+
+**Why use it:**
+
+- Avoids the extra "heap fetch" (jumping from the index entry to the actual table row) — a huge performance win for read-heavy queries.
+- Best for queries like:
+
+```sql
+  SELECT order_date, total FROM orders WHERE customer_id = 42;
+```
+
+Here, `customer_id` is used for filtering, and `order_date`/`total` are just being read — an index-only scan satisfies it fully.
+
+**`INCLUDE` vs. composite key columns:**
+
+- Columns in the actual index **key** (before `INCLUDE`) are sorted and can be used for filtering/sorting.
+- Columns in `INCLUDE` are just carried along as payload — not sorted, not usable for filtering, only for returning data — which keeps the index smaller/cheaper to maintain than making them full key columns.
+
+**Trade-off:** covering indexes are larger (more data duplicated in the index) and slightly slower to update, in exchange for much faster reads.
+
+### Combining Partial and Covering Indexes
+
+The two are complementary and often used together:
+
+```sql
+CREATE INDEX idx_active_orders ON orders (customer_id) 
+INCLUDE (order_date, total)
+WHERE status = 'active';
+```
+
+This index is small (only active orders), and index-only (no heap fetch needed) — ideal for a hot, frequently-run query on a narrow slice of data.
 
 ## Log Structured Indexes
 
@@ -41,31 +138,6 @@ A B-tree index must write every piece of data at least twice: once to the write-
 
 ## Hash Index
 
-It is the common index for key-value data. Key-value stores are quite similar to the dictionary type that you can find in many programming languages, and which are usually implemented as a hash map. It is the simplest case for [[Database Log]] implementation.
-
-### Compaction and merging
-
-But how not to run out of space? One approach is to split the data store into segments of a certain size. Then we can do compaction and merging to save up disk space. 
-- *Compaction* - for each segment leave only latest version of a specific key value.
-- Merging - Merge segments, for duplicated key leave values from later segments (each subsequent segment is newer).
-
-Segments are never modified after they have been written, so merged segment is written to a new file. This process can be done in the background thread.
-
-Each segment now has its own in-memory hash table, mapping keys to file offsets. In
-order to find the value for a key, we first check the most recent segment’s hash map;
-if the key is not present we check the second-most-recent segment, and so on. The
-merging process keeps the number of segments small, so lookups don’t need to check
-many hash maps.
-
-Several considerations:
-- **Concurrency control** - As writes are appended to the log in a strictly sequential order, a common implementation choice is to have only one writer thread. Data file segments are append-only and otherwise immutable, so they can be read concurrently by multiple threads.
-- **Partially written records** - The database may crash at any time, including halfway through appending a record to the log. Bitcask files include checksums, allowing such corrupted parts of the log to be detected and ignored.
-- **Crash recovery** - If the database is restarted, the in-memory hash maps are lost. In principle, you can restore each segment’s hash map by reading the entire segment file from beginning to end and noting the offset of the most recent value for every key as you go along. However, that might take a long time if the segment files are large, which would make server restarts painful.
-- **Deleting records** - If you want to delete a key and its associated value, you have to append a special deletion record to the data file (sometimes called a tombstone). When log segments are merged, the tombstone tells the merging process to discard any previous values for the deleted key.
-
-The hash table index also has limitations: 
-- The hash table must fit in memory, so if you have a very large number of keys, you’re out of luck. In principle, you could maintain a hash map on disk, but unfortunately it is difficult to make an on-disk hash map perform well. It requires a lot of random access I/O, it is expensive to grow when it becomes full, and hash collisions require fiddly logic. 
-- Range queries are not efficient. For example, you cannot easily scan over all keys between kitty00000 and kitty99999—you’d have to look up each key individually in the hash maps.
 
 ## Other indexing structures
 

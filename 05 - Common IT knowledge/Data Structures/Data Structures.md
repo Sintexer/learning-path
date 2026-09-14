@@ -2,4 +2,4 @@
 - [[Red-Black Tree]]
 - [[SSTable]]
 - [[LSM Tree]]
-- [[B-Tree]]
+- [[B-Tree Index]]

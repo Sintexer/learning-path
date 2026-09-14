@@ -4,24 +4,67 @@
     "type": "split",
     "children": [
       {
-        "id": "9c5801f827f5e764",
+        "id": "9c975a0e38d6aa78",
         "type": "tabs",
         "children": [
           {
-            "id": "109b915ef37b99a0",
+            "id": "19806831601a2746",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Data Formats/Data Encoding.md",
+                "file": "05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Data Encoding"
+              "title": "Optimistic Locking"
+            }
+          },
+          {
+            "id": "9dd952b4270478d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Databases/Transactions/OLAP.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "OLAP"
+            }
+          },
+          {
+            "id": "8eec5e127d42db7c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "B-Tree Index"
+            }
+          },
+          {
+            "id": "54b68f60c2e3d521",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "B-Tree Index"
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "vertical"
@@ -55,7 +98,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Docker",
+                "query": "locking",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -97,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "12 - DevOps/Kubernetes/K8S Service.md",
+                "file": "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -107,7 +150,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for K8S Service"
+              "title": "Backlinks"
             }
           },
           {
@@ -116,12 +159,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "12 - DevOps/Kubernetes/K8S Service.md",
+                "file": "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from K8S Service"
+              "title": "Outgoing links"
             }
           },
           {
@@ -233,44 +276,43 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "109b915ef37b99a0",
+  "active": "9c4b8ec1a35f1a1d",
   "lastOpenFiles": [
-    "05 - Common IT knowledge/Data Formats/Protocol Buffers.md",
-    "05 - Common IT knowledge/Data Formats/Backward Compatibility.md",
-    "05 - Common IT knowledge/Data Formats/Data Encoding.md",
-    "05 - Common IT knowledge/Data Formats/Apache Thrift.md",
-    "05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 4 Encoding and Evolution.md",
-    "05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 3 Storage and Retrieval.md",
-    "12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md",
-    "05 - Common IT knowledge/Data Formats/Forward Compatibility.md",
-    "05 - Common IT knowledge/Data Formats",
-    "05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md",
-    "05 - Common IT knowledge/Books/Designing Data Intensive Applications/Designing Data Intensive Applications.md",
-    "05 - Common IT knowledge/Books/Designing Data Intensive Applications",
-    "05 - Common IT knowledge/Databases/Data Warehouse.md",
-    "05 - Common IT knowledge/Books",
-    "05 - Common IT knowledge/System Design/Designing Data-Intensive Applications chapter-to-topic map.md",
-    "03 - Backend/Serialization and Schemas",
-    "05 - Common IT knowledge/Databases/Column-Oriented Storage.md",
-    "05 - Common IT knowledge/Algorithms/Binary search.md",
-    "05 - Common IT knowledge/Algorithms/Algorithms TODO.md",
-    "05 - Common IT knowledge/Algorithms/Untitled.md",
-    "05 - Common IT knowledge/Databases/OLAP.md",
-    "05 - Common IT knowledge/Databases/Database Storage Engines/Database Index Practical Usage.md",
-    "05 - Common IT knowledge/Databases/OLTP and OLAP.md",
-    "05 - Common IT knowledge/Databases/Star Schema vs Snowflake Schema.md",
-    "05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md",
+    "05 - Common IT knowledge/Databases/Indexes/Bitmap Index.md",
+    "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
+    "05 - Common IT knowledge/Databases/Indexes/Database Index.md",
+    "05 - Common IT knowledge/Databases/Indexes",
+    "05 - Common IT knowledge/Databases/Indexes/BRIN Index.md",
+    "05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md",
+    "05 - Common IT knowledge/Databases/Query Languages for Data.md",
+    "05 - Common IT knowledge/Databases/Untitled.md",
+    "05 - Common IT knowledge/Databases/Untitled 1.md",
+    "05 - Common IT knowledge/Databases/Transactions/Transaction.md",
+    "05 - Common IT knowledge/Databases/Transactions/MVCC.md",
     "05 - Common IT knowledge/Databases/ETL.md",
-    "05 - Common IT knowledge/Databases/OLTP.md",
-    "05 - Common IT knowledge/Databases/Transaction.md",
-    "05 - Common IT knowledge/Databases/In-Memory Database.md",
-    "05 - Common IT knowledge/Databases/Database Storage Engines/Database Index.md",
+    "05 - Common IT knowledge/Databases/Transactions/OLAP.md",
+    "05 - Common IT knowledge/Databases/Transactions/OLTP.md",
+    "05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md",
+    "05 - Common IT knowledge/Databases/Transactions",
+    "05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md",
+    "05 - Common IT knowledge/Databases/Locks",
+    "05 - Common IT knowledge/Databases/Locks/Database Lock.md",
+    "05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md",
+    "05 - Common IT knowledge/Databases/DB Glossary.md",
+    "05 - Common IT knowledge/Databases/Indexes/GIN Index.md",
+    "05 - Common IT knowledge/Databases/Database Storage Engines/Posting Tree.md",
+    "05 - Common IT knowledge/Databases/Indexes/GiST Index.md",
+    "05 - Common IT knowledge/System Design/Designing Data-Intensive Applications chapter-to-topic map.md",
+    "05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md",
+    "05 - Common IT knowledge/Data Structures/Bitmap.md",
+    "05 - Common IT knowledge/Databases/Vendors",
+    "05 - Common IT knowledge/Databases/Indexes/Hash Index.md",
+    "05 - Common IT knowledge/Data Formats",
+    "05 - Common IT knowledge/Books/Designing Data Intensive Applications",
+    "05 - Common IT knowledge/Books",
+    "03 - Backend/Serialization and Schemas",
     "05 - Common IT knowledge/Data Structures",
     "05 - Common IT knowledge/Databases/Database Storage Engines",
-    "05 - Common IT knowledge/System Design",
-    "03 - Backend/Event Driven/Apache Kafka",
-    "03 - Backend/Event Driven",
-    "12 - DevOps/Deployments",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "Untitled.canvas",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",

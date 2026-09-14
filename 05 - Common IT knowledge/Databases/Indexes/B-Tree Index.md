@@ -18,6 +18,11 @@ If you used a standard binary search tree ([[Binary Search Tree]] or [[AVL Tree]
 
 **B-Trees solve this by maximizing "branching factor."** By packing many keys into a single disk page, a single disk read gives the database a huge chunk of routing information, drastically reducing the number of disk accesses required to find data.
 
+> [!example] Classic Trap
+> **Question:** _"Why don't we use a Red-Black Tree or standard Binary Search Tree in databases?"_
+> 
+> **The Answer:** **Disk Page Architecture.** In memory, pointer jumping is cheap. On disk, every pointer dereference can be a random I/O read. A binary tree for 10 million rows has a depth of ≈24. That’s 24 page reads. A B-Tree with a fan-out of 100 has a depth of 3–4. Fewer page fetches = orders of magnitude faster.
+
 ## B-Tree anatomy
 
 A B-Tree consists of:
@@ -74,3 +79,68 @@ have been developed over the years. To mention just a few:
 - Instead of overwriting pages and maintaining a WAL for crash recovery, some databases (like LMDB) use a copy-on-write scheme. A modified page is written to a different location, and a new version of the parent pages in the tree is created, pointing at the new location. This approach is also useful for concurrency control.
 - Store pointers to sibling nodes
 - We can save space in pages by not storing the entire key, but abbreviating it. Especially in pages on the interior of the tree, keys only need to provide enough information to act as boundaries between key ranges. Packing more keys into a page allows the tree to have a higher branching factor, and thus fewer levels
+
+## Composite Index
+
+When you create a multi-column index:
+
+```sql
+CREATE INDEX idx_abc ON my_table (A, B, C);
+```
+
+The database builds a separate B-Tree where the **keys inside the leaf nodes** are the combined values of `(A, B, C)`, followed by the TID:
+
+```
+---------------------------------------------------------------
+Index Leaf Node Entries (Sorted Lexicographically):
+---------------------------------------------------------------
+Key: ('CA', 10, 100)  -->  Pointer to Heap: (Page 1, Slot 4)
+Key: ('CA', 10, 200)  -->  Pointer to Heap: (Page 9, Slot 1)
+Key: ('CA', 20, 50)   -->  Pointer to Heap: (Page 3, Slot 8)
+Key: ('NY', 10, 100)  -->  Pointer to Heap: (Page 2, Slot 2)
+Key: ('TX', 15, 300)  -->  Pointer to Heap: (Page 5, Slot 6)
+```
+
+> [!info] TID
+> **TID (Tuple Identifier)** or **RowID**:   `TID=(Page Number,Offset within that page)`
+
+### Column order
+
+How do you decide the order of columns in a composite B-tree index?
+
+In a composite index, putting the column with **higher [[DB Glossary#Cardinality|cardinality]] and higher [[DB Glossary#Selectivity|filter power]] first** narrows down the search space faster in many lookup patterns. 
+
+However, that is secondary to Factor 2: The Leftmost Prefix Rule (The Access Patterns). Ask yourself: **What queries will the application actually run?**
+
+
+
+Scenario A: Your app constantly queries: `WHERE surname = 'Smith'`. (e.g., searching for people by family name). If you build (name, surname), the engine cannot use this index for this query! If you build (surname, name), the engine can use it.
+
+Scenario B: Your app constantly queries: `WHERE surname = 'Smith' ORDER BY name;`. With (surname, name), the engine finds all "Smiths" and they are already sorted alphabetically by name. The database performs zero extra sorting work.
+
+#### Does the language/locale matter?
+
+**Yes.**  
+Databases use **Collations** (e.g., `en_US.UTF-8`, `C`, `de_DE`).  
+Collations dictate how strings are sorted (e.g., how accents like `é` or German umlauts `ä` are compared to `a`, or whether `'McDermott'` sorts before `'Macon'`).
+
+If your index uses the default operating system collation, standard B-tree equality queries work, but wildcard queries like `LIKE 'Smi%'` might bypass the index unless:
+
+1. The collation matches the query collation.
+2. The index is explicitly built using `text_pattern_ops` (e.g., `CREATE INDEX ON users(surname text_pattern_ops)` in PostgreSQL).
+
+### The Phonebook Analogy
+
+Think of a physical phonebook. It is a multi-column index sorted by:  
+`[Last Name, First Name]`
+
+- If I ask you: _"Find everyone with Last Name = 'Smith' and First Name = 'John'"_ → Easy. You open to 'S', find 'Smith', then find 'John'.
+- If I ask you: _"Find everyone with Last Name = 'Smith'"_ → Easy. You read all 'Smiths'.
+- If I ask you: _"Find everyone whose **First Name = 'John'** (without giving you a last name)"_ → **Impossible to jump to.**
+
+Because Johns are scattered across Abbott, Baker, Davis, Smith, and Williams, the alphabetical ordering of the book is **useless**. You are forced to read every single page of the phonebook from page 1 to the end.
+
+That is why:
+
+- `WHERE A = 'CA' AND B = 10` → **Can use the index.**
+- `WHERE B = 10 AND C = 20` (Missing A) → **Cannot traverse the index.** The root and branch nodes split their paths based on A. Without A, the engine doesn't know whether to branch left or right. Database engine might optimize this using [[Index Skip Scan]].
