@@ -1,4 +1,4 @@
-> Online Analytics Processing
+> 	Online Analytics Processing
 
 Usually an analytic query needs to scan over a huge number of records, only reading a few columns per record, and calculates aggregate statistics (such as count, sum, or average) rather than returning the raw data to the user. For example, if your data is a table of sales [[Transaction|transactions]], then analytic queries
 

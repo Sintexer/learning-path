@@ -94,6 +94,8 @@ Here, `customer_id` is used for filtering, and `order_date`/`total` are just bei
 
 **Trade-off:** covering indexes are larger (more data duplicated in the index) and slightly slower to update, in exchange for much faster reads.
 
+PostgreSQL has an optimization feature called [[PostgreSQL#Visibility Map]].
+
 ### Combining Partial and Covering Indexes
 
 The two are complementary and often used together:

@@ -1,3 +1,15 @@
+
+## Visibility Map
+
+> _In Postgres, how does the engine know if a row version in an index is visible to our transaction without checking the heap `xmin`/`xmax`?_  
+
+PostgreSQL maintains a tiny bitmap called the **Visibility Map**.  
+If a bit is set for a heap page, it guarantees that **all rows on that page are visible to all active transactions** (no uncommitted or dead tuples).  
+An Index-Only Scan checks the Visibility Map:
+
+- If the bit is `1` → It skips the heap read entirely.
+- If the bit is `0` → It is forced to visit the heap to check [[MVCC]] visibility. (This is why running [[#VACUUM]] makes Index-Only Scans fast!)
+
 ## TOAST
 
 The Oversized-Attribute Storage Technique.
@@ -28,6 +40,28 @@ If you run `SELECT * FROM users;`, Postgres has to do random disk I/O to look up
 Related to [[MVCC]].
 
 A background process called **`VACUUM`** cleans up obsolete rows whose `xmax` is older than all currently running transactions.
+
+**Plain `VACUUM`:**
+- Scans pages, marks dead tuple slots as "free space" inside the 8KB page.
+- **Crucial:** It **does not return space to the OS**. It only makes space available for _future inserts_ in that same table.
+- It runs concurrently in the background (**`autovacuum`**) and **does not block reads or writes**.
+
+**`VACUUM FULL`:**
+- Rewrites the entire table to a brand new disk file, compacting everything and returning disk space to the OS.
+- **The Trap:** It acquires an **`ACCESS EXCLUSIVE` lock**. It blocks **ALL** reads and writes until it finishes. If run on a 500GB table in production, you will take down the entire system for hours! (Production alternatives: `pg_repack`).
+
+## HOT (Heap-Only Tuples) Updates
+
+Every time an update creates a new row, does it also have to insert a new entry into every single index on that table?  
+If yes, write amplification would destroy performance!
+
+PostgreSQL uses an optimization called **HOT Updates**:  
+If you update a row:
+
+1. The new row version fits inside the **exact same 8KB disk page** as the old version, **AND**
+2. **None of the indexed columns were modified**.
+
+Then, Postgres does **not** touch the indexes at all! The old tuple on that page acts as a pointer jumping directly to the new tuple. The indexes still point to the old TID, saving massive disk I/O.
 
 ## Special Types
 
