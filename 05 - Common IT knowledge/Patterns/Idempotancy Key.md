@@ -1,0 +1,3 @@
+This pattern is about **client-facing APIs** (e.g., "place a bet" REST endpoint). If a client's request times out and they retry, how does the server avoid placing the bet twice?
+
+Pattern: client generates a unique key (usually a UUID) per logical operation, attaches it to the request (e.g., header `Idempotency-Key: abc-123`). Server, on receiving a request, checks: "have I seen this key before?" — typically stored in **Redis with a TTL** (e.g., `idempotencyKey → result`, expires after 24h). If seen, return the cached result immediately without reprocessing. If not seen, process normally, then cache the result under that key.

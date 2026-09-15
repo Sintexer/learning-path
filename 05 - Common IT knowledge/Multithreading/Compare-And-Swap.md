@@ -2,7 +2,7 @@
 aliases:
   - CAS
 ---
-**CAS** stands for **Compare-And-Swap**. It is a way to update a piece of data without using "locks" (which can be slow and cause programs to freeze). It is a concrete technology that makes [[Optimistic Concurrency Control]] possible.
+**CAS** stands for **Compare-And-Swap**. It is a way to update a piece of data without using "locks" (which can be slow and cause programs to freeze). It is a concrete technology that makes [[05 - Common IT knowledge/Multithreading/Optimistic Concurrency Control]] possible.
 
 > [!tip]
 > **CAS is not a system call, and it is not implemented by the OS.** It is implemented by the **CPU hardware itself.**

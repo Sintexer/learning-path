@@ -1,0 +1,3 @@
+- [[At-most-once-delivery]]
+- [[At-least-once delivery]]
+- [[Exactly-once delivery]]
