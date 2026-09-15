@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md",
+                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Optimistic Locking"
+              "title": "Kafka Retention"
             }
           },
           {
@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Transactions/OLAP.md",
+                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "OLAP"
+              "title": "Kafka Consumer"
             }
           },
           {
@@ -55,16 +55,16 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02 - Java/Java Evolution.md",
+                "file": "05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Java Evolution"
+              "title": "Logical Query Processing Order"
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -98,7 +98,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "locking",
+                "query": "kafka",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -140,7 +140,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02 - Java/Java Evolution.md",
+                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -159,7 +159,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02 - Java/Java Evolution.md",
+                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -276,17 +276,29 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "54b68f60c2e3d521",
+  "active": "9dd952b4270478d5",
   "lastOpenFiles": [
-    "05 - Common IT knowledge/Databases/Schema Migration.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Message.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md",
+    "05 - Common IT knowledge/Databases/Transactions/OLAP.md",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md",
+    "03 - Backend/Event Driven/Apache Kafka/Pasted image 20260915111343.png",
+    "03 - Backend/Event Driven/Apache Kafka/Kafka.md",
+    "05 - Common IT knowledge/Databases/SQL/Grouping.md",
+    "05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md",
+    "05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md",
+    "05 - Common IT knowledge/Databases/Untitled.md",
+    "05 - Common IT knowledge/Databases/SQL",
     "02 - Java/Java Evolution.md",
+    "05 - Common IT knowledge/Databases/Schema Migration.md",
     "05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md",
-    "05 - Common IT knowledge/Databases/Joins/Anti-join and NOT IN trap.md",
+    "05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md",
     "05 - Common IT knowledge/Databases/Indexes/Database Index.md",
     "05 - Common IT knowledge/Databases/Joins",
     "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
-    "05 - Common IT knowledge/Databases/Transactions/OLAP.md",
-    "05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md",
     "05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md",
     "05 - Common IT knowledge/Multithreading/Anti-Patterns/Check-Then-Act.md",
     "05 - Common IT knowledge/Databases/Indexes/Clustered and Non-Clustered Index.md",
@@ -297,23 +309,12 @@
     "05 - Common IT knowledge/Databases/Indexes/BRIN Index.md",
     "05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md",
     "05 - Common IT knowledge/Databases/Query Languages for Data.md",
-    "05 - Common IT knowledge/Databases/Untitled 1.md",
-    "05 - Common IT knowledge/Databases/Transactions/Transaction.md",
-    "05 - Common IT knowledge/Databases/Transactions/MVCC.md",
-    "05 - Common IT knowledge/Databases/ETL.md",
-    "05 - Common IT knowledge/Databases/Transactions/OLTP.md",
     "05 - Common IT knowledge/Databases/Transactions",
-    "05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md",
     "05 - Common IT knowledge/Databases/Locks",
-    "05 - Common IT knowledge/Databases/Locks/Database Lock.md",
-    "05 - Common IT knowledge/Databases/Indexes/GIN Index.md",
-    "05 - Common IT knowledge/Databases/Database Storage Engines/Posting Tree.md",
-    "05 - Common IT knowledge/Databases/Indexes/GiST Index.md",
     "05 - Common IT knowledge/Databases/Vendors",
     "05 - Common IT knowledge/Data Formats",
     "05 - Common IT knowledge/Books/Designing Data Intensive Applications",
     "05 - Common IT knowledge/Books",
-    "03 - Backend/Serialization and Schemas",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "Untitled.canvas",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",
@@ -324,7 +325,6 @@
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
     "01 - AWS/AWS Services/AWS Direct Connect schema.png",
-    "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.canvas"
   ]
 }
