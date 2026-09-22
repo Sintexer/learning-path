@@ -13,7 +13,7 @@ A dedicated BFF can absorb those differences without forcing every domain servic
 
 ## Aggregation
 
-An order page might require:
+Basically, any BFF acts as an [[Aggregator]]. An order page might require:
 
 ```text
 Order details

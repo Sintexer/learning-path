@@ -2,7 +2,7 @@ Resilience and fault tolerance are critical aspects of microservices architectur
 
 **Key Concepts:**
 
-- **[[Circuit Breaker Pattern]]**: Prevents a service from repeatedly trying to execute an operation that is likely to fail, thus avoiding cascading failures.
+- **[[Circuit Breaker]]**: Prevents a service from repeatedly trying to execute an operation that is likely to fail, thus avoiding cascading failures.
 - **[[Retry Pattern|Retries]] and [[Timeout Pattern|Timeouts]]**: Implementing retries with exponential backoff and setting appropriate timeouts for service calls.
 - **[[Bulkhead Pattern|Bulkheads]]**: Isolating different parts of the system to prevent failures from spreading.
 - **[[Fallback Pattern]]**: Providing alternative responses or degraded functionality when a service fails.

@@ -53,6 +53,48 @@ You can implement CQRS in a very simple way:
 
 CQRS’s Most Important Limitation - The write succeeded, but the read model is behind. This is **[[IT Common Glossary#Eventual consistency|eventual consistency]]**, specifically a failure of immediate **read-your-writes** behavior.
 
-### The sentence to have ready if asked "does CQRS require event sourcing?"
+## Materialized Projection
 
-> "No — CQRS is just about separating write and read models, which can be done with a plain database and a simple sync job or CDC pipeline. Event Sourcing is a separate decision about _how_ you store write-side state — as a log of events rather than current state. They compose very well together, which is why they're often discussed as a pair, but you can absolutely have one without the other."
+- **Projection:** a representation derived from other data.
+- **Materialized:** calculated and stored ahead of time, rather than recalculated for every request.
+- **CQRS:** using a read model that can differ from the write model.
+
+> A materialized CQRS projection is a stored, query-friendly read model maintained from authoritative business data or events.
+
+A usual implementation: listen for [[Event Sourcing]], update aggregated table on each part of aggregate. Useful for solving problem of [[BFF]], [[Aggregator]] (solves request amplification, dependencies, slowest response time wins, cross dependencies, etc.)
+
+ **The main cost: stale data** The projection is not authoritative for accepting a new business operation.
+
+### How do we update it safely?
+
+A projection consumer needs the patterns we already covered:
+- **Idempotency:** duplicate events must not apply an effect twice.
+- **Ordering:** old events must not overwrite newer state.
+- **Local transactions:** projection changes and processing progress commit together.
+- **Reconciliation:** detect and repair missed or incorrect updates.
+
+A subtle point: an overview combining several services usually does not have one universal sequence number.
+
+You may track separate source progress:
+
+```
+last_order_sequence
+last_payment_sequence
+last_shipping_sequence
+```
+
+Sequence 12 from Order Service is not necessarily related to sequence 12 from Payment Service.
+
+### Is it a database materialized view?
+
+Not necessarily.
+
+A PostgreSQL **materialized view** is a specific database feature storing the result of a query. It is typically refreshed explicitly.
+
+A CQRS materialized projection is a broader architectural concept. It can be:
+- An ordinary PostgreSQL table.
+- An Elasticsearch index.
+- A Redis structure.
+- A database materialized view, where suitable.
+
+Most event-driven, cross-service projections are application-maintained tables or documents.
