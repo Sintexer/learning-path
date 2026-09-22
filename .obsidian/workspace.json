@@ -27,12 +27,26 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md",
+                "file": "05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kafka Producer"
+              "title": "BFF"
+            }
+          },
+          {
+            "id": "ac0466b4a0f5596e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "13 - Common/MacOS keyboard actions.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "MacOS keyboard actions"
             }
           },
           {
@@ -41,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
+                "file": "05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "B-Tree Index"
+              "title": "Retry Pattern"
             }
           },
           {
@@ -64,7 +78,7 @@
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -98,7 +112,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "kafka",
+                "query": "API gateway",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -140,7 +154,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md",
+                "file": "13 - Common/MacOS keyboard actions.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -159,7 +173,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md",
+                "file": "13 - Common/MacOS keyboard actions.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -198,7 +212,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "11 - Japanese/Minnanonihongo/Test A.md",
+                "file": "13 - Common/MacOS keyboard actions.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -226,7 +240,7 @@
                 }
               },
               "icon": "lucide-git-fork",
-              "title": "Graph of Test A"
+              "title": "Local graph"
             }
           },
           {
@@ -276,45 +290,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9dd952b4270478d5",
+  "active": "9c4b8ec1a35f1a1d",
   "lastOpenFiles": [
-    "03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md",
-    "03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md",
-    "03 - Backend/Event Driven/Apache Kafka/Kafka Message.md",
-    "03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md",
-    "03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md",
-    "05 - Common IT knowledge/Messaging/Delivery Semantics.md",
-    "05 - Common IT knowledge/Messaging/Exactly-once delivery.md",
-    "05 - Common IT knowledge/Messaging/At-least-once delivery.md",
-    "05 - Common IT knowledge/Messaging/At-most-once-delivery.md",
-    "05 - Common IT knowledge/Patterns/Version Guard.md",
-    "05 - Common IT knowledge/Patterns/Optimistic Concurrency Control.md",
+    "08 - AI/Prompts/Learning prompts ChatGPT.md",
+    "13 - Common/MacOS keyboard actions.md",
+    "13 - Common",
+    "00 - Start here.md",
+    "00 - info stack.md",
+    "06 - Architecture/Microservices/Microservices patterns.md",
+    "06 - Architecture/Microservices/Microservices Service mesh pattern.md",
+    "06 - Architecture/Microservices/Microservices Sidecar pattern.md",
+    "06 - Architecture/Microservices/Microservices To-Do.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md",
+    "05 - Common IT knowledge/IT Common Glossary.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/Reverse Proxy.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotent Consumer.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md",
+    "06 - Architecture/Microservices/Saga pattern.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway access management.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway.md",
+    "05 - Common IT knowledge/Patterns/Resilience Patterns/Bulkhead Pattern.md",
+    "05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker Pattern.md",
+    "05 - Common IT knowledge/Patterns/CQRS.md",
+    "05 - Common IT knowledge/System Design/Designing Data-Intensive Applications chapter-to-topic map.md",
     "05 - Common IT knowledge/Patterns/Idempotancy Key.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns",
+    "05 - Common IT knowledge/Patterns/Event Sourcing.md",
+    "05 - Common IT knowledge/System Design/Learning path.md",
+    "05 - Common IT knowledge/Anti-Patterns/Dual-Write.md",
+    "05 - Common IT knowledge/Patterns/Outbox Pattern.md",
+    "06 - Architecture/2PC vs Saga.md",
+    "05 - Common IT knowledge/Patterns/Resilience Patterns",
     "05 - Common IT knowledge/Patterns",
-    "03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md",
-    "05 - Common IT knowledge/Databases/Transactions/OLAP.md",
     "03 - Backend/Event Driven/Apache Kafka/Pasted image 20260915111343.png",
-    "03 - Backend/Event Driven/Apache Kafka/Kafka.md",
-    "05 - Common IT knowledge/Databases/SQL/Grouping.md",
-    "05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md",
-    "05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md",
-    "05 - Common IT knowledge/Databases/Untitled.md",
     "05 - Common IT knowledge/Databases/SQL",
-    "02 - Java/Java Evolution.md",
-    "05 - Common IT knowledge/Databases/Schema Migration.md",
-    "05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md",
-    "05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md",
-    "05 - Common IT knowledge/Databases/Indexes/Database Index.md",
     "05 - Common IT knowledge/Databases/Joins",
-    "05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md",
-    "05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md",
-    "05 - Common IT knowledge/Multithreading/Anti-Patterns",
+    "05 - Common IT knowledge/Anti-Patterns",
     "05 - Common IT knowledge/Databases/Indexes",
     "05 - Common IT knowledge/Databases/Transactions",
     "05 - Common IT knowledge/Databases/Locks",
-    "05 - Common IT knowledge/Databases/Vendors",
-    "05 - Common IT knowledge/Data Formats",
-    "05 - Common IT knowledge/Books/Designing Data Intensive Applications",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "Untitled.canvas",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",

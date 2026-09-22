@@ -1,15 +1,15 @@
-1. **API Gateway**
+1. [[API Gateway]]
 2. **Service Discovery**
-3. **Circuit Breaker**
-4. **Bulkhead**
-5. **Retry**
-6. **Timeout**
-7. **Rate Limiting**
+3. [[Circuit Breaker Pattern]]
+4. [[Bulkhead Pattern]]
+5. [[Retry Pattern]]
+6. [[Timeout Pattern]]
+7. [[Rate Limiting Pattern]]
 8. [[Microservices Service mesh pattern|Service Mesh]]
 9. [[Microservices Sidecar pattern|Sidecar Pattern]]
-10. [[Microservices Saga pattern|Saga Pattern]]
-11. **Event Sourcing**
-12. **CQRS (Command Query Responsibility Segregation)**
+10. [[Saga pattern|Saga Pattern]]
+11. [[Event Sourcing]]
+12. **[[CQRS]]**
 13. **Strangler Fig**
 14. **Database per Service**
 15. **Choreography-Based Saga**
@@ -17,11 +17,11 @@
 17. **Health Check**
 18. **Distributed Tracing**
 19. **External Configuration Store**
-20. **Blue-Green Deployment**
-21. **Canary Release**
+20. [[Zero-downtime deployment#Green-Blue deployment]]
+21. [[Zero-downtime deployment#Canary deployment]]
 22. **Shadow Testing**
 23. **Anti-Corruption Layer**
-24. **Backends for Frontends (BFF)**
+24. [[BFF]]
 25. **Aggregator**
 26. **Proxy**
 27. **Chain of Responsibility**
