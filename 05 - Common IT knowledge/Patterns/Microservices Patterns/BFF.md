@@ -72,7 +72,7 @@ Order Service:    order is CONFIRMED
 Payment Service: payment is REFUNDED
 ```
 
-Those responses may have been captured at different moments during a [[Saga pattern|Saga]]. Calling services concurrently does not create a distributed read transaction. The BFF must tolerate legitimate intermediate states.
+Those responses may have been captured at different moments during a [[Saga|Saga]]. Calling services concurrently does not create a distributed read transaction. The BFF must tolerate legitimate intermediate states.
 
 Instead of querying five services for every request, use [[CQRS]]:
 

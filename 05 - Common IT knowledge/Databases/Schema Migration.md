@@ -69,7 +69,7 @@ The fundamental principle of zero-downtime deployments is the **N−1/N Compatib
 
 > At any given point in time during a deployment, **the database schema must work seamlessly with BOTH the old application version (N−1) and the new application version (N) simultaneously.**
 
-Because modern deployments are Rolling Updates (Kubernetes, AWS ECS) or Canary Deployments, old pods and new pods run at the same time for several minutes.
+Because modern deployments are Rolling Updates (Kubernetes, AWS ECS) or [[Zero-downtime deployment#Canary deployment|Canary Deployments]], old pods and new pods run at the same time for several minutes.
 
 #### The 3 Iron Rules of Backward Compatibility:
 

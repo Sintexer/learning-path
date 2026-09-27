@@ -1,3 +1,117 @@
+## Latest Features
+
+### 1. Asynchronous I/O
+
+PostgreSQL 18 introduces an asynchronous I/O subsystem, allowing it to issue multiple read requests without waiting for each one to finish.
+
+**Why it matters**
+
+- Improves throughput for sequential scans, bitmap heap scans, and maintenance operations.
+- Reduces time spent waiting for storage.
+- Supports worker-based asynchronous I/O and, on supported Linux systems, `io_uring`.
+
+**Interview point:** Async I/O primarily improves I/O-bound workloads; it does not automatically make CPU-bound queries faster.
+### B-tree index skip scans
+
+PostgreSQL can now use a multicolumn B-tree index even when a query does not constrain its leading column.
+
+```sql
+CREATE INDEX orders_customer_date_idx
+    ON orders (customer_id, order_date);
+
+SELECT *
+FROM orders
+WHERE order_date >= DATE '2026-01-01';
+```
+
+Historically, this index was much less useful without a condition on `customer_id`. A skip scan can repeatedly probe the index for distinct leading-column values.
+
+**Best suited for:** Cases where the leading column has relatively few distinct values.
+
+**Interview point:** The optimizer chooses skip scans automatically when their estimated cost is lower than alternatives.
+
+### Native UUIDv7 support
+
+PostgreSQL 18 adds generation and inspection functions for UUID version 7.
+
+
+```sql
+SELECT uuidv7();
+
+SELECT uuid_extract_timestamp(uuid_column);
+```
+
+UUIDv7 values contain a time-ordered component.
+
+**Compared with UUIDv4:**
+
+- UUIDv4 is random.
+- UUIDv7 is roughly time-ordered.
+- UUIDv7 generally offers better B-tree insertion locality and less index fragmentation.
+- It remains globally unique and suitable for distributed systems.
+
+**Interview point:** UUIDv7 combines distributed ID generation with index behavior that is often better than fully random UUIDv4 values.
+
+### Temporal constraints
+
+PostgreSQL 18 expands declarative support for data that is valid over time.
+
+A temporal key can prevent overlapping validity ranges:
+
+```sql
+CREATE TABLE employee_assignments (
+    employee_id bigint,
+    valid_during daterange,
+    PRIMARY KEY (employee_id, valid_during WITHOUT OVERLAPS)
+);
+```
+
+Temporal foreign keys can express that one validity period must be covered by a referenced period using `PERIOD`.
+
+**Why it matters:** Applications no longer need as many custom triggers or exclusion-constraint patterns to enforce common temporal rules.
+
+Typical use cases include:
+
+- Employee assignments
+- Product pricing periods
+- Hotel reservations
+- Insurance coverage
+- Slowly changing business data
+
+### Access to old and new values in `RETURNING`
+
+DML statements can return both the previous and resulting row values.
+
+```sql
+UPDATE products
+SET price = price * 1.10
+WHERE category = 'books'
+RETURNING
+    id,
+    old.price AS old_price,
+    new.price AS new_price;
+```
+
+This is useful for:
+
+- Audit logging
+- Change-data capture
+- Returning price or status transitions
+- Avoiding an additional query
+
+It applies across `INSERT`, `UPDATE`, `DELETE`, and `MERGE`, with old or new values being `NULL` where they do not apply.
+
+### Faster and safer major-version upgrades
+
+`pg_upgrade` can preserve planner statistics during major-version upgrades.
+
+Previously, statistics often had to be rebuilt with `ANALYZE` before query plans stabilized. Preserving them reduces the risk of poor plans immediately after upgrading.
+
+**Interview point:** PostgreSQL major upgrades are not performed with a simple package replacement. Common methods are:
+
+- `pg_upgrade`
+- Logical replication
+- Dump and restore
 
 ## Visibility Map
 

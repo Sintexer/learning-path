@@ -218,7 +218,7 @@ Broker durability still depends on appropriate acknowledgment and replication se
 
 # 10. Connecting Outbox back to Saga orchestration
 
-Related to [[Saga pattern]].
+Related to [[Saga]].
 
 A message-based coordinator often needs to:
 

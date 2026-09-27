@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md",
+                "file": "00 - info stack.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kafka Retention"
+              "title": "00 - info stack"
             }
           },
           {
@@ -69,16 +69,15 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md",
+                "file": "05 - Common IT knowledge/Web/Idempotency.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Logical Query Processing Order"
+              "title": "Idempotency"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "vertical"
@@ -112,7 +111,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "DDD",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -154,7 +153,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md",
+                "file": "05 - Common IT knowledge/Data Formats/Backward Compatibility.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -173,7 +172,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md",
+                "file": "05 - Common IT knowledge/Data Formats/Backward Compatibility.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -212,7 +211,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md",
+                "file": "05 - Common IT knowledge/Data Formats/Backward Compatibility.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -275,7 +274,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 347.5
+    "width": 347.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -290,35 +290,36 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "9c4b8ec1a35f1a1d",
+  "active": "19806831601a2746",
   "lastOpenFiles": [
-    "01 - AWS/AWS IAM/IAM.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/CQRS.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Shared Library.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Aggregator.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Strangler Fig.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md",
-    "06 - Architecture/Microservices/Microservices patterns.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/External Configuration Store.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Distributed Tracing.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md",
-    "05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md",
-    "05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Database Per Service.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Testing.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Traffic.md",
-    "13 - Common/MacOS keyboard actions.md",
-    "08 - AI/Prompts/Learning prompts ChatGPT.md",
-    "13 - Common",
-    "00 - Start here.md",
+    "06 - Architecture/DDD.md",
     "00 - info stack.md",
+    "05 - Common IT knowledge/Databases/SQL/IO-Bound vs CPU-Bound.md",
+    "05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md",
+    "03 - Backend/backend-path.png",
+    "README.md",
+    "00 - Start here.md",
+    "05 - Common IT knowledge/Cloud/Load Balancing.md",
     "06 - Architecture/Microservices/Microservices Service mesh pattern.md",
-    "06 - Architecture/Microservices/Microservices Sidecar pattern.md",
     "06 - Architecture/Microservices/Microservices To-Do.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md",
-    "05 - Common IT knowledge/IT Common Glossary.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Reverse Proxy.md",
+    "06 - Architecture/Microservices/CAP Theorem.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md",
+    "05 - Common IT knowledge/Web/Webhook.md",
+    "05 - Common IT knowledge/Patterns/Overview.md",
+    "05 - Common IT knowledge/Web/Idempotency.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md",
+    "05 - Common IT knowledge/Web/URL.md",
+    "05 - Common IT knowledge/Web/URI.md",
+    "05 - Common IT knowledge/Databases/Schema Migration.md",
+    "01 - AWS/AWS API Gateway/AWS API Gateway best-practices.md",
+    "11 - Japanese/Japanese.md",
+    "05 - Common IT knowledge/Data Formats/Forward Compatibility.md",
+    "05 - Common IT knowledge/Networks/Forward proxy.md",
+    "06 - Architecture/Microservices/Microservices patterns.md",
+    "05 - Common IT knowledge/Data Formats/Backward Compatibility.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/Reconciliation.md",
+    "13 - Common",
     "05 - Common IT knowledge/Patterns/Microservices Patterns",
     "05 - Common IT knowledge/Patterns/Resilience Patterns",
     "05 - Common IT knowledge/Patterns",
@@ -338,7 +339,6 @@
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment diagram.png",
     "01 - AWS/AWS Databases/AWS Managed Database diagram.png",
     "01 - AWS/AWS Databases/AWS Unmanaged Database diagram.png",
-    "01 - AWS/AWS Services/AWS Direct Connect schema.png",
     "01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle scheme.canvas"
   ]
 }

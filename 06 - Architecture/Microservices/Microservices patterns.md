@@ -7,7 +7,7 @@
 7. [[Rate Limiting Pattern]]
 8. [[Microservices Service mesh pattern|Service Mesh]]
 9. [[Microservices Sidecar pattern|Sidecar Pattern]]
-10. [[Saga pattern|Saga Pattern]]
+10. [[Saga|Saga Pattern]]
 11. [[Event Sourcing]]
 12. [[CQRS]]
 13. [[Strangler Fig]]
@@ -27,4 +27,5 @@
 27. **Chain of Responsibility**
 28. **Adapter/Wrapper**
 29. **Decomposition**
-30. **Shared Library**
+30. [[Shared Library]]
+31. [[Microservices Sidecar pattern]]

@@ -10,7 +10,7 @@ Lambda and API Gateway are both designed to support flexible use of versions. Yo
 
 ***Use Canary deployments***
 
-With Canary deployments, you can send a percentage of traffic to your **canary** while leaving the bulk of your traffic on a known good version of your API until the new version has been verified. API Gateway makes a base version available and updated versions of the API on the same stage. This way, you can introduce new features in the same environment for the base version. To set up a Canary deployment through the console, select a stage and then select the Canary tab for that stage.
+With [[Zero-downtime deployment#Canary deployment|Canary deployments]], you can send a percentage of traffic to your **canary** while leaving the bulk of your traffic on a known good version of your API until the new version has been verified. API Gateway makes a base version available and updated versions of the API on the same stage. This way, you can introduce new features in the same environment for the base version. To set up a Canary deployment through the console, select a stage and then select the Canary tab for that stage.
 
 ***Use AWS SAM to simplify deployments***
 
