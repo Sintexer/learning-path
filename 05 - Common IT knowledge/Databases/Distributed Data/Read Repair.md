@@ -1,0 +1,1 @@
+The system only detects that a replica is out of date when a client happens to read from it. The read triggers a background process to fix the stale node.

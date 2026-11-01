@@ -1,0 +1,1 @@
+Systems run scheduled background tasks (often hours apart) to compare data across nodes and fix inconsistencies. Until this process runs, the data remains inconsistent.
