@@ -9,3 +9,5 @@ An important detail of a replicated system is whether the replication happens [[
 When an application reads from async follower, it might see outdated result. But after some time replicas will catch app and app will once again show the correct information. This phenomena is called *eventual consistency*.
 
 Another solution is [[Multi-Leader Replication]]. Leader-based replication has one downside - there is only one leader and all writes must go through it. It limits the throughput. With multiple leaders, writes can be scaled along with read scaling. However there are other things to considers: the overhead is big, and the downsides outweigh the benefits for a single data center - it works for multiple data centers only. Also you'll have to deal with a harder replication mechanisms.
+
+A leader determines the order in which writes should be processed, and followers apply the leader’s writes in the same order. Some data storage systems take a different approach, abandoning the concept of a leader and allowing any replica to directly accept writes from clients. We call them [[Leaderless Replication]].

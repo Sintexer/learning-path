@@ -55,12 +55,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Replication.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Multi-Leader Replication"
+              "title": "Replication"
             }
           },
           {
@@ -196,7 +196,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Replication.md",
                 "collapseAll": false,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -334,6 +334,7 @@
   },
   "active": "ae2476446ac2aa4f",
   "lastOpenFiles": [
+    "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md",
@@ -361,7 +362,6 @@
     "06 - Architecture/Microservices/CAP Theorem.md",
     "05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md",
     "05 - Common IT knowledge/Web/Webhook.md",
-    "05 - Common IT knowledge/Patterns/Overview.md",
     "13 - Common",
     "05 - Common IT knowledge/Patterns/Microservices Patterns",
     "05 - Common IT knowledge/Patterns/Resilience Patterns",
