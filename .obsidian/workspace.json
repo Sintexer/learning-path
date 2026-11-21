@@ -55,12 +55,24 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Replication.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Replication"
+              "title": "Leaderless Replication"
+            }
+          },
+          {
+            "id": "459438de1feb22ad",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.15.1"
+              },
+              "icon": "lucide-book-up",
+              "title": "Release Notes 1.15.1"
             }
           },
           {
@@ -120,7 +132,7 @@
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 4
       }
     ],
     "direction": "vertical"
@@ -332,11 +344,16 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "ae2476446ac2aa4f",
+  "active": "459438de1feb22ad",
   "lastOpenFiles": [
+    "05 - Common IT knowledge/Databases/Distributed Data/Replication.md",
+    "05 - Common IT knowledge/Data Formats/Backward Compatibility.md",
+    "05 - Common IT knowledge/Data Formats/Apache Thrift.md",
+    "05 - Common IT knowledge/Data Formats/Data Encoding.md",
+    "05 - Common IT knowledge/Data Formats/Forward Compatibility.md",
+    "05 - Common IT knowledge/Data Formats/Protocol Buffers.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md",
@@ -357,11 +374,6 @@
     "README.md",
     "00 - Start here.md",
     "05 - Common IT knowledge/Cloud/Load Balancing.md",
-    "06 - Architecture/Microservices/Microservices Service mesh pattern.md",
-    "06 - Architecture/Microservices/Microservices To-Do.md",
-    "06 - Architecture/Microservices/CAP Theorem.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md",
-    "05 - Common IT knowledge/Web/Webhook.md",
     "13 - Common",
     "05 - Common IT knowledge/Patterns/Microservices Patterns",
     "05 - Common IT knowledge/Patterns/Resilience Patterns",
