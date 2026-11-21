@@ -1,0 +1,1 @@
+Conflict resolution related - collections that automatically resolve conflicts
