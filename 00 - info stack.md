@@ -19,6 +19,8 @@ Recovery after crashes
 - GCP, 
 - Event-Driven Architecture, 
 - Flyway.
+- Riak
+- Amazon Dynamodb
 
 ## Ansible
 

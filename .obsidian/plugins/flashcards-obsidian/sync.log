@@ -1,1 +1,871 @@
 2026-11-21T10:16:10.637Z [INFO] plugin loaded {"version":"2.2.0"}
+2026-11-21T10:26:27.246Z [INFO] syncVault start {"noteCount":508,"processedNoteCount":508,"skippedUnchangedNoteCount":0}
+2026-11-21T10:26:27.247Z [INFO] syncNote start {"notePath":"Anki flashcards.md"}
+2026-11-21T10:26:27.251Z [INFO] syncNote start {"notePath":"Keycloak.md"}
+2026-11-21T10:26:27.251Z [INFO] syncNote start {"notePath":"README.md"}
+2026-11-21T10:26:27.253Z [INFO] syncNote start {"notePath":"idea.md"}
+2026-11-21T10:26:27.254Z [INFO] syncNote start {"notePath":"🗂️ hub.md"}
+2026-11-21T10:26:27.254Z [INFO] syncNote start {"notePath":"13 - Common/MacOS keyboard actions.md"}
+2026-11-21T10:26:27.263Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/Repeat.md"}
+2026-11-21T10:26:27.263Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/🎴 Verbs.md"}
+2026-11-21T10:26:27.290Z [INFO] bootstrap: creating missing model {"model":"Obsidian-basic"}
+2026-11-21T10:26:27.321Z [INFO] bootstrap: creating missing model {"model":"Obsidian-basic-reversed"}
+2026-11-21T10:26:27.346Z [INFO] bootstrap: creating missing model {"model":"Obsidian-cloze"}
+2026-11-21T10:26:27.371Z [INFO] bootstrap: creating missing model {"model":"Obsidian-reminder"}
+2026-11-21T10:26:28.021Z [INFO] syncNote ok {"notePath":"11 - Japanese/Minnanonihongo/🎴 Verbs.md","okCreates":23,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:28.022Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/🎴 Lesson 7 flashcards.md"}
+2026-11-21T10:26:28.067Z [WARN] CREATE failed {"blockId":"q-b3up","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:26:28.247Z [WARN] CREATE failed {"blockId":"q-9vja","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:26:28.826Z [INFO] syncNote ok {"notePath":"11 - Japanese/Minnanonihongo/🎴 Lesson 7 flashcards.md","okCreates":29,"okUpdates":0,"okDeletes":0,"failedOps":2}
+2026-11-21T10:26:28.826Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/🎴 Lesson 8 flashcards.md"}
+2026-11-21T10:26:29.682Z [INFO] syncNote ok {"notePath":"11 - Japanese/Minnanonihongo/🎴 Lesson 8 flashcards.md","okCreates":33,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:29.683Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/🎴 Lesson 6 flashcards.md"}
+2026-11-21T10:26:29.930Z [INFO] syncNote ok {"notePath":"11 - Japanese/Minnanonihongo/🎴 Lesson 6 flashcards.md","okCreates":9,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:29.930Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/Useful words.md"}
+2026-11-21T10:26:30.334Z [INFO] syncNote ok {"notePath":"11 - Japanese/Minnanonihongo/Useful words.md","okCreates":15,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:30.334Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/Test A.md"}
+2026-11-21T10:26:30.580Z [WARN] CREATE failed {"blockId":"q-bwkg","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:26:30.598Z [WARN] CREATE failed {"blockId":"q-7wte","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:26:30.627Z [WARN] CREATE failed {"blockId":"q-n5pi","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:26:32.001Z [INFO] syncNote ok {"notePath":"11 - Japanese/Minnanonihongo/Test A.md","okCreates":59,"okUpdates":0,"okDeletes":0,"failedOps":3}
+2026-11-21T10:26:32.001Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/Lesson 7/Lesson 7.md"}
+2026-11-21T10:26:32.003Z [INFO] syncNote start {"notePath":"11 - Japanese/Minnanonihongo/Lesson 6.md"}
+2026-11-21T10:26:32.029Z [INFO] syncNote ok {"notePath":"11 - Japanese/Minnanonihongo/Lesson 6.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:32.030Z [INFO] syncNote start {"notePath":"11 - Japanese/Kanji/Kanji 2.md"}
+2026-11-21T10:26:32.577Z [INFO] syncNote ok {"notePath":"11 - Japanese/Kanji/Kanji 2.md","okCreates":20,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:32.577Z [INFO] syncNote start {"notePath":"11 - Japanese/Kanji/Kanji 1.md"}
+2026-11-21T10:26:32.976Z [WARN] CREATE failed {"blockId":"q-4v7c","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:26:33.403Z [INFO] syncNote ok {"notePath":"11 - Japanese/Kanji/Kanji 1.md","okCreates":31,"okUpdates":0,"okDeletes":0,"failedOps":1}
+2026-11-21T10:26:33.404Z [INFO] syncNote start {"notePath":"11 - Japanese/Japanese.md"}
+2026-11-21T10:26:33.405Z [INFO] syncNote start {"notePath":"11 - Japanese/Japanese Error correction.md"}
+2026-11-21T10:26:33.726Z [WARN] CREATE failed {"blockId":"q-emuc","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:26:33.850Z [INFO] syncNote ok {"notePath":"11 - Japanese/Japanese Error correction.md","okCreates":13,"okUpdates":0,"okDeletes":0,"failedOps":1}
+2026-11-21T10:26:33.850Z [INFO] syncNote start {"notePath":"10 - Management/Team management.md"}
+2026-11-21T10:26:33.858Z [INFO] syncNote start {"notePath":"10 - Management/Code review best practices and pitfals.md"}
+2026-11-21T10:26:33.864Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md"}
+2026-11-21T10:26:33.869Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/kubectl.md"}
+2026-11-21T10:26:33.872Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Version Skew.md"}
+2026-11-21T10:26:33.874Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/etcd.md"}
+2026-11-21T10:26:33.880Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/containerd.md"}
+2026-11-21T10:26:33.884Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Core Containers.md"}
+2026-11-21T10:26:33.894Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Label.md"}
+2026-11-21T10:26:33.896Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod.md"}
+2026-11-21T10:26:33.913Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod Desired State.md"}
+2026-11-21T10:26:33.916Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Multi-container Pods.md"}
+2026-11-21T10:26:33.931Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Kubernetes.md"}
+2026-11-21T10:26:33.955Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Worker nodes.md"}
+2026-11-21T10:26:33.967Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Service.md"}
+2026-11-21T10:26:33.976Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S ReplicaSet.md"}
+2026-11-21T10:26:33.983Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Namespace.md"}
+2026-11-21T10:26:33.994Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Deployment.md"}
+2026-11-21T10:26:34.028Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S DNS.md"}
+2026-11-21T10:26:34.031Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Control Plane.md"}
+2026-11-21T10:26:34.059Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Container Runtime Interface.md"}
+2026-11-21T10:26:34.061Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/Zero-downtime deployment.md"}
+2026-11-21T10:26:34.071Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/JVM App Deployment.md"}
+2026-11-21T10:26:34.082Z [INFO] syncNote start {"notePath":"12 - DevOps/Containers orchestration.md"}
+2026-11-21T10:26:34.090Z [INFO] syncNote start {"notePath":"12 - DevOps/Virtual machine.md"}
+2026-11-21T10:26:34.093Z [INFO] syncNote start {"notePath":"12 - DevOps/Open Container Initiative.md"}
+2026-11-21T10:26:34.094Z [INFO] syncNote start {"notePath":"12 - DevOps/Hypervisor.md"}
+2026-11-21T10:26:34.095Z [INFO] syncNote start {"notePath":"12 - DevOps/Difference between VMs and containers.md"}
+2026-11-21T10:26:34.100Z [INFO] syncNote start {"notePath":"12 - DevOps/Container.md"}
+2026-11-21T10:26:34.125Z [INFO] syncNote start {"notePath":"08 - AI/Prompts/Learning prompts ChatGPT.md"}
+2026-11-21T10:26:34.127Z [INFO] syncNote start {"notePath":"07 - Security/SSE.md"}
+2026-11-21T10:26:34.128Z [INFO] syncNote start {"notePath":"07 - Security/CORS.md"}
+2026-11-21T10:26:34.129Z [INFO] syncNote start {"notePath":"07 - Security/SAML.md"}
+2026-11-21T10:26:34.129Z [INFO] syncNote start {"notePath":"07 - Security/POLP.md"}
+2026-11-21T10:26:34.131Z [INFO] syncNote start {"notePath":"07 - Security/OIDC.md"}
+2026-11-21T10:26:34.132Z [INFO] syncNote start {"notePath":"07 - Security/Least privilege principle.md"}
+2026-11-21T10:26:34.141Z [INFO] syncNote start {"notePath":"07 - Security/JWT.md"}
+2026-11-21T10:26:34.142Z [INFO] syncNote start {"notePath":"07 - Security/AES256.md"}
+2026-11-21T10:26:34.142Z [INFO] syncNote start {"notePath":"09 - Linux/Linux Terminal.md"}
+2026-11-21T10:26:34.154Z [INFO] syncNote start {"notePath":"09 - Linux/Ubuntu experience.md"}
+2026-11-21T10:26:34.158Z [INFO] syncNote start {"notePath":"09 - Linux/Linux hard drive structure.md"}
+2026-11-21T10:26:34.159Z [INFO] syncNote start {"notePath":"09 - Linux/Linux devices.md"}
+2026-11-21T10:26:34.176Z [INFO] syncNote start {"notePath":"09 - Linux/Fedora experience.md"}
+2026-11-21T10:26:34.184Z [INFO] syncNote start {"notePath":"09 - Linux/Linux Mint experience.md"}
+2026-11-21T10:26:34.189Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md"}
+2026-11-21T10:26:34.204Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md"}
+2026-11-21T10:26:34.213Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md"}
+2026-11-21T10:26:34.223Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka.md"}
+2026-11-21T10:26:34.233Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md"}
+2026-11-21T10:26:34.258Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Message.md"}
+2026-11-21T10:26:34.266Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md"}
+2026-11-21T10:26:34.394Z [INFO] syncNote start {"notePath":"03 - Backend/spring/🗂️ Spring.md"}
+2026-11-21T10:26:34.399Z [INFO] syncNote start {"notePath":"03 - Backend/spring/persistence.md"}
+2026-11-21T10:26:34.401Z [INFO] syncNote start {"notePath":"03 - Backend/🗂️ 03 - Backend.md"}
+2026-11-21T10:26:34.402Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/🗂️ Backend cloud.md"}
+2026-11-21T10:26:34.403Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:26:34.413Z [WARN] Malformed cloze in 03 - Backend/cloud/architecture.md:14: automatic cloze is missing `==`. {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:26:34.414Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/Service discovery.md"}
+2026-11-21T10:26:34.414Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/Cloud ToDo.md"}
+2026-11-21T10:26:34.416Z [INFO] syncNote start {"notePath":"03 - Backend/API/RESTful.md"}
+2026-11-21T10:26:34.416Z [INFO] syncNote start {"notePath":"03 - Backend/API/API versioning.md"}
+2026-11-21T10:26:34.442Z [INFO] syncNote start {"notePath":"03 - Backend/API/REST.md"}
+2026-11-21T10:26:34.448Z [INFO] syncNote start {"notePath":"03 - Backend/API/API.md"}
+2026-11-21T10:26:34.449Z [INFO] syncNote start {"notePath":"03 - Backend/API/API Performance improvement.md"}
+2026-11-21T10:26:34.452Z [INFO] syncNote start {"notePath":"03 - Backend/Database/HiLo id optimization.md"}
+2026-11-21T10:26:34.458Z [INFO] syncNote start {"notePath":"03 - Backend/Backend senior developer questions.md"}
+2026-11-21T10:26:34.461Z [INFO] syncNote start {"notePath":"02 - Java/Java Evolution.md"}
+2026-11-21T10:26:34.488Z [INFO] syncNote start {"notePath":"02 - Java/JPA/JPA.md"}
+2026-11-21T10:26:34.499Z [INFO] syncNote start {"notePath":"02 - Java/JPA/🗂️ JPA.md"}
+2026-11-21T10:26:34.502Z [INFO] syncNote start {"notePath":"02 - Java/JPA/Hibernate/Hibernate.md"}
+2026-11-21T10:26:34.513Z [INFO] syncNote start {"notePath":"02 - Java/🗂️ 02 - Java.md"}
+2026-11-21T10:26:34.519Z [INFO] syncNote start {"notePath":"02 - Java/jvmArgs.md"}
+2026-11-21T10:26:34.521Z [INFO] syncNote start {"notePath":"02 - Java/jmxConfig.md"}
+2026-11-21T10:26:34.522Z [INFO] syncNote start {"notePath":"02 - Java/concurrency.md"}
+2026-11-21T10:26:34.607Z [INFO] syncNote start {"notePath":"02 - Java/Java versions.md"}
+2026-11-21T10:26:34.650Z [INFO] syncNote start {"notePath":"02 - Java/Java Memory Model.md"}
+2026-11-21T10:26:34.653Z [INFO] syncNote start {"notePath":"04 - Security/Identity federation.md"}
+2026-11-21T10:26:34.655Z [INFO] syncNote start {"notePath":"04 - Security/🗂️ 04 - Security.md"}
+2026-11-21T10:26:34.656Z [INFO] syncNote start {"notePath":"04 - Security/Identity provider.md"}
+2026-11-21T10:26:34.657Z [INFO] syncNote start {"notePath":"04 - Security/IdP.md"}
+2026-11-21T10:26:34.658Z [INFO] syncNote start {"notePath":"04 - Security/Authorization.md"}
+2026-11-21T10:26:34.753Z [INFO] syncNote ok {"notePath":"04 - Security/Authorization.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:34.753Z [INFO] syncNote start {"notePath":"04 - Security/Authentication.md"}
+2026-11-21T10:26:34.780Z [INFO] syncNote ok {"notePath":"04 - Security/Authentication.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:34.780Z [INFO] syncNote start {"notePath":"04 - Security/Authentication and Authorization.md"}
+2026-11-21T10:26:34.782Z [INFO] syncNote start {"notePath":"06 - Architecture/DDD.md"}
+2026-11-21T10:26:34.817Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Temporal.md"}
+2026-11-21T10:26:34.888Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices architecture.md"}
+2026-11-21T10:26:34.959Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices patterns.md"}
+2026-11-21T10:26:34.976Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Saga.md"}
+2026-11-21T10:26:34.993Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Tracing.md"}
+2026-11-21T10:26:34.999Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices decomposition.md"}
+2026-11-21T10:26:35.008Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices To-Do.md"}
+2026-11-21T10:26:35.019Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Service mesh pattern.md"}
+2026-11-21T10:26:35.032Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Sidecar pattern.md"}
+2026-11-21T10:26:35.044Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md"}
+2026-11-21T10:26:35.114Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Orchestration and Choreography.md"}
+2026-11-21T10:26:35.117Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/CAP Theorem.md"}
+2026-11-21T10:26:35.121Z [INFO] syncNote start {"notePath":"06 - Architecture/Event-driven architecture.md"}
+2026-11-21T10:26:35.125Z [INFO] syncNote start {"notePath":"06 - Architecture/2PC vs Saga.md"}
+2026-11-21T10:26:35.165Z [INFO] syncNote start {"notePath":"06 - Architecture/Client polling pattern.md"}
+2026-11-21T10:26:35.166Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP.md"}
+2026-11-21T10:26:35.175Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Idempotency.md"}
+2026-11-21T10:26:35.204Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/gRPC.md"}
+2026-11-21T10:26:35.205Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Webhook.md"}
+2026-11-21T10:26:35.216Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/WebSocket.md"}
+2026-11-21T10:26:35.216Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URL.md"}
+2026-11-21T10:26:35.221Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URI.md"}
+2026-11-21T10:26:35.224Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTPS.md"}
+2026-11-21T10:26:35.224Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP3.md"}
+2026-11-21T10:26:35.263Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP2.md"}
+2026-11-21T10:26:35.278Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP1.1.md"}
+2026-11-21T10:26:35.283Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/GraphQL.md"}
+2026-11-21T10:26:35.286Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/API Idempotency.md"}
+2026-11-21T10:26:35.289Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/CDN.md"}
+2026-11-21T10:26:35.290Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md"}
+2026-11-21T10:26:35.291Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Single Writer Principle.md"}
+2026-11-21T10:26:35.296Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Optimistic Concurrency Control.md"}
+2026-11-21T10:26:35.298Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Mutual Exclusion.md"}
+2026-11-21T10:26:35.299Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Little's Law.md"}
+2026-11-21T10:26:35.307Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Compare-And-Swap.md"}
+2026-11-21T10:26:35.312Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Critical Section.md"}
+2026-11-21T10:26:35.312Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md"}
+2026-11-21T10:26:35.341Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Learning path.md"}
+2026-11-21T10:26:35.347Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Designing Data-Intensive Applications chapter-to-topic map.md"}
+2026-11-21T10:26:35.820Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/SCSI.md"}
+2026-11-21T10:26:35.829Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/TTY.md"}
+2026-11-21T10:26:35.832Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Redis.md"}
+2026-11-21T10:26:35.832Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/MongoDB.md"}
+2026-11-21T10:26:35.833Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Memcached.md"}
+2026-11-21T10:26:35.833Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Apache Cassandra.md"}
+2026-11-21T10:26:35.833Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md"}
+2026-11-21T10:26:35.841Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Timeout Pattern.md"}
+2026-11-21T10:26:35.844Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Bulkhead Pattern.md"}
+2026-11-21T10:26:35.848Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Fallback Pattern.md"}
+2026-11-21T10:26:35.850Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker.md"}
+2026-11-21T10:26:35.857Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Composition Over Inheritance.md"}
+2026-11-21T10:26:35.867Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Optimistic Concurrency Control.md"}
+2026-11-21T10:26:35.885Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Overview.md"}
+2026-11-21T10:26:35.966Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Reconciliation.md"}
+2026-11-21T10:26:35.971Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Testing.md"}
+2026-11-21T10:26:35.981Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Strangler Fig.md"}
+2026-11-21T10:26:35.984Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Version Guard.md"}
+2026-11-21T10:26:35.988Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Outbox Pattern.md"}
+2026-11-21T10:26:36.022Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shared Library.md"}
+2026-11-21T10:26:36.029Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Event Sourcing.md"}
+2026-11-21T10:26:36.042Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/DLQ.md"}
+2026-11-21T10:26:36.046Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotent Consumer.md"}
+2026-11-21T10:26:36.051Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotancy Key.md"}
+2026-11-21T10:26:36.053Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md"}
+2026-11-21T10:26:36.056Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Database Per Service.md"}
+2026-11-21T10:26:36.062Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/External Configuration Store.md"}
+2026-11-21T10:26:36.068Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Distributed Tracing.md"}
+2026-11-21T10:26:36.077Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/CQRS.md"}
+2026-11-21T10:26:36.095Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md"}
+2026-11-21T10:26:36.104Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md"}
+2026-11-21T10:26:36.108Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Aggregator.md"}
+2026-11-21T10:26:36.110Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md"}
+2026-11-21T10:26:36.120Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IT Common Glossary.md"}
+2026-11-21T10:26:36.121Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/EFI.md"}
+2026-11-21T10:26:36.124Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/SSL.md"}
+2026-11-21T10:26:36.124Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Reverse proxy.md"}
+2026-11-21T10:26:36.126Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TCP.md"}
+2026-11-21T10:26:36.126Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Virtual Private Cloud.md"}
+2026-11-21T10:26:36.126Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VPN.md"}
+2026-11-21T10:26:36.126Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VLAN.md"}
+2026-11-21T10:26:36.127Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/UDP.md"}
+2026-11-21T10:26:36.127Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TLS.md"}
+2026-11-21T10:26:36.145Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Subnet.md"}
+2026-11-21T10:26:36.152Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI Model.md"}
+2026-11-21T10:26:36.158Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md"}
+2026-11-21T10:26:36.159Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 6 layer.md"}
+2026-11-21T10:26:36.160Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 5 layer.md"}
+2026-11-21T10:26:36.161Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 4 layer.md"}
+2026-11-21T10:26:36.162Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 3 layer.md"}
+2026-11-21T10:26:36.162Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 2 layer.md"}
+2026-11-21T10:26:36.162Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 1 layer.md"}
+2026-11-21T10:26:36.163Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/LAN.md"}
+2026-11-21T10:26:36.163Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/ISO.md"}
+2026-11-21T10:26:36.163Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Forward proxy.md"}
+2026-11-21T10:26:36.164Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/DNS.md"}
+2026-11-21T10:26:36.164Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/CIDR Notation.md"}
+2026-11-21T10:26:36.166Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-most-once-delivery.md"}
+2026-11-21T10:26:36.171Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Delivery Semantics.md"}
+2026-11-21T10:26:36.173Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Exactly-once delivery.md"}
+2026-11-21T10:26:36.176Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-least-once delivery.md"}
+2026-11-21T10:26:36.179Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IOT.md"}
+2026-11-21T10:26:36.179Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Dual-Write.md"}
+2026-11-21T10:26:36.193Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Check-Then-Act.md"}
+2026-11-21T10:26:36.232Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Data Structures.md"}
+2026-11-21T10:26:36.238Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bitmap.md"}
+2026-11-21T10:26:36.254Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/SSTable.md"}
+2026-11-21T10:26:36.259Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/LSM Tree.md"}
+2026-11-21T10:26:36.317Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bloom Filter.md"}
+2026-11-21T10:26:36.320Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Star Schema vs Snowflake Schema.md"}
+2026-11-21T10:26:36.353Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md"}
+2026-11-21T10:26:36.412Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Untitled.md"}
+2026-11-21T10:26:36.413Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Database Lock.md"}
+2026-11-21T10:26:36.426Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md"}
+2026-11-21T10:26:36.445Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md"}
+2026-11-21T10:26:36.460Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Hash Index.md"}
+2026-11-21T10:26:36.492Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md"}
+2026-11-21T10:26:36.510Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GIN Index.md"}
+2026-11-21T10:26:36.558Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index.md"}
+2026-11-21T10:26:36.699Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GiST Index.md"}
+2026-11-21T10:26:36.705Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Clustered and Non-Clustered Index.md"}
+2026-11-21T10:26:36.714Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index Practical Usage.md"}
+2026-11-21T10:26:36.751Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Bitmap Index.md"}
+2026-11-21T10:26:36.773Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/BRIN Index.md"}
+2026-11-21T10:26:36.778Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md"}
+2026-11-21T10:26:36.820Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLAP.md"}
+2026-11-21T10:26:36.833Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Transaction.md"}
+2026-11-21T10:26:36.834Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md"}
+2026-11-21T10:26:36.842Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP and OLAP.md"}
+2026-11-21T10:26:36.846Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP.md"}
+2026-11-21T10:26:36.847Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/MVCC.md"}
+2026-11-21T10:26:36.851Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/ACID.md"}
+2026-11-21T10:26:36.851Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Schema Migration.md"}
+2026-11-21T10:26:36.925Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL.md"}
+2026-11-21T10:26:36.943Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Window Functions.md"}
+2026-11-21T10:26:36.996Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Aggregate Functions.md"}
+2026-11-21T10:26:37.001Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md"}
+2026-11-21T10:26:37.017Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md"}
+2026-11-21T10:26:37.030Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/IO-Bound vs CPU-Bound.md"}
+2026-11-21T10:26:37.055Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Grouping.md"}
+2026-11-21T10:26:37.096Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL vs NoSQL.md"}
+2026-11-21T10:26:37.117Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Relational Database.md"}
+2026-11-21T10:26:37.124Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/RDBMS.md"}
+2026-11-21T10:26:37.127Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/ETL.md"}
+2026-11-21T10:26:37.132Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Query Languages for Data.md"}
+2026-11-21T10:26:37.143Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/NoSQL database.md"}
+2026-11-21T10:26:37.147Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/MapReduce querying.md"}
+2026-11-21T10:26:37.156Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Impedance mismatch.md"}
+2026-11-21T10:26:37.157Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/In-Memory Database.md"}
+2026-11-21T10:26:37.159Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Graph database.md"}
+2026-11-21T10:26:37.168Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorums.md"}
+2026-11-21T10:26:37.168Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication vs Partitioning.md"}
+2026-11-21T10:26:37.169Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Synchronous vs Asynchronous Replication.md"}
+2026-11-21T10:26:37.169Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:26:37.174Z [WARN] Skipped #card in 05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md:19: empty answer. {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:26:37.174Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication.md"}
+2026-11-21T10:26:37.179Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Log.md"}
+2026-11-21T10:26:37.182Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md"}
+2026-11-21T10:26:37.184Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Eventual Consistency.md"}
+2026-11-21T10:26:37.187Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Lag.md"}
+2026-11-21T10:26:37.189Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md"}
+2026-11-21T10:26:37.189Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md"}
+2026-11-21T10:26:37.198Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md"}
+2026-11-21T10:26:37.201Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Consistency Levels.md"}
+2026-11-21T10:26:37.217Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Anti-Entropy.md"}
+2026-11-21T10:26:37.217Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/WAL.md"}
+2026-11-21T10:26:37.218Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Log.md"}
+2026-11-21T10:26:37.218Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md"}
+2026-11-21T10:26:37.220Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Latch.md"}
+2026-11-21T10:26:37.223Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Data Warehouse.md"}
+2026-11-21T10:26:37.224Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Document Database.md"}
+2026-11-21T10:26:37.225Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database.md"}
+2026-11-21T10:26:37.226Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Column-Oriented Storage.md"}
+2026-11-21T10:26:37.231Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DB Glossary.md"}
+2026-11-21T10:26:37.231Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DBMS.md"}
+2026-11-21T10:26:37.233Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Cloud database.md"}
+2026-11-21T10:26:37.234Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Protocol Buffers.md"}
+2026-11-21T10:26:37.234Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Data Encoding.md"}
+2026-11-21T10:26:37.237Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Forward Compatibility.md"}
+2026-11-21T10:26:37.237Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Backward Compatibility.md"}
+2026-11-21T10:26:37.238Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Apache Thrift.md"}
+2026-11-21T10:26:37.238Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/Designing Data Intensive Applications.md"}
+2026-11-21T10:26:37.239Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 3 Storage and Retrieval.md"}
+2026-11-21T10:26:37.241Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 4 Encoding and Evolution.md"}
+2026-11-21T10:26:37.244Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaC.md"}
+2026-11-21T10:26:37.244Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Availability.md"}
+2026-11-21T10:26:37.245Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Vertical scaling.md"}
+2026-11-21T10:26:37.246Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Serverless.md"}
+2026-11-21T10:26:37.249Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Scaling.md"}
+2026-11-21T10:26:37.249Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Microservices App.md"}
+2026-11-21T10:26:37.250Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Load Balancing.md"}
+2026-11-21T10:26:37.251Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaS.md"}
+2026-11-21T10:26:37.251Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Horizontal scaling.md"}
+2026-11-21T10:26:37.251Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-passive systems.md"}
+2026-11-21T10:26:37.251Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Cloud-Native App.md"}
+2026-11-21T10:26:37.251Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-active systems.md"}
+2026-11-21T10:26:37.252Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Binary search.md"}
+2026-11-21T10:26:37.252Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Two pointers.md"}
+2026-11-21T10:26:37.252Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Algorithms TODO.md"}
+2026-11-21T10:26:37.256Z [INFO] syncNote start {"notePath":"00 - Start here.md"}
+2026-11-21T10:26:37.256Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Terms/DLQ.md"}
+2026-11-21T10:26:37.256Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Terms/Tag.md"}
+2026-11-21T10:26:37.257Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Terms/WORM.md"}
+2026-11-21T10:26:37.257Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Terms/AWS Principal.md"}
+2026-11-21T10:26:37.257Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Terms/ARN.md"}
+2026-11-21T10:26:37.259Z [INFO] syncNote start {"notePath":"01 - AWS/AWS learn materials.md"}
+2026-11-21T10:26:37.262Z [INFO] syncNote start {"notePath":"01 - AWS/🗂️ 01 - AWS.md"}
+2026-11-21T10:26:37.262Z [INFO] syncNote start {"notePath":"01 - AWS/Cloud.md"}
+2026-11-21T10:26:37.264Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/🗂️ AWS Storage.md"}
+2026-11-21T10:26:37.264Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS Storage Services.md"}
+2026-11-21T10:26:37.266Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS Storage Services - choosing right solution.md"}
+2026-11-21T10:26:37.277Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS S3.md"}
+2026-11-21T10:26:37.284Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS S3 storage classes.md"}
+2026-11-21T10:26:37.291Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS S3 security.md"}
+2026-11-21T10:26:37.298Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS S3 lifecycle.md"}
+2026-11-21T10:26:37.301Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS S3 Bucket.md"}
+2026-11-21T10:26:37.307Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS S3 Bucket versioning.md"}
+2026-11-21T10:26:37.310Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS Object Storage.md"}
+2026-11-21T10:26:37.311Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS File Storage.md"}
+2026-11-21T10:26:37.314Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS FSx.md"}
+2026-11-21T10:26:37.318Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS EFS.md"}
+2026-11-21T10:26:37.324Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS EC2 Instance store.md"}
+2026-11-21T10:26:37.325Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS EBS.md"}
+2026-11-21T10:26:37.332Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS EBS volume types.md"}
+2026-11-21T10:26:37.341Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS EBS snapshots.md"}
+2026-11-21T10:26:37.345Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS EBS scaling.md"}
+2026-11-21T10:26:37.346Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Storage/AWS Block Storage.md"}
+2026-11-21T10:26:37.348Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Security/🗂️ AWS Security.md"}
+2026-11-21T10:26:37.348Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Security/Shared responsibility.md"}
+2026-11-21T10:26:37.420Z [INFO] syncNote ok {"notePath":"01 - AWS/AWS Security/Shared responsibility.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:26:37.421Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Security/STS Assume role request.md"}
+2026-11-21T10:26:37.423Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Security/MFA.md"}
+2026-11-21T10:26:37.424Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Security/AWS STS.md"}
+2026-11-21T10:26:37.424Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Security/AWS Root User.md"}
+2026-11-21T10:26:37.425Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Security/AWS KMS.md"}
+2026-11-21T10:26:37.426Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Well-Architected Tool.md"}
+2026-11-21T10:26:37.426Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Unmanaged Service.md"}
+2026-11-21T10:26:37.428Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Serverless Application Model.md"}
+2026-11-21T10:26:37.428Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Serverless Application Repository.md"}
+2026-11-21T10:26:37.428Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS SNS.md"}
+2026-11-21T10:26:37.429Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Organizations.md"}
+2026-11-21T10:26:37.429Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Route 53.md"}
+2026-11-21T10:26:37.429Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Managed Service.md"}
+2026-11-21T10:26:37.431Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS NLB.md"}
+2026-11-21T10:26:37.432Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS License Manager.md"}
+2026-11-21T10:26:37.432Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS GLB.md"}
+2026-11-21T10:26:37.433Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Identity Center.md"}
+2026-11-21T10:26:37.433Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS CloudFormation.md"}
+2026-11-21T10:26:37.434Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS EventBridge.md"}
+2026-11-21T10:26:37.434Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS ALB.md"}
+2026-11-21T10:26:37.435Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS ELB.md"}
+2026-11-21T10:26:37.437Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS ECR.md"}
+2026-11-21T10:26:37.437Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Direct Connect.md"}
+2026-11-21T10:26:37.438Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS Control Tower.md"}
+2026-11-21T10:26:37.438Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS CloudTrail.md"}
+2026-11-21T10:26:37.439Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS CloudFront.md"}
+2026-11-21T10:26:37.440Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/AWS AppSync.md"}
+2026-11-21T10:26:37.441Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Services/ASM.md"}
+2026-11-21T10:26:37.441Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Regions/🗂️ Regions.md"}
+2026-11-21T10:26:37.441Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Regions/Service scope.md"}
+2026-11-21T10:26:37.442Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Regions/Region.md"}
+2026-11-21T10:26:37.443Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Regions/Partition.md"}
+2026-11-21T10:26:37.444Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Regions/Edge locations.md"}
+2026-11-21T10:26:37.444Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Regions/Data Center.md"}
+2026-11-21T10:26:37.444Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Regions/Availability Zone.md"}
+2026-11-21T10:26:37.444Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/VPC security.md"}
+2026-11-21T10:26:37.445Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/🗂️ AWS Networking.md"}
+2026-11-21T10:26:37.445Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/AWS Network Access Control List.md"}
+2026-11-21T10:26:37.447Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/VPC reserved IPs.md"}
+2026-11-21T10:26:37.448Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/VPC Routing.md"}
+2026-11-21T10:26:37.449Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/High availability with VPC.md"}
+2026-11-21T10:26:37.449Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/AWS Virtual Private Gateway.md"}
+2026-11-21T10:26:37.450Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/AWS VPC.md"}
+2026-11-21T10:26:37.450Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/AWS Security groups.md"}
+2026-11-21T10:26:37.451Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/AWS PrivateLink.md"}
+2026-11-21T10:26:37.451Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Networking/AWS Internet Gateway.md"}
+2026-11-21T10:26:37.452Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS Unmanaged Database.md"}
+2026-11-21T10:26:37.452Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/🗂️ AWS Databases.md"}
+2026-11-21T10:26:37.453Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS RDS.md"}
+2026-11-21T10:26:37.455Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS Managed Database.md"}
+2026-11-21T10:26:37.456Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS RDS backups.md"}
+2026-11-21T10:26:37.457Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS RDS Multi-AZ redundancy.md"}
+2026-11-21T10:26:37.458Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS Purpose-Built Databases.md"}
+2026-11-21T10:26:37.460Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS DynamoDB.md"}
+2026-11-21T10:26:37.463Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS Database - choosing right solution.md"}
+2026-11-21T10:26:37.463Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Databases/AWS Aurora.md"}
+2026-11-21T10:26:37.464Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Monitoring/AWS Monitoring.md"}
+2026-11-21T10:26:37.465Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Monitoring/AWS Management Console.md"}
+2026-11-21T10:26:37.465Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Monitoring/AWS X-Ray.md"}
+2026-11-21T10:26:37.466Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Monitoring/AWS CloudWatch.md"}
+2026-11-21T10:26:37.470Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Monitoring/AWS CloudWatch Logs.md"}
+2026-11-21T10:26:37.470Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Messages/AWS Kinesis Data Streams.md"}
+2026-11-21T10:26:37.471Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Messages/AWS Kinesis.md"}
+2026-11-21T10:26:37.473Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Messages/AWS SQS Lambda integration.md"}
+2026-11-21T10:26:37.474Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Messages/AWS SQS.md"}
+2026-11-21T10:26:37.476Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Messages/AWS Kinesis Data Streams vs Firehose.md"}
+2026-11-21T10:26:37.478Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Messages/AWS Kinesis Data Firehose.md"}
+2026-11-21T10:26:37.479Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Messages/AWS Kinesis Data Analytics.md"}
+2026-11-21T10:26:37.479Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM with identity provider.md"}
+2026-11-21T10:26:37.480Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/🗂️ AWS IAM.md"}
+2026-11-21T10:26:37.480Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM policy.md"}
+2026-11-21T10:26:37.484Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM Session policy.md"}
+2026-11-21T10:26:37.484Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM policy advanced statements.md"}
+2026-11-21T10:26:37.487Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM policy principal.md"}
+2026-11-21T10:26:37.488Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM policy condition.md"}
+2026-11-21T10:26:37.492Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM Identity-based policy.md"}
+2026-11-21T10:26:37.493Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM Permissions boundary.md"}
+2026-11-21T10:26:37.493Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM Resource-based policy.md"}
+2026-11-21T10:26:37.493Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM Customer managed policy.md"}
+2026-11-21T10:26:37.494Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM Inline policy.md"}
+2026-11-21T10:26:37.494Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM AWS managed policy.md"}
+2026-11-21T10:26:37.494Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM AWS Organizations SCPs.md"}
+2026-11-21T10:26:37.494Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/Policies/IAM ACL.md"}
+2026-11-21T10:26:37.494Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM.md"}
+2026-11-21T10:26:37.496Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM temporary credentials.md"}
+2026-11-21T10:26:37.497Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM user.md"}
+2026-11-21T10:26:37.498Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM session token.md"}
+2026-11-21T10:26:37.499Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM role.md"}
+2026-11-21T10:26:37.499Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM role trust policy.md"}
+2026-11-21T10:26:37.500Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM role session tag.md"}
+2026-11-21T10:26:37.501Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM role session policy.md"}
+2026-11-21T10:26:37.502Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM role session name.md"}
+2026-11-21T10:26:37.503Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM role assume.md"}
+2026-11-21T10:26:37.504Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM policy simulator.md"}
+2026-11-21T10:26:37.505Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM identity.md"}
+2026-11-21T10:26:37.505Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM group.md"}
+2026-11-21T10:26:37.506Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM access granting.md"}
+2026-11-21T10:26:37.507Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM RBAC.md"}
+2026-11-21T10:26:37.508Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM Identity Center.md"}
+2026-11-21T10:26:37.509Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM Access Analyzer.md"}
+2026-11-21T10:26:37.510Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM Federated user.md"}
+2026-11-21T10:26:37.511Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM Authorization context.md"}
+2026-11-21T10:26:37.511Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM Access history.md"}
+2026-11-21T10:26:37.514Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM Access Control approaches.md"}
+2026-11-21T10:26:37.515Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/IAM ABAC.md"}
+2026-11-21T10:26:37.516Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/AWS Single Sign-On.md"}
+2026-11-21T10:26:37.516Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/AWS Identity federation.md"}
+2026-11-21T10:26:37.518Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/AWS Credentials types.md"}
+2026-11-21T10:26:37.518Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/AWS Access keys.md"}
+2026-11-21T10:26:37.518Z [INFO] syncNote start {"notePath":"01 - AWS/AWS IAM/AWS Cognito.md"}
+2026-11-21T10:26:37.519Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API.md"}
+2026-11-21T10:26:37.520Z [INFO] syncNote start {"notePath":"01 - AWS/AWS CLI/🗂️ AWS CLI.md"}
+2026-11-21T10:26:37.520Z [INFO] syncNote start {"notePath":"01 - AWS/AWS CLI/AWS CLI.md"}
+2026-11-21T10:26:37.521Z [INFO] syncNote start {"notePath":"01 - AWS/AWS CLI/Commands/aws s3api.md"}
+2026-11-21T10:26:37.523Z [INFO] syncNote start {"notePath":"01 - AWS/AWS CLI/AWS CLI with temporary credentials.md"}
+2026-11-21T10:26:37.523Z [INFO] syncNote start {"notePath":"01 - AWS/AWS CLI/AWS CLI configuration.md"}
+2026-11-21T10:26:37.527Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda.md"}
+2026-11-21T10:26:37.528Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/🗂️ AWS Serverless.md"}
+2026-11-21T10:26:37.528Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/Lambda Power Tuning.md"}
+2026-11-21T10:26:37.528Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/EPAM Syndicate.md"}
+2026-11-21T10:26:37.534Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function.md"}
+2026-11-21T10:26:37.536Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Step Functions.md"}
+2026-11-21T10:26:37.539Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda invocation models.md"}
+2026-11-21T10:26:37.541Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Serverless.md"}
+2026-11-21T10:26:37.542Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Serverless scaling.md"}
+2026-11-21T10:26:37.546Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Serverless patterns.md"}
+2026-11-21T10:26:37.550Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS SAM.md"}
+2026-11-21T10:26:37.551Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda security.md"}
+2026-11-21T10:26:37.558Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda monitoring.md"}
+2026-11-21T10:26:37.560Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function versioning.md"}
+2026-11-21T10:26:37.561Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function configuration.md"}
+2026-11-21T10:26:37.562Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function development.md"}
+2026-11-21T10:26:37.565Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency.md"}
+2026-11-21T10:26:37.568Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda authorizers.md"}
+2026-11-21T10:26:37.569Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function burst.md"}
+2026-11-21T10:26:37.569Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda execution environment.md"}
+2026-11-21T10:26:37.571Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda Java.md"}
+2026-11-21T10:26:37.571Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Lambda billing.md"}
+2026-11-21T10:26:37.573Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Event-driven architecture.md"}
+2026-11-21T10:26:37.573Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Serverless/AWS Fargate.md"}
+2026-11-21T10:26:37.574Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/🗂️ EC2.md"}
+2026-11-21T10:26:37.574Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2.md"}
+2026-11-21T10:26:37.576Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 storage.md"}
+2026-11-21T10:26:37.577Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 pricing.md"}
+2026-11-21T10:26:37.580Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 lifecycle.md"}
+2026-11-21T10:26:37.582Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 instance type.md"}
+2026-11-21T10:26:37.583Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 instance sizing.md"}
+2026-11-21T10:26:37.583Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 instance network.md"}
+2026-11-21T10:26:37.583Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 Instance family.md"}
+2026-11-21T10:26:37.584Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 high availability.md"}
+2026-11-21T10:26:37.584Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS EC2/EC2 Auto Scaling.md"}
+2026-11-21T10:26:37.587Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/🗂️ AWS Compute.md"}
+2026-11-21T10:26:37.587Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS CodeDeploy.md"}
+2026-11-21T10:26:37.588Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Containers/AWS ECS.md"}
+2026-11-21T10:26:37.589Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Containers/🗂️ AWS Containers.md"}
+2026-11-21T10:26:37.589Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Containers/AWS Elastic Kubernetes Service.md"}
+2026-11-21T10:26:37.590Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Containers/AWS Elastic Container Service.md"}
+2026-11-21T10:26:37.591Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Containers/AWS ECS Container agent.md"}
+2026-11-21T10:26:37.592Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS Compute.md"}
+2026-11-21T10:26:37.593Z [INFO] syncNote start {"notePath":"01 - AWS/AWS Compute/AWS AMI.md"}
+2026-11-21T10:26:37.594Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS REST API Gateway.md"}
+2026-11-21T10:26:37.597Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS WebSocket API Gateway.md"}
+2026-11-21T10:26:37.601Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway policies.md"}
+2026-11-21T10:26:37.603Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS HTTP API Gateway.md"}
+2026-11-21T10:26:37.603Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway error handling.md"}
+2026-11-21T10:26:37.604Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway.md"}
+2026-11-21T10:26:37.606Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway throttling.md"}
+2026-11-21T10:26:37.608Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway stage.md"}
+2026-11-21T10:26:37.609Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway monitoring.md"}
+2026-11-21T10:26:37.611Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway integration types.md"}
+2026-11-21T10:26:37.613Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway input validation.md"}
+2026-11-21T10:26:37.613Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway data mapping.md"}
+2026-11-21T10:26:37.614Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway components.md"}
+2026-11-21T10:26:37.615Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway best-practices.md"}
+2026-11-21T10:26:37.616Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway access management.md"}
+2026-11-21T10:26:37.617Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway Lambda Authorizer.md"}
+2026-11-21T10:26:37.617Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway IAM Authorization.md"}
+2026-11-21T10:26:37.618Z [INFO] syncNote start {"notePath":"01 - AWS/AWS API Gateway/AWS API Gateway Cognito Authorizer.md"}
+2026-11-21T10:26:37.618Z [INFO] syncNote start {"notePath":"00 - info stack.md"}
+2026-11-21T10:26:37.622Z [INFO] syncVault end {"noteCount":508,"processedNoteCount":508,"skippedUnchangedNoteCount":0,"totalCreates":236,"totalUpdates":0,"totalDeletes":0,"failedNotes":0}
+2026-11-21T10:28:52.210Z [INFO] syncVault start {"noteCount":288,"processedNoteCount":288,"skippedUnchangedNoteCount":0}
+2026-11-21T10:28:52.435Z [INFO] syncNote start {"notePath":"Anki flashcards.md"}
+2026-11-21T10:28:52.441Z [INFO] syncNote start {"notePath":"Keycloak.md"}
+2026-11-21T10:28:52.441Z [INFO] syncNote start {"notePath":"README.md"}
+2026-11-21T10:28:52.444Z [INFO] syncNote start {"notePath":"idea.md"}
+2026-11-21T10:28:52.445Z [INFO] syncNote start {"notePath":"🗂️ hub.md"}
+2026-11-21T10:28:52.445Z [INFO] syncNote start {"notePath":"13 - Common/MacOS keyboard actions.md"}
+2026-11-21T10:28:52.454Z [INFO] syncNote start {"notePath":"10 - Management/Team management.md"}
+2026-11-21T10:28:52.455Z [INFO] syncNote start {"notePath":"10 - Management/Code review best practices and pitfals.md"}
+2026-11-21T10:28:52.457Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md"}
+2026-11-21T10:28:52.458Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/kubectl.md"}
+2026-11-21T10:28:52.459Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Version Skew.md"}
+2026-11-21T10:28:52.459Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/etcd.md"}
+2026-11-21T10:28:52.459Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/containerd.md"}
+2026-11-21T10:28:52.460Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Core Containers.md"}
+2026-11-21T10:28:52.461Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Label.md"}
+2026-11-21T10:28:52.462Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod.md"}
+2026-11-21T10:28:52.464Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod Desired State.md"}
+2026-11-21T10:28:52.465Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Multi-container Pods.md"}
+2026-11-21T10:28:52.466Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Kubernetes.md"}
+2026-11-21T10:28:52.468Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Worker nodes.md"}
+2026-11-21T10:28:52.469Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Service.md"}
+2026-11-21T10:28:52.469Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S ReplicaSet.md"}
+2026-11-21T10:28:52.469Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Namespace.md"}
+2026-11-21T10:28:52.470Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Deployment.md"}
+2026-11-21T10:28:52.472Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S DNS.md"}
+2026-11-21T10:28:52.472Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Control Plane.md"}
+2026-11-21T10:28:52.474Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Container Runtime Interface.md"}
+2026-11-21T10:28:52.474Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/Zero-downtime deployment.md"}
+2026-11-21T10:28:52.475Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/JVM App Deployment.md"}
+2026-11-21T10:28:52.476Z [INFO] syncNote start {"notePath":"12 - DevOps/Containers orchestration.md"}
+2026-11-21T10:28:52.477Z [INFO] syncNote start {"notePath":"12 - DevOps/Virtual machine.md"}
+2026-11-21T10:28:52.477Z [INFO] syncNote start {"notePath":"12 - DevOps/Open Container Initiative.md"}
+2026-11-21T10:28:52.477Z [INFO] syncNote start {"notePath":"12 - DevOps/Hypervisor.md"}
+2026-11-21T10:28:52.477Z [INFO] syncNote start {"notePath":"12 - DevOps/Difference between VMs and containers.md"}
+2026-11-21T10:28:52.478Z [INFO] syncNote start {"notePath":"12 - DevOps/Container.md"}
+2026-11-21T10:28:52.479Z [INFO] syncNote start {"notePath":"08 - AI/Prompts/Learning prompts ChatGPT.md"}
+2026-11-21T10:28:52.480Z [INFO] syncNote start {"notePath":"07 - Security/SSE.md"}
+2026-11-21T10:28:52.480Z [INFO] syncNote start {"notePath":"07 - Security/CORS.md"}
+2026-11-21T10:28:52.480Z [INFO] syncNote start {"notePath":"07 - Security/SAML.md"}
+2026-11-21T10:28:52.480Z [INFO] syncNote start {"notePath":"07 - Security/POLP.md"}
+2026-11-21T10:28:52.480Z [INFO] syncNote start {"notePath":"07 - Security/OIDC.md"}
+2026-11-21T10:28:52.480Z [INFO] syncNote start {"notePath":"07 - Security/Least privilege principle.md"}
+2026-11-21T10:28:52.481Z [INFO] syncNote start {"notePath":"07 - Security/JWT.md"}
+2026-11-21T10:28:52.481Z [INFO] syncNote start {"notePath":"07 - Security/AES256.md"}
+2026-11-21T10:28:52.481Z [INFO] syncNote start {"notePath":"09 - Linux/Linux Terminal.md"}
+2026-11-21T10:28:52.483Z [INFO] syncNote start {"notePath":"09 - Linux/Ubuntu experience.md"}
+2026-11-21T10:28:52.483Z [INFO] syncNote start {"notePath":"09 - Linux/Linux hard drive structure.md"}
+2026-11-21T10:28:52.483Z [INFO] syncNote start {"notePath":"09 - Linux/Linux devices.md"}
+2026-11-21T10:28:52.484Z [INFO] syncNote start {"notePath":"09 - Linux/Fedora experience.md"}
+2026-11-21T10:28:52.485Z [INFO] syncNote start {"notePath":"09 - Linux/Linux Mint experience.md"}
+2026-11-21T10:28:52.486Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md"}
+2026-11-21T10:28:52.487Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md"}
+2026-11-21T10:28:52.488Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md"}
+2026-11-21T10:28:52.489Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka.md"}
+2026-11-21T10:28:52.490Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md"}
+2026-11-21T10:28:52.492Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Message.md"}
+2026-11-21T10:28:52.493Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md"}
+2026-11-21T10:28:52.500Z [INFO] syncNote start {"notePath":"03 - Backend/spring/🗂️ Spring.md"}
+2026-11-21T10:28:52.501Z [INFO] syncNote start {"notePath":"03 - Backend/spring/persistence.md"}
+2026-11-21T10:28:52.501Z [INFO] syncNote start {"notePath":"03 - Backend/🗂️ 03 - Backend.md"}
+2026-11-21T10:28:52.501Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/🗂️ Backend cloud.md"}
+2026-11-21T10:28:52.501Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:28:52.502Z [WARN] Malformed cloze in 03 - Backend/cloud/architecture.md:14: automatic cloze is missing `==`. {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:28:52.502Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/Service discovery.md"}
+2026-11-21T10:28:52.502Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/Cloud ToDo.md"}
+2026-11-21T10:28:52.503Z [INFO] syncNote start {"notePath":"03 - Backend/API/RESTful.md"}
+2026-11-21T10:28:52.503Z [INFO] syncNote start {"notePath":"03 - Backend/API/API versioning.md"}
+2026-11-21T10:28:52.508Z [INFO] syncNote start {"notePath":"03 - Backend/API/REST.md"}
+2026-11-21T10:28:52.508Z [INFO] syncNote start {"notePath":"03 - Backend/API/API.md"}
+2026-11-21T10:28:52.508Z [INFO] syncNote start {"notePath":"03 - Backend/API/API Performance improvement.md"}
+2026-11-21T10:28:52.509Z [INFO] syncNote start {"notePath":"03 - Backend/Database/HiLo id optimization.md"}
+2026-11-21T10:28:52.511Z [INFO] syncNote start {"notePath":"03 - Backend/Backend senior developer questions.md"}
+2026-11-21T10:28:52.511Z [INFO] syncNote start {"notePath":"02 - Java/Java Evolution.md"}
+2026-11-21T10:28:52.517Z [INFO] syncNote start {"notePath":"02 - Java/JPA/JPA.md"}
+2026-11-21T10:28:52.520Z [INFO] syncNote start {"notePath":"02 - Java/JPA/🗂️ JPA.md"}
+2026-11-21T10:28:52.520Z [INFO] syncNote start {"notePath":"02 - Java/JPA/Hibernate/Hibernate.md"}
+2026-11-21T10:28:52.522Z [INFO] syncNote start {"notePath":"02 - Java/🗂️ 02 - Java.md"}
+2026-11-21T10:28:52.522Z [INFO] syncNote start {"notePath":"02 - Java/jvmArgs.md"}
+2026-11-21T10:28:52.523Z [INFO] syncNote start {"notePath":"02 - Java/jmxConfig.md"}
+2026-11-21T10:28:52.523Z [INFO] syncNote start {"notePath":"02 - Java/concurrency.md"}
+2026-11-21T10:28:52.542Z [INFO] syncNote start {"notePath":"02 - Java/Java versions.md"}
+2026-11-21T10:28:52.548Z [INFO] syncNote start {"notePath":"02 - Java/Java Memory Model.md"}
+2026-11-21T10:28:52.549Z [INFO] syncNote start {"notePath":"04 - Security/Identity federation.md"}
+2026-11-21T10:28:52.550Z [INFO] syncNote start {"notePath":"04 - Security/🗂️ 04 - Security.md"}
+2026-11-21T10:28:52.550Z [INFO] syncNote start {"notePath":"04 - Security/Identity provider.md"}
+2026-11-21T10:28:52.550Z [INFO] syncNote start {"notePath":"04 - Security/IdP.md"}
+2026-11-21T10:28:52.550Z [INFO] syncNote start {"notePath":"04 - Security/Authorization.md"}
+2026-11-21T10:28:52.553Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Authorization.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-21T10:28:52.553Z [INFO] syncNote start {"notePath":"04 - Security/Authentication.md"}
+2026-11-21T10:28:52.555Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Authentication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-21T10:28:52.555Z [INFO] syncNote start {"notePath":"04 - Security/Authentication and Authorization.md"}
+2026-11-21T10:28:52.556Z [INFO] syncNote start {"notePath":"06 - Architecture/DDD.md"}
+2026-11-21T10:28:52.561Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Temporal.md"}
+2026-11-21T10:28:52.575Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices architecture.md"}
+2026-11-21T10:28:52.583Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices patterns.md"}
+2026-11-21T10:28:52.584Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Saga.md"}
+2026-11-21T10:28:52.586Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Tracing.md"}
+2026-11-21T10:28:52.586Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices decomposition.md"}
+2026-11-21T10:28:52.587Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices To-Do.md"}
+2026-11-21T10:28:52.588Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Service mesh pattern.md"}
+2026-11-21T10:28:52.589Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Sidecar pattern.md"}
+2026-11-21T10:28:52.590Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md"}
+2026-11-21T10:28:52.591Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Orchestration and Choreography.md"}
+2026-11-21T10:28:52.592Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/CAP Theorem.md"}
+2026-11-21T10:28:52.593Z [INFO] syncNote start {"notePath":"06 - Architecture/Event-driven architecture.md"}
+2026-11-21T10:28:52.594Z [INFO] syncNote start {"notePath":"06 - Architecture/2PC vs Saga.md"}
+2026-11-21T10:28:52.600Z [INFO] syncNote start {"notePath":"06 - Architecture/Client polling pattern.md"}
+2026-11-21T10:28:52.600Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP.md"}
+2026-11-21T10:28:52.601Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Idempotency.md"}
+2026-11-21T10:28:52.607Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/gRPC.md"}
+2026-11-21T10:28:52.607Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Webhook.md"}
+2026-11-21T10:28:52.608Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/WebSocket.md"}
+2026-11-21T10:28:52.608Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URL.md"}
+2026-11-21T10:28:52.608Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URI.md"}
+2026-11-21T10:28:52.609Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTPS.md"}
+2026-11-21T10:28:52.609Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP3.md"}
+2026-11-21T10:28:52.615Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP2.md"}
+2026-11-21T10:28:52.617Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP1.1.md"}
+2026-11-21T10:28:52.618Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/GraphQL.md"}
+2026-11-21T10:28:52.618Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/API Idempotency.md"}
+2026-11-21T10:28:52.619Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/CDN.md"}
+2026-11-21T10:28:52.619Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md"}
+2026-11-21T10:28:52.620Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Single Writer Principle.md"}
+2026-11-21T10:28:52.621Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Optimistic Concurrency Control.md"}
+2026-11-21T10:28:52.621Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Mutual Exclusion.md"}
+2026-11-21T10:28:52.622Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Little's Law.md"}
+2026-11-21T10:28:52.623Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Compare-And-Swap.md"}
+2026-11-21T10:28:52.624Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Critical Section.md"}
+2026-11-21T10:28:52.624Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md"}
+2026-11-21T10:28:52.629Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Learning path.md"}
+2026-11-21T10:28:52.630Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Designing Data-Intensive Applications chapter-to-topic map.md"}
+2026-11-21T10:28:52.657Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/SCSI.md"}
+2026-11-21T10:28:52.658Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/TTY.md"}
+2026-11-21T10:28:52.658Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Redis.md"}
+2026-11-21T10:28:52.658Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/MongoDB.md"}
+2026-11-21T10:28:52.658Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Memcached.md"}
+2026-11-21T10:28:52.658Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Apache Cassandra.md"}
+2026-11-21T10:28:52.658Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md"}
+2026-11-21T10:28:52.659Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Timeout Pattern.md"}
+2026-11-21T10:28:52.659Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Bulkhead Pattern.md"}
+2026-11-21T10:28:52.659Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Fallback Pattern.md"}
+2026-11-21T10:28:52.660Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker.md"}
+2026-11-21T10:28:52.660Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Composition Over Inheritance.md"}
+2026-11-21T10:28:52.661Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Optimistic Concurrency Control.md"}
+2026-11-21T10:28:52.663Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Overview.md"}
+2026-11-21T10:28:52.664Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Reconciliation.md"}
+2026-11-21T10:28:52.664Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Testing.md"}
+2026-11-21T10:28:52.665Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Strangler Fig.md"}
+2026-11-21T10:28:52.666Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Version Guard.md"}
+2026-11-21T10:28:52.666Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Outbox Pattern.md"}
+2026-11-21T10:28:52.671Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shared Library.md"}
+2026-11-21T10:28:52.671Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Event Sourcing.md"}
+2026-11-21T10:28:52.674Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/DLQ.md"}
+2026-11-21T10:28:52.675Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotent Consumer.md"}
+2026-11-21T10:28:52.675Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotancy Key.md"}
+2026-11-21T10:28:52.676Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md"}
+2026-11-21T10:28:52.676Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Database Per Service.md"}
+2026-11-21T10:28:52.677Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/External Configuration Store.md"}
+2026-11-21T10:28:52.678Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Distributed Tracing.md"}
+2026-11-21T10:28:52.679Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/CQRS.md"}
+2026-11-21T10:28:52.683Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md"}
+2026-11-21T10:28:52.684Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md"}
+2026-11-21T10:28:52.685Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Aggregator.md"}
+2026-11-21T10:28:52.685Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md"}
+2026-11-21T10:28:52.688Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IT Common Glossary.md"}
+2026-11-21T10:28:52.689Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/EFI.md"}
+2026-11-21T10:28:52.689Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/SSL.md"}
+2026-11-21T10:28:52.689Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Reverse proxy.md"}
+2026-11-21T10:28:52.690Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TCP.md"}
+2026-11-21T10:28:52.690Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Virtual Private Cloud.md"}
+2026-11-21T10:28:52.690Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VPN.md"}
+2026-11-21T10:28:52.690Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VLAN.md"}
+2026-11-21T10:28:52.690Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/UDP.md"}
+2026-11-21T10:28:52.690Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TLS.md"}
+2026-11-21T10:28:52.692Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Subnet.md"}
+2026-11-21T10:28:52.694Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI Model.md"}
+2026-11-21T10:28:52.694Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md"}
+2026-11-21T10:28:52.694Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 6 layer.md"}
+2026-11-21T10:28:52.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 5 layer.md"}
+2026-11-21T10:28:52.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 4 layer.md"}
+2026-11-21T10:28:52.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 3 layer.md"}
+2026-11-21T10:28:52.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 2 layer.md"}
+2026-11-21T10:28:52.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 1 layer.md"}
+2026-11-21T10:28:52.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/LAN.md"}
+2026-11-21T10:28:52.696Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/ISO.md"}
+2026-11-21T10:28:52.696Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Forward proxy.md"}
+2026-11-21T10:28:52.696Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/DNS.md"}
+2026-11-21T10:28:52.696Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/CIDR Notation.md"}
+2026-11-21T10:28:52.696Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-most-once-delivery.md"}
+2026-11-21T10:28:52.697Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Delivery Semantics.md"}
+2026-11-21T10:28:52.697Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Exactly-once delivery.md"}
+2026-11-21T10:28:52.697Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-least-once delivery.md"}
+2026-11-21T10:28:52.698Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IOT.md"}
+2026-11-21T10:28:52.698Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Dual-Write.md"}
+2026-11-21T10:28:52.699Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Check-Then-Act.md"}
+2026-11-21T10:28:52.701Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Data Structures.md"}
+2026-11-21T10:28:52.701Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bitmap.md"}
+2026-11-21T10:28:52.702Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/SSTable.md"}
+2026-11-21T10:28:52.702Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/LSM Tree.md"}
+2026-11-21T10:28:52.706Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bloom Filter.md"}
+2026-11-21T10:28:52.706Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Star Schema vs Snowflake Schema.md"}
+2026-11-21T10:28:52.709Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md"}
+2026-11-21T10:28:52.715Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Untitled.md"}
+2026-11-21T10:28:52.715Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Database Lock.md"}
+2026-11-21T10:28:52.716Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md"}
+2026-11-21T10:28:52.718Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md"}
+2026-11-21T10:28:52.720Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Hash Index.md"}
+2026-11-21T10:28:52.722Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md"}
+2026-11-21T10:28:52.724Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GIN Index.md"}
+2026-11-21T10:28:52.727Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index.md"}
+2026-11-21T10:28:52.735Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GiST Index.md"}
+2026-11-21T10:28:52.736Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Clustered and Non-Clustered Index.md"}
+2026-11-21T10:28:52.738Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index Practical Usage.md"}
+2026-11-21T10:28:52.743Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Bitmap Index.md"}
+2026-11-21T10:28:52.747Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/BRIN Index.md"}
+2026-11-21T10:28:52.748Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md"}
+2026-11-21T10:28:52.754Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLAP.md"}
+2026-11-21T10:28:52.757Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Transaction.md"}
+2026-11-21T10:28:52.758Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md"}
+2026-11-21T10:28:52.759Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP and OLAP.md"}
+2026-11-21T10:28:52.760Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP.md"}
+2026-11-21T10:28:52.760Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/MVCC.md"}
+2026-11-21T10:28:52.761Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/ACID.md"}
+2026-11-21T10:28:52.761Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Schema Migration.md"}
+2026-11-21T10:28:52.771Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL.md"}
+2026-11-21T10:28:52.773Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Window Functions.md"}
+2026-11-21T10:28:52.776Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Aggregate Functions.md"}
+2026-11-21T10:28:52.776Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md"}
+2026-11-21T10:28:52.777Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md"}
+2026-11-21T10:28:52.778Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/IO-Bound vs CPU-Bound.md"}
+2026-11-21T10:28:52.779Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Grouping.md"}
+2026-11-21T10:28:52.782Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL vs NoSQL.md"}
+2026-11-21T10:28:52.784Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Relational Database.md"}
+2026-11-21T10:28:52.785Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/RDBMS.md"}
+2026-11-21T10:28:52.785Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/ETL.md"}
+2026-11-21T10:28:52.785Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Query Languages for Data.md"}
+2026-11-21T10:28:52.786Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/NoSQL database.md"}
+2026-11-21T10:28:52.786Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/MapReduce querying.md"}
+2026-11-21T10:28:52.787Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Impedance mismatch.md"}
+2026-11-21T10:28:52.788Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/In-Memory Database.md"}
+2026-11-21T10:28:52.788Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Graph database.md"}
+2026-11-21T10:28:52.791Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorums.md"}
+2026-11-21T10:28:52.791Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication vs Partitioning.md"}
+2026-11-21T10:28:52.791Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Synchronous vs Asynchronous Replication.md"}
+2026-11-21T10:28:52.792Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:28:52.793Z [WARN] Skipped #card in 05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md:19: empty answer. {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:28:52.793Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication.md"}
+2026-11-21T10:28:52.794Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Log.md"}
+2026-11-21T10:28:52.795Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md"}
+2026-11-21T10:28:52.795Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Eventual Consistency.md"}
+2026-11-21T10:28:52.796Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Lag.md"}
+2026-11-21T10:28:52.797Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md"}
+2026-11-21T10:28:52.797Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md"}
+2026-11-21T10:28:52.800Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md"}
+2026-11-21T10:28:52.801Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Consistency Levels.md"}
+2026-11-21T10:28:52.806Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Anti-Entropy.md"}
+2026-11-21T10:28:52.806Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/WAL.md"}
+2026-11-21T10:28:52.807Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Log.md"}
+2026-11-21T10:28:52.807Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md"}
+2026-11-21T10:28:52.808Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Latch.md"}
+2026-11-21T10:28:52.811Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Data Warehouse.md"}
+2026-11-21T10:28:52.811Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Document Database.md"}
+2026-11-21T10:28:52.812Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database.md"}
+2026-11-21T10:28:52.813Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Column-Oriented Storage.md"}
+2026-11-21T10:28:52.816Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DB Glossary.md"}
+2026-11-21T10:28:52.816Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DBMS.md"}
+2026-11-21T10:28:52.818Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Cloud database.md"}
+2026-11-21T10:28:52.818Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Protocol Buffers.md"}
+2026-11-21T10:28:52.818Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Data Encoding.md"}
+2026-11-21T10:28:52.820Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Forward Compatibility.md"}
+2026-11-21T10:28:52.820Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Backward Compatibility.md"}
+2026-11-21T10:28:52.821Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Apache Thrift.md"}
+2026-11-21T10:28:52.821Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/Designing Data Intensive Applications.md"}
+2026-11-21T10:28:52.821Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 3 Storage and Retrieval.md"}
+2026-11-21T10:28:52.823Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 4 Encoding and Evolution.md"}
+2026-11-21T10:28:52.825Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaC.md"}
+2026-11-21T10:28:52.825Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Availability.md"}
+2026-11-21T10:28:52.826Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Vertical scaling.md"}
+2026-11-21T10:28:52.827Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Serverless.md"}
+2026-11-21T10:28:52.829Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Scaling.md"}
+2026-11-21T10:28:52.829Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Microservices App.md"}
+2026-11-21T10:28:52.829Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Load Balancing.md"}
+2026-11-21T10:28:52.830Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaS.md"}
+2026-11-21T10:28:52.830Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Horizontal scaling.md"}
+2026-11-21T10:28:52.830Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-passive systems.md"}
+2026-11-21T10:28:52.831Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Cloud-Native App.md"}
+2026-11-21T10:28:52.831Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-active systems.md"}
+2026-11-21T10:28:52.831Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Binary search.md"}
+2026-11-21T10:28:52.831Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Two pointers.md"}
+2026-11-21T10:28:52.831Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Algorithms TODO.md"}
+2026-11-21T10:28:52.834Z [INFO] syncNote start {"notePath":"00 - Start here.md"}
+2026-11-21T10:28:52.834Z [INFO] syncNote start {"notePath":"00 - info stack.md"}
+2026-11-21T10:28:52.839Z [INFO] syncVault end {"noteCount":288,"processedNoteCount":288,"skippedUnchangedNoteCount":0,"totalCreates":0,"totalUpdates":0,"totalDeletes":0,"failedNotes":0}
+2026-11-21T10:29:13.568Z [INFO] syncVault start {"noteCount":288,"processedNoteCount":2,"skippedUnchangedNoteCount":286}
+2026-11-21T10:29:13.568Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:29:13.569Z [WARN] Malformed cloze in 03 - Backend/cloud/architecture.md:14: automatic cloze is missing `==`. {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:29:13.570Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:29:13.571Z [WARN] Skipped #card in 05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md:19: empty answer. {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:29:13.571Z [INFO] syncVault end {"noteCount":288,"processedNoteCount":2,"skippedUnchangedNoteCount":286,"totalCreates":0,"totalUpdates":0,"totalDeletes":0,"failedNotes":0}
+2026-11-21T10:48:38.013Z [INFO] syncVault start {"noteCount":288,"processedNoteCount":3,"skippedUnchangedNoteCount":285}
+2026-11-21T10:48:38.013Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:48:38.017Z [WARN] Malformed cloze in 03 - Backend/cloud/architecture.md:14: automatic cloze is missing `==`. {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:48:38.018Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md"}
+2026-11-21T10:48:38.018Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:48:38.324Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:48:38.324Z [INFO] syncVault end {"noteCount":288,"processedNoteCount":3,"skippedUnchangedNoteCount":285,"totalCreates":1,"totalUpdates":0,"totalDeletes":0,"failedNotes":0}
+2026-11-21T10:57:54.735Z [INFO] syncVault start {"noteCount":288,"processedNoteCount":3,"skippedUnchangedNoteCount":285}
+2026-11-21T10:57:54.972Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:57:54.979Z [WARN] Malformed cloze in 03 - Backend/cloud/architecture.md:14: automatic cloze is missing `==`. {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:57:54.979Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md"}
+2026-11-21T10:57:55.222Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-21T10:57:55.222Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:57:55.232Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-21T10:57:55.232Z [INFO] syncVault end {"noteCount":288,"processedNoteCount":3,"skippedUnchangedNoteCount":285,"totalCreates":1,"totalUpdates":0,"totalDeletes":0,"failedNotes":0}
+2026-11-21T10:58:16.975Z [INFO] syncVault start {"noteCount":288,"processedNoteCount":3,"skippedUnchangedNoteCount":285}
+2026-11-21T10:58:17.208Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:58:17.213Z [WARN] Malformed cloze in 03 - Backend/cloud/architecture.md:14: automatic cloze is missing `==`. {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T10:58:17.213Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md"}
+2026-11-21T10:58:17.458Z [WARN] CREATE failed {"blockId":"q-6fpf","error":"cannot create note because it is a duplicate"}
+2026-11-21T10:58:17.458Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md","okCreates":0,"okUpdates":0,"okDeletes":0,"failedOps":1}
+2026-11-21T10:58:17.459Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T10:58:17.470Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-21T10:58:17.470Z [INFO] syncVault end {"noteCount":288,"processedNoteCount":3,"skippedUnchangedNoteCount":285,"totalCreates":0,"totalUpdates":0,"totalDeletes":0,"failedNotes":0}
+2026-11-21T11:09:42.460Z [INFO] syncVault start {"noteCount":288,"processedNoteCount":4,"skippedUnchangedNoteCount":284}
+2026-11-21T11:09:42.675Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T11:09:42.682Z [WARN] Malformed cloze in 03 - Backend/cloud/architecture.md:14: automatic cloze is missing `==`. {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-21T11:09:42.682Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md"}
+2026-11-21T11:09:42.899Z [WARN] CREATE failed {"blockId":"q-6fpf","error":"cannot create note because it is a duplicate"}
+2026-11-21T11:09:43.068Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":1}
+2026-11-21T11:09:43.068Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-21T11:09:43.077Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-21T11:09:43.077Z [INFO] syncNote start {"notePath":"00 - info stack.md"}
+2026-11-21T11:09:43.084Z [INFO] syncVault end {"noteCount":288,"processedNoteCount":4,"skippedUnchangedNoteCount":284,"totalCreates":2,"totalUpdates":0,"totalDeletes":0,"failedNotes":0}

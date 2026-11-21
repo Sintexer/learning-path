@@ -1,6 +1,12 @@
+---
+flashcards:
+  q-68kf: { nid: 1795256797418, hash: wjt33ujr, sync: uk9g2eze }
+---
+
 # Shared responsibility
 
 ==AWS manages security **OF** the cloud==, while ==users must manage security **IN** the cloud==. This is called **shared responsibility** between AWS and you. 
+^q-68kf
 
 ### AWS responsibilities 
 
