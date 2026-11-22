@@ -1,12 +1,11 @@
-
 The **Outbox pattern** enables us to reliably update a database and publish a message when they are two separate systems. This pattern solves the [[Dual-Write]] problem.
 
 ## The scenario
 
 Your Order Service needs to:
 
-1. Save an order in PostgreSQL.
-2. Publish `OrderCreated` to a broker such as Kafka or RabbitMQ.
+1. Save an order in [[PostgreSQL]].
+2. Publish `OrderCreated` to a broker such as [[Kafka]] or RabbitMQ.
 
 Inventory Service consumes that event and reserves stock.
 
@@ -16,7 +15,7 @@ Order Service
     └── Message broker: publish OrderCreated
 ```
 
-These are **two writes to different systems**, hence “dual write.” A normal Spring database transaction does not automatically cover the broker.
+These are **two writes to different systems**, hence "dual write." A normal Spring database [[Transaction]] does not automatically cover the broker.
 
 ### Attempt A: commit the database, then publish
 
@@ -60,7 +59,6 @@ public void createOrder(CreateOrderRequest request) {
 This looks atomic, but normally it is not.
 
 With a database transaction manager:
-
 - The database write participates in the transaction.
 - The broker publish does not automatically participate.
 
@@ -68,7 +66,7 @@ The broker might accept the event, then the database commit might fail.
 
 > `@Transactional` does not turn arbitrary network calls into one atomic transaction.
 
-Similarly, an in-memory “publish after commit” callback avoids publishing before commit, but still leaves a crash window after the database commits.
+Similarly, an in-memory "publish after commit" callback avoids publishing before commit, but still leaves a crash window after the database commits.
 
 ## Implementation
 
@@ -122,7 +120,7 @@ We have not made the database and broker atomic. We have made the **obligation t
 
 ## Basic schema
 
-For PostgreSQL:
+For [[PostgreSQL]]:
 
 ```sql
 CREATE TABLE outbox_event (
@@ -135,7 +133,7 @@ CREATE TABLE outbox_event (
 );
 ```
 
-For multiple workers, you can claim outbox rows using the **same short-transaction lease mechanism** we covered for Saga workers:
+For multiple workers, you can claim outbox rows using the **same short-transaction [[Worker Leases|lease mechanism]]** we covered for [[Saga]] workers (e.g., `SELECT ... FOR UPDATE SKIP LOCKED` with a lease expiry + [[Fencing Token]]):
 
 ```text
 Transaction 1: claim an outbox row
@@ -149,11 +147,11 @@ The minimal table above omits those lease columns to keep the core idea visible.
 
 This is the most important part.
 
-## Case A: crash before the order transaction commits
+### Case A: crash before the order transaction commits
 
 The transaction rolls back. No partial result.
 
-## Case B: crash after database commit, before publication
+### Case B: crash after database commit, before publication
 
 ```text
 Order committed
@@ -169,9 +167,9 @@ published_at = NULL
 
 A publisher later discovers and sends it.
 
-If a publisher had already claimed the row, another worker can reclaim it after its lease expires.
+If a publisher had already claimed the row, another worker can reclaim it after its [[Worker Leases|lease]] expires.
 
-## Case C: broker accepts the event, but acknowledgment is lost
+### Case C: broker accepts the event, but acknowledgment is lost
 
 ```text
 Publisher → sends event E1
@@ -184,9 +182,9 @@ The publisher cannot know whether delivery succeeded.
 
 It retries **the same event ID, E1**.
 
-The broker may therefore contain two deliveries of E1.
+The broker may therefore contain two deliveries of E1 ([[At-least-once delivery]]).
 
-## Case D: acknowledgment arrives, then publisher crashes
+### Case D: acknowledgment arrives, then publisher crashes
 
 ```text
 Broker accepts E1
@@ -204,7 +202,7 @@ After recovery, the publisher sends E1 again.
 
 Again: duplicates are possible.
 
-## Case E: publication is acknowledged and recorded
+### Case E: publication is acknowledged and recorded
 
 ```text
 Broker accepts E1
@@ -214,11 +212,11 @@ Publisher commits published_at
 
 Normal polling no longer selects that row.
 
-Broker durability still depends on appropriate acknowledgment and replication settings.
+Broker durability still depends on appropriate acknowledgment and [[Replication|replication]] settings (`acks=all` in [[Kafka]]).
 
-# 10. Connecting Outbox back to Saga orchestration
+## Connecting Outbox back to Saga orchestration
 
-Related to [[Saga]].
+Related to [[Saga]] and [[Saga State Table]].
 
 A message-based coordinator often needs to:
 
@@ -239,38 +237,36 @@ One database transaction:
 
 If the coordinator crashes after commit, the command still gets delivered.
 
-Outbox can carry **commands or events**. It is not restricted to event-driven choreography.
+Outbox can carry **commands or events**. It is not restricted to event-driven choreography (see [[Microservices Orchestration and Choreography]]).
 
-## Publishing
+## Publishing: Polling vs. CDC
 
-Why Two Approaches Exist? **Polling** is attractive because almost every team already knows how to:
-
+Why do two approaches exist? **Polling** is attractive because almost every team already knows how to:
 - Query a database.
 - Run a scheduled Spring worker.
 - Publish a message.
 
 But as workloads grow, polling introduces database queries, bookkeeping updates, and delivery latency.
 
-CDC - **Change Data Capture** - uses the database’s existing change stream instead. It can reduce polling overhead and deliver changes quickly, but adds specialized infrastructure and operational responsibilities.
+**[[Change Data Capture]] (CDC)** uses the database's existing change stream instead. It can reduce polling overhead and deliver changes quickly, but adds specialized infrastructure and operational responsibilities.
 
-Both approaches require the [[Idempotency Key]] and idempotent consumers to be implemented.
+Both approaches deliver **[[At-least-once delivery]]** and therefore require an [[Idempotency Key]] and [[Idempotent Consumer]] downstream.
 
 Neither is universally better.
 
-|Question|Polling|CDC|
-|---|---|---|
-|How are events discovered?|Query outbox rows|Read committed changes from transaction log|
-|Who usually operates it?|Application team|Application and/or data-platform team|
-|Where is progress tracked?|Outbox status and worker state|Connector offsets and database log position|
-|Typical starting complexity|Lower|Higher unless CDC already exists|
-|Main operational pressure|Queries, updates, table maintenance|Log retention, connector health, recovery|
+| Question | Polling | CDC |
+| --- | --- | --- |
+| How are events discovered? | Query outbox rows | Read committed changes from transaction log |
+| Who usually operates it? | Application team | Application and/or data-platform team |
+| Where is progress tracked? | Outbox status and worker state | Connector offsets and database log position |
+| Typical starting complexity | Lower | Higher unless CDC already exists |
+| Main operational pressure | Queries, updates, table maintenance | Log retention, connector health, recovery |
 
 ### Polling Publishing
 
 > **Polling publisher:** periodically query the outbox table and publish pending rows.
 
 The publisher may run:
-
 - Inside the Order Service application.
 - As a separate application using the same outbox database.
 
@@ -278,19 +274,19 @@ A separate deployment lets you scale and restart publishing independently, but a
 
 Why implement polling first? Because it has a relatively small conceptual footprint:
 
-> “We already have a database and a Spring application. Add a table and a worker.”
+> "We already have a database and a Spring application. Add a table and a worker."
 
 That is often the right trade-off for moderate event volumes.
 
-Polling frequency is another limitation. With an interval of 5 seconds you have worst case of event is delayed for 5 seconds. It also introduces the write amplification.
+Polling frequency is another limitation. With an interval of 5 seconds you have worst-case delivery delay of 5 seconds. It also introduces write amplification (`UPDATE published_at`) and table bloat.
 
 ### CDC Publishing
 
-Change Data Capture. 
+[[Change Data Capture]].
 
-> **Transaction-log tailing / CDC:** read committed database changes from the database’s transaction log and publish them.
+> **Transaction-log tailing / CDC:** read committed database changes from the database's transaction log and publish them.
 
-A database maintains a durable record of changes for recovery and replication - transaction log ([[WAL]] in PostgreSQL, binlog in MySQL)
+A database maintains a durable record of changes for recovery and replication — the transaction log ([[WAL]] in [[PostgreSQL]], binlog in MySQL).
 
 With polling, the application typically writes:
 
@@ -310,7 +306,7 @@ The connector does not normally update every outbox row to mark it delivered. Th
 
 However:
 
-> “The connector read the event” and “every downstream consumer processed the event” are different milestones.
+> "The connector read the event" and "every downstream consumer processed the event" are different milestones.
 
 This distinction also applies to polling: a broker acknowledgment is not a consumer acknowledgment.
 
@@ -319,3 +315,31 @@ CDC moves work out of the application publisher, but it creates a relationship b
 - Database log retention.
 - Database disk capacity.
 
+> [!warning] Failure modes & trade-offs
+> - **Polling traps**: High-frequency polling + `UPDATE published_at` causes heavy [[PostgreSQL]] dead-tuple bloat (autovacuum pressure). Use a partial index `WHERE published_at IS NULL`, batch with `FOR UPDATE SKIP LOCKED`, and partition/drop old rows instead of row-by-row `DELETE`.
+> - **CDC traps**: If a Debezium connector stalls, PostgreSQL's **replication slot retains [[WAL]] segments indefinitely**, which can **fill the primary DB disk and crash Postgres**! Always configure `max_slot_wal_keep_size` and alert aggressively on replication-slot lag.
+> - **Ordering**: Multiple concurrent polling workers publishing rows for the same `aggregate_id` can publish events out of order; partition by `aggregate_id` or rely on CDC log order + Kafka partition key.
+
+Outbox Pattern:::Writing both business state and outbound event/command rows in a single local database transaction, then relaying those outbox rows asynchronously to a message broker to eliminate Dual-Write loss.
+
+## Outbox Polling vs. CDC (Transaction-Log Tailing) — what are the main operational trade-offs? #card
+- **Polling**: Simpler to start (just a table + worker), but adds DB read/write load, polling latency, and table bloat/vacuum pressure.
+- **[[Change Data Capture|CDC]]**: Low latency and no `published_at` update overhead, but requires operating connectors (e.g., Debezium) and monitoring [[WAL]] replication-slot lag so a stalled connector cannot fill the primary DB disk.
+
+The Outbox Pattern guarantees ==at-least-once delivery== (not exactly-once), so every downstream consumer must still be an ==Idempotent Consumer==.
+
+Why must an Outbox relay claim rows in a short transaction, publish outside the transaction, and then mark published?::Holding a DB transaction open across a slow network publish exhausts DB connections and locks; using short transactions + [[Worker Leases]] keeps DB locks minimal while surviving crashes safely.
+
+## Related
+- [[Dual-Write]]
+- [[Change Data Capture]]
+- [[Idempotent Consumer]]
+- [[Idempotency Key]]
+- [[Delivery Semantics]]
+- [[At-least-once delivery]]
+- [[Saga]]
+- [[Saga State Table]]
+- [[Worker Leases]]
+- [[Fencing Token]]
+- [[WAL]]
+- [[Event Sourcing]]

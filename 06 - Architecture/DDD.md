@@ -1,4 +1,4 @@
-**Domain-Driven Design (DDD)** is a software-design approach where the system’s structure and terminology are based on the **business domain** and its rules.
+**Domain-Driven Design (DDD)** is a software-design approach where the system's structure and terminology are based on the **business domain** and its rules.
 
 It is especially useful for applications with complex business logic, such as banking, insurance, logistics, healthcare, or e-commerce.
 
@@ -6,10 +6,9 @@ It is especially useful for applications with complex business logic, such as ba
 
 ## Core idea
 
-Developers and domain experts—such as product owners, accountants, or logistics specialists—build a shared model and vocabulary.
+Developers and domain experts — such as product owners, accountants, or logistics specialists — build a shared model and vocabulary.
 
 For example, in an e-commerce domain, terms might include:
-
 - Order
 - Customer
 - Product
@@ -26,7 +25,6 @@ These terms should have consistent meanings in conversations, requirements, code
 A large business domain is divided into smaller subdomains.
 
 For an e-commerce platform:
-
 - **Ordering**
 - **Payments**
 - **Inventory**
@@ -34,17 +32,15 @@ For an e-commerce platform:
 - **Customer support**
 
 Subdomains are often classified as:
-
-- **Core domain:** The primary business differentiator.
+- **Core domain:** The primary business differentiator (build in-house with your strongest engineers).
 - **Supporting subdomain:** Necessary but not the main competitive advantage.
-- **Generic subdomain:** A standard capability that can often use an existing product, such as authentication.
+- **Generic subdomain:** A standard capability that can often use an existing product, such as [[Authentication]] / [[Identity provider|IdP]].
 
 ### 2. Bounded context
 
 A **bounded context** is a boundary within which a domain model and its terminology have a precise meaning.
 
-For example, “customer” might mean:
-
+For example, "customer" might mean:
 - A buyer with a shipping address in the Ordering context.
 - An account with payment risk in the Billing context.
 - A ticket requester in the Support context.
@@ -53,7 +49,7 @@ These contexts can use separate models instead of forcing one large universal `C
 
 ### 3. Context map
 
-A context map describes how bounded contexts interact—for example, whether they exchange events, call APIs, or translate one model into another.
+A context map describes how bounded contexts interact — for example, whether they exchange events ([[Event-driven architecture]]), call APIs, share a kernel, or isolate foreign models behind an [[Anti-Corruption Layer]] (ACL).
 
 ## Tactical DDD building blocks
 
@@ -80,7 +76,7 @@ Two `Money(100, "USD")` values are considered equivalent.
 
 ### Aggregate
 
-A group of related entities and value objects treated as one consistency boundary.
+A group of related entities and value objects treated as **one consistency ([[Transaction|transactional]]) boundary**.
 
 For example:
 
@@ -91,7 +87,7 @@ Order aggregate
 └── ShippingAddress
 ```
 
-The **aggregate root** is the only external entry point—in this case, `Order`.
+The **aggregate root** is the only external entry point — in this case, `Order`.
 
 A business rule could be:
 
@@ -108,7 +104,7 @@ orderRepository.findById(orderId)
 orderRepository.save(order)
 ```
 
-A repository is usually defined in the domain/application layer and implemented using PostgreSQL, an ORM, or another persistence mechanism.
+A repository is usually defined in the domain/application layer and implemented using [[PostgreSQL]], an ORM ([[JPA]] / [[Hibernate]]), or another persistence mechanism.
 
 ### Domain service
 
@@ -132,7 +128,7 @@ PaymentReceived
 OrderShipped
 ```
 
-Other bounded contexts can react to these events.
+Other bounded contexts can react to these events (see [[Event-driven architecture]] and [[Outbox Pattern]]).
 
 ## Simple example
 
@@ -162,28 +158,51 @@ The emphasis is on modeling **business behavior**, not merely updating data.
 
 ## DDD and microservices
 
-DDD and microservices are related, but they are not the same.
+DDD and [[Microservices architecture|microservices]] are related, but they are not the same.
 
 - A **bounded context** is a logical business/model boundary.
 - A **microservice** is a deployment boundary.
-- A bounded context may become one service, but this is not mandatory.
+- A bounded context may become one service (with [[Database Per Service]]), but this is not mandatory.
 - DDD can be used in a modular monolith.
 
-A common mistake is to create one microservice per entity or database table. Services should generally align with business capabilities, not individual tables.
+A common mistake is to create one microservice per entity or database table (see [[Microservices decomposition]]). Services should generally align with business capabilities and invariants, not individual tables.
+
+> [!tip] Production reality
+> **Keep Aggregates small.** Modeling a giant `Customer` aggregate containing every `Order` ever placed creates severe lock/[[Optimistic Concurrency Control|OCC]] contention and memory bloat. Follow Vaughn Vernon's rules:
+> 1. Model true invariants in consistency boundaries (small aggregates).
+> 2. Reference other aggregates **by ID only**, not direct object graphs.
+> 3. Modify **one aggregate per transaction**; update other aggregates via domain events / [[Eventual Consistency]] / [[Saga]].
 
 ## When to use DDD
 
 DDD is helpful when:
-
 - Business rules are complex and frequently change.
 - Different departments use terms differently.
 - The application has many workflows and invariants.
 - Domain experts can collaborate with developers.
 
 It may be unnecessary for:
-
 - Simple CRUD applications
 - Basic reporting tools
 - Small applications with little business logic
 
 DDD introduces modeling and architectural overhead, so it should be applied where domain complexity justifies it.
+
+Bounded Context:::An explicit logical boundary within which a domain model and its Ubiquitous Language have a single, unambiguous meaning (allowing e.g. `Customer` to mean different things in Billing vs. Shipping).
+
+Aggregate (DDD):::A cluster of entities and value objects treated as a single transactional consistency boundary, accessed exclusively through its Aggregate Root.
+
+## What are three key design rules for sizing DDD Aggregates in high-throughput systems? #card
+1. Keep aggregates **small** — include only what is required to enforce a true transactional invariant.
+2. Reference other aggregates **by ID only** rather than embedding object graphs.
+3. Modify **one aggregate per local transaction**, propagating changes to other aggregates asynchronously via domain events ([[Outbox Pattern]]) or a [[Saga]].
+
+## Related
+- [[Microservices decomposition]]
+- [[Microservices architecture]]
+- [[Anti-Corruption Layer]]
+- [[Database Per Service]]
+- [[Event-driven architecture]]
+- [[Event Sourcing]]
+- [[CQRS]]
+- [[Saga]]
