@@ -11,7 +11,7 @@ Publisher retries
 
 The consumer may receive the same event *twice*. Rather than assuming duplicates will never happen, we make processing **idempotent**.
 
-This pattern also relies on [[Idempotancy Key]] and [[Version Guard]].
+This pattern also relies on [[Idempotency Key]] and [[Version Guard]].
 
 ```
 Producer local transaction

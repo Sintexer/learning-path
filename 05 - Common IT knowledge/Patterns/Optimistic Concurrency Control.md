@@ -1,6 +1,12 @@
-**Definition:** Optimistic Concurrency Control (OCC) is a strategy for handling concurrent updates _without acquiring locks upfront_. It assumes conflicts are rare, lets operations proceed freely, and instead checks — at the moment of writing — whether the data is still in the state you expect. If not, you reject or skip the operation rather than corrupt something.
+---
+aliases:
+  - OCC
+---
+**Definition:** Optimistic Concurrency Control (OCC) is a strategy for handling concurrent updates _without acquiring locks upfront_. It assumes conflicts are rare, lets operations proceed freely, and instead checks — at the moment of writing — whether the data is still in the state you expect. If not, you reject, skip, or retry the operation rather than corrupt state.
 
-**Contrast with pessimistic locking:** [[Pessimistic Locking]] (e.g., SQL `SELECT ... FOR UPDATE`) acquires a lock _before_ you even read the data, blocking any other transaction from touching it until you're done. Safe, but expensive — reduces concurrency, holds resources, and can cause deadlocks under load. OCC is the "ask forgiveness, not permission" model, better suited for high-throughput systems like event streams where locking every consumer against every other would defeat the purpose entirely.
+In-memory and low-level optimistic strategies take a copy of the data, modify it, and write the changes back only if the data has not mutated in the meantime. If a concurrent change happened, the operation repeats until it succeeds. Under high contention, repeated retries create a queuing effect similar to [[Mutual Exclusion]]. Optimistic strategies work well for data, but not for non-copyable hardware resources. Hardware-level atomicity is provided by [[Compare-And-Swap|CAS]] instructions. Notably, most locking strategies use optimistic primitives underneath to change the lock state — **to build a "Pessimistic" lock, you use an "Optimistic" technique underneath.**
+
+**Contrast with pessimistic locking:** [[Pessimistic Locking]] (e.g., SQL `SELECT ... FOR UPDATE`) acquires a lock _before_ you even read the data, blocking any other transaction from touching it until you're done. Safe, but expensive — reduces concurrency, holds resources, and can cause deadlocks under load. OCC is the "ask forgiveness, not permission" model, better suited for high-throughput systems like event streams where locking every consumer against every other would defeat the purpose entirely. See also [[Optimistic Locking]] for database-level row versioning.
 
 **Two flavors of OCC you should be able to distinguish:**
 

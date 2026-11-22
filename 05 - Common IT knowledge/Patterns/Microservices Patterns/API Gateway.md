@@ -30,7 +30,7 @@ Common responsibilities include:
 
 ##  Gateway Retries Can Duplicate Business Operations
 
-Gateway request failure - retry might produce duplicated operation (instead of trying to place the same order, gateway might submit two distinct orders).A safe design uses a stable request [[Idempotancy Key]]:
+Gateway request failure - retry might produce duplicated operation (instead of trying to place the same order, gateway might submit two distinct orders).A safe design uses a stable request [[Idempotency Key]]:
 
 ```http
 POST /orders

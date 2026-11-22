@@ -52,7 +52,7 @@ Protecting one arrow does not automatically protect the others.
 | Broker → Consumer database | Consumer idempotency |
 | Payment Service → Provider | External-operation idempotency |
 
-An [[Idempotancy Key]] tells the receiver: “This request is another attempt at the same operation, not a new operation.” [[API Idempotency]] is another form of idemppotency, which guarantees client-server idempotency.
+An [[Idempotency Key]] tells the receiver: “This request is another attempt at the same operation, not a new operation.” [[API Idempotency]] is another form of idemppotency, which guarantees client-server idempotency.
 
 ## Broker-level producer idempotency
 

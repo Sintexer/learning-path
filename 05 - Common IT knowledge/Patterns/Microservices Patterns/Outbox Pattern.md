@@ -253,7 +253,7 @@ But as workloads grow, polling introduces database queries, bookkeeping updates,
 
 CDC - **Change Data Capture** - uses the database’s existing change stream instead. It can reduce polling overhead and deliver changes quickly, but adds specialized infrastructure and operational responsibilities.
 
-Both approaches require the [[Idempotancy Key]] and idempotent consumers to be implemented.
+Both approaches require the [[Idempotency Key]] and idempotent consumers to be implemented.
 
 Neither is universally better.
 
