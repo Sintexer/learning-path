@@ -21,3 +21,18 @@ Sloppy quorums are particularly useful for increasing write availability: ==as l
 
 When the network interruption is fixed in a sloppy quorum, any writes that one node temporarily accepted on behalf of another node are sent to the appropriate "home" nodes. ::: This is called *hinted handoff*
 ^q-5jjw
+
+> [!warning] Failure modes & trade-offs
+> - **Not a real quorum**: A sloppy quorum is purely a durability/write-availability assurance ("data is stored on *some* $w$ nodes"), **not** a read-consistency guarantee. Even with $w + r > n$, reads cannot see the latest write until hinted handoff completes.
+> - **Hint expiry & disk pressure**: In [[Apache Cassandra]], hints are only retained for a bounded window (`max_hint_window_in_ms`, default 3 hours). If a home node stays down longer than that window, hints are dropped and only [[Anti-Entropy]] repair can recover the missing writes.
+
+In [[Apache Cassandra]], if a home node remains offline longer than the hinted-handoff window, how must it recover missed writes?::By running [[Anti-Entropy]] repair (`nodetool repair`).
+
+## Related
+- [[Leaderless Replication]]
+- [[Read Repair]]
+- [[Anti-Entropy]]
+- [[Quorum Consensus]]
+- [[Consistent Hashing]]
+- [[CAP Theorem]]
+- [[Apache Cassandra]]
