@@ -1,15 +1,37 @@
-`lssci` is the tool to list all devices. Sometimes it is inconvinient that devices are identified in the order kernel has recognized them. It brings some pain when one device is removed, and other devices might change their name. So Linux now uses UUID for devices, and stores UUID mapping in a special table.
+`lsscsi` (and `lsblk` / `blkid`) lists attached storage devices. Because the kernel assigns names like `/dev/sda` and `/dev/sdb` in discovery order, removing or adding a drive can shift device names across reboots. To avoid breakage, Linux identifies filesystems by immutable **UUIDs** (accessible under `/dev/disk/by-uuid/` and configured in `/etc/fstab` — see [[Linux hard drive structure]]).
 
-Devices are visible as folder under /dev.
+Devices are exposed as special files under `/dev` in two main classes:
+- **Block devices** (`b` in `ls -l /dev`): Random-access, kernel-buffered storage devices (e.g., `/dev/sda`, `/dev/nvme0n1`).
+- **Character devices** (`c` in `ls -l /dev`): Unbuffered byte-stream devices (e.g., `/dev/tty`, `/dev/null`, `/dev/urandom`).
 
-1. `dev/sd*` - these are SCSI disks. Used for SATA and USB devices. If you have three devices, they will be named sda, sdb, sdc. If one device has partiotions, each partition is a separate device (`sda1, sda2`)
-2. `dev/xvd*` and `dev/vd*` - these are virtual disks that are used by hypervisors.
-3. `dev/nvme` - for long-term storage devices like NVME SSDs.
-4. `dev/dm-*` and `dev/mapper` - some systems use a special virtualization layer, so the programs use some device mapper to access devices. Usually `dev/dm` devices are symbolic links to `dev/mapper`.
-5. `dev/sr*` - for CD and DVD
-6. `dev/hd*` - PATA (parallel ATA) devices, sometimes SATA devices might appear here if they are running in PATA compatibility mode.
-7. `dev/tty*`, `dev/pts/*` - are both representations of terminal devices, with `/dev/tty` representing an abstract controlling terminal for a process, and `/dev/pts` being used for each pseudoterminal, emulating physical terminals for things like terminal emulator windows and remote logins (see [[TTY]])
-8. `dev/ttyS*`, `dev/ttyUSB*`, `dev/ttyASM*` - for outdated serial ports like RS-232.
-9. `dev/lp0`, `dev/lp1` - one way parallel port devices, like used for printing pages
-10. `dev/snd/*`, `dev/dsp`, `dev/audio`, etc. - audio devices
-11. `dev/sg*` - is for [[SCSI]] generic devices. These are abstract representations of other devices, but with a SCSI plugged-in. Could be used to send SCI commands to a device if high-level set of command doesn't suit you.
+## Common Device Nodes under `/dev`
+
+1. `/dev/sd*` — [[SCSI]] disks, also used for SATA and USB storage via the kernel SCSI subsystem. Three drives appear as `sda`, `sdb`, `sdc`; each partition is a numbered device (`sda1`, `sda2`).
+2. `/dev/xvd*` and `/dev/vd*` — Paravirtualized disks exposed by [[Hypervisor|hypervisors]] (Xen and KVM/virtio) to [[Virtual machine|virtual machines]].
+3. `/dev/nvme*` — NVMe SSDs over PCIe (e.g., `/dev/nvme0n1` for namespace 1, `/dev/nvme0n1p1` for partition 1).
+4. `/dev/dm-*` and `/dev/mapper/*` — Device Mapper virtualization layer (used by LVM, LUKS disk encryption, and multipath); `/dev/mapper/*` provides human-readable symlinks to `/dev/dm-*`.
+5. `/dev/sr*` — Optical drives (CD/DVD).
+6. `/dev/hd*` — Legacy PATA (Parallel ATA / IDE) devices.
+7. `/dev/tty*`, `/dev/pts/*` — Terminal devices: `/dev/tty` represents a process's controlling terminal, while `/dev/pts/*` are pseudoterminal (PTY) slaves used by terminal emulators and SSH sessions (see [[TTY]]).
+8. `/dev/ttyS*`, `/dev/ttyUSB*`, `/dev/ttyACM*` — Serial ports (RS-232, USB-to-serial adapters, microcontrollers).
+9. `/dev/lp0`, `/dev/lp1` — Parallel port devices (legacy printers).
+10. `/dev/snd/*`, `/dev/dsp`, `/dev/audio` — Audio devices.
+11. `/dev/sg*` — [[SCSI]] generic devices, allowing raw SCSI commands to be sent directly to a device when high-level block drivers do not suffice.
+
+What is the difference between a block device and a character device in Linux `/dev`?::A block device (e.g., `/dev/sda`, `/dev/nvme0n1`) transfers fixed-size blocks with random access and kernel page-cache buffering, whereas a character device (e.g., `/dev/tty`, `/dev/null`, `/dev/urandom`) streams bytes sequentially without block buffering.
+
+In `/dev/nvme0n1p2`, `nvme0` is the ==controller==, `n1` is the ==namespace==, and `p2` is ==partition 2==.
+
+> [!tip] Production reality
+> On cloud VMs (like AWS Nitro EC2 instances), EBS volumes attach as `/dev/nvme*` even if your Terraform config specifies `/dev/sdf`. Never hardcode `/dev/sd*` in automation—use `lsblk -f`, `blkid`, or `/dev/disk/by-id/` / `/dev/disk/by-uuid/`.
+
+Why is referencing disks by `/dev/sdX` in `/etc/fstab` or scripts unsafe?::Because `/dev/sdX` names are assigned dynamically in kernel discovery order and can shift when disks are added, removed, or initialized in a different order across reboots—use `UUID` or `/dev/disk/by-id/` instead.
+
+## Related
+
+- [[Linux hard drive structure]]
+- [[SCSI]]
+- [[TTY]]
+- [[EFI]]
+- [[Hypervisor]]
+- [[Virtual machine]]

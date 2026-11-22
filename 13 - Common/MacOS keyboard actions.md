@@ -97,3 +97,8 @@ If you want to eliminate the trackpad completely, consider these developer stapl
 2. **[AeroSpace](https://github.com/nikitabobko/AeroSpace)** or **[Rectangle](https://rectangleapp.com/)**: AeroSpace brings an i3/Sway-like tiling window manager to macOS; Rectangle provides standard keyboard-based window resizing.
 3. **[Vimium](https://vimium.github.io/)** (Chrome / Brave / Firefox extension): Allows you to browse the web, click links, and navigate pages using only Vim-style keys (`f` to hint links, `j`/`k` to scroll).
 4. **[Homerow](https://www.homerow.app/)**: Generates keyboard shortcuts over any clickable UI button or icon on macOS, allowing clicks anywhere without reaching for the mouse.
+
+## Related
+
+- [[Linux Terminal]]
+- [[TTY]]
