@@ -1,28 +1,48 @@
-Uses port 80.
+> AKA **Hypertext Transfer Protocol**
 
-See [[HTTPS]]
+**HTTP** is a stateless request-response application protocol at [[OSI 7 layer]] (default port **80**; encrypted [[HTTPS]] uses port **443**).
 
-There are various implementations of HTTP protocol built in different years:
+There are three major versions in production:
 
-- [[HTTP1.1]] (REST, Web)
-- [[HTTP2]] (gRPC)
-- [[HTTP3]]
+- [[HTTP1.1]] (classic [[REST]], web)
+- [[HTTP2]] (multiplexed binary framing, used by [[gRPC]] and modern web)
+- [[HTTP3]] (QUIC over [[UDP]], eliminates [[TCP]] Head-of-Line blocking)
 
 ### Summary of Differences
 
-| Feature                   | HTTP/1.1                         | HTTP/2                              | HTTP/3                              |
-|---------------------------|----------------------------------|-------------------------------------|-------------------------------------|
-| **Protocol**              | Text-based                       | Binary                              | Binary (over QUIC)                  |
-| **Multiplexing**          | No                               | Yes                                 | Yes                                 |
-| **Header Compression**    | No                               | Yes (HPACK)                         | Yes (QPACK)                         |
-| **Server Push**           | No                               | Yes                                 | Yes                                 |
-| **Transport Protocol**    | TCP                              | TCP                                 | UDP (QUIC)                          |
-| **Head-of-Line Blocking** | Yes                              | Yes (at TCP level)                  | No                                  |
-| **Connection Establishment** | Slow (TCP handshake + TLS handshake) | Faster (TCP handshake + TLS handshake) | Fastest (combined QUIC handshake)   |
-| **Security**              | Optional (HTTPS)                 | Built-in (TLS)                      | Built-in (QUIC encryption)          |
+| Feature | [[HTTP1.1\|HTTP/1.1]] | [[HTTP2\|HTTP/2]] | [[HTTP3\|HTTP/3]] |
+| --- | --- | --- | --- |
+| **Framing** | Text-based | Binary | Binary (over QUIC) |
+| **Multiplexing** | No (1 in-flight per conn) | Yes (single TCP conn) | Yes (independent QUIC streams) |
+| **Header Compression** | No | Yes (HPACK) | Yes (QPACK) |
+| **Transport Protocol** | [[TCP]] | [[TCP]] | [[UDP]] (QUIC) |
+| **Head-of-Line Blocking** | Yes (HTTP + TCP) | Yes (at [[TCP]] level) | No |
+| **Connection Setup** | TCP + [[TLS]] (2–3 RTT) | TCP + [[TLS]] (2–3 RTT) | Combined QUIC + TLS 1.3 (1 RTT / 0-RTT) |
+| **Encryption** | Optional ([[HTTPS]]) | Effectively required ([[TLS]]) | Mandatory (built into QUIC) |
 
-### Examples of Adoption
+### Method Semantics (Safety & [[Idempotency]])
 
-1. **Google**: Google has been a major proponent of HTTP/2 and HTTP/3, with many of its services supporting these protocols.
-2. **Facebook**: Facebook has also adopted HTTP/2 and is experimenting with HTTP/3 to improve performance.
-3. **Cloudflare**: Cloudflare supports HTTP/2 and HTTP/3, providing these protocols to improve the performance of websites using its CDN services.
+- **Safe & Idempotent**: `GET`, `HEAD`, `OPTIONS` (read-only, cacheable).
+- **Unsafe & Idempotent**: `PUT`, `DELETE` (repeating leaves the resource in the same state).
+- **Unsafe & Non-Idempotent**: `POST`, `PATCH` (require an [[Idempotency Key]] / [[API Idempotency]] for safe retries).
+
+> [!tip] Production reality
+> HTTP/2 **Server Push** was deprecated and removed from Chrome/modern browsers due to cache-state ambiguity; **103 Early Hints** replaced it for preloading critical assets. Also remember that HTTP status codes drive automated infrastructure behavior: `429` / `503` with `Retry-After` signal [[Backpressure]] and [[Rate Limiting]], whereas retrying `4xx` client errors amplifies incidents.
+
+## Flashcards
+
+HTTP:::Hypertext Transfer Protocol — stateless request-response protocol at [[OSI 7 layer]] (port 80 plaintext, port 443 for [[HTTPS]]).
+
+Which HTTP methods are guaranteed to be idempotent by specification?::`GET`, `HEAD`, `OPTIONS`, `PUT`, and `DELETE` (`POST` and `PATCH` are ==not== idempotent by default).
+
+HTTP/1.1 uses ==text framing over TCP==; HTTP/2 adds ==binary multiplexing and HPACK over TCP==; HTTP/3 moves to ==QUIC over UDP with QPACK== to eliminate TCP Head-of-Line blocking.
+
+## Related
+- [[HTTPS]]
+- [[HTTP1.1]]
+- [[HTTP2]]
+- [[HTTP3]]
+- [[REST]]
+- [[API Idempotency]]
+- [[TCP]]
+- [[UDP]]

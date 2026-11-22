@@ -1,3 +1,21 @@
 > AKA **Application layer**
 
-This [[OSI Model]] layer provides services directly to applications, such as **file transfer**, **email**, and **web browsing**. It interacts with the user and provides the interface for accessing network resources.
+This [[OSI Model]] layer defines the protocols used directly by network applications to exchange meaningful domain messages—such as web APIs, name resolution, file transfer, and email.
+
+- **PDU**: Data
+- **Examples**: [[HTTP]] / [[HTTPS]], [[gRPC]], [[GraphQL]], [[WebSocket]], [[DNS]], SMTP, SSH, L7 [[Load Balancing]], [[Reverse proxy]], [[API Gateway]].
+
+## Flashcards
+
+OSI Layer 7:::Application layer — application-facing network protocols such as [[HTTP]], [[gRPC]], [[WebSocket]], and [[DNS]] (and L7 [[Load Balancing]] / [[API Gateway]] routing).
+
+L7 [[Load Balancing]] inspects ==application-layer headers, URL paths, and hosts== to make per-request routing decisions.
+
+## Related
+- [[OSI Model]]
+- [[OSI 6 layer]]
+- [[HTTP]]
+- [[gRPC]]
+- [[DNS]]
+- [[Load Balancing]]
+- [[API Gateway]]

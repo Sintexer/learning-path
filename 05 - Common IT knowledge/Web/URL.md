@@ -1,16 +1,37 @@
 > AKA **Uniform Resource Locator**
 
-A URL is a subset of [[URI]] that specifies **where a recognized resource is available** and **how it can be retrieved**. It's essentially a web address and comprises:
+A **URL** is a subset of [[URI]] that specifies **where a resource is located** and **how it can be retrieved** (its network access mechanism). Its standard anatomy is:
 
-- Scheme (Protocol)
-- Address (Domain Name and Path)
+`scheme://host:port/path?query#fragment`
+
+- **Scheme (Protocol)**: `https`, `http`, `wss`, `grpc`
+- **Authority**: hostname (resolved via [[DNS]]) and optional port
+- **Path & Query**: resource path and key-value parameters sent to the server
+- **Fragment (`#...`)**: client-side anchor—**never sent to the server** in an [[HTTP]] request
 
 > [!example]
 > `https://www.google.com/search?q=example`
 
 ## Difference between URI and URL
 
-All *URLs are URIs,* but *not all URIs are URLs*. A URI identifies a resource by location, name, or both. If it identifies a resource by location, it's a URL. **Some URIs are not URLs as they might identify a resource by name rather than by location.**
+All *URLs are URIs*, but *not all URIs are URLs*. A URI identifies a resource by location, name, or both. If it identifies a resource by location and retrieval mechanism, it's a URL. **Some URIs are not URLs because they identify a resource only by name (URNs) rather than by location.**
 
 > [!hint]
-> In typical web-discussion context, most people use the term URL even when they technically mean URI.
+> In typical web-discussion context, most people say URL even when they technically mean URI.
+
+> [!warning] Failure modes & trade-offs
+> - **Secrets in URL query strings**: query parameters are logged in plaintext by proxies, [[CDN|CDNs]], browser history, and `Referer` headers—never pass tokens, passwords, or PII in URLs; use `Authorization` headers or request bodies.
+
+## Flashcards
+
+URL:::Uniform Resource Locator — a subset of [[URI]] that specifies both *where* a resource lives and *how* to retrieve it (`scheme://host:port/path?query`).
+
+Which part of a URL is never sent over the network to the server in an [[HTTP]] request?::The ==fragment== (`#section`), which is processed strictly on the client.
+
+Never place secrets, tokens, or PII in URL query strings because proxies, access logs, and browser history record URLs in plaintext. #card-reminder
+
+## Related
+- [[URI]]
+- [[HTTP]]
+- [[DNS]]
+- [[REST]]

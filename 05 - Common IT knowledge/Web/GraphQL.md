@@ -1,11 +1,36 @@
-**GraphQL** is a data query and manipulation language for APIs, and a runtime for executing those queries with your existing data. It was developed by Facebook in 2012 and later open-sourced.
+**GraphQL** is a data query and manipulation language for [[API|APIs]], and a runtime for executing those queries against your existing data sources. It was developed by Facebook in 2012 and later open-sourced.
 
-**Efficiency** is one of the key advantages of GraphQL. Unlike traditional [[REST|REST APIs]], with GraphQL, the client specifies exactly what data it needs, which can reduce the amount of data that needs to be transferred over the network. This makes applications using GraphQL more efficient and faster.
+- **Efficiency (No Over-/Under-Fetching):** Unlike traditional [[REST|REST APIs]], the client specifies the exact fields it needs, reducing payload size over mobile or high-latency links.
+- **Single Request:** The client can fetch an entire object graph in a single round trip instead of chaining multiple REST calls (solving classic [[BFF]] / [[Aggregator]] chatty-client problems).
+- **Strong Typing:** Every GraphQL schema is strongly typed (queries, mutations, subscriptions, input types), enabling introspection, codegen, and clear contracts.
+- **Real-Time Updates:** Implemented with **subscriptions** (typically transported over [[WebSocket]] or Server-Sent Events).
+- **Integration & Federation:** Wraps existing [[REST]], [[gRPC]], or [[Database]] backends behind a unified graph (or composes subgraphs across teams via Apollo Federation).
 
-**Single Request**. GraphQL allows the client to make a single request to fetch the required data rather than making several requests to fetch the same data. This can greatly reduce the number of round trips between the client and server.
+> [!warning] Failure modes & trade-offs
+> - **N+1 query problem**: naive field resolvers fire a separate DB/RPC call for every item in a list—always batch and deduplicate per-request using **DataLoader**.
+> - **Lost [[HTTP]] caching**: because GraphQL typically sends `POST /graphql` with queries in the body, standard [[CDN]] and browser HTTP caching stops working unless you use **Persisted Queries** over `GET`.
+> - **Query-depth / complexity DoS**: a malicious or buggy client can craft deeply nested cyclic queries (`user { friends { friends { ... } } }`) that exhaust server CPU/memory—enforce **query depth limits**, **cost-based [[Rate Limiting]]**, and **persisted query allowlists** in production.
+> - **HTTP 200 for errors**: GraphQL returns `200 OK` even with partial/full `errors[]` in the JSON body, which blinds naive L7 monitoring and [[Circuit Breaker|circuit breakers]] unless you parse GraphQL-level error rates.
 
-**Strong Typing** is another important aspect of GraphQL. Every GraphQL schema is strongly typed. This means each data point has a specific type, and all types are defined in the schema. This leads to clearer API contracts and better tooling.
+## Flashcards
 
-**Real-Time Updates** with GraphQL are implemented with subscriptions. Clients subscribe to updates they're interested in, and the server pushes updates to those clients as they happen.
+GraphQL::A strongly typed API query language and runtime where clients declare the exact shape of data they need in a single request (queries, mutations, subscriptions).
 
-**Integration** with existing code is straightforward with GraphQL. It can wrap existing REST, [[gRPC]], or other API endpoints, or work directly with your database, providing a unified interface for all your data.
+How do you solve the N+1 resolver problem in GraphQL?::Use a per-request batching and caching layer like ==DataLoader== to coalesce individual field fetches into batched DB/service queries.
+
+Why does GraphQL break standard [[HTTP]] / [[CDN]] caching by default, and how do you regain it?::GraphQL sends queries in `POST` bodies to a single `/graphql` endpoint; you regain HTTP caching via ==Automatic Persisted Queries (APQ)== sent as `GET` requests with a query hash.
+
+### What security controls are mandatory before exposing a public GraphQL API? #card
+
+- **Query depth & complexity limits** (to block cyclic nested DoS queries).
+- **Persisted query allowlists** (clients send pre-approved query hashes instead of arbitrary ASTs).
+- **Disable introspection** in production (if the schema is private) and enforce field-level [[Authorization]].
+
+## Related
+- [[REST]]
+- [[gRPC]]
+- [[WebSocket]]
+- [[BFF]]
+- [[Aggregator]]
+- [[API]]
+- [[Rate Limiting]]

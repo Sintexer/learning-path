@@ -1,22 +1,18 @@
-**Terraform** is an **Infrastructure as Code ([[IaaC|IaC]])** tool used primarily to create and manage infrastructure through provider APIs.
+**Terraform** is a declarative **Infrastructure as Code ([[IaaC|IaC]])** tool used primarily to provision and manage infrastructure lifecycle through provider APIs (with OpenTofu as its open-source fork).
 
 It can manage resources in:
 
-- AWS, Azure, and Google Cloud
+- AWS, Azure, and Google Cloud ([[IaaS]] / [[Virtual Private Cloud|VPCs]] / managed services)
 - [[Kubernetes]]
-- VMware
-- GitHub
-- Datadog
-- [[PostgreSQL]] and many other systems
+- VMware, Cloudflare, GitHub, Datadog
+- [[PostgreSQL]] and hundreds of other providers
 
 ## Key characteristics
 
-- Uses the declarative **HashiCorp Configuration Language**, or HCL
-- Describes the desired infrastructure state
-- Builds a dependency graph to determine resource order
-- Maintains a **state file** mapping configuration to real infrastructure
-- Uses providers to communicate with external APIs
-- Shows planned changes before applying them
+- Uses declarative **HashiCorp Configuration Language (HCL)** to describe the desired end state
+- Builds a **DAG (dependency graph)** to determine parallel creation and safe destruction order
+- Maintains a **state file** (`terraform.tfstate`) mapping HCL resources to real-world cloud resource IDs
+- Shows an exact execution diff (`terraform plan`) before mutating infrastructure
 
 ## Example
 
@@ -35,7 +31,7 @@ resource "aws_instance" "database_server" {
 }
 ```
 
-Typical commands:
+Typical workflow:
 
 ```bash
 terraform init
@@ -44,25 +40,40 @@ terraform apply
 terraform destroy
 ```
 
-- `init`: Downloads providers and initializes the project.
-- `plan`: Previews proposed changes.
-- `apply`: Creates or modifies infrastructure.
-- `destroy`: Removes managed infrastructure.
+- `init`: Downloads providers/modules and initializes the backend.
+- `plan`: Refreshes state and previews exact additions, in-place updates, and replacements (`-/+`).
+- `apply`: Executes the planned DAG against provider APIs.
+- `destroy`: Tears down all resources tracked in the state.
 
-## Terraform state
+## Terraform Remote State & Locking
 
-Terraform stores information about managed resources in a state file. For team environments, state is normally kept in a remote backend with access control and locking.
+Terraform stores resource mappings and metadata in a state file. For teams, **never store state locally or commit it to Git** (it contains plaintext secrets and causes collisions). Instead, configure a **remote backend** (e.g., S3 with encryption + versioning and state locking via S3 native lockfile or DynamoDB, or Terraform Cloud):
+- **State locking** prevents two engineers or CI pipelines from running `terraform apply` concurrently and corrupting state.
+- **State segmentation**: split state by environment and blast radius (`network/`, `data/`, `app/`) so a bad app change cannot touch VPCs or databases, and `plan` stays fast.
 
-The state may contain sensitive information, so it must not be casually committed to Git.
+## Infrastructure Drift
 
-## Infrastructure drift
+Drift occurs when live infrastructure diverges from the declared Terraform configuration—for example, when someone manually edits a security group in the cloud console ("ClickOps"). Running `terraform plan` compares HCL, state, and live APIs to surface drift; scheduled CI drift-detection runs catch it early.
 
-Drift occurs when real infrastructure differs from the declared Terraform configuration—for example, when someone manually modifies a security group in the cloud console.
+> [!warning] Failure modes & trade-offs
+> - **Accidental `destroy and recreate` (`-/+`)**: changing an immutable attribute (e.g., RDS engine/subnet group or VPC CIDR) forces replacement. Always inspect `plan` for `-/+` and add `lifecycle { prevent_destroy = true }` on stateful resources like databases and S3 buckets.
+> - **Corrupted or leaked state**: state files store DB passwords and tokens in plaintext—encrypt the remote bucket with KMS, restrict IAM access ([[Least privilege principle]]), and enable bucket versioning for recovery.
+> - **Monolithic state**: putting an entire company's infra in one state file makes `plan` take 15 minutes and turns any mistake into a company-wide blast radius.
 
-`terraform plan` compares the configuration, state, and current infrastructure to identify required changes.
+## Flashcards
+
+Terraform:::Declarative [[IaaC]] tool using HCL, a dependency DAG, provider APIs, and a tracked state file to provision and manage infrastructure lifecycle.
+
+Why must team Terraform state live in a remote backend with state locking (never in Git)?::State contains ==plaintext secrets== and requires ==locking== so concurrent `terraform apply` runs don't race and corrupt infrastructure state.
+
+How do you protect critical stateful resources (like production databases) from accidental replacement in Terraform?::Add `lifecycle { prevent_destroy = true }` and isolate stateful resources into a separate state file with a smaller blast radius.
+
+Always inspect `terraform plan` output for `-/+` (destroy-and-recreate) actions before applying changes to stateful infrastructure. #card-reminder
 
 ## Related
-
 - [[Ansible]]
 - [[Ansible vs Terraform]]
 - [[IaaC]]
+- [[IaaS]]
+- [[Virtual Private Cloud]]
+- [[Least privilege principle]]

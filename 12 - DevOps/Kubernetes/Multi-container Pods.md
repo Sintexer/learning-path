@@ -1,22 +1,32 @@
-It is a powerful [[Pod]] pattern, because at the very high-level, each container should have a single clearly defined responsibility. When there is an idea to tightly couple two or more functions, we can benefit from multi-container pods. They might implement several well-known patterns:
+Multi-container [[Pod|Pods]] are a powerful pattern when two or more containers must be tightly coupled, co-scheduled on the same node, and share `localhost` networking, volumes, or lifecycle. Each container still keeps a single clear responsibility.
 
-1. Sidecar pattern
-2. Adapter pattern
-3. Ambassador pattern
-4. Init pattern
+## Core Multi-Container Pod Patterns
 
-## Sidecar multi-container Pods
+1. **Sidecar pattern** (see [[Microservices Sidecar pattern]]): extends or enhances the main container without changing app code—e.g., an Envoy [[Service Mesh]] proxy handling mTLS/retries/telemetry, a log forwarder tailing a shared volume, or a config/secret syncer.
+2. **Adapter pattern**: transforms or standardizes the main container's output for an external consumer—e.g., translating legacy app metrics into Prometheus / [[OpenTelemetry]] format.
+3. **Ambassador pattern**: proxies outbound connections from the main container to external systems—e.g., a local Cloud SQL Auth Proxy or [[Redis]]/sharding proxy listening on `localhost` so the app stays agnostic to connection topology.
+4. **Init container pattern**: runs one or more *init containers* sequentially to completion **before** any main application container starts (e.g., waiting for a dependency, fetching secrets, or seeding a shared volume). If an init container fails, Kubernetes restarts the Pod until it succeeds.
 
-Probably the most popular pattern. It has a main application container, and a sidecar container. For example, one could serve a web page, and the other (sidecar) sync container could pull the newest page version in background.
+## Native Sidecar Containers (K8s 1.28+)
 
-## Adapter multi-container Pods
+Historically, regular sidecars caused two painful production bugs:
+- **Startup race**: the main app started *before* the sidecar proxy (e.g., Envoy / Vault Agent) was ready, failing early requests.
+- **Job hang**: in `Job` / `CronJob` Pods, when the main container exited `0`, the sidecar kept running forever so the Job never completed.
 
-This is a special variation of the sidecar pattern where one container acts as a input-output mapper for the main container. It might take non-standardized output from the main container and route it to a target in a converted format.
+Kubernetes **native sidecars** solve both: define the sidecar under `initContainers` with `restartPolicy: Always`. Kubernetes starts it before the main app, waits for its readiness probe, keeps it running alongside the app, and **automatically terminates it after the main container exits**.
 
-## Ambassador multi-container Pods
+> [!warning] Failure modes & trade-offs
+> - **Don't bundle independent services in one Pod**: containers in a Pod always scale together and share fate—only co-locate helper containers that genuinely share lifecycle and `localhost`/volume with the main container; otherwise use separate [[K8S Deployment|Deployments]].
 
-Another variation of sidecar. This time, the helper container brokers connectivity to an external system. For example, the main application container can just dump its output to a port the ambassador container is listening on and sit back while the ambassador container does the hard work of getting it to external system.
+## Flashcards
 
-## Init multi-container Pods
+What are the four classic [[Kubernetes]] multi-container [[Pod]] patterns?::==Sidecar== (extends functionality, e.g., proxy/log shipper), ==Adapter== (normalizes output), ==Ambassador== (proxies outbound connectivity), and ==Init container== (runs to completion before main containers start).
 
-It runs a special *init container* that's guaranteed to start and complete **before** your main application container. It's also guaranteed to only run once.
+How do Kubernetes native sidecar containers (K8s 1.28+) fix startup races and hanging `Job` pods?::They are declared in `initContainers` with ==`restartPolicy: Always`==, so they start before the main container and automatically terminate once the main container finishes.
+
+## Related
+- [[Pod]]
+- [[Microservices Sidecar pattern]]
+- [[Microservices Service mesh pattern]]
+- [[Service Mesh]]
+- [[OpenTelemetry]]

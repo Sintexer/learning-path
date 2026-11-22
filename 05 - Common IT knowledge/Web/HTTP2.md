@@ -1,36 +1,22 @@
 **Introduction:**
-HTTP/2 was published in 2015 to address the performance limitations of HTTP/1.1. It is based on Google's SPDY protocol. Used by [[gRPC]] technology.
+HTTP/2 (RFC 9113) was published in 2015 to address the performance limitations of [[HTTP1.1]]. It evolved from Google's SPDY protocol and is the required transport for [[gRPC]].
 
 **Key Features:**
-1. **Binary Protocol**: Uses a binary format instead of text, making it more efficient to parse and less error-prone.
-2. **Multiplexing**: Allows multiple requests and responses to be sent over a single connection simultaneously, eliminating head-of-line blocking.
-3. **Header Compression**: Uses HPACK compression to reduce the size of headers, improving performance.
-4. **Server Push**: Allows servers to push resources to the client proactively, reducing latency.
-5. **Stream Prioritization**: Clients can prioritize streams, allowing more important resources to be delivered first.
-
-**Improvements Over HTTP/1.1:**
-1. **Reduced Latency**: Multiplexing and server push significantly reduce latency.
-2. **Better Resource Utilization**: Single connection usage reduces the overhead of multiple connections.
-3. **Improved Performance**: Header compression and binary framing improve overall performance.
+1. **Binary Framing**: Splits messages into binary frames (HEADERS, DATA, RST_STREAM, WINDOW_UPDATE) instead of text, making parsing faster and eliminating text-delimited request smuggling.
+2. **Multiplexing**: Interleaves multiple independent request/response streams over a single [[TCP]] connection simultaneously, eliminating **HTTP-level** Head-of-Line blocking.
+3. **Header Compression (HPACK)**: Uses a shared dynamic table + Huffman encoding to compress repetitive headers across requests on the same connection.
+4. **Per-Stream Flow Control**: Built-in `WINDOW_UPDATE` frames provide stream- and connection-level [[Backpressure]].
+5. **Stream Prioritization**: Allows clients to hint which streams matter most (RFC 9218 extensible priorities). *(Note: HTTP/2 Server Push was later deprecated in browsers in favor of `103 Early Hints`.)*
 
 **Limitations:**
-1. **Complexity**: More complex than HTTP/1.1, requiring more sophisticated handling.
-2. **Head-of-Line Blocking at TCP Level**: While HTTP/2 eliminates head-of-line blocking at the HTTP level, it still suffers from it at the TCP level.
+1. **Head-of-Line Blocking at the [[TCP]] Level**: Because all multiplexed streams share one [[TCP]] byte stream, losing a single TCP packet stalls *every* stream on that connection until TCP retransmits it—often making HTTP/2 slower than HTTP/1.1 on lossy (>2% packet loss) mobile networks. Solved by [[HTTP3]] (QUIC).
+2. **L4 [[Load Balancing]] Skew**: Because clients reuse one persistent connection, an L4 load balancer sends all requests from a client to a single backend; requires L7 load balancing (e.g., Envoy/NGINX) or client-side load balancing.
 
-#### Initial Limitation with gRPC and Browsers
+### gRPC and Browsers (`gRPC-Web`)
 
-**gRPC and HTTP/2:**
-- **gRPC**: gRPC is a high-performance, open-source RPC framework that uses HTTP/2 for transport and Protocol Buffers for serialization.
-- **Initial Limitation**: When gRPC was first introduced, it was primarily designed for server-to-server communication. This was because most browsers did not fully support HTTP/2 for non-HTTP traffic, making it challenging to use gRPC directly from web browsers.
+- **Initial Limitation**: [[gRPC]] relies on raw HTTP/2 framing features (especially HTTP/2 **trailers** for status codes and bidirectional streaming) that browser `fetch`/`XMLHttpRequest` APIs do not directly expose.
+- **gRPC-Web**: A browser-compatible wire spec and JS client that translates gRPC calls over standard HTTP/1.1 or HTTP/2 through a proxy (typically Envoy) which converts them to native gRPC on the server side.
 
-#### Changes and Current State
-
-**gRPC-Web:**
-- **Introduction**: To address the limitation of using gRPC in web browsers, the gRPC team introduced **gRPC-Web**. gRPC-Web is a JavaScript client library that allows web applications to interact with gRPC services.
-- **How It Works**: gRPC-Web works by translating gRPC calls into HTTP/1.1 or HTTP/2 requests that can be understood by web browsers. It uses a proxy server to convert these requests back into standard gRPC calls on the server side.
-- **Adoption**: gRPC-Web has been widely adopted and is now a standard way to use gRPC in web applications.
-
-**Example:**
 ```javascript
 import {grpc} from '@improbable-eng/grpc-web';
 import {MyServiceClient} from './generated/my_service_pb_service';
@@ -45,3 +31,25 @@ client.myMethod(request, {}, (err, response) => {
   }
 });
 ```
+
+> [!warning] Failure modes & trade-offs
+> - **HTTP/2 Rapid Reset (CVE-2023-44487)**: clients can open and immediately `RST_STREAM` millions of streams over a single TCP connection, bypassing traditional connection-based [[Rate Limiting]] and exhausting server CPU. Enforce `SETTINGS_MAX_CONCURRENT_STREAMS` and reset-rate limits at the [[Reverse proxy]] / [[API Gateway]].
+
+## Flashcards
+
+HTTP/2:::Binary, multiplexed [[HTTP]] protocol over [[TCP]] using HPACK header compression and per-stream flow control (transport for [[gRPC]]).
+
+Why can HTTP/2 still suffer from Head-of-Line blocking even though it multiplexes streams?::Because all streams share a single ==[[TCP]] connection==; one lost TCP packet stalls delivery of *every* stream until retransmitted (solved by QUIC in [[HTTP3]]).
+
+### Why does HTTP/2 break naive L4 load balancing between microservices? #card
+
+L4 load balancers distribute *connections*, not *requests*. Because an HTTP/2 (or [[gRPC]]) client multiplexes all RPCs onto one persistent [[TCP]] connection, all traffic pins to a single backend pod—requiring L7 load balancing ([[Reverse proxy]] / [[Service Mesh]]) or client-side load balancing.
+
+## Related
+- [[HTTP]]
+- [[HTTP1.1]]
+- [[HTTP3]]
+- [[gRPC]]
+- [[TCP]]
+- [[Load Balancing]]
+- [[Backpressure]]

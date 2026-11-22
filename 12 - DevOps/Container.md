@@ -1,28 +1,46 @@
-
-**What is a container?** Imagine a container as a lightweight, isolated environment that encapsulates an **application** and **all its dependencies** (libraries, configuration files, etc.). It's like a **self-contained package** that allows the application to *run consistently across different environments*, regardless of the underlying infrastructure. It is important to [[Difference between VMs and containers|differentiate VMs and containers]]. Containers share the *same operating system and kernel* as the host that they exist on. But [[Virtual machine|virtual machines]] contain their *own operating system*.
+**What is a container?** Imagine a container as a lightweight, isolated environment that encapsulates an **application** and **all its dependencies** (libraries, configuration files, etc.). It's like a **self-contained package** that allows the application to *run consistently across different environments*, regardless of the underlying infrastructure. It is important to [[Difference between VMs and containers|differentiate VMs and containers]]. Containers share the *same operating system and kernel* as the host that they exist on, whereas [[Virtual machine|virtual machines]] contain their *own operating system*.
 
 **Key characteristics:**
 
-* **Isolation:** Each container runs in its own isolated space, preventing conflicts with other applications or the host system.
-* **Portability:** Containers are designed to be portable, meaning they can be easily moved between different machines without requiring any modifications.
-* **Lightweight:** Compared to virtual machines, containers have a much smaller footprint, making them more efficient in terms of resource utilization.
-* **Scalability:** Containers can be easily scaled up or down to meet changing application demands.
+* **Isolation:** Each container runs in its own isolated user space, preventing conflicts with other applications or the host system.
+* **Portability:** Standardized by the [[Open Container Initiative]] (OCI), container images run identically across dev laptops, CI, and production clusters.
+* **Lightweight:** Compared to [[Virtual machine|virtual machines]], containers have a much smaller footprint and start in milliseconds to seconds.
+* **Scalability:** Containers are easy to scale out ([[Horizontal scaling]]) to meet changing demand.
 
-In the real world it is hard to manage containers manually. Various [[Containers orchestration|orchestration services]] like [[AWS Elastic Container Service|Amazon ECS]] or [[Kubernetes|K8S]] are designed to help with hundreds of containers running simultaneously, spin up and shut down additional instances on demand, and even enable [[Service discovery|service discovery]].
+In the real world it is hard to manage containers manually. Various [[Containers orchestration|orchestration services]] like [[AWS Elastic Container Service|Amazon ECS]] or [[Kubernetes|K8S]] manage hundreds or thousands of containers simultaneously, spin up and shut down instances on demand, and provide [[Service discovery|service discovery]].
 
-### Use cases for containers:
+### Use cases for containers
 
-* **Microservices architecture:** Containers are ideal for building and deploying microservices, which are small, independent services that communicate with each other.
-* **Continuous integration/continuous delivery (CI/CD):** Containers streamline the CI/CD process by providing a consistent and portable environment for building, testing, and deploying applications.
-* **Cloud-native applications:** Containers are a perfect fit for cloud-native applications, which are designed to be deployed and managed in cloud environments.
+* **[[Microservices architecture]]:** Ideal for packaging and deploying small, independently releasable services.
+* **Continuous integration/continuous delivery (CI/CD):** Provides reproducible build, test, and runtime environments.
+* **[[Cloud-Native App|Cloud-native applications]]:** Enables immutable deployments, rolling updates, and self-healing.
 
-### How do containers work?
+### How do containers work under the hood?
 
-Containers leverage a technology called **containerization**, which allows multiple isolated user spaces to run on a single operating system (OS) kernel. This is achieved through technologies like **cgroups** (control groups) and **namespaces**, which provide resource isolation and process isolation, respectively.
+Containers are **not** mini-VMs—they are ordinary Linux processes isolated by kernel primitives:
+- **Linux Namespaces** (*what you can see*): isolate PID tree, network stack (`net`), filesystem mounts (`mnt`), UTS hostname, IPC, and UID/GID (`user`).
+- **cgroups (v1/v2)** (*what you can use*): enforce CPU, memory, PID, and I/O quotas/limits.
+- **Union filesystem (OverlayFS)**: stacks read-only image layers with a thin writable container layer (copy-on-write).
+- **Security primitives**: Linux capabilities, `seccomp`, and AppArmor/SELinux restrict what syscalls the process can invoke on the shared kernel.
 
-### Benefits of using containers
+> [!warning] Failure modes & trade-offs
+> - **Shared kernel blast radius**: a kernel vulnerability or container escape compromises the host and neighbor containers—never run untrusted multi-tenant code in plain containers without sandboxing (gVisor, Kata Containers, or Firecracker microVMs).
+> - **Running as `root` (UID 0)**: by default many images run as root inside the container; always set a non-root `USER`, drop Linux capabilities, and use a read-only root filesystem where possible.
+> - **PID 1 zombie & signal trap**: if your app runs as PID 1 without signal handling (or via `sh -c`), `SIGTERM` may be ignored until `SIGKILL`, breaking [[Zero-downtime deployment|graceful shutdown]].
 
-* **Faster deployment:** Containers boot up quickly, enabling faster application deployment and updates.
-* **Improved resource utilization:** Due to their lightweight nature, containers consume fewer resources compared to virtual machines.
-* **Increased consistency:** Containers ensure consistent application behavior across different environments, promoting reliability and predictability.
-* **Enhanced scalability:** Containers can be easily scaled up or down to meet fluctuating application demands.
+## Flashcards
+
+What two Linux kernel primitives provide the core isolation behind containers?::==Namespaces== (isolate what a process can see: PID, net, mount, user) and ==cgroups== (limit what resources a process can use: CPU, memory, I/O).
+
+Why are standard containers weaker security boundaries than [[Virtual machine|VMs]] for untrusted multi-tenant workloads?::Because containers share the ==host OS kernel==; a kernel exploit can break out to the host, so untrusted multi-tenant workloads use microVMs (Firecracker) or sandboxed runtimes (gVisor/Kata).
+
+Always run production containers as a non-root user with a read-only root filesystem and minimal Linux capabilities. #card-reminder
+
+## Related
+- [[Difference between VMs and containers]]
+- [[Open Container Initiative]]
+- [[Containers orchestration]]
+- [[Container Runtime Interface]]
+- [[containerd]]
+- [[Kubernetes]]
+- [[Virtual machine]]

@@ -1,20 +1,19 @@
-> ❯ `kubectl version` 
-> Client Version: v1.36.2 
-> Kustomize Version: v5.8.1 
-> Server Version: v1.35.0+k3s1
+> ❯ `kubectl version`
+> Client Version: v1.36.2
+> Kustomize Version: v5.8.1
+> Server Version: v1.35.0+k3s1  *(within ±1 minor — see [[K8S Version Skew]])*
 
-I use docker via `colima`. My services do not auto-start, so I manually start them whenever needed, and then tear down to save resources.
+I use containers via `colima` with built-in **K3s** (lightweight [[Kubernetes]]). Services do not auto-start, so I start them manually when needed and tear them down afterward to save RAM/battery.
 
 ## Bootstrap
 
 ```zsh
-# For the first start after fresh installation
+# First start after fresh installation
 colima start --kubernetes --runtime containerd --cpu 4 --memory 6
-# or after first start
+
+# Subsequent starts
 colima start
 ```
-
-I use k3s built-in into colima 
 
 ## Teardown
 
@@ -22,20 +21,38 @@ I use k3s built-in into colima
 colima stop
 ```
 
-## Delete
+## Full Reset / Delete
 
 ```zsh
-colima stoop
+colima stop
 colima delete -f
-rm -fr ~/.colima
+rm -rf ~/.colima
 ```
 
-## Why `colima`?
+## Why `colima` on macOS?
 
 > **Co**ntainer **Li**nux **Ma**chine
 
-**Docker cannot run natively on macOS.** Docker containers rely on Linux-specific kernel features (like cgroups and namespaces). macOS is Unix-based, but it is _not_ Linux. It doesn't have those features.
+**Linux [[Container|containers]] cannot run natively on macOS.** Containers rely on Linux kernel primitives (**cgroups** and **namespaces**). macOS is Unix-based (Darwin/XNU), not Linux, so it lacks those kernel features.
 
-**The Solution:** You need a tiny Linux Virtual Machine (VM) running in the background to act as the "host" for your containers.
+**The Solution:** Run a lightweight Linux [[Virtual machine|VM]] in the background as the container host.
 
-**What Colima does:** It automatically spins up a lightweight, invisible Linux VM (using a tool called `Lima`) and sets up the Docker daemon inside it. It then maps the `docker.sock` from that VM to your Mac, so when you type `docker ps` on your Mac terminal, it talks to the Docker engine running inside the Colima VM.
+**What Colima does:** It spins up a minimal Linux VM (powered by `Lima` on Apple Virtualization / QEMU), runs [[containerd]] (or Docker) + K3s inside that VM, and forwards the container runtime socket and `kubeconfig` to macOS so local `docker` and `[[kubectl]]` commands transparently talk to the VM.
+
+> [!tip] Production reality
+> Local K3s/Colima/kind clusters are great for manifest validation and fast iteration, but beware differences from production: `local-path-provisioner` behaves differently from cloud CSI block storage, single-node clusters hide cross-node networking/anti-affinity bugs, and ARM64 (Apple Silicon) builds need `--platform linux/amd64` (or multi-arch builds) before pushing to x86 cloud nodes.
+
+## Flashcards
+
+Why can't Linux [[Container|containers]] run natively on macOS without a tool like `colima` or Docker Desktop?::Containers rely on Linux-specific kernel primitives (==cgroups and Linux namespaces==) that macOS's Darwin/XNU kernel does not have, so a lightweight Linux [[Virtual machine|VM]] is required.
+
+What is a common pitfall when building container images on Apple Silicon (ARM64) laptops for cloud [[Kubernetes]] clusters?::Building an `arm64`-only image that fails with `exec format error` on `amd64` worker nodes; build multi-arch images (`docker buildx --platform linux/amd64,linux/arm64`) in CI.
+
+## Related
+- [[Kubernetes]]
+- [[K8S Core Containers]]
+- [[K8S Version Skew]]
+- [[containerd]]
+- [[Container]]
+- [[Virtual machine]]
+- [[kubectl]]

@@ -1,41 +1,74 @@
-A [[Kubernetes]] *control plane node* is a server running collection of system services that make up the control plane of the cluster. Sometimes we call them *Masters*, *Heads* or *Head nodes*.
+A [[Kubernetes]] *control plane node* is a server running the collection of system services that make up the brains of the cluster (sometimes called *Masters* or *Head nodes*).
 
-The simplest setups run a single conrol plane node. However, prod environments run multiple control plane nodes configured for high availability (HA). 3 or 5 is recommended for HA. It is a good practice not to run user applications on control plane nodes.
+Simple local setups run a single control plane node, while production environments run **3 or 5** control plane nodes for high [[Availability|availability]] (HA)—odd numbers for [[etcd]] [[Quorum Consensus|quorum]]. Best practice is to taint control plane nodes so user workloads do not compete for control plane CPU/RAM.
 
-## API Server
+## API Server (`kube-apiserver`)
 
-It is the Grand Central of Kubernetes. **All communication, between all components, must go through the API server**. 
+It is the Grand Central Station of Kubernetes. **All communication between all components goes through the API server**—nothing else talks directly to [[etcd]].
 
-It exposes a RESTful API that you POST YAML configuration files to over HTTPS. These YAML files, which sometimes call *manifests*, describe the *[[Pod Desired State|desired state]]* of an application.
+It exposes a [[REST|RESTful]] API over [[HTTPS]] where clients ([[kubectl]], controllers, CI/CD) submit YAML/JSON *manifests* describing the [[Pod Desired State|desired state]]. Every request passes through:
+1. **[[Authentication]]** (X.509 certs, OIDC/[[JWT]], ServiceAccount tokens)
+2. **[[Authorization]]** (RBAC, Node authorizer)
+3. **Admission Controllers** (mutating webhooks -> schema validation -> validating webhooks / Pod Security Admission)
+4. **Persistence to [[etcd]]** and fan-out via **watch streams** to controllers and `kubelet`.
 
-All requests to the API server are subject to authentication and authorization checks. Once these are done, the config in the YAML file is validated, persisted to the cluster store, and work is scheduled to the cluster.
+Because `kube-apiserver` is stateless, it scales horizontally behind an L4/L7 [[Load Balancing|load balancer]].
 
-## Cluster store
+## Cluster Store ([[etcd]])
 
-The cluster store is the only *stateful* part of the control plane and persistently stores the entire configuration and state of the cluster. As such, it's a vital component of every Kubernetes cluster - no store, no cluster. 
+The cluster store is the only *stateful* part of the control plane and persistently stores the entire configuration and state of the cluster—no store, no cluster.
 
-Cluster store is currently based on [[etcd]]. Hence this is the single source of truth for a cluster, you should run between 3-5 etcd replicas for HA. A default installation of Kubernetes installs a replica of the cluster store on every control plane node with HA auto-configured.
+It is backed by [[etcd]], a strongly consistent key-value store using [[Raft]]. Run **3 or 5** etcd members across separate Availability Zones for HA.
 
-## Controllers and Controllers Manager
+## Controllers and Controller Manager (`kube-controller-manager`)
 
-Controller manager is a controller of controllers: it spawns all the independent controllers and monitors them. 
+The Controller Manager bundles and runs core control loops (Deployment, ReplicaSet, StatefulSet, Node, EndpointSlice, Job controllers). In HA clusters, replicas use **leader election** (`Lease` objects) so only one active controller manager reconciles at a time.
 
-Some of the controllers include the Deployment controller, the StatefulSet controller, and the ReplicaSet controller.  Each one is responsible for a small subset of cluster intelligence and runs as a background wath-loop constantly watching the API Server for changes.
+> The aim of a controller is to ensure the *observed state* of the cluster matches the *desired state*.
 
-> The aim of a controller is to ensure the *observed state* of the cluster matches the *desired state*
+Every controller follows the same declarative [[Reconciliation|reconciliation loop]]:
+1. Observe desired state (from API server watch/informer cache)
+2. Observe current state
+3. Diff desired vs current
+4. Reconcile differences via API calls
 
-The logic implemented by each controller is as follows, and is at the heart of Kubernetes and declarative design patters:
-1. Obtain desired state
-2. Observer current state
-3. Determine differences
-4. Reconcile differences
+Each controller is narrowly scoped (Unix philosophy), allowing complex cluster behavior to emerge from small, composable loops.
 
-Each controller is also extremely specialized and only interested in its own little corner of the Kubernetes cluster. No attempt is made to over-complicate design by implementing awareness of other parts of the system - each controller takes care of its own business and leaves everything else alone. This is key to the distributed design of Kubernetes and adheres to the Unix philosophy of building complex systems from small specialized parts.
+> Terms like *controller*, *control loop*, *watch loop*, and *reconciliation loop* refer to this same pattern.
 
-> Terms like *controller*, *control loop*, *watch loop* and *reconciliation loop* mean the same thing
+## Scheduler (`kube-scheduler`)
 
-## Scheduler
+Watches the [[#API Server]] for unscheduled [[Pod|Pods]] (`spec.nodeName == ""`) and binds each Pod to the best healthy [[K8S Worker nodes|worker node]] in two phases:
+1. **Filtering (Predicates)**: eliminates nodes lacking CPU/RAM requests, matching taints/tolerations, node selectors, or volume topology.
+2. **Scoring (Priorities)**: ranks remaining nodes (e.g., `topologySpreadConstraints`, bin-packing vs spreading, affinity) and binds the highest-scoring node.
 
-Scheduler watches the [[#API Server]] for new work tasks and assigns them to appropriate healthy worker nodes. He does this by filtering out invalid or unavailable nodes and ranking whats left with a sophisticated ranking algorithm.
+If no node passes filtering, the Pod stays `Pending`.
 
-If the scheduler doesn't find a suitable node, the task isn't scheduled and gets marked as pending.
+## Cloud Controller Manager (`cloud-controller-manager`)
+
+Decouples cloud-specific control loops (provisioning cloud [[Load Balancing|LoadBalancers]], attaching EBS/PD volumes, checking cloud VM node status) from core Kubernetes.
+
+> [!warning] Failure modes & trade-offs
+> - **Control plane outage ≠ instant data-plane outage**: if `kube-apiserver` or [[etcd]] goes down, existing healthy [[Pod|Pods]] keep serving traffic via existing `kube-proxy` rules—**but** no self-healing, autoscaling, rescheduling, or EndpointSlice updates can happen until the control plane recovers.
+> - **[[etcd]] quorum loss**: losing 2 of 3 control plane nodes breaks [[Raft]] quorum; the cluster freezes writes until quorum is restored or rebuilt from snapshot.
+> - **Broken validating/mutating webhooks**: a misconfigured admission webhook with `failurePolicy: Fail` whose backend pod is down can deadlock all Pod creations—even preventing recovery pods from starting!
+
+## Flashcards
+
+What are the four core components of the [[Kubernetes]] control plane?::==`kube-apiserver`== (gateway + auth/admission), ==`etcd`== (Raft state store), ==`kube-controller-manager`== (reconciliation loops), and ==`kube-scheduler`== (Pod-to-node binding).
+
+What happens to already-running user [[Pod|Pods]] if the Kubernetes control plane goes down temporarily?::Existing healthy Pods ==continue serving traffic== (data plane keeps running), but no new scheduling, self-healing, autoscaling, or EndpointSlice updates occur until the control plane recovers.
+
+### What are the two phases `kube-scheduler` uses to place a Pending Pod onto a worker node? #card
+
+1. **Filtering**: removes infeasible nodes (insufficient CPU/memory requests, unmatched taints, nodeSelectors, port/volume constraints).
+2. **Scoring**: ranks feasible nodes by policies (affinity, `topologySpreadConstraints`, resource balance) and binds the Pod to the highest-scoring node.
+
+## Related
+- [[Kubernetes]]
+- [[etcd]]
+- [[K8S Worker nodes]]
+- [[Pod Desired State]]
+- [[K8S Version Skew]]
+- [[Raft]]
+- [[Reconciliation]]

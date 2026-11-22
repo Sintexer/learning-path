@@ -1,13 +1,31 @@
-The desired state is the manifest files written in simple YAML and tell Kubernetes what an application should look like. It includes things such as which image to use, how many replicas to run, which network ports to listen on, and how to perform updates.
+The **desired state** is declared in YAML/JSON manifest files (or Helm/Kustomize templates) that tell [[Kubernetes]] *what* an application should look like—which [[Container]] image, how many replicas, resource requests/limits, ports, [[Health Checks|probes]], and rollout strategy.
 
-The easiest way to post the manifest to the API server is to use the [[kubectl]] cli utility. Once this is done, any required work tasks get [[K8S Control Plane#Scheduler|scheduled]] to cluster nodes where the [[K8S Worker nodes#Kubelet|kubelet]] co-ordinates the hard work of pulling images, starting containers, attaching to networks, and starting application processes.
+The simplest way to submit a manifest to the API server is `[[kubectl]] apply -f` (or declaratively via GitOps tools like Argo CD / Flux). Once persisted in [[etcd]], unscheduled Pods are bound by the [[K8S Control Plane#Scheduler|scheduler]] to [[K8S Worker nodes|worker nodes]], where [[K8S Worker nodes#Kubelet|kubelet]] pulls images via [[Container Runtime Interface|CRI]], attaches networking/volumes, and starts the containers.
 
-Controllers run as background reconciliation loops that constantly monitor the state of things. 
+## The Declarative [[Reconciliation]] Loop
 
 In [[Kubernetes]], the declarative model works like this:
 
-1. Declare the desired state of an application microservice in a manifest file.
-2. Post it to the [[K8S Control Plane#API Server]]
-3. Kubernetes stores it in the [[K8S Control Plane#Cluster store]] as the application's desired state.
-4. Kubernetes implements the desired state on the cluster.
-5. A controller makes sure the observed state of the application doesn't vary from the desired state.
+1. Declare the desired state (`spec`) of an application in a manifest file.
+2. Submit it to the [[K8S Control Plane#API Server|API Server]] (validated by auth/RBAC/admission controllers).
+3. Kubernetes persists it to the [[K8S Control Plane#Cluster store|cluster store (etcd)]] as the single source of truth.
+4. Specialized controllers (e.g., [[K8S Deployment]], [[K8S ReplicaSet]]) continuously watch observed state (`status`) vs desired state (`spec`).
+5. Whenever drift occurs (a Pod crashes, a node dies, or `spec` changes), controllers take idempotent corrective actions until `status` converges to `spec`.
+
+> [!tip] Production reality
+> **Level-triggered vs edge-triggered**: Kubernetes controllers are **level-triggered** (they inspect current state vs desired state on every tick/watch), not edge-triggered (reacting only to one-off events). That makes the system resilient to missed events, controller restarts, and network partitions—the core reason Kubernetes self-heals reliably.
+
+## Flashcards
+
+What is the difference between `spec` and `status` on a [[Kubernetes]] resource?::`spec` is the user-declared ==desired state==; `status` is the ==observed current state== continuously updated by controllers and `kubelet`.
+
+Why are Kubernetes controllers designed to be **level-triggered** rather than edge-triggered?::Level-triggered loops compare current observed state against desired state directly, so ==missed events or controller restarts== self-correct on the next reconciliation cycle.
+
+## Related
+- [[Kubernetes]]
+- [[K8S Control Plane]]
+- [[K8S Deployment]]
+- [[Pod]]
+- [[etcd]]
+- [[Reconciliation]]
+- [[kubectl]]

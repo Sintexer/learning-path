@@ -1,7 +1,29 @@
-> pronouced as *container dee*
+> Pronounced *container dee*
 
-It is effective a stripped-down version of Docker with just the stuff that [[Kubernetes]] needs.
+**containerd** is an industry-standard, CNCF-graduated, high-level [[Container]] runtime used by [[Kubernetes]] (via [[Container Runtime Interface|CRI]]) and also used under the hood by Docker Engine itself.
 
-The distinction between Docker and containerd stems from the difference between a comprehensive developer platform and a specialized execution engine. Docker was designed as an all-in-one tool for humans, bundling a wide array of features - such as image building, complex networking, and a high-level API - into a single, heavy background process known as the Docker daemon. While this provided a seamless experience for developers, it introduced unnecessary complexity and a larger attack surface for production environments.
+The distinction between Docker and `containerd` is the difference between a full developer platform and a focused execution engine:
+- **Docker** bundles image building (`buildx`), developer CLI, Compose, and networking into a large user-facing suite (which itself delegates execution down to `containerd` -> `runc`).
+- **`containerd`** strips away the build engine and developer UX to focus strictly on the machine-centric container lifecycle: pulling/pushing [[Open Container Initiative|OCI]] images, managing image snapshots, and spawning/supervising containers via low-level OCI runtimes (`runc`, `crun`, Kata, gVisor).
 
-Kubernetes shifted toward containerd because it required a lightweight, stable, and focused runtime rather than a full-featured management platform. By stripping away the build engine, the user-facing command-line interface, and various orchestration features, containerd became a streamlined "machine-centric" tool. It focuses exclusively on the container lifecycle—pulling images and executing them—which makes it more efficient, secure, and better suited for the automated, high-scale demands of a Kubernetes cluster.
+```text
+kubelet --(CRI gRPC)--> containerd --(OCI runtime-spec)--> runc --> container process
+```
+
+Kubernetes standardized on `containerd` (and CRI-O) because removing the extra Docker daemon + `dockershim` layers lowers resource overhead, shrinks the security attack surface, and simplifies operational debugging (`crictl` / `ctr`).
+
+> [!tip] Production reality
+> On a [[K8S Worker nodes|Kubernetes worker node]] running `containerd`, `docker ps` does not exist—use **`crictl ps`** / **`crictl logs`** (CRI-level) or **`ctr -n k8s.io containers list`** when debugging a broken node where `kube-apiserver` is unreachable.
+
+## Flashcards
+
+containerd:::CNCF-graduated, high-level [[Container]] runtime that implements [[Kubernetes]] [[Container Runtime Interface|CRI]] for image management and container lifecycle, delegating low-level execution to [[Open Container Initiative|OCI]] runtimes like `runc`.
+
+What is the execution chain from `kubelet` down to a running Linux container process on a modern Kubernetes node?::`kubelet` --([[Container Runtime Interface|CRI]])--> `containerd` --([[Open Container Initiative|OCI]])--> `runc` --> Linux container process.
+
+## Related
+- [[Container Runtime Interface]]
+- [[Open Container Initiative]]
+- [[Container]]
+- [[K8S Worker nodes]]
+- [[Kubernetes]]
