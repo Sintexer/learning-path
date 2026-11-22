@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-r6cp: { nid: 1795356727394, hash: naajc3b8, sync: 56ji44ek }
+  q-7w98: { nid: 1795356727416, hash: arehpyp3, sync: vu98fdpp }
+---
+
 An **Anti-Join** returns rows from the left table that have **no matching row** in the right table.  
 _Example: "Find all users who have NEVER placed an order."_
 
@@ -42,8 +48,10 @@ If the subquery inside `NOT IN` returns **even a single `NULL` value**, the enti
 ## Flashcards
 
 Why does `WHERE id NOT IN (SELECT user_id FROM orders)` return **zero rows** if the subquery contains even one `NULL`?::SQL uses three-valued logic: `id NOT IN (1, NULL)` expands to `id != 1 AND id != NULL`; since `id != NULL` evaluates to `UNKNOWN`, the whole `AND` never evaluates to `TRUE`.
+^q-r6cp
 
 Prefer ==`NOT EXISTS`== or ==`LEFT JOIN ... WHERE right_pk IS NULL`== over `NOT IN` for SQL anti-joins to stay immune to `NULL` values.
+^q-7w98
 
 ## Related
 

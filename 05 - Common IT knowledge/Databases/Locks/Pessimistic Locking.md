@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-8hyy: { nid: 1795356727567, hash: xjfc69jn, sync: k9rbwa6s }
+  q-j33r: { nid: 1795356727591, hash: jbfi8hd8, sync: 839pvdv7 }
+  q-6j9u: { nid: 1795356727617, hash: u6n6dwzf, sync: k24wgy9d }
+---
+
 Row-level locks are used for **Pessimistic Locking**: when you anticipate race conditions and want to prevent two concurrent processes from modifying the same data at the same time.
 
 [[Optimistic Locking]] assumes conflicts are **rare**, so it doesn't lock anything upfront. Instead, it lets transactions proceed freely and only checks for conflicts **at commit/update time**.
@@ -76,10 +83,13 @@ Imagine 10 background worker instances trying to process tasks from a database t
 ## Flashcards
 
 What is the difference between `FOR UPDATE NOWAIT` and `FOR UPDATE SKIP LOCKED`?::`NOWAIT` fails immediately with an error if a target row is locked; `SKIP LOCKED` ignores locked rows and returns the next unlocked ones (ideal for DB-backed job queues).
+^q-8hyy
 
 How do you prevent deadlocks when transactions must pessimistically lock multiple rows?::Always acquire locks in a deterministic global order (for example, sorted ascending by primary key).
+^q-j33r
 
 Never hold a database pessimistic lock across external network calls; set a strict `lock_timeout` and keep transactions short. #card-reminder
+^q-6j9u
 
 ## Related
 

@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-5khh: { nid: 1795356723991, hash: jm63iggu, sync: iea2z7zv }
+  q-8s5w: { nid: 1795356724017, hash: hfmuws92, sync: k7ny55tm }
+  q-tuae: { nid: 1795356724041, hash: ymbg5qxd, sync: qp4a6y7y }
+  q-3u32: { nid: 1795356724067, hash: pckspaf4, sync: 3n72gqd5 }
+  q-qmiw: { nid: 1795356724092, hash: dc4zvtcc, sync: amyi8k9s }
+---
+
 > AKA **Domain Name System**
 
 **DNS** is the hierarchical, distributed naming system that translates human-readable domain names (e.g., `api.example.com`) into IP addresses and service metadata. It runs primarily over [[UDP]] port 53 (falling back to [[TCP]] port 53 for large responses, DNSSEC, or zone transfers) at [[OSI 7 layer]].
@@ -32,14 +41,19 @@
 ## Flashcards
 
 DNS:::Domain Name System — hierarchical distributed system that resolves domain names to IP addresses and service records, primarily over [[UDP]] port 53.
+^q-5khh
 
 When does DNS switch from [[UDP]] to [[TCP]]?::When responses exceed the UDP payload limit (classic 512 bytes / EDNS0 limit), for DNSSEC-heavy responses, or for zone transfers (AXFR).
+^q-8s5w
 
 Why does lowering DNS TTL during an active outage fail to speed up failover?::Because resolvers that already cached the record will keep serving it until the ==previous TTL== expires.
+^q-3u32
+^q-tuae
 
 ### What is the difference between a `CNAME` record and an `A` / `ALIAS` record at the zone apex? #card
 
 A `CNAME` aliases one name to another and per RFC cannot coexist with other records (`NS`, `SOA`), so it is illegal at the zone apex (`example.com`). An `A`/`AAAA` points directly to an IP, while a provider-specific `ALIAS`/`ANAME` resolves the target internally and returns synthesized `A`/`AAAA` records at the apex.
+^q-qmiw
 
 ## Related
 - [[K8S DNS]]

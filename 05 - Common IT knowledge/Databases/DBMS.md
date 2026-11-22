@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-pe2k: { nid: 1795356728966, hash: vj9sicpb, sync: 66q7suib }
+---
+
 > AKA **Data Base Management System**
 
 ## DBMS Explained
@@ -42,6 +47,7 @@ There is a specific DBMS type for [[Relational Database|Relational Databases]] c
 ## Flashcards
 
 What are the three core internal layers of a modern [[DBMS]]?::1) Query processing layer (parser, optimizer, executor), 2) Transaction & concurrency manager ([[MVCC]], [[Database Lock|locks]]), and 3) [[Database Storage Engines|Storage engine]] (buffer pool, indexes, [[WAL]]).
+^q-pe2k
 
 ## Related
 

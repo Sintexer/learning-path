@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-ir3r: { nid: 1795356729768, hash: uf3g3du4, sync: sbe4kuw4 }
+  q-dsty: { nid: 1795356729792, hash: j45j55yu, sync: bk9etwr8 }
+  q-ajp4: { nid: 1795356729819, hash: mnv563dz, sync: ggti7b62 }
+---
+
 **Scaling** is the ability of a system to handle growing load (requests per second, data volume, or concurrent users) while maintaining acceptable latency and [[Availability|availability]].
 
 Scaling can be [[Horizontal scaling|horizontal]] (scaling out/in: adding or removing instances) or [[Vertical scaling|vertical]] (scaling up/down: increasing CPU, RAM, or disk on a single node).
@@ -24,12 +31,15 @@ Scaling can be [[Horizontal scaling|horizontal]] (scaling out/in: adding or remo
 ## Flashcards
 
 What are the three axes of the AKF Scale Cube?::X-axis: horizontal cloning (stateless replicas); Y-axis: functional decomposition (microservices); Z-axis: data partitioning (sharding by key).
+^q-ir3r
 
 Vertical scaling increases ==resources on a single node== (CPU/RAM), whereas horizontal scaling adds ==more independent nodes== behind a load balancer.
+^q-dsty
 
 ## When is vertical scaling preferable to horizontal scaling? #card
 
 When the workload is stateful or single-writer (e.g., an OLTP primary database), traffic fits comfortably within modern machine limits, and avoiding distributed coordination ([[Replication Lag]], sharding, [[Split-Brain]]) saves major engineering complexity.
+^q-ajp4
 
 ## Related
 - [[Horizontal scaling]]

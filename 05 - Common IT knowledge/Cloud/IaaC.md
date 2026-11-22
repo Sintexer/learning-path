@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-8puc: { nid: 1795356730118, hash: tuvtbwag, sync: xs7wk7kn }
+  q-ymrd: { nid: 1795356730141, hash: 35iud34j, sync: rfajk84j }
+  q-bntr: { nid: 1795356730167, hash: 7yb9pbna, sync: vmbibufh }
+  q-shdt: { nid: 1795356730201, hash: eejwdrzs, sync: cvdy7au8 }
+---
+
 > AKA **Infrastructure as Code (IaC)**
 
 **Infrastructure as Code (IaC)** is the practice of defining, provisioning, and managing infrastructure (networks, [[Virtual Private Cloud|VPCs]], [[Virtual machine|VMs]], [[Kubernetes]] clusters, databases, IAM policies) through version-controlled, machine-readable files instead of manual UI clicks or ad-hoc scripts.
@@ -20,14 +28,18 @@
 ## Flashcards
 
 IaC (Infrastructure as Code):::Managing and provisioning infrastructure through version-controlled code rather than manual configuration.
+^q-8puc
 
 Declarative IaC specifies the ==desired end state== (tool computes the diff), whereas imperative IaC specifies the ==exact sequence of steps== to execute.
+^q-ymrd
 
 Split IaC state by blast radius (network, stateful data, stateless apps) so an app deployment can never accidentally destroy core networking or databases. #card-reminder
+^q-bntr
 
 ### What is configuration drift in IaC and how do you prevent it? #card
 
 Drift happens when live infrastructure diverges from the IaC definitions due to manual console changes or out-of-band scripts. Prevent it with least-privilege read-only console access in production, immutable artifacts, and scheduled drift-detection plans in CI.
+^q-shdt
 
 ## Related
 - [[Terraform]]

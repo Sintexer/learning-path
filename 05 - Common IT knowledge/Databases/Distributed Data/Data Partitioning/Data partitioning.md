@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-5b4a: { nid: 1795356725143, hash: v22faf43, sync: s8mnuyq4 }
+  q-vvcn: { nid: 1795356725170, hash: 6n6975ar, sync: 4wvaint9 }
+---
+
 For very large datasets, or very high query throughput, [[Replication]] is not sufficient: we need to break the data up into **partitions**, also known as *sharding* (see [[Replication vs Partitioning]]).
 
 > [!tip] Fact
@@ -67,11 +73,13 @@ For secondary indexes across partitions, see [[Partitioning and Secondary Indexe
 
 ## Why is `hash(key) % N` an anti-pattern for partitioning a distributed database? #card
 Whenever the number of nodes `N` changes (adding capacity or replacing a failed node), `hash(key) % N` changes the target node for almost every key in the database, triggering massive, expensive data movement across the entire cluster. Use fixed-count virtual partitions, dynamic splitting, or [[Consistent Hashing]] instead.
+^q-5b4a
 
 ## How does Cassandra's compound primary key combine hash partitioning with range queries? #card
 `PRIMARY KEY (partition_key, clustering_key)` hashes only the `partition_key` to choose the partition evenly, then sorts all rows within that partition by `clustering_key` — enabling efficient range scans within a single partition key (e.g., one user's timeline by timestamp).
 
 To mitigate a single **hot key** (celebrity problem) under hash partitioning, applications can ==salt the key with a random suffix (e.g., `00`–`99`)==, trading extra read fan-out for distributed write load.
+^q-vvcn
 
 ## Related
 - [[Partitioning and Secondary Indexes]]

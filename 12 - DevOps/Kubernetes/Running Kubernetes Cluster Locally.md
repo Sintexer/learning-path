@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-a724: { nid: 1795356714016, hash: 2khur486, sync: c6isedpu }
+  q-zs6f: { nid: 1795356714041, hash: 3t2dkdkq, sync: n4chtwx9 }
+  q-35pu: { nid: 1795356714067, hash: dadudrrm, sync: j23xtkdh }
+---
+
 > ❯ `kubectl version`
 > Client Version: v1.36.2
 > Kustomize Version: v5.8.1
@@ -45,8 +52,11 @@ rm -rf ~/.colima
 ## Flashcards
 
 Why can't Linux [[Container|containers]] run natively on macOS without a tool like `colima` or Docker Desktop?::Containers rely on Linux-specific kernel primitives (==cgroups and Linux namespaces==) that macOS's Darwin/XNU kernel does not have, so a lightweight Linux [[Virtual machine|VM]] is required.
+^q-zs6f
+^q-a724
 
 What is a common pitfall when building container images on Apple Silicon (ARM64) laptops for cloud [[Kubernetes]] clusters?::Building an `arm64`-only image that fails with `exec format error` on `amd64` worker nodes; build multi-arch images (`docker buildx --platform linux/amd64,linux/arm64`) in CI.
+^q-35pu
 
 ## Related
 - [[Kubernetes]]

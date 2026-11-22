@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-h6sh: { nid: 1795356720917, hash: jyrxgdia, sync: d29zmmea }
+  q-kyrt: { nid: 1795356720942, hash: w9y2ux4z, sync: kzehm2r7 }
+  q-tevt: { nid: 1795356720967, hash: 546qgyuw, sync: 9yk2v7gx }
+---
+
 **The idea:** Some failures are _transient_ — a blip, a momentary network hiccup, a pod rolling over. Just try again.
 
 **But naively retrying is dangerous.** Two refinements are expected knowledge:
@@ -17,10 +24,13 @@ Retries multiply across hops: 3 retries at each of 3 layers turns 1 failing requ
 1. Retrying at **one designated layer** only.
 2. Using **exponential backoff with jitter**.
 3. Enforcing a **retry budget** (cap retries as a small % of total traffic) and honoring an end-to-end deadline.
+^q-h6sh
 
 Only retry operations that are ==idempotent== (or guarded by an [[Idempotency Key]]) and only on ==transient failures== (timeouts, network resets, 429/502/503/504). #card-reminder
+^q-kyrt
 
 What problem does jitter solve on top of exponential backoff?::Prevents synchronized thundering herds when many clients fail at the same instant and would otherwise wake up and retry at identical intervals.
+^q-tevt
 
 ## Related
 - [[Microservices Resilience and Fault tolerance]]

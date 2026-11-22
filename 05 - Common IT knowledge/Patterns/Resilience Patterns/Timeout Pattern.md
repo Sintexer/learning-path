@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-jfpp: { nid: 1795356720868, hash: swh5mnqv, sync: tu4424mq }
+  q-j8te: { nid: 1795356720891, hash: j4sbjfee, sync: njsuq6de }
+---
+
 Simple, but people forget to mention it — and it's foundational to everything else.
 
 **The rule:** Never let a remote call wait indefinitely. An unbounded wait means an unbounded hold on a thread, socket, and memory — which is exactly what causes the thread pool exhaustion problem [[Circuit Breaker]] and [[Bulkhead Pattern]] exist to prevent. Timeout is the _first line of defense_; Circuit Breaker is what happens after repeated timeouts.
@@ -26,8 +32,10 @@ Instead, propagate an **absolute deadline** (e.g., [[gRPC]] `grpc-timeout` heade
 Static per-hop timeouts allow downstream services to keep executing expensive work after the upstream caller has already timed out ("zombie work"). Propagating the remaining **end-to-end deadline** (e.g., via [[gRPC]] headers) lets every hop budget its work and cancel immediately when the caller's deadline expires.
 
 Setting a timeout too short can cause ==premature aborts and retry storms==, while omitting timeouts causes ==thread and connection pool exhaustion==.
+^q-jfpp
 
 Timeout is the ==first line of defense== in resilience: always set explicit connect, read, pool-wait, and end-to-end deadline budgets on every network and DB call. #card-reminder
+^q-j8te
 
 ## Related
 - [[Microservices Resilience and Fault tolerance]]

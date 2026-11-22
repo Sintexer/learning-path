@@ -1,4 +1,11 @@
-
+---
+flashcards:
+  q-pek8: { nid: 1795356726818, hash: b59h7arg, sync: kez9cbgz }
+  q-7s44: { nid: 1795356726842, hash: aux8yric, sync: 2ia4iumu }
+  q-mf3w: { nid: 1795356726876, hash: 7h4mhykr, sync: 59bntf6b }
+  q-k4pc: { nid: 1795356726899, hash: xkkzbph4, sync: iftzzbmy }
+  q-8kav: { nid: 1795356726918, hash: euy5ctir, sync: 5j4p37if }
+---
 ##  Migration Tools — Flyway vs. Liquibase
 
 Both tools solve the fundamental problem of **Database Change Management (Schema as Code)**: ensuring that every environment (local, staging, production) has an identical, reproducible database schema state.
@@ -262,17 +269,22 @@ _What if it fails due to lock timeout?_  The migration fails safely without bloc
 ## Flashcards
 
 Why is **roll-forward** preferred over automated down-migrations (`rollback` scripts) in production?::Down-migrations risk irreversible data loss (cannot restore data written after deploy), are rarely tested under production load, and break already-running new app instances.
+^q-pek8
 
 What is the **N−1 / N compatibility rule** for zero-downtime [[Schema Migration|schema migrations]]?::During a rolling or canary deployment, the database schema must remain compatible with *both* the previous (N−1) and new (N) application versions simultaneously — achieved via the Expand → Transition → Contract pattern.
+^q-7s44
 
 Why can even a 2 ms `ALTER TABLE ... DROP COLUMN` cause a production outage in [[PostgreSQL]]?::It requires an `ACCESS EXCLUSIVE` lock; if it waits behind one slow `SELECT`, PostgreSQL queues *all* subsequent reads and writes behind the migration, exhausting the connection pool (mitigate with `SET lock_timeout = '2s'`).
+^q-mf3w
 
 ## How do you add a `NOT NULL` constraint to an existing large [[PostgreSQL]] table without blocking writes? #card
 
 1. Add the constraint without scanning: `ALTER TABLE t ADD CONSTRAINT chk_not_null CHECK (col IS NOT NULL) NOT VALID;` (brief lock, enforced for new writes immediately).
 2. Validate existing rows concurrently: `ALTER TABLE t VALIDATE CONSTRAINT chk_not_null;` (uses `SHARE UPDATE EXCLUSIVE`, allowing reads and writes).
+^q-k4pc
 
 Always set a short `lock_timeout` before running DDL in production and use `CREATE INDEX CONCURRENTLY` for live tables. #card-reminder
+^q-8kav
 
 ## Related
 

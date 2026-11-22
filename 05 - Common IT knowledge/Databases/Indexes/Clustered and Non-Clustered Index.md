@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-ajcb: { nid: 1795356728292, hash: puh8epdj, sync: hgrwnh7v }
+  q-bmqz: { nid: 1795356728319, hash: 3mj2m7jv, sync: rsgt4h9j }
+  q-j27j: { nid: 1795356728341, hash: qj3yj6va, sync: 232h8pk5 }
+---
+
 ## Clustered Index
 
 The table data itself is **physically stored in the order of the index**, and the index's leaf nodes contain the **actual row data** — not a pointer to it. There's no separate [[DB Glossary#Table Heap|Heap]] at all; the index _is_ the table storage.
@@ -35,10 +42,13 @@ The index is a **separate structure** from the table's storage (the "heap"). Eac
 ## Flashcards
 
 Why can a table have at most **one** clustered index?::Because a clustered index determines the physical storage order of the table's rows on disk, and rows can only be physically ordered one way.
+^q-ajcb
 
 In MySQL InnoDB, secondary index leaf nodes store ==the primary (clustered) key== as the row pointer, which means wide primary keys bloat ==every secondary index== on the table.
+^q-bmqz
 
 How does [[PostgreSQL]] store table rows compared to MySQL InnoDB?::PostgreSQL stores all tables as unordered heap files with non-clustered indexes pointing to physical tuple IDs (TIDs), whereas InnoDB stores every table clustered by its primary key.
+^q-j27j
 
 ## Related
 

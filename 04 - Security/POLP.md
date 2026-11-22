@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-fgi7: { nid: 1795356732041, hash: 4p3acbg6, sync: jfnc6mib }
+  q-qt28: { nid: 1795356732067, hash: 7b8zycxe, sync: 7xar45j7 }
+---
+
 > AKA **Principle of least privilege**
 
 ![[Least privilege principle]]
@@ -13,8 +19,10 @@
 > Over-broad permissions usually creep in during urgent incident debugging ("temporarily" granting wildcard access) and are never revoked. Automate permission boundary checks and IAM access-analyzer reviews in CI/CD to catch privilege drift.
 
 Replace static long-lived secrets with short-lived workload identities (e.g., OIDC / IRSA / SPIFFE) so leaked credentials expire automatically. #card-reminder
+^q-fgi7
 
 What is Just-In-Time (JIT) privilege elevation and how does it support POLP?::Instead of granting standing admin rights, JIT grants elevated permissions only for a short, audited time window when needed, minimizing blast radius if an account is compromised.
+^q-qt28
 
 ## Related
 

@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-xk9m: { nid: 1795356722143, hash: 3jgkb4dw, sync: 2ei4pii7 }
+  q-2weg: { nid: 1795356722167, hash: b7dkviu9, sync: 43bdufjt }
+  q-w7eb: { nid: 1795356722201, hash: 8my28utf, sync: ca763fph }
+  q-wuk9: { nid: 1795356722223, hash: cagu3zhr, sync: 6axr6ekm }
+---
+
 Command Query Responsibility Segregation. **CQRS = using separate models for writing data (commands) versus reading data (queries).**
 
 That's it at its core — deceptively simple. But "separate models" can mean different things depending on how far you take it:
@@ -106,16 +114,20 @@ A CQRS materialized projection is a broader architectural concept. It can be:
 Most event-driven, cross-service projections are application-maintained tables or documents.
 
 CQRS (Command Query Responsibility Segregation):::Splitting a system's write model (commands, normalized/transactional) from its read model (queries, denormalized/query-optimized), synced asynchronously via events or CDC.
+^q-xk9m
 
 ## Does CQRS require Event Sourcing? #card
 **No.** CQRS only separates read and write models. The write side can remain a standard state-based relational DB (e.g., [[PostgreSQL]]) synced to read stores via [[Change Data Capture]] (CDC) or the [[Outbox Pattern]]. [[Event Sourcing]] is an orthogonal choice about storing write-side state as an append-only event log.
+^q-2weg
 
 ## How do you handle CQRS read lag (missing read-your-writes) in the UI? #card
 1. Return the committed state or **version token** from the command so the client updates optimistically or waits until `projection_version >= write_version`.
 2. Temporarily route the mutating user's immediate read to the authoritative write store.
 3. Never use the stale read projection to validate new write commands.
+^q-w7eb
 
 In a multi-service CQRS projection, track ==per-source sequence numbers== (e.g., `last_order_sequence`, `last_payment_sequence`) because independent services have no global ordering. #card-reminder
+^q-wuk9
 
 ## Related
 - [[Event Sourcing]]

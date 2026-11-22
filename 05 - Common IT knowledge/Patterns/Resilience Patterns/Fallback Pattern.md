@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-pwe7: { nid: 1795356721068, hash: zcsn8mh7, sync: zv8itfyr }
+  q-tb4q: { nid: 1795356721092, hash: xzf28vit, sync: tji8kgum }
+---
+
 **The idea:** When a downstream call fails, times out ([[Timeout Pattern]]), or the [[Circuit Breaker]] is open, don't just propagate a raw error — degrade gracefully instead.
 
 **Have this example ready, verbatim style:**
@@ -21,8 +27,10 @@ That's a strong answer because it's concrete and shows product thinking, not jus
 
 ## When should you deliberately NOT use a Fallback and instead fail fast? #card
 For safety-critical or transactional operations where stale or default values cause worse harm than an error — such as **payments, authorization/authentication checks, inventory reservations, and live financial execution**.
+^q-pwe7
 
 Every fallback path must emit ==metrics/alerts== and be ==tested under load==, otherwise it will silently mask outages or fail when an incident actually hits. #card-reminder
+^q-tb4q
 
 ## Related
 - [[Microservices Resilience and Fault tolerance]]

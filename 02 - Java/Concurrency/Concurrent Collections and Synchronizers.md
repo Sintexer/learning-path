@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-vii5: { nid: 1795356730991, hash: s3igdvtz, sync: a6w34nff }
+  q-d5hx: { nid: 1795356731016, hash: uk6wzsr8, sync: dncpbceq }
+  q-4i5a: { nid: 1795356731041, hash: kg6wr89a, sync: ah8dchvi }
+  q-nczg: { nid: 1795356731067, hash: 3tz86zj6, sync: gn2qpn27 }
+---
+
 # Concurrent Collections and Synchronizers
 
 Notes on `java.util.concurrent` collections, blocking queues, interruption handling, and synchronizers (based on *Java Concurrency in Practice*, Ch. 5).
@@ -51,14 +59,18 @@ When calling a blocking method that throws `InterruptedException`, you have two 
 ## Flashcards
 
 What are the two valid ways to handle `InterruptedException` in library or application code?::Either propagate `InterruptedException` to the caller, or catch it and restore the interrupt flag via `Thread.currentThread().interrupt()`—never swallow it silently.
+^q-vii5
 
 `CountDownLatch` is a ==single-use== gate that stays open once it reaches zero, whereas `CyclicBarrier` is ==reusable== across multiple phases/generations.
+^q-d5hx
 
 ## Why is calling blocking I/O inside `ConcurrentHashMap.computeIfAbsent()` dangerous? #card
 `computeIfAbsent` holds the lock on the target hash bin for the entire duration of the mapping lambda. Blocking I/O stalls all other threads writing to keys in that bin, and recursive updates to the same map can cause a deadlock.
+^q-4i5a
 
 ## When should you use `CopyOnWriteArrayList` vs. `ConcurrentHashMap`? #card
 Use `CopyOnWriteArrayList` only when iterations vastly outnumber writes (e.g. listener lists), because every mutation copies the whole array. Use `ConcurrentHashMap` for general-purpose concurrent key-value access with frequent reads and writes.
+^q-nczg
 
 ## Related
 - [[concurrency]]

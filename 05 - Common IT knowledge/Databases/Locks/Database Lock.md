@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-eyan: { nid: 1795356727643, hash: t3897vnj, sync: dq5h9j54 }
+  q-xc8j: { nid: 1795356727669, hash: 4ghdxbva, sync: wyhpbrfr }
+  q-t8qm: { nid: 1795356727703, hash: 4627frib, sync: dvhwxxbd }
+---
+
 Different [[Database Storage Engines|storage engines]] implement row-level locking very differently. The two most common architectures are **In-Memory Lock Managers** (MySQL/InnoDB, SQL Server) and **Tuple-Header Locks** ([[PostgreSQL]]).
 
 ## Tuple-Header Lock
@@ -26,10 +33,13 @@ InnoDB uses an internal in-memory data structure (the **Lock System**).
 ## Flashcards
 
 How does [[PostgreSQL]] store row-level locks without running out of RAM when locking millions of rows?::Directly inside each row's tuple header (`xmax` + `infomask` bits) on the heap page, avoiding an in-memory per-row lock table.
+^q-eyan
 
 In InnoDB, ==Gap Locks and Next-Key Locks== lock the empty spaces between [[B-Tree Index|B-Tree]] keys to prevent phantom inserts.
+^q-xc8j
 
 What is the key difference between a [[Database Lock]] and a [[Database Latch]]?::Locks protect logical database contents for the duration of a transaction; latches protect internal physical memory structures (like B-Tree pages) for microseconds.
+^q-t8qm
 
 ## Related
 

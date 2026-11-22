@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-j3a4: { nid: 1795356724668, hash: wdwr5339, sync: 3sapkqf5 }
+---
+
 Core in-memory and on-disk data structures used across [[Database Storage Engines]], [[Database Index|database indexes]], and distributed systems.
 
 ## On-Disk & Storage Engine Structures
@@ -19,6 +24,7 @@ Core in-memory and on-disk data structures used across [[Database Storage Engine
 > Choosing a storage data structure is fundamentally a trade-off along the **RUM Conjecture**: you can optimize at most two of **Read overhead**, **Update (write) overhead**, and **Memory/space overhead** — never all three simultaneously. [[B-Tree Index|B-Trees]] favor read latency; [[LSM Tree]]s favor write throughput and space compaction.
 
 What are the three axes of the RUM Conjecture in storage data structures?::Read overhead, Update (write) overhead, and Memory/space overhead (optimizing any two degrades the third).
+^q-j3a4
 
 ## Related
 - [[Database Storage Engines]]

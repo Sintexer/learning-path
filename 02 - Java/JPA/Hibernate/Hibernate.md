@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-vpg3: { nid: 1795356731192, hash: zaf97mnv, sync: nxbey85u }
+  q-9j4i: { nid: 1795356731219, hash: ard6efip, sync: yuyxeeqs }
+---
+
 Hibernate is a [[02 - Java/JPA/JPA|JPA]] implementation. But Hibernate existed before JPA. So it has many performance optimized features not present in JPA specification.
 
 **non-JPA compliant features:**
@@ -24,8 +30,10 @@ Hibernate is a [[02 - Java/JPA/JPA|JPA]] implementation. But Hibernate existed b
 ## Flashcards
 
 Why does `GenerationType.IDENTITY` silently disable Hibernate JDBC `INSERT` batching?::Hibernate must obtain the generated primary key immediately on `persist()` to track the entity in the Persistence Context, forcing an immediate per-row `INSERT` instead of batching; use `SEQUENCE` with a pooled/[[HiLo id optimization|HiLo]] optimizer instead.
+^q-vpg3
 
 What is the practical use of Hibernate's `SKIP LOCKED` support in [[Pessimistic Locking]]?::Allows concurrent worker threads/nodes (e.g. [[Outbox Pattern]] or job-queue consumers) to claim unlocked rows immediately without blocking on rows already locked by other transactions.
+^q-9j4i
 
 ## Related
 - [[JPA]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-zja3: { nid: 1795356729497, hash: 2j247gks, sync: dhwkbfdv }
+  q-ir4a: { nid: 1795356729521, hash: bhxytn2z, sync: q64665pq }
+  q-5ygu: { nid: 1795356729541, hash: rtjnia5n, sync: nzveniub }
+---
+
 **Increase the instance size (scale up).** If too many requests are sent to a single active-passive system, the active server will become unavailable and, hopefully, fail over to the passive server. But this doesn't solve the underlying capacity problem.
 
 With [[Active-passive systems]], you need **vertical scaling**. This means increasing the size of the server (more CPU, RAM, or faster I/O). To vertically scale an active-passive system with minimal downtime, one must stop the backup instance, change its size, start the backup instance, reroute traffic to this instance, and then do the same to the previous primary instance—lots of manual work unless automated via [[IaaC]]. When the number of requests reduces, you must repeat the same operation. Even though there aren't that many steps involved, it's operational overhead and mainly practical in cloud/virtualized environments.
@@ -12,12 +19,15 @@ This is where the [[Active-active systems|active-active system]] can help. When 
 ## Flashcards
 
 Vertical scaling (scaling up):::Increasing the capacity (CPU, RAM, disk IOPS) of an existing single server rather than adding more servers.
+^q-zja3
 
 What are the two main limitations of vertical scaling?::A hard hardware/cost ceiling per single machine and the need for restarts or failover to resize (making elastic scale-down awkward).
+^q-ir4a
 
 ## How do you vertically scale an active-passive pair with minimal downtime? #card
 
 Resize the passive standby first, verify it is healthy and synced, fail traffic over to the resized standby, then resize the former primary.
+^q-5ygu
 
 ## Related
 - [[Scaling]]

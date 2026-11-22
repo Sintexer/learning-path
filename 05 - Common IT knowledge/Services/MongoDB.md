@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-7fd6: { nid: 1795356720367, hash: czsr6gpx, sync: vhcx6rdw }
+  q-56pp: { nid: 1795356720392, hash: daz69gfe, sync: drgc3d8j }
+  q-tq9d: { nid: 1795356720417, hash: a3mu7nur, sync: 9ktvkj52 }
+  q-qqv7: { nid: 1795356720442, hash: bkuus2iw, sync: axm22wp9 }
+---
+
 A widely used [[Document Database]] that stores semi-structured records as **BSON** (Binary JSON) documents grouped into collections.
 
 ## Architecture & Core Features
@@ -18,15 +26,19 @@ A widely used [[Document Database]] that stores semi-structured records as **BSO
 ## Flashcards
 
 What is the primary replication mechanism in MongoDB?::Replica sets using [[Leader-Based Replication]], where the primary records mutations in an `oplog` that secondaries replay asynchronously.
+^q-7fd6
 
 In MongoDB, using a monotonically increasing shard key with range sharding causes ==all new writes to hit a single hot shard==.
+^q-56pp
 
 ## What write/read concerns are needed in MongoDB to avoid losing acknowledged writes on primary failover? #card
 
 - Set `writeConcern: { w: "majority", j: true }` so writes are journaled on a majority of replica set members before acknowledgement.
 - Pair with `readConcern: "majority"` (or `"linearizable"` when strict [[Linearizability]] is required) so reads do not observe uncommitted data that could later roll back.
+^q-tq9d
 
 Model MongoDB documents around access patterns, keep arrays bounded well below the 16 MB limit, and rely on single-document atomicity whenever possible. #card-reminder
+^q-qqv7
 
 ## Related
 

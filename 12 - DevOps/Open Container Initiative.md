@@ -1,6 +1,11 @@
 ---
 aliases:
   - OCI
+flashcards:
+  q-r5ek: { nid: 1795356716375, hash: hn5q3ebw, sync: 5th7rs8m }
+  q-ug6g: { nid: 1795356716398, hash: in8i7tjf, sync: 8iumuq67 }
+  q-hxy6: { nid: 1795356716417, hash: zxxsc4zk, sync: gvvukat9 }
+  q-ctee: { nid: 1795356716441, hash: 55g4v744, sync: u3gjiy49 }
 ---
 
 The **Open Container Initiative (OCI)** is a Linux Foundation governance body (founded in 2015 by Docker, CoreOS, and others) that defines open, vendor-neutral industry standards for [[Container|container]] formats and runtimes.
@@ -25,12 +30,16 @@ kubelet --(CRI)--> containerd / CRI-O --(OCI runtime-spec)--> runc --> Linux con
 ## Flashcards
 
 OCI (Open Container Initiative):::Linux Foundation project defining open standards for [[Container]] images (`image-spec`), low-level execution (`runtime-spec`), and registry APIs (`distribution-spec`).
+^q-r5ek
 
 What are the three Open Container Initiative (OCI) specifications?::==Image Spec== (manifest + layers), ==Runtime Spec== (how `runc` spawns a container), and ==Distribution Spec== (registry push/pull API).
+^q-hxy6
+^q-ug6g
 
 ### How do CRI and OCI differ in the Kubernetes container stack? #card
 
 [[Container Runtime Interface|CRI]] is the Kubernetes-specific gRPC API between `kubelet` and a high-level runtime ([[containerd]], CRI-O). **OCI** is the lower-level, orchestrator-agnostic standard for image formats, registries, and spawning the container process via `runc`.
+^q-ctee
 
 ## Related
 - [[Container]]

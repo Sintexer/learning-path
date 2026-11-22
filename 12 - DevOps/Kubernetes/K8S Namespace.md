@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-j3d2: { nid: 1795356715492, hash: kumek8q4, sync: 8ti7nvk4 }
+  q-2yn5: { nid: 1795356715516, hash: dxzgkzq3, sync: skx7skyi }
+  q-825y: { nid: 1795356715542, hash: wak3vhwp, sync: i27kjap7 }
+  q-sn5p: { nid: 1795356715568, hash: zxjafty3, sync: gkk2n7w3 }
+  q-shhs: { nid: 1795356715592, hash: cw9b8nq2, sync: jyjeve66 }
+---
+
 **Namespaces** are a native way to partition a single [[Kubernetes]] cluster into multiple *virtual clusters* for organizing teams, environments, RBAC permissions ([[Authorization]]), `ResourceQuota`, and `LimitRange` policies.
 
 Most Kubernetes objects are **namespaced** (e.g., [[Pod|Pods]], [[K8S Service|Services]], [[K8S Deployment|Deployments]], ConfigMaps, Secrets). Cluster-scoped objects exist outside namespaces (e.g., Nodes, PersistentVolumes, Namespaces, ClusterRoles, StorageClasses). If no namespace is specified, resources land in the `default` namespace.
@@ -12,10 +21,15 @@ System namespaces include `kube-system` (control plane & [[K8S Core Containers|C
 ## Flashcards
 
 Are [[Kubernetes]] Namespaces isolated from each other at the network layer by default?::==No==—the Pod network is flat across namespaces by default; you must apply **`NetworkPolicy`** rules (with a supporting CNI like Calico/Cilium) to restrict cross-namespace traffic.
+^q-2yn5
+^q-j3d2
 
 What replaced the deprecated/removed `PodSecurityPolicy` in Kubernetes 1.25+ for enforcing Pod security standards per namespace?::==Pod Security Admission (PSA)== (enforcing `privileged`, `baseline`, or `restricted` profiles via namespace labels).
+^q-sn5p
+^q-825y
 
 Namespaces provide logical grouping, RBAC boundaries, and `ResourceQuota` limits—not hard kernel/control-plane isolation for untrusted tenants. #card-reminder
+^q-shhs
 
 ## Related
 - [[Kubernetes]]

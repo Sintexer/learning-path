@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-jhty: { nid: 1795356719826, hash: w8vrn9zy, sync: gk27iyy3 }
+  q-8587: { nid: 1795356719844, hash: t5y2eunk, sync: jqpptkwy }
+  q-28iq: { nid: 1795356719866, hash: 8tafjjh6, sync: 53u86cni }
+---
+
 Based on request parameters and an [[Idempotency Key]], check if a request is a duplicate of an already executed operation so we avoid applying duplicated side effects. See [[Idempotency]] for the full cross-boundary model.
 
 The problem:
@@ -61,12 +68,15 @@ If the request performs an external payment, a local [[Transaction]] cannot make
 ## Flashcards
 
 What columns should an API idempotency table include to prevent cross-tenant collisions and payload-mismatch bugs?::`(caller_id, operation_type, idempotency_key)` with a `UNIQUE` constraint, plus `request_hash` and `result_reference` (or cached response).
+^q-jhty
 
 To avoid [[Dual-Write]] bugs, claiming the [[Idempotency Key]] and applying the local business state change must occur in the ==same database transaction==.
+^q-8587
 
 ### How should an API handle a retry that reuses an existing idempotency key with a different request payload? #card
 
 Compare the stored `request_hash` against the incoming payload and reject the request with `409 Conflict` or `422 Unprocessable Entity`—never silently return the cached result for a different operation.
+^q-28iq
 
 ## Related
 - [[Idempotency]]

@@ -1,4 +1,7 @@
-
+---
+flashcards:
+  q-yea7: { nid: 1795356728943, hash: jf738p3e, sync: 9b66uezb }
+---
 Large enterprises operate dozens of autonomous [[OLTP]] systems that require high availability and low latency for mission-critical business transactions. Because resource-heavy, ad-hoc analytical queries scan vast amounts of data and can severely degrade the performance of these operational databases, organizations replicate their data into a separate, read-only **data warehouse**. 
 
 Through an [[ETL]] process (or streaming [[Change Data Capture]]), data from disparate source systems is pulled, cleaned, transformed into an analysis-friendly format, and loaded into this central repository without impacting live transactions. While smaller businesses can often perform analysis directly on operational databases, large-scale analytics demands this separation not just for workload isolation, but because OLTP indexing strategies (like [[B-Tree Index|B-trees]] and [[LSM Tree|LSM-trees]]) perform poorly on broad analytic scans.
@@ -15,6 +18,7 @@ In a typical data warehouse, tables are often very wide (organized using [[Star 
 ## Flashcards
 
 Why do enterprises copy operational data into a separate [[Data Warehouse]] instead of running analytics on [[OLTP]] databases?::For workload isolation (heavy scans would degrade live user latency) and because OLTP row-oriented engines ([[B-Tree Index|B-trees]]) are poorly suited for scanning a few columns across billions of rows compared to [[Column-Oriented Storage]].
+^q-yea7
 
 ## Related
 

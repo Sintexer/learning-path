@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-aebu: { nid: 1795356717292, hash: kpi2yxz4, sync: nnuhf9gd }
+  q-vvbv: { nid: 1795356717317, hash: giuyxvnt, sync: f72z56fw }
+  q-ww84: { nid: 1795356717341, hash: netatxz2, sync: a98r48r6 }
+---
+
 Temporal is a **durable execution platform**.
 
 A durable execution can:
@@ -315,11 +322,14 @@ If the Temporal Service is unavailable, new scheduling and recorded progress can
 ## Workflow Replay vs. Activity Retry in Temporal — how do they differ? #card
 - **Workflow Replay** reconstructs execution state from recorded history after a crash or eviction, **reusing** completed Activity results without re-calling external systems.
 - **Activity Retry** re-executes external work when an attempt fails or crashes before completion is recorded — which is why every Activity must still be **idempotent** ([[Idempotency Key]]).
+^q-aebu
 
 ## Why must Temporal Workflow code be strictly deterministic, and where does non-deterministic work belong? #card
 Temporal recovers Workflows by **replaying** their event history through the Workflow code; direct network/DB calls, `Instant.now()`, or `Math.random()` would produce different decisions during replay and fail (`NonDeterministicException`). Put all external I/O and non-deterministic work inside **Activities**, and use Temporal's replay-safe APIs for timers and random IDs.
+^q-vvbv
 
 Temporal replaces custom [[Saga State Table]] polling and [[Worker Leases]], but does ==not== replace ==Activity idempotency, Saga compensation logic, or external Reconciliation==. #card-reminder
+^q-ww84
 
 ## Related
 - [[Saga]]

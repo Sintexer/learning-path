@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-w3t4: { nid: 1795356733526, hash: nvb8smg3, sync: ukfsrpse }
+  q-q5gs: { nid: 1795356733546, hash: par55kqc, sync: w2pamhru }
+---
+
 APIs are mechanisms that facilitate two software components communicating with each other. APIs act as the front door for applications to access data, business logic, or functionality from backend services.
 
 ## Common Backend API Styles
@@ -27,8 +33,10 @@ APIs are mechanisms that facilitate two software components communicating with e
 Choose [[gRPC]] for internal service-to-service calls where low latency, strict typed contracts ([[Protocol Buffers]]), binary serialization efficiency, or bidirectional streaming over [[HTTP2]] matter. Choose [[REST]] for public/browser-facing APIs, HTTP caching, and broad tooling compatibility.
 
 Why should REST API list endpoints return a wrapper object (e.g. `{ "items": [...], "nextCursor": "..." }`) instead of a bare JSON array?::A bare array root cannot be extended with metadata (pagination cursors, totals, warnings) without making a breaking change to the response schema.
+^q-w3t4
 
 Always pair client [[Retry Pattern|retries]] on mutating API endpoints with [[API Idempotency]] (e.g. an [[Idempotency Key]]) to prevent duplicate side effects. #card-reminder
+^q-q5gs
 
 ## Related
 - [[REST]]

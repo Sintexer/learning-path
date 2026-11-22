@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-66dt: { nid: 1795356727441, hash: gkku8uah, sync: qsggwtjq }
+  q-wviw: { nid: 1795356727467, hash: vh2i59z5, sync: 6ih9nkdk }
+---
+
 A relational database organizes data into **tables**. Data in one table can *link* to data in other tables to create **relationships** - hence, the relational part of the name.  
   
 A table stores data in **rows** and **columns**. A row, often called a record, contains all information about a specific entry. Columns describe attributes of an entry. 
@@ -27,8 +33,10 @@ In a relational database, the query optimizer automatically decides which parts 
 ## Flashcards
 
 Why does a [[Relational Database]] let you optimize query performance by adding [[Database Index|indexes]] without rewriting application code?::Because [[SQL]] is declarative — the query optimizer automatically picks the best access path and join strategy whenever indexes or table statistics change.
+^q-66dt
 
 What is the main advantage of normalizing data across relational tables instead of duplicating it?::It eliminates update anomalies and duplicate data, keeping many-to-one and many-to-many relationships consistent via foreign keys.
+^q-wviw
 
 ## Related
 

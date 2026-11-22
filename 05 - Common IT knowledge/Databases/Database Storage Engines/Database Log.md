@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-fwyw: { nid: 1795356726617, hash: jqt3h8mh, sync: xey4xrbj }
+  q-u8sk: { nid: 1795356726642, hash: 6utk5yns, sync: vbm9drgr }
+---
+
 Databases usually use a *log*, which is different from an application logger. A **database log** is an append-only file that achieves high write throughput because sequential disk writes avoid random seeks. Databases using append-only logs must also handle concurrency control, reclaiming disk space so that the log does not grow forever (via **compaction** and segment merging), and handling crash errors and partially written records (via checksums).
 
 ## Simplest case
@@ -17,12 +23,14 @@ Because an append-only log grows indefinitely, the engine breaks it into fixed-s
 > - **Crash recovery of in-memory index**: Rebuilding an in-memory hash map from a huge log on restart is slow; engines periodically snapshot the hash map to disk.
 
 What is the difference between a database log and an application log?::A database log is a structured, append-only binary sequence of records designed for storage durability, crash recovery ([[WAL]]), or [[Replication Log|replication]], whereas an application log is human-readable diagnostic output.
+^q-fwyw
 
 ## What are the two main limitations of an append-only log paired with an in-memory hash index (Bitcask)? #card
 1. All keys must fit in RAM (large key spaces cannot be indexed on disk efficiently with a hash map).
 2. Range queries are inefficient because keys are not stored in sorted order (you must look up every key individually).
 
 In log-structured storage, ==compaction== reclaims disk space by discarding overwritten keys and tombstones across closed segments while preserving only the latest value per key.
+^q-u8sk
 
 ## Related
 - [[WAL]]

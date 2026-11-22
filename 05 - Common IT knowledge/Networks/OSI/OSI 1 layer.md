@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-dqg5: { nid: 1795356723767, hash: gh783x8h, sync: yhp26aut }
+---
+
 > AKA **Physical layer**
 
 This layer of the [[OSI Model]] is responsible for the **physical transmission of raw bits** over a network medium, such as copper cables, fiber optics, or wireless radio signals. It deals with the *electrical, optical, and mechanical specifications* of network connections (voltages, frequencies, pinouts, modulation).
@@ -8,6 +13,7 @@ This layer of the [[OSI Model]] is responsible for the **physical transmission o
 ## Flashcards
 
 OSI Layer 1:::Physical layer — transmits raw bits as electrical, optical, or radio signals across physical media.
+^q-dqg5
 
 ## Related
 - [[OSI Model]]

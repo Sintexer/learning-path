@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-fdt5: { nid: 1795356725842, hash: 4btfh2nw, sync: sy3d78un }
+  q-2s4v: { nid: 1795356725868, hash: zv5bth5i, sync: ex62bywq }
+---
+
 Distributed systems store data on many computers (nodes). A **consistency model** is a contract that defines how and when all nodes show the same data (see also [[CAP Theorem]]).
 
 ### 1. Strict Consistency ([[Linearizability]])
@@ -97,6 +103,7 @@ These models give guarantees to one client session (see [[Replication Lag]]), bu
 
 ## Why is consensus on writes alone not enough to guarantee linearizable reads? #card
 During a network partition, a deposed leader might not know a new leader was elected. If it serves reads from its local state, it returns stale data ([[Split-Brain]]). Linearizable reads require either a **quorum heartbeat (Read-Index)** before replying or a time-bounded **Leader Lease**.
+^q-fdt5
 
 ## What is the difference between Linearizability and Serializability? #card
 - **[[Linearizability]]**: Recency guarantee on reads/writes of a **single object** respecting real-world time.
@@ -104,6 +111,7 @@ During a network partition, a deposed leader might not know a new leader was ele
 Combining both yields **Strict Serializability**.
 
 In Google Spanner, the **Commit Wait** pattern delays acknowledging a write for ==2ε (twice the clock uncertainty bound)== so that real-world time everywhere has passed the write's timestamp before any subsequent read can start.
+^q-2s4v
 
 ## Related
 - [[Linearizability]]

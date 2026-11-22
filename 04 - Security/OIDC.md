@@ -1,8 +1,17 @@
+---
+flashcards:
+  q-2237: { nid: 1795356732093, hash: 7p94jdqb, sync: tanb9cfr }
+  q-nihg: { nid: 1795356732118, hash: ais7ecv3, sync: p3f2ehbn }
+  q-52q9: { nid: 1795356732142, hash: vd6kumh3, sync: jzxc5yy2 }
+  q-qy62: { nid: 1795356732175, hash: vdui38nf, sync: v2ai5wzi }
+---
+
 > AKA **OpenID Connect**
 
 **OpenID Connect (OIDC)** is an [[Authentication|authentication]] layer built on top of **OAuth 2.0**. While OAuth 2.0 handles delegated [[Authorization|authorization]] (granting an app permission to call an [[API]]), OIDC standardizes how a client (Relying Party) verifies *who* the user is via an [[Identity provider|IdP]] (such as [[Keycloak]]).
 
 What is the difference between OAuth 2.0 and OIDC?::OAuth 2.0 is a delegated authorization framework (issuing access tokens for APIs), whereas OIDC adds an authentication layer on top of OAuth 2.0 using an ID Token (JWT) and UserInfo endpoint.
+^q-2237
 
 ## Core Artifacts & Discovery
 
@@ -14,6 +23,7 @@ What is the difference between OAuth 2.0 and OIDC?::OAuth 2.0 is a delegated aut
 ## Recommended Flow
 
 For browser SPAs and mobile apps, always use ==Authorization Code Flow with PKCE== instead of the deprecated Implicit flow.
+^q-nihg
 
 1. Client generates a high-entropy `code_verifier` and its SHA-256 `code_challenge`, then redirects the user to the [[Identity provider|IdP]] with `state` (CSRF protection) and `nonce` (ID Token replay protection).
 2. User authenticates at the IdP; IdP redirects back with a short-lived authorization `code`.
@@ -26,10 +36,12 @@ For browser SPAs and mobile apps, always use ==Authorization Code Flow with PKCE
 > - **Single Sign-Out friction**: Front-channel logout (hidden iframes) breaks under modern browsers' third-party cookie blocking; prefer back-channel logout or short token TTLs.
 
 Always validate `iss`, `aud`, `exp`, and signature on every resource server to prevent confused-deputy token replay across services. #card-reminder
+^q-52q9
 
 ## Why must you never send an OIDC ID Token to a backend API as a Bearer token? #card
 
 An ID Token is minted for the **client application** (`aud` = client ID) to prove user authentication—not to authorize API calls. Sending it to a backend API breaks audience isolation, bypasses API-specific scopes/permissions, and opens confused-deputy vulnerabilities where a token meant for one client is accepted by unrelated APIs. Always send an **Access Token** scoped to the target resource server.
+^q-qy62
 
 ## Related
 

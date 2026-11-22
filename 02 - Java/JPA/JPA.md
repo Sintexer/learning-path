@@ -1,4 +1,10 @@
-
+---
+flashcards:
+  q-imng: { nid: 1795356731266, hash: kgpi4xcc, sync: x5cpm8dw }
+  q-kjhi: { nid: 1795356731291, hash: 7qd9gkg4, sync: 3agjc4ki }
+  q-m9ax: { nid: 1795356731319, hash: 8wh24x2u, sync: z8nn6wp4 }
+  q-35qf: { nid: 1795356731345, hash: 2fenev6w, sync: 42j57589 }
+---
 # Default fetching policy
 
 | Association Type | Default fetching policy |
@@ -144,14 +150,18 @@ If you use 2nd layer cache, you could also face N+1. If you query for `PostComme
 ## Flashcards
 
 In JPA, `@OneToMany` and `@ManyToMany` default to ==LAZY== fetching, while `@ManyToOne` and `@OneToOne` default to ==EAGER== fetching.
+^q-imng
 
 ## Why should you disable `spring.jpa.open-in-view` in production Spring/JPA services? #card
 With OSIV enabled, Hibernate keeps the database session and JDBC connection open until the HTTP response finishes rendering. This holds connections across slow serialization or downstream calls (exhausting the connection pool) and masks N+1 lazy-loading queries outside the `@Transactional` service layer.
+^q-kjhi
 
 ## What happens when you combine `JOIN FETCH` on a `@OneToMany` collection with pagination (`Pageable`) in Hibernate? #card
 SQL `LIMIT`/`OFFSET` cannot be applied safely to a joined parent-child result set without cutting off child rows, so Hibernate logs `HHH90003004` and loads **all matching rows into JVM memory** to paginate in Java. Fix with a two-query pattern (fetch paged parent IDs, then `JOIN FETCH` by IDs) or DTO projections.
+^q-m9ax
 
 Default every `@ManyToOne` and `@OneToOne` to `FetchType.LAZY` and fetch associations per use case via `JOIN FETCH`, `@EntityGraph`, or DTO projections. #card-reminder
+^q-35qf
 
 ## Related
 - [[Hibernate]]

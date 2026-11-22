@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-72qy: { nid: 1795356728368, hash: 833tkhk3, sync: vtif8zg2 }
+  q-fm2p: { nid: 1795356728400, hash: 8dfy3cru, sync: qqffc6hj }
+---
+
 An index relying on [[Bitmap]] data structure. Imagine a table with `N` rows and a column that can only take a handful of distinct values (e.g., `Gender`, `Status`, `Country`, `IsActive`). For each distinct value, a bitmap index creates a **bit vector of length N**:
 
 - Bit `i` is `1` if row `i` has that value.
@@ -88,8 +94,10 @@ Because bitmaps for low-cardinality columns are often long runs of the same bit,
 ## Flashcards
 
 Why are persistent [[Bitmap Index|bitmap indexes]] great for [[OLAP]] but dangerous for [[OLTP]]?::They compress well and combine multi-column low-cardinality filters via fast bitwise `AND`/`OR`, but a single row update must lock and rewrite large bit segments, destroying concurrent write throughput.
+^q-72qy
 
 What modern compressed bitmap format is used by Lucene, ClickHouse, Druid, and Spark?::Roaring Bitmaps — they dynamically switch between arrays, bitmaps, and run-length containers depending on density.
+^q-fm2p
 
 ## Related
 

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-jhs5: { nid: 1795356724248, hash: k9e799fk, sync: jnfs6nrx }
+  q-9xhv: { nid: 1795356724266, hash: afwtyiyz, sync: hfd9w5xr }
+---
+
 It is guaranteed that messages will be delivered and there won't be delivery duplications.
 
 The message is processed **and its effect applied exactly one time**, no duplicates, no loss — semantically.
@@ -14,9 +20,11 @@ In other words: let [[Kafka]] redeliver duplicates freely (that's fine, that's j
 > [[Kafka]]'s built-in EOS (`enable.idempotence=true` + transactional producer + `read_committed` consumers) gives genuine exactly-once semantics **only for read-process-write pipelines staying entirely inside Kafka**. For external sinks (like [[PostgreSQL]]), store the consumer's processed message ID or offset **in the same local DB transaction** as the business mutation, or use an [[Idempotency Key]] with a unique constraint.
 
 In distributed systems, practical "exactly-once" is achieved by combining ==at-least-once delivery== with ==idempotent processing==.
+^q-jhs5
 
 ## What is the scope limitation of Kafka's native Exactly-Once Semantics (EOS)? #card
 Kafka EOS only guarantees atomic offset commit + output publish within **Kafka-to-Kafka** pipelines. Once a consumer writes to an external database or calls an external API, you must pair [[At-least-once delivery]] with transactional deduplication (storing offset/event ID in the same DB transaction) or an [[Idempotency Key]].
+^q-9xhv
 
 ## Related
 - [[Delivery Semantics]]

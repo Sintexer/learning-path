@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-vvga: { nid: 1795356717891, hash: asu95en7, sync: g6hdcwxw }
+  q-uffe: { nid: 1795356717917, hash: cii5kn9t, sync: 9ftts32d }
+---
+
 **Event-driven architecture (EDA)** is a design paradigm where services communicate by producing and consuming events. This approach decouples services and allows them to react to changes asynchronously.
 
 An event is a change in state, a user request, or an update, like an item being placed in a shopping cart in an e-commerce website. When an event occurs, the information is published for other services to consume it.
@@ -31,8 +37,10 @@ In event-driven architectures, events are the primary mechanism for sharing info
 ## Event Notification (thin event) vs. Event-Carried State Transfer (ECST) — what is the trade-off? #card
 - **Thin Event Notification** (`orderId` only): Small payloads and simpler schema evolution, but forces consumers to call back to the producer API (runtime availability & load coupling).
 - **Event-Carried State Transfer (ECST)**: Consumers stay autonomous and can build local [[CQRS]] views without callbacks, at the cost of larger payloads, eventual staleness, and stricter schema compatibility.
+^q-vvga
 
 Event-driven producers must publish via ==Outbox Pattern or Change Data Capture== to avoid [[Dual-Write]] loss, and consumers must handle ==duplicates, reordering, and poison pills==. #card-reminder
+^q-uffe
 
 ## Related
 - [[Kafka]]

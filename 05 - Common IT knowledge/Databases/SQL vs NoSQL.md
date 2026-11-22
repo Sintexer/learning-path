@@ -1,4 +1,9 @@
-
+---
+flashcards:
+  q-ks5p: { nid: 1795356726941, hash: h6ztwq7r, sync: u8hwwpri }
+  q-usyc: { nid: 1795356726966, hash: a9dg3xiw, sync: vqtpnkc3 }
+  q-qd7q: { nid: 1795356726992, hash: zk5d6nnv, sync: 98y7n9xp }
+---
 ## Which data model leads to simpler application code 
 
 If the data in an application has a document-like structure (i.e., a tree of one-to-many relationships, where typically the entire tree is loaded at once), then it's probably a good idea to use a [[Document Database]]. 
@@ -40,10 +45,13 @@ Some document databases offer support for joins. RethinkDB supports relational-l
 ## Flashcards
 
 What is the difference between **schema-on-write** and **schema-on-read**?::Schema-on-write ([[Relational Database|relational]]) enforces structure when data is written; schema-on-read ([[Document Database|document]]) stores arbitrary structures and relies on application code to interpret them at read time.
+^q-ks5p
 
 When does a [[Document Database]]'s storage locality advantage break down?::When queries only need a small slice of a large document (still must load the whole document) or when frequent updates grow the document and force full rewrites.
+^q-usyc
 
 How do modern [[RDBMS|relational databases]] like [[PostgreSQL]] narrow the gap with document databases?::By providing binary JSON (`jsonb`) columns with [[GIN Index|GIN indexing]], letting teams combine relational foreign keys and [[ACID]] transactions with flexible nested fields in one database.
+^q-qd7q
 
 ## Related
 

@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-d25d: { nid: 1795356718567, hash: dfzix437, sync: dizitbgn }
+  q-2tx6: { nid: 1795356718591, hash: 9w2mpnpz, sync: mqxy4bgr }
+  q-bhdk: { nid: 1795356718617, hash: 4ub924sx, sync: 86h6y6it }
+  q-54dw: { nid: 1795356718641, hash: hpuxcuxv, sync: 4xxhm4za }
+---
+
 > AKA **Hypertext Transfer Protocol**
 
 **HTTP** is a stateless request-response application protocol at [[OSI 7 layer]] (default port **80**; encrypted [[HTTPS]] uses port **443**).
@@ -32,10 +40,14 @@ There are three major versions in production:
 ## Flashcards
 
 HTTP:::Hypertext Transfer Protocol — stateless request-response protocol at [[OSI 7 layer]] (port 80 plaintext, port 443 for [[HTTPS]]).
+^q-d25d
 
 Which HTTP methods are guaranteed to be idempotent by specification?::`GET`, `HEAD`, `OPTIONS`, `PUT`, and `DELETE` (`POST` and `PATCH` are ==not== idempotent by default).
+^q-bhdk
+^q-2tx6
 
 HTTP/1.1 uses ==text framing over TCP==; HTTP/2 adds ==binary multiplexing and HPACK over TCP==; HTTP/3 moves to ==QUIC over UDP with QPACK== to eliminate TCP Head-of-Line blocking.
+^q-54dw
 
 ## Related
 - [[HTTPS]]

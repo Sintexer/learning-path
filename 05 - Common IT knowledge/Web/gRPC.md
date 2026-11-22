@@ -1,3 +1,13 @@
+---
+flashcards:
+  q-vxvv: { nid: 1795356718791, hash: ye4dj23k, sync: zbgbp3rx }
+  q-yc5i: { nid: 1795356718825, hash: 2wtji7v9, sync: 6nzsmu24 }
+  q-dq4e: { nid: 1795356718842, hash: jwy5um7n, sync: agz5ixb2 }
+  q-d9vg: { nid: 1795356718868, hash: eptq24k3, sync: r49dntbx }
+  q-h5ix: { nid: 1795356718893, hash: 26dkwcg3, sync: 4qb86ku7 }
+  q-2w7s: { nid: 1795356718918, hash: q5v3t5qz, sync: 5du87kq8 }
+---
+
 > AKA **gRPC Remote Procedure Call**
 
 **gRPC** is a high-performance, open-source RPC framework (originally from Google) designed primarily for low-latency, strongly typed service-to-service communication in [[Microservices App|microservices]]. It runs over [[HTTP2]] and uses [[Protocol Buffers]] (Protobuf) as both its Interface Definition Language (IDL) and compact binary wire format.
@@ -25,14 +35,20 @@
 ## Flashcards
 
 gRPC:::High-performance RPC framework using [[HTTP2]] for multiplexed transport/streaming and [[Protocol Buffers]] for strongly typed binary serialization.
+^q-vxvv
 
 What are the four RPC streaming patterns supported natively by gRPC?::==Unary==, ==server streaming==, ==client streaming==, and ==bidirectional streaming==.
+^q-dq4e
+^q-yc5i
 
 Why does a default [[K8S Service]] (`ClusterIP` / L4) cause severe load imbalance for gRPC traffic?::Because gRPC multiplexes all RPCs over a single persistent [[HTTP2]]/[[TCP]] connection, so L4 connection-level load balancing pins all calls to ==one backend pod==; solve with L7 proxies ([[Service Mesh]]) or client-side load balancing.
+^q-h5ix
+^q-d9vg
 
 ### How does gRPC deadline propagation protect microservices from cascading overload? #card
 
 Each gRPC call carries an absolute deadline (`grpc-timeout`) that propagates across downstream hops. When the deadline expires, downstream services receive cancellation signals and abort work instead of burning CPU on responses the caller will discard.
+^q-2w7s
 
 ## Related
 - [[HTTP2]]

@@ -1,6 +1,10 @@
 ---
 aliases:
   - K8S
+flashcards:
+  q-fs4t: { nid: 1795356714992, hash: tr9vrtiq, sync: 37c9hwbt }
+  q-7z2i: { nid: 1795356715016, hash: ifyt6c2c, sync: xhb63hsj }
+  q-mnds: { nid: 1795356715041, hash: 3sxz6kwf, sync: a8fty5zb }
 ---
 > v1.0 since 2015, donated to CNCF in 2014; pronounced *koo-ber-net-eez* (or K8s as *kates*).
 
@@ -31,8 +35,11 @@ To run an application on Kubernetes:
 ## Flashcards
 
 Kubernetes (K8s):::Declarative [[Containers orchestration|container orchestration]] platform composed of a [[K8S Control Plane|control plane]] and [[K8S Worker nodes|worker nodes]] that continuously reconciles observed cluster state toward desired state.
+^q-fs4t
 
 What architectural pattern sits at the core of Kubernetes?::A declarative ==reconciliation (control) loop== where specialized controllers watch the API server and continuously converge observed state to match [[Pod Desired State|desired state]] stored in [[etcd]].
+^q-mnds
+^q-7z2i
 
 ## Related
 - [[K8S Control Plane]]

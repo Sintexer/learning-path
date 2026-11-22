@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-gpmh: { nid: 1795356715068, hash: vj25bujv, sync: eqqqzuyk }
+  q-8gnr: { nid: 1795356715093, hash: hbput2is, sync: z4mdihie }
+  q-y5j4: { nid: 1795356715117, hash: 4sug9knu, sync: ydguzkyj }
+  q-598c: { nid: 1795356715141, hash: anqpa3na, sync: h8us63g8 }
+---
+
 These four system images are the bare minimum typically seen in a lightweight [[Kubernetes]] (K3s) cluster:
 
 - **`coredns` (The Phonebook — [[K8S DNS]]):** Because [[Pod]] IP addresses churn constantly as Pods die and restart, CoreDNS resolves stable [[K8S Service]] names (e.g., `orders.prod.svc.cluster.local`) to ClusterIPs or Pod IPs.
@@ -11,8 +19,12 @@ These four system images are the bare minimum typically seen in a lightweight [[
 ## Flashcards
 
 What is the purpose of the `pause` container inside every [[Kubernetes]] [[Pod]]?::It starts first and holds open the Pod's shared ==Linux network and IPC namespaces== (keeping the Pod IP alive even if an application container crashes and restarts).
+^q-8gnr
+^q-gpmh
 
 Which core Kubernetes component is required for both `kubectl top` and Horizontal Pod Autoscaler (HPA) CPU/memory scaling?::==`metrics-server`==.
+^q-598c
+^q-y5j4
 
 ## Related
 - [[Kubernetes]]

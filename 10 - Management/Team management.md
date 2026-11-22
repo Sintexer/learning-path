@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-5fif: { nid: 1795356717116, hash: 4j5g7sm2, sync: skdggs8m }
+  q-2zck: { nid: 1795356717141, hash: 7am8b9hr, sync: dnxcfy5c }
+  q-x89j: { nid: 1795356717175, hash: 93kketqk, sync: 9ay2x3t7 }
+---
+
 ## Core Pillars of Team Management
 
 1. **Leadership styles**: Understand different leadership styles—such as autocratic, democratic, transformational, and servant leadership—and when each applies (e.g., directive during a Sev-1 incident vs servant/coaching during normal product delivery).
@@ -20,12 +27,15 @@
 > **Micromanagement vs abdication**: Telling senior engineers *how* to implement every detail kills ownership and makes you a bottleneck; conversely, handing off a vague goal with zero context ("abdication") leads to rework. Align clearly on the **why**, **success criteria**, and **constraints/guardrails**, then let the owner drive the **how** with lightweight checkpoints.
 
 Effective delegation transfers ==outcomes, constraints, and decision ownership== rather than step-by-step instructions—avoiding both micromanagement and vague abdication.
+^q-5fif
 
 What is the goal of a blameless postmortem?::To surface systemic, process, and architectural root causes behind an incident—assuming engineers acted with good intent given the information they had—so the organization fixes systems rather than hiding mistakes out of fear.
+^q-2zck
 
 ## How does Conway's Law affect engineering management and system architecture? #card
 
 Conway's Law states that organizations design systems whose structure mirrors their internal communication structures. If two teams share ownership of one database or require constant cross-team syncs to ship a feature, the architecture becomes tightly coupled—so aligning team boundaries with bounded contexts ([[DDD]], [[Microservices decomposition]]) is both an organizational and architectural lever.
+^q-x89j
 
 ## Related
 

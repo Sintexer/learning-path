@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-qduc: { nid: 1795356726120, hash: 9p42gdf5, sync: 6ub2z3ya }
+  q-262e: { nid: 1795356726148, hash: ykevsmxt, sync: gwtwywz6 }
+---
+
 - [[OLTP]]
 - [[OLAP]]
 
@@ -19,8 +25,10 @@
 ## Flashcards
 
 What is the primary hardware bottleneck of an [[OLTP]] workload versus an [[OLAP]] workload?::OLTP is bottlenecked by disk seek time, latency, and lock contention; OLAP is bottlenecked by sequential disk bandwidth and scan throughput.
+^q-qduc
 
 Why do OLTP schemas favor normalization while OLAP schemas favor denormalization ([[Star Schema vs Snowflake Schema]])?::OLTP optimizes for fast, anomaly-free small writes; OLAP optimizes for fast read scans with fewer expensive joins across billions of rows.
+^q-262e
 
 ## Related
 

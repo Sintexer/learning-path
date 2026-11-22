@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-5mng: { nid: 1795356721991, hash: txyqn2mb, sync: kw8xm6h2 }
+  q-94gk: { nid: 1795356722018, hash: f72g29yv, sync: m9yn795v }
+  q-zf6f: { nid: 1795356722042, hash: j5rirign, sync: mn42e5ay }
+---
+
 **Purpose:** Follow one operation across service and messaging boundaries (see also [[Microservices Tracing]]).
 
 ```
@@ -44,12 +51,15 @@ A trace ID is **not** an [[Idempotency Key|idempotency key]] or durable workflow
 > Always attach a **business correlation ID** (`order_id`, `saga_id`) alongside `trace_id` in logs and events. Traces are sampled and expire in days, whereas business correlation IDs let you reconstruct an incident weeks later across logs, DB tables, and [[DLQ]] records.
 
 Distributed Tracing:::Tracking a single logical request across multiple services and async boundaries using a propagated Trace Context (`trace_id`, `span_id`) composed of nested Spans.
+^q-5mng
 
 ## Head-based vs. Tail-based sampling in Distributed Tracing — what is the trade-off? #card
 - **Head-based sampling** decides at request entry (e.g., keep 1%): cheap and stateless, but drops 99% of rare errors and tail-latency spikes.
 - **Tail-based sampling** buffers spans at the collector until the trace completes: keeps 100% of errors and slow traces, at the cost of higher collector memory and trace-affinity routing.
+^q-94gk
 
 Never reuse a `trace_id` as an ==Idempotency Key== or durable workflow ID — traces are sampled, ephemeral, and regenerate on client retries. #card-reminder
+^q-zf6f
 
 ## Related
 - [[Microservices Tracing]]

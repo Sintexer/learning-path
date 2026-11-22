@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-4a74: { nid: 1795356725218, hash: szz5sqi8, sync: dcqdrmds }
+  q-6pn5: { nid: 1795356725242, hash: f4vdke8a, sync: gxtnr6tr }
+---
+
 In **Synchronous** [[Replication]], the leader must **block and wait** until 1..N followers confirm they have received and persisted the write before acknowledging success to the client.
 
 Usually in [[Relational Database|relational databases]] (e.g., [[PostgreSQL]] `synchronous_commit`, MySQL semi-sync), only **one** follower is synchronous while the remaining followers are asynchronous — this is called **semi-synchronous** replication. It guarantees that at least two nodes (the leader + 1 follower) hold an up-to-date copy of every committed write, so if the leader dies, that synchronous follower can be promoted without data loss. Making *all* followers synchronous is impractical: any single follower outage or network hiccup would stall all writes across the entire cluster (violating [[Availability]]).
@@ -11,11 +17,13 @@ Often, [[Leader-Based Replication]] is configured to be completely **asynchronou
 
 ## Why is "semi-synchronous" replication preferred over making all followers synchronous? #card
 Making all followers synchronous means a single slow or failed follower stalls all writes for the entire database. **Semi-synchronous** replication keeps 1 follower synchronous (guaranteeing an up-to-date copy survives leader failure) while keeping other followers asynchronous so the cluster stays available if a node fails.
+^q-4a74
 
 ## What is the durability risk of completely asynchronous leader-based replication? #card
 The leader acknowledges writes to the client before followers receive them. If the leader crashes unrecoverably, any un-replicated writes are permanently lost even though the client received a success confirmation.
 
 In **semi-synchronous replication**, the leader waits for acknowledgment from ==one synchronous follower== before returning success, while ==the remaining followers replicate asynchronously==.
+^q-6pn5
 
 ## Related
 - [[Leader-Based Replication]]

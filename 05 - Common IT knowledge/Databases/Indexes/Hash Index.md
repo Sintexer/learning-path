@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-7var: { nid: 1795356728042, hash: wfascqnz, sync: kkecvwgd }
+  q-nvna: { nid: 1795356728067, hash: abuiyaga, sync: 3bjqmfqy }
+---
+
 It is the common index for key-value data. Key-value stores are quite similar to the dictionary type that you can find in many programming languages, and which are usually implemented as a hash map. It is the simplest case for [[Database Log]] implementation.
 
 ### The Internal Mechanics
@@ -50,8 +56,10 @@ The hash table index also has limitations:
 ## Flashcards
 
 Why are [[Hash Index|hash indexes]] rarely chosen over [[B-Tree Index|B-Tree indexes]] in relational databases?::Hash indexes only support strict equality (`=`) — no range scans, `ORDER BY`, or composite prefix lookups — and a B-Tree's top 3–4 levels are already cached in RAM anyway.
+^q-7var
 
 In a log-structured hash index (Bitcask), how are deletes handled on immutable append-only segments?::By appending a special deletion marker called a **tombstone**, which tells background segment compaction/merging to discard earlier versions of that key.
+^q-nvna
 
 ## Related
 

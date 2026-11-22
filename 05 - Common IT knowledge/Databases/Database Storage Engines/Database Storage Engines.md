@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-77kc: { nid: 1795356726667, hash: nka3tfbw, sync: tve3x3tj }
+---
+
 Database engines mainly diverged in two directions:
 - [[OLTP]] oriented
 - [[OLAP]] oriented
@@ -46,6 +51,7 @@ That is why real databases need a [[Database Index|index]] — a data structure 
 Every [[Database Index]] speeds up reads at the cost of ==slower writes==, because every write must update both the data and its index structures.
 
 What [[PostgreSQL]] (v12+) feature allows plugging in custom storage engines?::Table Access Methods (TAM)
+^q-77kc
 
 ## Related
 - [[Database Log]]

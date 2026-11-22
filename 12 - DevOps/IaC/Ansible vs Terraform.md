@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-sgj3: { nid: 1795356713517, hash: qn4tyeqr, sync: ah848vs3 }
+  q-bmys: { nid: 1795356713541, hash: udnxhb88, sync: qu6cmt72 }
+  q-vp9t: { nid: 1795356713569, hash: 6p8yyhas, sync: y4m7wdpf }
+  q-44wx: { nid: 1795356713592, hash: tdyfqf8k, sync: rsr2md7r }
+---
+
 | Topic | [[Terraform]] | [[Ansible]] |
 | --- | --- | --- |
 | Primary purpose | Provision cloud/platform infrastructure | Configure OS/software and run operational tasks |
@@ -44,8 +52,12 @@ In [[Cloud-Native App|cloud-native]] environments, runtime host mutation via Ans
 ## Flashcards
 
 How do [[Terraform]] and [[Ansible]] complement each other in an [[IaaC]] pipeline?::[[Terraform]] declaratively ==provisions infrastructure== (VPCs, VMs, databases, LBs) using a state file and provider APIs, while [[Ansible]] ==configures OS/software== inside hosts over SSH.
+^q-bmys
+^q-sgj3
 
 In modern [[Cloud-Native App|cloud-native]] stacks, what largely replaces [[Ansible]] for mutating live servers?::==Immutable images== (Packer AMIs / [[Container|OCI containers]]) deployed declaratively via [[Kubernetes]] or autoscaling groups.
+^q-44wx
+^q-vp9t
 
 ## Related
 - [[Terraform]]

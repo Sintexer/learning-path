@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-sggv: { nid: 1795356729220, hash: dtrekj6c, sync: 78js2hbv }
+---
+
 Programs usually work with data in (at least) two different representations:
 1. In memory, data is kept in objects, structs, lists, arrays, hash tables, trees, and so on. These [[Data Structures|data structures]] are optimized for efficient access and manipulation by the CPU (typically using pointers).
 2. When you want to write data to a file or send it over the network, you have to encode it as some kind of self-contained sequence of bytes (for example, a JSON document). Since a pointer wouldn’t make sense to any other process, this sequence-of-bytes representation looks quite different from the data structures that are normally used in memory.
@@ -53,6 +58,7 @@ Removing a field is just like adding a field, with backward and [[Forward Compat
 When removing a field in a tag-based binary schema (Protobuf/Thrift), you can only remove an ==optional== field and you must ==never reuse its tag number==.
 
 Why are 64-bit integers often encoded as strings in JSON APIs?::JavaScript/IEEE-754 numbers lose integer precision above 2^53 - 1, silently corrupting large IDs.
+^q-sggv
 
 ## Related
 - [[Backward Compatibility]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-6mrp: { nid: 1795356725517, hash: xrr8iw3c, sync: 4uvcw7kt }
+  q-3hqr: { nid: 1795356725542, hash: e67erkbg, sync: 4hqh469z }
+  q-227d: { nid: 1795356725567, hash: h2ey6ynp, sync: nhert59j }
+---
+
 **Eventual consistency** is a property of a distributed system (the weakest of the [[Consistency Levels]]) that guarantees that, if no new updates are made, all replicas will eventually converge to the same value.
 
 While **[[Replication Lag|asynchronous replication lag]]** (the time it takes for data to physically travel from a primary node to secondary nodes over a network) is a primary driver, several other architectural factors and mechanisms cause eventual consistency:
@@ -13,14 +20,17 @@ While **[[Replication Lag|asynchronous replication lag]]** (the time it takes fo
 > Eventual consistency says **nothing** about *when* replicas will converge or *what* anomalies clients see in the meantime (lost updates, reading your own write disappearing, time moving backward). Always specify whether you also need client-centric guarantees ([[Consistency Levels#4. Client-Centric Consistency Levels|Read-Your-Writes, Monotonic Reads]]) or conflict-free merging ([[CRDT]]).
 
 Eventual consistency:::A weak consistency guarantee stating that if no new updates are made, all replicas will eventually converge to the same value — with no bound on how long convergence takes.
+^q-6mrp
 
 ## Name four architectural causes of eventual consistency beyond database replication lag. #card
 1. Application-level caches with TTL or async invalidation ([[Redis]], [[Memcached]]).
 2. Asynchronous messaging / [[Event-driven architecture]] / [[CQRS]] projections.
 3. [[Multi-Leader Replication]] or [[Leaderless Replication]] concurrent writes awaiting conflict resolution.
 4. Gossip protocols or offline-first mobile clients syncing on reconnect.
+^q-3hqr
 
 Never treat "eventual consistency" as an excuse for silent data loss: pair it with explicit conflict resolution (version vectors / [[CRDT]]) and [[Reconciliation]] checks for critical business invariants. #card-reminder
+^q-227d
 
 ## Related
 - [[Consistency Levels]]

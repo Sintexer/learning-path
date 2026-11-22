@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-cxui: { nid: 1795356718292, hash: 24kzuc93, sync: ibmr7hjm }
+  q-8sa9: { nid: 1795356718317, hash: nc79m9hz, sync: z28ivwge }
+---
+
 Mutual exclusion is the means by which *only one writer can have access to a protected resource at a time*, and is usually implemented with a *locking strategy*. It is the way to implement the [[Pessimistic Concurrency Control]].
 
 Locking strategies require an *arbitrator*, usually the operating system kernel, to get involved when the contention occurs to decide who gains access and in what order.  This can be a very expensive process often requiring many more CPU cycles than the actual transaction to be applied to the business logic would use.  
@@ -12,9 +18,11 @@ Those waiting to enter the [[Critical Section]] in advance of performing the mut
 ## Flashcards
 
 Mutual exclusion:::Guarantee that at most one execution context accesses a [[Critical Section]] or mutates a protected resource at a time.
+^q-cxui
 
 ## Why is a TTL-based distributed lock alone insufficient to guarantee mutual exclusion across services? #card
 A process holding the [[Distributed Lock]] can pause (e.g. JVM stop-the-world GC or OS scheduling delay) longer than the lease TTL. Another node acquires the lock, and when the paused node resumes it can still write stale data. Preventing corruption requires a monotonic [[Fencing Token]] checked by the resource/storage layer.
+^q-8sa9
 
 ## Related
 - [[Critical Section]]

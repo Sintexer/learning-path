@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-6htc: { nid: 1795356728770, hash: r3qud8us, sync: 74zx4cq9 }
+  q-vwbt: { nid: 1795356728803, hash: jfpvgfuf, sync: cdz54wwq }
+  q-282h: { nid: 1795356728818, hash: vqjajg5t, sync: 3v6phieu }
+---
+
 **ETL (Extract, Transform, Load)** is the automated pipeline used to move data from operational [[OLTP]] databases into an analytical [[Data Warehouse]] ([[OLAP]]):
 
 1. **Extract:** Pull raw data from multiple disparate sources (databases, logs, APIs, event streams).
@@ -23,10 +30,13 @@
 ## Flashcards
 
 What is the key architectural difference between **ETL** and **ELT**?::ETL transforms data in an external pipeline *before* loading into the [[Data Warehouse]]; ELT loads raw data into the warehouse first and transforms it in-place (preserving raw history for replay).
+^q-6htc
 
 Why is [[Change Data Capture]] (CDC) preferred over polling `WHERE updated_at > ?` for extracting data from [[OLTP]] databases?::CDC reads the database's [[WAL]]/binlog directly, capturing hard deletes without missing rows or adding heavy query load to the OLTP database.
+^q-vwbt
 
 Make every ETL/ELT load stage idempotent (via partition overwrite or upsert) so retries and backfills never double-count metrics. #card-reminder
+^q-282h
 
 ## Related
 

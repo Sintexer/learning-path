@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-742k: { nid: 1795356730941, hash: vrcfma4z, sync: jiwx96g7 }
+  q-pg3z: { nid: 1795356730967, hash: qpxge2j2, sync: fz3yksnd }
+---
+
 # Executors and Task Execution
 
 Notes on decoupling task submission from execution policy in Java (based on *Java Concurrency in Practice*, Ch. 6, updated with modern Loom primitives).
@@ -49,8 +55,10 @@ Avoid `java.util.Timer` in favor of `ScheduledThreadPoolExecutor`:
 Why should you use `ScheduledThreadPoolExecutor` instead of `java.util.Timer`?::`Timer` runs all tasks on a single thread (so one slow task delays all others) and permanently dies if any task throws an unchecked exception.
 
 What advantage does `ExecutorCompletionService` have over iterating a `List<Future<V>>` and calling `get()`?::It places completed `Future`s onto an internal queue as they finish, letting callers process fastest results immediately instead of blocking behind the slowest task in submission order.
+^q-742k
 
 Never submit dependent subtasks to the same fixed-size thread pool that the parent task is blocking on—it causes thread-starvation deadlock. #card-reminder
+^q-pg3z
 
 ## Related
 - [[concurrency]]

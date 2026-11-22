@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-qysp: { nid: 1795356717667, hash: 9mefsjay, sync: cvtunmdt }
+  q-pe8q: { nid: 1795356717692, hash: yc6exps3, sync: ynjsqxdi }
+---
+
 Resilience and fault tolerance are critical aspects of [[Microservices architecture]], ensuring that the system handles partial failures gracefully instead of cascading into a platform-wide outage.
 
 ## Core Resilience Patterns
@@ -37,8 +43,10 @@ Fallback (outermost — catches final failure)
 ## In what order should Resilience4j decorators typically wrap a remote call (outermost to innermost)? #card
 **Fallback → Retry → Circuit Breaker → Bulkhead / Rate Limiter → Timeout → Remote Call**.
 Timeout bounds each individual attempt; Bulkhead caps concurrency; Circuit Breaker tracks failures and short-circuits; Retry re-attempts transient failures (while skipping `CallNotPermittedException`); Fallback handles the final failure gracefully.
+^q-qysp
 
 Never configure retries in ==both application code and the Service Mesh== without coordination, or retries multiply silently into retry storms. #card-reminder
+^q-pe8q
 
 ## Related
 - [[Timeout Pattern]]

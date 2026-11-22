@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-8k3c: { nid: 1795356733443, hash: uav5ff42, sync: r9jycmdr }
+  q-ag4n: { nid: 1795356733477, hash: t3usqzws, sync: 6muesdbv }
+  q-8ah9: { nid: 1795356733492, hash: 44fygq6k, sync: aszqka8y }
+---
+
 # RESTful API Design
 
 **RESTful** describes a concrete web [[API]] that adheres to [[REST]] principles—in industry practice, typically **Richardson Maturity Model Level 2** (resource-oriented [[URI|URIs]] + semantic [[HTTP]] verbs and status codes).
@@ -26,10 +33,13 @@ Strict CRUD mapping does not fit every domain workflow cleanly:
 ## Flashcards
 
 What is the difference between HTTP `401 Unauthorized` and `403 Forbidden` in a RESTful API?::`401` means the caller is unauthenticated (missing/invalid credentials), whereas `403` means the caller is authenticated but lacks [[Authorization|permission]] for the requested resource.
+^q-8k3c
 
 How can a RESTful API implement HTTP-level [[Optimistic Concurrency Control]] to prevent lost updates?::Return an `ETag` (version token) on `GET` and require clients to send `If-Match: <etag>` on `PUT`/`PATCH`; reject stale writes with `412 Precondition Failed`.
+^q-ag4n
 
 Model long-running backend workflows with `202 Accepted` plus a pollable status resource (or [[Webhook]]) instead of blocking synchronous HTTP requests. #card-reminder
+^q-8ah9
 
 ## Related
 - [[REST]]

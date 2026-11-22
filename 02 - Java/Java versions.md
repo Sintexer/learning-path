@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-idx2: { nid: 1795356731643, hash: eday2imp, sync: qtjzxst8 }
+  q-4cx9: { nid: 1795356731666, hash: 3f6yuiyf, sync: pw7ef8z3 }
+  q-8rme: { nid: 1795356731692, hash: k6p8uw7h, sync: bb48kyq5 }
+---
+
 ### Most important recent releases additions
 
 > See [[Java Evolution]] for a theme-based Staff/Senior overview covering Java 11 → 25.
@@ -106,8 +113,11 @@
 ## Flashcards
 
 Which Java versions since Java 8 are Long-Term Support (LTS) releases?::Java 8, 11, 17, 21, and 25.
+^q-idx2
 
 In which Java LTS release were [[Virtual Threads]] (JEP 444) and Pattern Matching for `switch` finalized?::==Java 21==.
+^q-8rme
+^q-4cx9
 
 ## Related
 - [[Java Evolution]]

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-senp: { nid: 1795356726692, hash: vga6hjbv, sync: t75aqky5 }
+  q-nbnj: { nid: 1795356726720, hash: qagz3jyb, sync: gxktzw6x }
+---
+
 In database systems, the term **latch** has a very specific, technical meaning that is distinct from a regular [[Database Lock|database "lock"]].
 
 A **latch** is a **low-level, short-lived synchronization primitive (like a mutex, spinlock, or read/write lock) used by the database engine to protect internal, in-memory data structures from concurrent thread access.**
@@ -46,6 +52,7 @@ Latches generally come in two flavors:
 ## What is the difference between a database Latch and a database Lock? #card
 - **Latch**: Short-lived (microseconds), protects **physical in-memory data structures** (B-Tree pages, buffer pool slots) for engine threads, no rollback or deadlock detection.
 - **[[Database Lock|Lock]]**: Long-lived (transaction duration), protects **logical database objects** (rows, tables) for [[ACID]] isolation, supports rollback and deadlock detection.
+^q-senp
 
 ## How does Latch Crabbing safely traverse a B-Tree? #card
 1. Acquire a latch on the parent node (starting at root).
@@ -54,6 +61,7 @@ Latches generally come in two flavors:
 4. Repeat until reaching the leaf page.
 
 In [[PostgreSQL]] and InnoDB internals, a ==Shared Latch (S-Latch)== allows concurrent readers on a memory page, while an ==Exclusive Latch (X-Latch)== blocks all other readers and writers during page modification.
+^q-nbnj
 
 ## Related
 - [[Database Lock]]

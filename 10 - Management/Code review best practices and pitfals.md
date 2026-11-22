@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-ym6s: { nid: 1795356717198, hash: mrzgr8fq, sync: qekifwv4 }
+  q-ay3q: { nid: 1795356717217, hash: 26kns538, sync: 29rfpaav }
+  q-ztbs: { nid: 1795356717241, hash: npmsnzk4, sync: 9jdi3mzb }
+---
+
 ## Best Practices
 
 1. **Establish Clear Guidelines** — Form project-wide code style rules and a review checklist for common issues to look for.
@@ -32,14 +39,17 @@ Beyond syntax and unit tests, high-leverage reviews check production operability
 > - **Bikeshedding**: Spending 15 comments debating variable names while missing an unindexed query, missing [[Authorization]] check, or non-idempotent retry. Automate style and explicitly distinguish `blocking:` from `nit:`.
 
 Always separate ==blocking correctness/security/operability defects== from ==non-blocking `nit:` style suggestions== so reviews protect quality without stalling delivery.
+^q-ym6s
 
 Why should style and formatting rules be enforced in CI/CD rather than by human code reviewers?::Automating style removes subjective bikeshedding, eliminates reviewer fatigue, and focuses human review bandwidth on architecture, correctness, concurrency, and failure modes.
+^q-ay3q
 
 ## What should a Staff-level code review verify beyond basic logic and unit tests? #card
 
 1. **Failure modes & resilience**: Timeouts, idempotency, bounded retries, and graceful degradation.
 2. **Deployment & data safety**: [[Backward Compatibility]], zero-downtime [[Schema Migration]], and rollback safety.
 3. **Security & observability**: Object-level [[Authorization]], input validation, structured logs without PII, and metrics/tracing ([[OpenTelemetry]]).
+^q-ztbs
 
 ## Related
 

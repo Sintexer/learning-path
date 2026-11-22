@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-adxu: { nid: 1795356721743, hash: vaqzt4g6, sync: ig8nrjgy }
+  q-zqnn: { nid: 1795356721767, hash: vitktqtd, sync: k53dzgek }
+---
+
 The **Outbox pattern** enables us to reliably update a database and publish a message when they are two separate systems. This pattern solves the [[Dual-Write]] problem.
 
 ## The scenario
@@ -321,6 +327,7 @@ CDC moves work out of the application publisher, but it creates a relationship b
 > - **Ordering**: Multiple concurrent polling workers publishing rows for the same `aggregate_id` can publish events out of order; partition by `aggregate_id` or rely on CDC log order + Kafka partition key.
 
 Outbox Pattern:::Writing both business state and outbound event/command rows in a single local database transaction, then relaying those outbox rows asynchronously to a message broker to eliminate Dual-Write loss.
+^q-adxu
 
 ## Outbox Polling vs. CDC (Transaction-Log Tailing) — what are the main operational trade-offs? #card
 - **Polling**: Simpler to start (just a table + worker), but adds DB read/write load, polling latency, and table bloat/vacuum pressure.
@@ -329,6 +336,7 @@ Outbox Pattern:::Writing both business state and outbound event/command rows in 
 The Outbox Pattern guarantees ==at-least-once delivery== (not exactly-once), so every downstream consumer must still be an ==Idempotent Consumer==.
 
 Why must an Outbox relay claim rows in a short transaction, publish outside the transaction, and then mark published?::Holding a DB transaction open across a slow network publish exhausts DB connections and locks; using short transactions + [[Worker Leases]] keeps DB locks minimal while surviving crashes safely.
+^q-zqnn
 
 ## Related
 - [[Dual-Write]]

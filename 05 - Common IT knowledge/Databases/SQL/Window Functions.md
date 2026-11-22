@@ -1,4 +1,9 @@
-
+---
+flashcards:
+  q-4veb: { nid: 1795356727141, hash: h9wg8e97, sync: kaaiauyy }
+  q-yb8m: { nid: 1795356727167, hash: 4uffentm, sync: xyi2sh3n }
+  q-fvms: { nid: 1795356727192, hash: 94wjune5, sync: wzykyk2h }
+---
 **Definition:** A window function performs a calculation **across a set of related rows** (called a "window"), but **without collapsing those rows** — every original row stays in the output, each annotated with the computed value.
 
 ```sql
@@ -121,10 +126,13 @@ Or use a CTE (`WITH` clause) instead of a subquery — same idea.
 ## Flashcards
 
 How do `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()` differ when two rows tie for 2nd place?::`ROW_NUMBER()` assigns distinct numbers (1, 2, 3, 4); `RANK()` ties and skips (1, 2, 2, 4); `DENSE_RANK()` ties without skipping (1, 2, 2, 3).
+^q-4veb
 
 Why can you not put a window function directly inside a `WHERE` clause?::Window functions are evaluated during the `SELECT` phase (after `WHERE`, `GROUP BY`, and `HAVING` in [[Logical Query Processing Order]]), so you must filter on them in an outer query or CTE.
+^q-yb8m
 
 In a window function with `ORDER BY`, why does `LAST_VALUE(x)` often surprise developers by returning the current row's value?::Because the default window frame ends at `CURRENT ROW`; you must explicitly set `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+^q-fvms
 
 ## Related
 

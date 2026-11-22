@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-mpfh: { nid: 1795356715617, hash: 4sh2avmj, sync: 9tp3ycfu }
+  q-5vgw: { nid: 1795356715650, hash: eg8ax9aq, sync: 45prj44z }
+  q-6qdt: { nid: 1795356715669, hash: zrerfi34, sync: 9un62d7a }
+  q-w4a3: { nid: 1795356715692, hash: c8bbmzms, sync: x4pyukz8 }
+  q-p64n: { nid: 1795356715725, hash: 63cn3tsz, sync: 8ie7gkn8 }
+---
+
 A **Deployment** is a higher-level [[Kubernetes]] object that wraps around [[K8S ReplicaSet|ReplicaSets]] and [[Pod|Pods]] to provide declarative self-healing, [[Horizontal scaling|scaling]], [[Zero-downtime deployment|zero-downtime rollouts]], and versioned rollbacks for **stateless** applications.
 
 Most of the time you deploy Pods indirectly via higher-level controllers:
@@ -35,12 +44,17 @@ During the rollout, Kubernetes checks each new Pod's **readiness probe** ([[Heal
 ## Flashcards
 
 What is the hierarchy of objects managed by a [[Kubernetes]] Deployment?::`Deployment` manages ==`ReplicaSets`== (one per revision), which manage ==`Pods`== (which run containers).
+^q-5vgw
+^q-mpfh
 
 In a Kubernetes Rolling Update, what do `maxSurge` and `maxUnavailable` control?::`maxSurge` limits how many ==extra Pods above desired replicas== can be created during rollout; `maxUnavailable` limits how many ==Pods can be unavailable== simultaneously.
+^q-w4a3
+^q-6qdt
 
 ### Why is a Kubernetes `Deployment` with Rolling Update not sufficient by itself for zero-downtime upgrades? #card
 
 You also need accurate **readiness probes** (so booting Pods don't get traffic), a **`preStop` sleep + graceful `SIGTERM` handler** (to beat the async `EndpointSlice`/`kube-proxy` update race), a **`PodDisruptionBudget`** (for node drains), and [[Backward Compatibility|backward-compatible]] APIs/schemas during `v1`/`v2` overlap.
+^q-p64n
 
 ## Related
 - [[K8S ReplicaSet]]

@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-vx4y: { nid: 1795356728920, hash: 5hav29z9, sync: hqwsngsp }
+---
+
 A database is an organized collection of data that is stored and accessed electronically. It allows you to store, manage, and retrieve data efficiently. Databases are used in a wide variety of applications, including:
 
 * **Customer relationship management (CRM)**
@@ -37,6 +42,7 @@ A database management system ([[DBMS]]) is a software application that allows yo
 ## Flashcards
 
 What four dimensions should drive database selection in system design?::Data model (relationships), access pattern ([[OLTP]] vs [[OLAP]]), consistency/durability needs ([[ACID]] vs [[Eventual Consistency]]), and operational scalability/team maturity.
+^q-vx4y
 
 ## Related
 

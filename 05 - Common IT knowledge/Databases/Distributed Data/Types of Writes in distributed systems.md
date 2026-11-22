@@ -1,7 +1,8 @@
 ---
 flashcards:
-  q-hxf7: { nid: 1795261497363, hash: jjxqfe3s, sync: hkfg22cy }
-  q-w32s: { nid: 1795261497420, hash: 2vx2i4ey, sync: 3rr3ej2r }
+  q-hxf7: { nid: 1795261497363, hash: z7usq4cb, sync: j9hya3zx }
+  q-w32s: { nid: 1795261497420, hash: 9mfqi5vw, sync: iasvkn3p }
+  q-4jv4: { nid: 1795356725293, hash: mh6wh87g, sync: t7sdyg66 }
 ---
 
 ## Happens-before Relation
@@ -34,6 +35,7 @@ In computer systems, two operations might be concurrent even though the speed of
 Physical clocks drift across machines and NTP adjustments can step clocks forward or backward. Two operations separated by seconds on different nodes can still be causally concurrent if neither node saw the other's write; conversely, a causally later write can carry an earlier wall-clock timestamp. Logical clocks (version vectors) are required to track causality.
 
 Two operations A and B are **concurrent** in a distributed system if and only if ==neither happens-before the other (neither is aware of the other), regardless of physical wall-clock time==.
+^q-4jv4
 
 ## Related
 - [[Leaderless Replication]]

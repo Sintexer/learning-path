@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-sfby: { nid: 1795356733916, hash: zzmu56s3, sync: 2amrmwhe }
+  q-tn7t: { nid: 1795356733942, hash: jngm94ua, sync: uvtjt3pa }
+  q-xctz: { nid: 1795356733968, hash: qxhr6a9e, sync: 9bgnhzqr }
+---
+
 ### Understanding the HiLo Identifier Generator
 
 In database-driven applications, generating unique primary keys is a fundamental task. While many developers rely on database-native `AUTO_INCREMENT` columns, this approach often creates a performance bottleneck: every time you save an entity, the application must wait for a "round-trip" to the database to retrieve the newly generated ID.
@@ -28,10 +35,13 @@ While modern distributed systems often favor **UUIDv7** (time-ordered, see [[Pos
 ## Flashcards
 
 How does the HiLo ID generator eliminate per-insert database round-trips?::The app fetches one High bucket value from the DB and generates `MaxLo` sequential IDs locally in memory using `ID = (High * MaxLo) + Low`.
+^q-sfby
 
 Why does [[Hibernate]] disable JDBC insert batching when using `GenerationType.IDENTITY`?::Because Hibernate must execute each `INSERT` immediately to obtain the database-generated primary key before flushing the persistence context.
+^q-tn7t
 
 What is the main operational risk of the classic HiLo algorithm in multi-writer databases?::The "social contract" — any external script or service inserting without following the exact same HiLo formula can collide with in-memory allocated IDs.
+^q-xctz
 
 ## Related
 

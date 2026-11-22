@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-zk2f: { nid: 1795356729418, hash: 6ahx2jyn, sync: eg3pcthm }
+  q-8f8e: { nid: 1795356729451, hash: djwjkwf2, sync: ka2atczq }
+---
+
 Databases handle data storage and retrieval using two main approaches optimized for different workloads: **[[OLTP]]** (transaction processing) and **[[OLAP]]** (analytics). See also [[OLTP and OLAP]] and [[Database Storage Engines]].
 
 ### [[OLTP]] (Online Transaction Processing)
@@ -64,9 +70,11 @@ Traditional row-oriented databases store entire rows together. [[Column-Oriented
 - **[[OLAP]]**: Disk bandwidth (scanning millions of rows) — optimized with [[Column-Oriented Storage|columnar storage]] and compression.
 
 The two main schools of [[OLTP]] storage engines are ==log-structured (LSM-Trees / SSTables)== and ==page-oriented update-in-place (B-Trees)==.
+^q-zk2f
 
 ## Why does column-oriented storage compress much better than row-oriented storage? #card
 Values within a single column share the same data type and often have low cardinality or repeating runs (especially when sorted), making run-length encoding and [[Bitmap]] compression dramatically more effective than across heterogeneous row fields.
+^q-8f8e
 
 ## Related
 - [[Database Storage Engines]]

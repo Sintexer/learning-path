@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-iwzu: { nid: 1795356729192, hash: 9uwtinus, sync: yxx9g7nf }
+---
+
 **Protocol Buffers (Protobuf)** is a schema-based binary [[Data Encoding|encoding]] format developed by Google, paired with code generation tools (`protoc`) for strongly typed models across languages. It is the default wire format for [[gRPC]].
 
 ```protobuf
@@ -28,6 +33,7 @@ A `required` field can never be safely added (breaks [[Backward Compatibility]] 
 What Protobuf keyword prevents accidental reuse of deleted field numbers?::`reserved`
 
 In Proto3, omitting presence tracking (`optional`) creates ambiguity because ==an unset scalar field is indistinguishable from an explicit zero value==.
+^q-iwzu
 
 ## Related
 - [[Data Encoding]]

@@ -1,7 +1,9 @@
 ---
 flashcards:
   q-s99j: { nid: 1795258118308, hash: f25rd6hd, sync: vvav2nny }
-  q-j4fv: { nid: 1795261497664, hash: sbm6cejq, sync: u5sx8xh2 }
+  q-j4fv: { nid: 1795261497664, hash: r5329hmb, sync: iq862wtr }
+  q-iqjh: { nid: 1795356725447, hash: y4qf24gp, sync: umvzr2hp }
+  q-r8hr: { nid: 1795356725466, hash: 8uj4srtk, sync: f8xq7egy }
 ---
 In a leaderless configuration, failover does not exist - there is no need to choose a new leader in case a node fails.
 
@@ -18,6 +20,7 @@ Not all systems implement both of these. Lack of an [[Anti-Entropy]] process imp
 If we know that every successful write is guaranteed to be present on at least two out of three replicas, that means at most one replica can be stale. Thus, if we read from at least two replicas, we can be sure that at least one of the two is up to date. If the third replica is down or slow to respond, reads can nevertheless continue returning an up-to-date value.
 
 More generally, if there are $n$ replicas, every write must be confirmed by $w$ nodes to be considered successful, and we must query at least $r$ nodes for each read. (In our example, $n = 3, w = 2, r = 2$.) As long as ==w + r > n==, we expect to get an up-to-date value when reading, because at least one of the $r$ nodes we’re reading from must be up to date. Reads and writes that obey these $r$ and $w$ values are called **[[Quorum Consensus|quorum reads and writes]]**.
+^q-iqjh
 
 Normally, reads and writes are always sent to all $n$ replicas in parallel. The parameters $w$ and $r$ determine how many nodes we wait for - i.e., how many of the $n$ nodes need to report success before we consider the read or write to be successful.
 
@@ -135,6 +138,7 @@ By subtracting a follower's current position from the leader's current position 
 
 ## Why is a single version number insufficient in leaderless replication, requiring a Version Vector instead? #card
 With multiple replicas independently accepting concurrent writes, a single scalar counter cannot distinguish whether write B overwrote write A or happened concurrently with it. A **version vector** maintains one counter per replica per key, letting replicas identify which values causally supersede others and which must be kept as concurrent siblings.
+^q-r8hr
 
 ## Related
 - [[Sloppy Quorum]]

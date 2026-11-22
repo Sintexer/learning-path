@@ -1,3 +1,13 @@
+---
+flashcards:
+  q-99np: { nid: 1795356718941, hash: ist9fr8n, sync: pq5z9iva }
+  q-9vc8: { nid: 1795356718966, hash: pvzrari4, sync: 67w6ndzj }
+  q-jpyf: { nid: 1795356718991, hash: 84y865vp, sync: tg4j64vj }
+  q-fnmc: { nid: 1795356719017, hash: ztss29uh, sync: wbvwnqma }
+  q-7n2e: { nid: 1795356719044, hash: qqaxbv2n, sync: vegakk6y }
+  q-wpty: { nid: 1795356719067, hash: dgtdnm92, sync: f98srx5r }
+---
+
 ## What is a webhook?
 
 Assume we run an eCommerce website. Clients send orders to the order service via the [[API Gateway]], which calls the payment service. The payment service then talks to an external payment service provider (PSP) to complete the transaction.
@@ -36,14 +46,20 @@ What if the PSP callback is lost or never arrives? Pair webhooks with a periodic
 ## Flashcards
 
 Webhook:::A user-registered [[HTTPS]] callback [[URL]] that a provider invokes via `POST` when an asynchronous event occurs ("push/reverse API").
+^q-99np
 
 How do you protect a webhook receiver against spoofed requests and replay attacks?::Verify an ==HMAC signature== over the raw body + timestamp using constant-time comparison, reject timestamps outside a short window (e.g., 5 min), and deduplicate by `event_id` ([[Idempotent Consumer]]).
+^q-jpyf
+^q-9vc8
 
 Why should a webhook endpoint enqueue the event and return `200 OK` immediately instead of running full business logic synchronously?::To prevent provider ==timeouts and retry storms== if downstream processing is slow or temporarily degraded.
+^q-7n2e
+^q-fnmc
 
 ### Why are webhooks alone not sufficient for critical workflows like payments? #card
 
 Webhooks can be dropped, delayed, duplicated, or delivered out of order. Always combine webhook ingestion (for low-latency updates) with a periodic [[Reconciliation]] job that queries the provider API for stuck pending operations.
+^q-wpty
 
 ## Related
 - [[Client polling pattern]]

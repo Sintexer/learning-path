@@ -1,6 +1,9 @@
 ---
 flashcards:
   q-c5qi: { nid: 1795256794775, hash: b3d3ehr3, sync: vkyqssgn }
+  q-hyc9: { nid: 1795356732775, hash: 9fw6ek92, sync: usd2nnjy }
+  q-tcre: { nid: 1795356732798, hash: 5xc32ugr, sync: w4mf7sk9 }
+  q-v9va: { nid: 1795356732818, hash: 3uttszjq, sync: 98cc66nt }
 ---
 
 Usually users uses the combination of an email address and a password to verify your identity. If a user types in the correct email address and password, the system assumes the user is allowed to enter and grants them access. This is the process of **authentication**.  
@@ -22,13 +25,16 @@ Usually users uses the combination of an email address and a password to verify 
 > - **Session fixation**: Always rotate the session identifier immediately after login or privilege change.
 
 Why must passwords be hashed with Argon2id or bcrypt instead of SHA-256?::SHA-256 is designed to be fast (billions of guesses/sec on GPUs), whereas Argon2id/bcrypt are intentionally slow, salted, and memory-hard to resist offline brute-force attacks.
+^q-hyc9
 
 ## Stateful sessions vs stateless JWTs: what is the core trade-off? #card
 
 - **Stateful sessions (cookies + Redis/DB)**: Instant revocation on logout/compromise and minimal payload size, at the cost of a shared state lookup on every request.
 - **Stateless JWTs**: Zero DB lookup to verify signature locally (great for [[API Gateway]] and cross-service fan-out), at the cost of harder immediate revocation before `exp` and larger request headers.
+^q-tcre
 
 Always rotate session IDs on login and privilege changes to prevent session fixation attacks. #card-reminder
+^q-v9va
 
 ## Related
 

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-6xrx: { nid: 1795356731101, hash: f3r3d8rw, sync: 4z7zke33 }
+  q-quij: { nid: 1795356731120, hash: rqvcyfhc, sync: xvyvhy5j }
+  q-ui95: { nid: 1795356731143, hash: tf72ykkn, sync: dmnzwkzg }
+---
+
 # Concurrency Performance and Scalability
 
 ## Resource-Bound Tasks
@@ -27,11 +34,14 @@ Poorly designed concurrent applications can behave **worse** than the same appli
 ## Flashcards
 
 Scalability:::The ability of a system to improve throughput or capacity when additional computing resources (CPU, memory, storage, I/O bandwidth) are added.
+^q-6xrx
 
 For ==CPU-bound== workloads, thread pool size should stay close to the number of CPU cores (`N_cpu`); adding significantly more threads degrades throughput via context switching and cache thrashing.
+^q-quij
 
 ## Why can adding more worker threads make a DB-bound service slower instead of faster? #card
 Once threads exceed the available database connections (or DB throughput), extra threads simply queue on the connection pool, increasing in-flight work (`L`) and wait time (`W`) per [[Little's Law]], while adding memory and context-switch overhead.
+^q-ui95
 
 ## Related
 - [[concurrency]]

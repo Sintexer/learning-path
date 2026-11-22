@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-j6rw: { nid: 1795356724991, hash: r2kybway, sync: 3e5g56tf }
+  q-hufy: { nid: 1795356725018, hash: 7asriaj2, sync: ebdy53d5 }
+  q-ewr8: { nid: 1795356725042, hash: jr3s2yya, sync: 4xr659yb }
+---
+
 Writing to two independent systems where you need "both or neither," but have no atomic mechanism spanning both.
 
 You have a service that needs to do **two things** when handling a request:
@@ -30,14 +37,17 @@ Other valid alternatives when an outbox isn't practical:
 - **[[Reconciliation]]** jobs as a safety net when integrating with third-party systems you don't control.
 
 Dual-Write anti-pattern:::Updating two independent systems (e.g., DB and message broker) without an atomic boundary, leaving a crash window where one succeeds and the other fails.
+^q-j6rw
 
 ## Why does wrapping a DB write and a Kafka publish in a single `@Transactional` block still fail as a Dual-Write? #card
 The broker publish is not enrolled in the database transaction:
 - If you publish **after** commit, a crash or network error loses the event.
 - If you publish **before** commit, a commit failure (deadlock, constraint error, DB crash) leaves a phantom event in Kafka that cannot be rolled back.
 Fix with the [[Outbox Pattern]] or [[Change Data Capture]].
+^q-hufy
 
 Never treat a database write plus an external broker/cache write as atomic; collapse them into a single local write (Outbox or CDC) or pair with [[Reconciliation]]. #card-reminder
+^q-ewr8
 
 ## Related
 - [[Outbox Pattern]]

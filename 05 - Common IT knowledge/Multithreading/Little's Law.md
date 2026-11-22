@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-y4a4: { nid: 1795356718342, hash: 6w9m4imf, sync: eun7hicg }
+  q-gfbf: { nid: 1795356718367, hash: siidqrtw, sync: 5ckxxi56 }
+  q-ce9x: { nid: 1795356718392, hash: awq5w578, sync: j7uui82p }
+---
+
 At its simplest, **Little’s Law** is a formula used to calculate how long it takes for something to get through a system (like a store, a factory, or a software project).
 
 It states that the number of items in a system is equal to the rate at which they arrive multiplied by the time they spend in the system.
@@ -42,11 +49,14 @@ If you have too many projects on your desk at once (high L), your wait time for 
 ## Flashcards
 
 Little's Law relates average concurrency, arrival rate, and latency as ==L = λ × W== (average items in system = arrival rate × average time in system).
+^q-y4a4
 
 ## When does Little's Law break down in production systems, and how do you protect the system? #card
 Little's Law assumes a **stable** system where arrival rate (`λ`) does not exceed service capacity. When `λ` exceeds capacity, in-flight work (`L`) and wait time (`W`) grow unboundedly until OOM or cascading [[Timeout Pattern|timeouts]]. Protect the system with bounded queues, [[Backpressure]], [[Rate Limiting]], and load shedding.
+^q-gfbf
 
 Adding a bigger queue without increasing processing throughput only increases `L` and worsens latency `W`—bound queues and shed load early. #card-reminder
+^q-ce9x
 
 ## Related
 - [[Mutual Exclusion]]

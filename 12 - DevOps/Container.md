@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-i397: { nid: 1795356716718, hash: 29xgyzic, sync: ztimk94j }
+  q-hg6f: { nid: 1795356716742, hash: 9x9vm6jd, sync: e2swia4u }
+  q-c97q: { nid: 1795356716767, hash: hkejz2jr, sync: 93tqx89y }
+  q-f2jq: { nid: 1795356716793, hash: fmvqijvv, sync: vycynkx4 }
+  q-qm3d: { nid: 1795356716817, hash: zxg6kaf9, sync: awpp9idp }
+---
+
 **What is a container?** Imagine a container as a lightweight, isolated environment that encapsulates an **application** and **all its dependencies** (libraries, configuration files, etc.). It's like a **self-contained package** that allows the application to *run consistently across different environments*, regardless of the underlying infrastructure. It is important to [[Difference between VMs and containers|differentiate VMs and containers]]. Containers share the *same operating system and kernel* as the host that they exist on, whereas [[Virtual machine|virtual machines]] contain their *own operating system*.
 
 **Key characteristics:**
@@ -31,10 +40,15 @@ Containers are **not** mini-VMs—they are ordinary Linux processes isolated by 
 ## Flashcards
 
 What two Linux kernel primitives provide the core isolation behind containers?::==Namespaces== (isolate what a process can see: PID, net, mount, user) and ==cgroups== (limit what resources a process can use: CPU, memory, I/O).
+^q-hg6f
+^q-i397
 
 Why are standard containers weaker security boundaries than [[Virtual machine|VMs]] for untrusted multi-tenant workloads?::Because containers share the ==host OS kernel==; a kernel exploit can break out to the host, so untrusted multi-tenant workloads use microVMs (Firecracker) or sandboxed runtimes (gVisor/Kata).
+^q-f2jq
+^q-c97q
 
 Always run production containers as a non-root user with a read-only root filesystem and minimal Linux capabilities. #card-reminder
+^q-qm3d
 
 ## Related
 - [[Difference between VMs and containers]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-vmu9: { nid: 1795356717726, hash: eyz78cxk, sync: xyxc6rrb }
+  q-9ct3: { nid: 1795356717745, hash: mdnf9f6u, sync: vbyxz2sw }
+  q-ikz8: { nid: 1795356717767, hash: g5qun5hx, sync: taz4j5sh }
+---
+
 **What is the Sidecar Pattern?** The sidecar pattern involves deploying a helper [[Container|container]] (sidecar) alongside the main application container within the same [[Pod]] (in [[Kubernetes]], see [[Multi-container Pods]]) or deployment unit. They share the same network namespace (`localhost`) and lifecycle, letting the sidecar extend the main application without modifying its code.
 
 ## Use Cases
@@ -24,13 +31,16 @@
 > - **Sidecar vs. DaemonSet vs. eBPF**: For high-density clusters, teams increasingly move heavy proxies or log shippers out of per-pod sidecars into node-level DaemonSets or sidecarless eBPF data planes (e.g., Istio Ambient, Cilium) to cut memory overhead.
 
 Sidecar Pattern:::Deploying an auxiliary container alongside the main application container in the same Pod (sharing network and storage) to offload cross-cutting concerns like mTLS, logging, or config rotation without modifying app code.
+^q-vmu9
 
 ## Why is the Sidecar pattern often preferred over a Shared Library in polyglot microservices, and what is its main cost? #card
 A sidecar provides uniform mTLS, telemetry, or secret rotation across **any programming language** and can be patched without recompiling apps. Its main cost is **per-pod resource overhead** (CPU/memory multiplied by every replica) and extra container lifecycle/networking complexity.
+^q-9ct3
 
 ## What classic Kubernetes lifecycle bugs do Native Sidecars (`initContainers` + `restartPolicy: Always`) solve? #card
 1. **Startup race**: App starts sending requests before the proxy/secret sidecar is ready.
 2. **Job hang**: A one-off Kubernetes `Job` container finishes, but the long-running sidecar prevents the Pod from ever terminating.
+^q-ikz8
 
 ## Related
 - [[Multi-container Pods]]

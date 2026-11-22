@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-dksb: { nid: 1795356729667, hash: ivy5x98g, sync: guac27np }
+  q-ak8f: { nid: 1795356729693, hash: daagbvru, sync: 3zkuxa6w }
+  q-5kw7: { nid: 1795356729717, hash: inzs6ts4, sync: jq6nvjtx }
+  q-2buq: { nid: 1795356729742, hash: n4f3kq99, sync: b79ujxqe }
+---
+
 With **serverless compute**, you can spend time on the things that differentiate your application, rather than spending time on ensuring *[[Availability|availability]]*, *[[Scaling|scaling]]*, and *managing servers*. **Serverless** is a *cloud computing model* where you don't have to manage *servers* or *infrastructure*. Instead, you simply write and deploy your code, and the cloud **provider takes care** of everything else. Serverless also decreases [[Time-to-Market]]. Every definition of serverless mentions the following four aspects:
 
 - There are **no servers** to provision or manage.
@@ -49,14 +57,18 @@ Serverless is ideal for applications that:
 ## Flashcards
 
 Serverless computing::A cloud execution model where the provider manages provisioning, scaling (including to zero), and availability, and billing is based on actual execution rather than idle servers.
+^q-dksb
 
 Two major production traps with serverless functions (e.g., AWS Lambda) are ==cold-start tail latency== and ==database connection exhaustion== under high concurrency.
+^q-ak8f
 
 Always set concurrency limits and use a DB connection proxy when connecting serverless functions to a relational database. #card-reminder
+^q-5kw7
 
 ### When is serverless a poor fit compared to containers or VMs? #card
 
 For steady, high-utilization workloads (cost inversion vs reserved compute), strict low-latency p99 requirements sensitive to cold starts, long-running stateful connections (e.g., [[WebSocket]] servers), or workloads needing custom OS/hardware tuning.
+^q-2buq
 
 ## Related
 - [[IaaS]]

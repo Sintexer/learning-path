@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-82zs: { nid: 1795356717617, hash: ufpzm8hj, sync: fcrk8zm4 }
+  q-ejxa: { nid: 1795356717642, hash: urzay5p3, sync: cw3qhncf }
+---
+
 **Service decomposition** is the process of breaking down a monolithic application (or designing a new domain) into cohesive, loosely coupled [[Microservices architecture|microservices]]. Each microservice should encapsulate a clear business capability and own its data ([[Database Per Service]]).
 
 ## Approaches to Decomposition
@@ -25,8 +31,10 @@ Never try to decompose a legacy monolith in one big-bang rewrite. First establis
 1. **Lockstep deployments**: One feature routinely requires coordinated releases across multiple services.
 2. **Chatty synchronous chains**: Simple reads/writes require multi-hop RPCs or cross-service joins (classic entity/table-per-service mistake).
 3. **Shared mutable tables**: Multiple services directly read/write the same database schema, breaking [[Database Per Service]].
+^q-82zs
 
 Align service boundaries with ==DDD Bounded Contexts and transactional invariants== rather than ==individual database tables or technical layers==. #card-reminder
+^q-ejxa
 
 ## Related
 - [[Microservices architecture]]

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-athr: { nid: 1795356724292, hash: ive4v8h2, sync: 65mpnwg3 }
+  q-ybpx: { nid: 1795356724317, hash: 5mznh94t, sync: xce3y6cc }
+---
+
 Delivery semantics define the contract between a message producer, broker (e.g., [[Kafka]]), and consumer regarding **message loss** vs **message duplication** when networks drop packets or processes crash.
 
 - [[At-most-once-delivery]] — zero or one delivery; fast, no duplicates, but messages can be lost on failure.
@@ -25,8 +31,10 @@ Delivery semantics are **end-to-end**, not just a broker toggle. Every hop can w
 
 ## Why is "exactly-once" an end-to-end property rather than a broker setting? #card
 A broker can only coordinate its own topics and offsets. As soon as a consumer updates an external database or calls a third-party API, a crash between the external side effect and the offset commit causes redelivery — requiring [[Idempotency]] (e.g., [[Idempotency Key]] or deduplication table) at the sink.
+^q-athr
 
 Design every distributed consumer for ==at-least-once delivery== and achieve an effectively ==exactly-once effect== via idempotent processing. #card-reminder
+^q-ybpx
 
 ## Related
 - [[At-most-once-delivery]]

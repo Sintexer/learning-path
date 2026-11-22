@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-zkf5: { nid: 1795356725893, hash: 57kxsfey, sync: zivcjeir }
+  q-vtat: { nid: 1795356725916, hash: rqvbe56k, sync: w3i3d3zq }
+---
+
 In [[Leaderless Replication|leaderless (Dynamo-style)]] databases (such as [[Apache Cassandra]] and Riak), an **anti-entropy process** is a background job that periodically compares data across replicas and copies missing or outdated records so all replicas converge toward [[Eventual Consistency]].
 
 ## How Anti-Entropy Works
@@ -18,11 +24,13 @@ Comparing raw datasets across nodes over the network would consume massive bandw
 
 ## Why do Dynamo-style databases use Merkle trees for anti-entropy? #card
 Merkle trees let two replicas compare millions of keys by exchanging a single root hash first and recursively descending only into differing subtrees — minimizing network bandwidth to just the mismatched key ranges.
+^q-zkf5
 
 ## What happens in Cassandra if anti-entropy repair does not run before `gc_grace_seconds` expires? #card
 Tombstones (deletion markers) are purged from compacted [[SSTable]]s on replicas that saw the delete. If another replica missed the delete, future anti-entropy or [[Read Repair]] will copy the old live row back, **resurrecting deleted data** ("zombie data").
 
 Unlike [[Read Repair]], ==anti-entropy== heals cold, rarely read keys in the background and is essential for long-term durability in [[Leaderless Replication]].
+^q-vtat
 
 ## Related
 - [[Read Repair]]

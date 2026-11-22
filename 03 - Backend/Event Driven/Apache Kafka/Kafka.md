@@ -1,4 +1,9 @@
-
+---
+flashcards:
+  q-mhiz: { nid: 1795356733017, hash: 6ijf43zy, sync: kuhdfsxm }
+  q-frz3: { nid: 1795356733041, hash: j4h8v7gj, sync: jzjruzc3 }
+  q-2nwm: { nid: 1795356733067, hash: ht6fzfxh, sync: xuv9iaya }
+---
 Kafka receives and outputs messages as bytes (see [[Kafka Message]] and [[Data Encoding]]).
 
 Because of that both [[Kafka Producer]] and [[Kafka Consumer]] must know Serialization and Deserialization details. The serialization/deserialization type must not change during a [[Kafka Topic|topic]] lifecycle (create a new topic instead, or evolve schemas with [[Backward Compatibility]] / [[Forward Compatibility]] using [[Protocol Buffers]] or Avro + Schema Registry).
@@ -31,11 +36,14 @@ Imagine Kafka not as a "message queue" (that's the wrong mental model), but as a
 ## Flashcards
 
 In Apache Kafka, message ordering is guaranteed only within a single ==[[Kafka Partition|partition]]==, not across an entire [[Kafka Topic|topic]].
+^q-mhiz
 
 ## Why is Kafka's mental model closer to a distributed append-only log than a traditional message queue? #card
 Messages are appended immutably to partitioned logs with monotonic offsets and retained by time/size ([[Kafka Retention]]), not deleted upon consumption. Multiple independent [[Kafka Consumer|consumer groups]] can read and replay the same stream at their own pace without interfering with each other.
+^q-frz3
 
 Never perform a direct DB write and a Kafka publish in the same request without the [[Outbox Pattern]] or [[Change Data Capture]]—otherwise partial failures create [[Dual-Write]] inconsistency. #card-reminder
+^q-2nwm
 
 ## Related
 - [[Kafka Topic]]

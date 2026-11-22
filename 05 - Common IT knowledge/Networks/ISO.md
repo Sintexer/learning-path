@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-ne3z: { nid: 1795356723873, hash: 9fy33smf, sync: tqz6ceje }
+  q-ssne: { nid: 1795356723892, hash: gwsw4i7m, sync: ijwnw6ap }
+---
+
 > AKA **International Organization for Standardization**
 
 **ISO** is an independent, non-governmental international body that publishes technical, industrial, and commercial standards used worldwide.
@@ -11,8 +17,10 @@ In software engineering and networking, ISO is most commonly referenced for:
 ## Flashcards
 
 ISO:::International Organization for Standardization — global standards body behind the [[OSI Model]], ISO 8601 timestamps, ISO 27001 security, and the [[SQL]] standard.
+^q-ne3z
 
 ISO 8601::The international standard format for representing dates and times (`YYYY-MM-DDTHH:MM:SSZ`), avoiding locale ambiguity and sorting lexicographically.
+^q-ssne
 
 ## Related
 - [[OSI Model]]

@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-en92: { nid: 1795356733241, hash: qq83i4ks, sync: z9d9yqnk }
+---
+
 **Kafka has zero awareness of consumer progress when deciding what to delete.** Retention is purely mechanical, configured per-[[Kafka Topic|topic]], based on either:
 
 - **Time** — e.g., `retention.ms = 7 days` → anything older than 7 days gets deleted, period.
@@ -18,6 +23,7 @@ Kafka does not check "does any consumer group still need this?" It just deletes 
 Because Kafka retention is completely decoupled from consumer progress, aged-out segments are deleted regardless of consumer lag. When the consumer requests the deleted offset, Kafka cannot serve it and the consumer falls back to `auto.offset.reset` (`earliest` or `latest`), silently skipping and permanently losing the expired messages.
 
 Kafka retention is configured per [[Kafka Topic]] by time (`retention.ms`) or size (`retention.bytes`) and has ==zero awareness of consumer progress==.
+^q-en92
 
 ## Related
 - [[Kafka]]

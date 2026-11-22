@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Leaderless Replication"
+              "title": "Partitioning and Secondary Indexes"
             }
           }
         ]
@@ -55,7 +55,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "Two-phase",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -152,10 +152,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05 - Common IT knowledge/Algorithms/Two pointers.md"
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Two pointers"
+              "title": "Outline"
             }
           },
           {
@@ -164,7 +167,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -216,7 +219,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 238.1015625
+    "width": 303.01953125
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -231,35 +234,38 @@
       "flashcards-obsidian:Update Anki from current note": false
     }
   },
-  "active": "f771b727cc82b9fe",
+  "active": "bb12408e9554b8a5",
   "lastOpenFiles": [
-    "05 - Common IT knowledge/Databases/Distributed Data/CRDT.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
+    "12 - DevOps/🗂️ 12 - DevOps.md",
+    "06 - Architecture/🗂️ 06 - Architecture.md",
+    "05 - Common IT knowledge/🗂️ 05 - Common IT knowledge.md",
+    "02 - Java/Concurrency/Safe Publication and Thread-Safe Design.md",
+    "02 - Java/Concurrency/Executors and Task Execution.md",
+    "02 - Java/Concurrency/Concurrent Collections and Synchronizers.md",
+    "02 - Java/Concurrency/Concurrency Performance and Scalability.md",
+    "02 - Java/Concurrency",
+    "12 - DevOps/IaC/Ansible vs Terraform.md",
+    "12 - DevOps/IaC/Terraform.md",
+    "12 - DevOps/IaC/Ansible.md",
+    "05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotency Key.md",
+    "04 - Security/Keycloak.md",
+    "04 - Security/SSE.md",
+    "04 - Security/SAML.md",
+    "04 - Security/POLP.md",
+    "04 - Security/OIDC.md",
+    "04 - Security/Least privilege principle.md",
+    "04 - Security/JWT.md",
+    "04 - Security/CORS.md",
+    "04 - Security/AES256.md",
+    "12 - DevOps/IaC",
     "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning",
+    "05 - Common IT knowledge/Databases/Distributed Data/CRDT.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Types of Writes in distributed systems.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Replication.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Consistency Levels.md",
-    "idea.md",
-    "Untitled.md",
     "Untitled.txt",
-    "Anki flashcards.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md",
-    "00 - info stack.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Synchronous vs Asynchronous Replication.md",
-    "05 - Common IT knowledge/Web/Idempotency.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md",
-    "05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Eventual Consistency.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Anti-Entropy.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md",
-    "README.md",
-    "05 - Common IT knowledge/Data Formats/Backward Compatibility.md",
-    "05 - Common IT knowledge/Data Formats/Apache Thrift.md",
-    "05 - Common IT knowledge/Data Formats/Data Encoding.md",
-    "05 - Common IT knowledge/Data Formats/Forward Compatibility.md",
-    "05 - Common IT knowledge/Data Formats/Protocol Buffers.md",
     "05 - Common IT knowledge/Databases/Distributed Data",
     "03 - Backend/backend-path.png",
     "13 - Common",
@@ -268,9 +274,6 @@
     "05 - Common IT knowledge/Patterns",
     "03 - Backend/Event Driven/Apache Kafka/Pasted image 20260915111343.png",
     "05 - Common IT knowledge/Databases/SQL",
-    "05 - Common IT knowledge/Databases/Joins",
-    "05 - Common IT knowledge/Anti-Patterns",
-    "05 - Common IT knowledge/Databases/Indexes",
     "12 - DevOps/Attachments/Difference between VMs and containers visual.png",
     "Untitled.canvas",
     "01 - AWS/AWS Compute/AWS Serverless/AWS Lambda function concurrency types.png",

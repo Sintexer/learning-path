@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-wrn2: { nid: 1795356725116, hash: n4kmff63, sync: 598a4cpu }
+---
+
 Primary-key lookups in a [[Data partitioning|partitioned]] database are straightforward: hash or range-lookup the key and route directly to the owning partition. **Secondary indexes** (e.g., querying all cars where `color = 'red'` or `make = 'Honda'`) do not map cleanly to a single partition because matching records live across many partitions.
 
 Distributed databases handle secondary indexes in two fundamental ways:
@@ -32,12 +37,14 @@ A single **global index** covers data across all partitions, and the index itsel
 > - **Hot index partitions**: With global indexes, a low-cardinality term (e.g., `status = 'ACTIVE'`) routes all matching index writes and reads to a single index partition, creating a severe hotspot.
 
 ## Compare local (document-partitioned) vs global (term-partitioned) secondary indexes. #card
+
 - **Local index**: Each partition indexes only its own documents. **Fast local writes**, but **reads require scatter/gather** across all partitions (high tail latency).
 - **Global index**: Index is partitioned by the indexed term across nodes. **Fast targeted reads**, but **writes span multiple partitions** and are typically updated asynchronously ([[Eventual Consistency|eventually consistent]]).
 
 Why are global (term-partitioned) secondary indexes usually updated asynchronously in distributed databases?::Updating the primary record and multiple remote index partitions synchronously would require a slow, fragile distributed transaction ([[Two-Phase Commit]]).
 
 In a document-partitioned secondary index, every query must perform a ==scatter/gather== across all partitions, exposing reads to tail-latency amplification.
+^q-wrn2
 
 ## Related
 - [[Data partitioning]]

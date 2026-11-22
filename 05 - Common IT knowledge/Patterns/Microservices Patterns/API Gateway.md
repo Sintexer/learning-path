@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-6sdk: { nid: 1795356722342, hash: sit5eq8j, sync: ueya2ghp }
+  q-ttu5: { nid: 1795356722368, hash: 33bh8psv, sync: pvu8nnrd }
+---
+
 > **Central question:** How should clients access a system composed of many services without becoming tightly coupled to its internal structure?
 
 An **API Gateway** provides a controlled entry point.
@@ -100,8 +106,10 @@ Neither a mesh nor a Gateway provides [[Saga]] correctness, business authorizati
 - **[[Service Mesh]]**: Handles **east-west** service-to-service networking (mTLS, retries, observability, traffic splitting) without domain logic.
 
 Why must an API Gateway avoid embedding business workflows?::It turns the edge into a deployment bottleneck and single point of coordination/failure across all teams; keep edge policy separate from domain logic.
+^q-6sdk
 
 An API Gateway retry on a non-idempotent POST can duplicate business actions unless the client and backend enforce an ==Idempotency Key==. #card-reminder
+^q-ttu5
 
 ## Related
 - [[BFF]]

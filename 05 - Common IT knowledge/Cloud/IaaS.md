@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-3jwu: { nid: 1795356730224, hash: 5cn8u7yc, sync: 3z3c3dh4 }
+  q-hken: { nid: 1795356730244, hash: xhzg8enf, sync: 884zivvv }
+  q-a8a8: { nid: 1795356730266, hash: ntmptbgu, sync: aw6kej7v }
+---
+
 > AKA **Infrastructure as a Service**
 
 **Infrastructure as a Service (IaaS)** is a cloud computing model that provides on-demand, pay-as-you-go virtualized compute, storage, and networking primitives (e.g., AWS EC2, EBS, [[Virtual Private Cloud|VPC]], GCP Compute Engine, Azure VMs).
@@ -18,12 +25,15 @@
 ## Flashcards
 
 IaaS (Infrastructure as a Service):::Cloud model providing virtualized compute, storage, and networking where the provider manages physical hardware and virtualization while the user manages the OS, runtime, and applications.
+^q-3jwu
 
 In the IaaS shared responsibility model, the cloud provider manages the ==physical hardware and hypervisor==, while the customer is responsible for ==guest OS patching, runtime, and application security==.
+^q-hken
 
 ## When should you choose IaaS over PaaS or Serverless? #card
 
 When you need OS/kernel-level control, custom networking, specialized hardware (GPUs, NVMe), predictable cost under steady high utilization, or to run workloads incompatible with serverless execution limits (long-running connections, large memory/state).
+^q-a8a8
 
 ## Related
 - [[Serverless]]

@@ -1,4 +1,8 @@
-
+---
+flashcards:
+  q-ec5x: { nid: 1795356728675, hash: n9bw3ndb, sync: d5h5ke2f }
+  q-fnfu: { nid: 1795356728693, hash: 8n6v8d4e, sync: twan8qs3 }
+---
 Falling RAM costs have made it practical to store entire datasets in memory, giving rise to systems that either treat data as volatile caches (e.g., [[Memcached]]) or maintain durability through append-only disk logs ([[WAL]]), snapshots, or [[Replication|replication]] (e.g., VoltDB, [[Redis]], RAMCloud). 
 
 For durable in-memory engines, disk is used strictly for crash recovery and backups while reads are served entirely from memory. Counterintuitively, their primary performance advantage is not merely avoiding disk reads — since traditional databases can already keep hot working sets in the operating system's disk page cache — but eliminating the substantial CPU overhead of serializing and managing complex on-disk page layouts, [[Database Latch|latches]], and buffer pools. Furthermore, keeping data purely in RAM makes it simpler to implement richer, non-relational data structures like queues and sets (as seen in [[Redis]]). 
@@ -13,8 +17,10 @@ When memory runs out, emerging designs employ "anti-caching" to evict least-rece
 ## Flashcards
 
 What is the *true* primary performance advantage of an [[In-Memory Database]] over a disk-backed database whose hot dataset already fits in OS page cache?::Eliminating the CPU overhead of encoding/decoding on-disk page formats, buffer-pool management, and page [[Database Latch|latches]] — plus enabling native in-memory data structures (like [[Redis]] sorted sets and queues).
+^q-ec5x
 
 How do durable [[In-Memory Database|in-memory databases]] survive power loss or crashes?::By writing an append-only log ([[WAL]]/AOF), taking periodic snapshots to disk, and/or replicating writes to other nodes in memory.
+^q-fnfu
 
 ## Related
 

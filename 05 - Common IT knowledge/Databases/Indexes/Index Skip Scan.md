@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-8htb: { nid: 1795356727992, hash: k8yyxg5t, sync: 9wytwumu }
+  q-5ph9: { nid: 1795356728018, hash: 4zpjr5va, sync: x6wcnmsp }
+---
+
 An **index skip scan** is a database query optimization technique that lets the database use a multi-column (composite) index even when the query does not filter on the first column (the leading edge)
 
 Imagine the column A only has 3 possible values in the entire table: `'CA'`, `'NY'`, and `'TX'`.
@@ -47,8 +53,10 @@ It **skips** the rest of the tree. Instead of scanning 1,000,000 rows sequential
 ## Flashcards
 
 How does an [[Index Skip Scan]] use a composite [[B-Tree Index]] `(A, B)` when a query only filters on `B`?::It probes the index repeatedly for each distinct value of the leading column `A`, turning one full table scan into a small number of targeted B-Tree seeks.
+^q-8htb
 
 [[Index Skip Scan]] is only cost-effective when the skipped leading column has ==low cardinality== (few distinct values).
+^q-5ph9
 
 ## Related
 

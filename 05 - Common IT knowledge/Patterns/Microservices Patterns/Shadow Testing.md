@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-isf6: { nid: 1795356721317, hash: fr3xr2at, sync: kpnzjzw9 }
+  q-fq4b: { nid: 1795356721341, hash: wxckqeae, sync: eu7ejfn4 }
+---
+
 Shadow testing (also known as **traffic shadowing** or **traffic mirroring**) is a production testing technique where a copy of live production traffic is duplicated and sent to a new preview version of an application in the background.
 
 > [!tip] AKA
@@ -31,10 +37,12 @@ However, it requires careful engineering for **Write** operations (e.g., placing
 > - **PII & compliance**: Mirroring live traffic copies production PII into the shadow environment, which must meet the same security and retention controls.
 
 Shadow Testing (Traffic Mirroring):::Duplicating live production requests asynchronously to a preview/new service version while discarding its responses, validating real-world performance and output parity with zero user-facing impact.
+^q-isf6
 
 ## What two hidden dangers must you guard against when running Shadow Testing on production traffic? #card
 1. **Duplicate side effects on writes**: Blindly mirroring writes can double-charge users, send duplicate emails, or corrupt shared state unless outbound calls and storage are isolated/stubbed.
 2. **Shared infrastructure overload**: Even for read-only endpoints, if V2 hits the same database or cache as V1, mirroring **doubles load** on shared dependencies and can degrade live V1 traffic.
+^q-fq4b
 
 ## Related
 - [[Strangler Fig]]

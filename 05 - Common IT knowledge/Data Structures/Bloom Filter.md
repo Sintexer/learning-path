@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-tqg2: { nid: 1795356724842, hash: 8pr43gdz, sync: qt7stv5q }
+  q-nitq: { nid: 1795356724867, hash: hfhwipf6, sync: tpwtb436 }
+---
+
 A **Bloom filter** is a space-efficient, probabilistic [[Bitmap|bit-array]] data structure for testing set membership. It answers one question in $O(k)$ time:
 - **"Definitely NOT in the set"** — 100% accurate (zero false negatives).
 - **"Possibly in the set"** — small, tunable probability of a false positive.
@@ -22,11 +28,13 @@ A **Bloom filter** is a space-efficient, probabilistic [[Bitmap|bit-array]] data
 > - **Rule of thumb**: ~10 bits per element gives roughly a **1% false-positive rate** (with $k \approx 7$ hash functions).
 
 Bloom filter membership guarantee:::No false negatives (if it says "absent", the key is definitely absent), but possible false positives.
+^q-tqg2
 
 ## Why can't you delete an element from a standard Bloom filter? #card
 Multiple keys can hash to the same bit position. Flipping a bit back from `1` to `0` to delete one key could cause other inserted keys sharing that bit to falsely report as absent (introducing false negatives). Use a Counting Bloom Filter or Cuckoo Filter if deletions are required.
 
 In [[LSM Tree]] engines, a Bloom filter per [[SSTable]] primarily optimizes ==point lookups for nonexistent keys== by skipping unnecessary disk reads.
+^q-nitq
 
 ## Related
 - [[Bitmap]]

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-d86a: { nid: 1795356733691, hash: qtkpuiu3, sync: g8vtvgjy }
+  q-p57g: { nid: 1795356733716, hash: 6bdnc2ie, sync: ebvd2bzu }
+---
+
 # Service Discovery
 
 **Service discovery** is the mechanism by which services in a dynamic cloud or [[Microservices architecture|microservices]] environment automatically locate the network addresses (`IP:port`) of other services without hardcoding hostnames or IPs.
@@ -35,9 +41,11 @@ In containerized and autoscaled platforms ([[Kubernetes]], AWS ECS), service ins
 In **Client-Side Discovery**, the caller queries the service registry directly and runs load-balancing logic in-process (fewer hops, but SDK coupling per language). In **Server-Side Discovery**, the caller talks to a router/VIP (e.g. [[K8S Service]] or load balancer) that queries the registry and forwards traffic (language-agnostic, extra hop).
 
 Why does L4 [[Load Balancing]] / [[DNS]] service discovery unevenly distribute [[gRPC]] or [[HTTP2]] traffic?::[[HTTP2]]/[[gRPC]] multiplexes many requests over a single long-lived [[TCP]] connection, so L4 balancing pins all requests to the single backend chosen at connection setup; use L7 load balancing, a [[Service Mesh]], or client-side discovery.
+^q-d86a
 
 ## How do CP registries (etcd/ZooKeeper) differ from AP registries (Eureka) during a network partition? #card
 CP registries prioritize consistency—they reject registrations/updates without quorum to prevent [[Split-Brain]]. AP registries (Eureka self-preservation mode) prioritize [[Availability]]—they keep serving cached instance lists even if heartbeats stop, tolerating brief staleness rather than dropping all routes.
+^q-p57g
 
 ## Related
 - [[K8S Service]]

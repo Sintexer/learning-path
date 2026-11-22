@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-pgci: { nid: 1795356731518, hash: m297rted, sync: xhbcnjxi }
+  q-ux7f: { nid: 1795356731542, hash: ugn5mtqc, sync: k5p5xcw8 }
+---
+
 # JVM args
 
 ## Memory and heap related
@@ -27,8 +33,10 @@
 ## Flashcards
 
 Why does setting `-Xmx` equal to a [[Container]]'s memory limit cause OOMKill (`Exit 137`)?::JVM native memory (Metaspace, thread stacks, direct buffers, CodeCache, GC structures) lives outside the Java heap—leaving no headroom causes the kernel OOM killer to kill the container before the JVM throws `OutOfMemoryError`.
+^q-pgci
 
 In containerized [[Kubernetes]] deployments, prefer `-XX:MaxRAMPercentage` (typically 70–75%) over hardcoded `-Xmx` so heap scales cleanly with cgroup memory limits. #card-reminder
+^q-ux7f
 
 ## Related
 - [[JVM App Deployment]]

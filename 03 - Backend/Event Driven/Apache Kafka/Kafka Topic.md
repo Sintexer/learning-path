@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-qbcr: { nid: 1795356732921, hash: uesm84dj, sync: fnpgnqdy }
+  q-dtky: { nid: 1795356732941, hash: 3dqsm8uj, sync: cjkzca62 }
+  q-657w: { nid: 1795356732966, hash: fa5rjznv, sync: gz7arjkv }
+---
+
 Topic is a *named* stream of data. It is like a table in the database. You can have as many topics as you need. Topic supports any kind of message format.
 
 The sequence of messages in a topic is called a **data stream**.
@@ -28,11 +35,14 @@ One nuance worth knowing: compaction doesn't happen instantly — it runs period
 ## Flashcards
 
 How does a compacted Kafka topic (`cleanup.policy=compact`) differ from the default `delete` policy?::Instead of deleting records by age or size, Kafka retains at least the ==latest value for each unique key== (behaving like a durable key-value changelog rather than a full event history).
+^q-dtky
+^q-qbcr
 
 ## How do you delete a key from a compacted Kafka topic, and why does `delete.retention.ms` matter? #card
 Publish a **tombstone** record—a message with the target key and a `null` value. Brokers keep the tombstone for `delete.retention.ms` so downstream consumers have time to observe the delete before the log cleaner removes the key permanently.
 
 Why is a compacted Kafka topic unsuitable for [[Event Sourcing]]?::Log compaction discards older events for the same key, destroying the historical sequence of state transitions that [[Event Sourcing]] requires to rebuild state.
+^q-657w
 
 ## Related
 - [[Kafka]]

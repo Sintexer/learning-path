@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-xzz2: { nid: 1795356722967, hash: 999uwyug, sync: qraa89wu }
+  q-v8f5: { nid: 1795356722995, hash: k3ihxsyi, sync: xt2h32p4 }
+  q-pd8p: { nid: 1795356723018, hash: xkvwp3fb, sync: 6wnj22df }
+  q-qzhd: { nid: 1795356723045, hash: xk4369k9, sync: 6nm9kmzn }
+  q-9hx4: { nid: 1795356723068, hash: uxyiccb3, sync: x6raufx2 }
+---
+
 **Transport Layer Security (TLS)** and its deprecated predecessor, [[SSL]], are cryptographic protocols designed to provide secure communication between clients and servers (powering [[HTTPS]], mTLS in [[Service Mesh|service meshes]], and encrypted DB connections) by ensuring **confidentiality**, **integrity**, and **authenticity**.
 
 ## Deep Dive into TLS
@@ -44,14 +53,19 @@
 ## Flashcards
 
 TLS:::Transport Layer Security — cryptographic protocol providing confidentiality, integrity, and authenticity over the network (successor to [[SSL]]).
+^q-xzz2
 
 How does TLS 1.3 cut handshake latency from 2 RTTs (TLS 1.2) to 1 RTT?::The client sends its ==ephemeral key share (ECDHE)== directly inside `ClientHello` instead of waiting for `ServerHello` first.
+^q-pd8p
+^q-v8f5
 
 Perfect Forward Secrecy (PFS) guarantees that compromising a server's long-term private key cannot decrypt past traffic because session keys are derived via ==ephemeral Diffie-Hellman (ECDHE)==.
+^q-qzhd
 
 ### Why is TLS 1.3 0-RTT early data unsafe for non-idempotent API endpoints? #card
 
 Because 0-RTT early data can be captured and replayed by a network attacker before the server verifies freshness. Only safe, read-only, or strictly [[API Idempotency|idempotent]] requests should be accepted in 0-RTT.
+^q-9hx4
 
 ## Related
 - [[SSL]]

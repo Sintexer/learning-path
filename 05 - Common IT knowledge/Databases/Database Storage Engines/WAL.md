@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-ayan: { nid: 1795356726592, hash: zy5t5cdi, sync: h67i3r2b }
+---
+
 **WAL (Write-Ahead Log)** — also known as a *redo log* — is an append-only [[Database Log|log file]] to which every storage modification must be durably written **before** the corresponding in-memory or on-disk data pages (e.g., [[B-Tree Index|B-Tree]] pages or an [[LSM Tree#Memtable|LSM-Tree memtable]]) are updated.
 
 ## Why WAL Exists
@@ -24,6 +29,7 @@ Modifying a [[B-Tree Index|B-Tree]] (especially a page split) requires overwriti
 What happens to old WAL segments once the storage engine completes a checkpoint?::Dirty pages (or memtables) up to the checkpoint LSN are safely on disk, so older WAL segments can be archived or truncated to reclaim disk space.
 
 In high-throughput databases, ==group commit== amortizes the cost of `fsync()` by flushing the WAL records of multiple concurrent transactions in a single disk sync.
+^q-ayan
 
 ## Related
 - [[Database Log]]

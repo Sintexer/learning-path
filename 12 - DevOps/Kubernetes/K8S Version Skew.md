@@ -1,3 +1,13 @@
+---
+flashcards:
+  q-enn6: { nid: 1795356714240, hash: 6q4h9dzg, sync: fqip4f5r }
+  q-idwt: { nid: 1795356714266, hash: 3rrkart6, sync: jq3m47ir }
+  q-9gu4: { nid: 1795356714294, hash: pk6tqne9, sync: 5kravdv5 }
+  q-8n28: { nid: 1795356714318, hash: zjug95g6, sync: t38s5ca9 }
+  q-ga9r: { nid: 1795356714342, hash: 7ka65pg2, sync: ji4g29wd }
+  q-f7v6: { nid: 1795356714375, hash: pe95s4w5, sync: sjhahxuv }
+---
+
 [[Kubernetes]] enforces a strict **Version Skew Policy** defining the maximum minor-version difference allowed between control plane components, worker nodes, and CLI clients during rolling cluster upgrades.
 
 ## Supported Skew Matrix (relative to `kube-apiserver`)
@@ -22,10 +32,16 @@
 ## Flashcards
 
 What is the supported [[Kubernetes]] version skew for `[[kubectl]]` vs `kube-apiserver`?::±==1 minor version== (one minor version newer or older than the API server).
+^q-idwt
+^q-enn6
 
 How many minor versions older than `kube-apiserver` can `kubelet` be (since K8s 1.28)?::Up to ==3 minor versions older== (and `kubelet` must never be newer than `kube-apiserver`).
+^q-8n28
+^q-9gu4
 
 In what order must you upgrade a Kubernetes cluster?::Upgrade the ==control plane== first (one minor version at a time), then upgrade ==worker nodes== (`kubelet` / `kube-proxy`).
+^q-f7v6
+^q-ga9r
 
 ## Related
 - [[Kubernetes]]

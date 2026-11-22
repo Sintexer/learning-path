@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-nmkm: { nid: 1795356716667, hash: jy3mvmzg, sync: ve49nh7h }
+  q-pgrb: { nid: 1795356716691, hash: z52aj349, sync: 6bfqumq5 }
+---
+
 Although running one [[Container]] instance is uncomplicated to manage, it lacks high [[Availability|availability]] and [[Scaling|scalability]]. Most organizations run hundreds or thousands of containers across fleets of hosts.
 
 When managing compute at scale, you must solve:
@@ -15,6 +21,7 @@ This coordination is handled by a **container orchestration platform**. The indu
 ## Flashcards
 
 Container orchestration::Automated management of container scheduling, self-healing, [[Scaling|scaling]], [[Service discovery]], networking, and rolling deployments across a cluster of hosts.
+^q-nmkm
 
 ### What core operational problems does a container orchestrator solve? #card
 
@@ -22,6 +29,7 @@ Container orchestration::Automated management of container scheduling, self-heal
 - Self-healing (restarting failed containers and rescheduling off dead nodes via [[Health Checks]]).
 - [[Zero-downtime deployment|Rolling updates and rollbacks]].
 - Dynamic [[Service discovery]], [[Load Balancing]], secret injection, and autoscaling.
+^q-pgrb
 
 ## Related
 - [[Container]]

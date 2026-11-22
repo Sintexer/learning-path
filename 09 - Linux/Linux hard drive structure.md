@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-58g3: { nid: 1795356716868, hash: js4h86ar, sync: vfwx99nx }
+  q-wdkc: { nid: 1795356716892, hash: vzrzzrvj, sync: mjids3j5 }
+  q-5vgm: { nid: 1795356716916, hash: cri2k2hd, sync: iau93sw5 }
+  q-vya4: { nid: 1795356716941, hash: eiuy6y3p, sync: w7dbi2yd }
+---
+
 Linux abstracts physical storage into a layered stack—from block devices and partition tables up to a single unified directory tree rooted at `/`.
 
 ## Storage Stack (Bottom to Top)
@@ -11,6 +19,7 @@ Linux abstracts physical storage into a layered stack—from block devices and p
 5. **Mount Table (`/etc/fstab`)**: Attaches filesystems onto directories in the root tree.
 
 In Linux LVM, the storage hierarchy from bottom to top is ==Physical Volume (PV) -> Volume Group (VG) -> Logical Volume (LV)==.
+^q-58g3
 
 ## Key Directories (Filesystem Hierarchy Standard)
 
@@ -28,14 +37,17 @@ In Linux LVM, the storage hierarchy from bottom to top is ==Physical Volume (PV)
 > - **Single-partition `/` blast radius**: Putting `/var/log` and `/tmp` on `/` means a single noisy service or core dump can hit 100% disk and break SSH, [[Database]] writes, and [[Container]] runtimes.
 
 Always mount disks in `/etc/fstab` by `UUID` or `PARTUUID` rather than `/dev/sdX` because kernel device enumeration order can change across reboots. #card-reminder
+^q-wdkc
 
 Why does `rm` on a large open log file not immediately free disk space?::The directory entry is removed, but the inode and data blocks remain allocated until every process holding an open file descriptor to it closes the file (inspect with `lsof +L1`).
+^q-5vgm
 
 ## How can Linux report "No space left on device" when `df -h` shows plenty of free disk space? #card
 
 Two common causes:
 1. **Inode exhaustion**: The filesystem ran out of inodes due to millions of tiny files (check with `df -i`).
 2. **Reserved root blocks**: `ext4` reserves ~5% of blocks for `root` by default, so non-root processes hit `ENOSPC` before `df -h` reaches 100%.
+^q-vya4
 
 ## Related
 

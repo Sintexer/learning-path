@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-i7jg: { nid: 1795356721944, hash: 9cwn3s6n, sync: 74wkzkuu }
+  q-ezjb: { nid: 1795356721967, hash: vavzyhzh, sync: xvq5jgh2 }
+---
+
 **Event Sourcing is a way of persisting data where, instead of storing the current state of an entity, you store the full sequence of events that led to that state.** The current state is never stored directly as the source of truth — it's always a **derived, computed value**, obtained by replaying the events in order.
 
 Contrast this with what you're used to:
@@ -45,6 +51,7 @@ So: **Event Sourcing determines how the write side stores its data (as events). 
 > - **Optimistic concurrency on append**: Concurrent commands on the same aggregate require an expected-version check ([[Optimistic Concurrency Control]]) on `(aggregate_id, version)` — Kafka alone does not enforce per-aggregate CAS on append!
 
 Event Sourcing:::Persisting an entity as an immutable, append-only sequence of domain events rather than overwriting current state; current state is derived by replaying the event log.
+^q-i7jg
 
 ## What are three major operational challenges of Event Sourcing in production, and how do you solve them? #card
 1. **Schema evolution**: Old events stay immutable — use **upcasters** on read and backward-compatible schemas.
@@ -52,6 +59,7 @@ Event Sourcing:::Persisting an entity as an immutable, append-only sequence of d
 3. **GDPR deletion of PII**: Use **crypto-shredding** (encrypt PII with a per-user key stored externally; destroy the key to erase data).
 
 Why is Kafka alone often insufficient as a write-side Event Store for aggregates with strict invariants?::Kafka appends messages without per-aggregate [[Optimistic Concurrency Control]] (expected-version CAS), so concurrent producers can append conflicting events unless serialized through a [[Single Writer Principle|single writer]] per key.
+^q-ezjb
 
 ## Related
 - [[CQRS]]

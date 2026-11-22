@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-2nie: { nid: 1795356726218, hash: idcvavnu, sync: tqvdnzg2 }
+  q-vr47: { nid: 1795356726242, hash: utjqfekr, sync: xvgdg7u9 }
+  q-6swy: { nid: 1795356726275, hash: qi8tcqep, sync: teykjh3z }
+---
+
 Multi-Version Concurrency Control
 
 In older database systems, if Transaction A was **reading** a table, it locked the table, and Transaction B had to **wait** before it could update a row. If Transaction B was **writing**, readers were blocked. Concurrency was terrible.
@@ -44,10 +51,13 @@ If an older, long-running Transaction 102 queries `Alice`, it looks at `xmax: 10
 ## Flashcards
 
 What is the golden rule of MVCC?::Readers never block writers, and writers never block readers.
+^q-2nie
 
 In [[PostgreSQL]] MVCC, ==`xmin`== records the transaction ID that created a tuple, while ==`xmax`== records the transaction ID that deleted or replaced it.
+^q-vr47
 
 How does [[PostgreSQL]]'s MVCC storage differ from MySQL InnoDB's?::PostgreSQL stores old tuple versions inline in the heap (cleaned by `VACUUM`), whereas InnoDB overwrites in place and stores older versions in a separate undo log.
+^q-6swy
 
 ## Related
 

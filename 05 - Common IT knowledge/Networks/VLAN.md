@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-9p5e: { nid: 1795356722767, hash: xappueqn, sync: j79mjrsa }
+  q-k7rk: { nid: 1795356722792, hash: 9n7mgaxv, sync: pa29ki5d }
+  q-c9et: { nid: 1795356722817, hash: 5vs52bu9, sync: dte28nqa }
+  q-xkud: { nid: 1795356722841, hash: 6uvk9uhh, sync: cyzfzsnk }
+---
+
 > AKA **Virtual Local Area Network**
 
 A **VLAN** (standardized in **IEEE 802.1Q**) logically partitions a single physical [[LAN]] switch infrastructure into multiple isolated Layer 2 ([[OSI 2 layer]]) broadcast domains.
@@ -21,10 +29,14 @@ A **VLAN** (standardized in **IEEE 802.1Q**) logically partitions a single physi
 ## Flashcards
 
 VLAN:::Virtual Local Area Network (IEEE 802.1Q) — logical segmentation of a physical [[LAN]] into separate Layer 2 broadcast domains using a 12-bit VLAN ID tag.
+^q-9p5e
 
 Devices in different VLANs on the same physical switch must communicate through a ==Layer 3 router== (enabling firewalling and isolation between segments).
+^q-k7rk
 
 What is the maximum number of VLANs supported by IEEE 802.1Q, and how do cloud providers exceed it?::4,094 (12-bit VLAN ID); cloud providers use overlay encapsulation protocols like ==VXLAN== or Geneve over L3/[[UDP]].
+^q-xkud
+^q-c9et
 
 ## Related
 - [[LAN]]

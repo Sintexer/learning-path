@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-ix3z: { nid: 1795356732197, hash: muz8977j, sync: y9j7ritv }
+  q-qqtj: { nid: 1795356732219, hash: d4n4j69r, sync: gc8s8b84 }
+---
+
 The security **principle of least privilege ([[POLP]])** means giving a user or system only those privileges ([[Authorization]]) that are essential to perform its intended function. For example, a user who works in supporting databases does not need to manage the network. By applying this principle you can protect your application from worst-case scenarios when credentials are lost or compromised: even with stolen credentials, an intruder will fail to steal bank information if the only thing they have is weather service permissions.
 
 ## Core Practices
@@ -12,12 +18,14 @@ The security **principle of least privilege ([[POLP]])** means giving a user or 
 > - **Productivity friction**: Overly rigid manual approval flows encourage shadow workarounds; pair least privilege with automated Just-In-Time (JIT) elevation for break-glass access.
 
 What is the primary security benefit of the Principle of Least Privilege (POLP)?::It minimizes the **blast radius** when a user account, workload, or credential is compromised—an attacker can only reach the minimal resources that identity was explicitly granted.
+^q-ix3z
 
 ## Why should every microservice have its own IAM identity / ServiceAccount instead of sharing one? #card
 
 Sharing a single IAM role or [[Kubernetes]] ServiceAccount across services grants every service the **union** of all permissions. A single vulnerability (e.g., SSRF or RCE) in a low-sensitivity service then exposes high-sensitivity databases, secrets, or queues owned by other services—violating [[Zero-Trust Security]] and least privilege.
 
 Start all authorization policies with ==default-deny==, enforce ==separation of duties==, and replace static credentials with ==short-lived temporary tokens==.
+^q-qqtj
 
 ## Related
 

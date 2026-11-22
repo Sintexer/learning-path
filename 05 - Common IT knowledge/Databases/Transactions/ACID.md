@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-2tx4: { nid: 1795356726342, hash: uyb9ve38, sync: 6zahrdty }
+  q-jyp5: { nid: 1795356726367, hash: kgd7wsct, sync: qqdkffm5 }
+  q-wsuh: { nid: 1795356726392, hash: dff2fdhh, sync: ciz5yeby }
+  q-ejy5: { nid: 1795356726420, hash: uvhx8nsv, sync: 43f56zys }
+---
+
 A set of four guarantees that traditional [[RDBMS|relational databases]] (and some modern [[NoSQL database|NoSQL]] stores) provide for [[Transaction|transactions]] so applications can reason safely about concurrent access and crashes.
 
 ## The Four Properties
@@ -24,15 +32,19 @@ A set of four guarantees that traditional [[RDBMS|relational databases]] (and so
 ## Flashcards
 
 In ACID, what does **Atomicity** actually guarantee?::Abortability — if a transaction fails or crashes partway through, all of its partial writes are rolled back so the client can safely retry.
+^q-2tx4
 
 Why is the **C (Consistency)** in ACID different from A, I, and D?::Consistency depends on application-level invariants (the database only enforces constraints like `UNIQUE` or `CHECK`), whereas A, I, and D are properties of the database engine itself.
+^q-jyp5
 
 Even under [[Snapshot Isolation]] (PostgreSQL `REPEATABLE READ`), concurrent transactions can still suffer from ==[[Write Skew]]== unless prevented by explicit locking or `SERIALIZABLE` isolation.
+^q-wsuh
 
 ## How do databases guarantee Durability without flushing random data pages on every commit? #card
 
 - They append changes sequentially to a [[WAL|Write-Ahead Log]] and call `fsync` before acknowledging the commit.
 - Dirty heap/index pages are flushed to disk lazily in the background; if a crash occurs, the engine replays the [[WAL]] on startup to recover committed transactions.
+^q-ejy5
 
 ## Related
 

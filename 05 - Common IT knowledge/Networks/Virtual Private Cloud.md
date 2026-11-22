@@ -1,3 +1,13 @@
+---
+flashcards:
+  q-aiak: { nid: 1795356722618, hash: nahtkvqi, sync: 5mkujqfe }
+  q-5e34: { nid: 1795356722642, hash: j89gtq3n, sync: fnsj3pde }
+  q-i6kb: { nid: 1795356722667, hash: bqnmm74v, sync: qrrzbamu }
+  q-bm35: { nid: 1795356722692, hash: ccd35zgh, sync: 3d8n43hg }
+  q-d46v: { nid: 1795356722717, hash: k4ssg23c, sync: zdwtgf9m }
+  q-hj9h: { nid: 1795356722742, hash: jgpkxcjr, sync: eh8tg7f4 }
+---
+
 > AKA **VPC**
 
 A **Virtual Private Cloud (VPC)** is a logically isolated, software-defined virtual network provisioned within a public cloud provider (e.g., AWS VPC, GCP VPC, Azure VNet). It gives you full control over IP addressing ([[CIDR Notation]]), [[Subnet|subnets]], route tables, internet/NAT gateways, and firewall rules.
@@ -19,12 +29,18 @@ A **Virtual Private Cloud (VPC)** is a logically isolated, software-defined virt
 ## Flashcards
 
 VPC (Virtual Private Cloud):::A logically isolated virtual network in a public cloud with user-defined [[CIDR Notation|CIDR]] ranges, [[Subnet|subnets]], route tables, and security controls.
+^q-aiak
 
 What is the difference between AWS Security Groups and Network ACLs?::Security Groups are ==stateful== allow-only firewalls at the instance/ENI level; NACLs are ==stateless== allow/deny firewalls at the [[Subnet]] level.
+^q-i6kb
+^q-5e34
 
 Why should private subnets use VPC Endpoints for services like S3 or container registries?::To keep traffic off the public internet and avoid high ==NAT Gateway== per-GB data-processing costs.
+^q-d46v
+^q-bm35
 
 VPC peering is non-transitive; use a hub-and-spoke Transit Gateway when connecting more than a handful of VPCs. #card-reminder
+^q-hj9h
 
 ## Related
 - [[Subnet]]

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-b2wx: { nid: 1795356725942, hash: f34725n6, sync: 27sd5hby }
+  q-ggxx: { nid: 1795356725967, hash: ec9gmirm, sync: 57pmg2ea }
+---
+
 **CRDTs (Conflict-free Replicated Data Types)** are specialized distributed data structures that can be updated independently and concurrently on multiple replicas without coordination, and are mathematically guaranteed to merge deterministically to the exact same state once all updates are delivered.
 
 They are used in [[Multi-Leader Replication]], [[Leaderless Replication]], collaborative editors, and offline-first apps to achieve **Strong Eventual Consistency** without losing concurrent updates (unlike Last-Write-Wins).
@@ -29,11 +35,13 @@ For replicas to converge regardless of network reordering, duplication, or delay
 1. **Commutative**: `merge(A, B) = merge(B, A)` (handles out-of-order delivery).
 2. **Associative**: `merge(merge(A, B), C) = merge(A, merge(B, C))` (handles arbitrary merge grouping).
 3. **Idempotent**: `merge(A, A) = A` (handles duplicate delivery).
+^q-b2wx
 
 ## When can you NOT use a CRDT for conflict resolution? #card
 When the application must enforce a **global invariant** across concurrent writers — such as preventing double-booking a unique seat, enforcing unique usernames, or preventing an account balance from dropping below zero. Those require synchronous coordination (e.g., [[Linearizability]] or consensus).
 
 A ==PN-Counter== CRDT supports both increments and decrements by combining two grow-only G-Counters (`P` and `N`) and computing `sum(P) - sum(N)`.
+^q-ggxx
 
 ## Related
 - [[Multi-Leader Replication]]

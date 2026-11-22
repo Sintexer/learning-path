@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-h2ea: { nid: 1795356713618, hash: bn67au93, sync: 8msxnevg }
+  q-8p33: { nid: 1795356713642, hash: 4f6x8nq8, sync: q7x83zsa }
+  q-b278: { nid: 1795356713667, hash: phfvvfxi, sync: n8z6ahnp }
+  q-5uwa: { nid: 1795356713694, hash: cv5cnihq, sync: 35trzt7v }
+  q-h2sz: { nid: 1795356713733, hash: u9kcufhx, sync: 4mpckk5k }
+---
+
 **Terraform** is a declarative **Infrastructure as Code ([[IaaC|IaC]])** tool used primarily to provision and manage infrastructure lifecycle through provider APIs (with OpenTofu as its open-source fork).
 
 It can manage resources in:
@@ -63,12 +72,17 @@ Drift occurs when live infrastructure diverges from the declared Terraform confi
 ## Flashcards
 
 Terraform:::Declarative [[IaaC]] tool using HCL, a dependency DAG, provider APIs, and a tracked state file to provision and manage infrastructure lifecycle.
+^q-h2ea
 
 Why must team Terraform state live in a remote backend with state locking (never in Git)?::State contains ==plaintext secrets== and requires ==locking== so concurrent `terraform apply` runs don't race and corrupt infrastructure state.
+^q-b278
+^q-8p33
 
 How do you protect critical stateful resources (like production databases) from accidental replacement in Terraform?::Add `lifecycle { prevent_destroy = true }` and isolate stateful resources into a separate state file with a smaller blast radius.
+^q-5uwa
 
 Always inspect `terraform plan` output for `-/+` (destroy-and-recreate) actions before applying changes to stateful infrastructure. #card-reminder
+^q-h2sz
 
 ## Related
 - [[Ansible]]

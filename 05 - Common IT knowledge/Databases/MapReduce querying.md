@@ -1,4 +1,8 @@
-
+---
+flashcards:
+  q-ubs5: { nid: 1795356727841, hash: e5mpawdy, sync: 2fbt7ytt }
+  q-2wr8: { nid: 1795356727867, hash: 6a36y9a8, sync: pbh9xz9d }
+---
 **MapReduce** is a programming model for processing large amounts of data in bulk across many machines, popularized by Google. A limited form of MapReduce is supported by some [[NoSQL database|NoSQL]] datastores, including **[[MongoDB]]** and **CouchDB**, as a mechanism for performing read-only queries across many documents.
 
 MapReduce is neither a declarative query language nor a fully imperative query API (see [[Query Languages for Data]]), but somewhere in between: the logic of the query is expressed with snippets of code, which are called repeatedly by the processing framework. It is based on the *map* (also known as *collect*) and *reduce* (also known as *fold* or *inject*) functions that exist in many functional programming languages.
@@ -38,8 +42,10 @@ The aggregation pipeline language is similar in expressiveness to a subset of [[
 ## Flashcards
 
 Why must `map` and `reduce` functions in MapReduce be pure (no side effects or external DB queries)?::So the execution framework can safely run them in parallel on any node, in any order, and automatically retry failed tasks without corrupting results.
+^q-ubs5
 
 Why did [[MongoDB]] move from MapReduce querying to the declarative Aggregation Pipeline?::Declarative pipelines are simpler to write than coordinated JS functions and let the database's query optimizer push down filters, use [[Database Index|indexes]], and execute in native C++ instead of JS.
+^q-2wr8
 
 ## Related
 

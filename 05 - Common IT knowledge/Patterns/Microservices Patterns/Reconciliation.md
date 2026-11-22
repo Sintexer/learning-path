@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-icn6: { nid: 1795356721667, hash: pjgvyuxa, sync: k3jic6w6 }
+  q-r9n7: { nid: 1795356721692, hash: kge7cxay, sync: 2xaid2dv }
+  q-63rh: { nid: 1795356721717, hash: 2448pamn, sync: t45rsx97 }
+---
+
 **Central question:** What happens when [[Retry Pattern|retries]], [[Outbox Pattern|outboxes]], and event processing still leave an operation unresolved or drifted?
 
 **Reconciliation** compares what our system believes with an authoritative source, then identifies and resolves discrepancies.
@@ -26,12 +33,15 @@ It is the operational safety net beneath asynchronous workflows, [[Saga|Sagas]],
 > **Masking silent bugs**: If a reconciliation job quietly repairs 10,000 drifted rows every night without alerting, teams won't notice that a primary event pipeline has been broken for weeks. Always emit metrics (`reconciliation_discrepancies_found`, `reconciliation_auto_repaired`, `reconciliation_escalated`) and page when drift exceeds a tiny baseline.
 
 Reconciliation:::A periodic or triggered process that compares local state against an authoritative source of truth to detect, repair, or escalate discrepancies left by crashes, timeouts, or missed events.
+^q-icn6
 
 ## What is the difference between Retry and Reconciliation? #card
 - **[[Retry Pattern|Retry]]** re-attempts an operation assuming it failed transiently.
 - **Reconciliation** queries an authoritative source to **establish what actually happened** and converges drifted or ambiguous state (e.g., an unknown payment timeout or drifted [[CQRS]] projection).
+^q-r9n7
 
 Always apply a ==grace window== (ignore recently updated records) in reconciliation jobs so you do not treat normal ==in-flight eventual consistency== as corruption. #card-reminder
+^q-63rh
 
 ## Related
 - [[Saga]]

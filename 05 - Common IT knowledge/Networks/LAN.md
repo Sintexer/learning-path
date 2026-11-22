@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-z69y: { nid: 1795356723792, hash: xhcvmrdf, sync: 8g9nydj4 }
+  q-ts45: { nid: 1795356723817, hash: kayka88h, sync: 3afqjvpa }
+  q-ebec: { nid: 1795356723851, hash: fa5k2g7s, sync: wnupsx62 }
+---
+
 > AKA **Local Area Network**
 
 A **Local Area Network (LAN)** is a network that interconnects devices within a limited physical area (an office, home, or single data center rack/hall), typically over Ethernet (IEEE 802.3) or Wi-Fi (IEEE 802.11).
@@ -16,10 +23,13 @@ A **Local Area Network (LAN)** is a network that interconnects devices within a 
 ## Flashcards
 
 LAN:::Local Area Network — a high-speed, low-latency network connecting devices in a limited physical area within a shared Layer 2 broadcast domain.
+^q-z69y
 
 Within the same LAN, hosts deliver frames directly using ==MAC addresses== (resolved from IPs via ==ARP==) without needing a Layer 3 router.
+^q-ts45
 
 Why do large networks split a single physical LAN into [[VLAN|VLANs]] and [[Subnet|subnets]]?::To contain Layer 2 broadcast domains (preventing broadcast storms) and isolate security/traffic zones.
+^q-ebec
 
 ## Related
 - [[VLAN]]

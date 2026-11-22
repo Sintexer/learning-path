@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-kx45: { nid: 1795356728868, hash: 7ubkyc5g, sync: him59dci }
+  q-6ydv: { nid: 1795356728897, hash: t9xtvzth, sync: xqfg4es9 }
+---
+
 Document Databases (such as [[MongoDB]]), a category of [[NoSQL database]]s, store data as collections of self-contained objects (JSON/BSON). Usually document databases have no strict schema (*schema-on-read*), which allows them to store different kinds of data in one collection and reduces [[Impedance mismatch]] for tree-structured aggregates (1-to-many nested data).
 
 However such architecture is not suitable for many-to-one and many-to-many relationships. Document databases usually store such relationships as denormalized duplicates within the document. E.g. the city name has no id, it is just repeated across entries, causing problems with duplicates, complications of renaming a value (when city name changes due to politics), handling free-text input and mapping values to a same style (case, writing).
@@ -12,8 +18,10 @@ Even if the original design of the application's data model fits well into a doc
 ## Flashcards
 
 For what kind of data relationships do [[Document Database|document databases]] shine, and where do they struggle?::They shine for self-contained one-to-many tree structures (aggregates fetched as a whole), and struggle with many-to-one and many-to-many relationships that require joins or fan-out updates.
+^q-kx45
 
 Why is "schemaless" a misleading description of [[Document Database|document databases]]?::They enforce **schema-on-read** rather than schema-on-write — the schema still exists implicitly in application code, which must handle multiple historical document shapes.
+^q-6ydv
 
 ## Related
 

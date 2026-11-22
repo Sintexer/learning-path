@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-6dns: { nid: 1795356714591, hash: un4ur5ed, sync: q2ke7x4d }
+  q-42d8: { nid: 1795356714617, hash: u86iyy98, sync: v6nxwzky }
+  q-j3d8: { nid: 1795356714642, hash: wxpp5yan, sync: xxipxu7z }
+  q-k4h2: { nid: 1795356714667, hash: h2r3g3id, sync: zk9a28r8 }
+---
+
 Multi-container [[Pod|Pods]] are a powerful pattern when two or more containers must be tightly coupled, co-scheduled on the same node, and share `localhost` networking, volumes, or lifecycle. Each container still keeps a single clear responsibility.
 
 ## Core Multi-Container Pod Patterns
@@ -21,8 +29,12 @@ Kubernetes **native sidecars** solve both: define the sidecar under `initContain
 ## Flashcards
 
 What are the four classic [[Kubernetes]] multi-container [[Pod]] patterns?::==Sidecar== (extends functionality, e.g., proxy/log shipper), ==Adapter== (normalizes output), ==Ambassador== (proxies outbound connectivity), and ==Init container== (runs to completion before main containers start).
+^q-42d8
+^q-6dns
 
 How do Kubernetes native sidecar containers (K8s 1.28+) fix startup races and hanging `Job` pods?::They are declared in `initContainers` with ==`restartPolicy: Always`==, so they start before the main container and automatically terminate once the main container finishes.
+^q-k4h2
+^q-j3d8
 
 ## Related
 - [[Pod]]

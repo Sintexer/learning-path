@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-ay8b: { nid: 1795356730291, hash: maim76fg, sync: esn7tfin }
+  q-ctb7: { nid: 1795356730317, hash: v397kvfs, sync: viea5iag }
+  q-5awx: { nid: 1795356730342, hash: yf9av5jh, sync: qkza832t }
+  q-3ekv: { nid: 1795356730368, hash: upmvw6jp, sync: v9jr3cn9 }
+---
+
 The availability of a system is typically expressed as a percentage of uptime in a given year or as a number of nines. In the following table is a list of availability percentages based on the downtime per year and its notation in nines.
 
 | **Availability (%)**                            | **Downtime (per year)** |
@@ -25,14 +33,18 @@ Two ways to increase availability are [[Active-active systems]] and [[Active-pas
 ## Flashcards
 
 How much annual downtime corresponds to 99.9% (three nines) and 99.99% (four nines) availability?::99.9% ≈ 8.77 hours/year; 99.99% ≈ 52.6 minutes/year.
+^q-ay8b
 
 For components in series, composite availability is the ==product== of individual availabilities; for independent components in parallel, it is ==1 minus the product of their unavailability==.
+^q-ctb7
 
 Every extra nine of availability costs roughly 10x more; match your SLO to business impact rather than chasing five nines by default. #card-reminder
+^q-5awx
 
 ### Why does chaining many synchronous microservices hurt availability? #card
 
 Because synchronous dependencies are in series: overall availability multiplies (\(A_1 \times A_2 \times \dots \times A_n\)). Even ten 99.9% services in a synchronous chain yield only ~99.0% availability unless decoupled asynchronously or protected by [[Fallback Pattern|fallbacks]].
+^q-3ekv
 
 ## Related
 - [[Active-active systems]]

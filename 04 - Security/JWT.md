@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-q24g: { nid: 1795356732244, hash: dsikhfgb, sync: 3nzfzp6z }
+  q-yyzb: { nid: 1795356732275, hash: 879zy4kx, sync: cvbnq69m }
+  q-dyh5: { nid: 1795356732296, hash: qhu9s6us, sync: gycizwaa }
+  q-fuch: { nid: 1795356732316, hash: h5zrrcy5, sync: nyc7ruzp }
+---
+
 A **JSON Web Token (JWT)** is a compact, URL-safe, self-contained token format (RFC 7519) used to transmit signed claims between parties—most commonly for stateless [[Authentication]] and [[Authorization]] in [[OIDC]] and [[Microservices architecture|microservices]].
 
 ## Structure
@@ -11,6 +19,7 @@ A JWT consists of three Base64URL-encoded parts separated by dots (`header.paylo
    - **Asymmetric (`RS256`, `ES256`)**: The [[Identity provider|IdP]] (e.g., [[Keycloak]]) signs with a private key; downstream services and [[API Gateway]] instances verify locally using the public key fetched and cached from the JWKS endpoint (`/.well-known/jwks.json`).
 
 A standard signed JWT (JWS) provides ==integrity and authenticity, not confidentiality==—anyone can Base64-decode the payload. Use JWE or omit sensitive data if confidentiality is required.
+^q-q24g
 
 > [!warning] Failure modes & trade-offs
 > - **Revocation problem**: Because verification is stateless, a compromised or logged-out JWT stays valid until `exp`. Mitigate with short access-token TTLs (5–15 minutes), refresh token rotation, and a fast denylist (e.g., [[Redis]] keyed by `jti`) for high-risk revocations.
@@ -19,6 +28,7 @@ A standard signed JWT (JWS) provides ==integrity and authenticity, not confident
 > - **Token bloat**: JWTs travel on every [[HTTP]] request header. Stuffing hundreds of fine-grained permissions into claims bloats bandwidth and hits proxy header size limits (commonly 4–8 KB).
 
 Keep JWT access tokens short-lived (5–15 min) and use rotating refresh tokens with reuse detection rather than trying to make long-lived JWTs revocable. #card-reminder
+^q-yyzb
 
 ## How do you handle immediate logout or revocation with stateless JWTs? #card
 
@@ -26,12 +36,14 @@ Stateless JWTs cannot be invalidated on their own before `exp`. In production, c
 1. **Short access-token TTL** (5–15 min) so exposure windows stay small.
 2. **Refresh token rotation with reuse detection** stored server-side at the [[Identity provider|IdP]]—revoking the refresh token prevents new access tokens, and reuse of an old refresh token invalidates the whole token family.
 3. **Emergency denylist** (e.g., [[Redis]] storing revoked `jti` or `user_id + logout_timestamp` with TTL equal to max access-token lifetime) checked at the [[API Gateway]] when immediate revocation is required.
+^q-dyh5
 
 ## What is the JWT algorithm confusion attack (RS256 to HS256) and how do you prevent it? #card
 
 If a verifier trusts the `alg` header in an incoming JWT, an attacker can change `alg` from `RS256` (asymmetric) to `HS256` (symmetric) and sign the forged token using the server's **public** RSA key as the HMAC shared secret.
 
 **Prevention**: Pin the expected algorithm(s) explicitly in the verification library config, bind each `kid` to its allowed algorithm, and reject `alg: none`.
+^q-fuch
 
 ## Related
 

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-fawu: { nid: 1795356725667, hash: wkeu36jt, sync: 8x4k5kkc }
+  q-icc8: { nid: 1795356725692, hash: 2ept82nh, sync: c653j3um }
+---
+
 In [[Leaderless Replication|leaderless (Dynamo-style)]] databases (such as [[Apache Cassandra]] and Riak), **read repair** is a mechanism where a client (or coordinator node) detects that a replica returned a stale value during a quorum read and asynchronously writes the newer version back to that stale replica.
 
 ## How It Works
@@ -16,9 +22,11 @@ In [[Leaderless Replication|leaderless (Dynamo-style)]] databases (such as [[Apa
 > - **Conflicts during repair**: If two concurrent writes occurred with different values (neither causally dominating the other), read repair must apply the conflict resolution policy (e.g., LWW, sibling merging, or [[CRDT]] merge) — otherwise LWW can silently drop one of the writes.
 
 Read repair:::A [[Leaderless Replication]] mechanism where a read query from multiple replicas detects a stale replica and writes the newer value back to it.
+^q-fawu
 
 ## Why is read repair alone insufficient for durability in a leaderless database? #card
 Read repair only updates replicas for keys that clients actually read. Rarely read ("cold") keys may never be repaired after a node outage, leaving fewer than $n$ up-to-date copies and risking permanent data loss if the remaining healthy replica fails. It must be paired with [[Anti-Entropy]].
+^q-icc8
 
 ## Related
 - [[Anti-Entropy]]

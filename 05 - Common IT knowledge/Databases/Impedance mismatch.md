@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-g5u8: { nid: 1795356728718, hash: dshj7h42, sync: qajf5sz4 }
+  q-em93: { nid: 1795356728742, hash: 7hdfv87n, sync: yd7nt92a }
+---
+
 Most application development today is done in object-oriented programming languages, which leads to a common criticism of the [[SQL]] / [[Relational Database|relational]] data model: if data is stored in relational tables, an awkward translation layer is required between the objects in application code and the database model of tables, rows, and columns. The disconnect between the two models is called **object-relational impedance mismatch**.
 
 ## Where the Mismatch Shows Up
@@ -20,8 +26,10 @@ Most application development today is done in object-oriented programming langua
 ## Flashcards
 
 What is **object-relational impedance mismatch**?::The structural friction between in-memory object-oriented models (nested graphs, inheritance, reference navigation) and [[Relational Database|relational]] tables (flat normalized rows, foreign keys, set-based queries).
+^q-g5u8
 
 What classic performance bug occurs when an ORM like [[Hibernate]] hides impedance mismatch behind lazy-loaded object navigation?::The **N+1 query problem** — fetching $N$ parent rows in 1 query and then triggering $N$ separate follow-up queries when iterating over a lazy association.
+^q-em93
 
 ## Related
 

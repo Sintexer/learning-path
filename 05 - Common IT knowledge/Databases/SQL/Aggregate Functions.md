@@ -1,4 +1,8 @@
-
+---
+flashcards:
+  q-3tpc: { nid: 1795356727091, hash: es7fs35k, sync: bstmzznw }
+  q-xiin: { nid: 1795356727118, hash: 9936kjek, sync: t8qxivyk }
+---
 `COUNT`, `SUM`, `AVG`, `MIN`, `MAX` — these **collapse multiple rows into a single row** per group.
 
 ```sql
@@ -17,8 +21,10 @@ GROUP BY department;
 ## Flashcards
 
 How do SQL [[Aggregate Functions]] like `AVG(col)` and `COUNT(col)` treat `NULL` values compared to `COUNT(*)`?::`AVG(col)` and `COUNT(col)` ignore `NULL` values (excluding them from the denominator/count), whereas `COUNT(*)` counts all rows including `NULL`s.
+^q-3tpc
 
 What is the fundamental difference between [[Aggregate Functions]] with `GROUP BY` and [[Window Functions]] with `OVER()`?::Aggregate functions collapse multiple rows into one output row per group; window functions preserve every input row and annotate each with the computed value.
+^q-xiin
 
 ## Related
 

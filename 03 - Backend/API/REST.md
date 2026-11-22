@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-ca6t: { nid: 1795356733369, hash: 6n8bg5fd, sync: g5hwzezk }
+  q-7tgi: { nid: 1795356733392, hash: 3tpvtshj, sync: dv322qth }
+  q-266v: { nid: 1795356733417, hash: xp29q4ta, sync: 96gcctse }
+---
+
 # REST (Representational State Transfer)
 
 **REST** is an architectural style for distributed hypermedia systems (defined by Roy Fielding in 2000), most commonly applied over [[HTTP]]. Instead of exposing remote procedures, a REST system models domain entities as **resources** addressed by [[URI|URIs]] and manipulated through a uniform set of operations.
@@ -37,11 +44,14 @@
 ## Flashcards
 
 What are the five mandatory architectural constraints of REST (excluding optional Code on Demand)?::Client-Server, Stateless, Cacheable, Uniform Interface, and Layered System.
+^q-ca6t
 
 Among standard HTTP methods, `GET`, `PUT`, and `DELETE` are ==idempotent==, whereas `POST` is ==not idempotent== by default (and requires an [[Idempotency Key]] for safe retries).
+^q-7tgi
 
 ## Why does REST's Stateless constraint simplify horizontal scaling? #card
 Because the server stores no client session state between requests, any request can be routed to any backend replica behind a [[Load Balancing|load balancer]] without sticky sessions or session replication.
+^q-266v
 
 ## Related
 - [[RESTful]]

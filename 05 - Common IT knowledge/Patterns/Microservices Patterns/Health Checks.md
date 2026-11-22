@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-g5zd: { nid: 1795356721868, hash: n8z8rcz3, sync: e29ivs54 }
+---
+
 **Purpose:** Tell infrastructure (e.g., [[Kubernetes]], load balancers) whether an instance should start receiving traffic, continue receiving traffic, or be restarted.
 
 These are different questions:
@@ -36,6 +41,7 @@ Also, a successful health check does not prove business correctness. A healthy p
 A failed liveness probe triggers a **container restart**. If a downstream DB or API blips, every pod fails liveness and restarts simultaneously — creating a fleet-wide restart storm and cold-start thundering herd that cannot fix the remote dependency.
 
 Liveness answers =="is this process irrecoverably stuck?"== (restart it), whereas Readiness answers =="can this instance serve traffic right now?"== (stop routing to it).
+^q-g5zd
 
 ## Related
 - [[Kubernetes]]

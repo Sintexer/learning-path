@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-8yvb: { nid: 1795356720541, hash: uss322ki, sync: qqankyxx }
+  q-ibiw: { nid: 1795356720567, hash: pwtuuetn, sync: ah4xzyxc }
+  q-ksji: { nid: 1795356720600, hash: ymkgwtj8, sync: 4p4rd5ym }
+  q-8fsp: { nid: 1795356720618, hash: 2paz7nrr, sync: d7rrpsvp }
+---
+
 A distributed, wide-column [[NoSQL database]] built for high write throughput, linear [[Horizontal scaling]], and multi-datacenter [[Availability]] with no single point of failure.
 
 ## Architecture & Data Model
@@ -16,15 +24,19 @@ A distributed, wide-column [[NoSQL database]] built for high write throughput, l
 ## Flashcards
 
 In Cassandra, ==partition key== determines which nodes own a row, while ==clustering columns== determine the sort order on disk within that partition.
+^q-8yvb
 
 Why do heavy delete or TTL workloads degrade Cassandra read performance?::Deletes create tombstones that remain until compaction and `gc_grace_seconds` expire, forcing reads to scan over dead markers.
+^q-ibiw
 
 ## What makes Cassandra achieve very high write throughput? #card
 
 - [[Leaderless Replication]] lets any node coordinate writes without single-leader bottlenecks.
 - Writes append sequentially to a commit log and in-memory memtable ([[LSM Tree]]), avoiding random disk I/O on the write path.
+^q-ksji
 
 Design Cassandra tables around query patterns and bucket time-series partition keys to prevent unbounded wide partitions. #card-reminder
+^q-8fsp
 
 ## Related
 

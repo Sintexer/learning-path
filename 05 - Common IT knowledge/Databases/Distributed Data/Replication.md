@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-6txc: { nid: 1795356725424, hash: ymk5mm5i, sync: x8zf6v8p }
+---
+
 **Replication** means keeping a copy of the same data on multiple machines connected via a network (see [[Replication vs Partitioning]]). There are three main reasons to replicate data:
 1. **Latency** — place data geographically closer to users.
 2. **Fault tolerance / [[Availability|high availability]]** — keep the system working if some nodes or a datacenter fail.
@@ -20,6 +25,7 @@ Three dominant replication architectures exist:
 - **[[Leaderless Replication]]**: No failover needed, high write availability (especially with [[Sloppy Quorum]]); complex concurrent-write handling (LWW data loss / version vectors) and unbounded staleness without [[Anti-Entropy]].
 
 What are the three primary reasons to replicate data across nodes?::1. Lower latency (geo-proximity), 2. High availability / fault tolerance, 3. Scaling read throughput horizontally.
+^q-6txc
 
 ## Related
 - [[Leader-Based Replication]]

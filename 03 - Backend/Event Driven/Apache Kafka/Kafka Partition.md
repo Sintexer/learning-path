@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-vmqw: { nid: 1795356733101, hash: r2arv5gx, sync: uq8s4ts7 }
+  q-qn28: { nid: 1795356733120, hash: 2ufzz8c3, sync: xi39nxtc }
+  q-w7jk: { nid: 1795356733142, hash: f37sbz3p, sync: vurwget7 }
+---
+
 [[Kafka Topic]]s are split into ***partitions***. Messages within each partition are strictly ordered. When no key is provided, modern Kafka producers use a sticky partitioner (filling a batch for one partition before switching) rather than per-message round-robin. To determine the partition based on the key, [[Kafka]] applies a hashing algorithm (`murmur2`):
 
 ```java
@@ -32,11 +39,14 @@ This is the detail most people gloss over but that senior engineers lean on cons
 ## Flashcards
 
 In a single Kafka consumer group, the maximum number of active parallel consumers for a topic is bounded by the topic's ==number of partitions==.
+^q-vmqw
 
 ## Why is increasing a Kafka topic's partition count risky for keyed streams? #card
 Kafka maps keys using `murmur2(key) % numPartitions`. Changing `numPartitions` remaps existing keys to different partitions, so new events for key `K` may be processed on the new partition before older events for `K` finish draining from the old partition—violating per-key ordering.
+^q-qn28
 
 Choose partition keys with high cardinality to prevent hot partitions (key skew) where a single consumer becomes a bottleneck while other partitions sit idle. #card-reminder
+^q-w7jk
 
 ## Related
 - [[Kafka]]

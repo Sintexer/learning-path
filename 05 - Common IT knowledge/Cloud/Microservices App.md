@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-qq3u: { nid: 1795356729941, hash: pkg33nsz, sync: zju8xfxc }
+  q-tv32: { nid: 1795356729967, hash: 6whxswis, sync: x8sivksn }
+  q-fag9: { nid: 1795356730001, hash: 9ci8mbbz, sync: qkpusdiu }
+---
+
 A microservices app is built from lots of independent small specialized parts that work together to form a meaningful application. For example, you might have an e-commerce app that comprises all of the following small specialized components:
 - Web front-end
 - Catalog service
@@ -18,12 +25,15 @@ Building applications this way is vital for [[Cloud-Native App]] features, and i
 ## Flashcards
 
 What is the defining operational benefit of a microservices application over a monolith?::Independent deployment, scaling, and team ownership per bounded service without coordinating releases across the whole application.
+^q-qq3u
 
 A microservices system that shares one database or requires lockstep deployments across services is called a ==distributed monolith==.
+^q-tv32
 
 ## What new failure modes appear when splitting a monolith into microservices? #card
 
 Network latency and partial failures, cascading outages across synchronous call chains, loss of single-database [[ACID]] transactions (requiring [[Saga|Sagas]] / [[Eventual Consistency]]), and harder debugging (requiring [[Distributed Tracing]] / [[OpenTelemetry]]).
+^q-fag9
 
 ## Related
 - [[Microservices architecture]]

@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-z3ih: { nid: 1795356715391, hash: dpzcer93, sync: jn64js64 }
+  q-bwys: { nid: 1795356715418, hash: dh39f6sn, sync: hkckzihs }
+  q-qjb2: { nid: 1795356715450, hash: 84nqxxna, sync: njhvmvgh }
+  q-k7qb: { nid: 1795356715468, hash: z9pmjhij, sync: c8t3gkqi }
+---
+
 Behind the scenes, [[K8S Deployment|Deployments]] rely on another object called a **ReplicaSet**. While you should almost never create or manage ReplicaSets directly (let the Deployment controller manage them), understanding their role explains how rollouts and rollbacks actually work.
 
 At a high level:
@@ -12,8 +20,12 @@ At a high level:
 ## Flashcards
 
 What is the difference between a [[K8S ReplicaSet|ReplicaSet]] and a [[K8S Deployment|Deployment]]?::A **ReplicaSet** ensures N identical [[Pod|Pods]] are running (scaling + self-healing); a **Deployment** manages multiple ReplicaSets to add ==rolling updates, revision history, and rollbacks==.
+^q-bwys
+^q-z3ih
 
 How does `kubectl rollout undo` roll back a Deployment so quickly?::The Deployment retains previous ==ReplicaSets== (scaled to 0 replicas, up to `revisionHistoryLimit`) and simply scales the old ReplicaSet back up while scaling the broken one down.
+^q-k7qb
+^q-qjb2
 
 ## Related
 - [[K8S Deployment]]

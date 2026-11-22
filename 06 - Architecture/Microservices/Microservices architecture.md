@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-k5gi: { nid: 1795356717567, hash: 8978ikcy, sync: yvhpe7d8 }
+  q-5jgc: { nid: 1795356717592, hash: aig7br6j, sync: hq6vn9pc }
+---
+
 The microservices approach is commonly used in modern application development. This includes [[Serverless|serverless]] applications, where your application's software is constructed of multiple loosely coupled services. Microservices architectures reduce the complexity of the individual component, but introduce a different type of complexity at scale related to the number of independent components and network boundaries.
 
 Microservices architecture is a design approach where a single application is composed of multiple loosely coupled and independently deployable services (see [[Microservices App]]). Each service is responsible for a specific business capability ([[DDD|bounded context]]) and can be developed, deployed, and scaled independently. This approach contrasts with monolithic architecture, where all functionalities are tightly integrated into a single deployment unit.
@@ -83,11 +89,13 @@ See the full index in [[Microservices patterns]].
    - [[Container|Containers]] (Docker/[[containerd]]), [[Containers orchestration|orchestration]] ([[Kubernetes]]), [[Microservices Sidecar pattern|sidecars]], and [[Microservices Service mesh pattern|Service Mesh]] (Istio, Linkerd).
 
 Distributed Monolith:::An anti-pattern where a system is split into separately deployed microservices that remain tightly coupled (via shared DBs, synchronous call chains, or shared domain libraries), paying distributed-systems overhead without gaining independent deployability.
+^q-k5gi
 
 ## When should you prefer a Modular Monolith over Microservices? #card
 When a small/medium team does not yet have independent scaling, fault-isolation, or multi-team organizational boundaries to justify the distributed-systems tax (network latency, [[Saga|Sagas]], [[Eventual Consistency]], observability, and [[Kubernetes]] operational overhead). You can always extract services later via [[Strangler Fig]].
 
 Microservices reduce ==single-component code complexity== while increasing ==distributed operational and data-consistency complexity==.
+^q-5jgc
 
 ## Related
 - [[Microservices patterns]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-vzws: { nid: 1795356720467, hash: vy555ddv, sync: 4gbqktwv }
+  q-2y38: { nid: 1795356720492, hash: tr9zirtw, sync: nzrc9jpy }
+  q-th96: { nid: 1795356720517, hash: cfytndvc, sync: 52ef46pf }
+---
+
 A high-performance, distributed, [[In-Memory Database|in-memory]] key-value cache designed for sub-millisecond read offloading in front of primary [[Database|databases]].
 
 ## Core Characteristics
@@ -21,10 +28,13 @@ A high-performance, distributed, [[In-Memory Database|in-memory]] key-value cach
 ## Flashcards
 
 How does Memcached distribute keys across a cluster of nodes?::Through client-side [[Consistent Hashing]]; Memcached servers do not communicate with or know about one another.
+^q-vzws
 
 Memcached avoids memory fragmentation using a ==slab allocator==, which can suffer from ==slab calcification== when object size distributions shift over time.
+^q-2y38
 
 When should you prefer Memcached over [[Redis]]?::When you only need a simple volatile key-value cache and want multi-threaded vertical scaling across CPU cores with minimal memory overhead.
+^q-th96
 
 ## Related
 

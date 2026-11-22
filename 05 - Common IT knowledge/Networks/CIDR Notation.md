@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-gews: { nid: 1795356724119, hash: mv8e37mk, sync: ugfhnu5h }
+  q-3gbk: { nid: 1795356724142, hash: 25avb9zs, sync: ix3cez84 }
+  q-k5d9: { nid: 1795356724167, hash: d855zyn6, sync: zhb6teqx }
+  q-gwdm: { nid: 1795356724192, hash: dsqqnxhi, sync: 9fqrbdbw }
+---
+
 > AKA **Classless Inter-Domain Routing**
 
 `192.168.1.30` is a single IP address. If you want to express IP addresses between the range of `192.168.1.0` and `192.168.1.255`, how can you do that?
@@ -26,12 +34,16 @@ The higher the number after the `/`, the smaller the number of IP addresses in y
 ## Flashcards
 
 CIDR:::Classless Inter-Domain Routing — a compact notation (`IP/prefix`) specifying how many leading bits of an IP address are fixed as the network prefix.
+^q-gews
 
 How many total IPv4 addresses are in a `/N` CIDR block?::\(2^{32 - N}\) (e.g., `/24` = 256, `/16` = 65,536, `/32` = 1).
+^q-3gbk
 
 In AWS [[Virtual Private Cloud|VPC]] subnets, ==5== IP addresses are reserved per subnet (compared to ==2== in standard networking).
+^q-k5d9
 
 Plan non-overlapping CIDR ranges across VPCs and on-prem networks from day one so future VPC peering and VPNs work without NAT hacks. #card-reminder
+^q-gwdm
 
 ## Related
 - [[Subnet]]

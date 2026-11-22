@@ -1,4 +1,12 @@
-
+---
+flashcards:
+  q-dfy8: { nid: 1795356719217, hash: qx7ejdsa, sync: n9x73jde }
+  q-tife: { nid: 1795356719241, hash: xxavvdqd, sync: y2vnabeq }
+  q-722h: { nid: 1795356719267, hash: f79q6xgh, sync: txf8uqtu }
+  q-ui8x: { nid: 1795356719292, hash: dnyqvx43, sync: 5ikitwtx }
+  q-wmun: { nid: 1795356719317, hash: pga94rka, sync: 8saj4k26 }
+  q-c472: { nid: 1795356719342, hash: w4fjknup, sync: 8ks78zvp }
+---
 **Idempotency means repeating the same logical operation does not create an additional business effect.**
 
 It does not necessarily mean:
@@ -409,16 +417,22 @@ These mechanisms complement one another.
 ## Flashcards
 
 Idempotency:::Property where repeating the same logical operation produces no additional business side effect (even if the code executes or the message is delivered multiple times).
+^q-dfy8
 
 Why is broker-level producer idempotency (e.g., [[Kafka]] idempotent producer) not sufficient on its own?::It only deduplicates ==transport-level transmission retries== within a producer session—not application-level replays (such as an [[Outbox Pattern|outbox]] publisher crashing before marking an event published).
+^q-722h
+^q-tife
 
 For [[Idempotent Consumer|consumer idempotency]], the deduplication insert (`processed_event`) and the business state change must execute in the ==same database transaction==.
+^q-ui8x
 
 Never use a separate [[Redis]] key plus a relational DB update as an atomic deduplication mechanism—it is a [[Dual-Write]]. #card-reminder
+^q-wmun
 
 ### Why are `event_id` deduplication and `operation_id` uniqueness both needed? #card
 
 `event_id` deduplicates redeliveries of the *same message*, while a business `operation_id` unique constraint prevents *two different messages* representing the same logical action (e.g., two reserve-stock messages for operation `R123`) from applying twice.
+^q-c472
 
 ## Related
 - [[API Idempotency]]

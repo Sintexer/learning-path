@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-nxkj: { nid: 1795356717841, hash: iu7ff3z7, sync: tci64xep }
+---
+
 #learn
 
 CAP theorem states that a distributed system can't provide more than two of these three guarantees simultaneously:
@@ -29,6 +34,7 @@ CAP only describes the trade-off **during a network partition** (Availability vs
 What specific form of consistency does the "C" in CAP refer to?::[[Linearizability]] (every read returns the most recent completed write or an error across all nodes) — not [[ACID]] invariant consistency.
 
 In a real distributed system you cannot choose "CA" because ==network partitions== are unavoidable; the real choice during a partition is ==CP vs. AP==.
+^q-nxkj
 
 ## Related
 - [[Linearizability]]

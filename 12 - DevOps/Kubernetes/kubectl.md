@@ -1,3 +1,13 @@
+---
+flashcards:
+  q-hi9t: { nid: 1795356714091, hash: mhzrcmp4, sync: w35a9m98 }
+  q-q7e6: { nid: 1795356714118, hash: few7h6cx, sync: sztq26e3 }
+  q-6nrn: { nid: 1795356714142, hash: bbdndkrw, sync: y9eqwdyf }
+  q-6j46: { nid: 1795356714167, hash: bsbzrxdh, sync: wgx55itk }
+  q-3feg: { nid: 1795356714193, hash: wdsepksr, sync: viwhm8sn }
+  q-jqfs: { nid: 1795356714218, hash: d72i7z3x, sync: 2bm6tpyh }
+---
+
 **`kubectl`** is the official command-line client for interacting with the [[Kubernetes]] [[K8S Control Plane#API Server|API Server]] over [[HTTPS]]. Its supported version skew is **±1 minor version** relative to `kube-apiserver` (see [[K8S Version Skew]]).
 
 ## Context & `kubeconfig`
@@ -37,12 +47,18 @@ kubectl config set-context --current --namespace=payments
 ## Flashcards
 
 What three components are combined inside a `kubectl` **context** in `kubeconfig`?::A ==cluster== (API server URL + CA), a ==user== (credentials), and a default ==namespace==.
+^q-q7e6
+^q-hi9t
 
 Which `kubectl` command lets you inspect logs from a container that already crashed and restarted (`CrashLoopBackOff`)?::`kubectl logs <pod> --previous`
+^q-6nrn
 
 How do you debug a running distroless [[Pod]] that has no `/bin/sh`, `curl`, or diagnostic tools installed?::Attach an ephemeral debug container sharing the Pod's network/process namespace with ==`kubectl debug -it <pod> --image=... --target=<container>`==.
+^q-3feg
+^q-6j46
 
 Always run `kubectl diff -f` and verify your active context before applying manual changes to a production cluster. #card-reminder
+^q-jqfs
 
 ## Related
 - [[Kubernetes]]

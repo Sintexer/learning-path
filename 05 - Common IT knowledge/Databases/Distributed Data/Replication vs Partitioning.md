@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-bbgj: { nid: 1795356725196, hash: fmy9v9ie, sync: f7mue6bg }
+---
+
 [[Replication]] and [[Data partitioning]] are orthogonal, complementary techniques in [[Distributed Data|distributed databases]] — most large-scale systems combine both.
 
 ## [[Replication]]
@@ -28,6 +33,7 @@ In real clusters ([[Apache Cassandra]], [[Kafka]], [[MongoDB]], CockroachDB), th
 - **[[Replication]]** duplicates each partition across multiple nodes (e.g., $N = 3$) so any node can fail without losing data or availability.
 
 Partitioning divides ==responsibility (each record belongs to one partition)==, while replication duplicates ==responsibility (multiple nodes hold copies of each partition)==.
+^q-bbgj
 
 ## Related
 - [[Replication]]

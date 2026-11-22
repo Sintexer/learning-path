@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-ui6h: { nid: 1795356725268, hash: kdsyvpua, sync: i7z4rge2 }
+---
+
 This is how data changes are streamed from [[Leader-Based Replication#Leader|leader]] to [[Leader-Based Replication#Follower|followers]].
 
 ## Statement-based replication
@@ -34,6 +39,7 @@ A trigger registers custom code that fires on every write transaction and logs t
 Why is statement-based replication fragile in production?::Nondeterministic functions (`NOW()`, `RAND()`), auto-increment ordering, and triggers can evaluate differently on leader vs follower, silently causing replicas to diverge.
 
 In [[PostgreSQL]], an abandoned logical replication slot can crash the primary database because ==Postgres retains unconsumed WAL segments indefinitely until disk fills up==.
+^q-ui6h
 
 ## Related
 - [[Leader-Based Replication]]

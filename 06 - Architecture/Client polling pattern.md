@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-fd35: { nid: 1795356718017, hash: sk7i677x, sync: tdtkzc5q }
+---
+
 In the **client polling pattern**, after the client initiates a long-running request, it repeatedly checks ("polls") the server for the status of the request until it reaches a terminal state (`COMPLETED` or `FAILED`). This pattern is useful in [[Serverless|serverless]] and asynchronous microservice architectures (e.g., waiting for a [[Saga]] or background job to finish) where processing takes longer than a synchronous [[HTTP]] request timeout.
 
 ## Standard HTTP Flow (Async Request-Reply)
@@ -26,6 +31,7 @@ In the **client polling pattern**, after the client initiates a long-running req
 3. Serve status reads from a lightweight cache/read projection ([[CQRS]] / [[Redis]]) rather than the primary write DB.
 
 In the Async Request-Reply pattern, the server acknowledges accepted background work with HTTP ==202 Accepted== and a ==Location== status endpoint for the client to poll.
+^q-fd35
 
 ## Related
 - [[WebSocket]]

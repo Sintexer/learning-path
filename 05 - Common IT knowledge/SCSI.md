@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-s6v9: { nid: 1795356718091, hash: yvpyytxc, sync: g27imker }
+  q-rb9y: { nid: 1795356718119, hash: ak3nzq2q, sync: spbkd2rg }
+---
+
 **SCSI** stands for **Small Computer System Interface**. It is a set of standards for physically connecting and transferring data between computers and peripheral devices.
 
 SCSI is most commonly used for hard disk drives and tape drives, but it can connect a wide range of other devices, including scanners and optical drives. It has long been the standard method for connecting storage devices to servers and enterprise systems.
@@ -15,10 +21,12 @@ Linux, like other operating systems, needs a unified way to communicate with sto
 Because the SCSI command set provides a rich, uniform abstraction layer, Linux uses **SCSI translation/emulation** (e.g., `libata` for SATA, `usb-storage` for USB) so upper storage layers do not need separate drivers for every drive interface.
 
 Why do SATA and USB drives appear as `/dev/sd*` (SCSI disks) in Linux?::Linux routes SATA (`libata`) and USB mass storage through its kernel SCSI subsystem because SCSI provides a uniform, rich command abstraction for block storage devices.
+^q-s6v9
 
 ## SCSI vs NVMe
 
 While SCSI/SAS and SATA/AHCI were designed around spinning disks (shallow command queues), modern flash SSDs increasingly use **NVMe** directly over PCIe, offering ==up to 64K queues with 64K commands per queue== instead of a single narrow queue—dramatically lowering I/O latency and maximizing parallel IOPS.
+^q-rb9y
 
 > [!tip] Production reality
 > On modern cloud hypervisors (e.g., AWS Nitro), attached block volumes (EBS) are exposed as NVMe devices (`/dev/nvme*`) rather than `/dev/sd*` or `/dev/xvd*`. Always mount filesystems by `UUID` or label in `/etc/fstab` rather than relying on device names ([[Linux hard drive structure]]).

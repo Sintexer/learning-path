@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-qzq2: { nid: 1795356733825, hash: dkxn6j3u, sync: it4yu8sk }
+  q-t5ix: { nid: 1795356733845, hash: m6kyajq8, sync: vz66d63f }
+  q-f24r: { nid: 1795356733868, hash: 4xc2r8vc, sync: qp5dfxfj }
+---
+
 # Spring Persistence
 
 ## Multi-Datasource Configuration
@@ -31,11 +38,14 @@ Spring implements `@Transactional` via **AOP proxies** (JDK dynamic proxy or CGL
 Spring applies `@Transactional` through an AOP proxy wrapping the bean. Internal self-invocation (`this.method()`) calls the target object directly, bypassing the proxy so the transaction interceptor never runs. Fix by moving the method to another bean or using `TransactionTemplate`.
 
 By default, Spring's `@Transactional` rolls back automatically on ==unchecked exceptions (`RuntimeException` / `Error`)==, NOT on checked exceptions.
+^q-qzq2
 
 ## How can `Propagation.REQUIRES_NEW` deadlock a Spring application's HikariCP connection pool? #card
 `REQUIRES_NEW` suspends the outer transaction (keeping its JDBC connection checked out) and requests a second connection from the pool. If all pool connections are held by outer transactions waiting for a second connection, every thread blocks until `connectionTimeout`—causing a pool deadlock.
+^q-t5ix
 
 Never perform external HTTP calls or broker publishes inside a `@Transactional` method—release the DB connection quickly and use the [[Outbox Pattern]] for reliable event publishing. #card-reminder
+^q-f24r
 
 ## Related
 - [[JPA]]

@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-4hk6: { nid: 1795356719617, hash: cpui2rc5, sync: yw6552m6 }
+  q-squ2: { nid: 1795356719641, hash: zgvrvepg, sync: 5tvbt4pu }
+  q-5dv2: { nid: 1795356719668, hash: 5hqbxu7x, sync: edxq3sdf }
+  q-ue25: { nid: 1795356719694, hash: membk5ds, sync: 6dy7j84x }
+---
+
 **Introduction:**
 HTTP/2 (RFC 9113) was published in 2015 to address the performance limitations of [[HTTP1.1]]. It evolved from Google's SPDY protocol and is the required transport for [[gRPC]].
 
@@ -38,12 +46,16 @@ client.myMethod(request, {}, (err, response) => {
 ## Flashcards
 
 HTTP/2:::Binary, multiplexed [[HTTP]] protocol over [[TCP]] using HPACK header compression and per-stream flow control (transport for [[gRPC]]).
+^q-4hk6
 
 Why can HTTP/2 still suffer from Head-of-Line blocking even though it multiplexes streams?::Because all streams share a single ==[[TCP]] connection==; one lost TCP packet stalls delivery of *every* stream until retransmitted (solved by QUIC in [[HTTP3]]).
+^q-5dv2
+^q-squ2
 
 ### Why does HTTP/2 break naive L4 load balancing between microservices? #card
 
 L4 load balancers distribute *connections*, not *requests*. Because an HTTP/2 (or [[gRPC]]) client multiplexes all RPCs onto one persistent [[TCP]] connection, all traffic pins to a single backend pod—requiring L7 load balancing ([[Reverse proxy]] / [[Service Mesh]]) or client-side load balancing.
+^q-ue25
 
 ## Related
 - [[HTTP]]

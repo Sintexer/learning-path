@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-wxhc: { nid: 1795356723417, hash: k8i6n37m, sync: gt97g2dc }
+  q-r4tm: { nid: 1795356723442, hash: rdaxg3jx, sync: tqcrrdyk }
+  q-tmyt: { nid: 1795356723467, hash: vidt63g5, sync: v3uk44we }
+  q-5juv: { nid: 1795356723492, hash: v7p9bzrt, sync: rd8fvhwe }
+---
+
 > AKA **Open Systems Interconnection**
 
 The **Open Systems Interconnection (OSI)** model is a conceptual framework that describes the seven (7) layers of network communication. It was developed by the [[ISO]] in the 1980s to promote interoperability between different computer systems.
@@ -18,10 +26,14 @@ The **Open Systems Interconnection (OSI)** model is a conceptual framework that 
 ## Flashcards
 
 OSI Model:::Open Systems Interconnection — 7-layer conceptual model of networking (1 Physical, 2 Data Link, 3 Network, 4 Transport, 5 Session, 6 Presentation, 7 Application).
+^q-wxhc
 
 What are the Protocol Data Units (PDUs) for OSI Layers 1 through 4?::L1: ==Bits==, L2: ==Frames==, L3: ==Packets==, L4: ==Segments (TCP) / Datagrams (UDP)==.
+^q-tmyt
+^q-r4tm
 
 When debugging a network outage, work bottom-up or top-down across OSI layers (link -> IP/route -> TCP port -> TLS -> HTTP) to isolate the failing boundary fast. #card-reminder
+^q-5juv
 
 ## Related
 - [[ISO]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-3r2j: { nid: 1795356732568, hash: 2fk3q2nm, sync: 6vpzp43y }
+  q-r4xx: { nid: 1795356732592, hash: gbckw9v9, sync: sds99k8b }
+  q-r5dp: { nid: 1795356732616, hash: ahyscxfw, sync: edvmbkg4 }
+---
+
 **Identity federation** allows users with credentials managed elsewhere—like a corporate directory or external [[Identity provider]]—to get access to a resource. E.g., allowing users from LDAP or Okta to access an application via [[Keycloak]] using [[SAML]] or [[OIDC]].
 
 Identity federation is a system of trust between two parties for the purpose of authenticating users ([[Authentication]]) and conveying information needed to authorize ([[Authorization]]) their access to resources. In this system, an [[Identity provider|IdP]] is responsible for user authentication, and a **Service Provider (SP)**—such as a service or an application—controls access to resources.
@@ -15,13 +22,16 @@ Identity federation is a system of trust between two parties for the purpose of 
 > - **Stale deprovisioning**: Federated login only runs at sign-in; without SCIM provisioning or short session TTLs, a terminated employee may retain access until their SP session expires.
 
 In identity federation, never auto-link external accounts solely by `email`—key users by immutable ==(issuer, subject) / `(iss, sub)`== pairs.
+^q-3r2j
 
 ## What is the difference between an Identity Provider (IdP) and a Service Provider (SP) in identity federation? #card
 
 - **Identity Provider (IdP)**: Owns user credentials, performs authentication (including MFA), and issues cryptographically signed assertions/tokens ([[SAML]] or [[OIDC]]).
 - **Service Provider (SP)**: Trusts the IdP's signing keys, validates the assertion/token, and enforces local [[Authorization]] over its own resources.
+^q-r4xx
 
 Always scope role/group claims from an external federated IdP to that tenant so a misconfigured external directory cannot escalate privileges across tenants. #card-reminder
+^q-r5dp
 
 ## Related
 

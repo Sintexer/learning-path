@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-wky7: { nid: 1795356726299, hash: 5sqce3f6, sync: iwncg4h2 }
+  q-s4we: { nid: 1795356726316, hash: 2pywq6rv, sync: vkrwpkm3 }
+---
+
 Database-Level Compare-And-Swap ([[Compare-And-Swap|CAS]]) — eliminates the [[Check-Then-Act]] race condition in a single atomic SQL statement.
 
 Under the SQL standard and in engines like [[PostgreSQL]] and MySQL (InnoDB):
@@ -47,8 +53,10 @@ if (updatedRows == 0) {
 ## Flashcards
 
 Why does `UPDATE accounts SET balance = balance - 10 WHERE id = 100 AND balance >= 10` prevent lost updates even under Read Committed?::The engine acquires an exclusive row lock, waits for any in-flight writer to commit, and re-evaluates the `WHERE` predicate against the latest committed row version.
+^q-wky7
 
 How does application code know whether an [[Atomic Conditional Mutation]] succeeded?::By checking that the affected row count returned by the database driver is `1` (or `> 0`); `0` means the row was missing or the guard condition failed.
+^q-s4we
 
 ## Related
 

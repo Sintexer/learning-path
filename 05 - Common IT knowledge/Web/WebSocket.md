@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-4xfh: { nid: 1795356718667, hash: p3ntcjxd, sync: kderiuxh }
+  q-pnqh: { nid: 1795356718692, hash: v4rqm9bz, sync: 4svr7vgj }
+  q-qfi2: { nid: 1795356718717, hash: t8necctk, sync: tcxcwbip }
+  q-6u93: { nid: 1795356718742, hash: m7sccgyq, sync: jd37dh3r }
+  q-43r4: { nid: 1795356718767, hash: 93v4fn4i, sync: hqmtetwr }
+---
+
 **WebSocket** (RFC 6455, `ws://` / `wss://`) is a full-duplex, persistent, bidirectional communication protocol over a single [[TCP]] connection at [[OSI 7 layer]]. It replaces inefficient [[Client polling pattern|HTTP polling]] for real-time features like chat, live trading/order-book feeds, collaborative editing, and notifications.
 
 ## Connection Lifecycle
@@ -24,14 +33,19 @@
 ## Flashcards
 
 WebSocket:::A full-duplex, persistent messaging protocol over a single [[TCP]] connection initiated via an [[HTTP]] `101 Switching Protocols` upgrade handshake.
+^q-4xfh
 
 When should you prefer Server-Sent Events (SSE) over WebSockets?::When communication is strictly ==server-to-client== (e.g., notifications, live feeds, LLM token streaming), because SSE works over standard [[HTTP]], auto-reconnects, and traverses proxies cleanly.
+^q-qfi2
+^q-pnqh
 
 Always bound per-connection outbound buffers and disconnect slow WebSocket consumers to prevent server OOMs. #card-reminder
+^q-6u93
 
 ### What breaks when you horizontally scale a WebSocket service, and how do you solve it? #card
 
 WebSocket connections are stateful and pinned to individual server instances, so a message arriving at Instance A cannot directly reach a user connected to Instance B. Solve it by adding a shared pub/sub backplane ([[Redis]] Pub/Sub, [[Kafka]], or NATS) to fan out events across instances, and handle rolling restarts with gradual draining + jittered client reconnects.
+^q-43r4
 
 ## Related
 - [[HTTP]]

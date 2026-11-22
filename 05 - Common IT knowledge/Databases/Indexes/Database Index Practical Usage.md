@@ -1,4 +1,9 @@
-
+---
+flashcards:
+  q-vy46: { nid: 1795356728219, hash: 7ns47q38, sync: 7qwuh5p6 }
+  q-83yr: { nid: 1795356728243, hash: e4z57hx8, sync: f3h4ysrb }
+  q-xr2x: { nid: 1795356728267, hash: jmtxi84i, sync: mdphwvp7 }
+---
 ## When to use indexes
 
 **Use [[Database Index|indexes]] when:**
@@ -425,10 +430,13 @@ SELECT * FROM users WHERE LOWER(email) = 'john@example.com';
 ## Flashcards
 
 What is the golden column-ordering rule for a composite [[B-Tree Index]] (the ESR rule)?::**E**quality columns first, **S**ort (`ORDER BY`) or **R**ange columns next (once a range predicate is used, subsequent index columns cannot narrow the range or guarantee sort order).
+^q-vy46
 
 Why should you always use `CREATE INDEX CONCURRENTLY` in production [[PostgreSQL]]?::A plain `CREATE INDEX` takes a `SHARE` lock that blocks all writes (`INSERT`/`UPDATE`/`DELETE`) for the entire duration of the index build.
+^q-83yr
 
 Why does `WHERE LOWER(email) = 'a@b.com'` fail to use a plain B-Tree index on `email`?::Wrapping an indexed column in a function makes the predicate non-SARGable; you need an expression index on `(LOWER(email))` or a case-insensitive collation.
+^q-xr2x
 
 ## Related
 

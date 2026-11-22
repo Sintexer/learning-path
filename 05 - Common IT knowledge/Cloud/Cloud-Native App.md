@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-n4gt: { nid: 1795356730393, hash: tq5m2nfr, sync: 4uu25yzk }
+  q-42bt: { nid: 1795356730426, hash: rfbwc5xz, sync: w3zx7xgh }
+  q-syuc: { nid: 1795356730443, hash: 6jpbc5j8, sync: 3edphe2y }
+  q-g93g: { nid: 1795356730469, hash: xznd83pv, sync: g8tw4vyk }
+---
+
 A cloud-native application is one that is designed from the ground up to exploit cloud platforms for auto-[[Scaling|scaling]], self-healing, rolling updates, rollbacks, and resilient operation under constant infrastructure churn.
 
 ## Core Characteristics
@@ -16,16 +24,20 @@ A cloud-native application is one that is designed from the ground up to exploit
 ## Flashcards
 
 Cloud-native application::An application designed around ephemeral [[Container|containers]], externalized state, declarative [[IaaC]], automated [[Scaling|scaling]], self-healing, and built-in observability.
+^q-n4gt
 
 Why is "lift-and-shift into containers" not enough to make an app cloud-native?::Containers alone do not fix local disk state, slow startup, missing [[Health Checks]], or lack of graceful shutdown—all of which break autoscaling and rolling updates.
+^q-42bt
 
 Design cloud-native instances as disposable cattle: assume any instance can be killed and replaced at any moment without warning. #card-reminder
+^q-syuc
 
 ### What core traits enable self-healing and auto-scaling in a cloud-native app? #card
 
 - Stateless, fast-starting instances with externalized config and state.
 - Accurate readiness/liveness [[Health Checks]] and graceful `SIGTERM` handling.
 - Idempotent operations ([[API Idempotency]]) so restarts and retries are safe.
+^q-g93g
 
 ## Related
 - [[Microservices App]]

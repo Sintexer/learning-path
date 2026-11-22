@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-njda: { nid: 1795356713917, hash: sspr39xe, sync: sg6ccttj }
+  q-g7cj: { nid: 1795356713951, hash: 8ydn9w95, sync: tjy74bna }
+  q-tmdw: { nid: 1795356713970, hash: 9fhhutzf, sync: i44bs23r }
+---
+
 A **virtual machine (VM)** emulates a physical server—complete with virtual CPU, memory, NIC, storage, and its own full guest operating system—allowing you to run isolated workloads as if on dedicated hardware. To run virtual machines, you install a [[Hypervisor|hypervisor]] on a physical host machine, which partitions and schedules hardware resources across VMs.
 
 It is important to [[Difference between VMs and containers|differentiate VMs and containers]]. For application packaging and fast scaling, [[Container|containers]] are usually a better choice than bare VMs. In cloud environments ([[IaaS]]), containers typically run *inside* VMs—for example, an [[EC2|EC2]] instance acting as a [[K8S Worker nodes|Kubernetes worker node]] hosting dozens of containers simultaneously.
@@ -8,8 +15,11 @@ It is important to [[Difference between VMs and containers|differentiate VMs and
 ## Flashcards
 
 Virtual machine (VM):::A software-emulated computer running its own full guest OS and kernel on top of a [[Hypervisor]].
+^q-njda
 
 When are virtual machines still preferred over plain [[Container|containers]]?::When you need ==hardware/kernel-level isolation== (untrusted multi-tenancy), a different guest OS/kernel than the host, or dedicated-kernel predictability for stateful workloads.
+^q-tmdw
+^q-g7cj
 
 ## Related
 - [[Hypervisor]]

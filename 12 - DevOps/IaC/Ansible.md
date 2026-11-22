@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-ijv2: { nid: 1795356713768, hash: vvhsijzq, sync: 8xsnucvx }
+  q-8z5p: { nid: 1795356713800, hash: 6re7ggxy, sync: sghquvpb }
+  q-msjm: { nid: 1795356713818, hash: b3jhyzb4, sync: rquc2g2w }
+  q-v75m: { nid: 1795356713841, hash: nvfmdf4w, sync: a532qzmy }
+  q-jypa: { nid: 1795356713867, hash: 7k6wcnwu, sync: 5frzuati }
+---
+
 **Ansible** is an open-source automation and configuration-management tool ([[IaaC]]). It is commonly used to configure servers, deploy applications, install packages, and orchestrate operational runbooks across fleets of machines.
 
 ## Key characteristics
@@ -62,10 +71,15 @@ An operation is idempotent when running it repeatedly produces the same desired 
 ## Flashcards
 
 Ansible:::Agentless, push-based configuration management and automation tool using YAML playbooks over SSH/WinRM.
+^q-ijv2
 
 Why does removing a task from an Ansible playbook *not* remove the resource from target servers (unlike [[Terraform]])?::Because Ansible has ==no central state file== tracking previously managed resources; you must explicitly write a task with `state: absent`.
+^q-msjm
+^q-8z5p
 
 Why are Ansible `shell`/`command` tasks risky for repeatable automation?::They execute imperatively on every run and break ==[[Idempotency]]== unless you add explicit guards (`creates`, `removes`, `changed_when`) or use native Ansible modules.
+^q-jypa
+^q-v75m
 
 ## Related
 - [[Terraform]]

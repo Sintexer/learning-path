@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-bsyt: { nid: 1795356725718, hash: 76qkd5d6, sync: 5afz6pfa }
+  q-8c3a: { nid: 1795356725743, hash: dtxx9qz7, sync: b66azaeg }
+  q-nfbn: { nid: 1795356725766, hash: x4vw52tq, sync: h9csim2e }
+---
+
 Multiple leaders ([[Active-active systems|active-active replication]]) means writes are accepted by more than one node, typically across multiple datacenters. This lowers local write latency and allows scaling writes across regions.
 
 The biggest problem with multi-leader replication is that **write conflicts** can occur, which means conflict resolution is required.
@@ -52,14 +59,17 @@ In circular and star topologies, each write is tagged with the IDs of all nodes 
 
 ## Why is conflict avoidance often preferred over automatic conflict resolution in multi-leader setups? #card
 Conflict resolution is notoriously subtle and error-prone (LWW silently drops data, custom handlers introduce bugs, and cross-record invariants like double-booking cannot be resolved automatically). Routing all writes for a given user or entity to the same datacenter leader eliminates conflicts in normal operation.
+^q-bsyt
 
 ## What is a key failure mode of an all-to-all multi-leader topology vs star/circular topologies? #card
 - **Star / Circular**: A single node failure breaks the replication path for other nodes.
 - **All-to-all**: Avoids single points of failure, but varying network delays can deliver causally dependent writes out of order (e.g., an `UPDATE` arrives before its `INSERT`), requiring version vectors to preserve causality.
 
 In [[Multi-Leader Replication]], both conflicting writes succeed locally and the conflict is only detected ==asynchronously later during replication==, whereas single-leader replication blocks or aborts the second writer immediately.
+^q-8c3a
 
 Never deploy multi-leader replication within a single datacenter; use it only for multi-region write latency, offline clients, or collaborative editing. #card-reminder
+^q-nfbn
 
 ## Related
 - [[Leader-Based Replication]]

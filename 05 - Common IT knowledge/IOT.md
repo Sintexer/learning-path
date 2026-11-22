@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-pz84: { nid: 1795356724517, hash: wqd2xrke, sync: htkh2m3r }
+  q-3bk3: { nid: 1795356724542, hash: k8praha6, sync: pqumy43b }
+  q-fgzg: { nid: 1795356724567, hash: 3jgsyu2d, sync: fx9ighq2 }
+---
+
 > AKA **Internet of Things**
 
 **IoT (Internet of Things)** refers to networks of physical devices (sensors, actuators, industrial controllers, wearables, smart meters) embedded with compute, firmware, and connectivity that collect telemetry or receive commands over a network.
@@ -13,6 +20,7 @@
 - **Device identity & security**: Each device should hold a unique hardware-backed X.509 certificate (mTLS) rather than a fleet-wide shared API key ([[Zero-Trust Security]], [[Least privilege principle]]).
 
 Why is MQTT commonly preferred over plain HTTP for IoT telemetry?::MQTT maintains a persistent, low-overhead binary TCP connection with tiny headers, built-in pub/sub fan-out, configurable QoS delivery levels, and Last Will disconnect detection—saving battery and bandwidth compared to HTTP's per-request overhead.
+^q-pz84
 
 > [!warning] Failure modes & trade-offs
 > - **Thundering herd reconnect storms**: When a regional cell tower or broker restarts, millions of devices reconnecting simultaneously can DDoS the ingestion tier. Always implement exponential backoff with random jitter ([[Retry Pattern]]), [[Rate Limiting]], and [[Backpressure]].
@@ -20,12 +28,14 @@ Why is MQTT commonly preferred over plain HTTP for IoT telemetry?::MQTT maintain
 > - **Out-of-order & duplicate telemetry**: Offline devices buffer readings and flush in bursts upon reconnecting; design ingestion consumers as [[Idempotent Consumer|idempotent consumers]] keyed by `(device_id, timestamp/seq)` and distinguish **event time** from **ingestion time**.
 
 Always separate **event time** (device timestamp) from **ingestion time** (server receipt time) and make IoT ingestion pipelines ==idempotent== to handle offline buffering, retries, and duplicate deliveries.
+^q-3bk3
 
 ## How do you prevent a fleet of IoT devices from taking down your backend after a network outage? #card
 
 1. **Exponential backoff + jitter** on device reconnects ([[Retry Pattern]]) so devices do not synchronize into a thundering herd.
 2. **Edge connection draining & [[Rate Limiting]]** at the IoT broker/gateway.
 3. **Buffered ingestion via [[Kafka]]** to absorb bursty telemetry spikes and apply [[Backpressure]] without dropping data.
+^q-fgzg
 
 ## Related
 

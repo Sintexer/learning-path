@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-sa5f: { nid: 1795356726168, hash: agrb6jdx, sync: 2c55g45b }
+  q-2355: { nid: 1795356726191, hash: q38nwcbw, sync: sxk9jdji }
+---
+
 > 	Online Analytics Processing
 
 Usually an analytic query needs to scan over a huge number of records, only reading a few columns per record, and calculates aggregate statistics (such as count, sum, or average) rather than returning the raw data to the user. For example, if your data is a table of sales [[Transaction|transactions]], then analytic queries
@@ -183,8 +189,10 @@ This is a **grain** (aggregation level) of the fact table, not a dimension.
 ## Flashcards
 
 What is the quick practical test to decide whether a column belongs in an OLAP **fact** table or a **dimension** table?::Can you meaningfully `SUM` or aggregate it? Additive metrics (amount, quantity) are facts; descriptive attributes (date, customer, product) are dimensions.
+^q-sa5f
 
 Why do [[OLAP]] systems strongly favor [[Column-Oriented Storage]]?::Analytic queries scan millions of rows across only a few columns, so columnar layout minimizes disk I/O and achieves much higher compression ratios.
+^q-2355
 
 ## Related
 

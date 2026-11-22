@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-9gfj: { nid: 1795356715168, hash: xhy9pccs, sync: 3fpz8gbh }
+  q-vjtg: { nid: 1795356715193, hash: 66za9cwx, sync: f92eix4v }
+  q-pmk7: { nid: 1795356715225, hash: hci9ngr9, sync: ewwmtuxb }
+  q-upau: { nid: 1795356715243, hash: drqtssn2, sync: kqam5xd6 }
+---
+
 Worker nodes are the servers (physical hosts or cloud [[Virtual machine|VMs]]) that run user application [[Pod|Pods]] in a [[Kubernetes]] cluster.
 
 Every worker node continuously:
@@ -27,8 +35,12 @@ When a node joins a cluster, `kubelet` registers its allocatable CPU, memory, ep
 ## Flashcards
 
 What are the three core agents/components running on a standard [[Kubernetes]] worker node?::==`kubelet`== (node agent managing Pods/probes), a ==[[Container Runtime Interface|CRI]] container runtime== (e.g., [[containerd]]), and ==`kube-proxy`== (plus a CNI plugin for Pod networking).
+^q-vjtg
+^q-9gfj
 
 What is the difference between the CNI plugin and `kube-proxy` on a worker node?::The **CNI plugin** assigns ==Pod IPs== and enforces `NetworkPolicy`; **`kube-proxy`** programs node-level L4 routing rules (iptables/IPVS/nftables) for ==[[K8S Service|Services]]==.
+^q-upau
+^q-pmk7
 
 ## Related
 - [[K8S Control Plane]]

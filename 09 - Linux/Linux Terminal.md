@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-hiru: { nid: 1795356717042, hash: 4pnpzh4j, sync: nz2tskzb }
+  q-aw94: { nid: 1795356717066, hash: jcn9btu2, sync: yp4fgedu }
+---
+
 ## Modern CLI Tools
 
 - [`eza`](https://github.com/eza-community/eza) (maintained fork of `exa`) — modern `ls` replacement with git status and tree view
@@ -24,8 +30,10 @@ When SSHing into production servers or `kubectl exec`ing into minimal [[Containe
 > Remember the [[TTY]] buffering trap when piping logs through `grep`/`awk`: redirecting stdout to a pipe switches libc from line buffering to block buffering, so live tail pipelines can appear frozen unless you pass `--line-buffered` (e.g., `tail -f app.log | grep --line-buffered ERROR`).
 
 Always start production Bash scripts with `set -euo pipefail` so ==failing commands, unset variables, and broken pipes exit immediately== instead of silently corrupting state.
+^q-hiru
 
 Which standard Linux commands show (1) listening TCP/UDP ports with owning PIDs and (2) deleted files still consuming disk space?::(1) `ss -tulpn` (or `lsof -i`) and (2) `lsof +L1`.
+^q-aw94
 
 ## Related
 

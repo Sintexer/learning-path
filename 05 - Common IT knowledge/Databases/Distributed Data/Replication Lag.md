@@ -1,6 +1,9 @@
 ---
 aliases:
   - Asynchronous Replication Lag
+flashcards:
+  q-7q4e: { nid: 1795356725619, hash: wjrhuf2j, sync: x3fkjjan }
+  q-vsqf: { nid: 1795356725644, hash: yb76mq3c, sync: jdqhurv5 }
 ---
 **Replication lag** is the delay between a write happening on the leader and being reflected on a follower in [[Synchronous vs Asynchronous Replication|asynchronous]] [[Leader-Based Replication]]. In normal operation it may be a fraction of a second and unnoticeable, but under heavy load or network issues it can grow to seconds or minutes.
 
@@ -28,12 +31,14 @@ If a sequence of writes happens in a causal order (e.g., a question followed by 
 
 ## How do you prevent "time moving backward" (violating Monotonic Reads) when reading from async followers? #card
 Route all reads for a given user consistently to the **same replica** (e.g., by hashing the user ID to pick a follower), so they never jump from a caught-up follower to a lagging follower.
+^q-7q4e
 
 ## Name two practical techniques to guarantee Read-Your-Writes consistency with async read replicas. #card
 1. Route reads of user-editable data (or all reads for ~1 minute after a user's write) to the **leader**.
 2. Track the write's replication log position (LSN/timestamp) on the client and only serve reads from followers that have caught up to at least that position.
 
 **Consistent prefix reads** prevent a reader from seeing ==an effect before its cause (e.g., an answer before the question)== when causally related writes live on differently lagging partitions.
+^q-vsqf
 
 ## Related
 - [[Leader-Based Replication]]

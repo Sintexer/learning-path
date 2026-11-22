@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-tae3: { nid: 1795356728849, hash: ruvpbmtg, sync: k8cf3dai }
+---
+
 ## Table Heap
 
 A table heap is an array of 8KB disk pages. A [[B-Tree Index|B-tree]] leaf node stores (Key Value, [[#TID]]). The leaf says: _"Go to Page #542, and read slot #4."_
@@ -17,6 +22,7 @@ How effectively a value narrows down the search space. High selectivity means a 
 ## Flashcards
 
 In database indexing, ==cardinality== is the number of distinct values in a column, while ==selectivity== measures how small a fraction of rows a predicate matches.
+^q-tae3
 
 ## Related
 

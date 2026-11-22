@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-3ujn: { nid: 1795356714917, hash: nn3wd9tj, sync: wgwezzk3 }
+  q-784b: { nid: 1795356714943, hash: 3wfen4kg, sync: phjtjncv }
+  q-ux33: { nid: 1795356714968, hash: fukc6tyr, sync: xgtmy784 }
+---
+
 **Labels** are key-value metadata pairs (`app: payments`, `tier: backend`, `env: prod`) used to **loosely couple** [[Kubernetes]] resources.
 
 Each time a [[Pod]] is created from a [[K8S Deployment]], it receives labels from `spec.template.metadata.labels`. Controllers ([[K8S ReplicaSet|ReplicaSets]], Deployments) and [[K8S Service|Services]] discover their target Pods dynamically via **label selectors** (`spec.selector.matchLabels` or `matchExpressions`). Kubernetes rejects a Deployment manifest at validation time if `spec.selector` does not match `spec.template.metadata.labels`.
@@ -15,8 +22,11 @@ Each time a [[Pod]] is created from a [[K8S Deployment]], it receives labels fro
 ## Flashcards
 
 What is the difference between [[Kubernetes]] **Labels** and **Annotations**?::**Labels** are indexed key-value pairs used to ==select and loosely couple resources== (Services, ReplicaSets, NetworkPolicies); **Annotations** store ==non-identifying metadata== for tooling, config, or build info.
+^q-784b
+^q-3ujn
 
 How can you isolate a misbehaving [[Pod]] from production traffic for live debugging without killing it?::Change or remove the label matched by its [[K8S Service]] and [[K8S ReplicaSet]]—the Service stops routing traffic to it and the ReplicaSet spawns a healthy replacement, while the broken Pod stays alive for inspection.
+^q-ux33
 
 ## Related
 - [[K8S Service]]

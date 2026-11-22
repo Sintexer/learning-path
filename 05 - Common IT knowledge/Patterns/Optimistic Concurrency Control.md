@@ -1,6 +1,9 @@
 ---
 aliases:
   - OCC
+flashcards:
+  q-di6m: { nid: 1795356721194, hash: q54fsu8k, sync: 3fduxsdr }
+  q-htyi: { nid: 1795356721215, hash: fvebmmuk, sync: 9q2isnkj }
 ---
 **Definition:** Optimistic Concurrency Control (OCC) is a strategy for handling concurrent updates _without acquiring locks upfront_. It assumes conflicts are rare, lets operations proceed freely, and instead checks — at the moment of writing — whether the data is still in the state you expect. If not, you reject, skip, or retry the operation rather than corrupt state.
 
@@ -23,8 +26,10 @@ In-memory and low-level optimistic strategies take a copy of the data, modify it
 - **Monotonic [[Version Guard]] (`incoming_version > stored_version`)**: Tolerates sequence gaps (e.g., Kafka compaction/replay); ideal for read-model projections where latest state wins.
 
 When does Optimistic Concurrency Control perform worse than Pessimistic Locking?::Under high contention on hot keys, where repeated conflict-and-retry loops waste CPU/DB I/O and cause retry storms or starvation.
+^q-di6m
 
 Version numbers for OCC must come from a ==single authoritative writer== per entity; multiple independent producers assigning versions reintroduce race conditions. #card-reminder
+^q-htyi
 
 ## Related
 - [[Optimistic Locking]]

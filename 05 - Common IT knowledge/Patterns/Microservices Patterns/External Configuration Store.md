@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-gqwa: { nid: 1795356721892, hash: tdrav2e9, sync: jhcgjd94 }
+  q-abkf: { nid: 1795356721925, hash: dgzikrwp, sync: yatcr8jr }
+---
+
 **Purpose:** Separate operational configuration from application binaries (a Twelve-Factor / [[Cloud-Native App]] principle).
 
 Examples:
@@ -46,8 +52,10 @@ For a long-running [[Saga]], consider persisting the chosen policy version or de
 
 ## Why is a dynamic configuration push often more dangerous than a code deployment? #card
 Code deploys roll out gradually (canary/rolling), whereas a dynamic config update can propagate to **100% of instances simultaneously** and bypass CI tests — instantly turning a typo or bad threshold into a fleet-wide outage. Mitigate with schema validation, staged rollouts, and cached last-known-good fallbacks.
+^q-gqwa
 
 For long-running [[Saga|Sagas]], persist the ==policy version or deadline== when the workflow starts so dynamic config updates do not alter in-flight executions mid-stream. #card-reminder
+^q-abkf
 
 ## Related
 - [[Cloud-Native App]]

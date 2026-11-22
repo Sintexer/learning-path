@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-avz9: { nid: 1795356716117, hash: 346ijvvz, sync: zr7pu3ba }
+  q-zkjh: { nid: 1795356716143, hash: uppt6hdg, sync: irxbe69i }
+  q-mmav: { nid: 1795356716167, hash: q78wicmv, sync: 7mki2c6n }
+  q-vguh: { nid: 1795356716192, hash: hxg2jkuh, sync: mak73v9x }
+---
+
 **Zero-downtime deployment** ensures an application does not lose [[Availability|availability]] or drop in-flight requests while rolling out a new version.
 
 ## Deployment Strategies
@@ -37,14 +45,18 @@ Use the **Expand-and-Contract (Parallel Change)** pattern across multiple releas
 ## Flashcards
 
 What are the three main zero-downtime deployment strategies and their key trade-offs?::**Rolling** (resource-efficient, mixed `v1`/`v2` overlap), **Blue-Green** (instant cutover/rollback, 2x infra cost), and **Canary** (smallest blast radius via progressive traffic shifting, needs L7 routing + metrics).
+^q-avz9
 
 To evolve a database schema without downtime while `v1` and `v2` run simultaneously, use the ==Expand-and-Contract== pattern (add new column + dual-write -> backfill -> switch reads -> drop old column in a later release).
+^q-zkjh
 
 Never deploy a destructive schema change (drop/rename column) in the same release that removes code referencing it. #card-reminder
+^q-mmav
 
 ### Why can a seemingly harmless DDL migration still cause a production outage in PostgreSQL? #card
 
 DDL statements like `ALTER TABLE` or non-concurrent `CREATE INDEX` can acquire heavy table locks (`ACCESS EXCLUSIVE` / `SHARE`), blocking reads and writes while waiting behind a long-running query—creating a lock queue that stalls the entire service. Mitigate with `lock_timeout` and `CREATE INDEX CONCURRENTLY`.
+^q-vguh
 
 ## Related
 - [[JVM App Deployment]]

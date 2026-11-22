@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-4nir: { nid: 1795356727269, hash: msmwevct, sync: w7ku6dy3 }
+  q-qbnq: { nid: 1795356727292, hash: gtk6558w, sync: rqdn3k2e }
+---
+
 The distinction is based on **what resource limits the query’s performance**.
 
 ### I/O-bound query
@@ -65,8 +71,10 @@ The bottleneck can also change after caching. The first execution may be I/O-bou
 ## Flashcards
 
 How can you tell from [[PostgreSQL]] `EXPLAIN (ANALYZE, BUFFERS)` whether a slow query is I/O-bound or CPU-bound?::High `shared read` or `temp read/written` blocks indicate I/O-bound storage waits; high execution time with almost all `shared hit` blocks indicates CPU-bound computation.
+^q-4nir
 
 Adding faster disks or async I/O speeds up ==I/O-bound== queries, while reducing scanned rows, complex regexes, or expensive joins speeds up ==CPU-bound== queries.
+^q-qbnq
 
 ## Related
 

@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-y294: { nid: 1795356716466, hash: 4eaufx54, sync: xg8n37ja }
+  q-qwud: { nid: 1795356716493, hash: qxkwvrzj, sync: b3e4t6ge }
+  q-8sbv: { nid: 1795356716518, hash: 44ikgf3f, sync: 2citgpiw }
+  q-ne5v: { nid: 1795356716541, hash: xhdsuw5a, sync: bd98kyjf }
+---
+
 A **hypervisor** (Virtual Machine Monitor / VMM) is software, firmware, or hardware-assisted layer that virtualizes physical server resources (CPU, RAM, NICs, storage) so multiple isolated [[Virtual machine|virtual machines]] can run concurrently on a single physical host.
 
 ## Type 1 vs Type 2 Hypervisors
@@ -18,10 +26,14 @@ Modern hypervisors rely on CPU extensions (Intel VT-x / AMD-V) so guest instruct
 ## Flashcards
 
 Hypervisor:::Software or firmware layer (VMM) that virtualizes physical hardware so multiple isolated [[Virtual machine|virtual machines]] can share one host.
+^q-y294
 
 What is the difference between a Type 1 and a Type 2 hypervisor?::Type 1 (bare-metal: KVM, ESXi, Hyper-V) runs ==directly on physical hardware== for production/cloud; Type 2 (hosted: VirtualBox, VMware Fusion) runs ==on top of a host OS== for local dev.
+^q-8sbv
+^q-qwud
 
 High Linux ==CPU steal (`%st`)== inside a cloud VM indicates the hypervisor is throttling your vCPU because of noisy-neighbor contention on the underlying physical host.
+^q-ne5v
 
 ## Related
 - [[Virtual machine]]

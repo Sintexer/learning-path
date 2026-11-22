@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-8wcq: { nid: 1795356729320, hash: bfn7jxnh, sync: kmyfc5d9 }
+  q-qmmy: { nid: 1795356729341, hash: kiyg4htc, sync: x8m34qgg }
+---
+
 Born at Facebook, **Apache Thrift** is a schema-based binary [[Data Encoding|encoding]] and RPC framework with a cross-language Interface Definition Language (IDL) and code generation tools.
 
 It defines three binary wire formats:
@@ -28,8 +34,10 @@ Like [[Protocol Buffers]], Thrift identifies fields by numeric **field tags** ra
 - **CompactProtocol** uses variable-length integers (varints) and packs field type and tag delta into one byte, producing significantly smaller payloads at a slight CPU cost.
 
 In [[Apache Thrift]], changing a field's name is safe on the wire because ==fields are identified by numeric tag numbers, not field names==.
+^q-8wcq
 
 Never reuse a deleted field tag in Thrift or Protobuf; stale stored data or in-flight messages with the old tag will silently decode with the wrong type or meaning. #card-reminder
+^q-qmmy
 
 ## Related
 - [[Data Encoding]]

@@ -1,4 +1,9 @@
-
+---
+flashcards:
+  q-mhvs: { nid: 1795356729042, hash: u5bjjv4p, sync: raxwjfnr }
+  q-uxdk: { nid: 1795356729069, hash: ii4p6q9t, sync: sybw6hbk }
+  q-p93z: { nid: 1795356729091, hash: 5pzmcjxq, sync: er88ubft }
+---
 
 In the context of [[Data Warehouse]] and [[OLAP]], If you have trillions of rows and petabytes of data in your fact tables, storing and querying them efficiently becomes a challenging problem. Dimension tables are usually much smaller (millions of rows), so in this section we will concentrate primarily on storage of facts.
 
@@ -75,10 +80,13 @@ Queries need to examine both the column data on disk and the recent writes in me
 ## Flashcards
 
 Why does [[Column-Oriented Storage]] drastically outperform row-oriented storage for [[OLAP]] queries?::Analytic queries typically read only a few columns across millions of rows; storing each column contiguously skips unused columns, enables high compression (bitmap/RLE), and maximizes CPU cache + SIMD utilization.
+^q-mhvs
 
 Why is it misleading to call [[Apache Cassandra]] or HBase "column-oriented" storage?::Within a column family, they still store all columns of a row together alongside the row key without column-level compression, making them mostly row-oriented.
+^q-uxdk
 
 How do column-oriented databases handle writes without rewriting compressed column files on every insert?::They buffer writes in an [[LSM Tree]]-style in-memory store and periodically merge and flush them in bulk into new immutable sorted column files on disk.
+^q-p93z
 
 ## Related
 

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-erp2: { nid: 1795356726069, hash: tb8tjvv8, sync: exqgbbx4 }
+  q-nx2f: { nid: 1795356726092, hash: 7ibgxexc, sync: 2wyjy4tz }
+---
+
 > AKA **Online Transaction Processing**
 
 An application typically looks up a small number of records by some key, using a [[Database Index|index]]. Records are inserted or updated based on the user's input. Because these applications are interactive, the access pattern became known as **online [[Transaction|transaction]] processing** (OLTP).
@@ -18,8 +24,10 @@ An application typically looks up a small number of records by some key, using a
 ## Flashcards
 
 Why do OLTP databases use row-oriented storage rather than [[Column-Oriented Storage]]?::OLTP queries fetch and update entire records by primary key, so storing all columns of a row together minimizes disk seeks.
+^q-erp2
 
 What happens to an OLTP database when a high-QPS endpoint lacks a proper [[Database Index]]?::Point lookups degrade into full table scans, exhausting disk I/O and causing tail-latency spikes across all concurrent transactions.
+^q-nx2f
 
 ## Related
 

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-ktn4: { nid: 1795356724921, hash: f88p7h3v, sync: gtpmgn4m }
+  q-jtfg: { nid: 1795356724942, hash: d6xdxbyt, sync: fpb6mgbb }
+  q-2j7y: { nid: 1795356724967, hash: wtf96jrd, sync: rx4xe6na }
+---
+
 **Check-Then-Act** (also known as **TOCTOU** — Time-Of-Check to Time-Of-Use) is a concurrency bug pattern where code **checks a condition**, then **acts on the assumption that the condition still holds** — but between the check and the act, another thread, process, or [[Transaction]] can change the state, invalidating the assumption.
 
 ### Generic Shape
@@ -58,13 +65,16 @@ The general principle: make the check-and-act a **single atomic operation**, usi
 - **Filesystem** — use atomic APIs (`Files.createFile()` which throws if it exists) instead of `exists()` + `create()`.
 
 Never validate a precondition in application code and assume it still holds during the subsequent write; push the invariant into an atomic primitive or database constraint. #card-reminder
+^q-ktn4
 
 Check-Then-Act (TOCTOU) race condition:::A concurrency bug where state changes between checking a condition and acting on it, causing lost updates, duplicates, or invariant violations.
+^q-jtfg
 
 ## How do you eliminate a database Check-Then-Act race without heavy locking? #card
 1. Enforce the invariant with a `UNIQUE` constraint and `INSERT ... ON CONFLICT` / `MERGE`.
 2. Fold the check into the write via an [[Atomic Conditional Mutation]] (`UPDATE ... WHERE balance >= x`).
 3. Use [[Optimistic Locking]] with a monotonic `version` column and retry on conflict.
+^q-2j7y
 
 ## Related
 - [[Atomic Conditional Mutation]]

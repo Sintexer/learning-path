@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-drcv: { nid: 1795356718216, hash: h5tmy6ha, sync: w8hbxfvk }
+  q-7dib: { nid: 1795356718242, hash: 5ymw9rpj, sync: 2a8aab63 }
+  q-qcs8: { nid: 1795356718267, hash: 6mbt5px9, sync: 24sghihb }
+---
+
 Modern CPUs are fast, but they are limited by memory speed. When a CPU needs data that isn't in its cache, it must fetch it from main memory, causing a "stall" that can last hundreds of cycles. This is the single biggest bottleneck in CPU performance today.
 
 This directly impacts concurrency. When multiple threads use **locks** to protect shared data, they rely on [[Compare-And-Swap|CAS]] instructions to coordinate access. Even without conflicts, these instructions are expensive - they can take tens of cycles and force the CPU to pause its optimized execution pipeline.
@@ -28,12 +35,15 @@ If you design systems around independent components that own their own state and
 ## Flashcards
 
 Single Writer Principle:::Design rule stating that any given piece of data or resource should be mutated by only one execution context, eliminating write-write lock contention.
+^q-drcv
 
 ## Why can a lock-protected shared counter be orders of magnitude slower with two threads than with one? #card
 Contended locks trigger OS kernel arbitration, thread context switches, and CPU cache invalidation/pollution. Cores spend far more cycles bouncing cache lines and reloading evicted "warm" state from main memory than executing the actual increment.
+^q-7dib
 
 ## What is false sharing, and how can it hurt even a Single Writer design? #card
 False sharing happens when two threads independently mutate different variables that sit on the same CPU cache line (typically 64 bytes). The CPU cache-coherency protocol invalidates the whole line across cores on every write, recreating contention; fix by padding independent hot fields onto separate cache lines.
+^q-qcs8
 
 ## Related
 - [[Compare-And-Swap]]

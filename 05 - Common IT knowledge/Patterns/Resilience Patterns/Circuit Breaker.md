@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-6bdg: { nid: 1795356721117, hash: yyv7yh2v, sync: 9py79eyk }
+  q-ifsr: { nid: 1795356721142, hash: pcca33d7, sync: b7w4wbhs }
+  q-bcng: { nid: 1795356721168, hash: nzzu6274, sync: rwzhgq5p }
+---
+
 > Prevents cascading failures
 
 **The problem it solves:** Imagine Service A calls Service B, and B is dying — every call to B takes 30 seconds to time out. If A keeps calling B anyway, A's threads pile up waiting on B, A's thread pool exhausts, and now A itself becomes unresponsive to _its_ callers. One failing service cascades upward and takes down the whole chain.
@@ -22,11 +29,14 @@ Think of it like an electrical circuit breaker in your house — trips when ther
 > - **Per-instance vs fleet view**: Local in-memory breakers don't share state across pods; with low per-pod traffic, set `minimumNumberOfCalls` carefully so a single blip doesn't trip the circuit.
 
 Circuit Breaker states:::Closed (normal, tracking failure/slow-call rate), Open (fail fast, short-circuit calls), and Half-Open (allow limited probe calls after cooldown to test recovery).
+^q-6bdg
 
 ## Why can a Circuit Breaker's Half-Open state re-crash a recovering downstream service? #card
 If many caller instances trip simultaneously and use the same fixed cooldown, they all transition to **Half-Open** at the exact same moment and send a burst of probe requests (a **thundering herd**) that overwhelms the barely recovered dependency. Mitigate with cooldown jitter, a small half-open probe limit, and slow-start warm-up.
+^q-ifsr
 
 A Circuit Breaker must count ==5xx, timeouts, and slow calls== as failures, never ==4xx client validation errors==, or bad user input will trip the breaker for everyone. #card-reminder
+^q-bcng
 
 ## Related
 - [[Microservices Resilience and Fault tolerance]]

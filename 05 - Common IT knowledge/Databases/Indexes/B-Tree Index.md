@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-qesd: { nid: 1795356728492, hash: 8j6d7qhs, sync: g7zb549y }
+  q-rhwr: { nid: 1795356728517, hash: 3t3tahnn, sync: scn6z7kd }
+  q-z884: { nid: 1795356728541, hash: u7q6uxty, sync: 5w9xf58g }
+  q-b2h5: { nid: 1795356728567, hash: hbgaf5rb, sync: xudnrqit }
+---
+
 The most widely used [[Database Index|indexing structure]].
 
 B-trees keep key-value pairs sorted by key, which allows efficient key-value lookups and range queries. It is designed to store sorted data and allow searches, sequential access, insertions, and deletions in logarithmic time $(O(log⁡n))$.
@@ -153,12 +161,16 @@ That is why:
 ## Flashcards
 
 Why do databases use B-Trees / B+Trees instead of Binary Search Trees (like Red-Black or AVL trees) for on-disk storage?::Disk I/O reads fixed-size pages (4–16 KB); B-Trees pack hundreds of keys per page (high branching factor), keeping tree depth at 3–4 page reads instead of ~24 for a binary tree.
+^q-qesd
 
 In a B+Tree, data/row pointers reside only in ==leaf nodes==, and all leaf nodes are linked in a ==doubly-linked list== to make range scans fast.
+^q-rhwr
 
 Why can a composite B-Tree index on `(A, B, C)` satisfy `WHERE A = 1 AND B = 2` but normally not `WHERE B = 2`?::Keys are sorted lexicographically starting with `A` (the leftmost prefix rule); without `A`, matching `B` values are scattered across the tree unless the engine uses an [[Index Skip Scan]].
+^q-z884
 
 Prefer time-ordered keys (like UUIDv7 or sequences) over random UUIDv4 for heavily written B-Tree primary keys to avoid random page splits and cache thrashing. #card-reminder
+^q-b2h5
 
 ## Related
 

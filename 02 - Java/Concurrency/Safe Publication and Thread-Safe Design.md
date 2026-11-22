@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-mua5: { nid: 1795356730853, hash: 3epnzawp, sync: dkxtgua7 }
+  q-7xjm: { nid: 1795356730870, hash: 4u7k8f3g, sync: fpzgqiee }
+  q-xjcy: { nid: 1795356730894, hash: 5826p9yt, sync: gg7ajzgx }
+  q-qfi4: { nid: 1795356730916, hash: fsn22t5x, sync: xre32976 }
+---
+
 # Safe Publication and Thread-Safe Design
 
 Notes on safely sharing objects across threads and composing thread-safe classes (based on *Java Concurrency in Practice*, Ch. 3–4, and the [[Java Memory Model]]).
@@ -64,17 +72,21 @@ Three steps:
 ## Flashcards
 
 What are the three requirements for an object to be truly immutable in Java?::Its state cannot be modified after construction, all its fields are `final`, and `this` does not escape during construction.
+^q-mua5
 
 ## What are the four primary ways to safely publish a properly constructed object in Java? #card
 1. Initialize the reference from a `static` initializer.
 2. Store it into a `volatile` field or `AtomicReference`.
 3. Store it into a `final` field of a properly constructed object.
 4. Store it into a field properly guarded by a lock (or insert into a thread-safe `java.util.concurrent` collection).
+^q-7xjm
 
 ## When can a class safely delegate thread safety to multiple underlying thread-safe fields? #card
 Only when those state variables are **independent**—no class invariant constrains their values together and no operation has compound state transitions across them. If an invariant couples them (like `lower <= upper`), you must guard compound operations under a single lock.
+^q-xjcy
 
 Prefer a private lock object over `synchronized (this)` so external callers cannot acquire your internal monitor and cause deadlocks. #card-reminder
+^q-qfi4
 
 ## Related
 - [[concurrency]]

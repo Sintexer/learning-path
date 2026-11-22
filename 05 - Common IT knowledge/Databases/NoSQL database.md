@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-8785: { nid: 1795356727791, hash: tecev47k, sync: 6cpz5x6g }
+  q-6iyb: { nid: 1795356727818, hash: 5npgrr9i, sync: 4kufxq3p }
+---
+
 **Not Only SQL** — an umbrella term for non-relational [[Database|databases]] designed for flexible schemas, specialized data models, high write throughput, or massive [[Horizontal scaling]] where traditional single-node [[RDBMS]] constraints become bottlenecks.
 
 ## The Four Major Families
@@ -23,8 +29,10 @@
 ## Flashcards
 
 What are the four main categories of [[NoSQL database|NoSQL databases]]?::Key-Value ([[Redis]]), [[Document Database|Document]] ([[MongoDB]]), Wide-Column ([[Apache Cassandra]]), and [[Graph database|Graph]] (Neo4j).
+^q-8785
 
 What is the biggest long-term trade-off of denormalized, query-driven NoSQL data modeling?::New ad-hoc access patterns are hard to serve without backfilling new tables/indexes, and keeping duplicated data consistent across entities shifts complexity into application code.
+^q-6iyb
 
 ## Related
 

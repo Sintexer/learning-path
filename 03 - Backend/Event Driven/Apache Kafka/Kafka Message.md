@@ -1,4 +1,9 @@
-
+---
+flashcards:
+  q-fyf8: { nid: 1795356733268, hash: r9t75sr2, sync: ncxy9ivg }
+  q-ppv8: { nid: 1795356733298, hash: fz9xtpcb, sync: 38sd5nsa }
+  q-39kr: { nid: 1795356733319, hash: vhnmm4se, sync: 6f32edqb }
+---
 A **Kafka message** (also called a **record**) is the atomic unit of data written by a [[Kafka Producer]] and stored sequentially inside a [[Kafka Partition]]. Brokers treat keys and values as opaque byte arrays—schema and [[Data Encoding]] are managed by clients (JSON, Avro, [[Protocol Buffers]]).
 
 ## Key 
@@ -46,10 +51,13 @@ Monotonically increasing 64-bit position assigned by the partition leader broker
 ## Flashcards
 
 In Kafka, compression (`lz4`, `zstd`, `snappy`, `gzip`) is applied at the ==record-batch== level rather than per individual message, so producer batching (`linger.ms` / `batch.size`) directly improves compression ratio.
+^q-fyf8
 
 What is the Claim Check pattern for large payloads in [[Kafka]]?::Store the large binary payload in external object storage (e.g. S3) and publish a small [[Kafka Message]] containing only the storage reference/URI and metadata, keeping broker throughput and page cache healthy.
+^q-ppv8
 
 Put cross-cutting metadata (like [[OpenTelemetry]] trace context or event type) in Kafka message headers so consumers and routers can inspect it without deserializing the payload. #card-reminder
+^q-39kr
 
 ## Related
 - [[Kafka]]

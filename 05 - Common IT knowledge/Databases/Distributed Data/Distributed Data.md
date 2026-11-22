@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-ziq6: { nid: 1795356725793, hash: bta8vbz9, sync: u2vuz9td }
+  q-muxf: { nid: 1795356725817, hash: p9ujuftd, sync: r78k8pun }
+---
+
 There are various reasons why you might want to distribute a database across multiple machines:
 - **[[Scaling|Scalability]]**: If your data volume, read load, or write load grows bigger than a single machine can handle, you can spread the load across multiple machines (see [[Data partitioning]]).
 - **Fault tolerance / [[Availability|high availability]]**: If your application needs to continue working even if one machine or datacenter goes down (see [[Replication]]).
@@ -26,8 +32,10 @@ No special hardware is required by a shared-nothing system, so you can use commo
 - **Shared-Memory ([[Vertical scaling]])**: Single OS with many CPUs/RAM/disks. Simple, no distributed semantics, but super-linear cost and single-region failure domain.
 - **Shared-Disk**: Independent compute nodes sharing a storage array. Common in [[Data Warehouse|data warehouses]] and cloud-native DBs (Aurora), but lock/network contention can bottleneck writes.
 - **Shared-Nothing ([[Horizontal scaling]])**: Independent nodes (CPU + RAM + disk) coordinating over the network. Best price/performance and multi-region fault tolerance, but adds full distributed-systems complexity.
+^q-ziq6
 
 Do not shard a database prematurely: exhaust [[Vertical scaling]], indexing, and read replicas before paying the operational tax of [[Data partitioning]] and cross-node transactions. #card-reminder
+^q-muxf
 
 ## Related
 - [[Replication]]

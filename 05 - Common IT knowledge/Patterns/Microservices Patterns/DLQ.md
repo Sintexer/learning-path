@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-55fr: { nid: 1795356721548, hash: vdhkdy2d, sync: cu9sd8w8 }
+  q-jxif: { nid: 1795356721567, hash: xwd7ysep, sync: j98g7vte }
+  q-adxj: { nid: 1795356721591, hash: p45h7kq4, sync: xp96a5pd }
+---
+
 **Dead Letter Queue (DLQ)**
 
 The problem: what happens when a [[Kafka Consumer|consumer]] tries to process a message and it **keeps failing** — a bug in the payload, an unexpected null field, a schema mismatch, or a downstream dependency that's permanently broken for this specific message (a "**poison pill**" message)?
@@ -12,11 +19,14 @@ The standard solution: after a bounded number of retry attempts, instead of retr
 > - **Transient vs permanent routing**: Routing transient downstream outages directly to the DLQ floods it with thousands of healthy messages. Distinguish **non-retryable poison pills** (deserialization/validation errors → immediate DLQ) from **transient errors** (backoff/retry topics or pause consumption with [[Backpressure]]).
 
 Dead Letter Queue (DLQ):::A dedicated fallback topic/queue where a consumer routes unprocessable ("poison pill") messages after bounded retries so they do not block partition progress.
+^q-55fr
 
 ## What hidden data-corruption risk happens when you replay messages from a DLQ? #card
 Routing message #10 to a DLQ allows newer messages (#11, #12) for the same entity key to process out of order. Replaying #10 later can **overwrite newer state** unless consumers enforce a [[Version Guard]] or [[Idempotent Consumer]] check.
+^q-jxif
 
 Always pair a DLQ with ==alerting, failure metadata headers, and a safe replay mechanism== — otherwise it becomes a silent data graveyard. #card-reminder
+^q-adxj
 
 ## Related
 - [[Kafka Consumer]]

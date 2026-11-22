@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-b3vv: { nid: 1795356732991, hash: tyj73wtg, sync: m2ksd726 }
+---
+
 Producers write data to [[Kafka Topic|topics]]. Producers know which [[Kafka Partition|partition]] to write to (and which [[Kafka]] broker is its leader), ahead of write.
 
 In case of Kafka broker failures, Producers will automatically recover. End-to-end [[Delivery Semantics]] depend on both producer durability settings and [[Kafka Consumer]] commit/deduplication logic.
@@ -31,6 +36,7 @@ Broker-side `(PID, sequenceNumber)` deduplication only prevents duplicates cause
 Why must producer `acks=all` be paired with broker `min.insync.replicas >= 2` (and `replication.factor >= 3`)?::Without `min.insync.replicas >= 2`, if all followers fall out of sync, the lone leader satisfies `acks=all` by itself and loses committed messages if it crashes before replicating.
 
 How does a Kafka broker detect and deduplicate retried batches from an idempotent producer?::It tracks the last committed monotonic ==sequence number per `(Producer ID, partition)`==; if an incoming batch has a sequence number ≤ last committed, the broker acks success without appending a duplicate.
+^q-b3vv
 
 ## Related
 - [[Kafka]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-ed6k: { nid: 1795356716592, hash: zih2dg2v, sync: zak4ncjq }
+  q-9qnp: { nid: 1795356716618, hash: zpxgm5cy, sync: tu3f8bqf }
+  q-uete: { nid: 1795356716641, hash: cbbbawky, sync: 68e64ym5 }
+---
+
 Compared to [[Virtual machine|virtual machines (VMs)]], [[Container|containers]] share the *same operating system and kernel* as the host they are deployed on.
 
 **Containers** share the host OS kernel and isolate processes using Linux namespaces and cgroups. **Virtual machines** run a full guest OS and dedicated kernel on virtualized hardware managed by a [[Hypervisor]]. Each VM carries the memory, disk, and patching overhead of its own OS.
@@ -19,8 +26,11 @@ In practice they are complementary: cloud workloads routinely run **containers i
 ## Flashcards
 
 What is the fundamental architectural difference between a [[Virtual machine|VM]] and a [[Container]]?::A VM virtualizes hardware via a [[Hypervisor]] and runs its own ==guest OS and kernel==; a container shares the ==host OS kernel== and isolates processes via Linux namespaces and cgroups.
+^q-9qnp
+^q-ed6k
 
 Why do cloud platforms commonly run [[Container|containers]] *inside* [[Virtual machine|VMs]]?::To combine VM-level hardware isolation (separating tenants/clusters) with container-level fast startup, packaging portability, and high bin-packing density.
+^q-uete
 
 ## Related
 - [[Container]]

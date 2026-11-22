@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-bf39: { nid: 1795356726742, hash: xi5vjvp5, sync: qse25h67 }
+  q-t2db: { nid: 1795356726767, hash: axhfvrvx, sync: pdes79a6 }
+---
+
 ## Star Schema
 
 **Structure:** One large central fact table surrounded by multiple dimension tables. The relationship pattern looks like a star when visualized.
@@ -204,8 +210,10 @@ This should give your readers a solid foundation for understanding when and why 
 ## Flashcards
 
 What is the structural difference between a **Star Schema** and a **Snowflake Schema**?::A Star Schema joins one central fact table directly to flat, denormalized dimension tables; a Snowflake Schema further normalizes dimension tables into hierarchical sub-dimensions.
+^q-bf39
 
 Why do most modern [[OLAP]] / [[Data Warehouse]] teams prefer **Star Schema** (or denormalized tables) over **Snowflake Schema**?::[[Column-Oriented Storage]] compresses repeated dimension values cheaply, so avoiding multi-level dimension joins yields faster queries and simpler SQL for analysts.
+^q-t2db
 
 ## Related
 

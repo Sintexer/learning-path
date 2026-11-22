@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-zxde: { nid: 1795356724391, hash: bevj8dny, sync: metnri56 }
+  q-ixw6: { nid: 1795356724417, hash: jh7udxs3, sync: cvs6cabi }
+---
+
 A message might be delivered and processed more than once in case of retries or consumer restarts.
 
 Commit the offset **after** successful processing (see [[Kafka Consumer]]).
@@ -10,9 +16,11 @@ Commit the offset **after** successful processing (see [[Kafka Consumer]]).
 > At-least-once delivery only holds if the producer also retries until broker acknowledgment (`acks=all` in [[Kafka]]) and the consumer commits offsets **strictly after** side effects are durably persisted. If a consumer commits asynchronously in the background (`enable.auto.commit=true`), a crash mid-batch silently degrades your guarantee to [[At-most-once-delivery]].
 
 At-least-once delivery commits the consumer offset ==after== processing finishes, preventing message loss at the cost of ==possible duplicates==.
+^q-zxde
 
 ## How does at-least-once delivery achieve an effectively exactly-once outcome? #card
 Pair at-least-once transport (producer retries + post-processing offset commit) with an [[Idempotent Consumer]] using an [[Idempotency Key]], [[Version Guard]], or atomic deduplication table so redelivered messages produce the same final state.
+^q-ixw6
 
 ## Related
 - [[Delivery Semantics]]

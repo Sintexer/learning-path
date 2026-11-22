@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-vurs: { nid: 1795356733741, hash: 2xxshcse, sync: jevpvqmg }
+  q-vbej: { nid: 1795356733767, hash: h57pxf9j, sync: e77thcah }
+---
+
 # Cloud architecture
 
 ## Designing [[Microservices architecture|microservice architecture]]
@@ -50,8 +56,10 @@ Rule of thumb: 1 service — 1 DB ([[Database Per Service]]) and cohesive tables
 ## Flashcards
 
 What is a "distributed monolith" anti-pattern in [[Microservices architecture]]?::Services deployed separately that remain tightly coupled (e.g. sharing a database or requiring coordinated lockstep releases), incurring distributed-system latency and complexity without independent deployability.
+^q-vurs
 
 Decompose services along [[DDD]] bounded contexts with [[Database Per Service]]—not by single-table CRUD—to avoid chatty cross-service joins and distributed monoliths. #card-reminder
+^q-vbej
 
 ## Related
 - [[Microservices architecture]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-usdk: { nid: 1795356733166, hash: 356nfyyd, sync: 7dvqn22u }
+  q-cvng: { nid: 1795356733191, hash: z6hnbubq, sync: iyqzmyjh }
+  q-mzve: { nid: 1795356733217, hash: axkt3hcp, sync: vpgxnjyx }
+---
+
 Consumer receives the data from the broker's topic (identified by name) using the *pull model*. Consumers automatically know which broker to read from. In case of broker failures, consumers know how to recover. 
 
 Data is read from low to high offset **within each partition**.
@@ -96,13 +103,16 @@ Separately, there's `max.poll.interval.ms` — this guards against a consumer th
 
 ## What is the difference between `session.timeout.ms` and `max.poll.interval.ms` in a Kafka consumer? #card
 `session.timeout.ms` detects a **dead/crashed** consumer via missing background heartbeats. `max.poll.interval.ms` detects a **livelocked or too-slow** consumer that is still heartbeating but fails to call `poll()` within the interval—evicting it and triggering a rebalance.
+^q-usdk
 
 ## How does `CooperativeStickyAssignor` improve on eager rebalance protocols? #card
 Eager rebalancing is "stop-the-world": every consumer in the group revokes all partitions and pauses processing during any membership change. `CooperativeStickyAssignor` rebalances **incrementally**, revoking and moving only the specific partitions that need to change owners.
 
 Why is manual offset commit paired with an [[Idempotent Consumer]] preferred over auto-commit in production?::Auto-commit commits on a timer regardless of whether processing finished (causing silent data loss on crash); manual commit after side effects guarantees [[At-least-once delivery]], and the [[Idempotent Consumer]] safely absorbs duplicates on retry/rebalance.
+^q-cvng
 
 Always route unparseable or permanently failing Kafka "poison pill" records to a [[DLQ]] after bounded retries so one bad message cannot stall an entire partition. #card-reminder
+^q-mzve
 
 ## Related
 - [[Kafka]]

@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-km53: { nid: 1795356722068, hash: n2df8fej, sync: tdj2up8e }
+  q-v9ek: { nid: 1795356722093, hash: ewtpr9eh, sync: dr2dykrc }
+  q-3dsy: { nid: 1795356722119, hash: 9ufra9xz, sync: ada4zk56 }
+---
+
 A **BFF (Backend for Frontend)** adapts backend capabilities to the needs of a particular frontend.
 
 Why separate them? Mobile and web clients may differ in:
@@ -96,12 +103,15 @@ This can reduce fan-out and improve predictable latency. But the projection is [
 A projection is not automatically a globally consistent snapshot either. Its consistency depends on the event model and how updates are applied.
 
 Backend for Frontend (BFF):::A dedicated backend service tailored to a single client type (e.g., mobile vs web) that aggregates and shapes downstream APIs without polluting core domain services with UI-specific endpoints.
+^q-km53
 
 ## Live BFF Aggregation vs. Materialized CQRS Projection — what is the core trade-off? #card
 - **Live aggregation**: Fresher data and simpler infrastructure, but suffers from **fan-out load amplification**, tail-latency compounding, and direct exposure to downstream outages.
 - **Materialized [[CQRS]] projection**: Predictable low latency and resilience to source outages, but introduces **[[Eventual Consistency]]** (read lag) and projection/[[Reconciliation]] operational overhead.
+^q-v9ek
 
 Keep BFFs limited to ==client-specific aggregation and response shaping==; never duplicate core domain rules across multiple BFFs. #card-reminder
+^q-3dsy
 
 ## Related
 - [[API Gateway]]

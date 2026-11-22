@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-vjp2: { nid: 1795356720267, hash: mjt676ws, sync: mqqn22hr }
+  q-6byp: { nid: 1795356720293, hash: mngymnjd, sync: 8rj2h75z }
+  q-uknp: { nid: 1795356720318, hash: gmgaimyg, sync: q7i9kvnr }
+  q-wbt9: { nid: 1795356720342, hash: 7ncyu499, sync: sp8zwqab }
+---
+
 An [[In-Memory Database|in-memory]] data structure store commonly used as a low-latency cache, session store, [[Rate Limiting|rate limiter]], message broker (Streams/Pub-Sub), and coordination primitive.
 
 ## Architecture & Data Structures
@@ -21,15 +29,19 @@ An [[In-Memory Database|in-memory]] data structure store commonly used as a low-
 ## Flashcards
 
 Why can a single `KEYS *` command cause an outage in Redis?::Redis executes commands on a single thread, so an $O(N)$ scan blocks all other client requests until it finishes (use `SCAN` instead).
+^q-vjp2
 
 In Redis persistence, ==RDB== takes point-in-time snapshots via `fork()`, while ==AOF== logs every write command with configurable `fsync` intervals.
+^q-6byp
 
 ## Why is Redis not a safe standalone source of truth for correctness-critical distributed locks? #card
 
 - Redis [[Leader-Based Replication|replication]] is asynchronous: a primary can acknowledge a lock and crash before replicating it to the promoted replica, allowing a second client to acquire the same lock ([[Split-Brain]]).
 - Even with Redlock, GC pauses or clock jumps can violate safety unless the downstream resource validates a monotonic [[Fencing Token]].
+^q-uknp
 
 Never mix volatile cache keys and durable state (sessions, rate-limit counters, queues) in the same Redis instance with an LRU eviction policy. #card-reminder
+^q-wbt9
 
 ## Related
 

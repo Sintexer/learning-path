@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-fiyu: { nid: 1795356726469, hash: 7d9ihjcw, sync: t4ng28v7 }
+  q-t72t: { nid: 1795356726491, hash: mv4ydvxw, sync: 67mu6ftp }
+  q-wvu9: { nid: 1795356726518, hash: 6uukjndn, sync: 5e4mydcn }
+  q-nfgr: { nid: 1795356726541, hash: j65q8v4r, sync: tm2f8im8 }
+---
+
 ## Latest Features
 
 ### 1. Asynchronous I/O
@@ -269,15 +277,19 @@ SELECT * FROM bookings WHERE during && tsrange('2023-10-01 10:30', '2023-10-01 1
 ## Flashcards
 
 How does PostgreSQL's Visibility Map speed up Index-Only Scans?::If a heap page's bit is set to 1, all tuples on that page are visible to every active transaction, so the scan skips reading the heap entirely.
+^q-fiyu
 
 A PostgreSQL HOT (Heap-Only Tuple) update avoids writing to any indexes when ==the new tuple fits on the same 8 KB page== and ==no indexed columns were modified==.
+^q-t72t
 
 Why is `VACUUM FULL` dangerous on a large production PostgreSQL table?::It acquires an `ACCESS EXCLUSIVE` lock that blocks all reads and writes while rewriting the entire table (use `pg_repack` instead).
+^q-wvu9
 
 ## Why can a single long-running transaction cause severe table bloat in PostgreSQL? #card
 
 - It holds back the global [[MVCC]] visibility horizon (`xmin`).
 - `autovacuum` cannot reclaim any dead tuples created after that transaction began, causing heap and index pages to grow unchecked even on unrelated tables.
+^q-nfgr
 
 ## Related
 

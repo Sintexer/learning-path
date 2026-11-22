@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-zwh4: { nid: 1795356728424, hash: ct7i8mre, sync: ca8d6s9f }
+  q-kuqm: { nid: 1795356728446, hash: 8t489qce, sync: s8mp86yx }
+  q-uwys: { nid: 1795356728469, hash: a2j89pee, sync: yr6efutd }
+---
+
 ## Block Range Index
 
 BRIN does **not** index individual rows. Instead, it records summaries for contiguous physical disk pages (by default, one summary per **128 pages** = ~1MB of data).  
@@ -41,10 +48,13 @@ The data **must be physically sorted (correlated)** on disk along the indexed co
 ## Flashcards
 
 What does a [[BRIN Index]] store for each range of physical disk pages?::Only summary metadata — primarily the **minimum** and **maximum** column values across that contiguous range of pages (default 128 pages in [[PostgreSQL]]).
+^q-zwh4
 
 A [[BRIN Index]] is only effective when the column values are ==physically correlated (sorted) on disk==, such as `created_at` in an append-only table.
+^q-kuqm
 
 Why does a BRIN index degrade on a table with frequent historical `UPDATE`s?::Updates relocate tuples to different heap pages, stretching each block range's `[min, max]` bounds until the index can no longer skip pages.
+^q-uwys
 
 ## Related
 

@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-m9xv: { nid: 1795356715841, hash: 45wz7rv7, sync: nk6smrny }
+  q-frc3: { nid: 1795356715866, hash: h7rdpvre, sync: v6cnkdmf }
+  q-6ddc: { nid: 1795356715892, hash: y25bzitg, sync: styabevj }
+  q-hmrf: { nid: 1795356715918, hash: qr39ncg2, sync: 5b9f8utk }
+  q-7kiy: { nid: 1795356715942, hash: pc648vsr, sync: ey9muc5i }
+---
+
 A [[Kubernetes]] *control plane node* is a server running the collection of system services that make up the brains of the cluster (sometimes called *Masters* or *Head nodes*).
 
 Simple local setups run a single control plane node, while production environments run **3 or 5** control plane nodes for high [[Availability|availability]] (HA)—odd numbers for [[etcd]] [[Quorum Consensus|quorum]]. Best practice is to taint control plane nodes so user workloads do not compete for control plane CPU/RAM.
@@ -56,13 +65,18 @@ Decouples cloud-specific control loops (provisioning cloud [[Load Balancing|Load
 ## Flashcards
 
 What are the four core components of the [[Kubernetes]] control plane?::==`kube-apiserver`== (gateway + auth/admission), ==`etcd`== (Raft state store), ==`kube-controller-manager`== (reconciliation loops), and ==`kube-scheduler`== (Pod-to-node binding).
+^q-frc3
+^q-m9xv
 
 What happens to already-running user [[Pod|Pods]] if the Kubernetes control plane goes down temporarily?::Existing healthy Pods ==continue serving traffic== (data plane keeps running), but no new scheduling, self-healing, autoscaling, or EndpointSlice updates occur until the control plane recovers.
+^q-hmrf
+^q-6ddc
 
 ### What are the two phases `kube-scheduler` uses to place a Pending Pod onto a worker node? #card
 
 1. **Filtering**: removes infeasible nodes (insufficient CPU/memory requests, unmatched taints, nodeSelectors, port/volume constraints).
 2. **Scoring**: ranks feasible nodes by policies (affinity, `topologySpreadConstraints`, resource balance) and binds the Pod to the highest-scoring node.
+^q-7kiy
 
 ## Related
 - [[Kubernetes]]

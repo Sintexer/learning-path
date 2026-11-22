@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-ra5q: { nid: 1795356719717, hash: ihikymgh, sync: f4g7s4wq }
+  q-vgjr: { nid: 1795356719742, hash: a6djc9z4, sync: pgawb6qf }
+  q-cmm3: { nid: 1795356719766, hash: psvtk9hb, sync: e825x24x }
+  q-jaty: { nid: 1795356719791, hash: xn4yj49n, sync: zfbysx4a }
+---
+
 **Introduction:**
 HTTP/1.1 (RFC 9112) was introduced in 1997 as an improvement over HTTP/1.0 and became the backbone of the web and [[REST]] APIs for over two decades.
 
@@ -19,10 +27,14 @@ HTTP/1.1 (RFC 9112) was introduced in 1997 as an improvement over HTTP/1.0 and b
 ## Flashcards
 
 HTTP/1.1:::Text-based [[HTTP]] version over [[TCP]] introducing persistent `keep-alive` connections, chunked transfer encoding, `Host` headers, and rich caching—but limited to one active request per connection.
+^q-ra5q
 
 Why do browsers open ~6 parallel [[TCP]] connections per domain under HTTP/1.1?::To work around ==HTTP-level Head-of-Line blocking==, since only one request/response can be in flight per HTTP/1.1 connection.
+^q-cmm3
+^q-vgjr
 
 What causes HTTP Request Smuggling in HTTP/1.1 proxy chains?::Ambiguous framing when a [[Reverse proxy]] and backend disagree on `Content-Length` vs `Transfer-Encoding: chunked` message boundaries.
+^q-jaty
 
 ## Related
 - [[HTTP]]

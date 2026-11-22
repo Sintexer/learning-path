@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-x9ew: { nid: 1795356721492, hash: bwy5qea2, sync: mgskucji }
+  q-87ig: { nid: 1795356721518, hash: secanij9, sync: uhauqh3q }
+---
+
 Each service owns its persistent data and controls access to it (a foundational rule of [[Microservices architecture]] and [[DDD]] bounded contexts).
 
 ```
@@ -37,6 +43,7 @@ Replace them selectively with:
 > **Shared-database backdoor**: The moment Service B queries Service A's table directly "just for reporting," Service A loses the ability to refactor its schema safely. Enforce ownership with separate DB users/roles and expose read needs via APIs, events, or dedicated [[Data Warehouse]] / [[ETL]] pipelines.
 
 Database Per Service:::A microservice pattern where each service has exclusive ownership of its schema/data store and other services must interact only through its APIs or events, never direct SQL access.
+^q-x9ew
 
 ## What three database conveniences do you give up with Database Per Service, and what replaces them? #card
 You give up cross-service **SQL joins**, **foreign keys**, and **local [[ACID]] transactions**.
@@ -44,6 +51,7 @@ Replace them with:
 - **[[Aggregator]] / [[BFF]]** or **[[CQRS]] projections** (for joins/reads)
 - **[[Saga]]** (for multi-service transactions)
 - **[[Outbox Pattern]] / [[Change Data Capture]]** + **[[Reconciliation]]** (for cross-service consistency)
+^q-87ig
 
 ## Related
 - [[Microservices architecture]]

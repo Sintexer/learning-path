@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-8u9c: { nid: 1795356723716, hash: zuhcxvfr, sync: 549ct9sy }
+  q-uiqm: { nid: 1795356723741, hash: bq4ezvta, sync: aaz92xmk }
+---
+
 > AKA **Data Link layer**
 
 This [[OSI Model]] layer provides node-to-node data transfer between **adjacent devices on the same [[LAN]]**. It handles **framing**, **MAC addressing**, **error detection (CRC)**, and **media access control**.
@@ -8,8 +14,10 @@ This [[OSI Model]] layer provides node-to-node data transfer between **adjacent 
 ## Flashcards
 
 OSI Layer 2:::Data Link layer — moves frames between adjacent nodes on the same [[LAN]] using MAC addresses (switches, Ethernet, [[VLAN]]).
+^q-8u9c
 
 Which protocol bridges Layer 3 IP addresses to Layer 2 MAC addresses on a [[LAN]]?::ARP (Address Resolution Protocol) for IPv4; NDP (Neighbor Discovery Protocol) for IPv6.
+^q-uiqm
 
 ## Related
 - [[OSI Model]]

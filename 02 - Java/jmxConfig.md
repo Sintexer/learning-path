@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-ap85: { nid: 1795356731568, hash: fh6pmwzj, sync: tfkrqycn }
+---
+
 # JMX java opts config for app in [[Container|Docker]] to attach VisualVM
 
 ```bash
@@ -18,6 +23,7 @@
 ## Flashcards
 
 Why must `-Dcom.sun.management.jmxremote.rmi.port` be pinned alongside `jmxremote.port` when profiling a JVM inside a [[Container]]?::Without pinning `rmi.port`, JMX opens a random ephemeral RMI port that container port mappings and firewalls block, causing VisualVM/JConsole connections to hang.
+^q-ap85
 
 ## Related
 - [[jvmArgs]]

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-uyrz: { nid: 1795356728992, hash: 7zngfc4m, sync: 8xgidr9b }
+  q-2g8d: { nid: 1795356729017, hash: ch6wt3iu, sync: bhknke69 }
+---
+
 A [[Database]] provisioned, operated, and scaled on a cloud platform — either self-managed on cloud VMs ([[IaaS]]) or delivered as a fully managed **Database-as-a-Service (DBaaS)** (e.g., Amazon RDS/Aurora, DynamoDB, Google Cloud Spanner, Azure Cosmos DB, Snowflake).
 
 ## Deployment Models
@@ -15,8 +21,10 @@ A [[Database]] provisioned, operated, and scaled on a cloud platform — either 
 ## Flashcards
 
 How do cloud-native databases like AWS Aurora differ architecturally from traditional managed RDS instances?::They decouple stateless compute instances from a shared, distributed, multi-AZ storage layer so read replicas share storage without duplicating disk writes.
+^q-uyrz
 
 What operational responsibilities still belong to the engineering team even when using a fully managed DBaaS?::Schema design, indexing, query optimization, connection pooling, safe [[Schema Migration|migrations]], and tuning engine-specific maintenance (such as [[PostgreSQL]] `autovacuum`).
+^q-2g8d
 
 ## Related
 

@@ -1,6 +1,15 @@
+---
+flashcards:
+  q-chik: { nid: 1795356730724, hash: vz5j5r3x, sync: 6u27m3k4 }
+  q-bz83: { nid: 1795356730745, hash: bi49e6mj, sync: 54sm6i4k }
+  q-iih7: { nid: 1795356730766, hash: tghwj9vw, sync: 7u5nbk66 }
+  q-ebgx: { nid: 1795356730791, hash: cu2p68vw, sync: dckn96ez }
+---
+
 **Two Pointers** is an algorithmic pattern that maintains two indices moving through an array, string, or linked list to eliminate redundant work—turning naive \(O(n^2)\) nested loops into \(O(n)\) time and \(O(1)\) extra space.
 
 Two pointers reduces brute-force ==O(n²)== pair or subarray scans to ==O(n) time and O(1) space== when a monotonic invariant lets each step discard candidates safely.
+^q-chik
 
 ## Three Canonical Variants
 
@@ -15,6 +24,7 @@ Two pointers reduces brute-force ==O(n²)== pair or subarray scans to ==O(n) tim
    - **In-place array compaction**: `read` scans every element while `write` tracks the next output position (e.g., Remove Duplicates from Sorted Array).
 
 In Floyd's cycle detection (fast/slow pointers), after they meet inside a cycle, resetting one pointer to head and advancing both 1 step at a time finds ==the exact start node of the cycle==.
+^q-bz83
 
 > [!warning] Failure modes & trade-offs
 > - **Negative numbers break sliding-window monotonicity**: Variable-size sliding windows for subarray sums rely on expanding `r` monotonically increasing the sum (and shrinking `l` decreasing it). If negative numbers are present, this invariant breaks—use **prefix sums + a hash map** instead.
@@ -22,12 +32,14 @@ In Floyd's cycle detection (fast/slow pointers), after they meet inside a cycle,
 > - **`l < r` vs `l <= r`**: Pair problems requiring two distinct elements use `while (l < r)`, whereas single-element boundary or in-place partition checks may need `l <= r`.
 
 When does a variable-size sliding window fail for subarray-sum problems, and what replaces it?::When the array contains negative numbers (breaking monotonicity as the window expands/shrinks); use prefix sums + a hash map instead.
+^q-iih7
 
 ## What are the three main variants of the Two Pointers pattern? #card
 
 1. **Converging (opposite ends)**: Start at `0` and `n - 1` and move inward (sorted pair sums, 3Sum, container with most water).
 2. **Same-direction / Sliding Window**: Expand `right` and shrink `left` to maintain a contiguous subarray/substring invariant.
 3. **Fast & Slow / Read-Write**: Different speeds for linked-list cycle detection/midpoint, or `read`/`write` indices for in-place array deduplication and partitioning.
+^q-ebgx
 
 ## Related
 

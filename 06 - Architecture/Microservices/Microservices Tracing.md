@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-mfua: { nid: 1795356717517, hash: 6qnhxqnz, sync: 3qbbwmfy }
+  q-t5u2: { nid: 1795356717542, hash: pzca2cen, sync: 4udebryj }
+---
+
 Distributed tracing tracks and visualizes the end-to-end flow of a single request across multiple [[Microservices architecture|microservices]], databases, and async queues. It is essential for debugging latency bottlenecks, cascading failures, and fan-out bugs in distributed systems (see also [[Distributed Tracing]]).
 
 ## Key Concepts
@@ -26,8 +32,10 @@ Modern systems standardize on **[[OpenTelemetry]] (OTel)** for vendor-neutral in
 
 ## Why can a Trace break into disconnected fragments inside a Java microservice even when OpenTelemetry is installed? #card
 Trace context is typically stored in a `ThreadLocal`. When work crosses an async boundary — a custom `ExecutorService`, reactive operator, or [[Kafka]] message without header propagation — the context is lost unless explicitly captured and restored (e.g., via OTel `Context.wrap()` or message header injection).
+^q-mfua
 
 Correlate traces with logs by injecting ==`trace_id` and `span_id`== into structured logs alongside durable business IDs like ==`order_id` or `saga_id`==. #card-reminder
+^q-t5u2
 
 ## Related
 - [[Distributed Tracing]]

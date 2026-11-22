@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-35mg: { nid: 1795356728092, hash: ujpctygr, sync: e9wtqsnb }
+  q-z6dg: { nid: 1795356728119, hash: vjvnacwg, sync: wgx6cxrn }
+---
+
 ## Generalized Search Tree
 
 GiST is not a single index structure; it is an **extensible, balanced tree framework** designed for non-scalar, multi-dimensional, or hierarchical data.  
@@ -27,8 +33,10 @@ Related to [[GIN Index]].
 ## Flashcards
 
 What core mechanism allows a [[GiST Index]] to index geometric shapes, ranges, and k-NN vectors?::Hierarchical bounding predicates (bounding boxes/intervals) stored in internal nodes that enclose all child entries below them.
+^q-35mg
 
 Between [[GIN Index]] and [[GiST Index]], which is faster for static full-text/JSONB lookups and which is better for range overlaps (`&&`) and dynamic updates?::GIN is faster for static full-text/JSONB/array containment lookups; GiST is required for range overlaps/spatial/k-NN queries and has lower write overhead.
+^q-z6dg
 
 ## Related
 

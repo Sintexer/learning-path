@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-6gpd: { nid: 1795356726792, hash: kcpr576p, sync: q8nuxf5w }
+---
+
 > AKA **Structured Query Language** or **SEQUEL**
 
 **SQL (Structured Query Language)** is a powerful and versatile programming language designed specifically for managing data stored in [[Relational Database|relational databases]]. It allows users to perform various operations like creating and modifying [[Database|database]] structures, inserting and updating data, retrieving specific information based on complex criteria, and analyzing data for insights. SQL's standardized syntax and wide adoption across different database systems make it an essential skill for data analysts, developers, and anyone working with large amounts of structured data.
@@ -24,6 +29,7 @@ However, the power of SQL queries is in creating more complex queries that pull 
 ## Flashcards
 
 What are the four standard sub-languages of [[SQL]]?::DDL (`CREATE`/`ALTER`/`DROP`), DML (`SELECT`/`INSERT`/`UPDATE`/`DELETE`), TCL (`BEGIN`/`COMMIT`/`ROLLBACK`), and DCL (`GRANT`/`REVOKE`).
+^q-6gpd
 
 ## Related
 

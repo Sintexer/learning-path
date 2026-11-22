@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-empg: { nid: 1795356722291, hash: vyxtf37m, sync: vfk4qjsn }
+  q-ygyh: { nid: 1795356722318, hash: mthfi6uj, sync: 5jbve7m5 }
+---
+
 **Purpose:** Combine information from multiple sources into one response.
 
 ```
@@ -29,8 +35,10 @@ If the same expensive aggregation happens frequently, consider a **materialized 
 1. **Fan-out load & tail-latency amplification** (slowest required call dictates latency; 1 request multiplies into \(N\) downstream calls).
 2. **Compound unavailability** (failing any required dependency fails the whole request).
 Replace live aggregation with a **materialized [[CQRS]] projection** when the composed view is read-heavy, expensive to assemble, and can tolerate [[Eventual Consistency]].
+^q-empg
 
 A live Aggregator calling multiple services concurrently does ==not== produce a globally consistent snapshot; responses reflect each service at slightly different points in time. #card-reminder
+^q-ygyh
 
 ## Related
 - [[BFF]]

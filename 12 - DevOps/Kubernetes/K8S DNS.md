@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-a9k9: { nid: 1795356715748, hash: u847eduq, sync: cdkvqrek }
+  q-74zg: { nid: 1795356715768, hash: pkngr3nt, sync: 9pij94v3 }
+  q-pi8u: { nid: 1795356715791, hash: 5hnx5f4j, sync: iyrwye7d }
+  q-6cwu: { nid: 1795356715816, hash: b3jm82sf, sync: d8444isc }
+---
+
 The cluster's internal [[DNS]] service (backed by **CoreDNS**) runs as a [[K8S Deployment]] fronted by a `kube-dns` [[K8S Service]] with a static ClusterIP (e.g., `10.96.0.10`). `kubelet` injects that IP into every [[Pod]]'s `/etc/resolv.conf` so every container can automatically discover services by name without hardcoding IPs.
 
 ## DNS Naming Convention
@@ -36,12 +44,16 @@ With dual-stack IPv4 (`A`) + IPv6 (`AAAA`), that multiplies a single external DN
 ## Flashcards
 
 What is the full cluster DNS name format for a [[K8S Service]]?::`<service-name>.<namespace>.svc.cluster.local`
+^q-a9k9
 
 How does DNS resolution differ between a normal `ClusterIP` Service and a **Headless Service** (`clusterIP: None`)?::A normal Service resolves to one virtual ==`ClusterIP`==; a Headless Service returns ==individual ready Pod IPs== (used for StatefulSets and client-side [[gRPC]] load balancing).
+^q-pi8u
+^q-74zg
 
 ### Why does Kubernetes's default `ndots:5` setting cause DNS amplification and latency spikes for external API calls? #card
 
 Any hostname with fewer than 5 dots (e.g., `api.stripe.com`) is queried against all cluster search domains (`<ns>.svc.cluster.local`, `svc.cluster.local`, `cluster.local`) before trying the root domain—multiplying each lookup by 4–8x (with A + AAAA). Mitigate with `ndots:2`, trailing dots on external FQDNs, or **NodeLocal DNSCache**.
+^q-6cwu
 
 ## Related
 - [[DNS]]

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-7jwt: { nid: 1795356727491, hash: j3y5iegw, sync: yugp8ijv }
+  q-8k63: { nid: 1795356727519, hash: 3fgytan6, sync: m5drntu5 }
+---
+
 When the [[Relational Database|relational model]] was introduced, it included a new way of querying data:
 [[SQL]] is a *declarative* query language, whereas IMS and CODASYL queried the database using *imperative* code. What does that mean?
 
@@ -18,8 +24,10 @@ The SQL output doesn’t guarantee any particular ordering, and so it doesn’t 
 ## Flashcards
 
 Why do declarative query languages like [[SQL]] enable far better database optimization than imperative data-access code?::Because they declare *what* result is wanted without constraining *how* to execute it — freeing the query optimizer to choose indexes, join algorithms, and parallel execution plans automatically.
+^q-7jwt
 
 Why is a SQL query without an explicit `ORDER BY` allowed to return rows in a different order after an upgrade or index change?::SQL treats tables as unordered sets; leaving ordering unspecified lets the optimizer pick faster physical access paths (like hash joins or parallel scans).
+^q-8k63
 
 ## Related
 

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-ffyf: { nid: 1795356718492, hash: efp8nz99, sync: t4fjtdkx }
+  q-grx8: { nid: 1795356718516, hash: g5xd8dnv, sync: s74h4zhm }
+---
+
 A **critical section** is a part of a program that accesses a shared resource (like a variable, file, or [[Database|database]]) that must not be accessed by more than one process or thread at the same time.
 
 In short: **It is the "exclusive zone" where only one worker is allowed at a time to prevent errors.**
@@ -23,8 +29,10 @@ Any mechanism guarding a critical section must satisfy three properties:
 ## Flashcards
 
 What three properties must a correct critical section synchronization mechanism satisfy?::[[Mutual Exclusion]], Progress (no indefinite postponement when free), and Bounded Waiting (no starvation).
+^q-ffyf
 
 Never perform blocking I/O or external network calls inside a critical section—shrink the locked region to pure in-memory state transitions or eliminate it with the [[Single Writer Principle]]. #card-reminder
+^q-grx8
 
 ## Related
 - [[Mutual Exclusion]]

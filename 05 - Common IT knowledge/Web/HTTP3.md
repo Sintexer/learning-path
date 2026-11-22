@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-z6ts: { nid: 1795356719491, hash: bedfdpu5, sync: vcwn84he }
+  q-2n6z: { nid: 1795356719516, hash: bt4uyrq2, sync: b52xvddx }
+  q-cjxr: { nid: 1795356719542, hash: vw8766bu, sync: sqqeucew }
+  q-h68w: { nid: 1795356719566, hash: hykcgeeb, sync: 3whxvzxp }
+  q-gr4i: { nid: 1795356719591, hash: yxgxmm36, sync: sncbz493 }
+---
+
 **Introduction:**
 HTTP/3 (RFC 9114) is the latest major version of [[HTTP]], built on top of the **QUIC** transport protocol over [[UDP]] instead of [[TCP]]. It directly eliminates [[TCP]]-level Head-of-Line blocking, speeds up connection establishment, and handles mobile network transitions gracefully.
 
@@ -26,14 +35,19 @@ Clients typically discover HTTP/3 support via the `Alt-Svc` response header (or 
 ## Flashcards
 
 HTTP/3:::Latest [[HTTP]] version running over QUIC/[[UDP]] with built-in [[TLS]] 1.3, independent streams (no TCP Head-of-Line blocking), QPACK header compression, and Connection ID migration.
+^q-z6ts
 
 How does QUIC keep a connection alive when a mobile phone switches from Wi-Fi to cellular?::QUIC identifies connections by a ==Connection ID (CID)== rather than the IP/port 4-tuple, enabling seamless connection migration without re-handshaking.
+^q-cjxr
+^q-2n6z
 
 HTTP/2 uses ==HPACK== over [[TCP]], whereas HTTP/3 uses ==QPACK== over QUIC/[[UDP]] so out-of-order streams don't block header decoding.
+^q-h68w
 
 ### Why can HTTP/3 outperform HTTP/2 dramatically on lossy mobile networks? #card
 
 On a lossy network, a single lost packet in [[HTTP2]] stalls *all* multiplexed streams on the shared [[TCP]] connection. In HTTP/3 (QUIC), streams are independent so packet loss only delays the affected stream, and combined 1-RTT/0-RTT handshakes + Connection ID migration avoid reconnect stalls.
+^q-gr4i
 
 ## Related
 - [[HTTP]]

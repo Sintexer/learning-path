@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-uvfm: { nid: 1795356723292, hash: aaa3zeig, sync: pr9bx7kg }
+  q-54vw: { nid: 1795356723317, hash: cguj9hja, sync: tx5n6hen }
+  q-w55r: { nid: 1795356723342, hash: 3znh3qb9, sync: 7e6y838w }
+---
+
 > AKA **Secure Sockets Layer** (deprecated predecessor to [[TLS]])
 
 **SSL** was the original cryptographic protocol developed by Netscape in the mid-1990s to encrypt network traffic between clients and servers (giving rise to [[HTTPS]]). Although people still colloquially say "SSL certificate", **all versions of SSL are deprecated and insecure**—modern systems exclusively use [[TLS]] (1.2 and 1.3).
@@ -16,10 +23,13 @@
 ## Flashcards
 
 SSL:::Secure Sockets Layer — the deprecated predecessor to [[TLS]]; all SSL versions (1.0–3.0) are cryptographically broken and must be disabled.
+^q-uvfm
 
 Which attack forced the final deprecation of SSL 3.0?::POODLE (Padding Oracle On Downgraded Legacy Encryption) against CBC-mode ciphers.
+^q-54vw
 
 Modern production endpoints should disable SSL and TLS 1.0/1.1, allowing only ==[[TLS]] 1.2== (with AEAD/PFS cipher suites) and ==TLS 1.3==.
+^q-w55r
 
 ## Related
 - [[TLS]]

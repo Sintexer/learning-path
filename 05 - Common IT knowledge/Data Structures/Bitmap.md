@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-mihs: { nid: 1795356724693, hash: esizjsu9, sync: nup2rzb8 }
+---
+
 A **bitmap** is a data structure that represents a set of values using individual **bits** (0 or 1), where each bit indicates the presence, absence, or truth of some condition for a corresponding record or position. In the context of databases, a bitmap is most commonly encountered as a [[Bitmap Index]] — an indexing technique that uses bit arrays instead of trees or hashes to speed up queries, especially on columns with a small number of distinct values (low cardinality), and heavily used in [[Column-Oriented Storage]] and [[OLAP]] engines.
 
 ## Other Database Uses of Bitmaps
@@ -18,6 +23,7 @@ Beyond [[Bitmap Index|bitmap indexes]], bitmaps appear elsewhere in database int
 - **[[OLTP]]**: Mutating a single row modifies compressed bitmap segments and causes heavy lock contention, degrading concurrent write throughput.
 
 What does [[PostgreSQL]]'s visibility map track using one bit per page?::Whether all tuples on a heap page are visible to all active transactions, enabling index-only scans and skipping pages during `VACUUM`.
+^q-mihs
 
 ## Related
 - [[Bitmap Index]]

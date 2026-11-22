@@ -1,6 +1,10 @@
 ---
 aliases:
   - CAS
+flashcards:
+  q-xdci: { nid: 1795356718418, hash: 8tym7gm5, sync: vfe5pdqw }
+  q-sesc: { nid: 1795356718443, hash: ttv5d9cz, sync: i8kkm5y2 }
+  q-hcs6: { nid: 1795356718467, hash: ajvzypii, sync: 5z2dn53i }
 ---
 **CAS** stands for **Compare-And-Swap**. It is a way to update a piece of data without using "locks" (which can be slow and cause programs to freeze). It is a concrete technology that makes [[Optimistic Concurrency Control]] possible.
 
@@ -34,11 +38,14 @@ Imagine you want to update a value (e.g., a bank balance) from **100 to 150**.
 ## Flashcards
 
 Compare-And-Swap (CAS) is implemented by ==CPU hardware instructions== (not the OS kernel), enabling lock-free [[Optimistic Concurrency Control]].
+^q-xdci
 
 ## What is the ABA problem in Compare-And-Swap, and how is it mitigated? #card
 A thread reads value `A`, is paused while other threads mutate `A → B → A`, and then its CAS succeeds because the current value still matches `A` even though the underlying state changed (dangerous in lock-free linked structures with node reuse). Mitigate by pairing the value with a monotonically increasing stamp/version (e.g. `AtomicStampedReference`).
+^q-sesc
 
 Under high contention, prefer striped accumulators (like `LongAdder`) or the [[Single Writer Principle]] over hot CAS retry loops that thrash CPU caches. #card-reminder
+^q-hcs6
 
 ## Related
 - [[Optimistic Concurrency Control]]

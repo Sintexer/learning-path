@@ -1,4 +1,9 @@
-
+---
+flashcards:
+  q-ezpy: { nid: 1795356727720, hash: nyp2xeut, sync: vb5q8wyn }
+  q-vwi4: { nid: 1795356727744, hash: enw83pth, sync: 3n3mh7ux }
+  q-iq6f: { nid: 1795356727767, hash: 4w2tw6d6, sync: c4nsfa9n }
+---
 [[Pessimistic Locking]] assumes conflicts are likely, so it locks data **before** modifying it, blocking other transactions from touching the same rows until the lock is released.
 
 Optimistic locking assumes conflicts are **rare**, so it doesn't lock anything upfront. Instead, it lets transactions proceed freely and only checks for conflicts **at commit/update time**.
@@ -74,10 +79,13 @@ em.find(Account.class, id, LockModeType.OPTIMISTIC_FORCE_INCREMENT); // forces a
 ## Flashcards
 
 How does optimistic locking detect concurrent modifications at the SQL level?::By including the expected version in the `WHERE` clause (`UPDATE ... SET version = version + 1 WHERE id = ? AND version = ?`) and checking that 1 row was affected.
+^q-ezpy
 
 When does [[Optimistic Locking]] perform worse than [[Pessimistic Locking]]?::Under high contention on hot rows, where frequent version mismatches cause retry storms and wasted work.
+^q-vwi4
 
 What does `LockModeType.OPTIMISTIC_FORCE_INCREMENT` do in [[JPA]]?::It bumps the entity's `@Version` at commit even if none of its fields changed, protecting parent-child or multi-row invariants against concurrent updates.
+^q-iq6f
 
 ## Related
 

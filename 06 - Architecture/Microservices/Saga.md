@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-rpmj: { nid: 1795356717425, hash: ppuv2c4a, sync: xdtvjrfu }
+  q-jjxu: { nid: 1795356717450, hash: 38canymy, sync: cne4szgb }
+  q-mfss: { nid: 1795356717469, hash: txs45q6n, sync: hp768mdv }
+  q-y5bh: { nid: 1795356717491, hash: ecbdvp8h, sync: h7uqc5am }
+---
+
 **What is the Saga Pattern?** The Saga pattern is a design pattern for managing multi-service business workflows without distributed locks ([[Database Per Service]] — compare with [[2PC vs Saga]]). It achieves [[Eventual Consistency]] across multiple services by breaking a workflow into a sequence of local [[ACID]] transactions, where each step has a corresponding **compensating action** (a new forward business transaction that semantically undoes the effect) if a later step fails.
 
 ## Types of Sagas (see [[Microservices Orchestration and Choreography]])
@@ -41,16 +49,20 @@ If payment processing fails, compensating actions execute in reverse order:
 > - **Crash between DB update and command send**: Always persist Saga state transitions and outbound commands in the same transaction via the [[Outbox Pattern]] (or use [[Temporal]]).
 
 Saga Pattern:::Managing a multi-service workflow as a sequence of local transactions where failures are handled by executing compensating business transactions instead of holding distributed locks.
+^q-rpmj
 
 ## What are the three transaction types in a Saga (Compensatable, Pivot, Retryable)? #card
 1. **Compensatable**: Steps before the pivot that can be semantically undone if a later step fails (e.g., reserve stock).
 2. **Pivot**: The go/no-go point; once it succeeds, the Saga cannot roll back and must finish forward.
 3. **Retryable**: Steps after the pivot that must eventually succeed via idempotent retries (e.g., confirm order, send receipt).
+^q-jjxu
 
 ## Why can a Saga experience Isolation anomalies, and how do you mitigate them? #card
 Because each step commits locally immediately, intermediate states are visible to concurrent transactions (no global Isolation). Mitigate with **semantic locks** (explicit `PENDING` / `RESERVED` flags), **commutative updates**, and ordering irreversible steps at or after the **pivot transaction**.
+^q-mfss
 
 A Saga compensation is a ==new forward business transaction== (not a DB rollback), so it must be ==idempotent and retried until it succeeds==. #card-reminder
+^q-y5bh
 
 ## Related
 - [[2PC vs Saga]]

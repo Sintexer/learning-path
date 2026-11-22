@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-mi33: { nid: 1795356727919, hash: 7658r2uk, sync: fk8sh7j5 }
+  q-855d: { nid: 1795356727942, hash: h22qb4zr, sync: wrahve7j }
+  q-rp8s: { nid: 1795356727972, hash: 2qq5bkys, sync: ynk9zj3s }
+---
+
 Index is an *additional* data structure that is derived from the primary data. Many databases allow you to add and remove indexes, and this doesn't affect the contents of the database; it only affects the performance of queries. Maintaining additional structures incurs overhead, especially on writes. 
 
 There are different kinds of index implementation:
@@ -187,13 +194,16 @@ Traditional database indexes rely on exact matches or sorted range comparisons, 
 ## Flashcards
 
 What is the core trade-off of adding a [[Database Index]]?::It speeds up reads by avoiding full table scans, at the cost of extra disk/RAM space and slower writes (every `INSERT`/`UPDATE`/`DELETE` must maintain the index).
+^q-mi33
 
 In a covering index (`CREATE INDEX ... ON t(a) INCLUDE (b)`), why put `b` in `INCLUDE` instead of the index key?::`INCLUDE` columns are stored only in leaf pages as payload (not sorted in internal nodes), keeping the index smaller while still enabling index-only scans.
+^q-855d
 
 ## When should you prefer an [[LSM Tree]] over a [[B-Tree Index]]? #card
 
 - Choose **[[LSM Tree]]** when high write throughput and storage compression are the primary bottlenecks (sequential appends, no half-empty split pages).
 - Choose **[[B-Tree Index]]** when you need predictable $p99$ read latency (no compaction stalls) and straightforward [[ACID]] range locking.
+^q-rp8s
 
 ## Related
 

@@ -3,6 +3,7 @@ flashcards:
   q-6fpf: { hash: 2wb9crxa }
   q-5jjw: { nid: 1795259382951, hash: y95wwngv, sync: ggdjturd }
   q-aumi: { nid: 1795259383064, hash: 8de5nffv, sync: jpgw4q3h }
+  q-9ndp: { nid: 1795356725393, hash: 4cn3p6eb, sync: 5kzdjkvc }
 ---
 [[Leaderless Replication#Quorums for reading and writing|Quorums]] are not as fault-tolerant as they could be. A network interruption can easily cut off a client from a large number of database nodes. Although those nodes are alive, and other clients may be able to connect to them, to a client that is cut off from the database nodes, they might as well be dead. In this situation, it’s likely that fewer than w or r reachable nodes remain, so the client can no longer reach a quorum.
 
@@ -27,6 +28,7 @@ When the network interruption is fixed in a sloppy quorum, any writes that one n
 > - **Hint expiry & disk pressure**: In [[Apache Cassandra]], hints are only retained for a bounded window (`max_hint_window_in_ms`, default 3 hours). If a home node stays down longer than that window, hints are dropped and only [[Anti-Entropy]] repair can recover the missing writes.
 
 In [[Apache Cassandra]], if a home node remains offline longer than the hinted-handoff window, how must it recover missed writes?::By running [[Anti-Entropy]] repair (`nodetool repair`).
+^q-9ndp
 
 ## Related
 - [[Leaderless Replication]]

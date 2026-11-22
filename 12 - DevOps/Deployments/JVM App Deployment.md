@@ -1,3 +1,13 @@
+---
+flashcards:
+  q-98t7: { nid: 1795356716217, hash: e4ztp6h9, sync: m2thpf7r }
+  q-sefi: { nid: 1795356716241, hash: s6f7ybmt, sync: y7myngwt }
+  q-q2er: { nid: 1795356716266, hash: 46hbg722, sync: uax8g5sh }
+  q-qqp9: { nid: 1795356716292, hash: 2wtaseri, sync: xx8rp9gu }
+  q-qvcd: { nid: 1795356716317, hash: grjkddyt, sync: kipz4hpg }
+  q-7f6g: { nid: 1795356716342, hash: u22xjgta, sync: 4dapyw33 }
+---
+
 To build a robust [[Zero-downtime deployment]] for a JVM application, you need to wire JVM bootstrap, memory sizing, and shutdown semantics cleanly into the [[Kubernetes]] and [[Container]] lifecycle.
 
 ## Startup, Readiness, and Liveness Probes ([[Health Checks]])
@@ -34,14 +44,20 @@ If Spring receives `SIGTERM` immediately—even with `server.shutdown=graceful`�
 ## Flashcards
 
 Why does `server.shutdown=graceful` alone still drop requests during a [[Kubernetes]] rolling update?::Because `EndpointSlice`/`kube-proxy` removal and `SIGTERM` delivery happen ==in parallel==; a `preStop` sleep (e.g., 5–10s) delays `SIGTERM` until load balancers stop routing new traffic to the pod.
+^q-sefi
+^q-98t7
 
 In Kubernetes, `terminationGracePeriodSeconds` must be strictly greater than ==`preStop` duration + application graceful-shutdown timeout== (otherwise `kubelet` sends `SIGKILL` mid-drain).
+^q-q2er
 
 Why should you never check external dependencies (DB, [[Redis]], downstream APIs) inside a Kubernetes liveness probe?::A brief downstream outage would fail liveness on all pods simultaneously, triggering a cluster-wide ==restart storm== that worsens the outage.
+^q-qvcd
+^q-qqp9
 
 ### Why can a JVM container get `OOMKilled` (exit 137) even when heap usage is below `-Xmx`? #card
 
 Because the Kubernetes cgroup memory limit applies to **total process RSS** (Java heap + Metaspace + code cache + thread stacks + direct byte buffers + native allocations). Setting `-Xmx` near 100% of the container limit leaves no room for off-heap memory, causing the Linux kernel OOM killer to terminate the pod.
+^q-7f6g
 
 ## Related
 - [[Zero-downtime deployment]]

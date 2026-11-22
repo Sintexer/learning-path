@@ -1,6 +1,15 @@
+---
+flashcards:
+  q-iexc: { nid: 1795356732341, hash: 97ensc23, sync: ievttamt }
+  q-gwzr: { nid: 1795356732367, hash: a34gtcik, sync: kfgqptfa }
+  q-62ic: { nid: 1795356732392, hash: fy7in9sx, sync: qsyfwj68 }
+  q-v43q: { nid: 1795356732426, hash: zgkaidvt, sync: a42zu5ek }
+---
+
 **CORS (Cross-Origin Resource Sharing)** is a browser-enforced [[HTTP]] header mechanism that selectively relaxes the **Same-Origin Policy (SOP)**, allowing a web app on Origin A to read responses from an [[API]] on Origin B.
 
 What three components define a browser Origin?::Scheme (protocol), host (domain), and port.
+^q-iexc
 
 ## Simple vs Preflight Requests
 
@@ -15,6 +24,7 @@ What three components define a browser Origin?::Scheme (protocol), host (domain)
 - `Access-Control-Max-Age`: Caches preflight results in the browser to avoid extra `OPTIONS` round-trips.
 
 When `Access-Control-Allow-Credentials` is `true`, `Access-Control-Allow-Origin` ==cannot be the wildcard `*` and must match an exact allowlisted origin==.
+^q-gwzr
 
 > [!warning] Failure modes & trade-offs
 > - **CORS is NOT a server-side security boundary or CSRF defense**: Only browsers enforce CORS (`curl`, scripts, and proxies ignore it). Worse, a simple cross-origin `POST` with cookies still executes on your server before the browser hides the response. Defend against CSRF with `SameSite=Lax/Strict` cookies, CSRF tokens, or non-cookie `Authorization` headers.
@@ -22,12 +32,14 @@ When `Access-Control-Allow-Credentials` is `true`, `Access-Control-Allow-Origin`
 > - **Cache poisoning without `Vary: Origin`**: Returning a dynamic `Access-Control-Allow-Origin` without `Vary: Origin` causes [[CDN]] or [[Reverse proxy]] caches to serve Origin A's header to Origin B, breaking clients intermittently.
 
 Always send `Vary: Origin` when dynamically setting `Access-Control-Allow-Origin` so CDNs and reverse proxies do not cache one origin's CORS header for another. #card-reminder
+^q-62ic
 
 ## Why is CORS NOT a defense against CSRF? #card
 
 1. CORS is enforced only by browsers on **reading responses** for simple requests—a malicious site can still trigger a simple cross-origin `POST` form submission carrying the victim's cookies, executing the state change on the backend before the browser blocks JS from reading the response.
 2. Non-browser clients (`curl`, bots) ignore CORS completely.
 3. Defend against CSRF with `SameSite` cookies, anti-CSRF tokens, or `Authorization` headers (which are never attached automatically by browsers).
+^q-v43q
 
 ## Related
 

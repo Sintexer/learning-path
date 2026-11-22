@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-b29v: { nid: 1795356717941, hash: acdievqn, sync: q2q76gvi }
+  q-9tha: { nid: 1795356717967, hash: d5g9k3ix, sync: vaupbjc8 }
+  q-z7y5: { nid: 1795356717993, hash: 7ktzq5x9, sync: wcgqhzcp }
+---
+
 **Domain-Driven Design (DDD)** is a software-design approach where the system's structure and terminology are based on the **business domain** and its rules.
 
 It is especially useful for applications with complex business logic, such as banking, insurance, logistics, healthcare, or e-commerce.
@@ -189,13 +196,16 @@ It may be unnecessary for:
 DDD introduces modeling and architectural overhead, so it should be applied where domain complexity justifies it.
 
 Bounded Context:::An explicit logical boundary within which a domain model and its Ubiquitous Language have a single, unambiguous meaning (allowing e.g. `Customer` to mean different things in Billing vs. Shipping).
+^q-b29v
 
 Aggregate (DDD):::A cluster of entities and value objects treated as a single transactional consistency boundary, accessed exclusively through its Aggregate Root.
+^q-9tha
 
 ## What are three key design rules for sizing DDD Aggregates in high-throughput systems? #card
 1. Keep aggregates **small** — include only what is required to enforce a true transactional invariant.
 2. Reference other aggregates **by ID only** rather than embedding object graphs.
 3. Modify **one aggregate per local transaction**, propagating changes to other aggregates asynchronously via domain events ([[Outbox Pattern]]) or a [[Saga]].
+^q-z7y5
 
 ## Related
 - [[Microservices decomposition]]

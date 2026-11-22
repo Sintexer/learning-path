@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-9jxb: { nid: 1795356724767, hash: r2qsyiwd, sync: dturmkk9 }
+  q-95ap: { nid: 1795356724792, hash: sqnjfhnp, sync: b2s395t5 }
+  q-858j: { nid: 1795356724818, hash: fkh2igpk, sync: 57ektufh }
+---
+
 > Log-Structured Merge-Tree
 
 An **LSM-Tree (Log-Structured Merge-Tree)** is a data structure optimized for write-heavy workloads, commonly used in modern [[NoSQL database]]s, key-value stores, and distributed [[Database Storage Engines|storage engines]] (such as [[Apache Cassandra]], RocksDB, LevelDB, and ClickHouse). It is essentially an implementation of a [[Database Index]].
@@ -51,14 +58,17 @@ Even though there are many subtleties, the basic idea of LSM-trees—keeping a c
 
 ## How does an LSM-Tree handle deletes when SSTables are immutable? #card
 It writes a special deletion marker called a **tombstone** to the memtable (and WAL). Reads encountering a tombstone stop searching older SSTables and return "not found." The deleted key and its tombstone are only physically reclaimed later during background compaction.
+^q-9jxb
 
 ## Compare size-tiered vs leveled compaction in LSM-Trees. #card
 - **Size-tiered compaction**: Merges similarly sized SSTables together. Lower write amplification, better for pure write-heavy workloads, but higher space amplification (up to ~50% disk headroom needed) and more SSTables to check on reads.
 - **Leveled compaction**: Splits key ranges into non-overlapping SSTables per level (each level ~10× larger). Lower space amplification and faster reads, at the cost of higher write amplification.
 
 LSM-Trees achieve high write throughput by converting ==random in-place disk writes== into ==sequential append-only writes== (memtable + WAL + flushed SSTables).
+^q-95ap
 
 Monitor compaction backlog on LSM-Tree databases: if compaction falls behind incoming writes, the engine triggers write stalls and p99 latency spikes. #card-reminder
+^q-858j
 
 ## Related
 - [[SSTable]]

@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-iz8w: { nid: 1795356725592, hash: jyuw5pyv, sync: 8xgyb26j }
+---
+
 This mode of [[Replication]] (also known as *primary-replica* or *active-passive* replication; see [[Active-passive systems]]) is a built-in feature of most [[Relational Database|relational databases]] ([[PostgreSQL]], MySQL, Oracle) as well as many distributed stores ([[MongoDB]], [[Kafka]] partitions). Under the hood, the leader feeds the [[Replication Log]] to the followers.
 
 ## Leader
@@ -36,6 +41,7 @@ To spawn new followers without downtime, you capture a consistent database snaps
 How does a new follower join a leader-based cluster without locking the database for writes?::Take a consistent snapshot at a known log position, copy it to the follower, then stream and apply all [[Replication Log]] entries since that exact position until caught up.
 
 In [[Leader-Based Replication]], prevent a zombie old leader from corrupting storage after failover by using ==[[Fencing Token|fencing tokens]]== or quorum-enforced epochs.
+^q-iz8w
 
 ## Related
 - [[Replication]]

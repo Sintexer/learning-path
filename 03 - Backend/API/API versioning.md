@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-ev8m: { nid: 1795356733618, hash: n5s9jymk, sync: npavj4si }
+  q-hg4u: { nid: 1795356733642, hash: 9crmg4gw, sync: rebq55p5 }
+---
+
 API versioning is a critical aspect of [[API]] design and management, ensuring that changes to an API do not break existing clients. It allows developers to introduce new features, fix bugs, and make improvements without disrupting the services that depend on the API.
 
 #### Different Approaches to API Versioning
@@ -139,8 +145,10 @@ By understanding these different approaches, their pros and cons, and best pract
 ## Flashcards
 
 Why is [[URI]] versioning (`/v1/...`) more cache-friendly than Header versioning?::HTTP caches and [[CDN|CDNs]] key entries by [[URL]] by default; Header versioning requires an explicit `Vary` response header to prevent serving the wrong version from cache.
+^q-ev8m
 
 Prefer additive, [[Backward Compatibility|backward-compatible]] schema evolution over frequent major API versions—every supported version multiplies maintenance and testing cost. #card-reminder
+^q-hg4u
 
 ## Related
 - [[API]]

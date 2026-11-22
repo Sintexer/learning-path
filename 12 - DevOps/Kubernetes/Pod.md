@@ -1,3 +1,12 @@
+---
+flashcards:
+  q-k34y: { nid: 1795356714792, hash: ninpe4kt, sync: qbz4rx6j }
+  q-twvd: { nid: 1795356714817, hash: c2fzw4n5, sync: rzt86gmq }
+  q-qtgj: { nid: 1795356714841, hash: kqfyutet, sync: x49tcajf }
+  q-hxta: { nid: 1795356714868, hash: wiue6pum, sync: p569sy42 }
+  q-84yu: { nid: 1795356714893, hash: r97bm5ni, sync: m84fvqaw }
+---
+
 A **Pod** is the smallest deployable and schedulable unit in [[Kubernetes]]—a sandbox that runs one or more tightly coupled [[Container|containers]]. Pods themselves don't execute application code; applications run inside containers hosted in the Pod's shared environment.
 
 Pods ring-fence an area of the host OS via the `pause` container ([[K8S Core Containers]]), creating shared Linux namespaces so all containers in the Pod share:
@@ -48,12 +57,17 @@ Kubernetes assigns every Pod a **Quality of Service (QoS)** class based on conta
 ## Flashcards
 
 What resources do containers inside the same [[Kubernetes]] [[Pod]] share?::The same ==network namespace== (IP, ports, `localhost`), ==IPC namespace==, and mounted ==volumes== (all scheduled atomically on the same worker node).
+^q-twvd
+^q-k34y
 
 What are the three Kubernetes Pod QoS classes in order from *last* evicted to *first* evicted under memory pressure?::1. ==`Guaranteed`== (`requests == limits`), 2. ==`Burstable`==, 3. ==`BestEffort`== (no requests/limits).
+^q-hxta
+^q-qtgj
 
 ### What is the difference between exceeding a Pod's memory limit vs exceeding its CPU limit? #card
 
 Memory is incompressible: exceeding a container's memory `limit` causes the Linux kernel to immediately terminate the process (**`OOMKilled`**, exit code `137`). CPU is compressible: exceeding a CPU `limit` does not kill the Pod, but triggers **CFS CPU throttling**, which can cause severe p99 latency spikes.
+^q-84yu
 
 ## Related
 - [[Multi-container Pods]]

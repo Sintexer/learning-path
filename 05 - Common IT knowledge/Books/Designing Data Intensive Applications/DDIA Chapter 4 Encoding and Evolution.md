@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-ni52: { nid: 1795356729392, hash: zdq5y2kr, sync: ac5vhiry }
+---
+
 **Core topic:** Data serialization and compatibility
 **Central question:** How can independently changing components continue exchanging and interpreting data correctly?
 
@@ -62,6 +67,7 @@ During a typical server-first deployment, API requests require ==backward compat
 **IT mapping:** [[API]] contracts; [[API versioning]]; schema registries; service integration; event schemas; [[Zero-downtime deployment|rolling deployment]]; [[Schema Migration|backward-compatible migrations]]; serialization security.
 
 **Connections:** `C02` schema assumptions; `C05` [[Replication]] dataflow; `C08` remote-call failures; `C11` event-stream compatibility.
+^q-ni52
 
 ## Related
 - [[Data Encoding]]

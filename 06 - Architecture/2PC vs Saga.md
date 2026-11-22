@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-puyi: { nid: 1795356718041, hash: vsmx5h6a, sync: yd98prdz }
+  q-dmrf: { nid: 1795356718066, hash: gz7nf5t7, sync: d825mg7t }
+---
+
 > [!note] Quick context on [[Worker Leases]]
 > When recovering a [[Saga]] step, **lease expiration** makes a row eligible for another worker to claim, provided `next_attempt_at` has also arrived:
 > - `lease_until`: "Is another worker still entitled to process this?"
@@ -238,11 +244,13 @@ If action A is irreversible and action B may fail, redesign the workflow: valida
 
 ## Why is Two-Phase Commit (2PC) called a blocking protocol? #card
 Once a participant votes **YES** in the Prepare phase, it has promised to honor the coordinator's decision and **cannot unilaterally abort or commit**. If the coordinator crashes before delivering COMMIT/ABORT, prepared participants remain **in-doubt**, holding locks and blocking conflicting transactions until the coordinator recovers.
+^q-puyi
 
 ## What ACID property does a Saga sacrifice compared to 2PC, and how do you mitigate it? #card
 A [[Saga]] sacrifices **Isolation** because each local step commits immediately, making intermediate states visible to concurrent requests. Mitigate with **semantic locks** (e.g., `PAYMENT_PENDING` / `RESERVED` flags), ordering steps around a **pivot transaction**, and [[Reconciliation]].
 
 When should you NOT use a Saga?::When a single local database transaction is sufficient, when intermediate states are strictly unacceptable, or when an irreversible step must execute before a failure-prone step without a viable mitigation.
+^q-dmrf
 
 ## Related
 - [[Two-Phase Commit]]

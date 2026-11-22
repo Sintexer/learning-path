@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-znvz: { nid: 1795356731417, hash: i8icucr9, sync: it2k9eex }
+  q-3h5w: { nid: 1795356731450, hash: 2qqhb5c7, sync: xee5cf2h }
+  q-q58p: { nid: 1795356731467, hash: bbq8nzzv, sync: 4dwethrv }
+  q-r3nf: { nid: 1795356731492, hash: q4rexiuj, sync: en3ptzhg }
+---
+
 ## Java 11 → 25: The Senior Overview
 
 I'll group by theme rather than strict version order, since that's how you'd actually reason about adopting them. LTS releases are **11, 17, 21, 25** — most shops jump between those.
@@ -194,11 +202,15 @@ void main() {    System.out.println("Hello");}
 ## Flashcards
 
 Why should you prefer `ScopedValue` over `ThreadLocal` when using [[Virtual Threads]]?::`ScopedValue` is immutable, lexically scoped (auto-unbound on exit), and lightweight across millions of virtual threads, avoiding `ThreadLocal` memory leaks and per-thread cache bloat.
+^q-znvz
 
 What does combining `sealed` types with pattern-matching `switch` give you at compile time?::==Exhaustiveness checking==—the compiler verifies all permitted subtypes are handled without needing a catch-all `default` branch.
+^q-q58p
+^q-3h5w
 
 ## How should you limit downstream concurrency when using Virtual Threads? #card
 Never pool [[Virtual Threads]] (create one per task). Instead, bound concurrent access to scarce downstream resources (DB pools, external APIs) with a `Semaphore` or [[Bulkhead Pattern]] to apply [[Backpressure]].
+^q-r3nf
 
 ## Related
 - [[Java versions]]

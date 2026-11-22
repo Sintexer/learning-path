@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-i6v6: { nid: 1795356719417, hash: 3chqa8nd, sync: f6s9vjzy }
+  q-kdse: { nid: 1795356719441, hash: mnta4ydg, sync: y2exvpnv }
+  q-8kx9: { nid: 1795356719467, hash: x84bxvd2, sync: 5vwqrfak }
+---
+
 > AKA **Hypertext Transfer Protocol Secure**
 
 **HTTPS** is [[HTTP]] layered over [[TLS]] (historically [[SSL]]), using default port **443** ([[TCP]] for [[HTTP1.1]]/[[HTTP2]], [[UDP]] for [[HTTP3]]/QUIC).
@@ -22,10 +29,13 @@
 ## Flashcards
 
 HTTPS:::[[HTTP]] over [[TLS]] (default port 443), providing confidentiality, integrity, and CA-backed server authentication.
+^q-i6v6
 
 What parts of an HTTPS request remain visible to a network eavesdropper (without ECH/DoH)?::Destination IP/port, [[DNS]] query, TLS SNI hostname, and traffic size/timing (while URL path, query params, headers, and body are encrypted).
+^q-kdse
 
 What HTTP header protects against SSL-stripping downgrade attacks by forcing browsers to use HTTPS?::`Strict-Transport-Security` (HSTS).
+^q-8kx9
 
 ## Related
 - [[HTTP]]

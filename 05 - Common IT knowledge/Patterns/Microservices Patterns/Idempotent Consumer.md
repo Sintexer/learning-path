@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-kdfq: { nid: 1795356721792, hash: p4djpnq8, sync: sbrxkku8 }
+  q-gtyz: { nid: 1795356721817, hash: pkmzkeie, sync: 8xiwuzm4 }
+  q-yxrw: { nid: 1795356721842, hash: t3ifngs8, sync: r6y4kdea }
+---
+
 > **Central question:** If the broker can deliver a message more than once ([[At-least-once delivery]]), how do we prevent duplicate business effects?
 
 From the [[Outbox Pattern]], we know this sequence is unavoidable in a basic implementation:
@@ -50,11 +57,14 @@ Inside **one local database [[Transaction]]**:
 > - **External side effects (email, third-party APIs)**: A local DB transaction cannot wrap an external HTTP call; pair the inbox with an outbound [[Idempotency Key]] supported by the downstream provider and a [[Reconciliation]] job.
 
 Idempotent Consumer:::A consumer that tracks processed message IDs (inbox table) or enforces monotonic state guards inside the same local transaction as its business update, making duplicate deliveries safe.
+^q-kdfq
 
 ## How do you implement an Idempotent Consumer atomically in PostgreSQL? #card
 In **one local transaction**: insert `event_id` into a `processed_events` table with a `PRIMARY KEY` / `UNIQUE` constraint (`INSERT ... ON CONFLICT DO NOTHING`). If the insert affects 0 rows, skip processing as a duplicate; otherwise apply the business update and commit both together.
+^q-gtyz
 
 Never store an Idempotent Consumer's deduplication state in ==a separate store (like Redis)== from its business database; crashes between the two reintroduce ==Dual-Write duplicates==. #card-reminder
+^q-yxrw
 
 ## Related
 - [[Delivery Semantics]]

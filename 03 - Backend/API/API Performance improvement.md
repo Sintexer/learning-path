@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-v8qz: { nid: 1795356733568, hash: qs688m26, sync: 7vkuvcwk }
+  q-nhzv: { nid: 1795356733594, hash: w476vb87, sync: zu2tisjs }
+---
+
 ## Pagination
 
 This is a common optimization when the size of the result is large. The results are returned in bounded pages (or streamed back to the client) to improve service responsiveness and cap memory usage.
@@ -33,8 +39,10 @@ When accessing resources, we often need to load data from the [[Database|databas
 `OFFSET N` forces the database to scan and discard `N` rows on every page (linear degradation as pages get deeper) and can skip or duplicate rows if items are inserted/deleted between requests. Cursor pagination seeks directly via an index (`WHERE id > :cursor LIMIT k`) in `O(log N)` time with stable ordering.
 
 What is a cache stampede (thundering herd), and name two mitigations?::Many concurrent requests miss an expired hot cache key at once and overload the backing database; mitigate with singleflight/lock coalescing, jittered TTLs, or probabilistic early refresh.
+^q-v8qz
 
 Do not oversize database connection pools to match HTTP thread counts—keep pools small and bounded to prevent database contention, and apply [[Backpressure]] or [[Rate Limiting]] upstream. #card-reminder
+^q-nhzv
 
 ## Related
 - [[API]]

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-eq74: { nid: 1795356714395, hash: i4wayn9m, sync: vxw267mk }
+  q-jmb5: { nid: 1795356714416, hash: j5u9dfkg, sync: nqt8572m }
+---
+
 > Pronounced *container dee*
 
 **containerd** is an industry-standard, CNCF-graduated, high-level [[Container]] runtime used by [[Kubernetes]] (via [[Container Runtime Interface|CRI]]) and also used under the hood by Docker Engine itself.
@@ -18,8 +24,10 @@ Kubernetes standardized on `containerd` (and CRI-O) because removing the extra D
 ## Flashcards
 
 containerd:::CNCF-graduated, high-level [[Container]] runtime that implements [[Kubernetes]] [[Container Runtime Interface|CRI]] for image management and container lifecycle, delegating low-level execution to [[Open Container Initiative|OCI]] runtimes like `runc`.
+^q-eq74
 
 What is the execution chain from `kubelet` down to a running Linux container process on a modern Kubernetes node?::`kubelet` --([[Container Runtime Interface|CRI]])--> `containerd` --([[Open Container Initiative|OCI]])--> `runc` --> Linux container process.
+^q-jmb5
 
 ## Related
 - [[Container Runtime Interface]]

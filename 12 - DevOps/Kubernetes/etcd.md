@@ -1,3 +1,13 @@
+---
+flashcards:
+  q-2ics: { nid: 1795356714442, hash: 2y5mjds7, sync: jq4jpfmz }
+  q-hjnb: { nid: 1795356714468, hash: 9xfnbqxv, sync: 4p2zhxpb }
+  q-dxuk: { nid: 1795356714492, hash: cdq92ehs, sync: ikjtu7av }
+  q-kvx5: { nid: 1795356714517, hash: iex4eq76, sync: 39vihwgi }
+  q-cibe: { nid: 1795356714541, hash: 8kc4wrb5, sync: trf3ice5 }
+  q-zjyz: { nid: 1795356714567, hash: knx55q2m, sync: 6gwfzg8d }
+---
+
 **etcd** is a strongly consistent ([[Linearizability|linearizable]]), distributed key-value store used as the single source of truth for [[Kubernetes]] cluster state and configuration.
 
 At its core, `etcd` uses the **[[Raft]]** consensus algorithm to replicate a write-ahead log ([[WAL]]) across a cluster of odd-numbered nodes, ensuring strong consistency and fault tolerance across node failures and network partitions (CP in the [[CAP Theorem]]).
@@ -25,14 +35,20 @@ In [[Kubernetes]], **only the [[K8S Control Plane#API Server|API Server]] talks 
 ## Flashcards
 
 etcd:::Strongly consistent, [[Raft]]-backed distributed key-value store serving as the sole persistent state store for [[Kubernetes]].
+^q-2ics
 
 Why should an `etcd` cluster always have an **odd** number of nodes (3 or 5) rather than 4?::A 4-node cluster requires quorum 3 (tolerating only ==1== failure)—the exact same fault tolerance as a ==3-node== cluster, while adding extra [[Raft]] replication overhead and split-vote risk.
+^q-dxuk
+^q-hjnb
 
 What happens to a [[Kubernetes]] cluster if `etcd` loses [[Quorum Consensus|quorum]] (e.g., 2 of 3 members go down)?::`etcd` stops accepting writes to prevent ==[[Split-Brain]]==; already-running Pods keep serving traffic, but no new Pods, rollouts, EndpointSlice updates, or failovers can occur until quorum is restored.
+^q-cibe
+^q-kvx5
 
 ### Why is dedicated low-latency SSD/NVMe storage mandatory for `etcd` in production? #card
 
 Every [[Raft]] commit requires an `fsync` to the [[WAL]] before acknowledging the leader. Slow disk I/O causes `etcd` heartbeats to time out, triggering continuous leader election storms that destabilize the entire `kube-apiserver` and cluster.
+^q-zjyz
 
 ## Related
 - [[K8S Control Plane]]

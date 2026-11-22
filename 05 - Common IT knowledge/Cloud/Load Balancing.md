@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-56p2: { nid: 1795356729843, hash: ah8u2kua, sync: mk94tfj4 }
+  q-xjg3: { nid: 1795356729866, hash: xmu9jdje, sync: pe5fznk4 }
+  q-knzk: { nid: 1795356729892, hash: m75s7z9m, sync: eetbu8bq }
+  q-7vzg: { nid: 1795356729918, hash: gz9chvf7, sync: a3zs2ex7 }
+---
+
 A **load balancer** distributes incoming network traffic across multiple backend instances to improve throughput, [[Availability|availability]], and fault isolation.
 
 ## L4 vs L7 Load Balancing
@@ -28,14 +36,18 @@ A **load balancer** distributes incoming network traffic across multiple backend
 ## Flashcards
 
 What is the key difference between L4 and L7 load balancing?::L4 routes at the [[TCP]]/[[UDP]] connection level (IP + port, fast, no payload inspection); L7 terminates [[TLS]]/[[HTTP]] and routes per-request using URL, headers, or host.
+^q-56p2
 
 Why does L4 load balancing fail to evenly distribute [[gRPC]] or [[HTTP2]] traffic?::Because HTTP/2 multiplexes many requests over a single long-lived [[TCP]] connection, so an L4 balancer pins all requests from that client to one backend; L7 or client-side load balancing is required.
+^q-xjg3
 
 Using ==[[Consistent Hashing]]== instead of modulo hashing ensures that adding or removing a backend node only remaps a minimal fraction of keys.
+^q-knzk
 
 ## Why is Power of Two Choices (P2C) preferred over global least-connections in distributed load balancers? #card
 
 With multiple independent load balancers, global least-connections suffers from stale metrics and "thundering herd" (all balancers pile onto the same newly-idle node). Sampling two random nodes and picking the less loaded one achieves near-optimal balance with O(1) work and no global state.
+^q-7vzg
 
 ## Related
 - [[Reverse proxy]]

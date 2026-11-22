@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-rawa: { nid: 1795356717791, hash: 689ewd6m, sync: s9bpncfi }
+  q-p675: { nid: 1795356717816, hash: i4vx86az, sync: w8hid7kp }
+---
+
 Service **orchestration** and **choreography** are two approaches to managing multi-step interactions and [[Saga|Sagas]] across [[Microservices architecture|microservices]].
 
 ## Service Orchestration
@@ -28,8 +34,10 @@ Service **orchestration** and **choreography** are two approaches to managing mu
 
 ## When should you choose Orchestration over Choreography for a multi-service workflow? #card
 Choose **Orchestration** when a workflow has 4+ steps, conditional branching, strict step ordering, or explicit [[Saga]] compensation — because keeping state transitions in one place (e.g., [[Temporal]] or a [[Saga State Table]]) prevents "pinball architecture" and makes failures easy to inspect and recover. Use **Choreography** for loosely coupled fan-out reactions (notifications, analytics, [[CQRS]] projections).
+^q-rawa
 
 Keep an orchestrator focused on ==workflow sequencing and failure recovery== — never let it absorb ==domain business rules== that belong in the participating services. #card-reminder
+^q-p675
 
 ## Related
 - [[Saga]]

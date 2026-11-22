@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-6av7: { nid: 1795356731718, hash: wn3j4c62, sync: 3nfsyr5b }
+  q-g6ia: { nid: 1795356731742, hash: 2atz6r3u, sync: g5cybn2j }
+  q-8usi: { nid: 1795356731775, hash: 2ryrcick, sync: jpwb8ecw }
+  q-iz7w: { nid: 1795356731797, hash: 9ufutiek, sync: pirizy6f }
+---
+
 The **Java Memory Model (JMM)** is the set of rules that defines what one thread is allowed to observe when multiple threads access shared memory.
 
 It answers questions like:
@@ -47,11 +55,15 @@ A useful informal interpretation is:
 ## Flashcards
 
 What does `A happens-before B` guarantee in the Java Memory Model?::The effects of action `A` are guaranteed to be ==visible== to `B`, and neither the compiler nor CPU may reorder operations in a way that violates that ordering.
+^q-g6ia
+^q-6av7
 
 ## Why does Double-Checked Locking in Java require the instance field to be `volatile`? #card
 Without `volatile`, object allocation and constructor execution can be reordered so another thread observes a non-null reference to a **partially constructed** object. Marking the field `volatile` establishes a happens-before edge between constructor writes (before the volatile write) and subsequent reads.
+^q-8usi
 
 `volatile` guarantees visibility and ordering (happens-before), NOT atomicity of compound read-modify-write operations like `count++`—use `Atomic*` ([[Compare-And-Swap|CAS]]) or locks for those. #card-reminder
+^q-iz7w
 
 ## Related
 - [[concurrency]]

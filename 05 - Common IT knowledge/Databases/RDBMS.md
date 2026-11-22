@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-jpp5: { nid: 1795356727025, hash: vvq8998c, sync: 8hzebhi4 }
+  q-h382: { nid: 1795356727044, hash: b2bhbn8b, sync: 98a372ih }
+---
+
 > AKA **Relational Database Management System**
 
 With a **relational database management system (RDBMS)**, you can create, update, and administer a [[Relational Database|relational database]]. It is a [[DBMS]] built around the relational model (tables, rows, columns, and declarative constraints).
@@ -19,8 +25,10 @@ You communicate with an RDBMS using Structured Query Language ([[SQL]]).
 ## Flashcards
 
 How does a traditional [[RDBMS]] scale reads versus writes?::Reads scale horizontally via [[Leader-Based Replication|read replicas]] (accepting [[Replication Lag]]); writes initially scale via [[Vertical scaling]] on the single primary, and beyond that require [[Data partitioning|sharding]] or distributed SQL.
+^q-jpp5
 
 What is the main advantage of an RDBMS's **schema-on-write** model compared to schema-on-read?::The database enforces types and constraints (`UNIQUE`, `FOREIGN KEY`, `CHECK`, `NOT NULL`) at write time, preventing corrupt or inconsistent shapes from ever entering storage.
+^q-h382
 
 ## Related
 

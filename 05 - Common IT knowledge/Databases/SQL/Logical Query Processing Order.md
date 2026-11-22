@@ -1,4 +1,8 @@
-
+---
+flashcards:
+  q-zxrv: { nid: 1795356727216, hash: xjxquszw, sync: nuzpni7z }
+  q-hrxr: { nid: 1795356727242, hash: 6gr4i2su, sync: tfbkuwp9 }
+---
 Developers write queries starting with `SELECT`. But the database engine executes the query in a completely different, strict logical order:
 
 $$\text{FROM} \longrightarrow \text{JOIN} \longrightarrow \text{WHERE} \longrightarrow \text{GROUP BY} \longrightarrow \text{HAVING} \longrightarrow \text{SELECT} \longrightarrow \text{DISTINCT} \longrightarrow \text{ORDER BY} \longrightarrow \text{LIMIT}$$
@@ -19,8 +23,10 @@ $$\text{FROM} \longrightarrow \text{JOIN} \longrightarrow \text{WHERE} \longrigh
 ## Flashcards
 
 What is the SQL logical query processing order from first clause to last?::`FROM` → `JOIN` → `WHERE` → `GROUP BY` → `HAVING` → `SELECT` → `DISTINCT` → `ORDER BY` → `LIMIT`.
+^q-zxrv
 
 Why can a `SELECT` column alias be referenced in `ORDER BY` but not in `WHERE`?::Because `WHERE` runs before `SELECT` in logical query processing order, whereas `ORDER BY` runs after `SELECT`.
+^q-hrxr
 
 ## Related
 

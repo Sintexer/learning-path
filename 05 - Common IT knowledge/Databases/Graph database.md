@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-nj4x: { nid: 1795356728592, hash: hqnkchfw, sync: d6y7xgri }
+  q-h654: { nid: 1795356728617, hash: atubess6, sync: tyxf2hfs }
+  q-uesk: { nid: 1795356728642, hash: repu9crk, sync: etuys2wc }
+---
+
 A graph consists of two kinds of objects: **vertices** (also known as nodes or entities) and **edges** (also known as relationships or arcs). Many kinds of data can be modeled as a graph. Typical examples include:
 - **Social graphs**: Vertices are people, and edges indicate which people know each other.
 - **The web graph**: Vertices are web pages, and edges indicate HTML links to other pages.
@@ -68,10 +75,13 @@ In practice, Datalog is used in a few data systems: for example, it is the query
 ## Flashcards
 
 When does a [[Graph database]] strongly beat both [[Relational Database|relational]] and [[Document Database|document]] databases?::When data is dominated by complex many-to-many relationships and variable-depth multi-hop traversals (e.g., fraud rings, social networks, knowledge graphs, permission hierarchies).
+^q-nj4x
 
 What are the two main graph data models?::The **Property Graph** model (vertices and labeled edges with key-value properties, queried with Cypher) and the **Triple-Store** model (`(subject, predicate, object)` statements, queried with SPARQL).
+^q-h654
 
 Why are [[Graph database|graph databases]] notoriously difficult to shard horizontally?::Multi-hop traversals follow arbitrary edges that frequently cross shard boundaries, turning fast in-memory pointer hops into high-latency distributed network round-trips.
+^q-uesk
 
 ## Related
 

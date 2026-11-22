@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-jy4f: { nid: 1795356720668, hash: afhyqpkm, sync: ekprr2xj }
+  q-b5vb: { nid: 1795356720693, hash: ejzqw99m, sync: yfv887z2 }
+  q-ya68: { nid: 1795356720716, hash: a6tbu36i, sync: r3ynwyu3 }
+---
+
 ## Reliability
 
 > Reliability means making systems work correctly, even when faults occur.
@@ -79,13 +86,16 @@ Every system grows and evolves, and the majority of software cost is in ongoing 
 - **Fault**: One component deviates from its specification (e.g., a disk dies, a packet is dropped).
 - **Failure**: The system as a whole stops providing the required service to the user.
 Fault-tolerant systems prevent component faults from escalating into system-wide failures.
+^q-jy4f
 
 ## What is tail latency amplification and why does it matter in microservices? #card
 When a user request fans out to multiple backend calls in parallel and must wait for all of them, the overall response time is dictated by the slowest single call. Even if each call has only a 1% chance of being slow, fanning out to 50–100 calls makes hitting tail latency the common case for end users.
 
 **Response time** is ==the total time the client waits (service time + network delay + queueing delay)==, whereas **latency** is ==the duration a request waits in a queue awaiting service==.
+^q-b5vb
 
 Never call a system "scalable" without specifying the load parameters it scales along and the latency percentiles it must hold. #card-reminder
+^q-ya68
 
 ## Related
 - [[Availability]]

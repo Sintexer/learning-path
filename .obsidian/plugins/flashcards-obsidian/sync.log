@@ -884,3 +884,575 @@
 2026-11-21T11:59:13.002Z [INFO] plugin loaded {"version":"2.2.0"}
 2026-11-21T11:59:24.664Z [INFO] plugin loaded {"version":"2.2.0"}
 2026-11-21T11:59:28.286Z [INFO] plugin loaded {"version":"2.2.0"}
+2026-11-21T21:03:18.029Z [INFO] plugin loaded {"version":"2.2.0"}
+2026-11-22T09:49:32.535Z [INFO] plugin loaded {"version":"2.2.0"}
+2026-11-22T14:11:53.376Z [INFO] syncVault start {"noteCount":300,"processedNoteCount":297,"skippedUnchangedNoteCount":3}
+2026-11-22T14:11:53.426Z [INFO] syncNote start {"notePath":"idea.md"}
+2026-11-22T14:11:53.428Z [INFO] syncNote start {"notePath":"🗂️ hub.md"}
+2026-11-22T14:11:53.431Z [INFO] syncNote start {"notePath":"12 - DevOps/🗂️ 12 - DevOps.md"}
+2026-11-22T14:11:53.434Z [INFO] syncNote start {"notePath":"12 - DevOps/IaC/Ansible vs Terraform.md"}
+2026-11-22T14:11:53.594Z [INFO] syncNote ok {"notePath":"12 - DevOps/IaC/Ansible vs Terraform.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:53.594Z [INFO] syncNote start {"notePath":"12 - DevOps/IaC/Terraform.md"}
+2026-11-22T14:11:53.736Z [INFO] syncNote ok {"notePath":"12 - DevOps/IaC/Terraform.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:53.737Z [INFO] syncNote start {"notePath":"12 - DevOps/IaC/Ansible.md"}
+2026-11-22T14:11:53.871Z [INFO] syncNote ok {"notePath":"12 - DevOps/IaC/Ansible.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:53.871Z [INFO] syncNote start {"notePath":"12 - DevOps/Virtual machine.md"}
+2026-11-22T14:11:53.973Z [INFO] syncNote ok {"notePath":"12 - DevOps/Virtual machine.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:53.973Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md"}
+2026-11-22T14:11:54.071Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.071Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/kubectl.md"}
+2026-11-22T14:11:54.222Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/kubectl.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.222Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Version Skew.md"}
+2026-11-22T14:11:54.378Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Version Skew.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.378Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/containerd.md"}
+2026-11-22T14:11:54.418Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/containerd.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.418Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/etcd.md"}
+2026-11-22T14:11:54.569Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/etcd.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.570Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Multi-container Pods.md"}
+2026-11-22T14:11:54.670Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Multi-container Pods.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.670Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod Desired State.md"}
+2026-11-22T14:11:54.771Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Pod Desired State.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.771Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod.md"}
+2026-11-22T14:11:54.897Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Pod.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.897Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Label.md"}
+2026-11-22T14:11:54.970Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Label.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:54.970Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Kubernetes.md"}
+2026-11-22T14:11:55.043Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Kubernetes.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.043Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Core Containers.md"}
+2026-11-22T14:11:55.142Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Core Containers.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.142Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Worker nodes.md"}
+2026-11-22T14:11:55.246Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Worker nodes.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.246Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Service.md"}
+2026-11-22T14:11:55.370Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Service.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.370Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S ReplicaSet.md"}
+2026-11-22T14:11:55.471Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S ReplicaSet.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.472Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Namespace.md"}
+2026-11-22T14:11:55.596Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Namespace.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.597Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Deployment.md"}
+2026-11-22T14:11:55.729Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Deployment.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.729Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S DNS.md"}
+2026-11-22T14:11:55.819Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S DNS.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.819Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Control Plane.md"}
+2026-11-22T14:11:55.946Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Control Plane.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:55.946Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Container Runtime Interface.md"}
+2026-11-22T14:11:56.069Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Container Runtime Interface.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.070Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/Zero-downtime deployment.md"}
+2026-11-22T14:11:56.195Z [INFO] syncNote ok {"notePath":"12 - DevOps/Deployments/Zero-downtime deployment.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.195Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/JVM App Deployment.md"}
+2026-11-22T14:11:56.345Z [INFO] syncNote ok {"notePath":"12 - DevOps/Deployments/JVM App Deployment.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.345Z [INFO] syncNote start {"notePath":"12 - DevOps/Open Container Initiative.md"}
+2026-11-22T14:11:56.444Z [INFO] syncNote ok {"notePath":"12 - DevOps/Open Container Initiative.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.444Z [INFO] syncNote start {"notePath":"12 - DevOps/Hypervisor.md"}
+2026-11-22T14:11:56.545Z [INFO] syncNote ok {"notePath":"12 - DevOps/Hypervisor.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.546Z [INFO] syncNote start {"notePath":"12 - DevOps/Difference between VMs and containers.md"}
+2026-11-22T14:11:56.643Z [INFO] syncNote ok {"notePath":"12 - DevOps/Difference between VMs and containers.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.643Z [INFO] syncNote start {"notePath":"12 - DevOps/Containers orchestration.md"}
+2026-11-22T14:11:56.693Z [INFO] syncNote ok {"notePath":"12 - DevOps/Containers orchestration.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.693Z [INFO] syncNote start {"notePath":"12 - DevOps/Container.md"}
+2026-11-22T14:11:56.820Z [INFO] syncNote ok {"notePath":"12 - DevOps/Container.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.820Z [INFO] syncNote start {"notePath":"09 - Linux/Ubuntu experience.md"}
+2026-11-22T14:11:56.822Z [INFO] syncNote start {"notePath":"09 - Linux/Linux hard drive structure.md"}
+2026-11-22T14:11:56.944Z [INFO] syncNote ok {"notePath":"09 - Linux/Linux hard drive structure.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:56.944Z [INFO] syncNote start {"notePath":"09 - Linux/Linux devices.md"}
+2026-11-22T14:11:57.022Z [INFO] syncNote ok {"notePath":"09 - Linux/Linux devices.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.022Z [INFO] syncNote start {"notePath":"09 - Linux/Linux Terminal.md"}
+2026-11-22T14:11:57.068Z [INFO] syncNote ok {"notePath":"09 - Linux/Linux Terminal.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.068Z [INFO] syncNote start {"notePath":"09 - Linux/Linux Mint experience.md"}
+2026-11-22T14:11:57.068Z [INFO] syncNote start {"notePath":"09 - Linux/Fedora experience.md"}
+2026-11-22T14:11:57.069Z [INFO] syncNote start {"notePath":"13 - Common/MacOS keyboard actions.md"}
+2026-11-22T14:11:57.074Z [INFO] syncNote start {"notePath":"08 - AI/Prompts/Learning prompts ChatGPT.md"}
+2026-11-22T14:11:57.074Z [INFO] syncNote start {"notePath":"10 - Management/Team management.md"}
+2026-11-22T14:11:57.177Z [INFO] syncNote ok {"notePath":"10 - Management/Team management.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.177Z [INFO] syncNote start {"notePath":"10 - Management/Code review best practices and pitfals.md"}
+2026-11-22T14:11:57.243Z [INFO] syncNote ok {"notePath":"10 - Management/Code review best practices and pitfals.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.243Z [INFO] syncNote start {"notePath":"06 - Architecture/🗂️ 06 - Architecture.md"}
+2026-11-22T14:11:57.244Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Temporal.md"}
+2026-11-22T14:11:57.343Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Temporal.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.343Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Service mesh pattern.md"}
+2026-11-22T14:11:57.393Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Microservices Service mesh pattern.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.393Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Saga.md"}
+2026-11-22T14:11:57.492Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Saga.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.492Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Tracing.md"}
+2026-11-22T14:11:57.544Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Microservices Tracing.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.544Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices architecture.md"}
+2026-11-22T14:11:57.594Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Microservices architecture.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.594Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices patterns.md"}
+2026-11-22T14:11:57.595Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices decomposition.md"}
+2026-11-22T14:11:57.644Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Microservices decomposition.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.644Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices To-Do.md"}
+2026-11-22T14:11:57.645Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md"}
+2026-11-22T14:11:57.694Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.694Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Sidecar pattern.md"}
+2026-11-22T14:11:57.769Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Microservices Sidecar pattern.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.769Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Orchestration and Choreography.md"}
+2026-11-22T14:11:57.818Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/Microservices Orchestration and Choreography.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.818Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/CAP Theorem.md"}
+2026-11-22T14:11:57.843Z [INFO] syncNote ok {"notePath":"06 - Architecture/Microservices/CAP Theorem.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.843Z [INFO] syncNote start {"notePath":"06 - Architecture/Event-driven architecture.md"}
+2026-11-22T14:11:57.919Z [INFO] syncNote ok {"notePath":"06 - Architecture/Event-driven architecture.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.919Z [INFO] syncNote start {"notePath":"06 - Architecture/DDD.md"}
+2026-11-22T14:11:57.994Z [INFO] syncNote ok {"notePath":"06 - Architecture/DDD.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:57.994Z [INFO] syncNote start {"notePath":"06 - Architecture/Client polling pattern.md"}
+2026-11-22T14:11:58.019Z [INFO] syncNote ok {"notePath":"06 - Architecture/Client polling pattern.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.019Z [INFO] syncNote start {"notePath":"06 - Architecture/2PC vs Saga.md"}
+2026-11-22T14:11:58.068Z [INFO] syncNote ok {"notePath":"06 - Architecture/2PC vs Saga.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.068Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/🗂️ 05 - Common IT knowledge.md"}
+2026-11-22T14:11:58.069Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/SCSI.md"}
+2026-11-22T14:11:58.120Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/SCSI.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.121Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md"}
+2026-11-22T14:11:58.194Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.194Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Single Writer Principle.md"}
+2026-11-22T14:11:58.268Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Multithreading/Single Writer Principle.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.268Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Mutual Exclusion.md"}
+2026-11-22T14:11:58.318Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Multithreading/Mutual Exclusion.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.318Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Little's Law.md"}
+2026-11-22T14:11:58.394Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Multithreading/Little's Law.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.394Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Compare-And-Swap.md"}
+2026-11-22T14:11:58.469Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Multithreading/Compare-And-Swap.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.469Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Critical Section.md"}
+2026-11-22T14:11:58.518Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Multithreading/Critical Section.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.518Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP.md"}
+2026-11-22T14:11:58.645Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.645Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/WebSocket.md"}
+2026-11-22T14:11:58.770Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/WebSocket.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.770Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/gRPC.md"}
+2026-11-22T14:11:58.921Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/gRPC.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:58.921Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Webhook.md"}
+2026-11-22T14:11:59.070Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/Webhook.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.070Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URL.md"}
+2026-11-22T14:11:59.179Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/URL.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.179Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Idempotency.md"}
+2026-11-22T14:11:59.346Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/Idempotency.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.346Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URI.md"}
+2026-11-22T14:11:59.394Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/URI.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.394Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTPS.md"}
+2026-11-22T14:11:59.469Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTPS.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.469Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP3.md"}
+2026-11-22T14:11:59.595Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP3.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.595Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP2.md"}
+2026-11-22T14:11:59.697Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP2.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.697Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP1.1.md"}
+2026-11-22T14:11:59.795Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP1.1.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.795Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/API Idempotency.md"}
+2026-11-22T14:11:59.867Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/API Idempotency.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:11:59.868Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/GraphQL.md"}
+2026-11-22T14:12:00.021Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/GraphQL.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.021Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/CDN.md"}
+2026-11-22T14:12:00.145Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/CDN.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.145Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/TTY.md"}
+2026-11-22T14:12:00.220Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/TTY.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.220Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Redis.md"}
+2026-11-22T14:12:00.346Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Services/Redis.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.346Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/MongoDB.md"}
+2026-11-22T14:12:00.445Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Services/MongoDB.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.445Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Memcached.md"}
+2026-11-22T14:12:00.519Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Services/Memcached.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.519Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Apache Cassandra.md"}
+2026-11-22T14:12:00.621Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Services/Apache Cassandra.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.621Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md"}
+2026-11-22T14:12:00.719Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.719Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Learning path.md"}
+2026-11-22T14:12:00.723Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Designing Data-Intensive Applications chapter-to-topic map.md"}
+2026-11-22T14:12:00.743Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Composition Over Inheritance.md"}
+2026-11-22T14:12:00.818Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Composition Over Inheritance.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.818Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Timeout Pattern.md"}
+2026-11-22T14:12:00.893Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Timeout Pattern.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.893Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md"}
+2026-11-22T14:12:00.969Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:00.969Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Bulkhead Pattern.md"}
+2026-11-22T14:12:01.045Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Bulkhead Pattern.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.045Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Fallback Pattern.md"}
+2026-11-22T14:12:01.094Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Fallback Pattern.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.094Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker.md"}
+2026-11-22T14:12:01.170Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.170Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Optimistic Concurrency Control.md"}
+2026-11-22T14:12:01.218Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Optimistic Concurrency Control.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.218Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Overview.md"}
+2026-11-22T14:12:01.219Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotency Key.md"}
+2026-11-22T14:12:01.294Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotency Key.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.294Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Testing.md"}
+2026-11-22T14:12:01.343Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Testing.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.343Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Strangler Fig.md"}
+2026-11-22T14:12:01.394Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Strangler Fig.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.394Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Version Guard.md"}
+2026-11-22T14:12:01.469Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Version Guard.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.469Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Database Per Service.md"}
+2026-11-22T14:12:01.519Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Database Per Service.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.520Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/DLQ.md"}
+2026-11-22T14:12:01.593Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/DLQ.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.593Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shared Library.md"}
+2026-11-22T14:12:01.644Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shared Library.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.644Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Reconciliation.md"}
+2026-11-22T14:12:01.719Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Reconciliation.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.719Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Outbox Pattern.md"}
+2026-11-22T14:12:01.769Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Outbox Pattern.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.769Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotent Consumer.md"}
+2026-11-22T14:12:01.844Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotent Consumer.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.844Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md"}
+2026-11-22T14:12:01.870Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.870Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/External Configuration Store.md"}
+2026-11-22T14:12:01.927Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/External Configuration Store.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.927Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Event Sourcing.md"}
+2026-11-22T14:12:01.969Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Event Sourcing.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:01.969Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Distributed Tracing.md"}
+2026-11-22T14:12:02.044Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Distributed Tracing.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.044Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md"}
+2026-11-22T14:12:02.120Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.121Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/CQRS.md"}
+2026-11-22T14:12:02.226Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/CQRS.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.226Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md"}
+2026-11-22T14:12:02.268Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.268Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Aggregator.md"}
+2026-11-22T14:12:02.319Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Aggregator.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.319Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md"}
+2026-11-22T14:12:02.369Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.369Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VPN.md"}
+2026-11-22T14:12:02.496Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/VPN.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.496Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Reverse proxy.md"}
+2026-11-22T14:12:02.596Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/Reverse proxy.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.596Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Virtual Private Cloud.md"}
+2026-11-22T14:12:02.746Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/Virtual Private Cloud.md","okCreates":6,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.746Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VLAN.md"}
+2026-11-22T14:12:02.844Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/VLAN.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.844Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/UDP.md"}
+2026-11-22T14:12:02.946Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/UDP.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:02.946Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TLS.md"}
+2026-11-22T14:12:03.072Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/TLS.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.072Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TCP.md"}
+2026-11-22T14:12:03.198Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/TCP.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.198Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Subnet.md"}
+2026-11-22T14:12:03.269Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/Subnet.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.269Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/SSL.md"}
+2026-11-22T14:12:03.345Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/SSL.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.345Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 6 layer.md"}
+2026-11-22T14:12:03.395Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 6 layer.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.395Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI Model.md"}
+2026-11-22T14:12:03.496Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI Model.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.496Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md"}
+2026-11-22T14:12:03.544Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.544Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 5 layer.md"}
+2026-11-22T14:12:03.578Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 5 layer.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.578Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 3 layer.md"}
+2026-11-22T14:12:03.643Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 3 layer.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.643Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 4 layer.md"}
+2026-11-22T14:12:03.696Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 4 layer.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.696Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 2 layer.md"}
+2026-11-22T14:12:03.743Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 2 layer.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.743Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 1 layer.md"}
+2026-11-22T14:12:03.769Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 1 layer.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.769Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/LAN.md"}
+2026-11-22T14:12:03.853Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/LAN.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.853Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/ISO.md"}
+2026-11-22T14:12:03.894Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/ISO.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.894Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Forward proxy.md"}
+2026-11-22T14:12:03.969Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/Forward proxy.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:03.969Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/DNS.md"}
+2026-11-22T14:12:04.096Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/DNS.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.096Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/CIDR Notation.md"}
+2026-11-22T14:12:04.196Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/CIDR Notation.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.196Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Exactly-once delivery.md"}
+2026-11-22T14:12:04.269Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Messaging/Exactly-once delivery.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.269Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Delivery Semantics.md"}
+2026-11-22T14:12:04.318Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Messaging/Delivery Semantics.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.318Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-most-once-delivery.md"}
+2026-11-22T14:12:04.368Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Messaging/At-most-once-delivery.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.368Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-least-once delivery.md"}
+2026-11-22T14:12:04.419Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Messaging/At-least-once delivery.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.419Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/EFI.md"}
+2026-11-22T14:12:04.496Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/EFI.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.496Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IOT.md"}
+2026-11-22T14:12:04.570Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/IOT.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.570Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IT Common Glossary.md"}
+2026-11-22T14:12:04.621Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/IT Common Glossary.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.622Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Data Structures.md"}
+2026-11-22T14:12:04.669Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Structures/Data Structures.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.669Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bitmap.md"}
+2026-11-22T14:12:04.695Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Structures/Bitmap.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/SSTable.md"}
+2026-11-22T14:12:04.743Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Structures/SSTable.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.744Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/LSM Tree.md"}
+2026-11-22T14:12:04.820Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Structures/LSM Tree.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.820Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bloom Filter.md"}
+2026-11-22T14:12:04.869Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Structures/Bloom Filter.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.869Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Check-Then-Act.md"}
+2026-11-22T14:12:04.969Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Anti-Patterns/Check-Then-Act.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:04.969Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Dual-Write.md"}
+2026-11-22T14:12:05.044Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Anti-Patterns/Dual-Write.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.044Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md"}
+2026-11-22T14:12:05.123Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.123Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md"}
+2026-11-22T14:12:05.171Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.171Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication vs Partitioning.md"}
+2026-11-22T14:12:05.198Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication vs Partitioning.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.198Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Synchronous vs Asynchronous Replication.md"}
+2026-11-22T14:12:05.244Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Synchronous vs Asynchronous Replication.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.244Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Log.md"}
+2026-11-22T14:12:05.270Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Log.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.270Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Types of Writes in distributed systems.md"}
+2026-11-22T14:12:05.346Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Types of Writes in distributed systems.md","okCreates":1,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.346Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md"}
+2026-11-22T14:12:05.371Z [WARN] CREATE failed {"blockId":"q-6fpf","error":"cannot create note because it is a duplicate"}
+2026-11-22T14:12:05.395Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":1}
+2026-11-22T14:12:05.395Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication.md"}
+2026-11-22T14:12:05.426Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.426Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-22T14:12:05.493Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md","okCreates":2,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.493Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Eventual Consistency.md"}
+2026-11-22T14:12:05.569Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Eventual Consistency.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.569Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md"}
+2026-11-22T14:12:05.594Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.594Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Lag.md"}
+2026-11-22T14:12:05.645Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Lag.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.645Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md"}
+2026-11-22T14:12:05.694Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.694Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md"}
+2026-11-22T14:12:05.768Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.768Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md"}
+2026-11-22T14:12:05.819Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.819Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Consistency Levels.md"}
+2026-11-22T14:12:05.870Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Consistency Levels.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.870Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Anti-Entropy.md"}
+2026-11-22T14:12:05.918Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Anti-Entropy.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.918Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/CRDT.md"}
+2026-11-22T14:12:05.969Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/CRDT.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:05.969Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Transaction.md"}
+2026-11-22T14:12:06.046Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Transactions/Transaction.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.046Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP.md"}
+2026-11-22T14:12:06.094Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.094Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP and OLAP.md"}
+2026-11-22T14:12:06.150Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP and OLAP.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.150Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLAP.md"}
+2026-11-22T14:12:06.193Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLAP.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.193Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/MVCC.md"}
+2026-11-22T14:12:06.277Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Transactions/MVCC.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.277Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md"}
+2026-11-22T14:12:06.318Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.318Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/ACID.md"}
+2026-11-22T14:12:06.421Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Transactions/ACID.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.421Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md"}
+2026-11-22T14:12:06.543Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.543Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/WAL.md"}
+2026-11-22T14:12:06.593Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/WAL.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.593Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Log.md"}
+2026-11-22T14:12:06.644Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Log.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.644Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md"}
+2026-11-22T14:12:06.669Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.669Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Latch.md"}
+2026-11-22T14:12:06.721Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Latch.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.721Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Star Schema vs Snowflake Schema.md"}
+2026-11-22T14:12:06.769Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Star Schema vs Snowflake Schema.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.769Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL.md"}
+2026-11-22T14:12:06.793Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.793Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Schema Migration.md"}
+2026-11-22T14:12:06.920Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Schema Migration.md","okCreates":5,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.920Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL vs NoSQL.md"}
+2026-11-22T14:12:06.994Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL vs NoSQL.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:06.994Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/RDBMS.md"}
+2026-11-22T14:12:07.045Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/RDBMS.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.045Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Aggregate Functions.md"}
+2026-11-22T14:12:07.120Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL/Aggregate Functions.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.120Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Window Functions.md"}
+2026-11-22T14:12:07.194Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL/Window Functions.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.194Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md"}
+2026-11-22T14:12:07.243Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.243Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/IO-Bound vs CPU-Bound.md"}
+2026-11-22T14:12:07.294Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL/IO-Bound vs CPU-Bound.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.294Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Grouping.md"}
+2026-11-22T14:12:07.373Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL/Grouping.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.374Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md"}
+2026-11-22T14:12:07.418Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.418Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Relational Database.md"}
+2026-11-22T14:12:07.469Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Relational Database.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.469Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Query Languages for Data.md"}
+2026-11-22T14:12:07.521Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Query Languages for Data.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.521Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md"}
+2026-11-22T14:12:07.619Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.619Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Database Lock.md"}
+2026-11-22T14:12:07.705Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Locks/Database Lock.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.705Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md"}
+2026-11-22T14:12:07.768Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.768Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/NoSQL database.md"}
+2026-11-22T14:12:07.820Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/NoSQL database.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.820Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/MapReduce querying.md"}
+2026-11-22T14:12:07.869Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/MapReduce querying.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.869Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index.md"}
+2026-11-22T14:12:07.973Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:07.974Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md"}
+2026-11-22T14:12:08.020Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.020Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Hash Index.md"}
+2026-11-22T14:12:08.069Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/Hash Index.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.069Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GiST Index.md"}
+2026-11-22T14:12:08.120Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/GiST Index.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.120Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GIN Index.md"}
+2026-11-22T14:12:08.198Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/GIN Index.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.198Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index Practical Usage.md"}
+2026-11-22T14:12:08.268Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index Practical Usage.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.268Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Clustered and Non-Clustered Index.md"}
+2026-11-22T14:12:08.343Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/Clustered and Non-Clustered Index.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.344Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Bitmap Index.md"}
+2026-11-22T14:12:08.402Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/Bitmap Index.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.402Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/BRIN Index.md"}
+2026-11-22T14:12:08.471Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/BRIN Index.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.471Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md"}
+2026-11-22T14:12:08.568Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.568Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Graph database.md"}
+2026-11-22T14:12:08.644Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Graph database.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.644Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/In-Memory Database.md"}
+2026-11-22T14:12:08.695Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/In-Memory Database.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.695Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Impedance mismatch.md"}
+2026-11-22T14:12:08.743Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Impedance mismatch.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.744Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/ETL.md"}
+2026-11-22T14:12:08.820Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/ETL.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.820Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DB Glossary.md"}
+2026-11-22T14:12:08.852Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/DB Glossary.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.852Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Document Database.md"}
+2026-11-22T14:12:08.899Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Document Database.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.899Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database.md"}
+2026-11-22T14:12:08.922Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Database.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.922Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Data Warehouse.md"}
+2026-11-22T14:12:08.945Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Data Warehouse.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.945Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DBMS.md"}
+2026-11-22T14:12:08.968Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/DBMS.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:08.968Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Cloud database.md"}
+2026-11-22T14:12:09.019Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Cloud database.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.019Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Column-Oriented Storage.md"}
+2026-11-22T14:12:09.093Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Column-Oriented Storage.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.093Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Forward Compatibility.md"}
+2026-11-22T14:12:09.168Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Formats/Forward Compatibility.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.168Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Protocol Buffers.md"}
+2026-11-22T14:12:09.194Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Formats/Protocol Buffers.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.194Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Data Encoding.md"}
+2026-11-22T14:12:09.222Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Formats/Data Encoding.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.222Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Backward Compatibility.md"}
+2026-11-22T14:12:09.293Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Formats/Backward Compatibility.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.293Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Apache Thrift.md"}
+2026-11-22T14:12:09.343Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Data Formats/Apache Thrift.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.343Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 4 Encoding and Evolution.md"}
+2026-11-22T14:12:09.394Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 4 Encoding and Evolution.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.394Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/Designing Data Intensive Applications.md"}
+2026-11-22T14:12:09.396Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 3 Storage and Retrieval.md"}
+2026-11-22T14:12:09.453Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 3 Storage and Retrieval.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.453Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Vertical scaling.md"}
+2026-11-22T14:12:09.544Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Vertical scaling.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.544Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-passive systems.md"}
+2026-11-22T14:12:09.650Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Active-passive systems.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.651Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Serverless.md"}
+2026-11-22T14:12:09.744Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Serverless.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.744Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Scaling.md"}
+2026-11-22T14:12:09.821Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Scaling.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.821Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Load Balancing.md"}
+2026-11-22T14:12:09.919Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Load Balancing.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:09.919Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Microservices App.md"}
+2026-11-22T14:12:10.002Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Microservices App.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.003Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Horizontal scaling.md"}
+2026-11-22T14:12:10.093Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Horizontal scaling.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.093Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaC.md"}
+2026-11-22T14:12:10.204Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/IaaC.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.205Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaS.md"}
+2026-11-22T14:12:10.268Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/IaaS.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.268Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Availability.md"}
+2026-11-22T14:12:10.372Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Availability.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.372Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Cloud-Native App.md"}
+2026-11-22T14:12:10.472Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Cloud-Native App.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.472Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-active systems.md"}
+2026-11-22T14:12:10.573Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Cloud/Active-active systems.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.573Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Binary search.md"}
+2026-11-22T14:12:10.705Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Algorithms/Binary search.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.705Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Two pointers.md"}
+2026-11-22T14:12:10.794Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Algorithms/Two pointers.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.794Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Algorithms TODO.md"}
+2026-11-22T14:12:10.800Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Safe Publication and Thread-Safe Design.md"}
+2026-11-22T14:12:10.920Z [INFO] syncNote ok {"notePath":"02 - Java/Concurrency/Safe Publication and Thread-Safe Design.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.920Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Executors and Task Execution.md"}
+2026-11-22T14:12:10.969Z [INFO] syncNote ok {"notePath":"02 - Java/Concurrency/Executors and Task Execution.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:10.969Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Concurrent Collections and Synchronizers.md"}
+2026-11-22T14:12:11.070Z [INFO] syncNote ok {"notePath":"02 - Java/Concurrency/Concurrent Collections and Synchronizers.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.070Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Concurrency Performance and Scalability.md"}
+2026-11-22T14:12:11.145Z [INFO] syncNote ok {"notePath":"02 - Java/Concurrency/Concurrency Performance and Scalability.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.145Z [INFO] syncNote start {"notePath":"02 - Java/JPA/Hibernate/Hibernate.md"}
+2026-11-22T14:12:11.222Z [INFO] syncNote ok {"notePath":"02 - Java/JPA/Hibernate/Hibernate.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.222Z [INFO] syncNote start {"notePath":"02 - Java/JPA/JPA.md"}
+2026-11-22T14:12:11.349Z [INFO] syncNote ok {"notePath":"02 - Java/JPA/JPA.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.349Z [INFO] syncNote start {"notePath":"02 - Java/JPA/🗂️ JPA.md"}
+2026-11-22T14:12:11.350Z [INFO] syncNote start {"notePath":"02 - Java/Java Evolution.md"}
+2026-11-22T14:12:11.496Z [INFO] syncNote ok {"notePath":"02 - Java/Java Evolution.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.496Z [INFO] syncNote start {"notePath":"02 - Java/🗂️ 02 - Java.md"}
+2026-11-22T14:12:11.498Z [INFO] syncNote start {"notePath":"02 - Java/jvmArgs.md"}
+2026-11-22T14:12:11.544Z [INFO] syncNote ok {"notePath":"02 - Java/jvmArgs.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.544Z [INFO] syncNote start {"notePath":"02 - Java/jmxConfig.md"}
+2026-11-22T14:12:11.569Z [INFO] syncNote ok {"notePath":"02 - Java/jmxConfig.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.617Z [INFO] syncNote start {"notePath":"02 - Java/concurrency.md"}
+2026-11-22T14:12:11.618Z [INFO] syncNote start {"notePath":"02 - Java/Java versions.md"}
+2026-11-22T14:12:11.693Z [INFO] syncNote ok {"notePath":"02 - Java/Java versions.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.694Z [INFO] syncNote start {"notePath":"02 - Java/Java Memory Model.md"}
+2026-11-22T14:12:11.799Z [INFO] syncNote ok {"notePath":"02 - Java/Java Memory Model.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.799Z [INFO] syncNote start {"notePath":"04 - Security/Keycloak.md"}
+2026-11-22T14:12:11.878Z [INFO] syncNote ok {"notePath":"04 - Security/Keycloak.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.878Z [INFO] syncNote start {"notePath":"04 - Security/SSE.md"}
+2026-11-22T14:12:11.945Z [INFO] syncNote ok {"notePath":"04 - Security/SSE.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:11.945Z [INFO] syncNote start {"notePath":"04 - Security/SAML.md"}
+2026-11-22T14:12:12.020Z [INFO] syncNote ok {"notePath":"04 - Security/SAML.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.020Z [INFO] syncNote start {"notePath":"04 - Security/POLP.md"}
+2026-11-22T14:12:12.068Z [INFO] syncNote ok {"notePath":"04 - Security/POLP.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.068Z [INFO] syncNote start {"notePath":"04 - Security/OIDC.md"}
+2026-11-22T14:12:12.178Z [INFO] syncNote ok {"notePath":"04 - Security/OIDC.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.178Z [INFO] syncNote start {"notePath":"04 - Security/Least privilege principle.md"}
+2026-11-22T14:12:12.220Z [INFO] syncNote ok {"notePath":"04 - Security/Least privilege principle.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.220Z [INFO] syncNote start {"notePath":"04 - Security/JWT.md"}
+2026-11-22T14:12:12.319Z [INFO] syncNote ok {"notePath":"04 - Security/JWT.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.319Z [INFO] syncNote start {"notePath":"04 - Security/CORS.md"}
+2026-11-22T14:12:12.429Z [INFO] syncNote ok {"notePath":"04 - Security/CORS.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.429Z [INFO] syncNote start {"notePath":"04 - Security/AES256.md"}
+2026-11-22T14:12:12.519Z [INFO] syncNote ok {"notePath":"04 - Security/AES256.md","okCreates":4,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.519Z [INFO] syncNote start {"notePath":"04 - Security/🗂️ 04 - Security.md"}
+2026-11-22T14:12:12.522Z [INFO] syncNote start {"notePath":"04 - Security/Identity provider.md"}
+2026-11-22T14:12:12.543Z [INFO] syncNote ok {"notePath":"04 - Security/Identity provider.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.543Z [INFO] syncNote start {"notePath":"04 - Security/Identity federation.md"}
+2026-11-22T14:12:12.618Z [INFO] syncNote ok {"notePath":"04 - Security/Identity federation.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.618Z [INFO] syncNote start {"notePath":"04 - Security/IdP.md"}
+2026-11-22T14:12:12.668Z [INFO] syncNote ok {"notePath":"04 - Security/IdP.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.668Z [INFO] syncNote start {"notePath":"04 - Security/Authorization.md"}
+2026-11-22T14:12:12.746Z [INFO] syncNote ok {"notePath":"04 - Security/Authorization.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.746Z [INFO] syncNote start {"notePath":"04 - Security/Authentication.md"}
+2026-11-22T14:12:12.820Z [INFO] syncNote ok {"notePath":"04 - Security/Authentication.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.820Z [INFO] syncNote start {"notePath":"04 - Security/Authentication and Authorization.md"}
+2026-11-22T14:12:12.868Z [INFO] syncNote ok {"notePath":"04 - Security/Authentication and Authorization.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.868Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md"}
+2026-11-22T14:12:12.969Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.969Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md"}
+2026-11-22T14:12:12.993Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:12.993Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka.md"}
+2026-11-22T14:12:13.069Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.069Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md"}
+2026-11-22T14:12:13.145Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.145Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md"}
+2026-11-22T14:12:13.222Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.222Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md"}
+2026-11-22T14:12:13.243Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md","okCreates":1,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.243Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Message.md"}
+2026-11-22T14:12:13.321Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Message.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.321Z [INFO] syncNote start {"notePath":"03 - Backend/API/REST.md"}
+2026-11-22T14:12:13.418Z [INFO] syncNote ok {"notePath":"03 - Backend/API/REST.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.419Z [INFO] syncNote start {"notePath":"03 - Backend/API/RESTful.md"}
+2026-11-22T14:12:13.494Z [INFO] syncNote ok {"notePath":"03 - Backend/API/RESTful.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.494Z [INFO] syncNote start {"notePath":"03 - Backend/API/API.md"}
+2026-11-22T14:12:13.548Z [INFO] syncNote ok {"notePath":"03 - Backend/API/API.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.548Z [INFO] syncNote start {"notePath":"03 - Backend/API/API Performance improvement.md"}
+2026-11-22T14:12:13.595Z [INFO] syncNote ok {"notePath":"03 - Backend/API/API Performance improvement.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.595Z [INFO] syncNote start {"notePath":"03 - Backend/API/API versioning.md"}
+2026-11-22T14:12:13.644Z [INFO] syncNote ok {"notePath":"03 - Backend/API/API versioning.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.644Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/Service discovery.md"}
+2026-11-22T14:12:13.718Z [INFO] syncNote ok {"notePath":"03 - Backend/cloud/Service discovery.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.718Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/🗂️ Backend cloud.md"}
+2026-11-22T14:12:13.719Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-22T14:12:13.769Z [INFO] syncNote ok {"notePath":"03 - Backend/cloud/architecture.md","okCreates":2,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.769Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/Cloud ToDo.md"}
+2026-11-22T14:12:13.770Z [INFO] syncNote start {"notePath":"03 - Backend/🗂️ 03 - Backend.md"}
+2026-11-22T14:12:13.770Z [INFO] syncNote start {"notePath":"03 - Backend/spring/🗂️ Spring.md"}
+2026-11-22T14:12:13.770Z [INFO] syncNote start {"notePath":"03 - Backend/spring/persistence.md"}
+2026-11-22T14:12:13.870Z [INFO] syncNote ok {"notePath":"03 - Backend/spring/persistence.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.870Z [INFO] syncNote start {"notePath":"03 - Backend/Backend senior developer questions.md"}
+2026-11-22T14:12:13.871Z [INFO] syncNote start {"notePath":"03 - Backend/Database/HiLo id optimization.md"}
+2026-11-22T14:12:13.970Z [INFO] syncNote ok {"notePath":"03 - Backend/Database/HiLo id optimization.md","okCreates":3,"okUpdates":0,"okDeletes":0,"failedOps":0}
+2026-11-22T14:12:13.970Z [INFO] syncNote start {"notePath":"00 - info stack.md"}
+2026-11-22T14:12:13.975Z [INFO] syncVault end {"noteCount":300,"processedNoteCount":297,"skippedUnchangedNoteCount":3,"totalCreates":768,"totalUpdates":3,"totalDeletes":0,"failedNotes":0}

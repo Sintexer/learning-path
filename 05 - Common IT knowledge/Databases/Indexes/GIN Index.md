@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-xd8c: { nid: 1795356728152, hash: 4kk6nx3u, sync: 2vsbb4iw }
+  q-6u2d: { nid: 1795356728172, hash: w2gxn77p, sync: yjysva9n }
+  q-w6c4: { nid: 1795356728196, hash: wuybcrgf, sync: i7g3kvjw }
+---
+
 ## Generalized Inverted Index
 
 Think of GIN as the index at the back of a textbook.  
@@ -115,10 +122,13 @@ A GIN index decomposes every key/value inside the JSONB document so you can quer
 ## Flashcards
 
 How does a [[GIN Index]] map data differently from a [[B-Tree Index]]?::A B-Tree maps a whole column value to a row; a GIN index unpacks composite values (arrays, JSONB, full-text tokens) and maps each individual element to a posting list/tree of matching rows.
+^q-xd8c
 
 In [[PostgreSQL]] GIN indexes, what is the difference between a **Posting List** and a **Posting Tree**?::A posting list is a small compressed inline array of TIDs for rarer keys; once it exceeds ~1/3 of a page, GIN promotes it into a separate B-Tree of TIDs called a posting tree.
+^q-6u2d
 
 Why can GIN indexes cause unexpected write/read latency spikes in [[PostgreSQL]]?::With `fastupdate = on`, writes accumulate in an unsorted pending list until a single query or `VACUUM` hits `gin_pending_list_limit` and must flush the entire buffer into the main index.
+^q-w6c4
 
 ## Related
 

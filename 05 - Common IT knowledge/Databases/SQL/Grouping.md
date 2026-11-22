@@ -1,3 +1,10 @@
+---
+flashcards:
+  q-s6s3: { nid: 1795356727318, hash: x35w5cwq, sync: zdmf3i9a }
+  q-2e2j: { nid: 1795356727351, hash: m3wmeg2v, sync: nnksmvvt }
+  q-qyku: { nid: 1795356727372, hash: jza3hgcp, sync: jpat496n }
+---
+
 This highly depends on [[Logical Query Processing Order]].
 ## Engine Mechanics: How `GROUP BY` Executes Physically
 
@@ -101,10 +108,13 @@ Suppose you need to count total orders, active orders, and cancelled orders in a
 ## Flashcards
 
 What are the two physical strategies [[PostgreSQL]] uses to execute `GROUP BY`?::`HashAggregate` (in-memory hash table up to `work_mem`, fast for unsorted input) and `GroupAggregate` (streaming $O(1)$ memory over pre-sorted input or a [[B-Tree Index]]).
+^q-s6s3
 
 Why should non-aggregate filters always go in `WHERE` instead of `HAVING`?::`WHERE` runs before grouping and can use indexes to skip rows early, whereas `HAVING` filters after every row has already been read and grouped.
+^q-2e2j
 
 What is the difference between `COUNT(*)`, `COUNT(1)`, and `COUNT(column)`?::`COUNT(*)` and `COUNT(1)` are identical and count all rows; `COUNT(column)` counts only rows where `column` is `NOT NULL`.
+^q-qyku
 
 ## Related
 

@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-nzgs: { nid: 1795356724716, hash: 7rc9snep, sync: pmiwmpa6 }
+  q-7nz2: { nid: 1795356724742, hash: pugcdz3v, sync: 3q8iu5fp }
+---
+
 **SSTables (Sorted String Tables)** are the foundational disk-based building blocks of an [[LSM Tree]].
 
 **Definition:** An SSTable is an immutable, sorted file of key-value pairs. Once an SSTable is written to disk, it **never changes**.
@@ -19,11 +25,13 @@ A typical SSTable (e.g., RocksDB / [[Apache Cassandra]]) is organized into:
 > - **Unbounded SSTable growth without compaction**: If compaction is throttled or disabled, read latency degrades linearly with the number of SSTable files that must be checked.
 
 SSTable (Sorted String Table):::An immutable on-disk file of key-value pairs sorted by key, paired with a sparse index and typically a [[Bloom Filter]].
+^q-nzgs
 
 ## Why can an SSTable use a sparse in-memory index instead of indexing every key? #card
 Because keys are stored in sorted order on disk. Knowing the byte offsets of a few boundary keys (e.g., one per 4–64 KB compressed block) lets the engine jump to the bounding block and quickly scan within it to find any key in between.
 
 Because SSTables are immutable, updates and deletes never overwrite existing files; instead they ==append a newer key-value entry or a tombstone to the memtable== and reclaim old versions during compaction.
+^q-7nz2
 
 ## Related
 - [[LSM Tree]]

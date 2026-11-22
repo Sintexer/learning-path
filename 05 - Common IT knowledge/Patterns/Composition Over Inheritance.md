@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-fv4w: { nid: 1795356720793, hash: w4vrpewf, sync: 5qtpw78q }
+  q-5jc2: { nid: 1795356720816, hash: rx2w9fyz, sync: e88cm3a5 }
+---
+
 **"Favor composition over inheritance"** means: when you want to reuse behavior or extend functionality, prefer **building an object out of smaller collaborating objects** (composition — a "has-a" relationship) rather than **extending a base class** (inheritance — an "is-a" relationship), especially when the relationship is really about _behavior_ rather than _identity_.
 
 This is not "inheritance is always bad" — it's "inheritance is a specific, powerful, but rigid tool that's frequently reached for when a more flexible tool would serve better."
@@ -24,12 +30,14 @@ A class built from injected, composed dependencies can have those dependencies t
 > Inheritance is still appropriate for closed, stable algebraic hierarchies (e.g., Java `sealed` interfaces/classes for domain events or AST nodes) or true Liskov-substitutable abstractions. Reach for composition whenever you are sharing **implementation mechanics** (retries, caching, serialization, telemetry) across unrelated types.
 
 Fragile Base Class Problem:::A coupling defect in inheritance hierarchies where a seemingly safe change to a parent class silently breaks subclass invariants or behavior.
+^q-fv4w
 
 ## Why is composition preferred over inheritance for combining cross-cutting behaviors (e.g., retry + logging + rate limiting)? #card
 1. Avoids the **Fragile Base Class** problem (explicit dependency boundaries).
 2. Allows **runtime swapping** and arbitrary combinations without combinatorial subclass explosion.
 3. Bypasses Java/Kotlin's **single-inheritance limit**.
 4. Improves **testability** by injecting lightweight mocks/fakes instead of inheriting ancestor state.
+^q-5jc2
 
 ## Related
 - [[Overview]]

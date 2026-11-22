@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-v7pw: { nid: 1795356721367, hash: egjn9tak, sync: ixd5a2b6 }
+  q-krqh: { nid: 1795356721392, hash: nqbnu4jt, sync: ma2vx2nx }
+---
+
 > **Central question:** How do we replace a production system without rewriting and switching everything at once?
 
 The **Strangler Fig pattern** gradually replaces an existing system by moving selected capabilities to a new implementation.
@@ -24,12 +30,14 @@ Other patterns, like [[Shadow Testing]], [[Anti-Corruption Layer]], [[Change Dat
 > - **Shared database entanglement**: Moving code without decoupling the underlying data ([[Database Per Service]]) leaves both systems writing to the same tables, causing schema-change gridlock and [[Dual-Write]] bugs. Use [[Change Data Capture]] + [[Anti-Corruption Layer]] to sync data cleanly during transition.
 
 Strangler Fig Pattern:::Incrementally replacing a legacy system by placing a routing facade in front and migrating one capability at a time to new services while both coexist until the legacy system can be retired.
+^q-v7pw
 
 ## Which supporting patterns make a Strangler Fig migration safe in production? #card
 - **[[API Gateway]] / [[Reverse proxy]]**: Routes traffic incrementally between legacy and new slices.
 - **[[Anti-Corruption Layer]]**: Prevents legacy schemas/semantics from leaking into the new domain model.
 - **[[Shadow Testing]]**: Validates parity against live traffic before shifting real users.
 - **[[Change Data Capture]] + [[Reconciliation]]**: Keeps data in sync during coexistence and catches drift.
+^q-krqh
 
 ## Related
 - [[Anti-Corruption Layer]]

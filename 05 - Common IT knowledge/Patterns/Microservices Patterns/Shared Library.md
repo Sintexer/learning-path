@@ -1,3 +1,9 @@
+---
+flashcards:
+  q-akck: { nid: 1795356721617, hash: upejjkgv, sync: usvgh8rs }
+  q-m2rb: { nid: 1795356721642, hash: gqzhyujq, sync: py8mnb4s }
+---
+
 **Purpose:** Reuse code across services without adding a network dependency.
 
 Good candidates include:
@@ -35,8 +41,10 @@ Prefer explicit [[API]] / event contracts, with [[Backward Compatibility|backwar
 ## What belongs in a Shared Library across microservices vs. what should NEVER be shared? #card
 - **Good candidates**: Thin, stable technical utilities (logging/[[OpenTelemetry]] setup, [[JWT]] parsing, HTTP client instrumentation).
 - **Never share**: Internal ORM/[[JPA]] entities, repositories, or domain business rules — these create tight coupling, break [[Database Per Service]], and force coordinated deployments across teams.
+^q-akck
 
 Remember: a Shared Library gives ==zero network overhead== at the cost of ==redeploying every consumer== whenever a fix is released. #card-reminder
+^q-m2rb
 
 ## Related
 - [[Microservices architecture]]

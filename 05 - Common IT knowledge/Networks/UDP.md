@@ -1,3 +1,11 @@
+---
+flashcards:
+  q-x6xw: { nid: 1795356722867, hash: 5qiy3pkf, sync: pp44aj9k }
+  q-uh48: { nid: 1795356722891, hash: xx3y6r8t, sync: dyk6eev9 }
+  q-vhxn: { nid: 1795356722918, hash: m2kw724j, sync: fk27xz7p }
+  q-mtgd: { nid: 1795356722942, hash: 8a5zwpcb, sync: dwcxgew2 }
+---
+
 > AKA **User Datagram Protocol**
 
 **UDP** is a connectionless, lightweight, message-oriented transport protocol at [[OSI 4 layer]]. It adds only an 8-byte header (source port, destination port, length, checksum) on top of IP—no handshake, no delivery guarantee, no ordering, and no built-in congestion control.
@@ -18,12 +26,16 @@
 ## Flashcards
 
 UDP:::User Datagram Protocol — connectionless, best-effort datagram transport protocol at [[OSI 4 layer]] with minimal 8-byte overhead and no delivery, ordering, or congestion guarantees.
+^q-x6xw
 
 Why does [[HTTP3]] (QUIC) run over UDP instead of [[TCP]]?::To implement independent multiplexed streams, integrated [[TLS]] 1.3, and connection migration in user space—eliminating ==TCP Head-of-Line blocking== and ossified OS/middlebox TCP constraints.
+^q-vhxn
+^q-uh48
 
 ### When should you choose UDP over TCP? #card
 
 When low latency matters more than guaranteed ordered delivery (VoIP, gaming, live streaming), for tiny single-RTT lookups ([[DNS]]), or when building a custom transport protocol in user space (QUIC / [[HTTP3]]).
+^q-mtgd
 
 ## Related
 - [[TCP]]

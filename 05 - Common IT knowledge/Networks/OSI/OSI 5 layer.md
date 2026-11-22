@@ -1,3 +1,8 @@
+---
+flashcards:
+  q-kk75: { nid: 1795356723576, hash: 8yukzdjr, sync: axfzxckg }
+---
+
 > AKA **Session layer**
 
 This [[OSI Model]] layer establishes, manages, checkpoints, and terminates communication sessions (dialogs) between communicating **applications**. In the practical TCP/IP stack, session responsibilities are handled by applications or transport/security protocols (e.g., [[TLS]] session resumption, [[HTTP]] cookies/tokens, [[gRPC]]/[[WebSocket]] connection lifecycles).
@@ -8,6 +13,7 @@ This [[OSI Model]] layer establishes, manages, checkpoints, and terminates commu
 ## Flashcards
 
 OSI Layer 5:::Session layer — establishes, maintains, and terminates logical communication sessions between applications (merged into the Application layer in TCP/IP).
+^q-kk75
 
 ## Related
 - [[OSI Model]]
