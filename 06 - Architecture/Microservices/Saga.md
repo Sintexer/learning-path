@@ -1,36 +1,67 @@
-**What is the Saga Pattern?** The Saga pattern is a design pattern for managing distributed transactions in a microservices architecture. It ensures data consistency across multiple services by breaking down a transaction into a series of smaller, independent steps (sub-transactions), each with its own compensating action to undo the work if necessary.
+**What is the Saga Pattern?** The Saga pattern is a design pattern for managing multi-service business workflows without distributed locks ([[Database Per Service]] — compare with [[2PC vs Saga]]). It achieves [[Eventual Consistency]] across multiple services by breaking a workflow into a sequence of local [[ACID]] transactions, where each step has a corresponding **compensating action** (a new forward business transaction that semantically undoes the effect) if a later step fails.
 
-**Types of Sagas (see [[Microservices Orchestration and Choreography]]):**
+## Types of Sagas (see [[Microservices Orchestration and Choreography]])
 
-1. **Choreography-Based Saga**: Each service involved in the saga publishes events and listens for events from other services. There is no central coordinator.
-2. **Orchestration-Based Saga**: A central orchestrator manages the saga, coordinating the execution of steps and invoking compensating actions if needed.
+1. **Choreography-Based Saga**: Each service listens for domain events, executes its local transaction, and publishes its own events via the [[Outbox Pattern]]. No central coordinator — simple for 2–3 steps, but becomes hard to trace as workflows grow.
+2. **Orchestration-Based Saga**: A central orchestrator (persisted in a [[Saga State Table]] with [[Worker Leases]], or built on [[Temporal]]) explicitly commands each step, tracks state, handles retries/timeouts, and drives compensations.
 
-**Steps in a Saga:**
+## Step Classification (Pivot Transaction Model)
 
-1. **Initiation**: The saga starts with an initial request.
-2. **Execution**: Each service performs its part of the transaction and publishes an event or calls the next service.
-3. **Compensation**: If a step fails, compensating actions are invoked to undo the previous steps.
+Every step in a well-designed Saga falls into one of three categories:
+1. **Compensatable transactions**: Steps *before* the pivot that can be semantically undone (e.g., `ReserveInventory`, `AuthorizePayment`).
+2. **Pivot transaction**: The go/no-go point of no return — once it succeeds, the Saga commits to running to completion (e.g., `CapturePayment`).
+3. **Retryable transactions**: Steps *after* the pivot that are guaranteed to eventually succeed via [[Retry Pattern|retries]] and [[Idempotency Key|idempotency]] (e.g., `ConfirmOrder`, `ScheduleShipment`).
 
-**Example:** Consider an e-commerce order process:
+## Example: E-Commerce Order Checkout
 
-1. **Create Order**: The order service creates an order.
-2. **Reserve Inventory**: The inventory service reserves the items.
-3. **Process Payment**: The payment service processes the payment.
-4. **Ship Order**: The shipping service ships the order.
+1. **Create Order** (`PENDING` — semantic lock).
+2. **Reserve Inventory** (compensatable).
+3. **Process Payment** (pivot).
+4. **Ship Order** & **Confirm Order** (retryable).
 
-If the payment processing fails, the compensating actions would be:
+If payment processing fails, compensating actions execute in reverse order:
+1. **Cancel / Refund Payment** (if partial/ambiguous — verify via [[Reconciliation]]).
+2. **Release Inventory**.
+3. **Cancel Order**.
 
-1. **Cancel Payment**: Revert any partial payment.
-2. **Release Inventory**: Release the reserved items.
-3. **Cancel Order**: Mark the order as canceled.
+## Benefits
 
-**Benefits:**
+- **Availability & Scalability**: No cross-service database locks held across network hops (unlike [[Two-Phase Commit]]).
+- **Resilience**: Each step retries independently, survives crashes, and works with external third-party APIs.
 
-- **Data Consistency**: Ensures eventual consistency across services.
-- **Resilience**: Each step can be retried independently, and compensating actions can handle failures.
+## Challenges
 
-**Challenges:**
+- **No Isolation (ACD, not ACID)**: Intermediate committed states are visible to other transactions.
+- **Complexity**: Must design explicit state machines, idempotent handlers ([[Idempotent Consumer]]), and recovery paths.
+- **Latency & Error Handling**: Sequential steps and compensations require durable tracking, monitoring, and [[Reconciliation]].
 
-- **Complexity**: Implementing and managing sagas can be complex.
-- **Latency**: Sagas can introduce latency due to the sequential execution of steps and compensating actions.
-- **Error Handling**: Requires robust error handling and monitoring to manage compensations effectively.
+> [!warning] Failure modes & trade-offs
+> - **Compensations are NOT atomic and CAN fail**: A compensation (`RefundPayment`, `ReleaseInventory`) is just another network call! It must be **idempotent**, **retried until it succeeds**, and escalated to [[Reconciliation]] / human ops if it permanently fails — you cannot "abort a rollback."
+> - **Lack of Isolation (Dirty Reads & Lost Updates)**: While Order #42 is in `PAYMENT_PENDING`, another request could read or modify it. Use **semantic locks** (an explicit `PENDING` / `RESERVED` status flag checked by concurrent operations) and **commutative updates** where possible.
+> - **Crash between DB update and command send**: Always persist Saga state transitions and outbound commands in the same transaction via the [[Outbox Pattern]] (or use [[Temporal]]).
+
+Saga Pattern:::Managing a multi-service workflow as a sequence of local transactions where failures are handled by executing compensating business transactions instead of holding distributed locks.
+
+## What are the three transaction types in a Saga (Compensatable, Pivot, Retryable)? #card
+1. **Compensatable**: Steps before the pivot that can be semantically undone if a later step fails (e.g., reserve stock).
+2. **Pivot**: The go/no-go point; once it succeeds, the Saga cannot roll back and must finish forward.
+3. **Retryable**: Steps after the pivot that must eventually succeed via idempotent retries (e.g., confirm order, send receipt).
+
+## Why can a Saga experience Isolation anomalies, and how do you mitigate them? #card
+Because each step commits locally immediately, intermediate states are visible to concurrent transactions (no global Isolation). Mitigate with **semantic locks** (explicit `PENDING` / `RESERVED` flags), **commutative updates**, and ordering irreversible steps at or after the **pivot transaction**.
+
+A Saga compensation is a ==new forward business transaction== (not a DB rollback), so it must be ==idempotent and retried until it succeeds==. #card-reminder
+
+## Related
+- [[2PC vs Saga]]
+- [[Two-Phase Commit]]
+- [[Microservices Orchestration and Choreography]]
+- [[Temporal]]
+- [[Saga State Table]]
+- [[Worker Leases]]
+- [[Outbox Pattern]]
+- [[Idempotent Consumer]]
+- [[Idempotency Key]]
+- [[Reconciliation]]
+- [[Database Per Service]]
+- [[Eventual Consistency]]

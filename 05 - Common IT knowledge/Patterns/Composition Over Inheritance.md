@@ -14,8 +14,24 @@ Inheritance relationships are fixed once compiled — an `EmailSender` that exte
 
 ### 3. Single inheritance limitation (Java/Kotlin specifically)
 
-You can only extend **one** class. If a class needs to combine multiple independent behaviors (say, "retryable" + "loggable" + "rate-limited"), inheritance forces awkward workarounds. Composition has no such limit — you can inject as many collaborators as you want.
+You can only extend **one** class. If a class needs to combine multiple independent behaviors (say, "retryable" + "loggable" + "rate-limited"), inheritance forces awkward workarounds. Composition has no such limit — you can inject as many collaborators as you want (see Decorator/Strategy in [[Overview|GoF Design Patterns]]).
 
 ### 4. Testability
 
 A class built from injected, composed dependencies can have those dependencies trivially replaced with mocks/fakes in a test. A class buried three levels deep in an inheritance chain often drags along behavior from every ancestor, making it much harder to isolate what you're actually testing.
+
+> [!tip] Production reality
+> Inheritance is still appropriate for closed, stable algebraic hierarchies (e.g., Java `sealed` interfaces/classes for domain events or AST nodes) or true Liskov-substitutable abstractions. Reach for composition whenever you are sharing **implementation mechanics** (retries, caching, serialization, telemetry) across unrelated types.
+
+Fragile Base Class Problem:::A coupling defect in inheritance hierarchies where a seemingly safe change to a parent class silently breaks subclass invariants or behavior.
+
+## Why is composition preferred over inheritance for combining cross-cutting behaviors (e.g., retry + logging + rate limiting)? #card
+1. Avoids the **Fragile Base Class** problem (explicit dependency boundaries).
+2. Allows **runtime swapping** and arbitrary combinations without combinatorial subclass explosion.
+3. Bypasses Java/Kotlin's **single-inheritance limit**.
+4. Improves **testability** by injecting lightweight mocks/fakes instead of inheriting ancestor state.
+
+## Related
+- [[Overview]]
+- [[Shared Library]]
+- [[DDD]]
