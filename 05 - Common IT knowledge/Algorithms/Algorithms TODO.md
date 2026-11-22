@@ -1,4 +1,4 @@
-- [ ] Binary search (last 15.11.2024)
+- [ ] [[Binary search]] (last 15.11.2024)
 - [ ] Contains duplicate
 - [ ] Valid anagram
 - [ ] Two sum
@@ -32,7 +32,7 @@
 - [ ] `l153` find minimum in rotated sorted array
 
 ###  From ChatGPT course
-### Two Pointers
+### [[Two pointers|Two Pointers]]
 
 1. **Pair with Target Sum**
 2. **Remove Duplicates from Sorted Array**
@@ -64,7 +64,7 @@
 4. **Coin Change Problem**
 5. **Climbing Stairs**
 
-### Binary Search
+### [[Binary search|Binary Search]]
 
 1. **Binary Search on a Sorted Array**
 2. **Find First and Last Position of Element in Sorted Array**
@@ -79,3 +79,9 @@
 3. **Merge Intervals** (Two Pointers)
 4. **Word Search** (Backtracking)
 5. **Course Schedule** (Graphs)
+
+## Related
+
+- [[Binary search]]
+- [[Two pointers]]
+- [[Data Structures]]
