@@ -27,3 +27,19 @@ For defining concurrency, exact time doesn’t matter: we simply call two operat
 
 In computer systems, two operations might be concurrent even though the speed of light would in principle have allowed one operation to affect the other. For example, if the network was slow or interrupted at the time, two operations can occur some time apart and still be concurrent, because the network problems prevented one operation from being able to know about the other.
 
+> [!warning] Failure modes & trade-offs
+> **Wall-clock timestamps cannot establish causality**: NTP synchronization has millisecond-to-second drift and can jump backward. Using physical timestamps to order writes (Last Write Wins) frequently discards causally newer updates. Distributed systems use logical clocks (Lamport timestamps, version vectors) instead to capture the true *happens-before* partial order.
+
+## Why can't physical wall-clock timestamps determine whether two distributed writes are concurrent? #card
+Physical clocks drift across machines and NTP adjustments can step clocks forward or backward. Two operations separated by seconds on different nodes can still be causally concurrent if neither node saw the other's write; conversely, a causally later write can carry an earlier wall-clock timestamp. Logical clocks (version vectors) are required to track causality.
+
+Two operations A and B are **concurrent** in a distributed system if and only if ==neither happens-before the other (neither is aware of the other), regardless of physical wall-clock time==.
+
+## Related
+- [[Leaderless Replication]]
+- [[Multi-Leader Replication]]
+- [[Consistency Levels]]
+- [[CRDT]]
+- [[Eventual Consistency]]
+- [[Linearizability]]
+

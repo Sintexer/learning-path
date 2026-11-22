@@ -3,35 +3,35 @@ flashcards:
   q-s99j: { nid: 1795258118308, hash: f25rd6hd, sync: vvav2nny }
   q-j4fv: { nid: 1795261497664, hash: sbm6cejq, sync: u5sx8xh2 }
 ---
-In a leaderless configuration, failover does not exist - there is no need to choose a new leader in case a node fails.`
+In a leaderless configuration, failover does not exist - there is no need to choose a new leader in case a node fails.
 
-The client sends the write to all replicas in parallel, and the other available replicas accept the write but the unavailable replica misses it. When client reads, it reads from multiple replicas, to avoid reading a stale value from a turned back online replica. Version numbers are used to determine which value is newer.
+The client sends the write to all replicas in parallel, and the other available replicas accept the write but the unavailable replica misses it. When a client reads, it reads from multiple replicas to avoid reading a stale value from a node that just came back online. Version numbers are used to determine which value is newer.
 
 After an unavailable node comes back online, how does it catch up on the writes that it missed? Two mechanisms:
-1. *Read repair* - client detects a stale value read from a replica and updates the up-to-date value back to the replica.
-2. *Anti-entropy process* - a background process that constantly looks for differences in the data between replicas and copies any missing data from one replica to another. Order is usually no guaranteed, and there may be a significant delay before data is copied.
+1. **[[Read Repair]]** - client detects a stale value read from a replica and writes the up-to-date value back to the replica.
+2. **[[Anti-Entropy]] process** - a background process that constantly looks for differences in the data between replicas and copies any missing data from one replica to another. Order is usually not guaranteed, and there may be a significant delay before data is copied.
 
-Not all systems implement both of these. Lack of the anti-entropy process implies reduced durability - a rarely read value is not guaranteed to be present on most nodes.
+Not all systems implement both of these. Lack of an [[Anti-Entropy]] process implies reduced durability - a rarely read value is not guaranteed to be present on most nodes.
 
 ## Quorums for reading and writing
 
 If we know that every successful write is guaranteed to be present on at least two out of three replicas, that means at most one replica can be stale. Thus, if we read from at least two replicas, we can be sure that at least one of the two is up to date. If the third replica is down or slow to respond, reads can nevertheless continue returning an up-to-date value.
 
-More generally, if there are n replicas, every write must be confirmed by w nodes to be considered successful, and we must query at least r nodes for each read. (In our example, n = 3, w = 2, r = 2.) As long as w + r > n, we expect to get an up-to-date value when reading, because at least one of the r nodes we’re reading from must be up to date. Reads and writes that obey these r and w values are called **quorum reads and writes**.
+More generally, if there are $n$ replicas, every write must be confirmed by $w$ nodes to be considered successful, and we must query at least $r$ nodes for each read. (In our example, $n = 3, w = 2, r = 2$.) As long as ==w + r > n==, we expect to get an up-to-date value when reading, because at least one of the $r$ nodes we’re reading from must be up to date. Reads and writes that obey these $r$ and $w$ values are called **[[Quorum Consensus|quorum reads and writes]]**.
 
-Normally, reads and writes are always sent to all n replicas in parallel. The parameters w and r determine how many nodes we wait for - i.e., how many of the n nodes need to report success before we consider the read or write to be successful.
+Normally, reads and writes are always sent to all $n$ replicas in parallel. The parameters $w$ and $r$ determine how many nodes we wait for - i.e., how many of the $n$ nodes need to report success before we consider the read or write to be successful.
 
 > [!info] What is n
 > In textbook examples of quorums (w+r>n), we usually pretend the database only has n nodes in total (e.g., n=3), and _every_ node holds _all_ the data. If that were true in the real world, you would be right: you could write to any node at any time.
 > 
-> However, in the real world (like in Amazon Dynamo, Cassandra, or Riak), **a cluster might have 100 nodes, while your replication factor (n) is only 3.**
+> However, in the real world (like in Amazon Dynamo, [[Apache Cassandra]], or Riak), **a cluster might have 100 nodes, while your replication factor (n) is only 3.**
 
 ### What are "Home" Nodes?
 
-Imagine you have a cluster of **100 nodes**, and your Replication Factor (n) is **3**.  
+Imagine you have a cluster of **100 nodes**, and your Replication Factor ($n$) is **3**.  
 When you write a piece of data (say, `User_123`), you do not write it to all 100 nodes. You only write it to 3 nodes.
 
-How does the database know _which_ 3 nodes out of the 100 should hold `User_123`? It uses **Consistent Hashing**.  
+How does the database know _which_ 3 nodes out of the 100 should hold `User_123`? It uses **[[Consistent Hashing]]**.  
 The database hashes the key `User_123`, and the result points to 3 specific nodes (for example, **Node A, Node B, and Node C**).
 
 **Nodes A, B, and C are the "Home Nodes" (or designated nodes) for `User_123`.**  
@@ -54,7 +54,7 @@ Cassandra and Voldemort implement their multi-datacenter support within the norm
 > [!tip] Fact
 > In a multi-datacenter (Multi-DC) setup, you **do not** just define a single global number like n=5 and let the database randomly guess which datacenters get the data. Instead, **you explicitly configure n per datacenter**, and the total n is simply the sum of those numbers.
 
-You _can_ configure `{DC1: 3, DC2: 1, DC3: 1}`, **but it is usually a bad idea.** Here is whyn:
+You _can_ configure `{DC1: 3, DC2: 1, DC3: 1}`, **but it is usually a bad idea.** Here is why:
 
 > _"...the client usually only waits for acknowledgment from a quorum of nodes within its local datacenter so that it is unaffected by delays..."_
 
@@ -83,7 +83,7 @@ Dynamo-style databases allow several clients to concurrently write to the same k
 
 In order to become eventually consistent, the replicas should converge toward the same value. How do they do that? One might hope that replicated databases would handle this automatically, but unfortunately most implementations are quite poor.
 
-### Last wire wins
+### Last write wins
 
 As long as we have some way of unambiguously determining which write is more “recent,” and every write is eventually copied to every replica, the replicas will eventually converge to the same value. Commonly abbreviated as **LWW**.
 
@@ -127,4 +127,23 @@ The collection of version numbers from all the replicas is called a version vect
 
 Such Dynamo-style databases it is important to set-up monitoring to detect the stale data. If the freshness of the data falls behind significantly, it should alert ops to investigate the root- cause.
 
-By subtracting a follower's current position from the leader's current position we can measure the replication lag. However in leaderless systems there is no specific order in which writes should be applied, and if there is no [[Anti-Entropy]] process and only the [[Read Repair]] is used, there is no limit on how stale a value may be.
+By subtracting a follower's current position from the leader's current position we can measure the [[Replication Lag|replication lag]]. However in leaderless systems there is no specific order in which writes should be applied, and if there is no [[Anti-Entropy]] process and only [[Read Repair]] is used, there is no limit on how stale a value may be.
+
+> [!warning] Failure modes & trade-offs
+> - **Quorums ($w + r > n$) do NOT guarantee [[Linearizability]]**: Even with strict quorums, concurrent reads during an in-flight write can observe the new value on one read and the old value on a subsequent read unless the database performs synchronous read-repair before returning to the caller.
+> - **Clock skew under LWW**: [[Apache Cassandra]]'s default LWW relies on client or coordinator wall-clock timestamps. A node whose clock is ahead by even a few seconds will silently overwrite newer writes from other nodes.
+
+## Why is a single version number insufficient in leaderless replication, requiring a Version Vector instead? #card
+With multiple replicas independently accepting concurrent writes, a single scalar counter cannot distinguish whether write B overwrote write A or happened concurrently with it. A **version vector** maintains one counter per replica per key, letting replicas identify which values causally supersede others and which must be kept as concurrent siblings.
+
+## Related
+- [[Sloppy Quorum]]
+- [[Read Repair]]
+- [[Anti-Entropy]]
+- [[CRDT]]
+- [[Types of Writes in distributed systems]]
+- [[Consistent Hashing]]
+- [[Quorum Consensus]]
+- [[Linearizability]]
+- [[Apache Cassandra]]
+- [[Eventual Consistency]]

@@ -1,42 +1,72 @@
-Multiple leaders means the writes are accepted by multiple data centers. This is a way to scale the writes horizontally.
+Multiple leaders ([[Active-active systems|active-active replication]]) means writes are accepted by more than one node, typically across multiple datacenters. This lowers local write latency and allows scaling writes across regions.
 
-The biggest problem with multi-leader replication is that write conflicts can occur, which means that conflict resolution is required.
+The biggest problem with multi-leader replication is that **write conflicts** can occur, which means conflict resolution is required.
 
 Use cases for multi-leader replication:
-1. **Multi-datacenter operation** - With a normal [[Leader-Based Replication]] setup, the leader has to be in one of the datacenters, and all writes must go through that datacenter. In a multi-leader configuration, you can have a leader in each datacenter. Within each datacenter, regular leader-follower replication is used; between datacenters, each datacenter’s leader replicates its changes to the leaders in other datacenters.
-2. **Clients with offline operation** - mobile calendar syncs, etc. In this design, any mobile phone is basically a separate leader that should be synced with others (each device is a datacenter). CouchDB is designed for this kind of operation.
-3. **Collaborative editing** - If you want to guarantee that there will be no editing conflicts, the application must obtain a lock on the document before a user can edit it. If another user wants to edit the same document, they first have to wait until the first user has committed their changes and released the lock. This collaboration model is equivalent to single-leader replication with transactions on the leader. However, for faster collaboration, you may want to make the unit of change very small (e.g., a single keystroke) and avoid locking. This approach allows multiple users to edit simultaneously, but it also brings all the challenges of multi-leader replication, including requiring conflict resolution.
+1. **Multi-datacenter operation** — With a normal [[Leader-Based Replication]] setup, the leader lives in one datacenter and all writes must cross the WAN to reach it. In a multi-leader configuration, you have a leader in each datacenter. Within each datacenter, regular leader-follower replication is used; between datacenters, each datacenter’s leader replicates its changes asynchronously to the leaders in other datacenters.
+2. **Clients with offline operation** — mobile calendar syncs, notes apps, etc. In this design, every device acts as a local leader with its own database that syncs asynchronously with other devices when online. CouchDB is designed for this model.
+3. **Collaborative editing** — To guarantee no editing conflicts, an app would have to lock a document before editing (equivalent to single-leader replication). For real-time collaboration (keystroke-level edits without locking), each user edits a local replica and conflicts are resolved continuously.
 
 ## Handling write conflict
 
-In a single-leader database, the second writer will either block and wait for the first write to complete, or abort the second write transaction, forcing the user to retry the write. On the other hand, in a multi-leader setup, both writes are successful, and the conflict is only detected asynchronously at some later point in time.
+In a single-leader database, the second writer will either block and wait for the first write to complete, or abort the second write transaction, forcing the user to retry. In a multi-leader setup, **both writes succeed locally**, and the conflict is only detected asynchronously later when changes replicate.
 
-**Conflict avoidance**. The simplest strategy for dealing with conflicts is to avoid them: if the application can ensure that all writes for a particular record go through the same leader, then conflicts cannot occur. Since many implementations of multi-leader replication handle conflicts quite poorly, avoiding conflicts is a frequently recommended approach
+**Conflict avoidance**. The simplest strategy for dealing with conflicts is to avoid them: if the application routes all writes for a particular user/record to the same datacenter leader, conflicts cannot occur (until a datacenter fails over and forces re-routing). Since many implementations of multi-leader replication handle conflicts poorly, avoiding conflicts is frequently recommended.
 
-**Converging towards a consistent state**: If each replica simply applied writes in the order that it saw the writes, the database might end up in an inconsistent state - the order is not guaranteed in a multi-datacenter operation. Thus, the database must resolve the conflict in a *convergent way*, which means that all replicas must arrive at the same final value when all changes have been replicated. This can be achieved by ordering writes by some id, timestamp, key and skip "outdated" updates. Another way is to pick writes based on which replica id is higher. Third way is to merge values together - e.g. concatenate titles and let user de-merge it manually. Last option is to store conflict until the user resolves it manually. 
+**Converging towards a consistent state**. If each replica simply applied writes in the order it saw them, replicas would permanently diverge because network arrival order is not guaranteed across datacenters. Thus, the database must resolve conflicts in a *convergent way*, guaranteeing all replicas arrive at the same final value:
+- **Last Write Wins (LWW)**: Assign each write a unique ID/timestamp and keep the highest — simple, but **prone to silent data loss** (especially under clock skew).
+- **Replica priority**: Give each replica a unique ID and always prefer writes from the higher-numbered replica — also loses data.
+- **Merge values**: Concatenate or union conflicting values (e.g., `B/C`).
+- **Preserve conflict**: Record both conflicting versions in an explicit data structure and resolve later (in app code or via user prompt).
 
-**Custom conflict resolution logic**. As the most appropriate way of resolving a conflict may depend on the application, most multi-leader replication tools let you write conflict resolution logic using application code. That code may be executed on write or on read: 
-1. On write - on write conflict DB calls an application code handler
-2. On read - DB stores the conflic in a special data structure and prompts user to resolve the conflict on read, or resolve the conflict automatically. 
+**Custom conflict resolution logic**. Most multi-leader tools let you plug in application code to resolve conflicts:
+1. **On write** — as soon as the DB detects a conflict in the replication stream, it invokes a background handler (cannot prompt the user).
+2. **On read** — the DB stores all conflicting versions (siblings) and returns them to the application on the next read, which resolves them (automatically or by prompting the user) and writes the result back.
 
-**What is a conflict?** Some conflicts are obvious - modification of the same entity field is likely a conflict. But some kinds of conflict can be more subtle to detect. For example, consider a meeting room booking system: it tracks which room is booked by which group of people at which time. This application needs to ensure that each room is only booked by one group of people at any one time (i.e., there must not be any overlapping bookings for the same room). In this case, a conflict may arise if two different bookings are created for the same room at the same time.
+**What is a conflict?** Some conflicts are obvious — two leaders updating the same field of the same row. Others are subtle: in a meeting room booking system, two leaders can insert *different* booking rows for the same room at overlapping times. Neither row conflicts on primary key, yet the business invariant ("no double bookings") is violated (analogous to [[Write Skew]]).
+
 ### Automatic conflict resolution
 
-Conflict resolution rules can quickly become complicated, and custom code can be error-prone. Amazon is a frequently cited example of surprising effects due to a conflict resolution handler: for some time, the conflict resolution logic on the shopping cart would preserve items added to the cart, but not items removed from the cart.
+Conflict resolution rules quickly become complicated, and custom code is error-prone. Amazon's shopping cart famously resurrected removed items when sibling merges only took the union of additions.
 
-- Conflict-free replicated datatypes (CRDTs) are a family of data structures for sets, maps, ordered lists, counters, etc. that can be concurrently edited by multiple users, and which automatically resolve conflicts in sensible ways. Some CRDTs have been implemented in Riak 2.0.
-- Mergeable persistent data structures track history explicitly, similarly to the Git version control system, and use a three-way merge function (whereas CRDTs use two-way merges).
-- Operational transformation is the conflict resolution algorithm behind collaborative editing applications such as Etherpad and Google Docs. It was designed particularly for concurrent editing of an ordered list of items, such as the list of characters that constitute a text document.
+- **[[CRDT|Conflict-free Replicated Data Types (CRDTs)]]** — data structures (sets, maps, ordered lists, counters) that can be concurrently edited and automatically converge via commutative/associative/idempotent two-way merges (used in Riak 2.0, Redis Enterprise).
+- **Mergeable persistent data structures** — track history explicitly like Git and use a three-way merge function.
+- **Operational Transformation (OT)** — conflict resolution algorithm behind collaborative editors like Google Docs for concurrent edits to ordered character lists.
+
 ## Single vs Multi-leader replication
 
-In multi-leader replication each data center has a leader, so the performance is better. In case of the data center outage, other datacenters would continue normal operation (in single-leader design, new leader might be elected in a different datacenter). And the multi-leader replication is less dependent on the public internet stability. 
+In multi-leader replication each datacenter has a local leader, so write latency is much lower and each datacenter can continue accepting writes during inter-datacenter network outages (unlike single-leader, where WAN outages block writes from remote regions or trigger failover).
 
 ## Multi-Leader Replication Topologies
 
-If you have only 2 leaders there could be only one possible topology - replication topology is a communication paths along which writes are propagated from one node to another. With more than 2 leaders various topologies are possible.
+A **replication topology** describes the communication paths along which writes propagate from one leader to another (with 2 leaders there is only one topology; with 3+ leaders there are several):
 
-The most general topology is **all-to-all**, in which every leader sends its writes to every other leader. However, more restricted topologies are also used: for example, MySQL by default supports only a **circular** topology, in which each node receives writes from one node and forwards those writes (plus any writes of its own) to one other node. Another popular topology has the shape of a **star**: one designated root node forwards writes to all of the other nodes. The star topology can be generalized to a tree.
+- **All-to-all**: Every leader sends its writes directly to every other leader. Most fault-tolerant, but some network links may be faster than others, causing **causality violations** (an `UPDATE` arriving before the `INSERT` it modifies — requires version vectors to order).
+- **Circular (ring)**: Each node forwards writes to one neighbor (MySQL's historical default).
+- **Star (or tree)**: One designated root node forwards writes to all other nodes.
 
-In circular and star topologies, a write may need to pass through several nodes before it reaches all replicas. Therefore, nodes need to forward data changes they receive from other nodes. To prevent infinite replication loops, each node is given a unique identifier, and in the replication log, each write is tagged with the identifiers of all the nodes it has passed through.
+In circular and star topologies, each write is tagged with the IDs of all nodes it has passed through to prevent infinite replication loops. However, both circular and star topologies have a **single point of failure**: one dead node interrupts replication across the cluster until reconfigured.
 
-Star and circular topologies are much more prone to interrupt of the flow of replication messages between replica if even only one node fails.
+> [!warning] Failure modes & trade-offs
+> Multi-leader replication is often bolted onto databases as an afterthought and has subtle traps: **auto-incrementing keys**, **triggers**, and **integrity constraints** (unique email, foreign keys) break easily across independent leaders. Avoid multi-leader replication inside a single datacenter — the operational complexity almost never pays off there.
+
+## Why is conflict avoidance often preferred over automatic conflict resolution in multi-leader setups? #card
+Conflict resolution is notoriously subtle and error-prone (LWW silently drops data, custom handlers introduce bugs, and cross-record invariants like double-booking cannot be resolved automatically). Routing all writes for a given user or entity to the same datacenter leader eliminates conflicts in normal operation.
+
+## What is a key failure mode of an all-to-all multi-leader topology vs star/circular topologies? #card
+- **Star / Circular**: A single node failure breaks the replication path for other nodes.
+- **All-to-all**: Avoids single points of failure, but varying network delays can deliver causally dependent writes out of order (e.g., an `UPDATE` arrives before its `INSERT`), requiring version vectors to preserve causality.
+
+In [[Multi-Leader Replication]], both conflicting writes succeed locally and the conflict is only detected ==asynchronously later during replication==, whereas single-leader replication blocks or aborts the second writer immediately.
+
+Never deploy multi-leader replication within a single datacenter; use it only for multi-region write latency, offline clients, or collaborative editing. #card-reminder
+
+## Related
+- [[Leader-Based Replication]]
+- [[Leaderless Replication]]
+- [[CRDT]]
+- [[Active-active systems]]
+- [[Replication]]
+- [[Eventual Consistency]]
+- [[Types of Writes in distributed systems]]
+- [[Write Skew]]

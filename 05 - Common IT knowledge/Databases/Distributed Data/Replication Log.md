@@ -1,24 +1,45 @@
-This is how data is shared from [[Leader-Based Replication#Leader]] to [[Leader-Based Replication#Follower]]s.
+This is how data changes are streamed from [[Leader-Based Replication#Leader|leader]] to [[Leader-Based Replication#Follower|followers]].
 
 ## Statement-based replication
- 
- The simplest case: the leader logs every write request (statement) that it executes and sends that statement log to its followers. Indirectly prohibits the usage of some statements like `RAND()`, `NOW()`, auto-incrementing columns, triggers and producers might also produce different results on different replicas.
+
+The simplest case: the leader logs every write request (`INSERT`, `UPDATE`, `DELETE` statement) that it executes and sends that statement log to its followers. This indirectly breaks on nondeterministic statements like `RAND()`, `NOW()`, auto-incrementing columns, triggers, and stored procedures, which can produce different results on different replicas and silently cause divergence.
 
 ## Write-ahead log (WAL) shipping
 
-Default for [[PostgreSQL]]. DB shares the low-level [[WAL]] entries, with disk block identifiers and etc. Enforces hard requirement on [[Database Storage Engines]].  If the database changes its storage format from one version to another, it is typically not possible to run different versions of
-the database software on the leader and the followers.
+Default for physical replication in [[PostgreSQL]] (and Oracle). The DB ships low-level [[WAL]] entries containing exact disk block/byte modifications. This tightly couples replication to the [[Database Storage Engines|storage engine]] internals: if the database changes its on-disk storage format between major versions, you typically cannot run different database versions on the leader and followers (blocking [[Zero-downtime deployment|zero-downtime]] major upgrades).
 
 ## Logical (row-based) log replication
 
-An alternative is to use different log formats for replication and for the storage engine, which allows the replication log to be decoupled from the storage engine internals. This kind of replication log is called a logical log, to distinguish it from the storage engine’s (physical) data representation.
+An alternative is to use a separate log format for replication, decoupled from the storage engine's physical layout. A **logical log** describes changes at the row granularity:
+- For an `INSERT`: the new values of all columns.
+- For a `DELETE`: enough information (primary key) to uniquely identify the deleted row.
+- For an `UPDATE`: row identifier plus the new values of changed columns.
+
+Because logical logs are decoupled from storage internals, leader and followers can run **different DB versions** (enabling zero-downtime upgrades) and external systems can parse the stream directly — this is the foundation of **[[Change Data Capture]] (CDC)** (e.g., Debezium reading MySQL binlog or PostgreSQL logical replication slots).
 
 ## Trigger-based replication
 
-There are some circumstances where more flexibility is needed and the replication should be controlled from application code. For example, if you want to only replicate a subset of the data, or want to replicate from one kind of database to another, or if you need conflict resolution logic, then you may need to move replication up to the application layer.
+When more flexibility is needed — replicating a subset of tables, replicating across heterogeneous databases, or running custom conflict resolution — replication can move up to the application layer via database triggers or external log-reading tools (e.g., Oracle GoldenGate, Bucardo for [[PostgreSQL]]).
 
-Usually this solution is implemented using third-party tools like Oracle GoldenGate. It can make data changes available to an application by reading the database log. An alternative is to use features that are available in many relational databases: triggers and stored procedures.
+A trigger registers custom code that fires on every write transaction and logs the change into a separate table, which an external process reads and forwards (conceptually similar to the [[Outbox Pattern]]). Trigger-based replication carries higher write overhead and more operational fragility than built-in logical replication, so prefer logical replication / [[Change Data Capture]] when available.
 
-A trigger lets you register custom application code that is automatically executed when a data change (write transaction) occurs in a database system. The trigger has the opportunity to log this change into a separate table, from which it can be read by an external process. That external process can then apply any necessary application logic and replicate the data change to another system. Databus for Oracle and Bucardo for Postgres work like this, for example.
+> [!warning] Failure modes & trade-offs
+> - **WAL shipping blocks rolling DB upgrades**: Physical WAL replication requires identical major versions and OS/CPU architectures on leader and follower. Use logical replication for major-version upgrades.
+> - **Logical replication slot bloat in [[PostgreSQL]]**: If a downstream [[Change Data Capture|CDC]] consumer stops reading from a logical replication slot, Postgres retains WAL segments indefinitely until the primary disk fills up and crashes the database. Always monitor replication slot lag and set `max_slot_wal_keep_size`.
 
-Trigger-based replication typically has greater overheads than other replication methods, and is more prone to bugs and limitations than the database’s built-in replication. However, it can nevertheless be useful due to its flexibility.
+## Compare WAL shipping vs Logical (row-based) replication. #card
+- **[[WAL]] shipping**: Streams physical disk-block byte changes. Fast, minimal overhead, but tightly coupled to storage engine version — prevents mixed-version rolling upgrades and external consumption.
+- **Logical (row-based) replication**: Streams row-level insert/update/delete events decoupled from disk layout. Enables [[Zero-downtime deployment|zero-downtime major upgrades]] and powers [[Change Data Capture]] (CDC).
+
+Why is statement-based replication fragile in production?::Nondeterministic functions (`NOW()`, `RAND()`), auto-increment ordering, and triggers can evaluate differently on leader vs follower, silently causing replicas to diverge.
+
+In [[PostgreSQL]], an abandoned logical replication slot can crash the primary database because ==Postgres retains unconsumed WAL segments indefinitely until disk fills up==.
+
+## Related
+- [[Leader-Based Replication]]
+- [[WAL]]
+- [[Database Log]]
+- [[Change Data Capture]]
+- [[Outbox Pattern]]
+- [[PostgreSQL]]
+- [[Zero-downtime deployment]]

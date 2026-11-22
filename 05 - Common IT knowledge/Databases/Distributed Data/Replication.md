@@ -1,13 +1,33 @@
-Replication means keeping the copy of the same data on different machines connected via the network. There are several reasons to replicate data: Latency, fault tolerance, horizontal scaling.
+**Replication** means keeping a copy of the same data on multiple machines connected via a network (see [[Replication vs Partitioning]]). There are three main reasons to replicate data:
+1. **Latency** — place data geographically closer to users.
+2. **Fault tolerance / [[Availability|high availability]]** — keep the system working if some nodes or a datacenter fail.
+3. **[[Horizontal scaling|Read throughput scaling]]** — scale out the number of machines serving read queries.
 
-Each node that stores a copy of the database is called a replica. With multiple replicas a question inevitably arises: how do we ensure that all the data ends up on all the replicas?
+Each node that stores a copy of the database is called a **replica**. With multiple replicas, the central challenge is: *how do we ensure that all changes end up on all replicas reliably?*
 
-The most common solution for this is called *[[Leader-Based Replication]]*. It is also called *read-scaling architecture*. However this approach is only realistically approachable with asynchronous replication.
+Three dominant replication architectures exist:
 
-An important detail of a replicated system is whether the replication happens [[Synchronous vs Asynchronous Replication|synchronously or asynchronously]].
+1. **[[Leader-Based Replication]]** (*primary-replica* / *read-scaling architecture*): One leader accepts all writes and streams a [[Replication Log]] to followers. Reads can scale out across followers (realistically with asynchronous replication). An important choice here is whether replication happens [[Synchronous vs Asynchronous Replication|synchronously or asynchronously]]. When an application reads from an async follower, it may see outdated results due to [[Replication Lag]], though replicas eventually catch up — a phenomenon called [[Eventual Consistency]].
+2. **[[Multi-Leader Replication]]**: Multiple leaders (typically one per datacenter) accept writes to lower geo-latency and survive WAN outages. However, the overhead and write-conflict complexity outweigh the benefits inside a single datacenter — use it only for multi-datacenter setups, offline clients, or collaborative editing.
+3. **[[Leaderless Replication]]** (*Dynamo-style*, e.g., [[Apache Cassandra]], Riak): Abandons the concept of a leader and lets clients send reads and writes directly to multiple replicas in parallel, using [[Quorum Consensus|quorums]] ($w + r > n$), [[Read Repair]], and [[Anti-Entropy]] to stay consistent.
 
-When an application reads from async follower, it might see outdated result. But after some time replicas will catch app and app will once again show the correct information. This phenomena is called *eventual consistency*.
+> [!tip] Production reality
+> Replication topology (single-leader, multi-leader, leaderless) and consistency guarantees ([[Consistency Levels]]) are **independent design dimensions**. For example, single-leader replication with asynchronous followers is *not* linearizable on follower reads, while leaderless replication with strict quorums ($w + r > n$) still does not guarantee [[Linearizability]] without extra coordination.
 
-Another solution is [[Multi-Leader Replication]]. Leader-based replication has one downside - there is only one leader and all writes must go through it. It limits the throughput. With multiple leaders, writes can be scaled along with read scaling. However there are other things to considers: the overhead is big, and the downsides outweigh the benefits for a single data center - it works for multiple data centers only. Also you'll have to deal with a harder replication mechanisms.
+## Compare the three main replication architectures and their primary trade-off. #card
+- **[[Leader-Based Replication]]**: Simple, no write conflicts; bottlenecked by single write leader and failover/[[Replication Lag]] hazards.
+- **[[Multi-Leader Replication]]**: Low multi-region write latency and offline support; introduces asynchronous **write conflicts** and complex topologies.
+- **[[Leaderless Replication]]**: No failover needed, high write availability (especially with [[Sloppy Quorum]]); complex concurrent-write handling (LWW data loss / version vectors) and unbounded staleness without [[Anti-Entropy]].
 
-A leader determines the order in which writes should be processed, and followers apply the leader’s writes in the same order. Some data storage systems take a different approach, abandoning the concept of a leader and allowing any replica to directly accept writes from clients. We call them [[Leaderless Replication]]. Sometimes this kind of the replication is called *Dynamo-style* because it was the original inspiration for this kind of databases.
+What are the three primary reasons to replicate data across nodes?::1. Lower latency (geo-proximity), 2. High availability / fault tolerance, 3. Scaling read throughput horizontally.
+
+## Related
+- [[Leader-Based Replication]]
+- [[Multi-Leader Replication]]
+- [[Leaderless Replication]]
+- [[Synchronous vs Asynchronous Replication]]
+- [[Replication Log]]
+- [[Replication Lag]]
+- [[Replication vs Partitioning]]
+- [[Eventual Consistency]]
+- [[Consistency Levels]]

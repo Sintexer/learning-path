@@ -4,6 +4,8 @@
 
 ## C01 — Reliable, Scalable, and Maintainable Applications
 
+> Vault note: [[Reliability, Scalability, Maintainability]]
+
 **Core topic:** Data-system quality attributes  
 **Central question:** What makes a data-intensive application successful beyond simply producing correct results?
 
@@ -51,6 +53,8 @@
 ---
 
 ## C02 — Data Models and Query Languages
+
+> Vault notes: [[Relational Database]], [[Document Database]], [[SQL vs NoSQL]], [[Impedance mismatch]], [[Query Languages for Data]], [[Graph database]]
 
 **Core topic:** Logical data modeling and data access  
 **Central question:** How do data models influence application code, relationships, and the queries a system can express?
@@ -105,6 +109,8 @@
 ---
 
 ## C03 — Storage and Retrieval
+
+> Vault notes: [[DDIA Chapter 3 Storage and Retrieval]], [[Database Storage Engines]], [[LSM Tree]], [[SSTable]], [[B-Tree Index]], [[WAL]], [[Column-Oriented Storage]], [[OLTP and OLAP]]
 
 **Core topic:** Storage-engine architecture and access paths  
 **Central question:** How do databases physically store data, and why are different engines suitable for different workloads?
@@ -168,6 +174,8 @@
 
 ## C04 — Encoding and Evolution
 
+> Vault notes: [[DDIA Chapter 4 Encoding and Evolution]], [[Data Encoding]], [[Backward Compatibility]], [[Forward Compatibility]], [[Protocol Buffers]], [[Apache Thrift]]
+
 **Core topic:** Data serialization and compatibility  
 **Central question:** How can independently changing components continue exchanging and interpreting data correctly?
 
@@ -224,6 +232,8 @@
 **Group theme:** Distributing data across machines while managing scaling, concurrency, failures, and agreement.
 
 ## C05 — Replication
+
+> Vault notes: [[Replication]], [[Leader-Based Replication]], [[Synchronous vs Asynchronous Replication]], [[Replication Log]], [[Replication Lag]], [[Multi-Leader Replication]], [[Leaderless Replication]], [[Sloppy Quorum]], [[Read Repair]], [[Anti-Entropy]], [[CRDT]], [[Types of Writes in distributed systems]]
 
 **Core topic:** Maintaining multiple copies of data  
 **Central question:** How can replicas improve availability and performance without creating unacceptable consistency problems?
@@ -285,6 +295,8 @@
 
 ## C06 — Partitioning
 
+> Vault notes: [[Data partitioning]], [[Partitioning and Secondary Indexes]], [[Replication vs Partitioning]], [[Consistent Hashing]]
+
 **Core topic:** Dividing datasets and workloads across nodes  
 **Central question:** How can a system distribute data efficiently while avoiding hotspots and excessive coordination?
 
@@ -341,6 +353,8 @@
 ---
 
 ## C07 — Transactions
+
+> Vault notes: [[Transaction]], [[ACID]], [[MVCC]], [[Snapshot Isolation]], [[Write Skew]], [[Optimistic Locking]], [[Pessimistic Locking]]
 
 **Core topic:** Correctness under concurrent access and failures  
 **Central question:** Which guarantees do transactions provide, and which anomalies remain at different isolation levels?
@@ -402,6 +416,8 @@
 
 ## C08 — The Trouble with Distributed Systems
 
+> Vault notes: [[Fencing Token]], [[Split-Brain]], [[Distributed Lock]], [[Worker Leases]], [[CAP Theorem]]
+
 **Core topic:** Failure models, uncertainty, and time  
 **Central question:** What assumptions become unsafe when computation spans independently failing machines?
 
@@ -457,6 +473,8 @@
 ---
 
 ## C09 — Consistency and Consensus
+
+> Vault notes: [[Consistency Levels]], [[Eventual Consistency]], [[Linearizability]], [[Raft]], [[Paxos]], [[Two-Phase Commit]], [[Quorum Consensus]]
 
 **Core topic:** Agreement, ordering, and strong consistency  
 **Central question:** How can distributed components agree on values and decisions despite failures?
@@ -522,6 +540,8 @@
 
 ## C10 — Batch Processing
 
+> Vault notes: [[MapReduce querying]], [[ETL]], [[Data Warehouse]]
+
 **Core topic:** Bounded data processing and recomputation  
 **Central question:** How can large datasets be transformed reliably and efficiently into new datasets?
 
@@ -581,6 +601,8 @@
 ---
 
 ## C11 — Stream Processing
+
+> Vault notes: [[Kafka]], [[Change Data Capture]], [[Event Sourcing]], [[CQRS]], [[Delivery Semantics]], [[Idempotent Consumer]]
 
 **Core topic:** Continuous processing of event data  
 **Central question:** How can systems derive useful state from ongoing event streams while handling ordering, time, and failures?
@@ -645,6 +667,8 @@
 ---
 
 ## C12 — The Future of Data Systems
+
+> Vault notes: [[Dual-Write]], [[Outbox Pattern]], [[Reconciliation]], [[Idempotency]], [[2PC vs Saga]]
 
 **Core topic:** Composing correct, evolvable, and responsible data systems  
 **Central question:** How can multiple specialized components behave as one coherent application-level data system?

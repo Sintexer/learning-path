@@ -1,8 +1,7 @@
-
 Known gaps:
-- [ ] how DB schema migration libraries work under the hood
-- [ ] passing data between services using db
-
+- [ ] How [[Schema Migration]] libraries work under the hood (lock acquisition, expand-and-contract, zero-downtime DDL)
+- [ ] Passing data between services using DB (anti-pattern vs [[Outbox Pattern]] / [[Change Data Capture]])
+- [ ] Deep-dive Staff gaps: [[Linearizability]], [[Snapshot Isolation]], [[Write Skew]], [[Fencing Token]], [[Raft]], [[Paxos]], [[Consistent Hashing]], [[Split-Brain]], [[Backpressure]]
 
 ```mermaid
 flowchart TD
@@ -89,3 +88,14 @@ flowchart TD
     Phase5 --> Finish([🏆 Principal Systems Architect Mastery])
 ```
 
+## Vault Links by Phase
+- **Phase 1**: [[Composition Over Inheritance]], [[JPA]], [[Hibernate]], [[concurrency]], [[Java Memory Model]], [[Virtual Threads]]
+- **Phase 2**: [[DDD]], [[Anti-Corruption Layer]]
+- **Phase 3**: [[Event-driven architecture]], [[Kafka]], [[Aggregator]], [[Outbox Pattern]], [[Idempotent Consumer]], [[Delivery Semantics]]
+- **Phase 4**: [[Microservices decomposition]], [[API Gateway]], [[BFF]], [[Saga]], [[2PC vs Saga]], [[CQRS]], [[Event Sourcing]], [[Circuit Breaker]], [[Rate Limiting]], [[Bulkhead Pattern]]
+- **Phase 5**: [[Designing Data Intensive Applications]], [[Database Storage Engines]], [[B-Tree Index]], [[LSM Tree]], [[Replication]], [[Data partitioning]], [[Consistent Hashing]], [[Partitioning and Secondary Indexes]], [[Raft]], [[Paxos]], [[Two-Phase Commit]], [[Linearizability]], [[Consistency Levels]], [[Eventual Consistency]], [[Change Data Capture]]
+
+## Related
+- [[Designing Data Intensive Applications]]
+- [[Designing Data-Intensive Applications chapter-to-topic map]]
+- [[Reliability, Scalability, Maintainability]]
