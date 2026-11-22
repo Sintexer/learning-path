@@ -2,44 +2,44 @@
 aliases:
   - K8S
 ---
-> v1.0 Since 2015, donated to CNCF in 2014, pronounced as *koo-ber-net-eez* or K8s as *kates*
+> v1.0 since 2015, donated to CNCF in 2014; pronounced *koo-ber-net-eez* (or K8s as *kates*).
 
-Kubernetes is a service that provides containers orchestration.
+**Kubernetes** is the industry-standard open-source [[Containers orchestration|container orchestration]] platform. It deploys, scales, self-heals, and updates [[Container|containerized]] [[Cloud-Native App|cloud-native applications]] declaratively across a fleet of machines.
 
-Kubernetes deploys and manages (orchestrates) applications that are packaged and run as containers (containerized) and that are built in ways (cloud-native microservices) that allow them to scale, self-heal, and be updated in-line with modern cloud-like requirements.
+Kubernetes and container runtimes are complementary technologies: Kubernetes handles high-level orchestration (scheduling, self-healing, [[Horizontal scaling|scaling]], [[Zero-downtime deployment|rolling updates]], [[Service discovery]]), while delegating low-level container execution to a [[Container Runtime Interface|CRI]] runtime such as [[containerd]] or CRI-O (and [[Open Container Initiative|OCI]] runtimes like `runc` or Kata).
 
-Kubernetes and [[Docker]] are complementary technologies.
+> Docker (`dockershim`) was deprecated in Kubernetes 1.20 and removed in 1.24 in favor of [[containerd]] / CRI-O, though standard Docker-built OCI images continue to run identically.
 
-Kubernetes performs high-level orchestration tasks as self-healing, scaling and rolling updates, but it needs a tool like Docker to perform low-level tasks such as staring and stopping containers.
+Kubernetes abstracts infrastructure the way an OS abstracts hardware—developers declare *what* desired state they want rather than *which* machine should run each process.
 
-Kubernetes might work with different container runtimes, not limited to Docker (e.g. containerd, kata) through [[Container Runtime Interface|CRI]]
+## Kubernetes as a Cluster
 
-> Docker was a Kubernetes runtime. But it is deprecated since 1.20 for removal in favor of [[containerd]].
+A Kubernetes cluster consists of two planes:
+- **[[K8S Control Plane]]**: the cluster brains (`kube-apiserver`, [[etcd]], `kube-controller-manager`, `kube-scheduler`).
+- **[[K8S Worker nodes]]**: the machines (`kubelet`, [[containerd]], `kube-proxy`, CNI) where user application [[Pod|Pods]] run.
 
-Docker Swarm and Mesosphere DCOS are former K8S competitors, while swarm is still under active development.
+## Packaging Apps for Kubernetes
 
-Kubernetes abstracts the cloud and hence the way we distribute resources between containers. It is like modern programming languages abstract developers from the memory addresses and cpu cores. 
+To run an application on Kubernetes:
+1. Package it as an [[Open Container Initiative|OCI]] [[Container]] image.
+2. Wrap it in a [[Pod]] specification with [[Health Checks|probes]], resource requests/limits, and graceful shutdown (see [[JVM App Deployment]]).
+3. Declare its [[Pod Desired State|desired state]] in a manifest (YAML / Helm / Kustomize) via a higher-level controller such as a [[K8S Deployment]] (stateless) or StatefulSet (stateful), exposed via a [[K8S Service]].
 
-Kubernetes isn't just one magic program; it is actually a collection of system containers running in the background.
+> [!tip] Production reality
+> Kubernetes is a **reconciliation engine**, not an imperative deployment script: every controller continuously converges observed state toward desired state. That design gives strong self-healing, but also means misconfigurations (bad liveness probes, missing CPU/memory limits, missing `PodDisruptionBudget`) can trigger automated restart or eviction loops at cluster speed.
 
-## Kubernetes as a cluster
+## Flashcards
 
-Kubernetes is like any other cluster - a bunch of machines to host applications. We call these machines **nodes**, and they can be physical servers, virtual machines, cloud instances, Raspberry Pis, and more.
+Kubernetes (K8s):::Declarative [[Containers orchestration|container orchestration]] platform composed of a [[K8S Control Plane|control plane]] and [[K8S Worker nodes|worker nodes]] that continuously reconciles observed cluster state toward desired state.
 
-Cluster is made of *control plane* and *nodes*.
+What architectural pattern sits at the core of Kubernetes?::A declarative ==reconciliation (control) loop== where specialized controllers watch the API server and continuously converge observed state to match [[Pod Desired State|desired state]] stored in [[etcd]].
 
-## Kubernetes as an orchestrator
-
-Orchestrator is a system that takes care of deploying and managing applications.
-
-The K8s cluster is made of one or more *control plane* nodes and a bunch of *worker nodes*. Control plane nodes implement the cluster intelligence, worker nodes are where user applications run.
-
-## Packaging apps for Kubernetes
-
-An application needs to tick a few boxes to run on a Kubernetes cluster:
-
-1. Packaged as a container
-2. Wrapped in a Pod
-3. Deployed via a declarative manifest file
-
-While it's possible to run static Pods like this on a Kubernetes cluster, the preferred model is to deploy all Pods via higher-level controllers. The most common controller is the *Deployment*. It offers scalability, self-healing, and replicas to deploy and how to perform updates. 
+## Related
+- [[K8S Control Plane]]
+- [[K8S Worker nodes]]
+- [[Pod]]
+- [[K8S Deployment]]
+- [[K8S Service]]
+- [[etcd]]
+- [[Containers orchestration]]
+- [[Cloud-Native App]]

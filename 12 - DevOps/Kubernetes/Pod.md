@@ -1,51 +1,65 @@
-Pod is a construct for running one or more containers. Pods themselves don't actually run applications - applications always run in containers, the Pod is just a sandbox to run one or more containers. 
+A **Pod** is the smallest deployable and schedulable unit in [[Kubernetes]]—a sandbox that runs one or more tightly coupled [[Container|containers]]. Pods themselves don't execute application code; applications run inside containers hosted in the Pod's shared environment.
 
-Pods ring-fence an area of the host OS, build a network stack, create a bunch of kernel namespaces, and run one or [[Multi-container Pods|more containers]]. Multiple containers in a pod share network stack, IP address, volumes, IPC (Inter-process communication) namespace, shared memory, and more. Two containers in the same Pod can talk to each other using the Pod's `localhost`.
+Pods ring-fence an area of the host OS via the `pause` container ([[K8S Core Containers]]), creating shared Linux namespaces so all containers in the Pod share:
+- **Network namespace**: single Pod IP, port space, routing table—containers in the same Pod talk over `localhost`.
+- **IPC namespace**: System V IPC and POSIX shared memory.
+- **Volumes**: shared storage mounts (e.g., `emptyDir`, PVCs, ConfigMaps/Secrets).
+- *(Optional)* **Shared PID namespace** (`shareProcessNamespace: true`).
 
 > [!tip] Scaling
-> If you need to scale an app, you add or remove Pods. You **do not** scale by adding more containers to existing pods.
+> If you need to scale an app, add or remove Pods ([[Horizontal scaling]]). You **never** scale by stuffing more app replicas into the same Pod.
 
-Usually each pod runs one container. However, advanced use-cases of [[Multi-container Pods]] include:
-- Service meshes
-- Web containers supported by a helper container pulling updated content
-- Container with a tightly coupled log scraper
+Usually a Pod runs a single container. Advanced [[Multi-container Pods]] include [[Service Mesh]] sidecars (Envoy), log forwarders, and init containers.
 
-The deployment of a Pod is an atomic operation. This means a Pod is only ready for service when all its containers are up and running. The entire Pod either comes up and is put into service, or it doesn't, and it fails.
+## Key Pod Properties
 
-A single Pod can only be scheduled a to a single node. - you cannot schedule a single Pod across multiple nodes. This is also true of multip-container Pods - all containers in the same Pod run on the same node.
+- **Atomic scheduling**: a Pod is scheduled to a **single** [[K8S Worker nodes|worker node]]—you cannot split one Pod's containers across multiple nodes.
+- **Ephemeral & immutable**: Pods live, die, and are replaced by new Pods with new IPs. You do not patch a running Pod's core spec in place; controllers delete and replace Pods instead.
+- **Pod-level controls**: [[K8S Label|labels]] & annotations, restart policies (`Always`, `OnFailure`, `Never`), [[Health Checks|startup/readiness/liveness probes]], affinity/anti-affinity & `topologySpreadConstraints`, `terminationGracePeriodSeconds` + `preStop` hooks, `securityContext`, and resource `requests`/`limits`.
 
-Pods are created, they live an, and they die. A new one is started in place of a dead one. This has implications on how you design your applications. Pods might change their IP and ID.
+## Flat Pod Networking
 
-Pods are **immutable** - this means you don't change them once they're running. Once a pod is running, you never change its configuration. Any update or replacement operation is done by deleting the old one and replacing it with a new one.
+Each Pod gets a unique IP in the flat cluster Pod network (assigned by the CNI plugin). Every Pod can reach every other Pod directly without NAT or port mapping—which also means the Pod network is **wide open by default** unless restricted by `NetworkPolicy`.
 
-Pods augment containers, pods assist scheduling, pods enable resource sharing. 
+## Pod Lifecycle Phases
 
-Pods add: 
-- labels and annotations
-- restart policies
-- probes
-- affinity and anti-affinity rules
-- termination control
-- security policies
-- resource policies and limits
+1. **`Pending`**: accepted by API server, waiting for scheduling or container image pull.
+2. **`Running`**: bound to a node and at least one container is running or restarting.
+3. **`Succeeded`**: all containers exited cleanly (`0`) and will not restart (batch `Job` Pods).
+4. **`Failed`**: at least one container terminated with non-zero exit code.
+5. **`Unknown`**: node communication lost (`kubelet` stopped heartbeating).
 
-Pods introduce a **shared execution environment**: all containers within a pod share net namespace (ip address, port range, routing table), pid namespace (isolated process tree), mnt namespace (filesystems and volumes), UTS namespace (hostname), icp namespace (unix domain sockets and shared memory).
+## QoS Classes & Eviction Order
 
-> [!tip] Fun fact
-> Pod is a special type of container called a "pause container", if you are using docker or [[containerd]]
+Kubernetes assigns every Pod a **Quality of Service (QoS)** class based on container `requests` and `limits`:
+- **`Guaranteed`**: every container sets `requests == limits` for both CPU and memory (evicted *last* under node memory pressure).
+- **`Burstable`**: at least one container sets a request or limit, but not equal for all resources.
+- **`BestEffort`**: no CPU/memory requests or limits set at all (evicted *first*).
 
-## Pods and shared networking
+## Unmanaged (Naked) Pods vs Static Pods vs Controllers
 
-Each pod has its own network namespace. Pos has its own IP, range of TCP and UDP ports, and a single routing table.
+- **Naked/unmanaged Pod**: created directly via `kubectl apply` with a `kind: Pod` manifest—if it dies or its node fails, **nothing recreates it**. Always wrap workloads in a controller ([[K8S Deployment]], StatefulSet, DaemonSet, Job).
+- **Static Pod**: managed directly by `kubelet` from local files on a node (e.g., `/etc/kubernetes/manifests`), bypassing the API server—used to bootstrap [[K8S Control Plane]] components (`kube-apiserver`, [[etcd]]).
 
-Each pod has a unique IP in the *pod network*. Network is flat, meaning every Pod can talk to every other Pod without the need for complex port mappings. In a default out-of-the box cluster, The Pod network is wide open from a security perspective.
+> [!warning] Failure modes & trade-offs
+> - **OOMKilled (exit 137) vs CPU throttling**: exceeding memory `limits` triggers the Linux kernel OOM killer immediately (`OOMKilled`), whereas exceeding CPU `limits` causes **CFS CPU throttling** (severe tail-latency spikes without crashing). Size memory limits with headroom (see [[JVM App Deployment]]) and be cautious with tight CPU limits on latency-sensitive services.
+> - **`CrashLoopBackOff`**: not an error itself—it means the container repeatedly crashes and `kubelet` is applying exponential restart backoff (10s -> 20s -> ... -> 5m). Check `kubectl logs --previous` and `kubectl describe pod` for exit code (`137` OOM, `143` SIGTERM, `1` app crash).
 
-## Pod Lifecycle
+## Flashcards
 
-1. `pending` phase - pod is declared through the yaml and waiting for scheduling
-2. `running` phase - all containers are pulled and running
-3. `succeeded` phase - for a short running pods, they end up successfully
+What resources do containers inside the same [[Kubernetes]] [[Pod]] share?::The same ==network namespace== (IP, ports, `localhost`), ==IPC namespace==, and mounted ==volumes== (all scheduled atomically on the same worker node).
 
-## Static pod vs controllers
+What are the three Kubernetes Pod QoS classes in order from *last* evicted to *first* evicted under memory pressure?::1. ==`Guaranteed`== (`requests == limits`), 2. ==`Burstable`==, 3. ==`BestEffort`== (no requests/limits).
 
-Pods deployed directly from manifest are called *static pods*. They do not offer self-healing, scaling and other features that controllers bring.
+### What is the difference between exceeding a Pod's memory limit vs exceeding its CPU limit? #card
+
+Memory is incompressible: exceeding a container's memory `limit` causes the Linux kernel to immediately terminate the process (**`OOMKilled`**, exit code `137`). CPU is compressible: exceeding a CPU `limit` does not kill the Pod, but triggers **CFS CPU throttling**, which can cause severe p99 latency spikes.
+
+## Related
+- [[Multi-container Pods]]
+- [[K8S Deployment]]
+- [[K8S ReplicaSet]]
+- [[K8S Service]]
+- [[K8S Core Containers]]
+- [[JVM App Deployment]]
+- [[Health Checks]]

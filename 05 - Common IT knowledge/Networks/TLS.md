@@ -1,44 +1,65 @@
-Transport Layer Security (TLS) and its predecessor, [[SSL]], are cryptographic protocols designed to provide secure communication between web clients and servers. They enable secure web browsing, email, voice over IP (VoIP), and other data transfers by ensuring data confidentiality, integrity, and authenticity.
+**Transport Layer Security (TLS)** and its deprecated predecessor, [[SSL]], are cryptographic protocols designed to provide secure communication between clients and servers (powering [[HTTPS]], mTLS in [[Service Mesh|service meshes]], and encrypted DB connections) by ensuring **confidentiality**, **integrity**, and **authenticity**.
 
-Deep Dive into TLS/SSL:
-1. Protocol Overview:
-TLS/SSL operates in the application layer of the TCP/IP stack, sitting between the Transport Layer (TCP) and the Application Layer. This allows it to provide secure communication for various application layer protocols like HTTP, SMTP, FTP, etc.
+## Deep Dive into TLS
 
-2. Handshake:
-The TLS/SSL connection begins with a handshake process between the client and server. This process establishes the encryption algorithms, cryptographic keys, and other security parameters. The handshake process includes the following steps:
-   a. ClientHello: The client initiates the handshake by sending a ClientHello message, which includes the TLS/SSL version, supported cipher suites, and a random number (ClientRandom).
-   b. ServerHello: The server responds with a ServerHello message, indicating the chosen TLS/SSL version, cipher suite, and a random number (ServerRandom).
-   c. Certificate: The server sends its SSL certificate, which contains the server's public key and other identity information.
-   d. ServerKeyExchange: (optional) The server sends additional key exchange information if necessary.
-   e. CertificateRequest: (optional) The server requests the client's SSL certificate if client authentication is required.
-   f. ServerHelloDone: The server signals the end of the ServerHello messages.
-   g. ClientKeyExchange: The client sends a ClientKeyExchange message, which includes the pre-master secret encrypted with the server's public key.
-   h. ChangeCipherSpec: Both client and server send ChangeCipherSpec messages, indicating that the subsequent messages will be encrypted using the negotiated keys.
-   i. Finished: Both client and server send Finished messages, which are encrypted and hashed, ensuring the integrity of the handshake process.
+1. **Protocol Overview:**
+   TLS operates on top of a reliable transport (usually [[TCP]], or integrated into QUIC over [[UDP]] for [[HTTP3]]), securing application protocols like [[HTTP]], [[gRPC]], SMTP, and database wire protocols (mapping conceptually near [[OSI 6 layer|OSI Layers 5–6]]).
 
-3. Encryption:
-TLS/SSL uses symmetric encryption for data transfer and asymmetric encryption during the handshake process. During the handshake, the client and server negotiate a shared secret, the pre-master secret, which is used to derive the symmetric keys for data encryption.
+2. **Handshake (TLS 1.2 vs TLS 1.3):**
+   - **TLS 1.2 (2 RTTs)**:
+     a. `ClientHello`: TLS version, supported cipher suites, `ClientRandom`, SNI/ALPN extensions.
+     b. `ServerHello` + `Certificate` + `ServerKeyExchange` + (optional `CertificateRequest` for mTLS) + `ServerHelloDone`.
+     c. `ClientKeyExchange` (pre-master secret / key share) + `ChangeCipherSpec` + `Finished`.
+     d. Server `ChangeCipherSpec` + `Finished`.
+   - **TLS 1.3 (1 RTT, or 0-RTT resumption)**:
+     Drops weak static RSA key exchange and legacy ciphers; client guesses the key-exchange group (ECDHE) and sends its key share right in `ClientHello`, cutting handshake latency in half and encrypting certificates immediately.
 
-4. Authentication:
-TLS/SSL provides authentication using digital certificates and public key infrastructure (PKI). The server's certificate is signed by a trusted Certificate Authority (CA), ensuring the client that the server is genuine. The client can also present its certificate to the server for mutual authentication.
+3. **Encryption:**
+   TLS uses **asymmetric cryptography** (ECDHE / RSA / ECDSA) during the handshake for authentication and key exchange, then switches to fast **symmetric AEAD encryption** (e.g., [[AES256|AES-256-GCM]] or ChaCha20-Poly1305) for bulk data transfer.
 
-5. Secure Renegotiation:
-TLS/SSL supports secure renegotiation, allowing the client and server to renegotiate the security parameters without interrupting the secure communication.
+4. **Authentication & mTLS:**
+   TLS authenticates the server via X.509 digital certificates signed by a trusted Certificate Authority (CA). In **mutual TLS (mTLS)**, the client also presents a certificate—standard for service-to-service identity in [[Zero-Trust Security]] and [[Service Mesh|service meshes]].
 
-6. Extensions:
-TLS/SSL supports various extensions that provide additional features, such as Server Name Indication (SNI), Encrypt-then-MAC (EtM), Application-Layer Protocol Negotiation (ALPN), etc.
+5. **Key Extensions:**
+   - **SNI (Server Name Indication)**: sends the target hostname in plaintext during `ClientHello` so one IP/[[Reverse proxy]] can host multiple TLS certificates.
+   - **ALPN (Application-Layer Protocol Negotiation)**: negotiates [[HTTP2]] vs [[HTTP1.1]] during the TLS handshake without an extra round trip.
 
-7. TLS 1.3:
-TLS 1.3 is the latest version of the TLS protocol and introduces several improvements, such as faster handshake, better security, and removal of support for weak cryptographic algorithms.
+6. **OCSP Stapling:**
+   Enables the server to attach ("staple") a CA-signed timestamped validity proof for its certificate during the handshake, avoiding slow, privacy-leaking client OCSP lookups to the CA.
 
-8. OCSP Stapling:
-Online Certificate Status Protocol (OCSP) stapling is a feature that enables the server to provide the client with a signed response from the CA, indicating the validity of the server's certificate. This reduces the need for the client to perform separate OCSP checks, improving performance and privacy.
+7. **Certificate Transparency (CT):**
+   Requires CAs to publish all issued certificates in public, append-only logs so domain owners can detect misissued or unauthorized certificates.
 
-9. Certificate Transparency:
-Certificate Transparency (CT) is a framework that aims to prevent the issuance of fraudulent SSL certificates by requiring CAs to publish all issued certificates in public, append-only logs. This allows domain owners to monitor and detect the issuance of unauthorized certificates.
+8. **Perfect Forward Secrecy (PFS):**
+   Ensures past recorded TLS sessions cannot be decrypted even if the server's long-term private key is later compromised. Achieved by ephemeral Diffie-Hellman (ECDHE) key exchange (mandatory in TLS 1.3).
 
-10. Perfect Forward Secrecy (PFS):
-PFS is a feature that ensures the confidentiality of past TLS/SSL sessions, even if the private key of the server is compromised. This is achieved by using ephemeral Diffie-Hellman (DHE) or elliptic curve Diffie-Hellman (ECDHE) key exchange algorithms during the handshake process.
+9. **Certificate Pinning:**
+   Client verifies the server certificate (or public key hash) against a hardcoded allowlist. Rarely recommended on the open web now because it causes self-inflicted outages during certificate rotation.
 
-11. Certificate Pinning:
-Certificate pinning is a security mechanism that allows the client to verify the authenticity of the server's SSL certificate by checking its fingerprint against a predefined list
+> [!warning] Failure modes & trade-offs
+> - **Expired certificates**: one of the most common preventable outages—automate issuance and rotation (ACME / Let's Encrypt / cert-manager in [[Kubernetes]]) and alert 30 days before expiry.
+> - **TLS 1.3 0-RTT replay risk**: 0-RTT early data is *not* replay-protected; only allow idempotent requests ([[API Idempotency]]) over 0-RTT, never state-mutating endpoints.
+> - **Handshake latency on short-lived connections**: TCP (1 RTT) + TLS 1.3 (1 RTT) = 2 RTTs before the first byte; reuse connections via keep-alive / [[HTTP2]] / TLS session resumption.
+
+## Flashcards
+
+TLS:::Transport Layer Security — cryptographic protocol providing confidentiality, integrity, and authenticity over the network (successor to [[SSL]]).
+
+How does TLS 1.3 cut handshake latency from 2 RTTs (TLS 1.2) to 1 RTT?::The client sends its ==ephemeral key share (ECDHE)== directly inside `ClientHello` instead of waiting for `ServerHello` first.
+
+Perfect Forward Secrecy (PFS) guarantees that compromising a server's long-term private key cannot decrypt past traffic because session keys are derived via ==ephemeral Diffie-Hellman (ECDHE)==.
+
+### Why is TLS 1.3 0-RTT early data unsafe for non-idempotent API endpoints? #card
+
+Because 0-RTT early data can be captured and replayed by a network attacker before the server verifies freshness. Only safe, read-only, or strictly [[API Idempotency|idempotent]] requests should be accepted in 0-RTT.
+
+## Related
+- [[SSL]]
+- [[HTTPS]]
+- [[AES256]]
+- [[TCP]]
+- [[HTTP2]]
+- [[HTTP3]]
+- [[Reverse proxy]]
+- [[Zero-Trust Security]]
+- [[Service Mesh]]

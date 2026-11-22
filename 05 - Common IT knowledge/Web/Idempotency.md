@@ -52,11 +52,11 @@ Protecting one arrow does not automatically protect the others.
 | Broker → Consumer database | Consumer idempotency |
 | Payment Service → Provider | External-operation idempotency |
 
-An [[Idempotency Key]] tells the receiver: “This request is another attempt at the same operation, not a new operation.” [[API Idempotency]] is another form of idemppotency, which guarantees client-server idempotency.
+An [[Idempotency Key]] tells the receiver: “This request is another attempt at the same operation, not a new operation.” [[API Idempotency]] is another form of idempotency, which guarantees client-server idempotency.
 
 ## Broker-level producer idempotency
 
-For example, [[Kafka]]’s idempotent producer protects against certain duplicate records caused by **producer transmission retries**.
+For example, [[Kafka]]’s idempotent [[Kafka Producer|producer]] protects against certain duplicate records caused by **producer transmission retries** (still combined with [[At-least-once delivery]] at the consumer boundary).
 
 ```text
 Producer sends a record
@@ -103,7 +103,7 @@ Request idempotency returns existing order
 No second OrderCreated event is created
 ```
 
-A transactional outbox helps ensure:
+A transactional [[Outbox Pattern|outbox]] helps ensure:
 
 ```text
 Order creation + its event record commit together
@@ -112,6 +112,8 @@ Order creation + its event record commit together
 But the outbox does **not** independently determine whether two requests are the same checkout. That requires request identity and business constraints.
 
 ## Consumer Idempotency: Broker → Business Effect
+
+See also [[Idempotent Consumer]].
 
 > A consumer is idempotent when receiving the same message again does not repeat its business effect.
 
@@ -384,9 +386,9 @@ If a key expires after 24 hours, a retry after 48 hours may be treated as new.
 
 Deduplication retention must align with replay, retry, and disaster-recovery windows.
 
-### E. Redis is not automatically an atomic deduplication solution
+### E. [[Redis]] is not automatically an atomic deduplication solution
 
-This is unsafe without additional coordination:
+This is unsafe without additional coordination (it is a [[Dual-Write]]):
 
 ```text
 Mark event processed in Redis
@@ -398,8 +400,34 @@ Those are separate writes. For database effects, a deduplication record in the s
 ### F. Idempotency is not ordering
 
 - Idempotency prevents repeated effects.
-- Ordering protects the sequence of different effects.
-- Concurrency control prevents conflicting simultaneous updates.
-- Reconciliation discovers and repairs uncertain or inconsistent outcomes.
+- Ordering protects the sequence of different effects (often guarded with [[Version Guard]]).
+- Concurrency control prevents conflicting simultaneous updates ([[Optimistic Concurrency Control]] / [[Pessimistic Locking]]).
+- [[Reconciliation]] discovers and repairs uncertain or inconsistent outcomes.
 
 These mechanisms complement one another.
+
+## Flashcards
+
+Idempotency:::Property where repeating the same logical operation produces no additional business side effect (even if the code executes or the message is delivered multiple times).
+
+Why is broker-level producer idempotency (e.g., [[Kafka]] idempotent producer) not sufficient on its own?::It only deduplicates ==transport-level transmission retries== within a producer session—not application-level replays (such as an [[Outbox Pattern|outbox]] publisher crashing before marking an event published).
+
+For [[Idempotent Consumer|consumer idempotency]], the deduplication insert (`processed_event`) and the business state change must execute in the ==same database transaction==.
+
+Never use a separate [[Redis]] key plus a relational DB update as an atomic deduplication mechanism—it is a [[Dual-Write]]. #card-reminder
+
+### Why are `event_id` deduplication and `operation_id` uniqueness both needed? #card
+
+`event_id` deduplicates redeliveries of the *same message*, while a business `operation_id` unique constraint prevents *two different messages* representing the same logical action (e.g., two reserve-stock messages for operation `R123`) from applying twice.
+
+## Related
+- [[API Idempotency]]
+- [[Idempotency Key]]
+- [[Idempotent Consumer]]
+- [[Outbox Pattern]]
+- [[Dual-Write]]
+- [[Reconciliation]]
+- [[Version Guard]]
+- [[Delivery Semantics]]
+- [[At-least-once delivery]]
+- [[Exactly-once delivery]]
