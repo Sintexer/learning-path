@@ -87,7 +87,7 @@ if (obj instanceof Point(var x, _)) { ... }  // ignore the y component
 
 ## 2. Concurrency — Project Loom (the headline story)
 
-**Virtual Threads (Java 21, final — JEP 444)**  
+**[[Virtual Threads]] (Java 21, final — JEP 444)**  
 Lightweight, JVM-managed threads (not OS threads) — you can spawn millions of them.
 
 ```java
@@ -96,7 +96,7 @@ try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
 }
 ```
 
-This is the biggest change to Java's concurrency story since `java.util.concurrent` itself. It makes the **thread-per-request** model viable again at scale — you get the simplicity of blocking, synchronous code without the throughput ceiling of platform threads, competing directly with reactive/async frameworks (WebFlux, etc.) for I/O-bound workloads without the cognitive overhead of reactive chains.
+This is the biggest change to Java's [[concurrency]] story since `java.util.concurrent` itself. It makes the **thread-per-request** model viable again at scale — you get the simplicity of blocking, synchronous code without the throughput ceiling of platform threads, competing directly with reactive/async frameworks (WebFlux, etc.) for [[IO-Bound vs CPU-Bound|I/O-bound]] workloads without the cognitive overhead of reactive chains.
 
 **Nuance you already know:** `synchronized` pinning was a real problem in 21–23; **fixed in Java 24 (JEP 491)** — `synchronized` no longer pins carriers in the common case. On Java 25, this concern is largely gone.
 
@@ -185,3 +185,25 @@ void main() {    System.out.println("Hello");}
 - **Strong encapsulation of JDK internals by default (Java 17+, fully enforced by later releases)** — `sun.misc.Unsafe` and reflective access to internals increasingly restricted; libraries relying on deep reflection (older ORMs, some serialization frameworks) needed updates. This bit a lot of legacy codebases upgrading past 17.
 - **Removal of deprecated tech:** Nashorn JS engine (removed Java 15), Applets (removed Java 17), Security Manager deprecated for removal (Java 17, actually disabled by default in later versions) — if you have ancient code depending on any of these, budget migration time.
 - **`instanceof` pattern + switch pattern matching finalization** already covered above but worth flagging again as the single most impactful _daily_ coding style change.
+
+> [!warning] Failure modes & trade-offs
+> - **[[Virtual Threads]] are not faster for CPU-bound work:** They eliminate blocking-I/O thread-pool limits, not CPU limits. Pooling virtual threads is an anti-pattern; use a `Semaphore` to cap downstream concurrency ([[Backpressure]] / [[Bulkhead Pattern]]) instead of a fixed thread pool.
+> - **Do not blindly swap `ThreadLocal` into virtual threads:** Heavy per-thread caches in `ThreadLocal` can explode heap usage when spawning hundreds of thousands of virtual threads; migrate context propagation to `ScopedValue`.
+> - **Generational ZGC memory overhead:** Low-pause collectors trade higher heap headroom and modest CPU overhead for sub-millisecond pauses—verify container memory limits ([[jvmArgs]]) before switching.
+
+## Flashcards
+
+Why should you prefer `ScopedValue` over `ThreadLocal` when using [[Virtual Threads]]?::`ScopedValue` is immutable, lexically scoped (auto-unbound on exit), and lightweight across millions of virtual threads, avoiding `ThreadLocal` memory leaks and per-thread cache bloat.
+
+What does combining `sealed` types with pattern-matching `switch` give you at compile time?::==Exhaustiveness checking==—the compiler verifies all permitted subtypes are handled without needing a catch-all `default` branch.
+
+## How should you limit downstream concurrency when using Virtual Threads? #card
+Never pool [[Virtual Threads]] (create one per task). Instead, bound concurrent access to scarce downstream resources (DB pools, external APIs) with a `Semaphore` or [[Bulkhead Pattern]] to apply [[Backpressure]].
+
+## Related
+- [[Java versions]]
+- [[Virtual Threads]]
+- [[concurrency]]
+- [[jvmArgs]]
+- [[JVM App Deployment]]
+- [[IO-Bound vs CPU-Bound]]

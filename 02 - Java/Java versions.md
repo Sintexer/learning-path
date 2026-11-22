@@ -1,13 +1,15 @@
 ### Most important recent releases additions
 
+> See [[Java Evolution]] for a theme-based Staff/Senior overview covering Java 11 → 25.
+
 1. Switch expression
 2. `instanceof` pattern matching - auto-casting
 3. Text blocks
 4. Records
 5. NPE stack-trace enhancement
 6. Sealed classes and Hidden classes
-7. String templates
-8. Virtual threads
+7. String templates (previewed in 21–22, withdrawn for redesign)
+8. [[Virtual Threads]]
 
 ### Java 8 (March 2014)
 1. **Lambda Expressions**: Introduced a concise way to represent anonymous functions.
@@ -95,8 +97,19 @@
 ### Java 21 (September 2023)
 1. **Pattern Matching for `switch`**: Standardized pattern matching for switch statements.
 2. **Record Patterns**: Standardized record patterns.
-3. **Virtual Threads**: Standardized virtual threads.
-4. **Structured Concurrency**: Standardized structured concurrency.
-5. **Foreign Function & Memory API**: Standardized the API for foreign functions and memory.
+3. **[[Virtual Threads]]**: Standardized virtual threads (JEP 444).
+4. **Structured Concurrency (Preview)**: Previewed structured concurrency (finalized in Java 25, JEP 505).
+5. **Foreign Function & Memory API (Third Preview)**: Previewed FFM API (finalized in Java 22, JEP 454).
 6. **Sequenced Collections**: Introduced sequenced collections to provide a common interface for collections with a defined encounter order.
-7. **String Templates (Preview)**: Introduced string templates for easier and safer string interpolation.
+7. **String Templates (Preview)**: Previewed string templates (later withdrawn in Java 23 for redesign).
+
+## Flashcards
+
+Which Java versions since Java 8 are Long-Term Support (LTS) releases?::Java 8, 11, 17, 21, and 25.
+
+In which Java LTS release were [[Virtual Threads]] (JEP 444) and Pattern Matching for `switch` finalized?::==Java 21==.
+
+## Related
+- [[Java Evolution]]
+- [[Virtual Threads]]
+- [[concurrency]]

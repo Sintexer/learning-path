@@ -25,3 +25,25 @@ Imagine you want to update a value (e.g., a bank balance) from **100 to 150**.
 *   **Efficiency:** It is much faster than traditional locking because it avoids the "stop-and-wait" overhead.
 
 **In one sentence:** CAS is a way of saying, *"Update this value only if it hasn't changed since I last looked at it."*
+
+> [!warning] Failure modes & trade-offs
+> - **ABA problem:** A thread reads `A`, gets preempted while another thread changes `A → B → A`, and the original CAS still succeeds even though intermediate state mutated. Prevent this with a monotonic version/stamp (e.g. Java's `AtomicStampedReference` or a [[Version Guard]]).
+> - **High-contention spin / retry storms:** Under heavy multi-core contention, failed CAS loops burn CPU cycles and cause cache-line bouncing across cores. For hot counters, prefer striped cells (`LongAdder`) or redesign around the [[Single Writer Principle]].
+> - **Single-word scope:** Hardware CAS atomically updates one memory word (or double-word on some ISAs); multi-field invariants still need immutable snapshots swapped by reference, locks, or [[Database Lock|database transactions]].
+
+## Flashcards
+
+Compare-And-Swap (CAS) is implemented by ==CPU hardware instructions== (not the OS kernel), enabling lock-free [[Optimistic Concurrency Control]].
+
+## What is the ABA problem in Compare-And-Swap, and how is it mitigated? #card
+A thread reads value `A`, is paused while other threads mutate `A → B → A`, and then its CAS succeeds because the current value still matches `A` even though the underlying state changed (dangerous in lock-free linked structures with node reuse). Mitigate by pairing the value with a monotonically increasing stamp/version (e.g. `AtomicStampedReference`).
+
+Under high contention, prefer striped accumulators (like `LongAdder`) or the [[Single Writer Principle]] over hot CAS retry loops that thrash CPU caches. #card-reminder
+
+## Related
+- [[Optimistic Concurrency Control]]
+- [[Atomic Conditional Mutation]]
+- [[Single Writer Principle]]
+- [[Mutual Exclusion]]
+- [[Java Memory Model]]
+- [[concurrency]]

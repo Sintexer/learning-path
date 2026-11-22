@@ -33,3 +33,25 @@ Little’s Law is powerful because it shows the **mathematical relationship** be
 The most important takeaway is this: **If you want to get things done faster (reduce W), you must reduce the amount of work in progress (L).**
 
 If you have too many projects on your desk at once (high L), your wait time for any single project will inevitably go up, even if your speed (λ) stays the same.
+
+> [!tip] Production reality
+> - **Sizing thread and connection pools:** If a service handles `λ = 500 req/s` and each request holds a worker thread for `W = 0.04 s` (40 ms), you need at least `L = 500 × 0.04 = 20` active threads to sustain throughput—before adding headroom for latency spikes or tail latency.
+> - **Stability precondition:** Little's Law only holds for a **stable** system (arrival rate ≤ max service rate, i.e. utilization < 100%). Once `λ` exceeds capacity, `L` and `W` grow without bound—you must apply [[Backpressure]], [[Rate Limiting]], or load shedding rather than enlarging queues.
+> - **Queueing vs. concurrency:** Increasing queue size without increasing service rate only inflates `L` and therefore `W` (higher latency), risking client [[Timeout Pattern|timeouts]] and retry storms.
+
+## Flashcards
+
+Little's Law relates average concurrency, arrival rate, and latency as ==L = λ × W== (average items in system = arrival rate × average time in system).
+
+## When does Little's Law break down in production systems, and how do you protect the system? #card
+Little's Law assumes a **stable** system where arrival rate (`λ`) does not exceed service capacity. When `λ` exceeds capacity, in-flight work (`L`) and wait time (`W`) grow unboundedly until OOM or cascading [[Timeout Pattern|timeouts]]. Protect the system with bounded queues, [[Backpressure]], [[Rate Limiting]], and load shedding.
+
+Adding a bigger queue without increasing processing throughput only increases `L` and worsens latency `W`—bound queues and shed load early. #card-reminder
+
+## Related
+- [[Mutual Exclusion]]
+- [[IO-Bound vs CPU-Bound]]
+- [[Backpressure]]
+- [[Rate Limiting]]
+- [[Bulkhead Pattern]]
+- [[Timeout Pattern]]
