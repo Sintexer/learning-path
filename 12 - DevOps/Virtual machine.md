@@ -1,7 +1,7 @@
 ---
 flashcards:
   q-njda: { nid: 1795356713917, hash: sspr39xe, sync: sg6ccttj }
-  q-g7cj: { nid: 1795361652107, hash: niegfepy, sync: 7r3wvr6n }
+  q-g7cj: { nid: 1795361652107, hash: siqafp7p, sync: 7r3wvr6n }
 
 ---
 

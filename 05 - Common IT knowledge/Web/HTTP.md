@@ -1,7 +1,7 @@
 ---
 flashcards:
   q-d25d: { nid: 1795356718567, hash: dfzix437, sync: dizitbgn }
-  q-2tx6: { nid: 1795361687932, hash: bq7xgs3d, sync: r8iez54w }
+  q-2tx6: { nid: 1795361687932, hash: 269gjjuu, sync: r8iez54w }
   q-54dw: { nid: 1795356718641, hash: hpuxcuxv, sync: 4xxhm4za }
 ---
 

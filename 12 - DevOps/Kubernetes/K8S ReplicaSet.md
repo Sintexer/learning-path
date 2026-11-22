@@ -1,7 +1,7 @@
 ---
 flashcards:
-  q-z3ih: { nid: 1795361671132, hash: xrfntjv7, sync: jcpe4drx }
-  q-qjb2: { nid: 1795361671203, hash: wrks6wdx, sync: bthrgpi9 }
+  q-z3ih: { nid: 1795361671132, hash: nkkis23v, sync: jcpe4drx }
+  q-qjb2: { nid: 1795361671203, hash: cxqthbb4, sync: bthrgpi9 }
 
 ---
 

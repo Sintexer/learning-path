@@ -1,8 +1,8 @@
 ---
 flashcards:
   q-788k: { nid: 1795356719891, hash: xmmc2x6i, sync: vxd3e9de }
-  q-ntvq: { nid: 1795361710380, hash: 659eifsi, sync: msp9ksyk }
-  q-j645: { nid: 1795361710453, hash: fskxgzkd, sync: 4i2gbkwh }
+  q-ntvq: { nid: 1795361710380, hash: bszgyvcd, sync: msp9ksyk }
+  q-j645: { nid: 1795361710453, hash: 978qtrmx, sync: 4i2gbkwh }
   q-qh7b: { nid: 1795356720017, hash: sgwr8ss5, sync: rmapvdk6 }
 ---
 

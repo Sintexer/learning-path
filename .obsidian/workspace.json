@@ -11,14 +11,14 @@
             "id": "f771b727cc82b9fe",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "split-diff-view",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
-                "mode": "source",
-                "source": false
+                "aFile": "12 - DevOps/Hypervisor.md",
+                "bFile": "12 - DevOps/Hypervisor.md",
+                "aRef": ""
               },
-              "icon": "lucide-file",
-              "title": "Rebalancing Partitions"
+              "icon": "diff",
+              "title": "Diff: Hypervisor"
             }
           }
         ]
@@ -152,7 +152,6 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -167,7 +166,6 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -234,15 +232,15 @@
       "flashcards-obsidian:Update Anki from current note": false
     }
   },
-  "active": "9c4b8ec1a35f1a1d",
+  "active": "f771b727cc82b9fe",
   "lastOpenFiles": [
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Linearizability.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Version Vectors and Concurrent Write Resolution.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning Hot Spots and Skew.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Hash Partitioning.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Key-Range Partitioning.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
     "00 - Learning Workflow.md",
     "12 - DevOps/🗂️ 12 - DevOps.md",

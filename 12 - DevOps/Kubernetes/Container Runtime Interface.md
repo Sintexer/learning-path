@@ -3,8 +3,8 @@ aliases:
   - CRI
 flashcards:
   q-isgf: { nid: 1795356715967, hash: zw9p3bdj, sync: mh2rfqt2 }
-  q-27g5: { nid: 1795361679856, hash: 87hiyax4, sync: fvp6fga2 }
-  q-726b: { nid: 1795361679930, hash: iys54icx, sync: w7ewfdeg }
+  q-27g5: { nid: 1795361679856, hash: 8523n9zd, sync: fvp6fga2 }
+  q-726b: { nid: 1795361679930, hash: dkezmp9s, sync: w7ewfdeg }
 
 ---
 

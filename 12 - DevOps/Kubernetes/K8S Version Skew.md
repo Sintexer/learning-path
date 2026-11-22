@@ -1,8 +1,8 @@
 ---
 flashcards:
-  q-enn6: { nid: 1795361658582, hash: kjexjp5f, sync: bwp4gfaa }
-  q-9gu4: { nid: 1795361658653, hash: ctt58qu5, sync: 9iz5wn8r }
-  q-ga9r: { nid: 1795361658729, hash: rvd5ehwa, sync: zpgkjh3v }
+  q-enn6: { nid: 1795361658582, hash: zydu8fvr, sync: bwp4gfaa }
+  q-9gu4: { nid: 1795361658653, hash: e3mizvbk, sync: 9iz5wn8r }
+  q-ga9r: { nid: 1795361658729, hash: 7vienq52, sync: zpgkjh3v }
 
 ---
 

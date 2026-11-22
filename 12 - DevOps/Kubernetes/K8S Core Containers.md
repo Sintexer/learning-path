@@ -1,7 +1,7 @@
 ---
 flashcards:
-  q-gpmh: { nid: 1795361667932, hash: xrnijnnh, sync: w6jij2wr }
-  q-y5j4: { nid: 1795361668003, hash: sbnx4a9m, sync: 7zqgg3r2 }
+  q-gpmh: { nid: 1795361667932, hash: g8myrwr6, sync: w6jij2wr }
+  q-y5j4: { nid: 1795361668003, hash: sy5u7gqc, sync: 7zqgg3r2 }
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 flashcards:
-  q-rnev: { nid: 1795361662781, hash: 7hsgea2v, sync: 3ue83npc }
-  q-eg4h: { nid: 1795361662853, hash: guuk2tiz, sync: re3xk4k8 }
+  q-rnev: { nid: 1795361662781, hash: w3v34ta3, sync: 3ue83npc }
+  q-eg4h: { nid: 1795361662853, hash: hdjsemny, sync: re3xk4k8 }
 
 ---
 

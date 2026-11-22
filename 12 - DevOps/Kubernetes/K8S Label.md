@@ -1,6 +1,6 @@
 ---
 flashcards:
-  q-3ujn: { nid: 1795361665858, hash: re4cgust, sync: q4mzc322 }
+  q-3ujn: { nid: 1795361665858, hash: 6eqc52qn, sync: q4mzc322 }
   q-ux33: { nid: 1795356714968, hash: fukc6tyr, sync: xgtmy784 }
 ---
 

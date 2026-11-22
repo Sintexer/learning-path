@@ -1,6 +1,6 @@
 ---
 flashcards:
-  q-qbcr: { nid: 1795361727057, hash: 4fpkjtmm, sync: 7db35fmg }
+  q-qbcr: { nid: 1795361727057, hash: zudtn6tf, sync: 7db35fmg }
   q-657w: { nid: 1795356732966, hash: fa5rjznv, sync: gz7arjkv }
 ---
 

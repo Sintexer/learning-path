@@ -1,7 +1,7 @@
 ---
 flashcards:
-  q-i397: { nid: 1795361686230, hash: 2bj4vsh8, sync: iv9ebn3a }
-  q-c97q: { nid: 1795361686303, hash: e3gx5eqf, sync: kfdzs6xy }
+  q-i397: { nid: 1795361686230, hash: te8r2pz9, sync: iv9ebn3a }
+  q-c97q: { nid: 1795361686303, hash: 2wwckh37, sync: kfdzs6xy }
   q-qm3d: { nid: 1795356716817, hash: zxg6kaf9, sync: awpp9idp }
 ---
 

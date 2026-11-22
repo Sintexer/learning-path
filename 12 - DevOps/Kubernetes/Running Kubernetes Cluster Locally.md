@@ -1,6 +1,6 @@
 ---
 flashcards:
-  q-a724: { nid: 1795361653133, hash: q2f5f2c8, sync: wsuzd7tx }
+  q-a724: { nid: 1795361653133, hash: q7ypz3f3, sync: wsuzd7tx }
   q-35pu: { nid: 1795356714067, hash: dadudrrm, sync: j23xtkdh }
 ---
 

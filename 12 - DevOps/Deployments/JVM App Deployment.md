@@ -1,8 +1,8 @@
 ---
 flashcards:
-  q-98t7: { nid: 1795361681181, hash: bft6tahw, sync: w72vfcs9 }
+  q-98t7: { nid: 1795361681181, hash: 8g7a9j3e, sync: w72vfcs9 }
   q-q2er: { nid: 1795356716266, hash: 46hbg722, sync: uax8g5sh }
-  q-qqp9: { nid: 1795361681254, hash: cr6pef6y, sync: 9uimh2g9 }
+  q-qqp9: { nid: 1795361681254, hash: zhj3dkne, sync: 9uimh2g9 }
   q-7f6g: { nid: 1795356716342, hash: u22xjgta, sync: 4dapyw33 }
 ---
 

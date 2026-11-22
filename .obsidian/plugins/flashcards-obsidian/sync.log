@@ -2163,3 +2163,558 @@
 2026-11-22T15:35:27.184Z [INFO] syncNote start {"notePath":"03 - Backend/Database/HiLo id optimization.md"}
 2026-11-22T15:35:27.186Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Database/HiLo id optimization.md","identityWritesApplied":0,"mediaErrors":0}
 2026-11-22T15:35:27.186Z [INFO] syncVault end {"noteCount":307,"processedNoteCount":278,"skippedUnchangedNoteCount":29,"totalCreates":15,"totalUpdates":83,"totalDeletes":75,"failedNotes":0}
+2026-11-22T15:35:39.656Z [INFO] syncVault start {"noteCount":307,"processedNoteCount":276,"skippedUnchangedNoteCount":31}
+2026-11-22T15:35:39.966Z [INFO] syncNote start {"notePath":"12 - DevOps/IaC/Ansible vs Terraform.md"}
+2026-11-22T15:35:40.007Z [INFO] syncNote ok {"notePath":"12 - DevOps/IaC/Ansible vs Terraform.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.007Z [INFO] syncNote start {"notePath":"12 - DevOps/IaC/Terraform.md"}
+2026-11-22T15:35:40.030Z [INFO] syncNote ok {"notePath":"12 - DevOps/IaC/Terraform.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.030Z [INFO] syncNote start {"notePath":"12 - DevOps/IaC/Ansible.md"}
+2026-11-22T15:35:40.080Z [INFO] syncNote ok {"notePath":"12 - DevOps/IaC/Ansible.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.080Z [INFO] syncNote start {"notePath":"12 - DevOps/Virtual machine.md"}
+2026-11-22T15:35:40.106Z [INFO] syncNote ok {"notePath":"12 - DevOps/Virtual machine.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.106Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md"}
+2026-11-22T15:35:40.130Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Running Kubernetes Cluster Locally.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.130Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/kubectl.md"}
+2026-11-22T15:35:40.181Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/kubectl.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.181Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Version Skew.md"}
+2026-11-22T15:35:40.255Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Version Skew.md","okCreates":0,"okUpdates":3,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.255Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/containerd.md"}
+2026-11-22T15:35:40.258Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"12 - DevOps/Kubernetes/containerd.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:40.258Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/etcd.md"}
+2026-11-22T15:35:40.306Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/etcd.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.306Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Multi-container Pods.md"}
+2026-11-22T15:35:40.356Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Multi-container Pods.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.356Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod Desired State.md"}
+2026-11-22T15:35:40.409Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Pod Desired State.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.409Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Pod.md"}
+2026-11-22T15:35:40.461Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Pod.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.461Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Label.md"}
+2026-11-22T15:35:40.488Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Label.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.488Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Kubernetes.md"}
+2026-11-22T15:35:40.514Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Kubernetes.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.514Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Core Containers.md"}
+2026-11-22T15:35:40.568Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Core Containers.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.568Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Worker nodes.md"}
+2026-11-22T15:35:40.621Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Worker nodes.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.621Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Service.md"}
+2026-11-22T15:35:40.661Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Service.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.661Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S ReplicaSet.md"}
+2026-11-22T15:35:40.714Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S ReplicaSet.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.714Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Namespace.md"}
+2026-11-22T15:35:40.769Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Namespace.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.769Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Deployment.md"}
+2026-11-22T15:35:40.822Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Deployment.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.822Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S DNS.md"}
+2026-11-22T15:35:40.851Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S DNS.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.851Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/K8S Control Plane.md"}
+2026-11-22T15:35:40.902Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/K8S Control Plane.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.902Z [INFO] syncNote start {"notePath":"12 - DevOps/Kubernetes/Container Runtime Interface.md"}
+2026-11-22T15:35:40.956Z [INFO] syncNote ok {"notePath":"12 - DevOps/Kubernetes/Container Runtime Interface.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:40.956Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/Zero-downtime deployment.md"}
+2026-11-22T15:35:40.961Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"12 - DevOps/Deployments/Zero-downtime deployment.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:40.961Z [INFO] syncNote start {"notePath":"12 - DevOps/Deployments/JVM App Deployment.md"}
+2026-11-22T15:35:41.008Z [INFO] syncNote ok {"notePath":"12 - DevOps/Deployments/JVM App Deployment.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.008Z [INFO] syncNote start {"notePath":"12 - DevOps/Open Container Initiative.md"}
+2026-11-22T15:35:41.035Z [INFO] syncNote ok {"notePath":"12 - DevOps/Open Container Initiative.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.035Z [INFO] syncNote start {"notePath":"12 - DevOps/Hypervisor.md"}
+2026-11-22T15:35:41.061Z [INFO] syncNote ok {"notePath":"12 - DevOps/Hypervisor.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.061Z [INFO] syncNote start {"notePath":"12 - DevOps/Difference between VMs and containers.md"}
+2026-11-22T15:35:41.105Z [INFO] syncNote ok {"notePath":"12 - DevOps/Difference between VMs and containers.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.105Z [INFO] syncNote start {"notePath":"12 - DevOps/Containers orchestration.md"}
+2026-11-22T15:35:41.108Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"12 - DevOps/Containers orchestration.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.108Z [INFO] syncNote start {"notePath":"12 - DevOps/Container.md"}
+2026-11-22T15:35:41.156Z [INFO] syncNote ok {"notePath":"12 - DevOps/Container.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.156Z [INFO] syncNote start {"notePath":"09 - Linux/Linux hard drive structure.md"}
+2026-11-22T15:35:41.161Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"09 - Linux/Linux hard drive structure.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.161Z [INFO] syncNote start {"notePath":"09 - Linux/Linux devices.md"}
+2026-11-22T15:35:41.164Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"09 - Linux/Linux devices.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.164Z [INFO] syncNote start {"notePath":"09 - Linux/Linux Terminal.md"}
+2026-11-22T15:35:41.168Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"09 - Linux/Linux Terminal.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.168Z [INFO] syncNote start {"notePath":"10 - Management/Team management.md"}
+2026-11-22T15:35:41.171Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"10 - Management/Team management.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.171Z [INFO] syncNote start {"notePath":"10 - Management/Code review best practices and pitfals.md"}
+2026-11-22T15:35:41.174Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"10 - Management/Code review best practices and pitfals.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.174Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Temporal.md"}
+2026-11-22T15:35:41.183Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Temporal.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.183Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Service mesh pattern.md"}
+2026-11-22T15:35:41.186Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Microservices Service mesh pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.186Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Saga.md"}
+2026-11-22T15:35:41.190Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Saga.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.190Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Tracing.md"}
+2026-11-22T15:35:41.194Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Microservices Tracing.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.194Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices architecture.md"}
+2026-11-22T15:35:41.199Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Microservices architecture.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.199Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices decomposition.md"}
+2026-11-22T15:35:41.201Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Microservices decomposition.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.201Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md"}
+2026-11-22T15:35:41.204Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Microservices Resilience and Fault tolerance.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.204Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Sidecar pattern.md"}
+2026-11-22T15:35:41.206Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Microservices Sidecar pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.206Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/Microservices Orchestration and Choreography.md"}
+2026-11-22T15:35:41.209Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/Microservices Orchestration and Choreography.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.209Z [INFO] syncNote start {"notePath":"06 - Architecture/Microservices/CAP Theorem.md"}
+2026-11-22T15:35:41.211Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Microservices/CAP Theorem.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.211Z [INFO] syncNote start {"notePath":"06 - Architecture/Event-driven architecture.md"}
+2026-11-22T15:35:41.215Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Event-driven architecture.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.215Z [INFO] syncNote start {"notePath":"06 - Architecture/DDD.md"}
+2026-11-22T15:35:41.219Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/DDD.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.219Z [INFO] syncNote start {"notePath":"06 - Architecture/Client polling pattern.md"}
+2026-11-22T15:35:41.221Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/Client polling pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.221Z [INFO] syncNote start {"notePath":"06 - Architecture/2PC vs Saga.md"}
+2026-11-22T15:35:41.226Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"06 - Architecture/2PC vs Saga.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.226Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/SCSI.md"}
+2026-11-22T15:35:41.228Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/SCSI.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.228Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md"}
+2026-11-22T15:35:41.229Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Multithreading/Pessimistic Concurrency Control.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.229Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Single Writer Principle.md"}
+2026-11-22T15:35:41.232Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Multithreading/Single Writer Principle.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.232Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Mutual Exclusion.md"}
+2026-11-22T15:35:41.234Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Multithreading/Mutual Exclusion.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.234Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Little's Law.md"}
+2026-11-22T15:35:41.237Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Multithreading/Little's Law.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.237Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Compare-And-Swap.md"}
+2026-11-22T15:35:41.239Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Multithreading/Compare-And-Swap.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.239Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Multithreading/Critical Section.md"}
+2026-11-22T15:35:41.241Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Multithreading/Critical Section.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.241Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP.md"}
+2026-11-22T15:35:41.258Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.258Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/WebSocket.md"}
+2026-11-22T15:35:41.280Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/WebSocket.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.280Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/gRPC.md"}
+2026-11-22T15:35:41.331Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/gRPC.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.331Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Webhook.md"}
+2026-11-22T15:35:41.380Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/Webhook.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.380Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URL.md"}
+2026-11-22T15:35:41.405Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/URL.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.405Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/Idempotency.md"}
+2026-11-22T15:35:41.431Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/Idempotency.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.431Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/URI.md"}
+2026-11-22T15:35:41.433Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Web/URI.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.433Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTPS.md"}
+2026-11-22T15:35:41.435Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Web/HTTPS.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.435Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP3.md"}
+2026-11-22T15:35:41.455Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP3.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.455Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP2.md"}
+2026-11-22T15:35:41.481Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP2.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.481Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/HTTP1.1.md"}
+2026-11-22T15:35:41.506Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/HTTP1.1.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.506Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/API Idempotency.md"}
+2026-11-22T15:35:41.509Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Web/API Idempotency.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.509Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/GraphQL.md"}
+2026-11-22T15:35:41.556Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/GraphQL.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.556Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Web/CDN.md"}
+2026-11-22T15:35:41.581Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Web/CDN.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.581Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/TTY.md"}
+2026-11-22T15:35:41.584Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/TTY.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.584Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Redis.md"}
+2026-11-22T15:35:41.588Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Services/Redis.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.588Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/MongoDB.md"}
+2026-11-22T15:35:41.591Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Services/MongoDB.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.591Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Memcached.md"}
+2026-11-22T15:35:41.594Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Services/Memcached.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.594Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Services/Apache Cassandra.md"}
+2026-11-22T15:35:41.597Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Services/Apache Cassandra.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.597Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md"}
+2026-11-22T15:35:41.602Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/System Design/Reliability, Scalability, Maintainability.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.602Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Composition Over Inheritance.md"}
+2026-11-22T15:35:41.605Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Composition Over Inheritance.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.605Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Timeout Pattern.md"}
+2026-11-22T15:35:41.608Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Timeout Pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.609Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md"}
+2026-11-22T15:35:41.612Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Retry Pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.612Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Bulkhead Pattern.md"}
+2026-11-22T15:35:41.614Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Bulkhead Pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.614Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Fallback Pattern.md"}
+2026-11-22T15:35:41.616Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Fallback Pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.616Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker.md"}
+2026-11-22T15:35:41.618Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Resilience Patterns/Circuit Breaker.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.618Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Optimistic Concurrency Control.md"}
+2026-11-22T15:35:41.621Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Optimistic Concurrency Control.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.621Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotency Key.md"}
+2026-11-22T15:35:41.624Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotency Key.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.624Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Testing.md"}
+2026-11-22T15:35:41.626Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shadow Testing.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.626Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Strangler Fig.md"}
+2026-11-22T15:35:41.629Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Strangler Fig.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.629Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Version Guard.md"}
+2026-11-22T15:35:41.633Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Version Guard.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.633Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Database Per Service.md"}
+2026-11-22T15:35:41.636Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Database Per Service.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.636Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/DLQ.md"}
+2026-11-22T15:35:41.639Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/DLQ.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.639Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shared Library.md"}
+2026-11-22T15:35:41.641Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Shared Library.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.641Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Reconciliation.md"}
+2026-11-22T15:35:41.645Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Reconciliation.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.645Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Outbox Pattern.md"}
+2026-11-22T15:35:41.651Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Outbox Pattern.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.651Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotent Consumer.md"}
+2026-11-22T15:35:41.654Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Idempotent Consumer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.654Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md"}
+2026-11-22T15:35:41.655Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Health Checks.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.655Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/External Configuration Store.md"}
+2026-11-22T15:35:41.659Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/External Configuration Store.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.659Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Event Sourcing.md"}
+2026-11-22T15:35:41.663Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Event Sourcing.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.663Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Distributed Tracing.md"}
+2026-11-22T15:35:41.665Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Distributed Tracing.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.665Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md"}
+2026-11-22T15:35:41.669Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/BFF.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.669Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/CQRS.md"}
+2026-11-22T15:35:41.675Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/CQRS.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.675Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md"}
+2026-11-22T15:35:41.676Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Anti-Corruption Layer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.676Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Aggregator.md"}
+2026-11-22T15:35:41.679Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/Aggregator.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.679Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md"}
+2026-11-22T15:35:41.684Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Patterns/Microservices Patterns/API Gateway.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.684Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VPN.md"}
+2026-11-22T15:35:41.707Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/VPN.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.707Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Reverse proxy.md"}
+2026-11-22T15:35:41.731Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/Reverse proxy.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.731Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Virtual Private Cloud.md"}
+2026-11-22T15:35:41.781Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/Virtual Private Cloud.md","okCreates":0,"okUpdates":2,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.781Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/VLAN.md"}
+2026-11-22T15:35:41.806Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/VLAN.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.806Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/UDP.md"}
+2026-11-22T15:35:41.830Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/UDP.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.830Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TLS.md"}
+2026-11-22T15:35:41.855Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/TLS.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.855Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/TCP.md"}
+2026-11-22T15:35:41.880Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/TCP.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.880Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Subnet.md"}
+2026-11-22T15:35:41.883Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/Subnet.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.884Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/SSL.md"}
+2026-11-22T15:35:41.886Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/SSL.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.886Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 6 layer.md"}
+2026-11-22T15:35:41.887Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 6 layer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.887Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI Model.md"}
+2026-11-22T15:35:41.906Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI Model.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.906Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md"}
+2026-11-22T15:35:41.908Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 7 layer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.908Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 5 layer.md"}
+2026-11-22T15:35:41.909Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 5 layer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.909Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 3 layer.md"}
+2026-11-22T15:35:41.930Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 3 layer.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.930Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 4 layer.md"}
+2026-11-22T15:35:41.931Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 4 layer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.931Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 2 layer.md"}
+2026-11-22T15:35:41.933Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 2 layer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.933Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 1 layer.md"}
+2026-11-22T15:35:41.933Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/OSI/OSI 1 layer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.934Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/LAN.md"}
+2026-11-22T15:35:41.935Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/LAN.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.935Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/ISO.md"}
+2026-11-22T15:35:41.937Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/ISO.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.937Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/Forward proxy.md"}
+2026-11-22T15:35:41.939Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/Forward proxy.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.939Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/DNS.md"}
+2026-11-22T15:35:41.955Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Networks/DNS.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:41.955Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Networks/CIDR Notation.md"}
+2026-11-22T15:35:41.958Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Networks/CIDR Notation.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.958Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Exactly-once delivery.md"}
+2026-11-22T15:35:41.959Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Messaging/Exactly-once delivery.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.959Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/Delivery Semantics.md"}
+2026-11-22T15:35:41.961Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Messaging/Delivery Semantics.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.961Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-most-once-delivery.md"}
+2026-11-22T15:35:41.962Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Messaging/At-most-once-delivery.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.962Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Messaging/At-least-once delivery.md"}
+2026-11-22T15:35:41.964Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Messaging/At-least-once delivery.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.964Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/EFI.md"}
+2026-11-22T15:35:41.966Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/EFI.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.966Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IOT.md"}
+2026-11-22T15:35:41.969Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/IOT.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.969Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/IT Common Glossary.md"}
+2026-11-22T15:35:41.971Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/IT Common Glossary.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.971Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Data Structures.md"}
+2026-11-22T15:35:41.972Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Structures/Data Structures.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.972Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bitmap.md"}
+2026-11-22T15:35:41.974Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Structures/Bitmap.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.974Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/SSTable.md"}
+2026-11-22T15:35:41.976Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Structures/SSTable.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.976Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/LSM Tree.md"}
+2026-11-22T15:35:41.981Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Structures/LSM Tree.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.981Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Structures/Bloom Filter.md"}
+2026-11-22T15:35:41.983Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Structures/Bloom Filter.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.983Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Check-Then-Act.md"}
+2026-11-22T15:35:41.986Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Anti-Patterns/Check-Then-Act.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.986Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Anti-Patterns/Dual-Write.md"}
+2026-11-22T15:35:41.989Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Anti-Patterns/Dual-Write.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.989Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Linearizability.md"}
+2026-11-22T15:35:41.992Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Linearizability.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.992Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Version Vectors and Concurrent Write Resolution.md"}
+2026-11-22T15:35:41.994Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Version Vectors and Concurrent Write Resolution.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.994Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning Hot Spots and Skew.md"}
+2026-11-22T15:35:41.997Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning Hot Spots and Skew.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.997Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Hash Partitioning.md"}
+2026-11-22T15:35:41.999Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Hash Partitioning.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:41.999Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Key-Range Partitioning.md"}
+2026-11-22T15:35:42.001Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Key-Range Partitioning.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.001Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md"}
+2026-11-22T15:35:42.005Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.005Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md"}
+2026-11-22T15:35:42.008Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.008Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md"}
+2026-11-22T15:35:42.011Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.011Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication vs Partitioning.md"}
+2026-11-22T15:35:42.013Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication vs Partitioning.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.013Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Synchronous vs Asynchronous Replication.md"}
+2026-11-22T15:35:42.015Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Synchronous vs Asynchronous Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.015Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Log.md"}
+2026-11-22T15:35:42.018Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Log.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.018Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Types of Writes in distributed systems.md"}
+2026-11-22T15:35:42.020Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Types of Writes in distributed systems.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.020Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md"}
+2026-11-22T15:35:42.056Z [WARN] CREATE failed {"blockId":"q-6fpf","error":"cannot create note because it is a duplicate"}
+2026-11-22T15:35:42.056Z [INFO] syncNote ok {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Sloppy Quorum.md","okCreates":0,"okUpdates":0,"okDeletes":0,"failedOps":1}
+2026-11-22T15:35:42.056Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication.md"}
+2026-11-22T15:35:42.059Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.059Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md"}
+2026-11-22T15:35:42.063Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.063Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Eventual Consistency.md"}
+2026-11-22T15:35:42.066Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Eventual Consistency.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.066Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md"}
+2026-11-22T15:35:42.069Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.069Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Lag.md"}
+2026-11-22T15:35:42.072Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Replication Lag.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.072Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md"}
+2026-11-22T15:35:42.074Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Read Repair.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.074Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md"}
+2026-11-22T15:35:42.079Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Multi-Leader Replication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.079Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md"}
+2026-11-22T15:35:42.082Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Distributed Data.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.082Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Consistency Levels.md"}
+2026-11-22T15:35:42.086Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Consistency Levels.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.086Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Anti-Entropy.md"}
+2026-11-22T15:35:42.089Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/Anti-Entropy.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.089Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/CRDT.md"}
+2026-11-22T15:35:42.091Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Distributed Data/CRDT.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.091Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Transaction.md"}
+2026-11-22T15:35:42.093Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Transactions/Transaction.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.093Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP.md"}
+2026-11-22T15:35:42.095Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.095Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP and OLAP.md"}
+2026-11-22T15:35:42.097Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLTP and OLAP.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.097Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLAP.md"}
+2026-11-22T15:35:42.101Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Transactions/OLAP.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.101Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/MVCC.md"}
+2026-11-22T15:35:42.104Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Transactions/MVCC.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.104Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md"}
+2026-11-22T15:35:42.106Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Transactions/Atomic Conditional Mutation.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.106Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Transactions/ACID.md"}
+2026-11-22T15:35:42.109Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Transactions/ACID.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.109Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md"}
+2026-11-22T15:35:42.115Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Vendors/PostgreSQL.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.115Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/WAL.md"}
+2026-11-22T15:35:42.118Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/WAL.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.118Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Log.md"}
+2026-11-22T15:35:42.120Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Log.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.120Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md"}
+2026-11-22T15:35:42.124Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Storage Engines.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.124Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Latch.md"}
+2026-11-22T15:35:42.128Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Database Storage Engines/Database Latch.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.128Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Star Schema vs Snowflake Schema.md"}
+2026-11-22T15:35:42.132Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Star Schema vs Snowflake Schema.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.132Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL.md"}
+2026-11-22T15:35:42.133Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.133Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Schema Migration.md"}
+2026-11-22T15:35:42.144Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Schema Migration.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.144Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL vs NoSQL.md"}
+2026-11-22T15:35:42.147Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL vs NoSQL.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.147Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/RDBMS.md"}
+2026-11-22T15:35:42.149Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/RDBMS.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.150Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Aggregate Functions.md"}
+2026-11-22T15:35:42.151Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL/Aggregate Functions.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.151Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Window Functions.md"}
+2026-11-22T15:35:42.156Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL/Window Functions.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.156Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md"}
+2026-11-22T15:35:42.158Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL/Logical Query Processing Order.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.158Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/IO-Bound vs CPU-Bound.md"}
+2026-11-22T15:35:42.160Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL/IO-Bound vs CPU-Bound.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.160Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Grouping.md"}
+2026-11-22T15:35:42.164Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL/Grouping.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.164Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md"}
+2026-11-22T15:35:42.167Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/SQL/Anti-join and NOT IN trap.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.167Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Relational Database.md"}
+2026-11-22T15:35:42.169Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Relational Database.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.169Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Query Languages for Data.md"}
+2026-11-22T15:35:42.171Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Query Languages for Data.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.171Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md"}
+2026-11-22T15:35:42.174Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Locks/Pessimistic Locking.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.174Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Database Lock.md"}
+2026-11-22T15:35:42.177Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Locks/Database Lock.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.177Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md"}
+2026-11-22T15:35:42.180Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Locks/Optimistic Locking.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.180Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/NoSQL database.md"}
+2026-11-22T15:35:42.182Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/NoSQL database.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.182Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/MapReduce querying.md"}
+2026-11-22T15:35:42.184Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/MapReduce querying.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.184Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index.md"}
+2026-11-22T15:35:42.192Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.192Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md"}
+2026-11-22T15:35:42.194Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/Index Skip Scan.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.194Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Hash Index.md"}
+2026-11-22T15:35:42.197Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/Hash Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.197Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GiST Index.md"}
+2026-11-22T15:35:42.199Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/GiST Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.199Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/GIN Index.md"}
+2026-11-22T15:35:42.204Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/GIN Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.204Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index Practical Usage.md"}
+2026-11-22T15:35:42.210Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/Database Index Practical Usage.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.210Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Clustered and Non-Clustered Index.md"}
+2026-11-22T15:35:42.213Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/Clustered and Non-Clustered Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.213Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/Bitmap Index.md"}
+2026-11-22T15:35:42.217Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/Bitmap Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.217Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/BRIN Index.md"}
+2026-11-22T15:35:42.219Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/BRIN Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.219Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md"}
+2026-11-22T15:35:42.226Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Indexes/B-Tree Index.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.226Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Graph database.md"}
+2026-11-22T15:35:42.230Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Graph database.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.230Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/In-Memory Database.md"}
+2026-11-22T15:35:42.233Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/In-Memory Database.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.233Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Impedance mismatch.md"}
+2026-11-22T15:35:42.235Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Impedance mismatch.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.235Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/ETL.md"}
+2026-11-22T15:35:42.238Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/ETL.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.238Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DB Glossary.md"}
+2026-11-22T15:35:42.238Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/DB Glossary.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.238Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Document Database.md"}
+2026-11-22T15:35:42.240Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Document Database.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.240Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Database.md"}
+2026-11-22T15:35:42.242Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Database.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.242Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Data Warehouse.md"}
+2026-11-22T15:35:42.244Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Data Warehouse.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.244Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/DBMS.md"}
+2026-11-22T15:35:42.246Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/DBMS.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.246Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Cloud database.md"}
+2026-11-22T15:35:42.248Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Cloud database.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.248Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Databases/Column-Oriented Storage.md"}
+2026-11-22T15:35:42.253Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Databases/Column-Oriented Storage.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.253Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Forward Compatibility.md"}
+2026-11-22T15:35:42.255Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Formats/Forward Compatibility.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.255Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Protocol Buffers.md"}
+2026-11-22T15:35:42.257Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Formats/Protocol Buffers.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.257Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Data Encoding.md"}
+2026-11-22T15:35:42.260Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Formats/Data Encoding.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.261Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Backward Compatibility.md"}
+2026-11-22T15:35:42.262Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Formats/Backward Compatibility.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.262Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Data Formats/Apache Thrift.md"}
+2026-11-22T15:35:42.264Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Data Formats/Apache Thrift.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.264Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 4 Encoding and Evolution.md"}
+2026-11-22T15:35:42.267Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 4 Encoding and Evolution.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.267Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 3 Storage and Retrieval.md"}
+2026-11-22T15:35:42.270Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Books/Designing Data Intensive Applications/DDIA Chapter 3 Storage and Retrieval.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.271Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Vertical scaling.md"}
+2026-11-22T15:35:42.272Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Vertical scaling.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.272Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-passive systems.md"}
+2026-11-22T15:35:42.275Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Active-passive systems.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.275Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Serverless.md"}
+2026-11-22T15:35:42.278Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Serverless.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.278Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Scaling.md"}
+2026-11-22T15:35:42.280Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Scaling.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.280Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Load Balancing.md"}
+2026-11-22T15:35:42.283Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Load Balancing.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.283Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Microservices App.md"}
+2026-11-22T15:35:42.285Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Microservices App.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.285Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Horizontal scaling.md"}
+2026-11-22T15:35:42.287Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Horizontal scaling.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.288Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaC.md"}
+2026-11-22T15:35:42.289Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/IaaC.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.290Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/IaaS.md"}
+2026-11-22T15:35:42.291Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/IaaS.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.291Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Availability.md"}
+2026-11-22T15:35:42.294Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Availability.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.294Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Cloud-Native App.md"}
+2026-11-22T15:35:42.298Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Cloud-Native App.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.298Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Cloud/Active-active systems.md"}
+2026-11-22T15:35:42.300Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Cloud/Active-active systems.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.300Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Binary search.md"}
+2026-11-22T15:35:42.302Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Algorithms/Binary search.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.302Z [INFO] syncNote start {"notePath":"05 - Common IT knowledge/Algorithms/Two pointers.md"}
+2026-11-22T15:35:42.305Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"05 - Common IT knowledge/Algorithms/Two pointers.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.305Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Safe Publication and Thread-Safe Design.md"}
+2026-11-22T15:35:42.309Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/Concurrency/Safe Publication and Thread-Safe Design.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.309Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Executors and Task Execution.md"}
+2026-11-22T15:35:42.312Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/Concurrency/Executors and Task Execution.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.312Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Concurrent Collections and Synchronizers.md"}
+2026-11-22T15:35:42.318Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/Concurrency/Concurrent Collections and Synchronizers.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.318Z [INFO] syncNote start {"notePath":"02 - Java/Concurrency/Concurrency Performance and Scalability.md"}
+2026-11-22T15:35:42.320Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/Concurrency/Concurrency Performance and Scalability.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.320Z [INFO] syncNote start {"notePath":"02 - Java/JPA/Hibernate/Hibernate.md"}
+2026-11-22T15:35:42.323Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/JPA/Hibernate/Hibernate.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.323Z [INFO] syncNote start {"notePath":"02 - Java/JPA/JPA.md"}
+2026-11-22T15:35:42.327Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/JPA/JPA.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.327Z [INFO] syncNote start {"notePath":"02 - Java/Java Evolution.md"}
+2026-11-22T15:35:42.358Z [INFO] syncNote ok {"notePath":"02 - Java/Java Evolution.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:42.359Z [INFO] syncNote start {"notePath":"02 - Java/jvmArgs.md"}
+2026-11-22T15:35:42.362Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/jvmArgs.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.362Z [INFO] syncNote start {"notePath":"02 - Java/jmxConfig.md"}
+2026-11-22T15:35:42.364Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"02 - Java/jmxConfig.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.364Z [INFO] syncNote start {"notePath":"02 - Java/Java versions.md"}
+2026-11-22T15:35:42.380Z [INFO] syncNote ok {"notePath":"02 - Java/Java versions.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:42.380Z [INFO] syncNote start {"notePath":"02 - Java/Java Memory Model.md"}
+2026-11-22T15:35:42.406Z [INFO] syncNote ok {"notePath":"02 - Java/Java Memory Model.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:42.407Z [INFO] syncNote start {"notePath":"04 - Security/Keycloak.md"}
+2026-11-22T15:35:42.409Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Keycloak.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.409Z [INFO] syncNote start {"notePath":"04 - Security/SSE.md"}
+2026-11-22T15:35:42.412Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/SSE.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.412Z [INFO] syncNote start {"notePath":"04 - Security/SAML.md"}
+2026-11-22T15:35:42.414Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/SAML.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.414Z [INFO] syncNote start {"notePath":"04 - Security/POLP.md"}
+2026-11-22T15:35:42.416Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/POLP.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.416Z [INFO] syncNote start {"notePath":"04 - Security/OIDC.md"}
+2026-11-22T15:35:42.419Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/OIDC.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.419Z [INFO] syncNote start {"notePath":"04 - Security/Least privilege principle.md"}
+2026-11-22T15:35:42.421Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Least privilege principle.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.421Z [INFO] syncNote start {"notePath":"04 - Security/JWT.md"}
+2026-11-22T15:35:42.425Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/JWT.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.425Z [INFO] syncNote start {"notePath":"04 - Security/CORS.md"}
+2026-11-22T15:35:42.428Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/CORS.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.428Z [INFO] syncNote start {"notePath":"04 - Security/AES256.md"}
+2026-11-22T15:35:42.432Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/AES256.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.432Z [INFO] syncNote start {"notePath":"04 - Security/Identity provider.md"}
+2026-11-22T15:35:42.434Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Identity provider.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.434Z [INFO] syncNote start {"notePath":"04 - Security/Identity federation.md"}
+2026-11-22T15:35:42.437Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Identity federation.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.504Z [INFO] syncNote start {"notePath":"04 - Security/IdP.md"}
+2026-11-22T15:35:42.505Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/IdP.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.505Z [INFO] syncNote start {"notePath":"04 - Security/Authorization.md"}
+2026-11-22T15:35:42.508Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Authorization.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.508Z [INFO] syncNote start {"notePath":"04 - Security/Authentication.md"}
+2026-11-22T15:35:42.511Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Authentication.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.511Z [INFO] syncNote start {"notePath":"04 - Security/Authentication and Authorization.md"}
+2026-11-22T15:35:42.512Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"04 - Security/Authentication and Authorization.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.512Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md"}
+2026-11-22T15:35:42.531Z [INFO] syncNote ok {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Topic.md","okCreates":0,"okUpdates":1,"okDeletes":0,"failedOps":0}
+2026-11-22T15:35:42.531Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md"}
+2026-11-22T15:35:42.535Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Producer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.535Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka.md"}
+2026-11-22T15:35:42.538Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.538Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md"}
+2026-11-22T15:35:42.540Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Partition.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.540Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md"}
+2026-11-22T15:35:42.548Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Consumer.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.548Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md"}
+2026-11-22T15:35:42.550Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Retention.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.550Z [INFO] syncNote start {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Message.md"}
+2026-11-22T15:35:42.552Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Event Driven/Apache Kafka/Kafka Message.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.552Z [INFO] syncNote start {"notePath":"03 - Backend/API/REST.md"}
+2026-11-22T15:35:42.555Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/API/REST.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.555Z [INFO] syncNote start {"notePath":"03 - Backend/API/RESTful.md"}
+2026-11-22T15:35:42.558Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/API/RESTful.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.558Z [INFO] syncNote start {"notePath":"03 - Backend/API/API.md"}
+2026-11-22T15:35:42.561Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/API/API.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.561Z [INFO] syncNote start {"notePath":"03 - Backend/API/API Performance improvement.md"}
+2026-11-22T15:35:42.563Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/API/API Performance improvement.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.563Z [INFO] syncNote start {"notePath":"03 - Backend/API/API versioning.md"}
+2026-11-22T15:35:42.569Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/API/API versioning.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.569Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/Service discovery.md"}
+2026-11-22T15:35:42.572Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/cloud/Service discovery.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.572Z [INFO] syncNote start {"notePath":"03 - Backend/cloud/architecture.md"}
+2026-11-22T15:35:42.574Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/cloud/architecture.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.574Z [INFO] syncNote start {"notePath":"03 - Backend/spring/persistence.md"}
+2026-11-22T15:35:42.577Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/spring/persistence.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.577Z [INFO] syncNote start {"notePath":"03 - Backend/Database/HiLo id optimization.md"}
+2026-11-22T15:35:42.580Z [INFO] syncNote ok (no plan ops after reconciliation) {"notePath":"03 - Backend/Database/HiLo id optimization.md","identityWritesApplied":0,"mediaErrors":0}
+2026-11-22T15:35:42.580Z [INFO] syncVault end {"noteCount":307,"processedNoteCount":276,"skippedUnchangedNoteCount":31,"totalCreates":0,"totalUpdates":75,"totalDeletes":0,"failedNotes":0}

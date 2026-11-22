@@ -1,7 +1,7 @@
 ---
 flashcards:
-  q-6dns: { nid: 1795361661605, hash: ddtwa5dc, sync: vd9qmqng }
-  q-j3d8: { nid: 1795361661679, hash: 4tttx94d, sync: wt4hci6s }
+  q-6dns: { nid: 1795361661605, hash: 9cpzn4hu, sync: vd9qmqng }
+  q-j3d8: { nid: 1795361661679, hash: k3wm5b62, sync: wt4hci6s }
 
 ---
 

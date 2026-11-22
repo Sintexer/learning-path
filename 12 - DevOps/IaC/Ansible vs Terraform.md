@@ -1,7 +1,7 @@
 ---
 flashcards:
-  q-sgj3: { nid: 1795361647061, hash: brn82jgf, sync: 8y7zfve2 }
-  q-vp9t: { nid: 1795361647137, hash: awe8vr48, sync: wr3gqvan }
+  q-sgj3: { nid: 1795361647061, hash: 4v2xjkkx, sync: 8y7zfve2 }
+  q-vp9t: { nid: 1795361647137, hash: z62uq6bp, sync: wr3gqvan }
 
 ---
 

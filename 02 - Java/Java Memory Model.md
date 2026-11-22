@@ -1,6 +1,6 @@
 ---
 flashcards:
-  q-6av7: { nid: 1795361726133, hash: 8rewe2ky, sync: y8jejgwd }
+  q-6av7: { nid: 1795361726133, hash: rpa4s8dc, sync: y8jejgwd }
   q-8usi: { nid: 1795356731775, hash: 2ryrcick, sync: jpwb8ecw }
   q-iz7w: { nid: 1795356731797, hash: 9ufutiek, sync: pirizy6f }
 ---

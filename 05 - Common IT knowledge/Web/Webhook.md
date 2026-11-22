@@ -1,8 +1,8 @@
 ---
 flashcards:
   q-99np: { nid: 1795356718941, hash: ist9fr8n, sync: pq5z9iva }
-  q-9vc8: { nid: 1795361691230, hash: phfea65t, sync: wgxe3w63 }
-  q-fnmc: { nid: 1795361691303, hash: 89xzx56n, sync: eqx275rx }
+  q-9vc8: { nid: 1795361691230, hash: zpatfwkx, sync: wgxe3w63 }
+  q-fnmc: { nid: 1795361691303, hash: fwbwcxi9, sync: eqx275rx }
   q-wpty: { nid: 1795356719067, hash: dgtdnm92, sync: f98srx5r }
 ---
 

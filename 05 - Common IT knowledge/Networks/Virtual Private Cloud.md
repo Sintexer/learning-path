@@ -1,8 +1,8 @@
 ---
 flashcards:
   q-aiak: { nid: 1795356722618, hash: nahtkvqi, sync: 5mkujqfe }
-  q-5e34: { nid: 1795361715382, hash: qby585wc, sync: pvkrvmmq }
-  q-bm35: { nid: 1795361715453, hash: sgvx388h, sync: tturrpqk }
+  q-5e34: { nid: 1795361715382, hash: 4hhwxe2y, sync: pvkrvmmq }
+  q-bm35: { nid: 1795361715453, hash: nwkit988, sync: tturrpqk }
   q-hj9h: { nid: 1795356722742, hash: jgpkxcjr, sync: eh8tg7f4 }
 ---
 

@@ -2,7 +2,7 @@
 flashcards:
   q-5khh: { nid: 1795356723991, hash: jm63iggu, sync: iea2z7zv }
   q-8s5w: { nid: 1795356724017, hash: hfmuws92, sync: k7ny55tm }
-  q-tuae: { nid: 1795361721883, hash: 4cnvb3pn, sync: pg7whwdm }
+  q-tuae: { nid: 1795361721883, hash: wq5riq9c, sync: pg7whwdm }
   q-qmiw: { nid: 1795356724092, hash: dc4zvtcc, sync: amyi8k9s }
 ---
 

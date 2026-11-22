@@ -1,7 +1,7 @@
 ---
 flashcards:
   q-6ezd: { nid: 1795356723598, hash: z9aygvbz, sync: riwn557t }
-  q-ftc3: { nid: 1795361721057, hash: zyrkw9ay, sync: 4dvwnjmb }
+  q-ftc3: { nid: 1795361721057, hash: wau6j5s5, sync: 4dvwnjmb }
 
 ---
 
