@@ -19,3 +19,27 @@ While this specific "counter" test seems trivial, it exposes a scaling limit. In
 **Single Writer Principle:** Any given piece of data or resource should be mutated by only one execution context, ever.
 
 If you design systems around independent components that own their own state and communicate only via messages (not shared writes), contention disappears naturally. If migrating fully isn't possible, the practical fix when facing scalability issues is to ask: _"How can I restructure this so only one thread/owner ever writes this data?"_
+
+> [!tip] Production reality
+> - **Where it shines in practice:** LMAX Disruptor ring buffers, Actor frameworks, Redis's single-threaded command loop, and per-key ordering in a [[Kafka Partition]] all leverage single-writer ownership to avoid lock contention.
+> - **Watch out for false sharing:** Even if Thread A only writes field `x` and Thread B only writes field `y`, if `x` and `y` share the same 64-byte CPU cache line, the cores still invalidate each other's cache line on every write. Mitigate by padding hot independent fields (e.g. `@Contended` in the JVM).
+> - **Visibility still matters:** A single writer eliminates write-write races, not read-write visibility bugs—readers still need proper [[Java Memory Model|happens-before]] publication (e.g. `volatile` / acquire-release fences).
+
+## Flashcards
+
+Single Writer Principle:::Design rule stating that any given piece of data or resource should be mutated by only one execution context, eliminating write-write lock contention.
+
+## Why can a lock-protected shared counter be orders of magnitude slower with two threads than with one? #card
+Contended locks trigger OS kernel arbitration, thread context switches, and CPU cache invalidation/pollution. Cores spend far more cycles bouncing cache lines and reloading evicted "warm" state from main memory than executing the actual increment.
+
+## What is false sharing, and how can it hurt even a Single Writer design? #card
+False sharing happens when two threads independently mutate different variables that sit on the same CPU cache line (typically 64 bytes). The CPU cache-coherency protocol invalidates the whole line across cores on every write, recreating contention; fix by padding independent hot fields onto separate cache lines.
+
+## Related
+- [[Compare-And-Swap]]
+- [[Mutual Exclusion]]
+- [[Critical Section]]
+- [[Java Memory Model]]
+- [[Kafka Partition]]
+- [[Event Sourcing]]
+- [[concurrency]]

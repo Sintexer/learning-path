@@ -6,17 +6,17 @@
 | @OneToMany       | LAZY                    |
 | @ManyToMany      | LAZY                    |
 | @ManyToOne       | EAGER                   |
-| @OneToMany       | EAGER                   |
+| @OneToOne        | EAGER                   |
 
-# JPA/Hibernate cache
+# JPA/[[Hibernate]] cache
 
 ## 1st layer cache
 
-1st layer cache is a session cache which is associated with current transaction. It is enabled by default and used to prevent quering for the same object. It is implemented as key-value Map inside EntityManager.
+1st layer cache is a session cache which is associated with current [[Transaction|transaction]]. It is enabled by default and used to prevent querying for the same object. It is implemented as key-value Map inside `EntityManager` (the Persistence Context).
 
 ## 2nd layer cache
 
-2nd layer cache is a global cache that is stored inside SessionFactory and same for every transaction. It could be usefull for read-only object (`@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)`). 2nd layer cache disabled by default and could be enabled. You need to add implementation dependency to make it work (e.g., `hibernate-ehcache`).
+2nd layer cache is a global cache that is stored inside `SessionFactory` and shared across every transaction. It could be useful for read-only objects (`@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY)`). 2nd layer cache is disabled by default and can be enabled by adding an implementation dependency (e.g., `hibernate-ehcache`).
 
 ``` yaml
 spring:
@@ -86,7 +86,7 @@ List<PostComment> comments = entityManager.createQuery("""
     join fetch pc.post p
     """, PostComment.class)
 .getResultList();
-````
+```
  
 In this case you'll have only one SQL query:
 
@@ -109,30 +109,55 @@ INNER JOIN
 
 N+1 problem with `FetchType.LAZY` is pretty obvious - you fetch collection of comments and they are loaded without post, but if you'll traverse through comment and get their posts, for each post-postComment you'll have a select post query.
 
-## N+1 for biderectional @OneToOne
+## N+1 for bidirectional `@OneToOne`
 
-Imagine you have Post and PostDetails, that share same primary key. In this key PostDetails primery key is a foreign key for Post.
+Imagine you have `Post` and `PostDetails`, that share the same primary key. In this case `PostDetails` primary key is a foreign key for `Post`.
 
-When using unidirectional @OneToOne there is no problem. Using @mapsId annotation on PostDetails side you easily can have such relation. 
+When using unidirectional `@OneToOne` there is no problem. Using `@MapsId` annotation on `PostDetails` side you easily can have such relation. 
 
-But when adding biderectional association you could face the problem when using `FetchType.LAZY` on the Parent side if you use advanced setter, where a biderectional association is initialized:
+But when adding bidirectional association you could face the problem when using `FetchType.LAZY` on the Parent side if you use an advanced setter, where a bidirectional association is initialized:
 
 ``` java
-
 public void setDetails(PostDetails details) {
     this.details = details;
     details.post = this;
 }
 ```
 
-The line `details.post = this;` will lead to second SELECT when quering for post - hibernate will try to inject a proxy of PostDetails and this eventually will trigger proxy to be loaded.
+The line `details.post = this;` will lead to a second SELECT when querying for post - [[Hibernate]] will try to inject a proxy of `PostDetails` and this eventually will trigger the proxy to be loaded.
 
-This can be avoided with Bytecode enhancement like `@LazyToOneOption.NO_PROXY`, which force you to remove `@MapsId` on the child side as well.
+This can be avoided with bytecode enhancement like `@LazyToOneOption.NO_PROXY`, which forces you to remove `@MapsId` on the child side as well.
 
-But also when using `@MapsId` there is no much sense for biderectional assocoation since Post and PostDetails share the same `id`, so you can easily fetch PostDetails having only Post.
+But also when using `@MapsId` there is not much sense for a bidirectional association since `Post` and `PostDetails` share the same `id`, so you can easily fetch `PostDetails` having only `Post`.
 
-By default the name of the column of the field with `@MapsId` annotation will be field name + `_id`, but if you want to change it (e.g., to `id`, at least because it is a primary key) use good old `@JoinColumn(name = "desired_column_name")`
+By default the name of the column of the field with `@MapsId` annotation will be field name + `_id`, but if you want to change it (e.g., to `id`, at least because it is a primary key) use good old `@JoinColumn(name = "desired_column_name")`.
 
 ## N+1 for 2nd layer cache
 
-If you use 2nd layer cache, you could also face N+1. If you query for PostComment where each comment has a field of Post, than for each PostComment a SELECT query for Post is executed if PostComment is not yet in the 2nd layer cache.
+If you use 2nd layer cache, you could also face N+1. If you query for `PostComment` where each comment has a field of `Post`, then for each `PostComment` a SELECT query for `Post` is executed if `Post` is not yet in the 2nd layer cache.
+
+> [!warning] Failure modes & trade-offs
+> - **Detached entity / `LazyInitializationException`:** Accessing a `LAZY` association after the `EntityManager` / `@Transactional` boundary closes throws `LazyInitializationException`. Fix by fetching required data explicitly (`JOIN FETCH`, `@EntityGraph`, or DTO projections) inside the transaction—**not** by switching to `EAGER`.
+> - **Open Session in View (OSIV) anti-pattern:** Spring Boot enables `spring.jpa.open-in-view=true` by default, keeping the DB connection open across controller serialization and external calls. Disable it (`false`) in production to avoid connection pool exhaustion and hidden N+1 queries during JSON serialization.
+> - **`JOIN FETCH` + pagination trap:** Combining `JOIN FETCH` on a `@OneToMany` collection with `Pageable` forces Hibernate to load the entire result set into memory and paginate in Java (`HHH90003004`). Use a two-step query (fetch paged IDs first, then `JOIN FETCH` by `WHERE id IN (...)`) or DTO projections.
+
+## Flashcards
+
+In JPA, `@OneToMany` and `@ManyToMany` default to ==LAZY== fetching, while `@ManyToOne` and `@OneToOne` default to ==EAGER== fetching.
+
+## Why should you disable `spring.jpa.open-in-view` in production Spring/JPA services? #card
+With OSIV enabled, Hibernate keeps the database session and JDBC connection open until the HTTP response finishes rendering. This holds connections across slow serialization or downstream calls (exhausting the connection pool) and masks N+1 lazy-loading queries outside the `@Transactional` service layer.
+
+## What happens when you combine `JOIN FETCH` on a `@OneToMany` collection with pagination (`Pageable`) in Hibernate? #card
+SQL `LIMIT`/`OFFSET` cannot be applied safely to a joined parent-child result set without cutting off child rows, so Hibernate logs `HHH90003004` and loads **all matching rows into JVM memory** to paginate in Java. Fix with a two-query pattern (fetch paged parent IDs, then `JOIN FETCH` by IDs) or DTO projections.
+
+Default every `@ManyToOne` and `@OneToOne` to `FetchType.LAZY` and fetch associations per use case via `JOIN FETCH`, `@EntityGraph`, or DTO projections. #card-reminder
+
+## Related
+- [[Hibernate]]
+- [[persistence]]
+- [[Impedance mismatch]]
+- [[HiLo id optimization]]
+- [[Optimistic Locking]]
+- [[Pessimistic Locking]]
+- [[Transaction]]

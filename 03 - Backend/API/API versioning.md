@@ -1,8 +1,8 @@
-API versioning is a critical aspect of API design and management, ensuring that changes to an API do not break existing clients. It allows developers to introduce new features, fix bugs, and make improvements without disrupting the services that depend on the API.
+API versioning is a critical aspect of [[API]] design and management, ensuring that changes to an API do not break existing clients. It allows developers to introduce new features, fix bugs, and make improvements without disrupting the services that depend on the API.
 
 #### Different Approaches to API Versioning
 
-1. **URI Versioning**
+1. **[[URI]] Versioning**
 2. **Query Parameter Versioning**
 3. **Header Versioning**
 4. **Content Negotiation**
@@ -130,3 +130,24 @@ Headers:
    - **Content Negotiation**: `Accept: application/vnd.twitter.v1+json`
 
 By understanding these different approaches, their pros and cons, and best practices, you'll be well-prepared to design and manage versioned APIs effectively. Good luck with your senior assessment preparation!
+
+> [!warning] Failure modes & trade-offs
+> - **Version sprawl:** Every live major version multiplies testing, security patching, and on-call surface area. Prefer **additive, [[Backward Compatibility|backward-compatible]] evolution** (adding optional fields, never repurposing/removing existing ones) so you rarely need a new major version.
+> - **Cache poisoning with Header/Content-Negotiation versioning:** CDNs and [[Reverse proxy|reverse proxies]] cache by [[URL]] by default—if you version via headers, you MUST send `Vary: Accept` (or `Vary: X-API-Version`) or proxies may serve v2 payloads to v1 clients.
+> - **Silent deprecations:** Always pair deprecation timelines with standard `Deprecation` and `Sunset` HTTP headers, usage telemetry per client/version, and consumer-driven contract tests.
+
+## Flashcards
+
+Why is [[URI]] versioning (`/v1/...`) more cache-friendly than Header versioning?::HTTP caches and [[CDN|CDNs]] key entries by [[URL]] by default; Header versioning requires an explicit `Vary` response header to prevent serving the wrong version from cache.
+
+Prefer additive, [[Backward Compatibility|backward-compatible]] schema evolution over frequent major API versions—every supported version multiplies maintenance and testing cost. #card-reminder
+
+## Related
+- [[API]]
+- [[REST]]
+- [[RESTful]]
+- [[Backward Compatibility]]
+- [[Forward Compatibility]]
+- [[API Gateway]]
+- [[URI]]
+- [[HTTP]]

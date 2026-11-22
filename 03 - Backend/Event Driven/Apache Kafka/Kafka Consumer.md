@@ -40,10 +40,10 @@ When a consumer restarts, crashes and comes back, or a rebalance happens (partit
 
 ### Delivery semantics
 
-On reconnect, consumer will start reading from the last committed offset. So there are several option to choose the delivery semantics based on whether the consumer tolerant for repeated messages or not:
-1. **At least once** - (usually preferred) offsets are committed after the message is processed. If the processing goes wrong, the message will be read again. This can result in duplicate processing of messages.
-2. **At most once** - Offsets are committed as soon as messages are received. If the processing goes wrong, some messages will be lost.
-3. **Exactly once** - For Kafka use Transactional API (easy with Kafka Streams API), or use External Systems workflows: use an idempotent consumer
+On reconnect, consumer will start reading from the last committed offset. So there are several options to choose the [[Delivery Semantics|delivery semantics]] based on whether the consumer is tolerant of repeated messages or not:
+1. **[[At-least-once delivery|At least once]]** - (usually preferred) offsets are committed after the message is processed. If the processing goes wrong, the message will be read again. This can result in duplicate processing of messages, so pair with an [[Idempotent Consumer]].
+2. **[[At-most-once-delivery|At most once]]** - Offsets are committed as soon as messages are received. If the processing goes wrong, some messages will be lost.
+3. **[[Exactly-once delivery|Exactly once]]** - For Kafka-to-Kafka pipelines use the Transactional API (e.g. Kafka Streams + `isolation.level=read_committed`), or for external systems use an [[Idempotent Consumer]] / transactional offset storage.
 
 ### Configuring the initial group offset
 
@@ -86,3 +86,31 @@ This is configurable via `partition.assignment.strategy`, common options:
 Each consumer periodically sends a **heartbeat** to the Group Coordinator on a background thread (`heartbeat.interval.ms`). If the coordinator doesn't hear from a consumer within `session.timeout.ms`, it considers that consumer dead and triggers a rebalance to redistribute its partitions to the survivors.
 
 Separately, there's `max.poll.interval.ms` — this guards against a consumer that's _alive_ (heartbeating fine) but stuck not actually calling `poll()` again (e.g., stuck processing a message too long). If it exceeds this interval without polling, it's kicked from the group too, even though heartbeats looked healthy — a subtlety that trips people up in production ("why did my slow-processing consumer get rebalanced away even though it was clearly alive?").
+
+> [!warning] Failure modes & trade-offs
+> - **Rebalance storms (`max.poll.interval.ms` death spiral):** If a polled batch (`max.poll.records`) takes longer to process than `max.poll.interval.ms`, the broker evicts the consumer and triggers a rebalance. Its uncommitted offsets are reassigned to another consumer, which hits the exact same slow batch and also gets evicted—looping indefinitely. Fix by lowering `max.poll.records`, optimizing/bounding downstream timeouts, or pausing partitions while processing asynchronously.
+> - **Poison pill messages:** A single malformed or permanently failing message can block an entire partition forever if the consumer retries infinitely without committing. Route non-retryable failures (or records exceeding max retry attempts) to a [[DLQ]] so healthy records keep flowing.
+> - **Rolling-deploy rebalance churn:** During [[Kubernetes]] rolling restarts, ephemeral consumer IDs trigger unnecessary rebalances. Configure **static group membership** (`group.instance.id`) + `CooperativeStickyAssignor` so brief restarts reclaim their previous partitions without full group churn.
+
+## Flashcards
+
+## What is the difference between `session.timeout.ms` and `max.poll.interval.ms` in a Kafka consumer? #card
+`session.timeout.ms` detects a **dead/crashed** consumer via missing background heartbeats. `max.poll.interval.ms` detects a **livelocked or too-slow** consumer that is still heartbeating but fails to call `poll()` within the interval—evicting it and triggering a rebalance.
+
+## How does `CooperativeStickyAssignor` improve on eager rebalance protocols? #card
+Eager rebalancing is "stop-the-world": every consumer in the group revokes all partitions and pauses processing during any membership change. `CooperativeStickyAssignor` rebalances **incrementally**, revoking and moving only the specific partitions that need to change owners.
+
+Why is manual offset commit paired with an [[Idempotent Consumer]] preferred over auto-commit in production?::Auto-commit commits on a timer regardless of whether processing finished (causing silent data loss on crash); manual commit after side effects guarantees [[At-least-once delivery]], and the [[Idempotent Consumer]] safely absorbs duplicates on retry/rebalance.
+
+Always route unparseable or permanently failing Kafka "poison pill" records to a [[DLQ]] after bounded retries so one bad message cannot stall an entire partition. #card-reminder
+
+## Related
+- [[Kafka]]
+- [[Kafka Topic]]
+- [[Kafka Partition]]
+- [[Kafka Producer]]
+- [[Kafka Retention]]
+- [[Delivery Semantics]]
+- [[Idempotent Consumer]]
+- [[DLQ]]
+- [[Backpressure]]
