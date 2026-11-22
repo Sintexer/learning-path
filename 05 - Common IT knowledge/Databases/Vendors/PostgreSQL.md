@@ -10,10 +10,10 @@ PostgreSQL 18 introduces an asynchronous I/O subsystem, allowing it to issue mul
 - Reduces time spent waiting for storage.
 - Supports worker-based asynchronous I/O and, on supported Linux systems, `io_uring`.
 
-**Interview point:** Async I/O primarily improves I/O-bound workloads; it does not automatically make CPU-bound queries faster.
+**Interview point:** Async I/O primarily improves [[IO-Bound vs CPU-Bound|I/O-bound workloads]]; it does not automatically make CPU-bound queries faster.
 ### B-tree index skip scans
 
-PostgreSQL can now use a multicolumn B-tree index even when a query does not constrain its leading column.
+PostgreSQL can now use a multicolumn [[B-Tree Index|B-tree index]] via an [[Index Skip Scan]] even when a query does not constrain its leading column.
 
 ```sql
 CREATE INDEX orders_customer_date_idx
@@ -95,7 +95,7 @@ RETURNING
 This is useful for:
 
 - Audit logging
-- Change-data capture
+- [[Change Data Capture|Change-data capture]]
 - Returning price or status transitions
 - Avoiding an additional query
 
@@ -164,6 +164,11 @@ A background process called **`VACUUM`** cleans up obsolete rows whose `xmax` is
 - Rewrites the entire table to a brand new disk file, compacting everything and returning disk space to the OS.
 - **The Trap:** It acquires an **`ACCESS EXCLUSIVE` lock**. It blocks **ALL** reads and writes until it finishes. If run on a 500GB table in production, you will take down the entire system for hours! (Production alternatives: `pg_repack`).
 
+> [!warning] Failure modes & trade-offs
+> - **Transaction ID (XID) wraparound:** PostgreSQL uses 32-bit transaction IDs (~2B active window). If `autovacuum` fails to freeze old tuples before wraparound, Postgres refuses all writes to prevent silent data loss. Monitor `age(datfrozenxid)` closely.
+> - **Long-running transactions & bloat:** An idle-in-transaction session or long analytical query pins the global MVCC horizon, preventing `VACUUM` from reclaiming *any* dead tuples created after it started — causing rapid table and index bloat.
+> - **HOT update tuning:** Setting a table `fillfactor` below 100 (e.g., 70–85) on update-heavy tables leaves free space on each 8 KB page so HOT updates can succeed instead of triggering full index writes.
+
 ## HOT (Heap-Only Tuples) Updates
 
 Every time an update creates a new row, does it also have to insert a new entry into every single index on that table?  
@@ -196,9 +201,9 @@ CREATE TABLE users (
 );
 ```
 
-#### Creating the GIN Index
+#### Creating the [[GIN Index]]
 
-There are two ways to index JSONB with GIN:
+There are two ways to index JSONB with [[GIN Index|GIN]]:
 
 **Option A: Default (`jsonb_ops`)** — Indexes every key and every value.
 ```sql
@@ -260,3 +265,31 @@ CREATE TABLE bookings (
 -- Check if a new slot overlaps with ANY existing booking using the "&&" operator:
 SELECT * FROM bookings WHERE during && tsrange('2023-10-01 10:30', '2023-10-01 11:30');
 ```
+
+## Flashcards
+
+How does PostgreSQL's Visibility Map speed up Index-Only Scans?::If a heap page's bit is set to 1, all tuples on that page are visible to every active transaction, so the scan skips reading the heap entirely.
+
+A PostgreSQL HOT (Heap-Only Tuple) update avoids writing to any indexes when ==the new tuple fits on the same 8 KB page== and ==no indexed columns were modified==.
+
+Why is `VACUUM FULL` dangerous on a large production PostgreSQL table?::It acquires an `ACCESS EXCLUSIVE` lock that blocks all reads and writes while rewriting the entire table (use `pg_repack` instead).
+
+## Why can a single long-running transaction cause severe table bloat in PostgreSQL? #card
+
+- It holds back the global [[MVCC]] visibility horizon (`xmin`).
+- `autovacuum` cannot reclaim any dead tuples created after that transaction began, causing heap and index pages to grow unchecked even on unrelated tables.
+
+## Related
+
+- [[RDBMS]]
+- [[Relational Database]]
+- [[MVCC]]
+- [[Database Lock]]
+- [[B-Tree Index]]
+- [[GIN Index]]
+- [[GiST Index]]
+- [[BRIN Index]]
+- [[Index Skip Scan]]
+- [[WAL]]
+- [[Schema Migration]]
+- [[Change Data Capture]]

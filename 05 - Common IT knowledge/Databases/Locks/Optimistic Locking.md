@@ -64,4 +64,29 @@ em.find(Account.class, id, LockModeType.OPTIMISTIC_FORCE_INCREMENT); // forces a
 | Best for | Low contention, high concurrency | High contention, critical sections |
 | Failure mode | Exception → retry | Waiting / timeout / deadlock |
 
-**In short:** at the DB level, optimistic locking is just a conditional `UPDATE ... WHERE version = X`; in JPA you get this for free by adding `@Version` to the entity, and you handle conflicts by catching `OptimisticLockException` and retrying.
+**In short:** at the DB level, optimistic locking is just a conditional `UPDATE ... WHERE version = X` (a form of [[Atomic Conditional Mutation]] / [[Compare-And-Swap]] — see also [[Optimistic Concurrency Control]] and [[Version Guard]]); in [[JPA]]/[[Hibernate]] you get this for free by adding `@Version` to the entity, and you handle conflicts by catching `OptimisticLockException` and retrying.
+
+> [!warning] Failure modes & trade-offs
+> - **Retry storms under high contention:** On a hot row (e.g., flash-sale inventory or a global counter), 100 concurrent writers all read `version = 5`, 1 succeeds, and 99 fail and retry — wasting CPU, DB connections, and latency. Switch to [[Pessimistic Locking]] or [[Atomic Conditional Mutation]] (`UPDATE ... SET stock = stock - 1 WHERE stock >= 1`) for hot keys.
+> - **Bulk JPQL/SQL updates bypass `@Version`:** Running a native query or `UPDATE` in JPQL without manually incrementing `version` silently breaks optimistic locking for concurrently loaded entities.
+> - **[[Write Skew]] across multiple rows:** A single-row `@Version` does not protect invariants that span multiple rows unless you lock a shared parent aggregate (`OPTIMISTIC_FORCE_INCREMENT`) or use Serializable isolation.
+
+## Flashcards
+
+How does optimistic locking detect concurrent modifications at the SQL level?::By including the expected version in the `WHERE` clause (`UPDATE ... SET version = version + 1 WHERE id = ? AND version = ?`) and checking that 1 row was affected.
+
+When does [[Optimistic Locking]] perform worse than [[Pessimistic Locking]]?::Under high contention on hot rows, where frequent version mismatches cause retry storms and wasted work.
+
+What does `LockModeType.OPTIMISTIC_FORCE_INCREMENT` do in [[JPA]]?::It bumps the entity's `@Version` at commit even if none of its fields changed, protecting parent-child or multi-row invariants against concurrent updates.
+
+## Related
+
+- [[Pessimistic Locking]]
+- [[Optimistic Concurrency Control]]
+- [[Version Guard]]
+- [[Atomic Conditional Mutation]]
+- [[Compare-And-Swap]]
+- [[Database Lock]]
+- [[Write Skew]]
+- [[JPA]]
+- [[Hibernate]]

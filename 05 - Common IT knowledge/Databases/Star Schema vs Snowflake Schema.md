@@ -197,3 +197,20 @@ graph TB
 ---
 
 This should give your readers a solid foundation for understanding when and why to choose each approach!
+
+> [!tip] Production reality
+> Modern cloud [[Data Warehouse|data warehouses]] (Snowflake, BigQuery, Redshift, ClickHouse) use [[Column-Oriented Storage]] with heavy compression, which largely neutralizes the storage penalty of denormalized **Star Schemas** — and even favors **One Big Table (OBT)** pre-joined models for hot BI dashboards. Reserve Snowflake normalization for dimensions with complex, frequently updated hierarchies shared across many fact tables.
+
+## Flashcards
+
+What is the structural difference between a **Star Schema** and a **Snowflake Schema**?::A Star Schema joins one central fact table directly to flat, denormalized dimension tables; a Snowflake Schema further normalizes dimension tables into hierarchical sub-dimensions.
+
+Why do most modern [[OLAP]] / [[Data Warehouse]] teams prefer **Star Schema** (or denormalized tables) over **Snowflake Schema**?::[[Column-Oriented Storage]] compresses repeated dimension values cheaply, so avoiding multi-level dimension joins yields faster queries and simpler SQL for analysts.
+
+## Related
+
+- [[OLAP]]
+- [[Data Warehouse]]
+- [[Column-Oriented Storage]]
+- [[OLTP and OLAP]]
+- [[ETL]]

@@ -57,3 +57,21 @@ A query can be **both** I/O-bound and CPU-bound at different stages. For example
 3. A large sort exceeds `work_mem` and spills—**I/O-bound again**.
 
 The bottleneck can also change after caching. The first execution may be I/O-bound, while later executions become CPU-bound because the data is cached.
+
+> [!tip] Production reality
+> - **Diagnose before optimizing:** In [[PostgreSQL]], run `EXPLAIN (ANALYZE, BUFFERS)` — high `shared read` / `temp read/written` signals an **I/O-bound** query (add a [[Database Index]], increase `work_mem`, or leverage async I/O), while high execution time with mostly `shared hit` signals a **CPU-bound** query (simplify expressions, reduce row count earlier, or parallelize).
+> - **Fix the right bottleneck:** Upgrading to faster NVMe storage or enabling [[PostgreSQL]] 18 async I/O will not speed up a CPU-bound regex or JSON parsing query.
+
+## Flashcards
+
+How can you tell from [[PostgreSQL]] `EXPLAIN (ANALYZE, BUFFERS)` whether a slow query is I/O-bound or CPU-bound?::High `shared read` or `temp read/written` blocks indicate I/O-bound storage waits; high execution time with almost all `shared hit` blocks indicates CPU-bound computation.
+
+Adding faster disks or async I/O speeds up ==I/O-bound== queries, while reducing scanned rows, complex regexes, or expensive joins speeds up ==CPU-bound== queries.
+
+## Related
+
+- [[PostgreSQL]]
+- [[Database Index]]
+- [[Database Index Practical Usage]]
+- [[Grouping]]
+- [[OLTP and OLAP]]

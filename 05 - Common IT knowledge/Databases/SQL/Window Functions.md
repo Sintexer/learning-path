@@ -80,7 +80,7 @@ This computes a **moving/rolling window** — e.g., a 3-day rolling sum, not a f
 
 ## The trap question interviewers love: "Can you use a window function in a `WHERE` clause?"
 
-**Answer: No — and knowing why shows real understanding of SQL execution order.**
+**Answer: No — and knowing why shows real understanding of [[Logical Query Processing Order|SQL execution order]].**
 
 SQL logical execution order is roughly:
 ```
@@ -113,3 +113,22 @@ Or use a CTE (`WITH` clause) instead of a subquery — same idea.
 
 1. Given an `orders` table with `customer_id`, `order_date`, `amount` — write (verbally or in text) the query to get, for each order, the **running total** of that customer's spending up to that order, ordered by date.
 2. Did any of the terms I listed (HAVING, ROLLUP/CUBE, correlated subquery, CTE, execution order) spark recognition as your missing term?
+
+> [!warning] Failure modes & trade-offs
+> - **Default frame trap (`RANGE` vs `ROWS`):** When you specify `ORDER BY` inside `OVER()` without a frame clause, SQL defaults to `RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW` — meaning ties are summed *together* in a running total, and `LAST_VALUE()` returns the current row's value unless you specify `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+> - **Sort cost & memory:** Every distinct `PARTITION BY / ORDER BY` combination in your `SELECT` list forces a separate sort pass (which can spill to disk if it exceeds `work_mem`). Reuse a named `WINDOW w AS (...)` clause when multiple window functions share the same ordering.
+
+## Flashcards
+
+How do `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()` differ when two rows tie for 2nd place?::`ROW_NUMBER()` assigns distinct numbers (1, 2, 3, 4); `RANK()` ties and skips (1, 2, 2, 4); `DENSE_RANK()` ties without skipping (1, 2, 2, 3).
+
+Why can you not put a window function directly inside a `WHERE` clause?::Window functions are evaluated during the `SELECT` phase (after `WHERE`, `GROUP BY`, and `HAVING` in [[Logical Query Processing Order]]), so you must filter on them in an outer query or CTE.
+
+In a window function with `ORDER BY`, why does `LAST_VALUE(x)` often surprise developers by returning the current row's value?::Because the default window frame ends at `CURRENT ROW`; you must explicitly set `ROWS BETWEEN UNBOUNDED PRECEDING AND UNBOUNDED FOLLOWING`.
+
+## Related
+
+- [[Aggregate Functions]]
+- [[Grouping]]
+- [[Logical Query Processing Order]]
+- [[SQL]]

@@ -3,7 +3,7 @@ A graph consists of two kinds of objects: **vertices** (also known as nodes or e
 - **The web graph**: Vertices are web pages, and edges indicate HTML links to other pages.
 - **Road or rail networks**: Vertices are junctions, and edges represent the roads or railway lines between them.
 
-Well-known algorithms can operate on these graphs: for example, car navigation sys‐ tems search for the shortest path between two points in a road network, and PageRank can be used on the web graph to determine the popularity of a web page and thus its ranking in search results.
+Well-known algorithms can operate on these graphs: for example, car navigation systems search for the shortest path between two points in a road network, and PageRank can be used on the web graph to determine the popularity of a web page and thus its ranking in search results.
 In the examples just given, all the vertices in a graph represent the same kind of thing (people, web pages, or road junctions, respectively). 
 
 However, graphs are not limited to such homogeneous data: an equally powerful use of graphs is to provide a consistent way of storing completely different types of objects in a single datastore. For example, Facebook maintains a single graph with many different types of vertices and edges: vertices represent people, locations, events, check-ins, and comments made by users; edges indicate which people are friends with each other, which check-in happened in which location, who commented on which post, who attended which event, and so on.
@@ -34,7 +34,7 @@ Each vertex is given a symbolic name like USA or Idaho, and other parts of the q
 
 ## Triple-Stores
 
-The triple-store model is mostly equivalent to the property graph model, using differ‐ ent words to describe the same ideas.
+The triple-store model is mostly equivalent to the property graph model, using different words to describe the same ideas.
 
 In a triple-store, all information is stored in the form of very simple three-part statements: (*subject*, *predicate*, *object*). For example, in the triple (*Jim*, *likes*, *bananas*), Jim is the subject, likes is the predicate (verb), and bananas is the object.
 
@@ -57,5 +57,26 @@ RDF has a few quirks due to the fact that it is designed for internet-wide data 
 
 ## Datalog
 
-Datalog is a much older language than SPARQL or Cypher, having been studied extensively by academics in the 1980s. It is less well known among soft‐ ware engineers, but it is nevertheless important, because it provides the foundation that later query languages build upon.
+Datalog is a much older language than SPARQL or Cypher, having been studied extensively by academics in the 1980s. It is less well known among software engineers, but it is nevertheless important, because it provides the foundation that later query languages build upon.
 In practice, Datalog is used in a few data systems: for example, it is the query language of Datomic, and Cascalog is a Datalog implementation for querying large datasets in Hadoop.
+
+> [!warning] Failure modes & trade-offs
+> - **Supernodes (high-degree vertices):** A celebrity with 50 million followers creates a node with millions of edges; traversing through a supernode blows up latency and memory unless you cap degree, sample, or materialize edge indexes.
+> - **Hard to partition horizontally:** Unlike key-value or document stores, graphs resist clean [[Data partitioning|sharding]] because multi-hop traversals cross partition boundaries and incur expensive network hops.
+> - **When SQL is enough:** For shallow fixed-depth relationships (1–2 hops), a [[Relational Database]] with `WITH RECURSIVE` CTEs and proper [[Database Index|indexes]] is often simpler to operate than introducing a dedicated graph engine.
+
+## Flashcards
+
+When does a [[Graph database]] strongly beat both [[Relational Database|relational]] and [[Document Database|document]] databases?::When data is dominated by complex many-to-many relationships and variable-depth multi-hop traversals (e.g., fraud rings, social networks, knowledge graphs, permission hierarchies).
+
+What are the two main graph data models?::The **Property Graph** model (vertices and labeled edges with key-value properties, queried with Cypher) and the **Triple-Store** model (`(subject, predicate, object)` statements, queried with SPARQL).
+
+Why are [[Graph database|graph databases]] notoriously difficult to shard horizontally?::Multi-hop traversals follow arbitrary edges that frequently cross shard boundaries, turning fast in-memory pointer hops into high-latency distributed network round-trips.
+
+## Related
+
+- [[NoSQL database]]
+- [[Document Database]]
+- [[Relational Database]]
+- [[Query Languages for Data]]
+- [[Data partitioning]]

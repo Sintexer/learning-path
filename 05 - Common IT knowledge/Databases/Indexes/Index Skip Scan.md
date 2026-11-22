@@ -38,4 +38,22 @@ Search 2: WHERE gender = 'M' AND age = 25  --> [B-Tree jump directly to result]
 It **skips** the rest of the tree. Instead of scanning 1,000,000 rows sequentially, it performs two fast logarithmic seeks down the index.
 
 > [!important] 
-> Skip scan only works when the skipped leading column has **low cardinality** (very few unique values, like status, gender, country code).
+> Skip scan only works when the skipped leading column has **low [[DB Glossary#Cardinality|cardinality]]** (very few unique values, like status, gender, country code).
+
+> [!tip] Production reality
+> - **Engine support:** Supported natively in Oracle, MySQL 8.0+, CockroachDB, and [[PostgreSQL]] 18+.
+> - **When NOT to rely on it:** If the leading column has high cardinality (e.g., `tenant_id` with 50,000 tenants), a skip scan would have to perform 50,000 separate B-Tree probes — the planner will rightly abandon it and fall back to a sequential scan. Add a dedicated index if the secondary column is a hot access path.
+
+## Flashcards
+
+How does an [[Index Skip Scan]] use a composite [[B-Tree Index]] `(A, B)` when a query only filters on `B`?::It probes the index repeatedly for each distinct value of the leading column `A`, turning one full table scan into a small number of targeted B-Tree seeks.
+
+[[Index Skip Scan]] is only cost-effective when the skipped leading column has ==low cardinality== (few distinct values).
+
+## Related
+
+- [[B-Tree Index]]
+- [[Database Index]]
+- [[Database Index Practical Usage]]
+- [[PostgreSQL]]
+- [[DB Glossary]]

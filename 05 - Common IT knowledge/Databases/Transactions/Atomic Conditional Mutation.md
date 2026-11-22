@@ -1,8 +1,8 @@
-Database-Level Compare-And-Swap ([[Compare-And-Swap|CAS]])
+Database-Level Compare-And-Swap ([[Compare-And-Swap|CAS]]) — eliminates the [[Check-Then-Act]] race condition in a single atomic SQL statement.
 
-Under the SQL standard and in engines like PostgreSQL and MySQL (InnoDB):
+Under the SQL standard and in engines like [[PostgreSQL]] and MySQL (InnoDB):
 
-1. When an `UPDATE` executes, the storage engine acquires an **exclusive row-level write lock** on the target row before evaluating changes.
+1. When an `UPDATE` executes, the storage engine acquires an **exclusive row-level write lock** (see [[Database Lock]]) on the target row before evaluating changes.
 2. Even under the default isolation level (**Read Committed**), if another transaction was updating that row at the exact same millisecond, our transaction **waits** for that transaction to finish.
 3. Once the lock is passed to our query, the engine **re-reads the latest committed version of the row**.
 4. It evaluates the `WHERE` clause: `id = 100 AND balance >= 10`.
@@ -38,3 +38,24 @@ if (updatedRows == 0) {
 
 - If you need to calculate complex business logic in your application code that SQL cannot do (e.g., calling an external risk-scoring service or third-party fraud API based on the balance).
 - If you must record an `orders` row containing data that depends on fields from multiple parent entities simultaneously. In that case, you must open a multi-statement transaction and use `SELECT ... FOR UPDATE` ([[Pessimistic Locking]]).
+
+> [!tip] Production reality
+> - **Prefer this over [[Optimistic Locking]] for hot rows:** On high-contention counters (inventory, wallet balance, quota), `UPDATE ... WHERE stock >= ?` serializes cleanly in the DB with zero client retries, whereas `@Version` optimistic locking triggers retry storms.
+> - **Return new state in one round-trip:** In [[PostgreSQL]], append `RETURNING balance` to confirm the update and read the post-mutation value without a second query.
+> - **Make retries safe:** If the client times out after the DB commits, retrying `balance = balance - 10` double-charges the user. Pair with an [[Idempotency Key]] stored in the same [[Transaction]].
+
+## Flashcards
+
+Why does `UPDATE accounts SET balance = balance - 10 WHERE id = 100 AND balance >= 10` prevent lost updates even under Read Committed?::The engine acquires an exclusive row lock, waits for any in-flight writer to commit, and re-evaluates the `WHERE` predicate against the latest committed row version.
+
+How does application code know whether an [[Atomic Conditional Mutation]] succeeded?::By checking that the affected row count returned by the database driver is `1` (or `> 0`); `0` means the row was missing or the guard condition failed.
+
+## Related
+
+- [[Compare-And-Swap]]
+- [[Check-Then-Act]]
+- [[Optimistic Locking]]
+- [[Pessimistic Locking]]
+- [[Database Lock]]
+- [[Idempotency Key]]
+- [[Transaction]]

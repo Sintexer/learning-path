@@ -31,7 +31,7 @@ When you write `GROUP BY customer_id`, how does the storage engine physically bu
   2. Read Row 2 (`ID: 10`) $\to$ add to accumulator.
   3. Read Row 3 (`ID: 11`) $\to$ Emit result for `10` immediately! Clear memory, start accumulating `11`.
 * **Memory footprint:** Constant $O(1)$ memory!
-* **Optimization Secret:** If you already have a **B-Tree index** on the `GROUP BY` column, the engine can use `GroupAggregate` directly by scanning the index leaf nodes, requiring zero sorting and almost zero RAM.
+* **Optimization Secret:** If you already have a **[[B-Tree Index|B-Tree index]]** on the `GROUP BY` column, the engine can use `GroupAggregate` directly by scanning the index leaf nodes, requiring zero sorting and almost zero RAM.
 
 ## `WHERE` vs. `HAVING` Under the Hood
 
@@ -40,7 +40,7 @@ When you write `GROUP BY customer_id`, how does the storage engine physically bu
 | **Execution Point** | **Before** grouping and aggregation | **After** grouping and aggregation |
 | **Operates On** | Individual row tuples | Aggregated group buckets |
 | **Can filter on** | Table columns | Aggregated calculations (`COUNT`, `SUM`, `AVG`) |
-| **Index usage** | Can leverage B-Tree/BRIN indexes to skip rows entirely | **Cannot use indexes** directly; operates on the in-memory buckets |
+| **Index usage** | Can leverage [[B-Tree Index\|B-Tree]]/[[BRIN Index\|BRIN]] indexes to skip rows entirely | **Cannot use indexes** directly; operates on the in-memory buckets |
 
 ### The Production Performance Trap:
 Look at these two queries that return the exact same answer:
@@ -93,3 +93,24 @@ Suppose you need to count total orders, active orders, and cancelled orders in a
   GROUP BY user_id;
   ```
   *(PostgreSQL, SQLite, and DuckDB support `FILTER` natively. MySQL still requires `SUM(CASE ...)`).*
+
+> [!warning] Failure modes & trade-offs
+> - **High-cardinality `HashAggregate` disk spills:** Grouping by a high-cardinality key (e.g., `user_id` across 50M rows) can overflow `work_mem`, turning a fast in-memory aggregation into a slow [[IO-Bound vs CPU-Bound|I/O-bound]] temp-file spill.
+> - **Multiple `COUNT(DISTINCT ...)` in one query:** Each distinct aggregate typically forces a separate sort or hash pass over the input; consider pre-aggregating or approximating with HyperLogLog on huge [[OLAP]] datasets.
+
+## Flashcards
+
+What are the two physical strategies [[PostgreSQL]] uses to execute `GROUP BY`?::`HashAggregate` (in-memory hash table up to `work_mem`, fast for unsorted input) and `GroupAggregate` (streaming $O(1)$ memory over pre-sorted input or a [[B-Tree Index]]).
+
+Why should non-aggregate filters always go in `WHERE` instead of `HAVING`?::`WHERE` runs before grouping and can use indexes to skip rows early, whereas `HAVING` filters after every row has already been read and grouped.
+
+What is the difference between `COUNT(*)`, `COUNT(1)`, and `COUNT(column)`?::`COUNT(*)` and `COUNT(1)` are identical and count all rows; `COUNT(column)` counts only rows where `column` is `NOT NULL`.
+
+## Related
+
+- [[Logical Query Processing Order]]
+- [[Aggregate Functions]]
+- [[Window Functions]]
+- [[B-Tree Index]]
+- [[IO-Bound vs CPU-Bound]]
+- [[PostgreSQL]]
