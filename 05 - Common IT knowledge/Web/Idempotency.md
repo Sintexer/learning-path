@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-dfy8: { nid: 1795356719217, hash: qx7ejdsa, sync: n9x73jde }
-  q-tife: { nid: 1795356719241, hash: xxavvdqd, sync: y2vnabeq }
-  q-722h: { nid: 1795356719267, hash: f79q6xgh, sync: txf8uqtu }
+  q-tife: { nid: 1795361693506, hash: rw7jnhd9, sync: te2j8k2u }
   q-ui8x: { nid: 1795356719292, hash: dnyqvx43, sync: 5ikitwtx }
   q-wmun: { nid: 1795356719317, hash: pga94rka, sync: 8saj4k26 }
   q-c472: { nid: 1795356719342, hash: w4fjknup, sync: 8ks78zvp }

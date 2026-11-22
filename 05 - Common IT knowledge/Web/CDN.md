@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-dwx3: { nid: 1795356720043, hash: bvc4hgui, sync: y6bcdr9i }
-  q-wv3e: { nid: 1795356720068, hash: izcqjcqg, sync: wawkd7hu }
-  q-mtxs: { nid: 1795356720091, hash: 2jm9d269, sync: dg89q8qy }
+  q-wv3e: { nid: 1795361711956, hash: dkvjvjat, sync: v5wnz2fq }
   q-44g5: { nid: 1795356720117, hash: ncpdvww9, sync: qwre724e }
   q-6xyk: { nid: 1795356720142, hash: 675ekcg2, sync: 9epmbk83 }
 ---

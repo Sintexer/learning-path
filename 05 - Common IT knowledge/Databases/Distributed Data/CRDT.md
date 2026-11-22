@@ -1,7 +1,7 @@
 ---
 flashcards:
   q-b2wx: { nid: 1795356725942, hash: f34725n6, sync: 27sd5hby }
-  q-ggxx: { nid: 1795356725967, hash: ec9gmirm, sync: 57pmg2ea }
+  q-ggxx: { nid: 1795356725967, hash: ec9gmirm, sync: 3m88rruh }
 ---
 
 **CRDTs (Conflict-free Replicated Data Types)** are specialized distributed data structures that can be updated independently and concurrently on multiple replicas without coordination, and are mathematically guaranteed to merge deterministically to the exact same state once all updates are delivered.

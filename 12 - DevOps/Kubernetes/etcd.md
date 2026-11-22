@@ -1,10 +1,8 @@
 ---
 flashcards:
   q-2ics: { nid: 1795356714442, hash: 2y5mjds7, sync: jq4jpfmz }
-  q-hjnb: { nid: 1795356714468, hash: 9xfnbqxv, sync: 4p2zhxpb }
-  q-dxuk: { nid: 1795356714492, hash: cdq92ehs, sync: ikjtu7av }
-  q-kvx5: { nid: 1795356714517, hash: iex4eq76, sync: 39vihwgi }
-  q-cibe: { nid: 1795356714541, hash: 8kc4wrb5, sync: trf3ice5 }
+  q-hjnb: { nid: 1795361660508, hash: 5m7bjd3r, sync: xvfyegj7 }
+  q-kvx5: { nid: 1795361660578, hash: ttstidfe, sync: gz5v9fiv }
   q-zjyz: { nid: 1795356714567, hash: knx55q2m, sync: 6gwfzg8d }
 ---
 

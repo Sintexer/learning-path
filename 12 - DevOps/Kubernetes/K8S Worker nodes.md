@@ -1,9 +1,8 @@
 ---
 flashcards:
-  q-9gfj: { nid: 1795356715168, hash: xhy9pccs, sync: 3fpz8gbh }
-  q-vjtg: { nid: 1795356715193, hash: 66za9cwx, sync: f92eix4v }
-  q-pmk7: { nid: 1795356715225, hash: hci9ngr9, sync: ewwmtuxb }
-  q-upau: { nid: 1795356715243, hash: drqtssn2, sync: kqam5xd6 }
+  q-9gfj: { nid: 1795361669007, hash: uarpbnsv, sync: qxwsyc9j }
+  q-pmk7: { nid: 1795361669079, hash: pc2qp7tw, sync: iqfptkfq }
+
 ---
 
 Worker nodes are the servers (physical hosts or cloud [[Virtual machine|VMs]]) that run user application [[Pod|Pods]] in a [[Kubernetes]] cluster.

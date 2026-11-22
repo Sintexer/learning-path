@@ -3,8 +3,7 @@ aliases:
   - OCI
 flashcards:
   q-r5ek: { nid: 1795356716375, hash: hn5q3ebw, sync: 5th7rs8m }
-  q-ug6g: { nid: 1795356716398, hash: in8i7tjf, sync: 8iumuq67 }
-  q-hxy6: { nid: 1795356716417, hash: zxxsc4zk, sync: gvvukat9 }
+  q-ug6g: { nid: 1795361682505, hash: e4qh2xpc, sync: 2q9n4gd4 }
   q-ctee: { nid: 1795356716441, hash: 55g4v744, sync: u3gjiy49 }
 ---
 

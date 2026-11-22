@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-3zce: { nid: 1795356719091, hash: qubhh48e, sync: i2hdkh4r }
-  q-6aj4: { nid: 1795356719117, hash: 8kxkg4wp, sync: 9v9m2pvz }
-  q-z5cq: { nid: 1795356719142, hash: aychyd2p, sync: 8xydvb4n }
+  q-6aj4: { nid: 1795361692555, hash: witt78mw, sync: 28rmwvh7 }
   q-5mn9: { nid: 1795356719175, hash: mtbm89mh, sync: xtsx33rp }
 ---
 

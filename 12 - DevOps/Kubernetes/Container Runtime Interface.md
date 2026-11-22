@@ -3,10 +3,9 @@ aliases:
   - CRI
 flashcards:
   q-isgf: { nid: 1795356715967, hash: zw9p3bdj, sync: mh2rfqt2 }
-  q-27g5: { nid: 1795356715991, hash: tvcbgs72, sync: qnjvj7nw }
-  q-ht7d: { nid: 1795356716025, hash: bb2ttm55, sync: grctwq3j }
-  q-726b: { nid: 1795356716047, hash: t4gvb86a, sync: uw5ek2qx }
-  q-2wsy: { nid: 1795356716066, hash: 8p6g6ubv, sync: w5cmz7vm }
+  q-27g5: { nid: 1795361679856, hash: 87hiyax4, sync: fvp6fga2 }
+  q-726b: { nid: 1795361679930, hash: iys54icx, sync: w7ewfdeg }
+
 ---
 
 **Container Runtime Interface (CRI)** is a [[gRPC]] plugin API that decouples the [[K8S Worker nodes#Kubelet|kubelet]] from any specific [[Container]] runtime implementation in [[Kubernetes]].

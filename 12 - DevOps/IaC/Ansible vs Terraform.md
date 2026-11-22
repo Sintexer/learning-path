@@ -1,9 +1,8 @@
 ---
 flashcards:
-  q-sgj3: { nid: 1795356713517, hash: qn4tyeqr, sync: ah848vs3 }
-  q-bmys: { nid: 1795356713541, hash: udnxhb88, sync: qu6cmt72 }
-  q-vp9t: { nid: 1795356713569, hash: 6p8yyhas, sync: y4m7wdpf }
-  q-44wx: { nid: 1795356713592, hash: tdyfqf8k, sync: rsr2md7r }
+  q-sgj3: { nid: 1795361647061, hash: brn82jgf, sync: 8y7zfve2 }
+  q-vp9t: { nid: 1795361647137, hash: awe8vr48, sync: wr3gqvan }
+
 ---
 
 | Topic | [[Terraform]] | [[Ansible]] |

@@ -1,6 +1,6 @@
 ---
 flashcards:
-  q-nxkj: { nid: 1795356717841, hash: iu7ff3z7, sync: tci64xep }
+  q-nxkj: { nid: 1795356717841, hash: iu7ff3z7, sync: d8ker9tj }
 ---
 
 #learn

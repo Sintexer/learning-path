@@ -1,11 +1,9 @@
 ---
 flashcards:
-  q-enn6: { nid: 1795356714240, hash: 6q4h9dzg, sync: fqip4f5r }
-  q-idwt: { nid: 1795356714266, hash: 3rrkart6, sync: jq3m47ir }
-  q-9gu4: { nid: 1795356714294, hash: pk6tqne9, sync: 5kravdv5 }
-  q-8n28: { nid: 1795356714318, hash: zjug95g6, sync: t38s5ca9 }
-  q-ga9r: { nid: 1795356714342, hash: 7ka65pg2, sync: ji4g29wd }
-  q-f7v6: { nid: 1795356714375, hash: pe95s4w5, sync: sjhahxuv }
+  q-enn6: { nid: 1795361658582, hash: kjexjp5f, sync: bwp4gfaa }
+  q-9gu4: { nid: 1795361658653, hash: ctt58qu5, sync: 9iz5wn8r }
+  q-ga9r: { nid: 1795361658729, hash: rvd5ehwa, sync: zpgkjh3v }
+
 ---
 
 [[Kubernetes]] enforces a strict **Version Skew Policy** defining the maximum minor-version difference allowed between control plane components, worker nodes, and CLI clients during rolling cluster upgrades.

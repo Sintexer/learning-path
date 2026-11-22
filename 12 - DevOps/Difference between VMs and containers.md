@@ -1,7 +1,6 @@
 ---
 flashcards:
-  q-ed6k: { nid: 1795356716592, hash: zih2dg2v, sync: zak4ncjq }
-  q-9qnp: { nid: 1795356716618, hash: zpxgm5cy, sync: tu3f8bqf }
+  q-ed6k: { nid: 1795361685203, hash: bbk5qztw, sync: i3cdhr5f }
   q-uete: { nid: 1795356716641, hash: cbbbawky, sync: 68e64ym5 }
 ---
 

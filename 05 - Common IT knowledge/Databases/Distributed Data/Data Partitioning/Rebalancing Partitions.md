@@ -1,76 +1,102 @@
-#add-cards
+---
+flashcards:
+  q-gfgs: { nid: 1795361722281, hash: nn7sprrq, sync: bk8wekcz }
+  q-f427: { nid: 1795361722304, hash: r6xxct7w, sync: fzbrxb2f }
+  q-yjds: { nid: 1795361722329, hash: 7rx5kkpt, sync: vrkb9kgg }
+  q-36rm: { nid: 1795361722354, hash: 2d7ebm88, sync: senj2aub }
+  q-f2pc: { nid: 1795361722379, hash: 73f43fe5, sync: tnc3ikpn }
+  q-jp5y: { nid: 1795361722403, hash: b5k7hb8m, sync: 6quwn7qu }
+---
 
-The process of moving load from one node in the cluster to another is called ::: rebalancing.
+The process of moving load (data and request traffic) from one node in a cluster to another ::: rebalancing.
+^q-gfgs
 
-## Relation to Service Discovery
+## Relation to Service Discovery & Request Routing
 
-Rebalancing is also highly related to the topic of [[Service discovery]] as rebalancing changes the target IPs for user requests. Many companies have written their own in-house service discovery tools, and many of these have been released as open source.
+Rebalancing is closely tied to [[Service discovery]] because moving partitions changes which node IP owns a given key.
 
-On a high level there are several different approaches to this problem:
-1. Load balance the request to any node, and node forwards the request to the correct target if not matched initially
-2. Add a gateway that owns partitioning state
-3. Let clients a way to learn the destination IP upfront.
+At a high level, there are three routing approaches:
+1. **Node-to-node forwarding**: Route the request to any node via [[Load Balancing]]; if it does not own the partition, it forwards the request to the right node.
+2. **Routing tier / gateway**: Send all requests through a partition-aware routing tier (similar to [[API Gateway]]) that forwards each request to the owning node.
+3. **Partition-aware client**: Clients learn the partition-to-node mapping directly and connect to the target node without an extra hop.
 
-The main problem is how the component making the routing decision learns the system state change 
+The core challenge across all three approaches is keeping the routing component updated when partition ownership changes — typically solved with a consensus coordination service such as ZooKeeper or [[etcd]], or via gossip protocols (used in [[Apache Cassandra]] and Riak).
 
 ## Reasons for rebalance #card
 
-- The query throughput increases, so we have to add more CPUs
-- The dataset size increases, so we need to add more disks and RAM to store it.
-- A machine fails, and other machines need to take over the failed machine's responsibilities.
+- Query throughput increases, so we add more CPUs.
+- Dataset size increases, so we add more disks and RAM.
+- A machine fails, so surviving nodes must take over its partitions.
+^q-f427
 
+## Rebalancing minimum requirements #card
 
-## Rebalancing minimum requirements #card 
+No matter which partitioning scheme is used, rebalancing is expected to meet three minimum requirements:
+- After rebalancing, load (data storage, reads, and writes) should be shared fairly across nodes.
+- While rebalancing is happening, the database must continue accepting reads and writes.
+- No more data than necessary should move between nodes, keeping rebalancing fast and minimizing network and disk I/O overhead.
+^q-yjds
 
-No matter which partitioning scheme is used, rebalancing is usually expected to meet some minimum requirements:
-- After rebalancing, the load (data storage and write requests) should be shared fairly between the nodes in the cluster.
-- While rebalancing is happening, the database should ocntinue accepting reads and writes.
-- No more data than necessary should be moved between nodes, to make rebalancing fast and to minimize the network and disk I/O load.
-
-## Renalancing Strategies
+## Rebalancing Strategies
 
 ### Fixed Number of Partitions #card
 
-There is a simple solution: assign many more partitions than there are nodes. Each node receives lots of partitions. E.g. for cluster of 10 nodes we can assign 1000 paritions, and distribute them by 100 per node. When a node is added, it simply steals some partitions from other nodes to normalize the load.
+Create many more partitions than nodes (for example, 1,000 partitions across 10 nodes = 100 partitions per node). When a new node joins, it steals a few whole partitions from existing nodes until load is balanced.
 
-This approach to rebalancing is used in [[Riak]], [[Elasticsearch]], [[Couchbase]], and [[Voldemort]]
+Used in Riak, Elasticsearch, Couchbase, and Voldemort. Partition count is normally fixed at cluster creation.
 
-In this configuration, the number of partitions is usually fixed when the database is first set up and not changed afterward. Technically the number of partitions could be changed, but not necessary.
-
-Cons: hard too chose the right size - choose too big number of partitions, and this adds operational overhead. Choose too small - and there is too much overhead. Sarting with a low number of nodes will also require massive data transfer when the dataset grows and new nodes are added.
+- **Trade-off**: Choosing the partition count is hard — too many partitions add management/metadata overhead per partition; too few create oversized partitions that are slow and expensive to move or recover when the dataset grows.
+^q-36rm
 
 ### Dynamic Partitioning
 
-For databases that use key range partitioning, a fixed number of partitions with fixed boundaries would be very inconvenient: if you got the boundaries wrong, you could end up with all of the data in one partition and all of the other partitions empty. Reconfiguring the partition bound‐ aries manually would be very tedious.
+For [[Key-Range Partitioning|key-range partitioned]] databases (such as HBase and RethinkDB), fixed boundaries are impractical: bad initial boundaries leave all data in one partition and the rest empty.
 
-For that reason, [[Data partitioning#Skewed Partition & Key-Range Partitioning|key range–partitioned]] databases such as HBase and RethinkDB create partitions dynamically. When a partition grows to exceed a configured size (on HBase, the default is 10 GB), it is split into two partitions so that approximately half of the data ends up on each side of the split. Conversely, if lots of data is deleted and a partition shrinks below some threshold, it can be merged with an adjacent partition. This process is similar to what happens at the top level of a B-tree.
+Instead, partitions split dynamically when they exceed a size threshold (e.g., 10 GB in HBase) into two roughly equal halves, and merge with adjacent partitions if deletes shrink them — similar to the top level of a [[B-Tree Index|B-Tree]]. After a split, one half can be transferred to another node (in HBase, via HDFS).
 
-Each partition is assigned to one node, and each node can handle multiple partitions, like in the case of a fixed number of partitions. After a large partition has been split, one of its two halves can be transferred to another node in order to balance the load. In the case of HBase, the transfer of partition files happens through [[HDFS]], the underlying distributed filesystem.
+- **Advantage**: Partition count adapts automatically to total data volume.
+- **Downside**: An empty database starts with a single partition on one node until it reaches the split threshold. HBase and [[MongoDB]] mitigate this with **pre-splitting** (configuring initial boundaries upfront, which requires knowing the key distribution in advance).
 
-- Advantage: the number of partitions adapts to the total data volume (low for small, large for big).
-- Downside: while the dataset is smal, initial, only one node is active. To mitigate this issue, [[HBase]] and [[MongoDB]] allow an initial set of partitions to be configured on an empty database (this is called *pre-splitting*). In the case of key-range partitioning, pre-splitting requires that you already know what the key distribution is going to look like.
+### Partitioning Proportionally to Nodes
 
-### Partitioning Proportionally to nodes
+Maintain a fixed number of partitions *per node* (e.g., 256 vnodes per node in [[Apache Cassandra]]; see [[Consistent Hashing]]). Partition size grows with dataset size while node count is fixed, and shrinks when new nodes join.
 
-The number of partitions proportional to the number of nodes—in other words, to have a fixed number of partitions per node. In this case, the size of each partition grows proportionally to the dataset size while the number of nodes remains unchanged, but when you increase the number of nodes, the partitions become smaller again. Since a larger data volume generally requires a larger number of nodes to store, this approach also keeps the size of each partition fairly stable.
+When a new node joins, it randomly selects existing partitions to split in half, taking one half of each. Randomness can produce uneven splits at small counts, but averages out over many partitions per node (Cassandra 3.0+ uses an improved allocation algorithm to avoid skewed splits).
 
-Idea is to take some partitions from some nodes and halve them, and constuct new partitions from these halves. The randomization can produce unfair splits, but when averaged over a larger number of partitions (in Cassandra, 256 partitions per node by default), the new node ends up taking a fair share of the load from the existing nodes. Later Cassandra version 3.0+ introduces an alternative algorithm that avoids unfair split.
+### How Not to Do It: `hash(key) % N`
 
-### How not to do it: hash mod N
+Assigning partitions with `hash(key) % N` causes almost every key to move whenever node count `N` changes (`123 % 10 != 123 % 9 != 123 % 11`), violating the minimum-data-movement requirement.
 
-If we assign partitions by simply modding the hash, each N change would cause massive aprtition change for data (e.g. 123 mod 10 != 123 mod 9 != 123 mod 11). This violates the rule that data shouldn't move more than necessary.
+## Automatic vs Manual Rebalancing
 
-## Automatic or Manual Rebalancing
+Systems like Couchbase, Riak, and Voldemort automatically compute a suggested partition assignment, but require an administrator to commit it before execution.
 
-For example, Couchbase, Riak, and Voldemort generate a suggested partition assignment automatically, but require an administrator to commit it before it takes effect.
+- **Fully automatic**: Less routine operational work, but rebalancing is expensive and unpredictable.
+- **Semi-automatic (human-in-the-loop)**: Safer for large clusters because an operator confirms whether a node is truly dead before shifting terabytes across the network.
 
-
-Automatic:
-- Pros: less operational work to do the maintanence
-- Cons: rebalancing is expensive. Automatic decision is unpredictable. Wrong rebalancing could overload the netweok and harm performance.
-
-Such automation can be dangerous in combination with automatic failure detection. For example, say one node is overloaded and is temporarily slow to respond to requests. The other nodes conclude that the overloaded node is dead, and automatically rebalance the cluster to move load away from it. This puts additional load on the overloaded node, other nodes, and the network—making the situation worse and potentially causing a cascading failure.
+> [!warning] Failure modes & trade-offs
+> - **Cascading overload from auto-rebalance + auto-failover**: If a node is merely overloaded or in a long GC pause, other nodes may declare it dead and start moving its partitions. The resulting network and disk storm overloads healthy nodes too, turning a single slow node into a cluster-wide outage.
+> - **Stale routing tables during rebalance**: While ownership transfers, clients or routers with cached mappings can route writes to the old owner; systems must reject stale writes or forward them cleanly to avoid [[Split-Brain]] divergence.
 
 ## Parallel Query Execution
 
-Massively parallel processing (MPP) relational database products, often used for analytics, are much more sophisticated in the types of queries they support. A typical data warehouse query contains several join, filtering, grouping, and aggregation operations. The MPP query optimizer breaks this complex query into a number of execution stages and partitions, many of which can be executed in parallel on different nodes of the database cluster. Queries that involve scanning over large parts of the dataset particularly benefit from such parallel execution.
+Massively parallel processing (MPP) analytical databases (see [[OLAP]] and [[Data Warehouse]]) go beyond key-value routing: the query optimizer breaks complex joins, filters, groupings, and aggregations into execution stages that run in parallel across partitions on many cluster nodes.
+
+In dynamic key-range partitioning, an empty database starts with all writes hitting a single node until the first split; databases like HBase and MongoDB mitigate this with ==pre-splitting==.
+^q-f2pc
+
+Why is fully automatic rebalancing dangerous when combined with automatic failure detection?::A temporarily overloaded or slow node can be misclassified as dead, triggering heavy data transfers that saturate the network and healthy nodes — causing a cascading outage.
+^q-jp5y
+
+## Related
+- [[Data partitioning]]
+- [[Key-Range Partitioning]]
+- [[Hash Partitioning]]
+- [[Partitioning Hot Spots and Skew]]
+- [[Partitioning and Secondary Indexes]]
+- [[Consistent Hashing]]
+- [[Service discovery]]
+- [[Load Balancing]]
+- [[etcd]]
+- [[Apache Cassandra]]
+- [[MongoDB]]

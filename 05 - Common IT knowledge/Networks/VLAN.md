@@ -2,8 +2,8 @@
 flashcards:
   q-9p5e: { nid: 1795356722767, hash: xappueqn, sync: j79mjrsa }
   q-k7rk: { nid: 1795356722792, hash: 9n7mgaxv, sync: pa29ki5d }
-  q-c9et: { nid: 1795356722817, hash: 5vs52bu9, sync: dte28nqa }
-  q-xkud: { nid: 1795356722841, hash: 6uvk9uhh, sync: cyzfzsnk }
+  q-c9et: { nid: 1795361716457, hash: 8wqdf25c, sync: 5ab87kpb }
+
 ---
 
 > AKA **Virtual Local Area Network**

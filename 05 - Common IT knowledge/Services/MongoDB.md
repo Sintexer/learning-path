@@ -2,7 +2,7 @@
 flashcards:
   q-7fd6: { nid: 1795356720367, hash: czsr6gpx, sync: vhcx6rdw }
   q-56pp: { nid: 1795356720392, hash: daz69gfe, sync: drgc3d8j }
-  q-tq9d: { nid: 1795356720417, hash: a3mu7nur, sync: 9ktvkj52 }
+  q-tq9d: { nid: 1795356720417, hash: a3mu7nur, sync: mttq4krh }
   q-qqv7: { nid: 1795356720442, hash: bkuus2iw, sync: axm22wp9 }
 ---
 

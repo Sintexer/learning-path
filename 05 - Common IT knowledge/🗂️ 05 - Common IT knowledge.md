@@ -11,7 +11,7 @@
 
 ## Databases & Distributed Data
 
-- **Distributed Data**: [[Distributed Data]], [[Replication]], [[Leader-Based Replication]], [[Multi-Leader Replication]], [[Leaderless Replication]], [[Sloppy Quorum]], [[Data partitioning]], [[Partitioning and Secondary Indexes]], [[Consistency Levels]], [[Eventual Consistency]], [[CRDT]]
+- **Distributed Data**: [[Distributed Data]], [[Replication]], [[Leader-Based Replication]], [[Multi-Leader Replication]], [[Leaderless Replication]], [[Version Vectors and Concurrent Write Resolution]], [[Sloppy Quorum]], [[Data partitioning]], [[Key-Range Partitioning]], [[Hash Partitioning]], [[Partitioning Hot Spots and Skew]], [[Partitioning and Secondary Indexes]], [[Rebalancing Partitions]], [[Consistency Levels]], [[Linearizability]], [[Eventual Consistency]], [[CRDT]]
 - **Storage Engines**: [[Database Storage Engines]], [[WAL]], [[Database Log]], [[Database Latch]], [[LSM Tree]], [[SSTable]], [[Bloom Filter]]
 - **SQL, Indexes, Locks & Transactions**: [[Database Index]], [[B-Tree Index]], [[GIN Index]], [[MVCC]], [[ACID]], [[Optimistic Locking]], [[Pessimistic Locking]], [[Schema Migration]], [[PostgreSQL]], [[Window Functions]]
 - **Services**: [[Redis]], [[Apache Cassandra]], [[MongoDB]], [[Memcached]]

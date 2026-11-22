@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-h2ea: { nid: 1795356713618, hash: bn67au93, sync: 8msxnevg }
-  q-8p33: { nid: 1795356713642, hash: 4f6x8nq8, sync: q7x83zsa }
-  q-b278: { nid: 1795356713667, hash: phfvvfxi, sync: n8z6ahnp }
+  q-8p33: { nid: 1795361649256, hash: nqb5gep5, sync: 7w3t5n38 }
   q-5uwa: { nid: 1795356713694, hash: cv5cnihq, sync: 35trzt7v }
   q-h2sz: { nid: 1795356713733, hash: u9kcufhx, sync: 4mpckk5k }
 ---

@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-yuuy: { nid: 1795356722419, hash: fj63bqry, sync: hesybgmv }
-  q-bdkm: { nid: 1795356722444, hash: 95sbrtbu, sync: 5nun95jf }
-  q-xia6: { nid: 1795356722468, hash: vdn63kje, sync: cha2tqwm }
+  q-bdkm: { nid: 1795361713582, hash: mr2ppmpt, sync: 2p6qc6de }
   q-2ybh: { nid: 1795356722492, hash: sm4hu5wm, sync: ahybhdfi }
 ---
 

@@ -1,9 +1,7 @@
 ---
 flashcards:
-  q-m9xv: { nid: 1795356715841, hash: 45wz7rv7, sync: nk6smrny }
-  q-frc3: { nid: 1795356715866, hash: h7rdpvre, sync: v6cnkdmf }
-  q-6ddc: { nid: 1795356715892, hash: y25bzitg, sync: styabevj }
-  q-hmrf: { nid: 1795356715918, hash: qr39ncg2, sync: 5b9f8utk }
+  q-m9xv: { nid: 1795361678707, hash: y3e335yj, sync: 43pq4w43 }
+  q-6ddc: { nid: 1795361678778, hash: 2e7smgcj, sync: ikpgp63r }
   q-7kiy: { nid: 1795356715942, hash: pc648vsr, sync: ey9muc5i }
 ---
 

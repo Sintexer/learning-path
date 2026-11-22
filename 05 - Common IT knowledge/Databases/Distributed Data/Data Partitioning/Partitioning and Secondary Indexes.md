@@ -9,7 +9,7 @@ Distributed databases handle secondary indexes in two fundamental ways:
 
 ## 1. Document-Partitioned (Local) Secondary Indexes
 
-One approach is too keep a separate version of the secondary index per partition. In this indexing approach, each partition is completely separate: each partition maintains its own secondary indexes, covering only the documents in that partition. It doesn’t care what data is stored in other partitions. Whenever you need to write to the database—to add, remove, or update a document—you only need to deal with the partition that contains the document ID that you are writing. For that reason, a document-partitioned index is also known as a *local index* (as opposed to a global index).
+One approach is to keep a separate version of the secondary index per partition. In this indexing approach, each partition is completely separate: each partition maintains its own secondary indexes, covering only the documents in that partition. It doesn’t care what data is stored in other partitions. Whenever you need to write to the database—to add, remove, or update a document—you only need to deal with the partition that contains the document ID that you are writing. For that reason, a document-partitioned index is also known as a *local index* (as opposed to a global index).
 
 Each partition maintains its **own independent secondary index** covering *only* the documents stored in that partition.
 
@@ -50,6 +50,10 @@ In a document-partitioned secondary index, every query must perform a ==scatter/
 
 ## Related
 - [[Data partitioning]]
+- [[Key-Range Partitioning]]
+- [[Hash Partitioning]]
+- [[Partitioning Hot Spots and Skew]]
+- [[Rebalancing Partitions]]
 - [[Database Index]]
 - [[Consistent Hashing]]
 - [[Two-Phase Commit]]

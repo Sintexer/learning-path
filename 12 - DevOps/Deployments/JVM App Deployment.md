@@ -1,10 +1,8 @@
 ---
 flashcards:
-  q-98t7: { nid: 1795356716217, hash: e4ztp6h9, sync: m2thpf7r }
-  q-sefi: { nid: 1795356716241, hash: s6f7ybmt, sync: y7myngwt }
+  q-98t7: { nid: 1795361681181, hash: bft6tahw, sync: w72vfcs9 }
   q-q2er: { nid: 1795356716266, hash: 46hbg722, sync: uax8g5sh }
-  q-qqp9: { nid: 1795356716292, hash: 2wtaseri, sync: xx8rp9gu }
-  q-qvcd: { nid: 1795356716317, hash: grjkddyt, sync: kipz4hpg }
+  q-qqp9: { nid: 1795361681254, hash: cr6pef6y, sync: 9uimh2g9 }
   q-7f6g: { nid: 1795356716342, hash: u22xjgta, sync: 4dapyw33 }
 ---
 

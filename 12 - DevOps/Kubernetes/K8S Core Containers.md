@@ -1,9 +1,8 @@
 ---
 flashcards:
-  q-gpmh: { nid: 1795356715068, hash: vj25bujv, sync: eqqqzuyk }
-  q-8gnr: { nid: 1795356715093, hash: hbput2is, sync: z4mdihie }
-  q-y5j4: { nid: 1795356715117, hash: 4sug9knu, sync: ydguzkyj }
-  q-598c: { nid: 1795356715141, hash: anqpa3na, sync: h8us63g8 }
+  q-gpmh: { nid: 1795361667932, hash: xrnijnnh, sync: w6jij2wr }
+  q-y5j4: { nid: 1795361668003, hash: sbnx4a9m, sync: 7zqgg3r2 }
+
 ---
 
 These four system images are the bare minimum typically seen in a lightweight [[Kubernetes]] (K3s) cluster:

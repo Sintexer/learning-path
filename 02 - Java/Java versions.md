@@ -1,8 +1,8 @@
 ---
 flashcards:
   q-idx2: { nid: 1795356731643, hash: eday2imp, sync: qtjzxst8 }
-  q-4cx9: { nid: 1795356731666, hash: 3f6yuiyf, sync: pw7ef8z3 }
-  q-8rme: { nid: 1795356731692, hash: k6p8uw7h, sync: bb48kyq5 }
+  q-4cx9: { nid: 1795361725231, hash: y7ctmgwp, sync: 6rnew65m }
+
 ---
 
 ### Most important recent releases additions

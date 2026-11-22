@@ -234,8 +234,13 @@
       "flashcards-obsidian:Update Anki from current note": false
     }
   },
-  "active": "f771b727cc82b9fe",
+  "active": "9c4b8ec1a35f1a1d",
   "lastOpenFiles": [
+    "05 - Common IT knowledge/Databases/Distributed Data/Linearizability.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Version Vectors and Concurrent Write Resolution.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning Hot Spots and Skew.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Hash Partitioning.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Key-Range Partitioning.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
@@ -258,13 +263,8 @@
     "04 - Security/POLP.md",
     "04 - Security/OIDC.md",
     "04 - Security/Least privilege principle.md",
-    "04 - Security/JWT.md",
-    "04 - Security/CORS.md",
-    "04 - Security/AES256.md",
     "12 - DevOps/IaC",
-    "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning",
-    "05 - Common IT knowledge/Databases/Distributed Data/CRDT.md",
     "Untitled.txt",
     "05 - Common IT knowledge/Databases/Distributed Data",
     "03 - Backend/backend-path.png",

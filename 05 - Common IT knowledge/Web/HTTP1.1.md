@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-ra5q: { nid: 1795356719717, hash: ihikymgh, sync: f4g7s4wq }
-  q-vgjr: { nid: 1795356719742, hash: a6djc9z4, sync: pgawb6qf }
-  q-cmm3: { nid: 1795356719766, hash: psvtk9hb, sync: e825x24x }
+  q-vgjr: { nid: 1795361701732, hash: pewrw79c, sync: 9y2iknwc }
   q-jaty: { nid: 1795356719791, hash: xn4yj49n, sync: zfbysx4a }
 ---
 

@@ -1,10 +1,8 @@
 ---
 flashcards:
   q-vxvv: { nid: 1795356718791, hash: ye4dj23k, sync: zbgbp3rx }
-  q-yc5i: { nid: 1795356718825, hash: 2wtji7v9, sync: 6nzsmu24 }
-  q-dq4e: { nid: 1795356718842, hash: jwy5um7n, sync: agz5ixb2 }
-  q-d9vg: { nid: 1795356718868, hash: eptq24k3, sync: r49dntbx }
-  q-h5ix: { nid: 1795356718893, hash: 26dkwcg3, sync: 4qb86ku7 }
+  q-yc5i: { nid: 1795361690156, hash: sad6rfcp, sync: sxa4r8dh }
+  q-d9vg: { nid: 1795361690229, hash: uudeny83, sync: 8axc2e2m }
   q-2w7s: { nid: 1795356718918, hash: q5v3t5qz, sync: 5du87kq8 }
 ---
 

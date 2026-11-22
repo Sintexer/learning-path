@@ -3,8 +3,8 @@ aliases:
   - K8S
 flashcards:
   q-fs4t: { nid: 1795356714992, hash: tr9vrtiq, sync: 37c9hwbt }
-  q-7z2i: { nid: 1795356715016, hash: ifyt6c2c, sync: xhb63hsj }
-  q-mnds: { nid: 1795356715041, hash: 3sxz6kwf, sync: a8fty5zb }
+  q-7z2i: { nid: 1795361666833, hash: tz4nqcnd, sync: n925dg59 }
+
 ---
 > v1.0 since 2015, donated to CNCF in 2014; pronounced *koo-ber-net-eez* (or K8s as *kates*).
 

@@ -1,8 +1,8 @@
 ---
 flashcards:
   q-njda: { nid: 1795356713917, hash: sspr39xe, sync: sg6ccttj }
-  q-g7cj: { nid: 1795356713951, hash: 8ydn9w95, sync: tjy74bna }
-  q-tmdw: { nid: 1795356713970, hash: 9fhhutzf, sync: i44bs23r }
+  q-g7cj: { nid: 1795361652107, hash: niegfepy, sync: 7r3wvr6n }
+
 ---
 
 A **virtual machine (VM)** emulates a physical server—complete with virtual CPU, memory, NIC, storage, and its own full guest operating system—allowing you to run isolated workloads as if on dedicated hardware. To run virtual machines, you install a [[Hypervisor|hypervisor]] on a physical host machine, which partitions and schedules hardware resources across VMs.

@@ -1,9 +1,8 @@
 ---
 flashcards:
-  q-z3ih: { nid: 1795356715391, hash: dpzcer93, sync: jn64js64 }
-  q-bwys: { nid: 1795356715418, hash: dh39f6sn, sync: hkckzihs }
-  q-qjb2: { nid: 1795356715450, hash: 84nqxxna, sync: njhvmvgh }
-  q-k7qb: { nid: 1795356715468, hash: z9pmjhij, sync: c8t3gkqi }
+  q-z3ih: { nid: 1795361671132, hash: xrfntjv7, sync: jcpe4drx }
+  q-qjb2: { nid: 1795361671203, hash: wrks6wdx, sync: bthrgpi9 }
+
 ---
 
 Behind the scenes, [[K8S Deployment|Deployments]] rely on another object called a **ReplicaSet**. While you should almost never create or manage ReplicaSets directly (let the Deployment controller manage them), understanding their role explains how rollouts and rollbacks actually work.

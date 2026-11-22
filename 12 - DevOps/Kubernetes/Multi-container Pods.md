@@ -1,9 +1,8 @@
 ---
 flashcards:
-  q-6dns: { nid: 1795356714591, hash: un4ur5ed, sync: q2ke7x4d }
-  q-42d8: { nid: 1795356714617, hash: u86iyy98, sync: v6nxwzky }
-  q-j3d8: { nid: 1795356714642, hash: wxpp5yan, sync: xxipxu7z }
-  q-k4h2: { nid: 1795356714667, hash: h2r3g3id, sync: zk9a28r8 }
+  q-6dns: { nid: 1795361661605, hash: ddtwa5dc, sync: vd9qmqng }
+  q-j3d8: { nid: 1795361661679, hash: 4tttx94d, sync: wt4hci6s }
+
 ---
 
 Multi-container [[Pod|Pods]] are a powerful pattern when two or more containers must be tightly coupled, co-scheduled on the same node, and share `localhost` networking, volumes, or lifecycle. Each container still keeps a single clear responsibility.

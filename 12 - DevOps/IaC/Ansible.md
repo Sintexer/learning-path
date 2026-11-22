@@ -1,10 +1,9 @@
 ---
 flashcards:
   q-ijv2: { nid: 1795356713768, hash: vvhsijzq, sync: 8xsnucvx }
-  q-8z5p: { nid: 1795356713800, hash: 6re7ggxy, sync: sghquvpb }
-  q-msjm: { nid: 1795356713818, hash: b3jhyzb4, sync: rquc2g2w }
-  q-v75m: { nid: 1795356713841, hash: nvfmdf4w, sync: a532qzmy }
-  q-jypa: { nid: 1795356713867, hash: 7k6wcnwu, sync: 5frzuati }
+  q-8z5p: { nid: 1795361650532, hash: encp34as, sync: ntjddxvx }
+  q-v75m: { nid: 1795361650603, hash: br8bpv6e, sync: pb4jq46n }
+
 ---
 
 **Ansible** is an open-source automation and configuration-management tool ([[IaaC]]). It is commonly used to configure servers, deploy applications, install packages, and orchestrate operational runbooks across fleets of machines.

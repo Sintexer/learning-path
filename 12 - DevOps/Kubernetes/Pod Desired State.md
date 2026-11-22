@@ -1,9 +1,8 @@
 ---
 flashcards:
-  q-rnev: { nid: 1795356714692, hash: rmivmpe8, sync: 6t2imff8 }
-  q-u7d2: { nid: 1795356714717, hash: mqkq3u8p, sync: qfemtyi7 }
-  q-eg4h: { nid: 1795356714741, hash: 2d67whmm, sync: hxwjva8m }
-  q-vze2: { nid: 1795356714768, hash: ytsq33rk, sync: swxvs2bd }
+  q-rnev: { nid: 1795361662781, hash: 7hsgea2v, sync: 3ue83npc }
+  q-eg4h: { nid: 1795361662853, hash: guuk2tiz, sync: re3xk4k8 }
+
 ---
 
 The **desired state** is declared in YAML/JSON manifest files (or Helm/Kustomize templates) that tell [[Kubernetes]] *what* an application should look like—which [[Container]] image, how many replicas, resource requests/limits, ports, [[Health Checks|probes]], and rollout strategy.

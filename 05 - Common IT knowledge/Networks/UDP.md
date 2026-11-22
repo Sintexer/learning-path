@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-x6xw: { nid: 1795356722867, hash: 5qiy3pkf, sync: pp44aj9k }
-  q-uh48: { nid: 1795356722891, hash: xx3y6r8t, sync: dyk6eev9 }
-  q-vhxn: { nid: 1795356722918, hash: m2kw724j, sync: fk27xz7p }
+  q-uh48: { nid: 1795361717533, hash: dnfibv9n, sync: ye3rpqxr }
   q-mtgd: { nid: 1795356722942, hash: 8a5zwpcb, sync: dwcxgew2 }
 ---
 

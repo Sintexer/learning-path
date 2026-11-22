@@ -1,10 +1,9 @@
 ---
 flashcards:
   q-jipf: { nid: 1795356715268, hash: qa5fjduk, sync: tsc8zt7c }
-  q-wkm2: { nid: 1795356715291, hash: gtr5ju9q, sync: m8djysta }
-  q-e3vg: { nid: 1795356715325, hash: mg4i3egr, sync: nars9maj }
-  q-zrgy: { nid: 1795356715347, hash: d97kehif, sync: rrni8pud }
-  q-y4fw: { nid: 1795356715366, hash: jc3n4swu, sync: pxtbpvdx }
+  q-wkm2: { nid: 1795361670032, hash: ah5qwvzr, sync: ghvgk6f5 }
+  q-zrgy: { nid: 1795361670104, hash: qzk39ezf, sync: mjn8gqre }
+
 ---
 
 [[K8S Deployment]] runs [[Pod|Pods]] via [[K8S ReplicaSet|ReplicaSets]] to provide scaling and self-healing. However, clients cannot talk directly to Pod IPs—Pods are ephemeral and get new IPs whenever they restart or reschedule. That is where **Services** come in.

@@ -1,8 +1,7 @@
 ---
 flashcards:
   q-wxhc: { nid: 1795356723417, hash: k8i6n37m, sync: gt97g2dc }
-  q-r4tm: { nid: 1795356723442, hash: rdaxg3jx, sync: tqcrrdyk }
-  q-tmyt: { nid: 1795356723467, hash: vidt63g5, sync: v3uk44we }
+  q-r4tm: { nid: 1795361720232, hash: 66938e94, sync: 74gnjjjm }
   q-5juv: { nid: 1795356723492, hash: v7p9bzrt, sync: rd8fvhwe }
 ---
 
