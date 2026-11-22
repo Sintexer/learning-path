@@ -9,6 +9,8 @@ Distributed databases handle secondary indexes in two fundamental ways:
 
 ## 1. Document-Partitioned (Local) Secondary Indexes
 
+One approach is too keep a separate version of the secondary index per partition. In this indexing approach, each partition is completely separate: each partition maintains its own secondary indexes, covering only the documents in that partition. It doesn’t care what data is stored in other partitions. Whenever you need to write to the database—to add, remove, or update a document—you only need to deal with the partition that contains the document ID that you are writing. For that reason, a document-partitioned index is also known as a *local index* (as opposed to a global index).
+
 Each partition maintains its **own independent secondary index** covering *only* the documents stored in that partition.
 
 - **Writes**: Fast and local — inserting or updating a document only touches the single partition holding that document (and its local index).
@@ -17,7 +19,7 @@ Each partition maintains its **own independent secondary index** covering *only*
 
 ## 2. Term-Partitioned (Global) Secondary Indexes
 
-A single **global index** covers data across all partitions, and the index itself is partitioned by the indexed term (e.g., `color` A–M on Partition 0, N–Z on Partition 1).
+A single **global index** covers data across all partitions. However, we can’t just store that index on one node, since it would likely become a bottleneck and defeat the purpose of partitioning. A global index must also be partitioned, but it can be partitioned differently from the primary key index. The index itself is partitioned by the indexed term (e.g., `color` A–M on Partition 0, N–Z on Partition 1).
 
 - **Reads**: Fast and targeted — querying `WHERE color = 'red'` routes to only the partition(s) owning the term `'red'`, avoiding scatter/gather.
 - **Writes**: Complex and cross-partition — updating one document may affect several indexed fields (`color`, `make`, `year`), requiring updates to multiple remote index partitions.

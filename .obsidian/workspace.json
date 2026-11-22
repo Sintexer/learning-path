@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Partitioning and Secondary Indexes"
+              "title": "Rebalancing Partitions"
             }
           }
         ]
@@ -152,7 +152,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -167,7 +167,7 @@
             "state": {
               "type": "localgraph",
               "state": {
-                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
+                "file": "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
                 "options": {
                   "collapse-filter": true,
                   "search": "",
@@ -234,10 +234,12 @@
       "flashcards-obsidian:Update Anki from current note": false
     }
   },
-  "active": "bb12408e9554b8a5",
+  "active": "f771b727cc82b9fe",
   "lastOpenFiles": [
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Data partitioning.md",
+    "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Rebalancing Partitions.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning/Partitioning and Secondary Indexes.md",
+    "00 - Learning Workflow.md",
     "12 - DevOps/🗂️ 12 - DevOps.md",
     "06 - Architecture/🗂️ 06 - Architecture.md",
     "05 - Common IT knowledge/🗂️ 05 - Common IT knowledge.md",
@@ -263,8 +265,6 @@
     "05 - Common IT knowledge/Databases/Distributed Data/Leaderless Replication.md",
     "05 - Common IT knowledge/Databases/Distributed Data/Data Partitioning",
     "05 - Common IT knowledge/Databases/Distributed Data/CRDT.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Types of Writes in distributed systems.md",
-    "05 - Common IT knowledge/Databases/Distributed Data/Leader-Based Replication.md",
     "Untitled.txt",
     "05 - Common IT knowledge/Databases/Distributed Data",
     "03 - Backend/backend-path.png",
