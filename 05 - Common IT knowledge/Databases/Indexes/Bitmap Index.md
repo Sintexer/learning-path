@@ -76,7 +76,27 @@ Because bitmaps for low-cardinality columns are often long runs of the same bit,
 
 ## Where It's Used in Practice
 
-- **[[Oracle Database]]** — offers native `BITMAP` index type, popular in data warehouse schemas (star schemas).
-- **PostgreSQL** — does not have persistent bitmap indexes, but uses dynamic **bitmap index scans** internally to combine multiple B-tree/hash indexes for a single query.
+- **Oracle Database** — offers native `BITMAP` index type, popular in data warehouse schemas ([[Star Schema vs Snowflake Schema|star schemas]]).
+- **[[PostgreSQL]]** — does not have persistent bitmap indexes, but uses dynamic **bitmap index scans** internally to combine multiple [[B-Tree Index|B-tree]]/[[Hash Index|hash]] indexes for a single query.
 - **Apache Druid, ClickHouse, Elasticsearch, Apache Spark** — use Roaring Bitmaps for indexing and fast filtering over large analytical datasets.
-- **[[Data Warehouse]]s / OLAP cubes** — bitmap indexing is a foundational technique for star-schema fact/dimension filtering.
+- **[[Data Warehouse]]s / [[OLAP]] cubes** — bitmap indexing is a foundational technique for star-schema fact/dimension filtering.
+
+> [!warning] Failure modes & trade-offs
+> - **Never use persistent bitmap indexes on [[OLTP]] tables:** Updating a single row in a bitmap index locks the entire compressed bit-segment covering thousands of rows, causing severe write contention and deadlocks.
+> - **High-cardinality explosion:** Creating a bitmap index on a column with millions of distinct values (like `user_id`) creates millions of sparse bitmaps, exploding storage and CPU cost.
+
+## Flashcards
+
+Why are persistent [[Bitmap Index|bitmap indexes]] great for [[OLAP]] but dangerous for [[OLTP]]?::They compress well and combine multi-column low-cardinality filters via fast bitwise `AND`/`OR`, but a single row update must lock and rewrite large bit segments, destroying concurrent write throughput.
+
+What modern compressed bitmap format is used by Lucene, ClickHouse, Druid, and Spark?::Roaring Bitmaps — they dynamically switch between arrays, bitmaps, and run-length containers depending on density.
+
+## Related
+
+- [[Bitmap]]
+- [[Database Index]]
+- [[B-Tree Index]]
+- [[GIN Index]]
+- [[OLAP]]
+- [[Data Warehouse]]
+- [[Column-Oriented Storage]]

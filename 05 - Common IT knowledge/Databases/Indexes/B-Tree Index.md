@@ -12,7 +12,7 @@ The number of references to child pages in one page of the B-tree is called the 
 
 Computers read and write data from disk in blocks or **pages** (typically 4KB to 16KB in size). Fetching a 16KB page from an SSD or hard drive takes vastly more time than reading data from RAM.
 
-If you used a standard binary search tree ([[Binary Search Tree]] or [[AVL Tree]]) on disk:
+If you used a standard binary search tree (BST or AVL tree) on disk:
 - Each node would typically store only a single key and two pointers.
 - Traversing the tree would require a separate disk read for almost every single node level you visit, leading to excessive disk seeks (high I/O cost).
 
@@ -144,3 +144,29 @@ That is why:
 
 - `WHERE A = 'CA' AND B = 10` → **Can use the index.**
 - `WHERE B = 10 AND C = 20` (Missing A) → **Cannot traverse the index.** The root and branch nodes split their paths based on A. Without A, the engine doesn't know whether to branch left or right. Database engine might optimize this using [[Index Skip Scan]].
+
+> [!warning] Failure modes & trade-offs
+> - **Random key page splits & fragmentation:** Inserting random keys (like UUIDv4) scatters writes across random leaf pages, causing frequent 50% page splits, poor buffer-pool hit rates, and heavy write amplification. Prefer monotonic keys or time-ordered **UUIDv7** (see [[PostgreSQL]] and [[HiLo id optimization]]).
+> - **Index bloat under [[MVCC]]:** In [[PostgreSQL]], dead index entries accumulate after updates/deletes until `VACUUM` cleans them; heavy update churn can leave an index mostly empty pages (fix with `REINDEX CONCURRENTLY` or `pg_repack`).
+> - **Write amplification:** Every new B-Tree index adds extra page writes and [[WAL]] volume to every `INSERT`/`UPDATE`/`DELETE` (unless [[PostgreSQL#HOT (Heap-Only Tuples) Updates|HOT updates]] apply).
+
+## Flashcards
+
+Why do databases use B-Trees / B+Trees instead of Binary Search Trees (like Red-Black or AVL trees) for on-disk storage?::Disk I/O reads fixed-size pages (4–16 KB); B-Trees pack hundreds of keys per page (high branching factor), keeping tree depth at 3–4 page reads instead of ~24 for a binary tree.
+
+In a B+Tree, data/row pointers reside only in ==leaf nodes==, and all leaf nodes are linked in a ==doubly-linked list== to make range scans fast.
+
+Why can a composite B-Tree index on `(A, B, C)` satisfy `WHERE A = 1 AND B = 2` but normally not `WHERE B = 2`?::Keys are sorted lexicographically starting with `A` (the leftmost prefix rule); without `A`, matching `B` values are scattered across the tree unless the engine uses an [[Index Skip Scan]].
+
+Prefer time-ordered keys (like UUIDv7 or sequences) over random UUIDv4 for heavily written B-Tree primary keys to avoid random page splits and cache thrashing. #card-reminder
+
+## Related
+
+- [[Database Index]]
+- [[Database Index Practical Usage]]
+- [[Clustered and Non-Clustered Index]]
+- [[Index Skip Scan]]
+- [[LSM Tree]]
+- [[WAL]]
+- [[Database Latch]]
+- [[PostgreSQL]]

@@ -27,3 +27,22 @@ The index is a **separate structure** from the table's storage (the "heap"). Eac
 |Count per table|One|Many|
 |Terminology|Clustered index (SQL Server), Index-Organized Table (Oracle), primary key = clustered key (InnoDB)|Non-clustered / secondary index; heap table (PostgreSQL default)|
 |Lookup cost|Direct — data found in the index itself|Extra hop to fetch the actual row|
+
+> [!warning] Failure modes & trade-offs
+> - **InnoDB secondary index bloat from wide primary keys:** Because every secondary index in MySQL InnoDB stores the **clustered primary key** as its row pointer, using a 36-byte `CHAR(36)` UUID primary key bloats *every* secondary index on that table and doubles lookup work (secondary tree → primary tree). Prefer compact 8-byte `BIGINT` or binary `UUIDv7` keys.
+> - **PostgreSQL `CLUSTER` is a one-shot lock:** Running `CLUSTER table USING idx` in [[PostgreSQL]] takes an `ACCESS EXCLUSIVE` lock, rewrites the heap once, and does *not* keep future inserts sorted.
+
+## Flashcards
+
+Why can a table have at most **one** clustered index?::Because a clustered index determines the physical storage order of the table's rows on disk, and rows can only be physically ordered one way.
+
+In MySQL InnoDB, secondary index leaf nodes store ==the primary (clustered) key== as the row pointer, which means wide primary keys bloat ==every secondary index== on the table.
+
+How does [[PostgreSQL]] store table rows compared to MySQL InnoDB?::PostgreSQL stores all tables as unordered heap files with non-clustered indexes pointing to physical tuple IDs (TIDs), whereas InnoDB stores every table clustered by its primary key.
+
+## Related
+
+- [[Database Index]]
+- [[B-Tree Index]]
+- [[PostgreSQL]]
+- [[DB Glossary]]

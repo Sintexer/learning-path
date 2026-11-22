@@ -416,3 +416,27 @@ SELECT * FROM users WHERE LOWER(email) = 'john@example.com';
 - ✓ Drop unused indexes
 - ✓ Rebuild bloated indexes with REINDEX
 - ✓ Update statistics with ANALYZE after bulk inserts
+
+> [!warning] Failure modes & trade-offs
+> - **Never run bare `CREATE INDEX` or `REINDEX` on a busy production table:** In [[PostgreSQL]], `CREATE INDEX` acquires a `SHARE` lock that blocks all `INSERT`/`UPDATE`/`DELETE` until the build finishes. Always use `CREATE INDEX CONCURRENTLY` and `REINDEX INDEX CONCURRENTLY` (see [[Schema Migration]]).
+> - **SARGability (breaking index usage with functions):** Writing `WHERE LOWER(email) = ...` or `WHERE created_at + INTERVAL '1 day' > NOW()` prevents the planner from using a plain index on `email` or `created_at`. Keep indexed columns bare on one side of the operator, or create a matching expression index.
+> - **Implicit type casts disable indexes:** Passing an integer to a `TEXT` column (or `VARCHAR` to `UUID`) forces a cast on every row and silently degrades to a sequential scan.
+
+## Flashcards
+
+What is the golden column-ordering rule for a composite [[B-Tree Index]] (the ESR rule)?::**E**quality columns first, **S**ort (`ORDER BY`) or **R**ange columns next (once a range predicate is used, subsequent index columns cannot narrow the range or guarantee sort order).
+
+Why should you always use `CREATE INDEX CONCURRENTLY` in production [[PostgreSQL]]?::A plain `CREATE INDEX` takes a `SHARE` lock that blocks all writes (`INSERT`/`UPDATE`/`DELETE`) for the entire duration of the index build.
+
+Why does `WHERE LOWER(email) = 'a@b.com'` fail to use a plain B-Tree index on `email`?::Wrapping an indexed column in a function makes the predicate non-SARGable; you need an expression index on `(LOWER(email))` or a case-insensitive collation.
+
+## Related
+
+- [[Database Index]]
+- [[B-Tree Index]]
+- [[BRIN Index]]
+- [[GIN Index]]
+- [[GiST Index]]
+- [[Hash Index]]
+- [[Schema Migration]]
+- [[PostgreSQL]]

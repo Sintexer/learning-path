@@ -4,9 +4,9 @@ In the context of [[Data Warehouse]] and [[OLAP]], If you have trillions of rows
 
 Although fact tables are often over 100 columns wide, a typical data warehouse query only accesses 4 or 5 of them at one time ("SELECT *" queries are rarely needed for analytics).
 
-In most [[OLTP]] databases, storage is laid out in a row-oriented fashion: all the values from one row of a table are stored next to each other. Document databases are similar: an entire document is typically stored as one contiguous sequence of bytes.
+In most [[OLTP]] databases, storage is laid out in a row-oriented fashion: all the values from one row of a table are stored next to each other. [[Document Database|Document databases]] are similar: an entire document is typically stored as one contiguous sequence of bytes.
 
-Using indexes for such purpose won't solve the problem: DB would still need to load all 100 column values for each row, and filter them in memory. That cam take a long time.
+Using [[Database Index|indexes]] for such purpose won't solve the problem: DB would still need to load all 100 column values for each row, and filter them in memory. That can take a long time.
 
 The idea behind column-oriented storage is simple: don’t store all the values from one row together, but store all the values from each column together instead. If each column is stored in a separate file, a query only needs to read and parse those columns that are used in that query, which can save a lot of work.
 
@@ -21,10 +21,10 @@ Besides only loading those columns from disk that are required for a query, we c
 
 Often, the number of distinct values in a column is small compared to the number of rows (for example, a retailer may have billions of sales transactions, but only 100,000 distinct products). We can now take a column with n distinct values and turn it into n separate bitmaps: one bitmap for each distinct value, with one bit for each row. The bit is 1 if the row has that value, and 0 if not.
 
-If n is very small (for example, a country column may have approximately 200 dis‐ tinct values), those bitmaps can be stored with one bit per row. But if n is bigger, there will be a lot of zeros in most of the bitmaps (we say that they are sparse). In that case, the bitmaps can additionally be run-length encoded.
+If n is very small (for example, a country column may have approximately 200 distinct values), those [[Bitmap|bitmaps]] can be stored with one bit per row. But if n is bigger, there will be a lot of zeros in most of the bitmaps (we say that they are sparse). In that case, the bitmaps can additionally be run-length encoded.
 
 > [!warning] Column-oriented storage and column families
->  Cassandra and HBase have a concept of column families, which they inherited from Bigtable. However, it is very misleading to call them column-oriented: within each column family, they store all columns from a row together, along with a row key, and they do not use column compression. Thus, the Bigtable model is still mostly row-oriented.
+>  [[Apache Cassandra|Cassandra]] and HBase have a concept of column families, which they inherited from Bigtable. However, it is very misleading to call them column-oriented: within each column family, they store all columns from a row together, along with a row key, and they do not use column compression. Thus, the Bigtable model is still mostly row-oriented.
 
 The column oriented storages also benefit from optimized CPU L1 cache and SIMD instructions.
 
@@ -67,3 +67,24 @@ Queries need to examine both the column data on disk and the recent writes in me
 |Makes sense in read-heavy warehouses|Not ideal for OLTP (write-heavy) systems|
 
 **Best practice:** Keep raw data in the warehouse; use data cubes/aggregates only as a performance optimization for frequently-run queries, not as the primary data store.
+
+> [!tip] Production reality
+> - **Vectorized execution & SIMD:** Modern columnar engines (ClickHouse, DuckDB, Snowflake, Parquet) process tight arrays of uniform column values in batches that fit in CPU L1/L2 caches and leverage SIMD instructions — making analytical scans 10–100x faster than row-at-a-time volcano iterators.
+> - **Avoid single-row `UPDATE`/`DELETE` mutations:** Because columnar files are immutable and compressed, point updates are expensive (handled via [[LSM Tree]]-style deltas or full partition rewrites). Batch writes or append-only streams perform best.
+
+## Flashcards
+
+Why does [[Column-Oriented Storage]] drastically outperform row-oriented storage for [[OLAP]] queries?::Analytic queries typically read only a few columns across millions of rows; storing each column contiguously skips unused columns, enables high compression (bitmap/RLE), and maximizes CPU cache + SIMD utilization.
+
+Why is it misleading to call [[Apache Cassandra]] or HBase "column-oriented" storage?::Within a column family, they still store all columns of a row together alongside the row key without column-level compression, making them mostly row-oriented.
+
+How do column-oriented databases handle writes without rewriting compressed column files on every insert?::They buffer writes in an [[LSM Tree]]-style in-memory store and periodically merge and flush them in bulk into new immutable sorted column files on disk.
+
+## Related
+
+- [[OLAP]]
+- [[OLTP and OLAP]]
+- [[Data Warehouse]]
+- [[Bitmap Index]]
+- [[LSM Tree]]
+- [[DDIA Chapter 3 Storage and Retrieval]]

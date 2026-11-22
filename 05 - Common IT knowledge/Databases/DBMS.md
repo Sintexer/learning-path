@@ -20,11 +20,11 @@ There is a specific DBMS type for [[Relational Database|Relational Databases]] c
 **DBMS Examples:**
 
 * MySQL
-* PostgreSQL
+* [[PostgreSQL]]
 * Oracle Database
 * Microsoft SQL Server
 * IBM Db2
-- [[AWS Aurora]]
+* AWS Aurora
 
 **Benefits of Using a DBMS:**
 
@@ -35,4 +35,20 @@ There is a specific DBMS type for [[Relational Database|Relational Databases]] c
 * Improved data analysis and reporting capabilities.
 
 **Note:** DBMS is a crucial component for managing and utilizing data effectively in various applications, from small-scale personal databases to large-scale enterprise systems.
+
+> [!tip] Production reality
+> Internally, every modern DBMS splits cleanly into layered subsystems: **Connection/Query Layer** (parser, planner/optimizer, executor) → **Transaction & Concurrency Manager** ([[MVCC]], [[Database Lock|locks]], [[ACID]]) → **[[Database Storage Engines|Storage Engine]]** (buffer pool, [[B-Tree Index|B-Tree]]/[[LSM Tree]], [[WAL]]). Knowing which layer owns a bottleneck (e.g., bad planner stats vs. lock contention vs. buffer-pool misses) is how Staff engineers debug database incidents fast.
+
+## Flashcards
+
+What are the three core internal layers of a modern [[DBMS]]?::1) Query processing layer (parser, optimizer, executor), 2) Transaction & concurrency manager ([[MVCC]], [[Database Lock|locks]]), and 3) [[Database Storage Engines|Storage engine]] (buffer pool, indexes, [[WAL]]).
+
+## Related
+
+- [[Database]]
+- [[RDBMS]]
+- [[Database Storage Engines]]
+- [[Transaction]]
+- [[ACID]]
+- [[PostgreSQL]]
 

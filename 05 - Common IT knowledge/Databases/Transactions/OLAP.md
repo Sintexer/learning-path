@@ -174,3 +174,24 @@ CREATE TABLE customer_summary_fact (
 ```
 
 This is a **grain** (aggregation level) of the fact table, not a dimension.
+
+> [!tip] Production reality
+> - **Storage matters:** OLAP databases typically use [[Column-Oriented Storage]] (e.g., Parquet, ClickHouse, BigQuery) so scanning 3 columns out of 100 reads only those 3 column files with high compression.
+> - **Define fact table grain first:** Mixing two granularities in one fact table (e.g., order-level and line-item-level rows) causes double-counting in `SUM()` queries.
+> - **Keep OLAP off the OLTP primary:** Route analytical queries to a dedicated [[Data Warehouse]] fed by [[ETL]] or [[Change Data Capture]] so heavy scans don't evict the OLTP buffer pool.
+
+## Flashcards
+
+What is the quick practical test to decide whether a column belongs in an OLAP **fact** table or a **dimension** table?::Can you meaningfully `SUM` or aggregate it? Additive metrics (amount, quantity) are facts; descriptive attributes (date, customer, product) are dimensions.
+
+Why do [[OLAP]] systems strongly favor [[Column-Oriented Storage]]?::Analytic queries scan millions of rows across only a few columns, so columnar layout minimizes disk I/O and achieves much higher compression ratios.
+
+## Related
+
+- [[OLTP]]
+- [[OLTP and OLAP]]
+- [[Data Warehouse]]
+- [[Column-Oriented Storage]]
+- [[Star Schema vs Snowflake Schema]]
+- [[ETL]]
+- [[Change Data Capture]]

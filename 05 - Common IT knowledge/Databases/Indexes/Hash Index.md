@@ -42,3 +42,23 @@ Several considerations:
 The hash table index also has limitations: 
 - The hash table must fit in memory, so if you have a very large number of keys, you’re out of luck. In principle, you could maintain a hash map on disk, but unfortunately it is difficult to make an on-disk hash map perform well. It requires a lot of random access I/O, it is expensive to grow when it becomes full, and hash collisions require fiddly logic. 
 - Range queries are not efficient. For example, you cannot easily scan over all keys between kitty00000 and kitty99999—you’d have to look up each key individually in the hash maps.
+
+> [!tip] Production reality
+> - **[[PostgreSQL]] Hash indexes (PG 10+):** Modern PostgreSQL hash indexes are [[WAL]]-logged and crash-safe (older versions were not!). Still, they only beat [[B-Tree Index|B-Trees]] in niche cases like indexing very long strings (e.g., URLs) for exact equality where storing only the 32-bit hash makes the index much smaller than a B-Tree.
+> - **Bitcask-style hash indexes:** Fast for point lookups and restarts with snapshots (e.g., Riak), but when keys outgrow RAM or range queries are needed, storage engines move to [[SSTable]] + [[LSM Tree]].
+
+## Flashcards
+
+Why are [[Hash Index|hash indexes]] rarely chosen over [[B-Tree Index|B-Tree indexes]] in relational databases?::Hash indexes only support strict equality (`=`) — no range scans, `ORDER BY`, or composite prefix lookups — and a B-Tree's top 3–4 levels are already cached in RAM anyway.
+
+In a log-structured hash index (Bitcask), how are deletes handled on immutable append-only segments?::By appending a special deletion marker called a **tombstone**, which tells background segment compaction/merging to discard earlier versions of that key.
+
+## Related
+
+- [[Database Index]]
+- [[B-Tree Index]]
+- [[LSM Tree]]
+- [[SSTable]]
+- [[Database Log]]
+- [[PostgreSQL]]
+- [[DDIA Chapter 3 Storage and Retrieval]]

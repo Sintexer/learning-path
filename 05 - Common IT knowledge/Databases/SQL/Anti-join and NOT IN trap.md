@@ -34,3 +34,20 @@ If the subquery inside `NOT IN` returns **even a single `NULL` value**, the enti
 
 > [!tip] Rule
 > Always use **`NOT EXISTS`** or **`LEFT JOIN ... WHERE IS NULL`**. The optimizer converts both of these into a specialized internal **Hash Anti-Join** execution node, which is safe, fast, and ignores `NULL` traps.
+
+> [!warning] Failure modes & trade-offs
+> - **Nullable columns sneak in later:** Even if `orders.user_id` is non-null today, a future [[Schema Migration]] or left-joined CTE that introduces a single `NULL` will silently turn a working `NOT IN` query into an empty-result bug.
+> - **`LEFT JOIN` trap with `IS NULL`:** Make sure the `IS NULL` check targets a `NOT NULL` column on the right table (such as its primary key `o.id`), not a nullable attribute that could legitimately be `NULL` on matched rows.
+
+## Flashcards
+
+Why does `WHERE id NOT IN (SELECT user_id FROM orders)` return **zero rows** if the subquery contains even one `NULL`?::SQL uses three-valued logic: `id NOT IN (1, NULL)` expands to `id != 1 AND id != NULL`; since `id != NULL` evaluates to `UNKNOWN`, the whole `AND` never evaluates to `TRUE`.
+
+Prefer ==`NOT EXISTS`== or ==`LEFT JOIN ... WHERE right_pk IS NULL`== over `NOT IN` for SQL anti-joins to stay immune to `NULL` values.
+
+## Related
+
+- [[SQL]]
+- [[Logical Query Processing Order]]
+- [[Database Index Practical Usage]]
+- [[Schema Migration]]

@@ -63,7 +63,31 @@ em.find(Account.class, id, LockModeType.PESSIMISTIC_WRITE, props);
 
 ## The Classic Production Use Case: The Queue Pattern
 
-Imagine 10 background worker instances trying to process tasks from a database table:
+Imagine 10 background worker instances trying to process tasks from a database table (e.g., an [[Outbox Pattern]] table):
 
 - **Without `SKIP LOCKED`:** Worker 1 and Worker 2 both try to lock the first row. Worker 2 hangs until Worker 1 finishes, creating severe thread starvation and latency.
 - **With `SKIP LOCKED`:** Worker 1 locks row 1. Worker 2 immediately skips row 1 and grabs row 2. All 10 workers work concurrently with zero blocking.
+
+> [!warning] Failure modes & trade-offs
+> - **Deadlocks:** If Transaction A locks Row 1 then Row 2, while Transaction B locks Row 2 then Row 1, the database aborts one of them. Prevent deadlocks by always acquiring locks in a **consistent deterministic order** (e.g., sorted by `id`).
+> - **Connection pool exhaustion:** Holding a pessimistic lock across a slow external HTTP call keeps both the row lock *and* the DB connection tied up. Never hold DB locks across network I/O; use [[Timeout Pattern|lock timeouts]] (`SET LOCAL lock_timeout`) and keep [[Transaction|transactions]] short.
+> - **Missing index = table lock:** In some engines (like MySQL InnoDB), `SELECT ... FOR UPDATE` on an unindexed predicate locks every scanned row/gap, effectively locking the entire table.
+
+## Flashcards
+
+What is the difference between `FOR UPDATE NOWAIT` and `FOR UPDATE SKIP LOCKED`?::`NOWAIT` fails immediately with an error if a target row is locked; `SKIP LOCKED` ignores locked rows and returns the next unlocked ones (ideal for DB-backed job queues).
+
+How do you prevent deadlocks when transactions must pessimistically lock multiple rows?::Always acquire locks in a deterministic global order (for example, sorted ascending by primary key).
+
+Never hold a database pessimistic lock across external network calls; set a strict `lock_timeout` and keep transactions short. #card-reminder
+
+## Related
+
+- [[Optimistic Locking]]
+- [[Pessimistic Concurrency Control]]
+- [[Database Lock]]
+- [[Transaction]]
+- [[Outbox Pattern]]
+- [[Distributed Lock]]
+- [[JPA]]
+- [[Hibernate]]

@@ -253,3 +253,33 @@ ALTER TABLE users DROP COLUMN middle_name;
 ```
 
 _What if it fails due to lock timeout?_  The migration fails safely without blocking user traffic. The CI/CD pipeline retries when traffic is lower or background jobs are finished.
+
+> [!warning] Failure modes & trade-offs
+> - **Foreign keys lock *both* tables:** Adding a `FOREIGN KEY` takes a `SHARE ROW EXCLUSIVE` lock on both the child *and* referenced parent table during validation. Use `ADD CONSTRAINT ... FOREIGN KEY ... NOT VALID`, then `VALIDATE CONSTRAINT` in a separate statement.
+> - **Failed `CREATE INDEX CONCURRENTLY` leaves an `INVALID` index:** If a concurrent index build fails (e.g., duplicate key on a `UNIQUE` index or timeout), [[PostgreSQL]] leaves behind a broken index marked `INVALID` that still slows writes and is ignored by reads — check `pg_index.indisvalid` and `DROP INDEX CONCURRENTLY` before retrying.
+> - **Data backfills can saturate replication:** Updating millions of rows in one big statement creates massive [[WAL]] spikes, [[Replication Lag]], and [[PostgreSQL#VACUUM|MVCC bloat]]. Always backfill in small throttled batches (e.g., 1k–10k rows per transaction with brief pauses).
+
+## Flashcards
+
+Why is **roll-forward** preferred over automated down-migrations (`rollback` scripts) in production?::Down-migrations risk irreversible data loss (cannot restore data written after deploy), are rarely tested under production load, and break already-running new app instances.
+
+What is the **N−1 / N compatibility rule** for zero-downtime [[Schema Migration|schema migrations]]?::During a rolling or canary deployment, the database schema must remain compatible with *both* the previous (N−1) and new (N) application versions simultaneously — achieved via the Expand → Transition → Contract pattern.
+
+Why can even a 2 ms `ALTER TABLE ... DROP COLUMN` cause a production outage in [[PostgreSQL]]?::It requires an `ACCESS EXCLUSIVE` lock; if it waits behind one slow `SELECT`, PostgreSQL queues *all* subsequent reads and writes behind the migration, exhausting the connection pool (mitigate with `SET lock_timeout = '2s'`).
+
+## How do you add a `NOT NULL` constraint to an existing large [[PostgreSQL]] table without blocking writes? #card
+
+1. Add the constraint without scanning: `ALTER TABLE t ADD CONSTRAINT chk_not_null CHECK (col IS NOT NULL) NOT VALID;` (brief lock, enforced for new writes immediately).
+2. Validate existing rows concurrently: `ALTER TABLE t VALIDATE CONSTRAINT chk_not_null;` (uses `SHARE UPDATE EXCLUSIVE`, allowing reads and writes).
+
+Always set a short `lock_timeout` before running DDL in production and use `CREATE INDEX CONCURRENTLY` for live tables. #card-reminder
+
+## Related
+
+- [[Zero-downtime deployment]]
+- [[Backward Compatibility]]
+- [[Forward Compatibility]]
+- [[PostgreSQL]]
+- [[Database Lock]]
+- [[Database Index Practical Usage]]
+- [[Kubernetes]]

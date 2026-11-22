@@ -35,3 +35,25 @@ If an older, long-running Transaction 102 queries `Alice`, it looks at `xmax: 10
 **The downside:** These dead rows accumulate on disk. This is called **bloat**.
 
 **The solution:** A background process called [[PostgreSQL#VACUUM]] cleans up obsolete rows whose `xmax` is older than all currently running transactions.
+
+> [!warning] Failure modes & trade-offs
+> - **PostgreSQL vs. MySQL InnoDB MVCC:** PostgreSQL keeps old row versions *inline in the main heap* (requiring `VACUUM` and risking table/index bloat). InnoDB overwrites rows in place and stores old versions in a separate **undo log** — avoiding heap bloat, but making rollbacks and very long reads traverse long undo chains.
+> - **[[Snapshot Isolation]] still allows [[Write Skew]]:** MVCC ensures readers see a consistent snapshot without blocking writers, but two concurrent transactions can read the same snapshot and update *disjoint* rows in a way that violates a multi-row invariant (e.g., two doctors going off-call simultaneously).
+> - **Long-running transactions stall cleanup:** A single forgotten `IDLE IN TRANSACTION` session prevents `VACUUM` (or InnoDB purge) from freeing dead versions across the entire database.
+
+## Flashcards
+
+What is the golden rule of MVCC?::Readers never block writers, and writers never block readers.
+
+In [[PostgreSQL]] MVCC, ==`xmin`== records the transaction ID that created a tuple, while ==`xmax`== records the transaction ID that deleted or replaced it.
+
+How does [[PostgreSQL]]'s MVCC storage differ from MySQL InnoDB's?::PostgreSQL stores old tuple versions inline in the heap (cleaned by `VACUUM`), whereas InnoDB overwrites in place and stores older versions in a separate undo log.
+
+## Related
+
+- [[PostgreSQL]]
+- [[ACID]]
+- [[Transaction]]
+- [[Snapshot Isolation]]
+- [[Write Skew]]
+- [[Database Lock]]

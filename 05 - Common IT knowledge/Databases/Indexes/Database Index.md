@@ -177,4 +177,30 @@ For true multi-dimensional range searches — such as bounding-box geospatial qu
 
 ### Fuzzy Querying and Full-Text Search
 
-Traditional database indexes rely on exact matches or sorted range comparisons, making them incapable of handling typos, synonyms, or grammatical variations. To support this kind of fuzzy querying, full-text search engines like [[Apache Lucene]] use linguistic analysis and edit-distance algorithms (which measure character insertions, deletions, or substitutions) to find approximate matches. Under the hood, Lucene organizes its vocabulary in an SSTable-like term dictionary on disk, but instead of using a simple sparse key index like LevelDB, it uses an in-memory finite state automaton structured similarly to a [[Trie]]. This structure can be evaluated as a Levenshtein automaton, allowing the database to efficiently navigate character transitions and locate all terms within a specified edit distance without having to scan through every word in the dictionary. More advanced approaches to non-exact searching extend beyond character mechanics into document classification and machine learning.
+Traditional database indexes rely on exact matches or sorted range comparisons, making them incapable of handling typos, synonyms, or grammatical variations. To support this kind of fuzzy querying, full-text search engines like Apache Lucene use linguistic analysis and edit-distance algorithms (which measure character insertions, deletions, or substitutions) to find approximate matches. Under the hood, Lucene organizes its vocabulary in an [[SSTable]]-like term dictionary on disk, but instead of using a simple sparse key index like LevelDB, it uses an in-memory finite state automaton structured similarly to a Trie. This structure can be evaluated as a Levenshtein automaton, allowing the database to efficiently navigate character transitions and locate all terms within a specified edit distance without having to scan through every word in the dictionary. More advanced approaches to non-exact searching extend beyond character mechanics into document classification and machine learning.
+
+> [!warning] Failure modes & trade-offs
+> - **Over-indexing write-heavy tables:** Every extra index increases write amplification, [[WAL]] volume, and [[PostgreSQL#HOT (Heap-Only Tuples) Updates|disables HOT updates]] when any indexed column changes. Audit `pg_stat_user_indexes` periodically to drop unused indexes.
+> - **Index bloat & visibility map staleness:** Even a covering index falls back to heap fetches if `autovacuum` hasn't marked heap pages all-visible in the [[PostgreSQL#Visibility Map|Visibility Map]].
+> - **Distributed secondary indexes:** In sharded databases, secondary indexes must be either local (scatter-gather reads) or global (distributed writes) — see [[Partitioning and Secondary Indexes]].
+
+## Flashcards
+
+What is the core trade-off of adding a [[Database Index]]?::It speeds up reads by avoiding full table scans, at the cost of extra disk/RAM space and slower writes (every `INSERT`/`UPDATE`/`DELETE` must maintain the index).
+
+In a covering index (`CREATE INDEX ... ON t(a) INCLUDE (b)`), why put `b` in `INCLUDE` instead of the index key?::`INCLUDE` columns are stored only in leaf pages as payload (not sorted in internal nodes), keeping the index smaller while still enabling index-only scans.
+
+## When should you prefer an [[LSM Tree]] over a [[B-Tree Index]]? #card
+
+- Choose **[[LSM Tree]]** when high write throughput and storage compression are the primary bottlenecks (sequential appends, no half-empty split pages).
+- Choose **[[B-Tree Index]]** when you need predictable $p99$ read latency (no compaction stalls) and straightforward [[ACID]] range locking.
+
+## Related
+
+- [[Database Index Practical Usage]]
+- [[B-Tree Index]]
+- [[LSM Tree]]
+- [[Clustered and Non-Clustered Index]]
+- [[Partitioning and Secondary Indexes]]
+- [[PostgreSQL]]
+- [[DDIA Chapter 3 Storage and Retrieval]]

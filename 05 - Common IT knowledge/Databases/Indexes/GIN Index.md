@@ -106,4 +106,25 @@ You store arbitrary user settings in Postgres:
 SELECT * FROM users WHERE metadata @> '{"beta_tester": true}';
 ```
 
-A GIN index decomposes every key/value inside the JSONB document so you can query arbitrary keys at high speed without creating 50 separate columns.
+A GIN index decomposes every key/value inside the JSONB document so you can query arbitrary keys at high speed without creating 50 separate columns. (See [[PostgreSQL#JSON]] for `jsonb_ops` vs `jsonb_path_ops`.)
+
+> [!warning] Failure modes & trade-offs
+> - **`fastupdate` pending list latency spikes:** By default in [[PostgreSQL]], GIN buffers new writes in an unsorted pending list (`gin_pending_list_limit`, default 4 MB). The unlucky query or `VACUUM` that fills the buffer pays a sudden latency spike while flushing the whole list into the main tree. For latency-sensitive OLTP tables, tune `gin_pending_list_limit` smaller or set `fastupdate = off`.
+> - **Cannot support `ORDER BY` or range operators (`<`, `>`):** GIN is an inverted index for containment/overlap (`@>`, `?`, `@@`), not scalar ordering.
+
+## Flashcards
+
+How does a [[GIN Index]] map data differently from a [[B-Tree Index]]?::A B-Tree maps a whole column value to a row; a GIN index unpacks composite values (arrays, JSONB, full-text tokens) and maps each individual element to a posting list/tree of matching rows.
+
+In [[PostgreSQL]] GIN indexes, what is the difference between a **Posting List** and a **Posting Tree**?::A posting list is a small compressed inline array of TIDs for rarer keys; once it exceeds ~1/3 of a page, GIN promotes it into a separate B-Tree of TIDs called a posting tree.
+
+Why can GIN indexes cause unexpected write/read latency spikes in [[PostgreSQL]]?::With `fastupdate = on`, writes accumulate in an unsorted pending list until a single query or `VACUUM` hits `gin_pending_list_limit` and must flush the entire buffer into the main index.
+
+## Related
+
+- [[GiST Index]]
+- [[B-Tree Index]]
+- [[Bitmap]]
+- [[PostgreSQL]]
+- [[Database Index]]
+- [[Database Index Practical Usage]]
